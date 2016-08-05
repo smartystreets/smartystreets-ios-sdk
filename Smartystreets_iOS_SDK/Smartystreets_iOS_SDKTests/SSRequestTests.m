@@ -1,11 +1,3 @@
-//
-//  SSRequestTests.m
-//  Smartystreets_iOS_SDK
-//
-//  Created by Oshion Niemela on 8/3/16.
-//  Copyright © 2016 SmartyStreets. All rights reserved.
-//
-
 #import <XCTest/XCTest.h>
 #import "SSRequest.h"
 
@@ -38,23 +30,58 @@
 }
 
 - (void)testNullNameQueryStringParameterNotAdded {
-    SSRequest *request = [[SSRequest alloc] initWithUrlPrefix:@"http://localhost/?"];
-    
-    [request setValue:@"value" forHTTPParameterField:nil];
-    
-    XCTAssertEqualObjects(@"http://localhost/?", [request getUrl]);
+    [self assertQueryStringParametersField:nil withValue:@"value" withExpectedValue:@"http://localhost/?"];
+}
+
+- (void)testEmptyNameQueryStringParameterNotAdded {
+    [self assertQueryStringParametersField:@"" withValue:@"value" withExpectedValue:@"http://localhost/?"];
+}
+
+- (void)testNullValueQueryStringParameterNotAdded {
+    [self assertQueryStringParametersField:@"name" withValue:nil withExpectedValue:@"http://localhost/?"];
 }
 
 - (void)testEmptyValueQueryStringParameterIsAdded {
-    [self assertQueryStringParameters:<#(NSString *)#> withValue:<#(NSString *)#> withExpectedValue:<#(NSString *)#>]
+    [self assertQueryStringParametersField:@"name" withValue:@"" withExpectedValue:@"http://localhost/?name="];
 }
 
--(void)assertQueryStringParameters:(NSString*)name withValue:(NSString*)value withExpectedValue:(NSString*)expectedValue {
+-(void)assertQueryStringParametersField:(NSString*)name withValue:(NSString*)value withExpectedValue:(NSString*)expectedValue {
     SSRequest *request = [[SSRequest alloc] initWithUrlPrefix:@"http://localhost/?"];
     
-    [request setValue:@"" forHTTPParameterField:@"name"];
+    [request setValue:value forHTTPParameterField:name];
     
-    XCTAssertEqualObjects(@"http://localhost/?name=", [request getUrl]);
+    XCTAssertEqualObjects(expectedValue, [request getUrl]);
+}
+
+- (void)testMultipleQueryStringParametersAreAdded {
+    SSRequest *request = [[SSRequest alloc] initWithUrlPrefix:@"http://localhost/?"];
+    
+    [request setValue:@"value1" forHTTPParameterField:@"name1"];
+    [request setValue:@"value2" forHTTPParameterField:@"name2"];
+    [request setValue:@"value3" forHTTPParameterField:@"name3"];
+    
+    NSString *const expectedValue = @"http://localhost/?name1=value1&name2=value2&name3=value3";
+    XCTAssertEqualObjects(expectedValue, [request getUrl]);
+}
+
+- (void)assertUrlEncodingOfQueryStringParameters {
+    
+}
+
+- (void)testUrlWithoutTrailingQuestionMark {
+    
+}
+
+- (void)testHeadersAddedToRequest {
+    
+}
+
+- (void)testGet {
+    
+}
+
+- (void)testPost {
+    
 }
 
 @end
