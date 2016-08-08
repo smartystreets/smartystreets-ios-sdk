@@ -57,14 +57,18 @@ NSString *const kSSCharSet = @"UTF-8";
     return url;
 }
 - (NSString*)urlEncode:(NSString*)value {
+    NSString *const charactersToEscape = @"*'();:@&=+$,/?%#[]";
+    NSCharacterSet *allowedCharacters = [[NSCharacterSet characterSetWithCharactersInString:charactersToEscape] invertedSet];
     
-    //TODO: figure out how to urlEncode
+    value = [value stringByAddingPercentEncodingWithAllowedCharacters:allowedCharacters];
+    value = [value stringByReplacingOccurrencesOfString:@" " withString:@"+"];
+
     return value;
 }
 
 - (void)setPayload:(NSMutableData *)payload {
     _method = @"POST";
-    self.payload = payload;
+    _payload = payload;
 }
 
 @end
