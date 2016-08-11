@@ -2,6 +2,6 @@
 
 @protocol SSSender <NSObject>
 
-- (Response)send:(Request)request;
+- (SSResponse)send:(SSRequest)request;
 
 @end
