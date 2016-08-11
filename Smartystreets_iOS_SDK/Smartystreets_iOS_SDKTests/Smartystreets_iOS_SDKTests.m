@@ -1,11 +1,3 @@
-//
-//  Smartystreets_iOS_SDKTests.m
-//  Smartystreets_iOS_SDKTests
-//
-//  Created by Oshion Niemela on 8/3/16.
-//  Copyright © 2016 SmartyStreets. All rights reserved.
-//
-
 #import <XCTest/XCTest.h>
 
 @interface Smartystreets_iOS_SDKTests : XCTestCase
