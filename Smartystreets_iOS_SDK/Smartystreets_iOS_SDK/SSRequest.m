@@ -20,9 +20,9 @@ NSString *const kSSCharSet = @"UTF-8";
 }
 
 - (instancetype)initWithUrlPrefix:(NSString *)urlPrefix {
-    self = [[super self] init];
-    _urlPrefix = urlPrefix;
-    
+    if (self = [[super self] init]) {
+        _urlPrefix = urlPrefix;
+    }
     return self;
 }
 
