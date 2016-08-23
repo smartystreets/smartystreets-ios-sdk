@@ -15,7 +15,7 @@
     return self;
 }
 
-- (SSResponse*)send:(SSRequest*)request {
+- (SSResponse*)sendRequest:(SSRequest*)request withError:(NSError**)error {
     _request = request;
     return self.response;
 }

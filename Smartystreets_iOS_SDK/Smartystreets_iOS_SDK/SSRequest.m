@@ -56,6 +56,7 @@ NSString *const kSSCharSet = @"UTF-8";
 
     return url;
 }
+
 - (NSString*)urlEncode:(NSString*)value {
     NSString *const charactersToEscape = @"*'();:@&=+$,/?%#[]";
     NSCharacterSet *allowedCharacters = [[NSCharacterSet characterSetWithCharactersInString:charactersToEscape] invertedSet];
