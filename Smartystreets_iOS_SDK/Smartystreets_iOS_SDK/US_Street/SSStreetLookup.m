@@ -1,13 +1,13 @@
-#import "SSLookup.h"
+#import "SSStreetLookup.h"
 
-@interface SSLookup()
+@interface SSStreetLookup()
 
 @property (nonatomic) NSMutableArray<SSCandidate*> *result;
 @property (nonatomic) int maxCandidates;
 
 @end
 
-@implementation SSLookup
+@implementation SSStreetLookup
 
 - (instancetype)init {
     if (self = [super init]) {

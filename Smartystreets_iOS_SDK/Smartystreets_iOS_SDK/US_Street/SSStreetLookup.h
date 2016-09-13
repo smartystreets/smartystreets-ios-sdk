@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 #import "SSCandidate.h"
 
-@interface SSLookup : NSObject
+@interface SSStreetLookup : NSObject
 
 @property (nonatomic) NSString *inputId;
 @property (nonatomic) NSString *street;

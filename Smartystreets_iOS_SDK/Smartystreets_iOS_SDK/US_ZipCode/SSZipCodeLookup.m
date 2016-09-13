@@ -1,6 +1,6 @@
-#import "SSLookup.h"
+#import "SSZipCodeLookup.h"
 
-@implementation SSLookup
+@implementation SSZipCodeLookup
 
 - (instancetype)init {
     if (self = [super init])

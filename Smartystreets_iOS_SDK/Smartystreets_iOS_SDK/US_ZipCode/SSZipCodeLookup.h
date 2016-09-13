@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 #import "SSResult.h"
 
-@interface SSLookup : NSObject
+@interface SSZipCodeLookup : NSObject
 
 @property (nonatomic) SSResult *result;
 @property (nonatomic) NSString *inputId;
