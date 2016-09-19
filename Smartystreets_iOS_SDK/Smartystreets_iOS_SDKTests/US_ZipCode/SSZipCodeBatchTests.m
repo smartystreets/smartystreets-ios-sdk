@@ -55,7 +55,7 @@
     XCTAssertEqual(3, [batch size]);
 }
 
-//- (void)testAddingALookupWhenBatchIsFullThrowsError { //TODO: implement test
+//- (void)testAddingALookupWhenBatchIsFullError { //TODO: implement test
 //    SSBatch *batch = [[SSBatch alloc] init];
 //    SSZipCodeLookup *lookup = [[SSZipCodeLookup alloc] init];
 //    

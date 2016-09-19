@@ -15,11 +15,11 @@
 
     NSString *deleteThisString = @"delete";
     
-    return nil;
+    return nil; //TODO: implement
 }
 
 - (id)deserialize:(NSMutableData *)payload withClassType:(Class)type {
-    return nil;
+    return nil; //TODO: implement
 }
 
 @end
