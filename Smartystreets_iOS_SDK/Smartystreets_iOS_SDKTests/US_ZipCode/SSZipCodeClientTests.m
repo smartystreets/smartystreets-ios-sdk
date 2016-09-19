@@ -47,7 +47,7 @@
     
     [client sendLookup:lookup error:&error];
     
-    XCTAssertEqualObjects(@"http://localhost/?city=1&state=2&zipcode=3", sender.request.getUrl);
+    XCTAssertEqualObjects(@"http://localhost/?state=2&city=1&zipcode=3", sender.request.getUrl);
 }
 
 //Batch Lookup
@@ -100,7 +100,28 @@
 }
 
 - (void)testCandidatesCorrectlyAssignedToCorrespondingLookup {
+    NSMutableArray<SSResult*> *expectedCandidates = [[NSMutableArray<SSResult*> alloc] init];
+    [expectedCandidates insertObject:[[SSResult alloc] init] atIndex:0];
+    [expectedCandidates insertObject:[[SSResult alloc] init] atIndex:1];
+    SSZipCodeBatch *batch = [[SSZipCodeBatch alloc] init];
+    NSError *error = nil;
     
+    [batch add:[[SSZipCodeLookup alloc] init] error:&error];
+    [batch add:[[SSZipCodeLookup alloc] init] error:&error];
+    
+    NSString *emptyString = @"[]";
+    NSData *data = [emptyString dataUsingEncoding:NSUTF8StringEncoding];
+    NSMutableData *payload = [NSMutableData dataWithData:data];
+    SSResponse *response = [[SSResponse alloc] initWithStatusCode:0 payload:payload];
+    
+    SSMockSender *sender = [[SSMockSender alloc] initWithSSResponse:response];
+    SSMockDeserializer *deserializer = [[SSMockDeserializer alloc] initWithDeserializedObject:expectedCandidates];
+    SSZipCodeClient *client = [[SSZipCodeClient alloc] initWithUrlPrefix:@"/" withSender:sender withSerializer:deserializer];
+    
+    [client sendBatch:batch error:&error];
+    
+    XCTAssertEqual([expectedCandidates objectAtIndex:0], [[batch getLookupByIndex:0] result]);
+    XCTAssertEqual([expectedCandidates objectAtIndex:1], [[batch getLookupByIndex:1] result]);
 }
 
 @end
