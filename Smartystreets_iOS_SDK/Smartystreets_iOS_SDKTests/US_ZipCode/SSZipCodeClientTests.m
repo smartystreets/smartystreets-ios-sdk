@@ -47,6 +47,7 @@
     
     [client sendLookup:lookup error:&error];
     
+    //TODO: change the test to not be dependent on the URL. Indivually test the urlPrefix, the slash, and the parameters
     XCTAssertEqualObjects(@"http://localhost/?state=2&city=1&zipcode=3", sender.request.getUrl);
 }
 

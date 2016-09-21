@@ -28,10 +28,13 @@
 - (void)sendBatch:(SSZipCodeBatch*)batch error:(NSError**)error {
     SSRequest *request = [[SSRequest alloc] initWithUrlPrefix:self.urlPrefix];
     
-    if ([batch size] == 0)
+    if (error != nil) //TODO: should I add this for handling errors
         return;
     
-    if ([batch size] == 1)
+    if ([batch count] == 0)
+        return;
+    
+    if ([batch count] == 1)
         [self populateQueryString:[batch getLookupByIndex:0] withRequest:request];
     else
         [request setPayload:[self.serializer serialize:batch.allLookups]];

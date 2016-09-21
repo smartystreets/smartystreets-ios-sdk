@@ -1,5 +1,8 @@
 #import <Foundation/Foundation.h>
 #import "SSZipCodeLookup.h"
+#import "SmartyErrors.h"
+
+extern int const kSSZipCodeMaxBatchSize;
 
 @interface SSZipCodeBatch : NSObject
 
@@ -8,11 +11,9 @@
 
 - (void)add:(SSZipCodeLookup*)lookup error:(NSError**)error;
 - (void)removeAllObjects;
-- (int)size;
+- (int)count;
 //- (iterator<SSZipCodeLookup>)iterator;
 - (SSZipCodeLookup*)getLookupById:(NSString*)inputId;
 - (SSZipCodeLookup*)getLookupByIndex:(int)inputIndex;
 
 @end
-
-extern int const kSSMaxBatchSize;

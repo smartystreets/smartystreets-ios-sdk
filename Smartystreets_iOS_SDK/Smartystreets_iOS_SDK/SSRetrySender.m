@@ -17,7 +17,7 @@
     return self;
 }
 
--(SSResponse*)sendRequest:(SSRequest*)request withError:(NSError **)error {
+- (SSResponse*)sendRequest:(SSRequest*)request withError:(NSError **)error {
     for (int i = 0; i <= self.maxRetries; i++) {
         SSResponse *response = [self trySendingRequest:request attempts:i error:error];
         if (response != nil)

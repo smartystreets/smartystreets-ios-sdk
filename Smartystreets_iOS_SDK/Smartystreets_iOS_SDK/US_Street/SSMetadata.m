@@ -17,7 +17,7 @@
 @property (nonatomic) NSString *precision;
 @property (nonatomic) NSString *timeZone;
 @property (nonatomic) double utcOffset;
-@property (nonatomic) bool obeysDst; //TODO: change the getter name from isObeysDst to obeysDst
+@property (nonatomic) bool obeysDst;
 @end
 
 @implementation SSMetadata

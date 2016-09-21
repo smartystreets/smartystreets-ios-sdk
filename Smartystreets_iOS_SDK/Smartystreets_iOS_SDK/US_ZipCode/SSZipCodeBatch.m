@@ -1,6 +1,6 @@
 #import "SSZipCodeBatch.h"
 
-int const kSSMaxBatchSize = 100;
+int const kSSZipCodeMaxBatchSize = 100;
 
 @implementation SSZipCodeBatch
 
@@ -13,16 +13,20 @@ int const kSSMaxBatchSize = 100;
 }
 
 - (void)add:(SSZipCodeLookup*)lookup error:(NSError**)error {
-    if ([self.allLookups count] >= kSSMaxBatchSize) {
-        //TODO: set BatchFullError
+    if ([self.allLookups count] >= kSSZipCodeMaxBatchSize) {
+        NSString *description = [NSString stringWithFormat:@"Batch size cannot exceed %i", kSSZipCodeMaxBatchSize];
+        NSDictionary *details = @{NSLocalizedDescriptionKey: description};
+        *error = [NSError errorWithDomain:SSErrorDomain code:BatchFullError userInfo:details];
+        return;
     }
     
-    NSString *key = lookup.inputId;
-    
-    if (key != nil)
-        [self.namedLookups setObject:lookup forKey:key];
-    
     [self.allLookups addObject:lookup];
+    
+    NSString *key = lookup.inputId;
+    if (key == nil)
+        return;
+    
+    [self.namedLookups setObject:lookup forKey:key];
 }
 
 - (void)removeAllObjects {
@@ -30,7 +34,7 @@ int const kSSMaxBatchSize = 100;
     [self.allLookups removeAllObjects];
 }
 
-- (int)size {
+- (int)count {
     return (int)[self.allLookups count];
 }
 
