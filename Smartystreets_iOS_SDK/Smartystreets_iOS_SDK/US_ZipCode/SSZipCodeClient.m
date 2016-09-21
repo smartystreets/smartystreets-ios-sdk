@@ -28,9 +28,6 @@
 - (void)sendBatch:(SSZipCodeBatch*)batch error:(NSError**)error {
     SSRequest *request = [[SSRequest alloc] initWithUrlPrefix:self.urlPrefix];
     
-    if (error != nil) //TODO: should I add this for handling errors
-        return;
-    
     if ([batch count] == 0)
         return;
     
@@ -44,7 +41,7 @@
     NSArray<SSResult*> *results = [self.serializer deserialize:response.payload withClassType:[SSResult class]];
     if (results == nil)
         results = [[NSArray<SSResult*> alloc] init];
-    [self assignResultsToLookups:batch withResult:results];
+    [self assignResultsToLookups:batch result:results];
 }
 
 - (void)populateQueryString:(SSZipCodeLookup*)lookup withRequest:(SSRequest*)request {
@@ -54,7 +51,7 @@
     [request setValue:lookup.zipcode forHTTPParameterField:@"zipcode"];
 }
 
-- (void)assignResultsToLookups:(SSZipCodeBatch*)batch withResult:(NSArray*)results {
+- (void)assignResultsToLookups:(SSZipCodeBatch*)batch result:(NSArray*)results {
     for (int i = 0; i < [results count]; i++)
         [[batch getLookupByIndex:i] setResult:[results objectAtIndex:i]];
 }
