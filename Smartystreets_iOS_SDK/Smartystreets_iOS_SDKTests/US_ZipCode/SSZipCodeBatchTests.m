@@ -36,7 +36,7 @@
     
     [batch add:lookup error:&error];
     
-    XCTAssertEqual(@"Provo", [[batch getLookupByIndex:0] city]);
+    XCTAssertEqual(@"Provo", [[batch getLookupAtIndex:0] city]);
 }
 
 - (void)testReturnsCorrectSize {

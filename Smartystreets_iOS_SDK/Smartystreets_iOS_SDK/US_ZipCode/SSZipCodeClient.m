@@ -32,7 +32,7 @@
         return;
     
     if ([batch count] == 1)
-        [self populateQueryString:[batch getLookupByIndex:0] withRequest:request];
+        [self populateQueryString:[batch getLookupAtIndex:0] withRequest:request];
     else
         [request setPayload:[self.serializer serialize:batch.allLookups]];
         
@@ -51,9 +51,9 @@
     [request setValue:lookup.zipcode forHTTPParameterField:@"zipcode"];
 }
 
-- (void)assignResultsToLookups:(SSZipCodeBatch*)batch result:(NSArray*)results {
+- (void)assignResultsToLookups:(SSZipCodeBatch*)batch result:(NSArray<SSResult*>*)results {
     for (int i = 0; i < [results count]; i++)
-        [[batch getLookupByIndex:i] setResult:[results objectAtIndex:i]];
+        [[batch getLookupAtIndex:i] setResult:[results objectAtIndex:i]];
 }
 
 @end

@@ -54,7 +54,7 @@ int const kSSStreetMaxBatchSize = 100;
     return [self.namedLookups objectForKey:inputId];
 }
 
-- (SSStreetLookup*)getLookupByIndex:(int)inputIndex {
+- (SSStreetLookup*)getLookupAtIndex:(int)inputIndex {
     return [self.allLookups objectAtIndex:inputIndex];
 }
 

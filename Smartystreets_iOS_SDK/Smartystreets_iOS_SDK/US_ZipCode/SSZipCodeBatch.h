@@ -14,6 +14,6 @@ extern int const kSSZipCodeMaxBatchSize;
 - (int)count;
 //- (iterator<SSZipCodeLookup>)iterator;
 - (SSZipCodeLookup*)getLookupById:(NSString*)inputId;
-- (SSZipCodeLookup*)getLookupByIndex:(int)inputIndex;
+- (SSZipCodeLookup*)getLookupAtIndex:(int)inputIndex;
 
 @end

@@ -17,6 +17,6 @@ extern int const kSSStreetMaxBatchSize;
 - (int)count;
 //- (iterator<SSZipCodeLookup>)iterator;
 - (SSStreetLookup*)getLookupById:(NSString*)inputId;
-- (SSStreetLookup*)getLookupByIndex:(int)inputIndex;
+- (SSStreetLookup*)getLookupAtIndex:(int)inputIndex;
 
 @end

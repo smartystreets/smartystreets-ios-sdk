@@ -1,12 +1,5 @@
 #import "SSStreetLookup.h"
 
-@interface SSStreetLookup()
-
-@property (nonatomic) NSMutableArray<SSCandidate*> *result;
-@property (nonatomic) int maxCandidates;
-
-@end
-
 @implementation SSStreetLookup
 
 - (instancetype)init {
@@ -25,6 +18,10 @@
 
 - (void)addToResult:(SSCandidate*)newCandidate {
     [self.result addObject:newCandidate];
+}
+
+- (SSCandidate*)getResultAtIndex:(int)index {
+    return [self.result objectAtIndex:index];
 }
 
 - (void)setMaxCandidates:(int)maxCandidates error:(NSError**)error {

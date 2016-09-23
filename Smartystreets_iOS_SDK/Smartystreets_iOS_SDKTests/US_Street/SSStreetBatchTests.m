@@ -1,10 +1,7 @@
 #import <XCTest/XCTest.h>
 #import "SSStreetBatch.h"
 
-@interface SSStreetBatchTests : XCTestCase {
-    SSStreetBatch *batch;
-    SSStreetLookup *lookup;
-}
+@interface SSStreetBatchTests : XCTestCase
 
 @end
 
@@ -12,8 +9,7 @@
 
 - (void)setUp {
     [super setUp];
-    batch = [[SSStreetBatch alloc] init];
-    lookup = [[SSStreetLookup alloc] init];
+
 }
 
 - (void)tearDown {
@@ -21,6 +17,8 @@
 }
 
 - (void)testGetsLookupByInputId {
+    SSStreetBatch *batch = [[SSStreetBatch alloc] init];
+    SSStreetLookup *lookup = [[SSStreetLookup alloc] init];
     lookup.inputId = @"hasInputId";
     NSError *error = nil;
     
@@ -30,15 +28,18 @@
 }
 
 - (void)testGetsLookupByIndex {
+    SSStreetBatch *batch = [[SSStreetBatch alloc] init];
+    SSStreetLookup *lookup = [[SSStreetLookup alloc] init];
     lookup.city = @"Provo";
     NSError *error = nil;
     
     [batch add:lookup error:&error];
     
-    XCTAssertEqualObjects(@"Provo", [[batch getLookupByIndex:0] city]);
+    XCTAssertEqualObjects(@"Provo", [[batch getLookupAtIndex:0] city]);
 }
 
 - (void)testReturnsCorrectSize {
+    SSStreetBatch *batch = [[SSStreetBatch alloc] init];
     SSStreetLookup *lookup1 = [[SSStreetLookup alloc] init];
     lookup1.inputId = @"inputId";
     SSStreetLookup *lookup2 = [[SSStreetLookup alloc] init];
@@ -53,6 +54,8 @@
 }
 
 - (void)testAddingALookupWhenThereIsABatchIsFullError {
+    SSStreetBatch *batch = [[SSStreetBatch alloc] init];
+    SSStreetLookup *lookup = [[SSStreetLookup alloc] init];
     NSError *error = nil;
     
     for (int i = 0; i < kSSStreetMaxBatchSize + 1; i++) {
@@ -68,6 +71,8 @@
 }
 
 - (void)testResetMethodResetsHeadersAndLookups {
+    SSStreetBatch *batch = [[SSStreetBatch alloc] init];
+    SSStreetLookup *lookup = [[SSStreetLookup alloc] init];
     NSError *error = nil;
     batch.standardizeOnly = YES;
     batch.includeInvalid = YES;
@@ -83,6 +88,8 @@
 }
 
 - (void)testClearMethodClearsBothLookupCollectionsButNotHeaders {
+    SSStreetBatch *batch = [[SSStreetBatch alloc] init];
+    SSStreetLookup *lookup = [[SSStreetLookup alloc] init];
     NSError *error = nil;
     batch.standardizeOnly = YES;
     batch.includeInvalid = YES;

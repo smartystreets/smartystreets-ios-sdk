@@ -44,7 +44,7 @@ int const kSSZipCodeMaxBatchSize = 100;
     return [self.namedLookups objectForKey:inputId];
 }
 
-- (SSZipCodeLookup*)getLookupByIndex:(int)inputIndex {
+- (SSZipCodeLookup*)getLookupAtIndex:(int)inputIndex {
     return [self.allLookups objectAtIndex:inputIndex];
 }
 

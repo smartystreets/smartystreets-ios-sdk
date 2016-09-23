@@ -121,8 +121,8 @@
     
     [client sendBatch:batch error:&error];
     
-    XCTAssertEqual([expectedCandidates objectAtIndex:0], [[batch getLookupByIndex:0] result]);
-    XCTAssertEqual([expectedCandidates objectAtIndex:1], [[batch getLookupByIndex:1] result]);
+    XCTAssertEqual([expectedCandidates objectAtIndex:0], [[batch getLookupAtIndex:0] result]);
+    XCTAssertEqual([expectedCandidates objectAtIndex:1], [[batch getLookupAtIndex:1] result]);
 }
 
 @end
