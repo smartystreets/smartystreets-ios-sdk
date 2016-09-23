@@ -1,13 +1,5 @@
 #import "SSResult.h"
 
-@interface SSResult()
-
-@property (nonatomic) int inputIndex;
-@property (nonatomic) NSMutableArray<SSCity*> *cities;
-@property (nonatomic) NSMutableArray<SSZipCode*> *zipCodes;
-
-@end
-
 @implementation SSResult
 
 - (bool)isValid {
