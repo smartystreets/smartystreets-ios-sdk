@@ -46,9 +46,7 @@ int const kSSStreetMaxBatchSize = 100;
     return (int)[self.allLookups count];
 }
 
-//- (iterator<SSZipCodeLookup>)iterator {
-
-//}
+//- (iterator<SSLookup>)iterator; //TODO: figure out how to implement this
 
 - (SSStreetLookup*)getLookupById:(NSString*)inputId {
     return [self.namedLookups objectForKey:inputId];

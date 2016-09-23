@@ -12,7 +12,7 @@ extern int const kSSZipCodeMaxBatchSize;
 - (void)add:(SSZipCodeLookup*)lookup error:(NSError**)error;
 - (void)removeAllObjects;
 - (int)count;
-//- (iterator<SSZipCodeLookup>)iterator;
+//- (iterator<SSLookup>)iterator; //TODO: figure out how to implement this
 - (SSZipCodeLookup*)getLookupById:(NSString*)inputId;
 - (SSZipCodeLookup*)getLookupAtIndex:(int)inputIndex;
 
