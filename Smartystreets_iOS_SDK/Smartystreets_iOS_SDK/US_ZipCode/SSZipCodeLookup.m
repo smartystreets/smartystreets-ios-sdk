@@ -8,6 +8,15 @@
     return self;
 }
 
+- (instancetype)initWithData:(NSDictionary*)data {
+    if ([self = [super self] init]) {
+        _city = [data objectForKey:@"city"];
+        _state = [data objectForKey:@"state"];
+        _zipcode = [data objectForKey:@"zipcode"];
+    }
+    return self;
+}
+
 - (instancetype)initWithZipcode:(NSString*)zipcode {
     if (self = [[super self] init])
         _zipcode = zipcode;

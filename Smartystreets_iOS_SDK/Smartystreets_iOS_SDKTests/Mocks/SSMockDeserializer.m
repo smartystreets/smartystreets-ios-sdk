@@ -18,7 +18,7 @@
     return [[NSMutableData alloc] init];
 }
 
-- (id)deserialize:(NSMutableData *)payload withClassType:(Class)type {
+- (id)deserialize:(NSMutableData *)payload withClassType:(Class)type error:(NSError**)error {
     _payload = payload;
     return self.deserialized;
 }

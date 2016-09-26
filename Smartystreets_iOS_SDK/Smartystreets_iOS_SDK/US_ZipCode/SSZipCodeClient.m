@@ -38,9 +38,9 @@
         
     SSResponse *response = [self.sender sendRequest:request withError:error];
     
-    NSArray<SSResult*> *results = [self.serializer deserialize:response.payload withClassType:[SSResult class]];
+    NSDictionary *results = [self.serializer deserialize:response.payload withClassType:[SSResult class] error:error];
     if (results == nil)
-        results = [[NSArray<SSResult*> alloc] init];
+        results = [[NSDictionary alloc] init];
     [self assignResultsToLookups:batch result:results];
 }
 
@@ -51,9 +51,11 @@
     [request setValue:lookup.zipcode forHTTPParameterField:@"zipcode"];
 }
 
-- (void)assignResultsToLookups:(SSZipCodeBatch*)batch result:(NSArray<SSResult*>*)results {
-    for (int i = 0; i < [results count]; i++)
-        [[batch getLookupAtIndex:i] setResult:[results objectAtIndex:i]];
+- (void)assignResultsToLookups:(SSZipCodeBatch*)batch result:(NSDictionary*)results {
+//    for (SSResult *r in results)
+//        SSResult *result = 
+//        
+//        [[batch getLookupAtIndex:i] setResult:[results objectAtIndex:i]];
 }
 
 @end

@@ -11,4 +11,6 @@
 @property (readonly, nonatomic) double longitude;
 @property (readonly, nonatomic) NSString *precision;
 
+- (instancetype)initWithData:(NSDictionary*)data;
+
 @end

@@ -40,7 +40,7 @@
     
     SSResponse *response = [self.sender sendRequest:request withError:error];
     
-    NSArray<SSCandidate*> *candidates = [self.serializer deserialize:response.payload withClassType:[SSCandidate class]];
+    NSArray<SSCandidate*> *candidates = [self.serializer deserialize:response.payload withClassType:[SSCandidate class] error:error];
     if (candidates == nil)
         candidates = [[NSArray<SSCandidate*> alloc] init];
     [self assignCandidatesToLookups:batch candidates:candidates];

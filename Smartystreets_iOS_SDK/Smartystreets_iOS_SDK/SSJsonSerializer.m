@@ -18,8 +18,9 @@
     return nil; //TODO: implement
 }
 
-- (id)deserialize:(NSMutableData *)payload withClassType:(Class)type {
-    return nil; //TODO: implement
+- (id)deserialize:(NSMutableData *)payload withClassType:(Class)type error:(NSError**)error {
+    NSDictionary *json = [NSJSONSerialization JSONObjectWithData:payload options:NSJSONReadingMutableContainers error:error];
+    return json; //TODO: implement
 }
 
 @end

@@ -1,63 +1,11 @@
 #import <XCTest/XCTest.h>
 #import "SSJsonSerializer.h"
+#import "SSZipCodeLookup.h"
+#import "SSResult.h"
 
-//---------------------- Inner Classes -----------------------//
-@interface StringProperty : NSObject
-
-@property (nonatomic) NSString *name;
-
-- (instancetype)initWithName:(NSString*)name;
-
-@end
-
-@implementation StringProperty
-
-- (instancetype)initWithName:(NSString *)name {
-    if (self = [super init])
-        _name = name;
-    return self;
+@interface SSJsonSerializerTests : XCTestCase {
+    NSString *expectedJsonInput;
 }
-
-@end
-
-@interface IntProperty : NSObject
-
-@property (nonatomic) int number;
-
-- (instancetype)initWithNumber:(int)number;
-
-@end
-
-@implementation IntProperty
-
-- (instancetype)initWithNumber:(int)number {
-    if (self = [super init])
-        _number = number;
-    return self;
-}
-
-@end
-
-@interface BoolProperty : NSObject
-
-@property (nonatomic) bool booleanValue;
-
-- (instancetype)initWithBooleanValue:(int)booleanValue;
-
-@end
-
-@implementation BoolProperty
-
-- (instancetype)initWithBooleanValue:(int)booleanValue {
-    if (self = [super init])
-        _booleanValue = booleanValue;
-    return self;
-}
-
-@end
-//------------------------------------------------------------//
-
-@interface SSJsonSerializerTests : XCTestCase
 
 @property (readonly, nonatomic) SSJsonSerializer *serializer;
 
@@ -67,6 +15,7 @@
 
 - (void)setUp {
     [super setUp];
+    expectedJsonInput = @"[{\"city\":\"Washington\",\"state\":\"District of Columbia\",\"zipcode\":\"20500\"},{\"city\":\"Provo\",\"state\":\"Utah\"},{\"zipcode\":\"54321\"}]";
     _serializer = [[SSJsonSerializer alloc] init];
 }
 
@@ -106,21 +55,17 @@
     
 }
 
-- (void)TestDeserializationOfKnownType {
+- (void)testDeserializationOfKnownType {
+    SSJsonSerializer *serializer = [[SSJsonSerializer alloc] init];
+    NSError *error = nil;
     
+    NSData *expectedJson = [expectedJsonInput dataUsingEncoding:NSUTF8StringEncoding];
+    NSMutableData *json = [NSMutableData dataWithData:expectedJson];
+    NSArray *results = [serializer deserialize:json withClassType:[SSResult class] error:&error];
+    
+    SSResult *result = [[SSResult alloc] initWithData:[results objectAtIndex:0]];
+    
+    XCTAssertNotNil([results objectAtIndex:0]);
 }
 
 @end
-
-//[DataContract]
-//public class StandardLibraryJsonSerializerTestObject
-//{
-//    [DataMember(Name = "property_1")]
-//    public string Property1 { get; set; }
-//    
-//    [DataMember(Name = "Property2")]
-//    public int Property2 { get; set; }
-//    
-//    [DataMember(Name = "Property3")]
-//    public bool Property3 { get; set; }
-//}
