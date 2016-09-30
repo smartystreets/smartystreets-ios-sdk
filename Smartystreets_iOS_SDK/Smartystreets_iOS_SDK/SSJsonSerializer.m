@@ -18,9 +18,16 @@
     return nil; //TODO: implement
 }
 
-- (id)deserialize:(NSMutableData *)payload withClassType:(Class)type error:(NSError**)error {
-    NSDictionary *json = [NSJSONSerialization JSONObjectWithData:payload options:NSJSONReadingMutableContainers error:error];
-    return json; //TODO: implement
+- (NSArray*)deserialize:(NSMutableData *)payload withClassType:(Class)type error:(NSError**)error {
+    NSArray *json = [NSJSONSerialization JSONObjectWithData:payload options:NSJSONReadingMutableContainers error:error];
+    
+    NSMutableArray *results = [NSMutableArray new];
+    for (int i = 0; i < [json count]; i++) {
+        NSObject *result = [[type alloc] initWithData:[json objectAtIndex:i]];
+        [results addObject:result];
+    }
+    
+    return [NSArray arrayWithArray:results];
 }
 
 @end

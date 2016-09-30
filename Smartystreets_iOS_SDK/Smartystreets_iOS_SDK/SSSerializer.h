@@ -11,6 +11,6 @@
 @protocol SSSerializer <NSObject>
 
 - (NSMutableData*)serialize:(NSObject*)obj;
-- (id)deserialize:(NSMutableData*)payload withClassType:(Class)type error:(NSError**)error;
+- (NSArray*)deserialize:(NSMutableData*)payload withClassType:(Class)type error:(NSError**)error;
 
 @end

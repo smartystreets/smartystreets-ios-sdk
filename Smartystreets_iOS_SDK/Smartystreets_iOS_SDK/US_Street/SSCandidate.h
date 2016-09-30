@@ -5,6 +5,7 @@
 
 @interface SSCandidate : NSObject
 
+@property (readonly, nonatomic) int inputId;
 @property (readonly, nonatomic) int inputIndex;
 @property (readonly, nonatomic) int candidateIndex;
 @property (readonly, nonatomic) NSString *addressee;

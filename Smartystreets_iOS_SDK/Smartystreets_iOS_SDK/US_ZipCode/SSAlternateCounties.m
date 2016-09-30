@@ -1,11 +1,11 @@
-#import "SSCity.h"
+#import "SSAlternateCounties.h"
 
-@implementation SSCity
+@implementation SSAlternateCounties
 
 - (instancetype)initWithData:(NSDictionary*)data {
     if (self = [super init]) {
-        _city = [data objectForKey:@"city"];
-        _mailableCity = [data objectForKey:@"mailable_city"]; // TODO: what's the default value or should it be nil?
+        _countyFips = [data objectForKey:@"county_fips"];
+        _countyName = [data objectForKey:@"county_name"];
         _stateAbbreviation = [data objectForKey:@"state_abbreviation"];
         _state = [data objectForKey:@"state"];
     }

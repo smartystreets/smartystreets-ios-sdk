@@ -5,6 +5,6 @@
 
 @property (readonly, nonnull) NSMutableData *payload;
 
-- (instancetype)initWithDeserializedObject:(id<NSObject>)deserialized;
+- (instancetype)initWithDeserializedObject:(NSArray*)deserialized;
 
 @end

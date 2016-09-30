@@ -12,7 +12,7 @@
 
 - (instancetype)initWithData:(NSDictionary*)data;
 - (bool)isValid;
-- (SSCity*)getCity:(int)index;
-- (SSZipCode*)getZipCode:(int)index;
+- (SSCity*)getCityAtIndex:(int)index;
+- (SSZipCode*)getZipCodeAtIndex:(int)index;
 
 @end
