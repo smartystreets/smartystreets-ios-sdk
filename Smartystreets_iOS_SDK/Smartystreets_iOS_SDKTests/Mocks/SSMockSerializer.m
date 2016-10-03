@@ -19,7 +19,7 @@
     return self.bytes;
 }
 
-- (id)deserialize:(NSMutableData*)payload withClassType:(Class)type {
+- (NSArray*)deserialize:(NSMutableData *)payload withClassType:(Class)type error:(NSError**)error {
     return nil;
 }
 

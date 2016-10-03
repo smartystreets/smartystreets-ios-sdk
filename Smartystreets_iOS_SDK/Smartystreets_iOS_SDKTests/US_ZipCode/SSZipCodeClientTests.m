@@ -14,11 +14,9 @@
 
 - (void)setUp {
     [super setUp];
-
 }
 
 - (void)tearDown {
-
     [super tearDown];
 }
 
@@ -105,8 +103,8 @@
     [expectedCandidates insertObject:[[SSResult alloc] init] atIndex:0];
     [expectedCandidates insertObject:[[SSResult alloc] init] atIndex:1];
     SSZipCodeBatch *batch = [[SSZipCodeBatch alloc] init];
-    NSError *error = nil;
     
+    NSError *error = nil;
     [batch add:[[SSZipCodeLookup alloc] init] error:&error];
     [batch add:[[SSZipCodeLookup alloc] init] error:&error];
     

@@ -53,11 +53,9 @@
     [request setValue:lookup.zipcode forHTTPParameterField:@"zipcode"];
 }
 
-- (void)assignResultsToLookups:(SSZipCodeBatch*)batch result:(NSArray*)resultsDict {
-//    for (SSResult *r in results)
-//        SSResult *result = 
-//        
-//        [[batch getLookupAtIndex:i] setResult:[results objectAtIndex:i]];
+- (void)assignResultsToLookups:(SSZipCodeBatch*)batch result:(NSArray*)results {
+    for (int i = 0; i < [results count]; i++)
+        [[batch getLookupAtIndex:i] setResult:[results objectAtIndex:i]];
 }
 
 @end

@@ -2,23 +2,23 @@
 
 @interface SSMockDeserializer()
 
-@property (readonly, nonatomic) NSMutableArray *deserialized;
+@property (readonly, nonatomic) NSArray *deserialized;
 
 @end
 
 @implementation SSMockDeserializer
 
-- (instancetype)initWithDeserializedObject:(NSMutableArray*)deserialized {
+- (instancetype)initWithDeserializedObject:(NSArray*)deserialized {
     if (self = [super init])
         _deserialized = deserialized;
     return self;
 }
 
-- (NSMutableData*)serialize:(NSObject *)obj {
+- (NSMutableData*)serialize:(NSObject*)obj {
     return [[NSMutableData alloc] init];
 }
 
-- (NSMutableArray*)deserialize:(NSMutableData *)payload withClassType:(Class)type error:(NSError**)error {
+- (NSArray*)deserialize:(NSMutableData*)payload withClassType:(Class)type error:(NSError**)error {
     _payload = payload;
     return self.deserialized;
 }

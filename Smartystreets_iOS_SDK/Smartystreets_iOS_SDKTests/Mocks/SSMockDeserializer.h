@@ -3,7 +3,7 @@
 
 @interface SSMockDeserializer : NSObject <SSSerializer>
 
-@property (readonly, nonnull) NSMutableData *payload;
+@property (readonly, nonatomic) NSMutableData *payload;
 
 - (instancetype)initWithDeserializedObject:(NSArray*)deserialized;
 
