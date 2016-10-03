@@ -33,4 +33,8 @@
     return altCountyObjects;
 }
 
+- (SSAlternateCounties*)getAlternateCountiesAtIndex:(int)index {
+    return [self.alternateCounties objectAtIndex:index];
+}
+
 @end
