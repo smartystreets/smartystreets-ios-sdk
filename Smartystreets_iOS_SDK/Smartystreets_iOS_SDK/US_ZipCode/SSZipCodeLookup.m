@@ -8,11 +8,11 @@
     return self;
 }
 
-- (instancetype)initWithData:(NSDictionary*)data {
+- (instancetype)initWithDictionary:(NSDictionary*)dictionary {
     if ([self = [super self] init]) {
-        _city = [data objectForKey:@"city"];
-        _state = [data objectForKey:@"state"];
-        _zipcode = [data objectForKey:@"zipcode"];
+        _city = dictionary[@"city"];
+        _state = dictionary[@"state"];
+        _zipcode = dictionary[@"zipcode"];
     }
     return self;
 }
@@ -38,6 +38,16 @@
         _zipcode = zipcode;
     }
     return self;
+}
+
+- (NSDictionary*)toDictionary {
+    return [@{
+//              @"result" : [self.result toDictionary], //TODO: does it need this?
+//              @"inputid" : self.inputId, //TODO: does it need this?
+              @"city" : self.city,
+              @"state" : self.state,
+              @"zipcode" : self.zipcode
+            } mutableCopy];
 }
 
 @end

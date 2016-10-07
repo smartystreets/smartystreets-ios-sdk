@@ -36,7 +36,7 @@
     if ([batch count] == 1)
         [self populateQueryString:[batch getLookupAtIndex:0] withRequest:request];
     else
-        [request setPayload:[self.serializer serialize:batch.allLookups]];
+        [request setPayload:[self.serializer serialize:batch.allLookups error:error]];
     
     SSResponse *response = [self.sender sendRequest:request withError:error];
     

@@ -15,7 +15,7 @@
 @property (readonly, nonatomic) NSString *precision;
 @property (readonly, nonatomic) NSMutableArray<SSAlternateCounties*> *alternateCounties;
 
-- (instancetype)initWithData:(NSDictionary*)data;
+- (instancetype)initWithDictionary:(NSDictionary*)dictionary;
 - (SSAlternateCounties*)getAlternateCountiesAtIndex:(int)index;
 
 @end

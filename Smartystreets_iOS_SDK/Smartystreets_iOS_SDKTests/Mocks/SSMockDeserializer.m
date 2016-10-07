@@ -14,11 +14,11 @@
     return self;
 }
 
-- (NSMutableData*)serialize:(NSObject*)obj {
-    return [[NSMutableData alloc] init];
+- (NSData*)serialize:(NSObject*)obj error:(NSError**)error {
+    return [[NSData alloc] init];
 }
 
-- (NSArray*)deserialize:(NSMutableData*)payload withClassType:(Class)type error:(NSError**)error {
+- (NSArray*)deserialize:(NSData*)payload withClassType:(Class)classType error:(NSError**)error {
     _payload = payload;
     return self.deserialized;
 }

@@ -2,15 +2,15 @@
 
 @implementation SSCity
 
-- (instancetype)initWithData:(NSDictionary*)data {
+- (instancetype)initWithDictionary:(NSDictionary*)dictionary {
     if (self = [super init]) {
-        _city = [data objectForKey:@"city"];
+        _city = dictionary[@"city"];
         
-        if ([[data objectForKey:@"mailable_city"]boolValue])
+        if ([dictionary[@"mailable_city"] boolValue])
             _mailableCity = YES;
         
-        _stateAbbreviation = [data objectForKey:@"state_abbreviation"];
-        _state = [data objectForKey:@"state"];
+        _stateAbbreviation = dictionary[@"state_abbreviation"];
+        _state = dictionary[@"state"];
     }
     return self;
 }

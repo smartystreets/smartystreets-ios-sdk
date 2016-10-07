@@ -2,19 +2,19 @@
 
 @implementation SSZipCode
 
-- (instancetype)initWithData:(NSDictionary*)data {
+- (instancetype)initWithDictionary:(NSDictionary*)dictionary {
     if (self = [super init]) {
-        _zipCode = [data objectForKey:@"zipcode"];
-        _zipCodeType = [data objectForKey:@"zipcode_type"];
-        _defaultCity = [data objectForKey:@"default_city"];
-        _countyFips = [data objectForKey:@"county_fips"];
-        _countyName = [data objectForKey:@"county_name"];
-        _stateAbbreviation = [data objectForKey:@"state_abbreviation"];
-        _state = [data objectForKey:@"state"];
-        _latitude = [[data objectForKey:@"latitude"] doubleValue];
-        _longitude = [[data objectForKey:@"longitude"] doubleValue];
-        _precision = [data objectForKey:@"precision"];
-        _alternateCounties = [data objectForKey:@"alternate_counties"];
+        _zipCode = dictionary[@"zipcode"];
+        _zipCodeType = dictionary[@"zipcode_type"];
+        _defaultCity = dictionary[@"default_city"];
+        _countyFips = dictionary[@"county_fips"];
+        _countyName = dictionary[@"county_name"];
+        _stateAbbreviation = dictionary[@"state_abbreviation"];
+        _state = dictionary[@"state"];
+        _latitude = [dictionary[@"latitude"] doubleValue];
+        _longitude = [dictionary[@"longitude"] doubleValue];
+        _precision = dictionary[@"precision"];
+        _alternateCounties = dictionary[@"alternate_counties"];
         
         if (self.alternateCounties == nil)
             _alternateCounties = [NSMutableArray<SSAlternateCounties*> new];
@@ -28,7 +28,7 @@
     NSMutableArray<SSAlternateCounties*> *altCountyObjects = [NSMutableArray<SSAlternateCounties*> new];
     
     for (NSDictionary *county in self.alternateCounties)
-        [altCountyObjects addObject:[[SSAlternateCounties alloc] initWithData:county]];
+        [altCountyObjects addObject:[[SSAlternateCounties alloc] initWithDictionary:county]];
     
     return altCountyObjects;
 }

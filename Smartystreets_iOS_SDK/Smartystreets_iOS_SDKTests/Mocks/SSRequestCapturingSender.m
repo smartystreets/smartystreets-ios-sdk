@@ -7,9 +7,8 @@
     
     NSString *emptyString = @"[]";
     NSData *data = [emptyString dataUsingEncoding:NSUTF8StringEncoding];
-    NSMutableData *mutableData = [NSMutableData dataWithData:data];
     
-    return [[SSResponse alloc] initWithStatusCode:200 payload:mutableData];
+    return [[SSResponse alloc] initWithStatusCode:200 payload:data];
 }
 
 @end

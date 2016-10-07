@@ -26,31 +26,23 @@
 }
 
 - (void)testSerializationOfNullValues {
-    NSMutableData *results = [self.serializer serialize:nil];
+    NSError *error = nil;
+    NSMutableData *results = [self.serializer serialize:nil error:&error];
     
     XCTAssertNil(results);
 }
 
 - (void)testSerializationOfKnownType {
-    NSString *jsonString = @"{\"Property2\":42,\"Property3\":true,\"property_1\":\"Name\"}";
-    NSData *expectedJson = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
-//    StringProperty *stringProperty = [[StringProperty alloc] initWithName:@"Name"];
-//    IntProperty *intProperty = [[IntProperty alloc] initWithNumber:42];
-//    BoolProperty *boolProperty = [[BoolProperty alloc] initWithBooleanValue:true];
+    NSError *error = nil;
+    NSMutableArray *lookups = [NSMutableArray new];
+    [lookups addObject:[[SSZipCodeLookup alloc] initWithCity:@"Las Vegas" state:@"NV" zipcode:@"12345"]];
+    [lookups addObject:[[SSZipCodeLookup alloc] initWithCity:@"Provo" state:@"Utah"]];
+    [lookups addObject:[[SSZipCodeLookup alloc] initWithZipcode:@"54321"]];
     
-//    NSMutableArray *lookups = [[NSMutableArray alloc] init];
-//    [lookups addObject:stringProperty];
-//    [lookups addObject:intProperty];
-//    [lookups addObject:boolProperty];
-//    NSMutableData *lookupBytes = [self.serializer serialize:lookups];
+    NSData *lookupBytes = [_serializer serialize:lookups error:&error];
     
-    NSMutableDictionary *testLookups = [[NSMutableDictionary alloc] init];
-    [testLookups setValue:@"name" forKey:@"Property1"];
-    [testLookups setValue:@42 forKey:@"Property2"];
-    [testLookups setValue:@YES forKey:@"Property3"];
-    NSMutableData *lookupBytes = [self.serializer serialize:testLookups];
-    
-    XCTAssertEqual(expectedJson, lookupBytes);
+    NSData *expected = [expectedJsonInput dataUsingEncoding:NSUTF8StringEncoding];
+    XCTAssertEqual(expected, lookupBytes);
 }
 
 - (void)testDeserializationOfNullStream {
@@ -66,8 +58,7 @@
     NSError *error = nil;
     
     NSData *expectedJson = [expectedJsonOutput dataUsingEncoding:NSUTF8StringEncoding];
-    NSMutableData *json = [NSMutableData dataWithData:expectedJson];
-    NSArray<SSResult*> *results = [serializer deserialize:json withClassType:[SSResult class] error:&error];
+    NSArray<SSResult*> *results = [serializer deserialize:expectedJson withClassType:[SSResult class] error:&error];
     
     //Result1
     XCTAssertNotNil([results objectAtIndex:0]);
@@ -81,7 +72,7 @@
     XCTAssertTrue([[result1 getCityAtIndex:0] mailableCity]);
     XCTAssertNotNil([result1 getCityAtIndex:1]);
     XCTAssertEqualObjects(@"state2", [[result1 getCityAtIndex:1] state]);
-    XCTAssertFalse([[result1 getCityAtIndex:1] mailableCity]); //TODO: should default be true, false or nil?
+    XCTAssertFalse([[result1 getCityAtIndex:1] mailableCity]);
     
     XCTAssertNotNil([result1 getZipCodeAtIndex:0]);
     XCTAssertEqualObjects(@"12345", [[result1 getZipCodeAtIndex:0] zipCode]);

@@ -3,6 +3,6 @@
 
 @interface SSMockSerializer : NSObject <SSSerializer>
 
-- (instancetype)initWithBytes:(NSMutableData*)bytes;
+- (instancetype)initWithBytes:(NSData*)bytes;
 
 @end

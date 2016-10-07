@@ -2,12 +2,12 @@
 
 @implementation SSAlternateCounties
 
-- (instancetype)initWithData:(NSDictionary*)data {
+- (instancetype)initWithDictionary:(NSDictionary*)dictionary {
     if (self = [super init]) {
-        _countyFips = [data objectForKey:@"county_fips"];
-        _countyName = [data objectForKey:@"county_name"];
-        _stateAbbreviation = [data objectForKey:@"state_abbreviation"];
-        _state = [data objectForKey:@"state"];
+        _countyFips = dictionary[@"county_fips"];
+        _countyName = dictionary[@"county_name"];
+        _stateAbbreviation = dictionary[@"state_abbreviation"];
+        _state = dictionary[@"state"];
     }
     return self;
 }

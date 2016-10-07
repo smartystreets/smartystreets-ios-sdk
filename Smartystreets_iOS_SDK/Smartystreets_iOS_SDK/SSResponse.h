@@ -3,8 +3,8 @@
 @interface SSResponse : NSObject
 
 @property (nonatomic) NSInteger statusCode;
-@property (nonatomic) NSMutableData *payload;
+@property (nonatomic) NSData *payload;
 
-- (instancetype)initWithStatusCode:(NSInteger)statusCode payload:(NSMutableData*)payload;
+- (instancetype)initWithStatusCode:(NSInteger)statusCode payload:(NSData*)payload;
 
 @end

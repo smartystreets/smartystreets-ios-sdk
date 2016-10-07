@@ -10,7 +10,8 @@
 @property (readonly, nonatomic) NSMutableArray<SSCity*> *cities;
 @property (readonly, nonatomic) NSMutableArray<SSZipCode*> *zipCodes;
 
-- (instancetype)initWithData:(NSDictionary*)data;
+- (instancetype)initWithDictionary:(NSDictionary*)dictionary;
+- (NSDictionary*)toDictionary;
 - (bool)isValid;
 - (SSCity*)getCityAtIndex:(int)index;
 - (SSZipCode*)getZipCodeAtIndex:(int)index;

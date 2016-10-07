@@ -7,6 +7,6 @@
 @property (readonly, nonatomic) NSString *stateAbbreviation;
 @property (readonly, nonatomic) NSString *state;
 
-- (instancetype)initWithData:(NSDictionary*)data;
+- (instancetype)initWithDictionary:(NSDictionary*)dictionary;
 
 @end

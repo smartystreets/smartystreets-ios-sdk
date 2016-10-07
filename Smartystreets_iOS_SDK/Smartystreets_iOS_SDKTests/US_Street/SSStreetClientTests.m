@@ -74,8 +74,7 @@
 
 - (void)testSuccessfullySendsBatchOfAddressLookups {
     NSString *helloWorld = @"Hello, World!";
-    NSData *data = [helloWorld dataUsingEncoding:NSUTF8StringEncoding];
-    NSMutableData *expectedPayload = [NSMutableData dataWithData:data];
+    NSData *expectedPayload = [helloWorld dataUsingEncoding:NSUTF8StringEncoding];
     
     SSRequestCapturingSender *sender = [[SSRequestCapturingSender alloc] init];
     SSMockSerializer *serializer = [[SSMockSerializer alloc] initWithBytes:expectedPayload];
@@ -142,9 +141,8 @@
 - (void)testDeserializeCalledWithResponseBody {
     NSString *helloWorld = @"Hello, World!";
     NSData *data = [helloWorld dataUsingEncoding:NSUTF8StringEncoding];
-    NSMutableData *mutableData = [NSMutableData dataWithData:data];
     
-    SSResponse *response = [[SSResponse alloc] initWithStatusCode:0 payload:mutableData];
+    SSResponse *response = [[SSResponse alloc] initWithStatusCode:0 payload:data];
     SSMockSender *sender = [[SSMockSender alloc] initWithSSResponse:response];
     SSMockDeserializer *deserializer = [[SSMockDeserializer alloc] initWithDeserializedObject:nil];
     SSStreetClient *client = [[SSStreetClient alloc] initWithUrlPrefix:@"/" withSender:sender withSerializer:deserializer];
@@ -167,8 +165,7 @@
     [batch add:[[SSStreetLookup alloc] init] error:&error];
     
     NSString *emptyString = @"[]";
-    NSData *data = [emptyString dataUsingEncoding:NSUTF8StringEncoding];
-    NSMutableData *payload = [NSMutableData dataWithData:data];
+    NSData *payload = [emptyString dataUsingEncoding:NSUTF8StringEncoding];
     SSResponse *response = [[SSResponse alloc] initWithStatusCode:0 payload:payload];
     
     SSMockSender *sender = [[SSMockSender alloc] initWithSSResponse:response];

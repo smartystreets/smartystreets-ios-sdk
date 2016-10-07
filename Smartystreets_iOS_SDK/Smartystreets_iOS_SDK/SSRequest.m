@@ -67,7 +67,7 @@ NSString *const kSSCharSet = @"UTF-8";
     return value;
 }
 
-- (void)setPayload:(NSMutableData *)payload {
+- (void)setPayload:(NSData *)payload {
     _method = @"POST";
     _payload = payload;
 }
