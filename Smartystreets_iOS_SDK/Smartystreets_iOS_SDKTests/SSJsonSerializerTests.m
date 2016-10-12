@@ -35,29 +35,37 @@
 - (void)testSerializationOfKnownType {
     NSError *error = nil;
     NSMutableArray *lookups = [NSMutableArray new];
-    [lookups addObject:[[SSZipCodeLookup alloc] initWithCity:@"1" state:@"2" zipcode:@"3"]];
-//    [lookups addObject:[[SSZipCodeLookup alloc] initWithCity:@"Las Vegas" state:@"NV" zipcode:@"12345"]];
-//    [lookups addObject:[[SSZipCodeLookup alloc] initWithCity:@"Provo" state:@"Utah"]]; //TODO: make it accept these too
-//    [lookups addObject:[[SSZipCodeLookup alloc] initWithZipcode:@"54321"]];
+    [lookups addObject:[[SSZipCodeLookup alloc] initWithCity:@"Las Vegas" state:@"NV" zipcode:@"12345"]];
+    [lookups addObject:[[SSZipCodeLookup alloc] initWithCity:@"Provo" state:@"Utah"]];
+    [lookups addObject:[[SSZipCodeLookup alloc] initWithZipcode:@"54321"]];
     
     NSData *lookupBytes = [_serializer serialize:lookups withClassType:[SSZipCodeLookup class] error:&error];
     
-    NSString *expected = [self expected];
+    NSString *expected = [self getExpectedJsonInput];
     NSString *lookupString = [[NSString alloc] initWithData:lookupBytes encoding:NSUTF8StringEncoding];
     
     
     XCTAssertEqualObjects(expected, lookupString);
 }
 
-- (NSString*)expected { //TODO: change this arround
-    NSMutableArray *expectedArray = [NSMutableArray new];
-    NSDictionary *expectedDict = [@{
-                                    @"city" : @"1",
-                                    @"state" : @"2",
-                                    @"zipcode" : @"3"
-                                    } mutableCopy];
-    [expectedArray addObject:expectedDict];
-    NSData *expected = [NSJSONSerialization dataWithJSONObject:expectedArray options:kNilOptions error:nil];
+- (NSString*)getExpectedJsonInput {
+    NSMutableArray *lookups = [NSMutableArray new];
+    NSDictionary *lookup1 = [@{
+                                  @"city" : @"Las Vegas",
+                                  @"state" : @"NV",
+                                  @"zipcode" : @"12345"
+                                } mutableCopy];
+    NSDictionary *lookup2 = [@{
+                                  @"city" : @"Provo",
+                                  @"state" : @"Utah"
+                               } mutableCopy];
+    NSDictionary *lookup3 = [@{
+                                  @"zipcode" : @"54321"
+                               } mutableCopy];
+    [lookups addObject:lookup1];
+    [lookups addObject:lookup2];
+    [lookups addObject:lookup3];
+    NSData *expected = [NSJSONSerialization dataWithJSONObject:lookups options:kNilOptions error:nil];
     
     return [[NSString alloc] initWithData:expected encoding:NSUTF8StringEncoding];
 }
