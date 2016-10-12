@@ -1,7 +1,8 @@
 #import <Foundation/Foundation.h>
+#import "SSLookup.h"
 #import "SSCandidate.h"
 
-@interface SSStreetLookup : NSObject
+@interface SSStreetLookup : NSObject <SSLookup>
 
 @property (readonly, nonatomic) NSMutableArray<SSCandidate*> *result;
 @property (nonatomic) NSString *inputId;

@@ -1,7 +1,8 @@
 #import <Foundation/Foundation.h>
 #import "SSResult.h"
+#import "SSLookup.h"
 
-@interface SSZipCodeLookup : NSObject
+@interface SSZipCodeLookup : NSObject <SSLookup>
 
 @property (nonatomic) SSResult *result;
 @property (nonatomic) NSString *inputId;
@@ -13,6 +14,5 @@
 - (instancetype)initWithZipcode:(NSString*)zipcode;
 - (instancetype)initWithCity:(NSString*)city state:(NSString*)state;
 - (instancetype)initWithCity:(NSString*)city state:(NSString*)state zipcode:(NSString*)zipcode;
-- (NSDictionary*)toDictionary;
 
 @end

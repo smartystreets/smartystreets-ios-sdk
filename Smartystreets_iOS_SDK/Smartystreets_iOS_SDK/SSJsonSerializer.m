@@ -1,29 +1,25 @@
 #import "SSJsonSerializer.h"
+#import "SSLookup.h"
 
 @implementation SSJsonSerializer
 
-- (NSData*)serialize:(NSObject*)obj error:(NSError**)error {
+- (NSData*)serialize:(id)obj withClassType:(Class)classType error:(NSError**)error {
     if (!obj)
-        return nil;
+        return nil; //TODO: set error as well?
     
-    //maybe pass in withClassType to be able to do [classType toDictionary:obj];
+    if (![obj isKindOfClass:[NSArray class]]) { //TODO: should this only be of type NSArray?
+        return nil; //TODO: set error as well?
+    }
     
-//    NSDictionary *dictionary = [obj toDictionary]
+    NSMutableArray<SSLookup> *lookups = obj;
+    NSMutableArray *arrayOfLookupDictionaries = [NSMutableArray new];
     
-    return [NSJSONSerialization dataWithJSONObject:obj options:kNilOptions error:error];
+    for (id<SSLookup> lookup in lookups) {
+        [arrayOfLookupDictionaries addObject:[lookup toDictionary]];
+    }
     
-////    [NSJSONSerialization ]
-//    
-//    NSMutableDictionary *jsonData = obj;
-//
-////    NSArray<NSString*>* arr = @[@"str"];
-////    
-////    NSString* string = [arr objectAtIndex:0];
-////    NSNumber* number = [arr objectAtIndex:0];
-//
-//    NSString *deleteThisString = @"delete";
-//    
-//    return nil; //TODO: implement
+    NSData *data = [NSJSONSerialization dataWithJSONObject:arrayOfLookupDictionaries options:kNilOptions error:error];
+    return data;
 }
 
 - (NSArray*)deserialize:(NSData*)payload withClassType:(Class)classType error:(NSError**)error {

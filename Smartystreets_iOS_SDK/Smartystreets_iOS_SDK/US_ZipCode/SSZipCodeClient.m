@@ -34,7 +34,7 @@
     if ([batch count] == 1)
         [self populateQueryString:[batch getLookupAtIndex:0] withRequest:request];
     else
-        [request setPayload:[self.serializer serialize:batch.allLookups error:error]];
+        [request setPayload:[self.serializer serialize:batch.allLookups withClassType:[SSZipCodeLookup class] error:error]];
         
     SSResponse *response = [self.sender sendRequest:request withError:error];
     

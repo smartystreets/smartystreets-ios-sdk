@@ -32,4 +32,8 @@
     *error = [NSError errorWithDomain:NSCocoaErrorDomain code:nil userInfo:details]; //TODO: what is the error code?
 }
 
+- (NSDictionary*)toDictionary {
+    return nil;
+}
+
 @end

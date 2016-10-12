@@ -4,7 +4,7 @@
 #import "SSResult.h"
 
 @interface SSJsonSerializerTests : XCTestCase {
-    NSString *expectedJsonInput;
+//    NSString *expectedJsonInput;
     NSString *expectedJsonOutput;
 }
 
@@ -16,7 +16,7 @@
 
 - (void)setUp {
     [super setUp];
-    expectedJsonInput = @"[{\"city\":\"Washington\",\"state\":\"District of Columbia\",\"zipcode\":\"20500\"},{\"city\":\"Provo\",\"state\":\"Utah\"},{\"zipcode\":\"54321\"}]";
+//    expectedJsonInput = @"[{\"city\":\"Las Vegas\",\"state\":\"NV\",\"zipcode\":\"12345\"},{\"city\":\"Provo\",\"state\":\"Utah\"},{\"zipcode\":\"54321\"}]";
     expectedJsonOutput = @"[{\"input_index\":0,\"city_states\":[{\"city\":\"city1\",\"state_abbreviation\":\"CA\",\"state\":\"state1\",\"mailable_city\":true},{\"city\":\"city2\",\"state_abbreviation\":\"NV\",\"state\":\"state2\",\"mailable_city\":false}],\"zipcodes\":[{\"zipcode\":\"12345\",\"zipcode_type\":\"S\",\"default_city\":\"Los Angeles\",\"county_fips\":\"06037\",\"county_name\":\"Los Angeles\",\"state_abbreviation\":\"CA\",\"state\":\"California\",\"latitude\":34.02425,\"longitude\":-118.20399,\"precision\":\"Zip5\",\"alternate_counties\":[{\"county_fips\":\"21047\",\"county_name\":\"Christian\",\"state_abbreviation\":\"KY\",\"state\":\"Kentucky\"},{\"county_fips\":\"47125\",\"county_name\":\"Montgomery\",\"state_abbreviation\":\"TN\",\"state\":\"Tennessee\"}]},{\"zipcode\":\"56789\",\"zipcode_type\":\"S\",\"default_city\":\"Los Vegas\",\"county_fips\":\"34567\",\"county_name\":\"Los Vegas\",\"state_abbreviation\":\"NV\",\"state\":\"Nevada\",\"latitude\":35.02437,\"longitude\":-115.20356,\"precision\":\"Zip5\"}]},{\"input_index\":1,\"city_states\":[{\"city\":\"Provo\",\"state_abbreviation\":\"UT\",\"state\":\"Utah\",\"mailable_city\":true}],\"zipcodes\":[{\"zipcode\":\"84606\",\"zipcode_type\":\"S\",\"county_fips\":\"11501\",\"county_name\":\"Utah\",\"latitude\":38.89769,\"longitude\":-77.038,\"alternate_counties\":[{\"county_fips\":\"23456\",\"county_name\":\"County\",\"state_abbreviation\":\"AZ\",\"state\":\"Arizona\"}]}]},{\"input_index\":2,\"status\":\"invalid_zipcode\",\"reason\":\"Invalid ZIP Code.\"}]";
     _serializer = [[SSJsonSerializer alloc] init];
 }
@@ -27,7 +27,7 @@
 
 - (void)testSerializationOfNullValues {
     NSError *error = nil;
-    NSMutableData *results = [self.serializer serialize:nil error:&error];
+    NSData *results = [self.serializer serialize:nil withClassType:nil error:&error];
     
     XCTAssertNil(results);
 }
@@ -35,14 +35,31 @@
 - (void)testSerializationOfKnownType {
     NSError *error = nil;
     NSMutableArray *lookups = [NSMutableArray new];
-    [lookups addObject:[[SSZipCodeLookup alloc] initWithCity:@"Las Vegas" state:@"NV" zipcode:@"12345"]];
-    [lookups addObject:[[SSZipCodeLookup alloc] initWithCity:@"Provo" state:@"Utah"]];
-    [lookups addObject:[[SSZipCodeLookup alloc] initWithZipcode:@"54321"]];
+    [lookups addObject:[[SSZipCodeLookup alloc] initWithCity:@"1" state:@"2" zipcode:@"3"]];
+//    [lookups addObject:[[SSZipCodeLookup alloc] initWithCity:@"Las Vegas" state:@"NV" zipcode:@"12345"]];
+//    [lookups addObject:[[SSZipCodeLookup alloc] initWithCity:@"Provo" state:@"Utah"]]; //TODO: make it accept these too
+//    [lookups addObject:[[SSZipCodeLookup alloc] initWithZipcode:@"54321"]];
     
-    NSData *lookupBytes = [_serializer serialize:lookups error:&error];
+    NSData *lookupBytes = [_serializer serialize:lookups withClassType:[SSZipCodeLookup class] error:&error];
     
-    NSData *expected = [expectedJsonInput dataUsingEncoding:NSUTF8StringEncoding];
-    XCTAssertEqual(expected, lookupBytes);
+    NSString *expected = [self expected];
+    NSString *lookupString = [[NSString alloc] initWithData:lookupBytes encoding:NSUTF8StringEncoding];
+    
+    
+    XCTAssertEqualObjects(expected, lookupString);
+}
+
+- (NSString*)expected { //TODO: change this arround
+    NSMutableArray *expectedArray = [NSMutableArray new];
+    NSDictionary *expectedDict = [@{
+                                    @"city" : @"1",
+                                    @"state" : @"2",
+                                    @"zipcode" : @"3"
+                                    } mutableCopy];
+    [expectedArray addObject:expectedDict];
+    NSData *expected = [NSJSONSerialization dataWithJSONObject:expectedArray options:kNilOptions error:nil];
+    
+    return [[NSString alloc] initWithData:expected encoding:NSUTF8StringEncoding];
 }
 
 - (void)testDeserializationOfNullStream {

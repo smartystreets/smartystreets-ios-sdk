@@ -50,4 +50,9 @@
             } mutableCopy];
 }
 
+//static id ObjectOrNull(id object) //TODO: delete this?
+//{
+//    return object ?: [NSNull null];
+//}
+
 @end

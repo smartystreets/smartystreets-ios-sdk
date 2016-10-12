@@ -10,7 +10,7 @@
 
 @protocol SSSerializer <NSObject>
 
-- (NSData*)serialize:(NSObject*)obj error:(NSError**)error;
+- (NSData*)serialize:(id)obj withClassType:(Class)classType error:(NSError**)error;
 - (NSArray*)deserialize:(NSData*)payload withClassType:(Class)classType error:(NSError**)error;
 
 @end

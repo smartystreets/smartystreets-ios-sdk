@@ -14,7 +14,7 @@
     return self;
 }
 
-- (NSData*)serialize:(NSObject*)obj error:(NSError**)error {
+- (NSData*)serialize:(id)obj withClassType:(Class)classType error:(NSError**)error {
     return [[NSData alloc] init];
 }
 
