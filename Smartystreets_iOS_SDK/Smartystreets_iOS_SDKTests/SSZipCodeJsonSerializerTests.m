@@ -4,7 +4,7 @@
 #import "SSResult.h"
 
 @interface SSJsonSerializerTests : XCTestCase {
-//    NSString *expectedJsonInput;
+    NSArray *expectedJsonInput;
     NSString *expectedJsonOutput;
 }
 
@@ -16,7 +16,20 @@
 
 - (void)setUp {
     [super setUp];
-//    expectedJsonInput = @"[{\"city\":\"Las Vegas\",\"state\":\"NV\",\"zipcode\":\"12345\"},{\"city\":\"Provo\",\"state\":\"Utah\"},{\"zipcode\":\"54321\"}]";
+    expectedJsonInput = @[
+                          @{
+                              @"city" : @"Las Vegas",
+                              @"state" : @"NV",
+                              @"zipcode" : @"12345"
+                              },
+                          @{
+                              @"city" : @"Provo",
+                              @"state" : @"Utah"
+                              },
+                          @{
+                              @"zipcode" : @"54321"
+                              }
+                          ];
     expectedJsonOutput = @"[{\"input_index\":0,\"city_states\":[{\"city\":\"city1\",\"state_abbreviation\":\"CA\",\"state\":\"state1\",\"mailable_city\":true},{\"city\":\"city2\",\"state_abbreviation\":\"NV\",\"state\":\"state2\",\"mailable_city\":false}],\"zipcodes\":[{\"zipcode\":\"12345\",\"zipcode_type\":\"S\",\"default_city\":\"Los Angeles\",\"county_fips\":\"06037\",\"county_name\":\"Los Angeles\",\"state_abbreviation\":\"CA\",\"state\":\"California\",\"latitude\":34.02425,\"longitude\":-118.20399,\"precision\":\"Zip5\",\"alternate_counties\":[{\"county_fips\":\"21047\",\"county_name\":\"Christian\",\"state_abbreviation\":\"KY\",\"state\":\"Kentucky\"},{\"county_fips\":\"47125\",\"county_name\":\"Montgomery\",\"state_abbreviation\":\"TN\",\"state\":\"Tennessee\"}]},{\"zipcode\":\"56789\",\"zipcode_type\":\"S\",\"default_city\":\"Los Vegas\",\"county_fips\":\"34567\",\"county_name\":\"Los Vegas\",\"state_abbreviation\":\"NV\",\"state\":\"Nevada\",\"latitude\":35.02437,\"longitude\":-115.20356,\"precision\":\"Zip5\"}]},{\"input_index\":1,\"city_states\":[{\"city\":\"Provo\",\"state_abbreviation\":\"UT\",\"state\":\"Utah\",\"mailable_city\":true}],\"zipcodes\":[{\"zipcode\":\"84606\",\"zipcode_type\":\"S\",\"county_fips\":\"11501\",\"county_name\":\"Utah\",\"latitude\":38.89769,\"longitude\":-77.038,\"alternate_counties\":[{\"county_fips\":\"23456\",\"county_name\":\"County\",\"state_abbreviation\":\"AZ\",\"state\":\"Arizona\"}]}]},{\"input_index\":2,\"status\":\"invalid_zipcode\",\"reason\":\"Invalid ZIP Code.\"}]";
     _serializer = [[SSJsonSerializer alloc] init];
 }
@@ -40,34 +53,18 @@
     [lookups addObject:[[SSZipCodeLookup alloc] initWithZipcode:@"54321"]];
     
     NSData *lookupBytes = [_serializer serialize:lookups withClassType:[SSZipCodeLookup class] error:&error];
+    NSArray *results = [NSJSONSerialization JSONObjectWithData:lookupBytes options:NSJSONReadingMutableContainers error:&error];
     
-    NSString *expected = [self getExpectedJsonInput];
-    NSString *lookupString = [[NSString alloc] initWithData:lookupBytes encoding:NSUTF8StringEncoding];
-    
-    
-    XCTAssertEqualObjects(expected, lookupString);
-}
-
-- (NSString*)getExpectedJsonInput {
-    NSMutableArray *lookups = [NSMutableArray new];
-    NSDictionary *lookup1 = [@{
-                                  @"city" : @"Las Vegas",
-                                  @"state" : @"NV",
-                                  @"zipcode" : @"12345"
-                                } mutableCopy];
-    NSDictionary *lookup2 = [@{
-                                  @"city" : @"Provo",
-                                  @"state" : @"Utah"
-                               } mutableCopy];
-    NSDictionary *lookup3 = [@{
-                                  @"zipcode" : @"54321"
-                               } mutableCopy];
-    [lookups addObject:lookup1];
-    [lookups addObject:lookup2];
-    [lookups addObject:lookup3];
-    NSData *expected = [NSJSONSerialization dataWithJSONObject:lookups options:kNilOptions error:nil];
-    
-    return [[NSString alloc] initWithData:expected encoding:NSUTF8StringEncoding];
+    XCTAssertNotNil(results);
+    XCTAssertNotNil([results objectAtIndex:0]);
+    XCTAssertEqualObjects([expectedJsonInput objectAtIndex:0] [@"city"], [results objectAtIndex:0] [@"city"]);
+    XCTAssertEqualObjects([expectedJsonInput objectAtIndex:0] [@"state"], [results objectAtIndex:0] [@"state"]);
+    XCTAssertEqualObjects([expectedJsonInput objectAtIndex:0] [@"zipcode"], [results objectAtIndex:0] [@"zipcode"]);
+    XCTAssertNotNil([results objectAtIndex:1]);
+    XCTAssertEqualObjects([expectedJsonInput objectAtIndex:1] [@"city"], [results objectAtIndex:1] [@"city"]);
+    XCTAssertEqualObjects([expectedJsonInput objectAtIndex:1] [@"state"], [results objectAtIndex:1] [@"state"]);
+    XCTAssertNotNil([results objectAtIndex:2]);
+    XCTAssertEqualObjects([expectedJsonInput objectAtIndex:2] [@"zipcode"], [results objectAtIndex:2] [@"zipcode"]);
 }
 
 - (void)testDeserializationOfNullStream {
@@ -89,6 +86,8 @@
     XCTAssertNotNil([results objectAtIndex:0]);
     SSResult *result1 = [results objectAtIndex:0];
     XCTAssertEqual(0, [[results objectAtIndex:0] inputIndex]);
+    
+    //TODO: assert equal data structure iOS - that an array or dictionary resembles another dictionary.
     
     XCTAssertNotNil([result1 getCityAtIndex:0]);
     XCTAssertEqualObjects(@"city1", [[result1 getCityAtIndex:0] city]);

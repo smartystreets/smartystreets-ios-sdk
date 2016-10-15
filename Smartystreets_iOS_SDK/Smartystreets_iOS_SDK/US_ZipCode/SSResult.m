@@ -42,16 +42,6 @@
     return zipCodeObjects;
 }
 
-- (NSDictionary*)toDictionary {
-    return [@{
-              @"status" : self.status,
-              @"reason" : self.reason,
-              @"input_index" : [@(self.inputIndex) stringValue],
-              @"city_states" : self.cities, //TODO: do I need to add a toDictionary in the SSCity and SSZipCode as well?
-              @"zipcodes" : self.zipCodes //TODO: do I need to add a toDictionary in the SSCity and SSZipCode as well?
-              } mutableCopy];
-}
-
 - (bool)isValid {
     return (self.status == nil && self.reason == nil);
 }

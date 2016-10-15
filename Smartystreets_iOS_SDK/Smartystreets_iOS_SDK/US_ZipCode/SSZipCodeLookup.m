@@ -43,21 +43,11 @@
 - (NSDictionary*)toDictionary {
     NSMutableDictionary *dictionary = [NSMutableDictionary new];
     
-//       @"result" : [self.result toDictionary], //TODO: does it need this?
-//       @"inputid" : self.inputId, //TODO: does it need this?
     dictionary = [self addValueToDictionary:self.city key:@"city" dictionary:dictionary];
     dictionary = [self addValueToDictionary:self.state key:@"state" dictionary:dictionary];
     dictionary = [self addValueToDictionary:self.zipcode key:@"zipcode" dictionary:dictionary];
     
-    
     return [NSDictionary dictionaryWithDictionary:dictionary];
-//    return [@{
-//              @"result" : [self.result toDictionary], //TODO: does it need this?
-//              @"inputid" : self.inputId, //TODO: does it need this?
-//              @"city" : self.city,
-//              @"state" : self.state,
-//              @"zipcode" : self.zipcode
-//            } mutableCopy];
 }
 
 - (NSMutableDictionary*)addValueToDictionary:(NSString*)value key:(NSString*)key dictionary:(NSMutableDictionary*)dictionary {
@@ -65,10 +55,5 @@
         [dictionary setObject:value forKey:key];
     return dictionary;
 }
-
-//static id ObjectOrNull(id object) //TODO: delete this?
-//{
-//    return object ?: [NSNull null];
-//}
 
 @end

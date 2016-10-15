@@ -11,7 +11,6 @@
 @property (readonly, nonatomic) NSMutableArray<SSZipCode*> *zipCodes;
 
 - (instancetype)initWithDictionary:(NSDictionary*)dictionary;
-- (NSDictionary*)toDictionary;
 - (bool)isValid;
 - (SSCity*)getCityAtIndex:(int)index;
 - (SSZipCode*)getZipCodeAtIndex:(int)index;
