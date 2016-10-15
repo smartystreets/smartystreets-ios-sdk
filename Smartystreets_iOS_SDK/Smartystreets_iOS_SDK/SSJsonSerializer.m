@@ -7,7 +7,7 @@
     if (!obj)
         return nil; //TODO: set error as well?
     
-    if (![obj isKindOfClass:[NSArray class]]) { //TODO: should this only be of type NSArray?
+    if (![obj isKindOfClass:[NSArray class]]) {
         return nil; //TODO: set error as well?
     }
     
