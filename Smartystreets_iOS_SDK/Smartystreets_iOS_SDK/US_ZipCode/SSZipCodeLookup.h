@@ -10,7 +10,6 @@
 @property (nonatomic) NSString *state;
 @property (nonatomic) NSString *zipcode;
 
-- (instancetype)initWithDictionary:(NSDictionary*)dictionary;
 - (instancetype)initWithZipcode:(NSString*)zipcode;
 - (instancetype)initWithCity:(NSString*)city state:(NSString*)state;
 - (instancetype)initWithCity:(NSString*)city state:(NSString*)state zipcode:(NSString*)zipcode;

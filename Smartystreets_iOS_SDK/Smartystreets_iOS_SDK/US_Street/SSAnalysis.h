@@ -13,4 +13,6 @@
 @property (readonly, nonatomic) NSString *lacsLinkIndicator;
 @property (readonly, nonatomic) bool isSuiteLinkMatch;
 
+- (instancetype)initWithDictionary:(NSDictionary*)dictionary;
+
 @end

@@ -3,57 +3,39 @@
 #import "SSZipCodeLookup.h"
 #import "SSResult.h"
 
-@interface SSJsonSerializerTests : XCTestCase {
+@interface SSJsonSerializerTestsForZipCode : XCTestCase {
     NSArray *expectedJsonInput;
     NSArray *expectedJsonOutput;
 }
 
-@property (readonly, nonatomic) SSJsonSerializer *serializer;
-
 @end
 
-@implementation SSJsonSerializerTests
+@implementation SSJsonSerializerTestsForZipCode
 
 - (void)setUp {
     [super setUp];
     expectedJsonInput = @[@{@"city":@"Las Vegas",@"state":@"NV",@"zipcode":@"12345"},@{@"city":@"Provo",@"state":@"Utah"},@{@"zipcode":@"54321"}];
 
     expectedJsonOutput = @[@{@"input_index":@0,@"city_states":@[@{@"city":@"city1",@"state_abbreviation":@"CA",@"state":@"state1",@"mailable_city":@YES},@{@"city":@"city2",@"state_abbreviation":@"NV",@"state":@"state2",@"mailable_city":@NO}],@"zipcodes":@[@{@"zipcode":@"12345",@"zipcode_type":@"S",@"default_city":@"Los Angeles",@"county_fips":@"06037",@"county_name":@"Los Angeles",@"state_abbreviation":@"CA",@"state":@"California",@"latitude":@34.02425,@"longitude":@-118.20399,@"precision":@"Zip5",@"alternate_counties":@[@{@"county_fips":@"21047",@"county_name":@"Christian",@"state_abbreviation":@"KY",@"state":@"Kentucky"},@{@"county_fips":@"47125",@"county_name":@"Montgomery",@"state_abbreviation":@"TN",@"state":@"Tennessee"}]},@{@"zipcode":@"56789",@"zipcode_type":@"S",@"default_city":@"Los Vegas",@"county_fips":@"34567",@"county_name":@"Los Vegas",@"state_abbreviation":@"NV",@"state":@"Nevada",@"latitude":@35.02437,@"longitude":@-115.20356,@"precision":@"Zip5"}]},@{@"input_index":@1,@"city_states":@[@{@"city":@"Provo",@"state_abbreviation":@"UT",@"state":@"Utah",@"mailable_city":@YES}],@"zipcodes":@[@{@"zipcode":@"84606",@"zipcode_type":@"S",@"county_fips":@"11501",@"county_name":@"Utah",@"latitude":@38.89769,@"longitude":@-77.038,@"alternate_counties":@[@{@"county_fips":@"23456",@"county_name":@"County",@"state_abbreviation":@"AZ",@"state":@"Arizona"}]}]},@{@"input_index":@2,@"status":@"invalid_zipcode",@"reason":@"Invalid ZIP Code."}];
-    
-    _serializer = [[SSJsonSerializer alloc] init];
 }
 
 - (void)tearDown {
     [super tearDown];
 }
 
-- (void)testSerializationOfNullValues {
-    NSError *error = nil;
-    NSData *results = [self.serializer serialize:nil withClassType:nil error:&error];
-    
-    XCTAssertNil(results);
-}
-
 - (void)testSerializationOfKnownType {
+    SSJsonSerializer *serializer = [[SSJsonSerializer alloc] init];
     NSError *error = nil;
     NSMutableArray *lookups = [NSMutableArray new];
     [lookups addObject:[[SSZipCodeLookup alloc] initWithCity:@"Las Vegas" state:@"NV" zipcode:@"12345"]];
     [lookups addObject:[[SSZipCodeLookup alloc] initWithCity:@"Provo" state:@"Utah"]];
     [lookups addObject:[[SSZipCodeLookup alloc] initWithZipcode:@"54321"]];
     
-    NSData *actualBytes = [_serializer serialize:lookups withClassType:[SSZipCodeLookup class] error:&error];
+    NSData *actualBytes = [serializer serialize:lookups withClassType:[SSZipCodeLookup class] error:&error];
     NSData *expectedBytes = [NSJSONSerialization dataWithJSONObject:expectedJsonInput options:kNilOptions error:&error];
     
     XCTAssertNotNil(actualBytes);
     XCTAssertTrue([expectedBytes isEqualToData:actualBytes]);
-}
-
-- (void)testDeserializationOfNullStream {
-    SSJsonSerializer *serializer = [[SSJsonSerializer alloc] init];
-    NSError *error = nil;
-    NSArray *result = [serializer deserialize:nil withClassType:nil error:&error];
-    
-    XCTAssertNil(result);
 }
 
 - (void)testDeserializationOfKnownType {
@@ -68,7 +50,7 @@
     //Result1
     XCTAssertNotNil([results objectAtIndex:0]);
     SSResult *result1 = [results objectAtIndex:0];
-    XCTAssertEqual(0, [[results objectAtIndex:0] inputIndex]);
+    XCTAssertEqual(0, result1.inputIndex);
     
     XCTAssertNotNil([result1 getCityAtIndex:0]);
     XCTAssertEqualObjects(@"city1", [[result1 getCityAtIndex:0] city]);

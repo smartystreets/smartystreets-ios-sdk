@@ -87,7 +87,7 @@
     }
     
     [request setPayload:data];
-    NSMutableData *actualPayload = request.payload;
+    NSData *actualPayload = request.payload;
     
     XCTAssertEqualObjects(@"POST", request.method);
     XCTAssertEqualObjects(data, actualPayload);

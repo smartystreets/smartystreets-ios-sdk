@@ -22,4 +22,6 @@
 @property (readonly, nonatomic) NSString *deliveryPoint;
 @property (readonly, nonatomic) NSString *deliveryPointCheckDigit;
 
+- (instancetype)initWithDictionary:(NSDictionary*)dictionary;
+
 @end

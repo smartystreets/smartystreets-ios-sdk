@@ -8,15 +8,6 @@
     return self;
 }
 
-- (instancetype)initWithDictionary:(NSDictionary*)dictionary {
-    if ([self = [super self] init]) {
-        _city = dictionary[@"city"];
-        _state = dictionary[@"state"];
-        _zipcode = dictionary[@"zipcode"];
-    }
-    return self;
-}
-
 - (instancetype)initWithZipcode:(NSString*)zipcode {
     if (self = [[super self] init])
         _zipcode = zipcode;

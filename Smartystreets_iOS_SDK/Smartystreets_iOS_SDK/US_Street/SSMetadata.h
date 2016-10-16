@@ -19,4 +19,6 @@
 @property (readonly, nonatomic) double utcOffset;
 @property (readonly, nonatomic) bool obeysDst;
 
+- (instancetype)initWithDictionary:(NSDictionary*)dictionary;
+
 @end

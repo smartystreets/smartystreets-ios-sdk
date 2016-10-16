@@ -16,6 +16,7 @@
 @property (nonatomic) NSString *addressee;
 @property (nonatomic) NSString *urbanization;
 @property (readonly, nonatomic) int maxCandidates;
+//@property (nonatomic) NSString *match; //TODO: do we set match?
 
 - (instancetype)initWithFreeformAddress:(NSString*)freeformAddress;
 - (void)addToResult:(SSCandidate*)newCandidate;
