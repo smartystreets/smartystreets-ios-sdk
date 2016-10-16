@@ -37,6 +37,14 @@
                BlueprintName = "Smartystreets_iOS_SDKTests"
                ReferencedContainer = "container:Smartystreets_iOS_SDK.xcodeproj">
             </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "SSBatchTests/testExample">
+               </Test>
+               <Test
+                  Identifier = "SSBatchTests/testPerformanceExample">
+               </Test>
+            </SkippedTests>
          </TestableReference>
       </Testables>
       <MacroExpansion>
