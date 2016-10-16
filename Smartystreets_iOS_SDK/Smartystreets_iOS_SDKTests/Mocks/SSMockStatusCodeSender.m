@@ -15,7 +15,7 @@
     return self;
 }
 
-- (SSResponse*)sendRequest:(SSRequest*)request withError:(NSError**)error {
+- (SSResponse*)sendRequest:(SSRequest*)request error:(NSError**)error {
     if (self.statusCode == 0)
         return nil;
     

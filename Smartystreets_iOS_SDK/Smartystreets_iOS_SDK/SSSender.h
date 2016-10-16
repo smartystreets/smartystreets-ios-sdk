@@ -13,6 +13,6 @@
 
 @protocol SSSender <NSObject>
 
-- (SSResponse*)sendRequest:(SSRequest*)request withError:(NSError**)error;
+- (SSResponse*)sendRequest:(SSRequest*)request error:(NSError**)error;
 
 @end

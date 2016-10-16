@@ -10,7 +10,7 @@ int const kStatusCode = 200;
     return self;
 }
 
-- (SSResponse*)sendRequest:(SSRequest*)request withError:(NSError**)error {
+- (SSResponse*)sendRequest:(SSRequest*)request error:(NSError**)error {
     _sendCount++;
     
     NSDictionary *details;

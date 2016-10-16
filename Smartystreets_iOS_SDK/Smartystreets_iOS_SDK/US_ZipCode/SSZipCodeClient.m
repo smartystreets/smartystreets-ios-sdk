@@ -36,7 +36,7 @@
     else
         [request setPayload:[self.serializer serialize:batch.allLookups withClassType:[SSZipCodeLookup class] error:error]];
         
-    SSResponse *response = [self.sender sendRequest:request withError:error];
+    SSResponse *response = [self.sender sendRequest:request error:error];
     
     NSArray *resultsDict = [self.serializer deserialize:response.payload withClassType:[NSArray<SSResult*> class] error:error];
     

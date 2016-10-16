@@ -17,14 +17,14 @@
     return self;
 }
 
-- (SSResponse*)sendRequest:(SSRequest *)request withError:(NSError**)error {
+- (SSResponse*)sendRequest:(SSRequest *)request error:(NSError**)error {
     if (self.inner && [self.signer respondsToSelector:@selector(sign:)]) {
         [self.signer sign:request];
     }
     
     SSResponse *response;
-    if (self.inner && [self.inner respondsToSelector:@selector(sendRequest:withError:)]) {
-        response = [self.inner sendRequest:request withError:error];
+    if (self.inner && [self.inner respondsToSelector:@selector(sendRequest:error:)]) {
+        response = [self.inner sendRequest:request error:error];
     }
     return response;
 }

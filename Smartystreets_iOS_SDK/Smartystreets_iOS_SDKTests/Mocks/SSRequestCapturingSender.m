@@ -2,7 +2,7 @@
 
 @implementation SSRequestCapturingSender
 
-- (SSResponse*)sendRequest:(SSRequest *)request withError:(NSError**)error {
+- (SSResponse*)sendRequest:(SSRequest *)request error:(NSError**)error {
     _request = request;
     
     NSString *emptyString = @"[]";

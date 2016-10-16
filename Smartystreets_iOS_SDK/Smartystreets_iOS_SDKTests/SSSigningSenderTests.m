@@ -24,7 +24,7 @@
     NSError *error = nil;
     
     SSRequest *request = [[SSRequest alloc] initWithUrlPrefix:@"http://localhost/"];
-    [sender sendRequest:request withError:&error];
+    [sender sendRequest:request error:&error];
     
     NSString *expectedUrl = @"http://localhost/?auth-id=authId&auth-token=secret";
     XCTAssertEqualObjects(expectedUrl, [mockSender.request getUrl]);
@@ -38,7 +38,7 @@
     NSError *error = nil;
     
     SSRequest *request = [[SSRequest alloc] initWithUrlPrefix:@"http://localhost/"];
-    SSResponse *actualResponse = [sender sendRequest:request withError:&error];
+    SSResponse *actualResponse = [sender sendRequest:request error:&error];
     
     XCTAssertEqualObjects(expectedResponse, actualResponse);
 }

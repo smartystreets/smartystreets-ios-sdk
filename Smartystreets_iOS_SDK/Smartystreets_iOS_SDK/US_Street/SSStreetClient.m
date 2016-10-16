@@ -38,7 +38,7 @@
     else
         [request setPayload:[self.serializer serialize:batch.allLookups withClassType:[SSStreetLookup class] error:error]];
     
-    SSResponse *response = [self.sender sendRequest:request withError:error];
+    SSResponse *response = [self.sender sendRequest:request error:error];
     
     NSArray<SSCandidate*> *candidates = [self.serializer deserialize:response.payload withClassType:[SSCandidate class] error:error];
     if (candidates == nil)

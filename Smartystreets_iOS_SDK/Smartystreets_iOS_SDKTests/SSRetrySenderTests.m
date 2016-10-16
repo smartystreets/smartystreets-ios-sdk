@@ -45,7 +45,7 @@
     SSRequest *request = [[SSRequest alloc] initWithUrlPrefix:requestBehavior];
     SSRetrySender *retrySender = [[SSRetrySender alloc] initWithMaxRetries:5 inner:self.mockCrashingSender];
     
-    [retrySender sendRequest:request withError:error];
+    [retrySender sendRequest:request error:error];
 }
 
 @end
