@@ -3,6 +3,7 @@
 @interface SSHttpSender()
     
 @property (nonatomic) int maxTimeout;
+@property (nonatomic) SSResponse* theResponse; //TODO: try to not make this a field
 //@property (nonatomic) HttpTransport transport; //TODO: Java uses this line. figure out what to do for Objective-C
 
 @end
@@ -51,18 +52,42 @@
 }
 
 - (SSResponse*)buildResponse:(NSMutableURLRequest*)httpRequest {
-    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+//    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
     
-    __block SSResponse *myResponse;
-    [[session dataTaskWithRequest:httpRequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        if (error == nil) {
-            int statusCode = (int)[(NSHTTPURLResponse *) response statusCode];
-            NSData *payload = data;
-            myResponse = [[SSResponse alloc] initWithStatusCode:statusCode payload:payload];
-        }
-    }] resume];
+//    __block SSResponse *myResponse;
+    NSURLSessionDataTask *task = [[self getURLSession] dataTaskWithRequest:httpRequest
+                                            completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
+    {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (error == nil) {
+                int statusCode = (int)[(NSHTTPURLResponse *) response statusCode];
+                NSData *payload = data;
+                _theResponse = [self setResponse:statusCode payload:payload];
+//
+            }
+        });
+    }];
     
-    return myResponse;
+    [task resume];
+    
+    return self.theResponse;
+//    return myResponse;
+}
+
+- (SSResponse*)setResponse:(int)statusCode payload:(NSData*)payload {
+    return [[SSResponse alloc] initWithStatusCode:statusCode payload:payload];;
+}
+
+- (NSURLSession*) getURLSession {
+    static NSURLSession *session = nil;
+    static dispatch_once_t onceToken;
+    
+    dispatch_once(&onceToken,
+                  ^{
+                      NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+                      session = [NSURLSession sessionWithConfiguration:configuration];
+                  });
+    return session;
 }
 
 @end
