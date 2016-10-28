@@ -55,20 +55,57 @@
 //    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
     
 //    __block SSResponse *myResponse;
-    NSURLSessionDataTask *task = [[self getURLSession] dataTaskWithRequest:httpRequest
-                                            completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
-    {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            if (error == nil) {
-                int statusCode = (int)[(NSHTTPURLResponse *) response statusCode];
-                NSData *payload = data;
-                _theResponse = [self setResponse:statusCode payload:payload];
-//
-            }
-        });
-    }];
+    
+//    [NSURLConnection sendAsynchronousRequest:httpRequest
+//                                       queue:[NSOperationQueue mainQueue]
+//                           completionHandler:
+//     ^(NSURLResponse *response, NSData *data, NSError *error)
+//     {
+//         if (error == nil) {
+//             int statusCode = (int)[(NSHTTPURLResponse *) response statusCode];
+//             NSData *payload = data;
+//             _theResponse = [self setResponse:statusCode payload:payload];
+//         }
+//     }
+//     ];
+    
+//    NSURLSessionDataTask *task = [[self getURLSession] dataTaskWithRequest:httpRequest
+//                                            completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
+//    {
+////        dispatch_async(dispatch_get_main_queue(), ^{
+//            if (error == nil) {
+//                int statusCode = (int)[(NSHTTPURLResponse *) response statusCode];
+//                NSData *payload = data;
+//                _theResponse = [self setResponse:statusCode payload:payload];
+////
+////            }
+//        }/*)*/;
+//    }];
+//    
+//    [task resume];
+    
+    
+    
+    NSURLSession *session = [NSURLSession sharedSession];
+    
+    NSURLSessionDataTask *task = [session dataTaskWithRequest:httpRequest
+                                            completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                                                if(error == nil) {
+                                                    int statusCode = (int)[(NSHTTPURLResponse *) response statusCode];
+                                                    NSData *payload = data;
+                                                    
+                                                    NSString * payloadText = [[NSString alloc] initWithData:payload encoding: NSUTF8StringEncoding];
+                                                    NSLog(@"Data = %@", payloadText);
+//                                                    NSLog(@"Status Code = %@", statusCode);
+                                                    
+                                                    _theResponse = [self setResponse:statusCode payload:payload];
+                                                }
+                                            }];
     
     [task resume];
+    
+    CFRunLoopRunInMode(kCFRunLoopDefaultMode, 1, false);
+    
     
     return self.theResponse;
 //    return myResponse;
