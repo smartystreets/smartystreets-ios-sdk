@@ -38,7 +38,7 @@
         
     SSResponse *response = [self.sender sendRequest:request error:error];
     
-    NSArray *resultsDict = [self.serializer deserialize:response.payload withClassType:[NSArray<SSResult*> class] error:error];
+    NSArray *resultsDict = [self.serializer deserialize:response.payload withClassType:[SSResult class] error:error];
     
     if (resultsDict == nil)
         resultsDict = [NSArray<SSResult*> new];

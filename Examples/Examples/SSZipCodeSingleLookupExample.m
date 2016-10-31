@@ -6,8 +6,8 @@
 
 - (NSString*)runCode {
     SSZipCodeClient *client = [[[SSZipCodeClientBuilder alloc]
-                                initWithAuthId:@"YOUR AUTH-ID HERE"
-                                authToken:@"YOUR AUTH-TOKEN HERE"]
+                                initWithAuthId:@"YOUR_AUTH_ID_HERE"
+                                authToken:@"YOUR_AUTH_TOKEN_HERE"]
                                build];
     
     SSZipCodeLookup *lookup = [[SSZipCodeLookup alloc] init];
@@ -27,21 +27,25 @@
     
     NSMutableString *output = [[NSMutableString alloc] init];
     
-    if (cities == nil && zipCodes == nil)
-        return [output stringByAppendingString:@"Error getting cities and zip codes."];
+    if (cities == nil && zipCodes == nil) {
+        [output appendString:@"Error getting cities and zip codes."];
+        return output;
+    }
     
     for (SSCity *city in cities) {
-        [output stringByAppendingString:[@"\nCity: " stringByAppendingString:city.city]];
-        [output stringByAppendingString:[@"State: " stringByAppendingString:city.state]];
-        [output stringByAppendingString:[@"Mailable City: " stringByAppendingString:city.mailableCity ? @"YES" : @"NO"]];
+        [output appendString:[@"\nCity: " stringByAppendingString:city.city]];
+        [output appendString:[@"\nState: " stringByAppendingString:city.state]];
+        [output appendString:[@"\nMailable City: " stringByAppendingString:city.mailableCity ? @"YES" : @"NO"]];
+        [output appendString:@"\n"];
     }
     
     for (SSZipCode *zip in zipCodes) {
-        [output stringByAppendingString:[@"\nZIP Code: " stringByAppendingString:zip.zipCode]];
+        [output appendString:[@"\nZIP Code: " stringByAppendingString:zip.zipCode]];
         NSNumber *latitude = [NSNumber numberWithDouble:zip.latitude];
         NSNumber *longitute = [NSNumber numberWithDouble:zip.longitude];
-        [output stringByAppendingString:[@"Latitue: " stringByAppendingString:[latitude stringValue]]];
-        [output stringByAppendingString:[@"Longitude: " stringByAppendingString:[longitute stringValue]]];
+        [output appendString:[@"\nLatitude: " stringByAppendingString:[latitude stringValue]]];
+        [output appendString:[@"\nLongitude: " stringByAppendingString:[longitute stringValue]]];
+        [output appendString:@"\n"];
     }
     
     return output;

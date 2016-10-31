@@ -95,8 +95,8 @@
                                                     NSData *payload = data;
                                                     
                                                     NSString * payloadText = [[NSString alloc] initWithData:payload encoding: NSUTF8StringEncoding];
-                                                    NSLog(@"Data = %@", payloadText);
-//                                                    NSLog(@"Status Code = %@", statusCode);
+//                                                    NSLog(@"Data = %@", payloadText); //TODO: delete line
+//                                                    NSLog(@"Status Code = %@", statusCode); //TODO: delete line
                                                     
                                                     _theResponse = [self setResponse:statusCode payload:payload];
                                                 }
