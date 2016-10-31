@@ -1,5 +1,6 @@
 #import <UIKit/UIKit.h>
 #import "SSZipCodeSingleLookupExample.h"
+#import "SSZipCodeMultipleLookupsExample.h"
 
 @interface ViewController : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate>
 

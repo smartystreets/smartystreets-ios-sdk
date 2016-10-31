@@ -24,14 +24,17 @@
 }
 
 - (void)buttonPressed:(UIButton*)button {
+    NSString *result = @"";
     if ([pickerName isEqualToString:@"ZipCodeSingleLookup"]) {
         SSZipCodeSingleLookupExample *example = [[SSZipCodeSingleLookupExample alloc] init];
-        NSString *result = [example runCode];
-        self.resultsTextView.text = result;
+        result = [example runCode];
     }
     else if ([pickerName isEqualToString:@"ZipCodeMultipleLookups"]) {
-        
+        SSZipCodeMultipleLookupsExample *example = [[SSZipCodeMultipleLookupsExample alloc] init];
+        result = [example runCode];
     }
+    
+    self.resultsTextView.text = result;
 }
 
 - (void)didReceiveMemoryWarning {
