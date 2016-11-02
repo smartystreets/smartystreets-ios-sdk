@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
-#include "SSAlternateCounties.h"
+#import "SSAlternateCounties.h"
 
 @interface SSZipCode : NSObject
 

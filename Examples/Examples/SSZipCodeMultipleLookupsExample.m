@@ -1,13 +1,14 @@
 #import "SSZipCodeMultipleLookupsExample.h"
-#import </Users/oshion/Library/Developer/Xcode/DerivedData/Smartystreets_iOS_SDK-hgqhnhhppaibdnfgaptgxhhngupi/Build/Products/Debug-iphonesimulator/Smartystreets_iOS_SDK.framework/Headers/SSZipCodeClient.h> //TODO: get imports working correctly
-#import </Users/oshion/Library/Developer/Xcode/DerivedData/Smartystreets_iOS_SDK-hgqhnhhppaibdnfgaptgxhhngupi/Build/Products/Debug-iphonesimulator/Smartystreets_iOS_SDK.framework/Headers/SSZipCodeClientBuilder.h>
-#import </Users/oshion/src/github.com/smartystreets/smartystreets-ios-sdk/Smartystreets_iOS_SDK/Smartystreets_iOS_SDK/SSSharedCredentials.h>
+#import </Users/oshion/Library/Developer/Xcode/DerivedData/Smartystreets_iOS_SDK-hgqhnhhppaibdnfgaptgxhhngupi/Build/Products/Debug-iphonesimulator/Smartystreets_iOS_SDK.framework/Headers/SSZipCodeClientBuilder.h> //TODO: get imports working correctly
+//#import </Users/oshion/Library/Developer/Xcode/DerivedData/Smartystreets_iOS_SDK-hgqhnhhppaibdnfgaptgxhhngupi/Build/Products/Debug-iphonesimulator/Smartystreets_iOS_SDK.framework/Headers/SSSharedCredentials.h>
+#import "SSMyCredentials.h"
 
 @implementation SSZipCodeMultipleLookupsExample
 
 - (NSString*)runCode {
-    id<SSCredentials> mobile = [[SSSharedCredentials alloc] initWithId:@"SMARTY_WEBSITE_KEY" hostname:@"HOST"];
-    SSZipCodeClient *client = [[SSZipCodeClientBuilder alloc] initWithSigner:mobile].build;
+    //    id<SSCredentials> mobile = [[SSSharedCredentials alloc] initWithId:kSSSmartyWebsiteKey hostname:kSSHost];
+    //    SSStreetClient *client = [[SSStreetClientBuilder alloc] initWithSigner:mobile].build;
+    SSZipCodeClient *client = [[SSZipCodeClientBuilder alloc] initWithAuthId:kSSAuthId authToken:kSSAuthToken].build;
     
     SSZipCodeBatch *batch = [[SSZipCodeBatch alloc] init];
     

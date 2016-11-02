@@ -1,11 +1,3 @@
-//
-//  Smartystreets_iOS_SDK.h
-//  Smartystreets_iOS_SDK
-//
-//  Created by Oshion Niemela on 8/3/16.
-//  Copyright © 2016 SmartyStreets. All rights reserved.
-//
-
 #import <UIKit/UIKit.h>
 
 //! Project version number for Smartystreets_iOS_SDK.
