@@ -34,8 +34,12 @@
         result = [example runCode];
     }
     else if ([pickerName isEqualToString:@"StreetSingleAddress"]) {
-//        SSUSStreetSingleAddressExample *example = [[SSUSStreetSingleAddressExample alloc] init];
-//        result = [example runCode];
+        SSUSStreetSingleAddressExample *example = [[SSUSStreetSingleAddressExample alloc] init];
+        result = [example runCode];
+    }
+    else if ([pickerName isEqualToString:@"StreetMultipleAddresses"]) {
+        SSUSStreetMultipleLookupsExample *example = [[SSUSStreetMultipleLookupsExample alloc] init];
+        result = [example runCode];
     }
     
     

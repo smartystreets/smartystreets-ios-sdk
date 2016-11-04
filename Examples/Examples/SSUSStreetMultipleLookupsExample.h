@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 
-@interface SSUSStreetSingleAddressExample : NSObject
+@interface SSUSStreetMultipleLookupsExample : NSObject
 
 - (NSString*)runCode;
 
