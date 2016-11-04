@@ -1,14 +1,14 @@
 #import "SSZipCodeSingleLookupExample.h"
-#import </Users/oshion/Library/Developer/Xcode/DerivedData/Smartystreets_iOS_SDK-hgqhnhhppaibdnfgaptgxhhngupi/Build/Products/Debug-iphonesimulator/Smartystreets_iOS_SDK.framework/Headers/SSZipCodeClientBuilder.h> //TODO: get imports working correctly
-//#import </Users/oshion/Library/Developer/Xcode/DerivedData/Smartystreets_iOS_SDK-hgqhnhhppaibdnfgaptgxhhngupi/Build/Products/Debug-iphonesimulator/Smartystreets_iOS_SDK.framework/Headers/SSSharedCredentials.h>
+#import <Smartystreets_iOS_SDK/SSZipCodeClientBuilder.h>
+#import <Smartystreets_iOS_SDK/SSSharedCredentials.h>
 #import "SSMyCredentials.h"
 
 @implementation SSZipCodeSingleLookupExample
 
 - (NSString*)runCode {
-    //    id<SSCredentials> mobile = [[SSSharedCredentials alloc] initWithId:kSSSmartyWebsiteKey hostname:kSSHost];
-    //    SSStreetClient *client = [[SSStreetClientBuilder alloc] initWithSigner:mobile].build;
-    SSZipCodeClient *client = [[SSZipCodeClientBuilder alloc] initWithAuthId:kSSAuthId authToken:kSSAuthToken].build;
+        id<SSCredentials> mobile = [[SSSharedCredentials alloc] initWithId:kSSSmartyWebsiteKey hostname:kSSHost];
+        SSZipCodeClient *client = [[SSZipCodeClientBuilder alloc] initWithSigner:mobile].build;
+//    SSZipCodeClient *client = [[SSZipCodeClientBuilder alloc] initWithAuthId:kSSAuthId authToken:kSSAuthToken].build;
     
     SSZipCodeLookup *lookup = [[SSZipCodeLookup alloc] init];
     lookup.city = @"Mountain View";

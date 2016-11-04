@@ -1,11 +1,11 @@
 #import <Foundation/Foundation.h>
 
 //Mobile Credentials
-NSString *const kSSSmartyWebsiteKey = @"SMARTY_WEBSITE_KEY";
-NSString *const kSSHost = @"HOST";
+extern NSString *const kSSSmartyWebsiteKey;
+extern NSString *const kSSHost;
 
-NSString *const kSSAuthId = @"AUTH_ID_HERE";
-NSString *const kSSAuthToken = @"AUTH_TOKEN_HERE";
+extern NSString *const kSSAuthId;
+extern NSString *const kSSAuthToken;
 
 @interface SSMyCredentials : NSObject
 
