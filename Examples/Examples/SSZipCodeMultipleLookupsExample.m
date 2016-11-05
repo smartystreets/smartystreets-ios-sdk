@@ -6,9 +6,9 @@
 @implementation SSZipCodeMultipleLookupsExample
 
 - (NSString*)runCode {
-//        id<SSCredentials> mobile = [[SSSharedCredentials alloc] initWithId:kSSSmartyWebsiteKey hostname:kSSHost];
-//        SSZipCodeClient *client = [[SSZipCodeClientBuilder alloc] initWithSigner:mobile].build; //TODO: figure out why this doesn't work
-    SSZipCodeClient *client = [[SSZipCodeClientBuilder alloc] initWithAuthId:kSSAuthId authToken:kSSAuthToken].build;
+    id<SSCredentials> mobile = [[SSSharedCredentials alloc] initWithId:kSSSmartyWebsiteKey hostname:kSSHost];
+    SSZipCodeClient *client = [[SSZipCodeClientBuilder alloc] initWithSigner:mobile].build; //TODO: figure out why this doesn't work
+//    SSZipCodeClient *client = [[SSZipCodeClientBuilder alloc] initWithAuthId:kSSAuthId authToken:kSSAuthToken].build;
     
     SSZipCodeBatch *batch = [[SSZipCodeBatch alloc] init];
     

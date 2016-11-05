@@ -3,8 +3,6 @@
 @interface SSHttpSender()
     
 @property (nonatomic) int maxTimeout;
-@property (nonatomic) SSResponse* theResponse; //TODO: try to not make this a field
-//@property (nonatomic) HttpTransport transport; //TODO: Java uses this line. figure out what to do for Objective-C
 
 @end
 
@@ -13,7 +11,6 @@
 - (instancetype)init {
     if (self = [super init]) {
         _maxTimeout = 10000;
-//        _transport = [[NetHttpTransport alloc] init]; //TODO: Java uses this line. figure out what to do for Objective-C
     }
     return self;
 }
@@ -52,43 +49,10 @@
 }
 
 - (SSResponse*)buildResponse:(NSMutableURLRequest*)httpRequest {
-//    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
-    
-//    __block SSResponse *myResponse;
-    
-//    [NSURLConnection sendAsynchronousRequest:httpRequest
-//                                       queue:[NSOperationQueue mainQueue]
-//                           completionHandler:
-//     ^(NSURLResponse *response, NSData *data, NSError *error)
-//     {
-//         if (error == nil) {
-//             int statusCode = (int)[(NSHTTPURLResponse *) response statusCode];
-//             NSData *payload = data;
-//             _theResponse = [self setResponse:statusCode payload:payload];
-//         }
-//     }
-//     ];
-    
-//    NSURLSessionDataTask *task = [[self getURLSession] dataTaskWithRequest:httpRequest
-//                                            completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
-//    {
-////        dispatch_async(dispatch_get_main_queue(), ^{
-//            if (error == nil) {
-//                int statusCode = (int)[(NSHTTPURLResponse *) response statusCode];
-//                NSData *payload = data;
-//                _theResponse = [self setResponse:statusCode payload:payload];
-////
-////            }
-//        }/*)*/;
-//    }];
-//    
-//    [task resume];
-    
-    
-    
     NSURLSession *session = [NSURLSession sharedSession];
     
-    NSURLSessionDataTask *task = [session dataTaskWithRequest:httpRequest
+    __block SSResponse *myResponse;
+    NSURLSessionDataTask *task = [[self getURLSession] dataTaskWithRequest:httpRequest
                                             completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
                                                 if(error == nil) {
                                                     int statusCode = (int)[(NSHTTPURLResponse *) response statusCode];
@@ -98,7 +62,7 @@
 //                                                    NSLog(@"Data = %@", payloadText); //TODO: delete line
 //                                                    NSLog(@"Status Code = %@", statusCode); //TODO: delete line
                                                     
-                                                    _theResponse = [self setResponse:statusCode payload:payload];
+                                                    myResponse = [self setResponse:statusCode payload:payload];
                                                 }
                                             }];
     
@@ -106,9 +70,7 @@
     
     CFRunLoopRunInMode(kCFRunLoopDefaultMode, 1, false);
     
-    
-    return self.theResponse;
-//    return myResponse;
+    return myResponse;
 }
 
 - (SSResponse*)setResponse:(int)statusCode payload:(NSData*)payload {

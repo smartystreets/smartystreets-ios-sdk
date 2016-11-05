@@ -6,8 +6,8 @@
 @implementation SSZipCodeSingleLookupExample
 
 - (NSString*)runCode {
-        id<SSCredentials> mobile = [[SSSharedCredentials alloc] initWithId:kSSSmartyWebsiteKey hostname:kSSHost];
-        SSZipCodeClient *client = [[SSZipCodeClientBuilder alloc] initWithSigner:mobile].build;
+    id<SSCredentials> mobile = [[SSSharedCredentials alloc] initWithId:kSSSmartyWebsiteKey hostname:kSSHost];
+    SSZipCodeClient *client = [[SSZipCodeClientBuilder alloc] initWithSigner:mobile].build;
 //    SSZipCodeClient *client = [[SSZipCodeClientBuilder alloc] initWithAuthId:kSSAuthId authToken:kSSAuthToken].build;
     
     SSZipCodeLookup *lookup = [[SSZipCodeLookup alloc] init];
