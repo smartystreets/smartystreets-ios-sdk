@@ -5,7 +5,7 @@
 
 @implementation SSZipCodeSingleLookupExample
 
-- (NSString*)runCode {
+- (NSString*)run {
     id<SSCredentials> mobile = [[SSSharedCredentials alloc] initWithId:kSSSmartyWebsiteKey hostname:kSSHost];
     SSZipCodeClient *client = [[SSZipCodeClientBuilder alloc] initWithSigner:mobile].build;
 //    SSZipCodeClient *client = [[SSZipCodeClientBuilder alloc] initWithAuthId:kSSAuthId authToken:kSSAuthToken].build;
@@ -18,7 +18,10 @@
     [client sendLookup:lookup error:&error];
     
     if (error != nil) {
-        //TODO: handle error
+        NSLog(@"Domain: %@", error.domain);
+        NSLog(@"Error Code: %i", (int)error.code);
+        NSLog(@"Description: %@", [error localizedDescription]);
+        return @"Error sending request";
     }
     
     SSResult *result = lookup.result;

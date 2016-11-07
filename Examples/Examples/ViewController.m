@@ -27,19 +27,19 @@
     NSString *result = @"";
     if ([pickerName isEqualToString:@"ZipCodeSingleLookup"]) {
         SSZipCodeSingleLookupExample *example = [[SSZipCodeSingleLookupExample alloc] init];
-        result = [example runCode];
+        result = [example run];
     }
     else if ([pickerName isEqualToString:@"ZipCodeMultipleLookups"]) {
         SSZipCodeMultipleLookupsExample *example = [[SSZipCodeMultipleLookupsExample alloc] init];
-        result = [example runCode];
+        result = [example run];
     }
     else if ([pickerName isEqualToString:@"StreetSingleAddress"]) {
         SSUSStreetSingleAddressExample *example = [[SSUSStreetSingleAddressExample alloc] init];
-        result = [example runCode];
+        result = [example run];
     }
     else if ([pickerName isEqualToString:@"StreetMultipleAddresses"]) {
         SSUSStreetMultipleLookupsExample *example = [[SSUSStreetMultipleLookupsExample alloc] init];
-        result = [example runCode];
+        result = [example run];
     }
     
     
@@ -52,12 +52,12 @@
 }
 
 // The number of columns of data
-- (int)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
     return 1;
 }
 
 // The number of rows of data
-- (int)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
     return pickerData.count;
 }
 

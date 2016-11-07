@@ -5,7 +5,7 @@
 
 @implementation SSUSStreetSingleAddressExample
 
-- (NSString*)runCode {
+- (NSString*)run {
     id<SSCredentials> mobile = [[SSSharedCredentials alloc] initWithId:kSSSmartyWebsiteKey hostname:kSSHost];
     SSStreetClient *client = [[SSStreetClientBuilder alloc] initWithSigner:mobile].build;
 //    SSStreetClient *client = [[SSStreetClientBuilder alloc] initWithAuthId:kSSAuthId authToken:kSSAuthToken].build;
@@ -19,7 +19,10 @@
     [client sendLookup:lookup error:&error];
     
     if (error != nil) {
-        //TODO: handle error
+        NSLog(@"Domain: %@", error.domain);
+        NSLog(@"Error Code: %i", (int)error.code);
+        NSLog(@"Description: %@", [error localizedDescription]);
+        return @"Error sending request";
     }
     
     NSArray<SSCandidate*> *results = lookup.result;

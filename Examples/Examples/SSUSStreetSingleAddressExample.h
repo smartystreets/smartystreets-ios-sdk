@@ -2,6 +2,6 @@
 
 @interface SSUSStreetSingleAddressExample : NSObject
 
-- (NSString*)runCode;
+- (NSString*)run;
 
 @end

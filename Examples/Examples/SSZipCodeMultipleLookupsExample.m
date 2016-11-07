@@ -5,10 +5,8 @@
 
 @implementation SSZipCodeMultipleLookupsExample
 
-- (NSString*)runCode {
-    id<SSCredentials> mobile = [[SSSharedCredentials alloc] initWithId:kSSSmartyWebsiteKey hostname:kSSHost];
-    SSZipCodeClient *client = [[SSZipCodeClientBuilder alloc] initWithSigner:mobile].build; //TODO: figure out why this doesn't work
-//    SSZipCodeClient *client = [[SSZipCodeClientBuilder alloc] initWithAuthId:kSSAuthId authToken:kSSAuthToken].build;
+- (NSString*)run {
+    SSZipCodeClient *client = [[SSZipCodeClientBuilder alloc] initWithAuthId:kSSAuthId authToken:kSSAuthToken].build;
     
     SSZipCodeBatch *batch = [[SSZipCodeBatch alloc] init];
     
@@ -25,10 +23,21 @@
     [batch add:lookup1 error:&error];
     [batch add:lookup2 error:&error];
     [batch add:lookup3 error:&error];
+    
+    if (error != nil) {
+        if ([error.domain isEqualToString:@"SSSmartyErrorDomain"] && error.code == BatchFullError) {
+            NSLog(@"Description: %@", [error localizedDescription]);
+            return @"Error. The batch is already full.";
+        }
+    }
+    
     [client sendBatch:batch error:&error];
     
     if (error != nil) {
-        //TODO: handle error
+        NSLog(@"Domain: %@", error.domain);
+        NSLog(@"Error Code: %i", (int)error.code);
+        NSLog(@"Description: %@", [error localizedDescription]);
+        return @"Error sending request";
     }
     
     NSArray *lookups = batch.allLookups;

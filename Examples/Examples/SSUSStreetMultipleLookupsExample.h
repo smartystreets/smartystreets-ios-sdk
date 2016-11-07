@@ -2,6 +2,6 @@
 
 @interface SSUSStreetMultipleLookupsExample : NSObject
 
-- (NSString*)runCode;
+- (NSString*)run;
 
 @end

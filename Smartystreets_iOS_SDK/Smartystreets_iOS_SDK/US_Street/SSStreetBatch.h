@@ -15,7 +15,6 @@ extern int const kSSStreetMaxBatchSize;
 - (void)reset;
 - (void)removeAllObjects;
 - (int)count;
-//- (iterator<SSLookup>)iterator; //TODO: figure out how to implement this
 - (SSStreetLookup*)getLookupById:(NSString*)inputId;
 - (SSStreetLookup*)getLookupAtIndex:(int)inputIndex;
 

@@ -24,7 +24,7 @@
 
 - (NSArray*)deserialize:(NSData*)payload withClassType:(Class)classType error:(NSError**)error {
     if (payload == nil)
-        return nil;
+        return nil; //TODO: set error as well?
     
     NSArray *json = [NSJSONSerialization JSONObjectWithData:payload options:NSJSONReadingMutableContainers error:error];
     

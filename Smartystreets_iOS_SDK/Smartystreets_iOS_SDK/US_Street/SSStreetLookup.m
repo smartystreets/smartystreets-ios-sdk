@@ -27,9 +27,10 @@
 - (void)setMaxCandidates:(int)maxCandidates error:(NSError**)error {
     if (maxCandidates > 0)
         _maxCandidates = maxCandidates;
-    
-    NSDictionary *details = @{NSLocalizedDescriptionKey: @"Max candidates must be a positive integer."};
-    *error = [NSError errorWithDomain:NSCocoaErrorDomain code:nil userInfo:details]; //TODO: what is the error code?
+    else {
+        NSDictionary *details = @{NSLocalizedDescriptionKey: @"Max candidates must be a positive integer."};
+        *error = [NSError errorWithDomain:NSCocoaErrorDomain code:nil userInfo:details]; //TODO: what is the error code?
+    }
 }
 
 - (NSDictionary*)toDictionary {

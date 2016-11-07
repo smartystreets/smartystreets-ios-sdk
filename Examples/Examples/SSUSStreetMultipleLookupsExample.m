@@ -5,10 +5,8 @@
 
 @implementation SSUSStreetMultipleLookupsExample
 
-- (NSString*)runCode {
-//    id<SSCredentials> mobile = [[SSSharedCredentials alloc] initWithId:kSSSmartyWebsiteKey hostname:kSSHost];
-//    SSStreetClient *client = [[SSStreetClientBuilder alloc] initWithSigner:mobile].build;
-        SSStreetClient *client = [[SSStreetClientBuilder alloc] initWithAuthId:kSSAuthId authToken:kSSAuthToken].build;
+- (NSString*)run {
+    SSStreetClient *client = [[SSStreetClientBuilder alloc] initWithAuthId:kSSAuthId authToken:kSSAuthToken].build;
     
     SSStreetBatch *batch = [[SSStreetBatch alloc] init];
     NSError *error = nil;
@@ -32,10 +30,20 @@
     [batch add:address2 error:&error];
     [batch add:address3 error:&error];
     
+    if (error != nil) {
+        if ([error.domain isEqualToString:@"SSSmartyErrorDomain"] && error.code == BatchFullError) {
+            NSLog(@"Description: %@", [error localizedDescription]);
+            return @"Error. The batch is already full.";
+        }
+    }
+    
     [client sendBatch:batch error:&error];
     
     if (error != nil) {
-        //TODO: handle error
+        NSLog(@"Domain: %@", error.domain);
+        NSLog(@"Error Code: %i", (int)error.code);
+        NSLog(@"Description: %@", [error localizedDescription]);
+        return @"Error sending request";
     }
     
     NSArray<SSStreetLookup*> *lookups = batch.allLookups;

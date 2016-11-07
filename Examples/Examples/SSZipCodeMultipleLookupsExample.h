@@ -2,6 +2,6 @@
 
 @interface SSZipCodeMultipleLookupsExample : NSObject
 
-- (NSString*)runCode;
+- (NSString*)run;
 
 @end

@@ -38,8 +38,6 @@ int const kSSZipCodeMaxBatchSize = 100;
     return (int)[self.allLookups count];
 }
 
-//- (iterator<SSLookup>)iterator; //TODO: figure out how to implement this
-
 - (SSZipCodeLookup*)getLookupById:(NSString*)inputId {
     return [self.namedLookups objectForKey:inputId];
 }
