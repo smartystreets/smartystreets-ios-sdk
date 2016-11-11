@@ -1,5 +1,9 @@
 #import "SSStreetLookup.h"
 
+NSString *const kSSStrict = @"strict";
+NSString *const kSSRange = @"range";
+NSString *const kSSInvalid = @"invalid";
+
 @implementation SSStreetLookup
 
 - (instancetype)init {
@@ -29,7 +33,7 @@
         _maxCandidates = maxCandidates;
     else {
         NSDictionary *details = @{NSLocalizedDescriptionKey: @"Max candidates must be a positive integer."};
-        *error = [NSError errorWithDomain:NSCocoaErrorDomain code:nil userInfo:details]; //TODO: what is the error code?
+        *error = [NSError errorWithDomain:SSErrorDomain code:MaxCandidatesNotPositiveIntegerError userInfo:details]; 
     }
 }
 
@@ -46,7 +50,7 @@
     dictionary = [self addValueToDictionary:self.addressee key:@"addressee" dictionary:dictionary];
     dictionary = [self addValueToDictionary:self.urbanization key:@"urbanization" dictionary:dictionary];
     [dictionary setObject:[NSNumber numberWithInteger:self.maxCandidates] forKey:@"candidates"];
-//    dictionary = [self addValueToDictionary:self.match key:@"match" dictionary:dictionary];
+    dictionary = [self addValueToDictionary:self.matchStrategy key:@"match" dictionary:dictionary];
 
     return [NSDictionary dictionaryWithDictionary:dictionary];
 }

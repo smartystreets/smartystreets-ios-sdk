@@ -7,6 +7,9 @@ FOUNDATION_EXPORT NSString *const SSErrorDomain;
 
 typedef NS_ENUM(NSInteger, SSErrors) {
     BatchFullError,
+    ObjectNilError,
+    ObjectInvalidTypeError,
+    MaxCandidatesNotPositiveIntegerError,
     BadRequestError = 400,
     BadCredentialsError = 401,
     PaymentRequiredError = 402,

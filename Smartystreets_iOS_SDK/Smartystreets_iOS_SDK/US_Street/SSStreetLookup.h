@@ -1,6 +1,11 @@
 #import <Foundation/Foundation.h>
 #import "SSLookup.h"
 #import "SSCandidate.h"
+#import "SmartyErrors.h"
+
+extern NSString *const kSSStrict;
+extern NSString *const kSSRange;
+extern NSString *const kSSInvalid;
 
 @interface SSStreetLookup : NSObject <SSLookup>
 
@@ -16,7 +21,7 @@
 @property (nonatomic) NSString *addressee;
 @property (nonatomic) NSString *urbanization;
 @property (readonly, nonatomic) int maxCandidates;
-//@property (nonatomic) NSString *match; //TODO: do we set match?
+@property (nonatomic) NSString *matchStrategy;
 
 - (instancetype)initWithFreeformAddress:(NSString*)freeformAddress;
 - (void)addToResult:(SSCandidate*)newCandidate;

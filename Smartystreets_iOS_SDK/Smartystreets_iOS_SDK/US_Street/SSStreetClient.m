@@ -66,6 +66,8 @@
     
     if (lookup.maxCandidates != 1)
         [request setValue:[[NSNumber numberWithInt:lookup.maxCandidates] stringValue] forHTTPParameterField:@"candidates"];
+    
+    [request setValue:lookup.matchStrategy forHTTPHeaderField:@"match"];
 }
 
 - (void)assignCandidatesToLookups:(SSStreetBatch*)batch candidates:(NSArray<SSCandidate*>*)candidates {
