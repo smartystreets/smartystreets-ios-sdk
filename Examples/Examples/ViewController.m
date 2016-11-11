@@ -13,7 +13,7 @@
     [super viewDidLoad];
 
     pickerData = @[@"ZipCodeSingleLookup", @"ZipCodeMultipleLookups",
-                @"StreetSingleAddress", @"StreetMultipleAddresses"];
+                @"StreetSingleAddress", @"StreetMultipleAddresses", @"StreetLookupsWithMatchStrategy"];
     pickerName = pickerData[0];
     
     [_submitButton addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
@@ -39,6 +39,10 @@
     }
     else if ([pickerName isEqualToString:@"StreetMultipleAddresses"]) {
         SSUSStreetMultipleLookupsExample *example = [[SSUSStreetMultipleLookupsExample alloc] init];
+        result = [example run];
+    }
+    else if ([pickerName isEqualToString:@"StreetLookupsWithMatchStrategy"]) {
+        SSUSStreetLookupsWithMatchStrategyExamples *example = [[SSUSStreetLookupsWithMatchStrategyExamples alloc] init];
         result = [example run];
     }
     

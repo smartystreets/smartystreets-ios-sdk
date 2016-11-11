@@ -3,6 +3,7 @@
 #import "SSZipCodeMultipleLookupsExample.h"
 #import "SSUSStreetSingleAddressExample.h"
 #import "SSUSStreetMultipleLookupsExample.h"
+#import "SSUSStreetLookupsWithMatchStrategyExamples.h"
 
 @interface ViewController : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate>
 
