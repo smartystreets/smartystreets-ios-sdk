@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AE01B75F1DE129E700363A59 /* TestClass.m in Sources */ = {isa = PBXBuildFile; fileRef = AE01B75E1DE129E700363A59 /* TestClass.m */; };
 		AE54787A1DDA3FD4005DEB61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5478791DDA3FD4005DEB61 /* AppDelegate.swift */; };
 		AE54787C1DDA3FD4005DEB61 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE54787B1DDA3FD4005DEB61 /* ViewController.swift */; };
 		AE54787F1DDA3FD4005DEB61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE54787D1DDA3FD4005DEB61 /* Main.storyboard */; };
@@ -19,8 +18,6 @@
 
 /* Begin PBXFileReference section */
 		AE01B7571DE126C700363A59 /* Examples_Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Examples_Swift-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
-		AE01B75D1DE129E700363A59 /* TestClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestClass.h; sourceTree = "<group>"; };
-		AE01B75E1DE129E700363A59 /* TestClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestClass.m; sourceTree = "<group>"; };
 		AE5478761DDA3FD4005DEB61 /* Examples_Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Examples_Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE5478791DDA3FD4005DEB61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE54787B1DDA3FD4005DEB61 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -72,8 +69,6 @@
 				AE5478801DDA3FD4005DEB61 /* Assets.xcassets */,
 				AE5478821DDA3FD4005DEB61 /* LaunchScreen.storyboard */,
 				AE5478851DDA3FD4005DEB61 /* Info.plist */,
-				AE01B75D1DE129E700363A59 /* TestClass.h */,
-				AE01B75E1DE129E700363A59 /* TestClass.m */,
 			);
 			path = Examples_Swift;
 			sourceTree = "<group>";
@@ -150,7 +145,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE01B75F1DE129E700363A59 /* TestClass.m in Sources */,
 				AE54787C1DDA3FD4005DEB61 /* ViewController.swift in Sources */,
 				AE54787A1DDA3FD4005DEB61 /* AppDelegate.swift in Sources */,
 				AE5478921DDA5CEA005DEB61 /* SSZipCodeSingleLookupExample.swift in Sources */,

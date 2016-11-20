@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  Examples_Swift
-//
-//  Created by Oshion Niemela on 11/14/16.
-//  Copyright © 2016 SmartyStreets. All rights reserved.
-//
-
 import UIKit
 
 @UIApplicationMain
