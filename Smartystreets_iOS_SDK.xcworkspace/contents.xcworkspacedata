@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Examples_Swift/Examples_Swift.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Examples/Examples.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "container:Smartystreets_iOS_SDK/Smartystreets_iOS_SDK.xcodeproj">
    </FileRef>
 </Workspace>

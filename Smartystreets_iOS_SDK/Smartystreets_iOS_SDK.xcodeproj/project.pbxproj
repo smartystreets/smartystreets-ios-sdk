@@ -7,84 +7,84 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AE07574F1D8865FE00565B8D /* SSZipCodeClient.h in Headers */ = {isa = PBXBuildFile; fileRef = AE07574D1D8865FE00565B8D /* SSZipCodeClient.h */; };
+		AE07574F1D8865FE00565B8D /* SSZipCodeClient.h in Headers */ = {isa = PBXBuildFile; fileRef = AE07574D1D8865FE00565B8D /* SSZipCodeClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE0757501D8865FE00565B8D /* SSZipCodeClient.m in Sources */ = {isa = PBXBuildFile; fileRef = AE07574E1D8865FE00565B8D /* SSZipCodeClient.m */; };
 		AE0757521D8875E400565B8D /* SSZipCodeClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0757511D8875E400565B8D /* SSZipCodeClientTests.m */; };
 		AE0757551D88763F00565B8D /* SSRequestCapturingSender.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0757541D88763F00565B8D /* SSRequestCapturingSender.m */; };
 		AE0757581D88788E00565B8D /* SSMockSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0757571D88788E00565B8D /* SSMockSerializer.m */; };
-		AE0D45141DAC15EE00FFAA95 /* SSLookup.h in Headers */ = {isa = PBXBuildFile; fileRef = AE0D45131DAC15EE00FFAA95 /* SSLookup.h */; };
-		AE258B461D6B551200EBD18E /* SSRetrySender.h in Headers */ = {isa = PBXBuildFile; fileRef = AE258B441D6B551200EBD18E /* SSRetrySender.h */; };
+		AE0D45141DAC15EE00FFAA95 /* SSLookup.h in Headers */ = {isa = PBXBuildFile; fileRef = AE0D45131DAC15EE00FFAA95 /* SSLookup.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE258B461D6B551200EBD18E /* SSRetrySender.h in Headers */ = {isa = PBXBuildFile; fileRef = AE258B441D6B551200EBD18E /* SSRetrySender.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE258B471D6B551200EBD18E /* SSRetrySender.m in Sources */ = {isa = PBXBuildFile; fileRef = AE258B451D6B551200EBD18E /* SSRetrySender.m */; };
-		AE35B0441D87058D00C6B324 /* SSZipCodeBatch.h in Headers */ = {isa = PBXBuildFile; fileRef = AE35B0421D87058D00C6B324 /* SSZipCodeBatch.h */; };
+		AE35B0441D87058D00C6B324 /* SSZipCodeBatch.h in Headers */ = {isa = PBXBuildFile; fileRef = AE35B0421D87058D00C6B324 /* SSZipCodeBatch.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE35B0451D87058D00C6B324 /* SSZipCodeBatch.m in Sources */ = {isa = PBXBuildFile; fileRef = AE35B0431D87058D00C6B324 /* SSZipCodeBatch.m */; };
 		AE35B0471D8715E900C6B324 /* SSZipCodeBatchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE35B0461D8715E900C6B324 /* SSZipCodeBatchTests.m */; };
-		AE4177671D5CE19B003DEF9F /* SSResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = AE4177651D5CE19B003DEF9F /* SSResponse.h */; };
+		AE4177671D5CE19B003DEF9F /* SSResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = AE4177651D5CE19B003DEF9F /* SSResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE4177681D5CE19B003DEF9F /* SSResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = AE4177661D5CE19B003DEF9F /* SSResponse.m */; };
-		AE41776A1D5D1450003DEF9F /* SSCredentials.h in Headers */ = {isa = PBXBuildFile; fileRef = AE4177691D5D1450003DEF9F /* SSCredentials.h */; };
-		AE41776D1D5D1568003DEF9F /* SSSharedCredentials.h in Headers */ = {isa = PBXBuildFile; fileRef = AE41776B1D5D1568003DEF9F /* SSSharedCredentials.h */; };
+		AE41776A1D5D1450003DEF9F /* SSCredentials.h in Headers */ = {isa = PBXBuildFile; fileRef = AE4177691D5D1450003DEF9F /* SSCredentials.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE41776D1D5D1568003DEF9F /* SSSharedCredentials.h in Headers */ = {isa = PBXBuildFile; fileRef = AE41776B1D5D1568003DEF9F /* SSSharedCredentials.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE41776E1D5D1568003DEF9F /* SSSharedCredentials.m in Sources */ = {isa = PBXBuildFile; fileRef = AE41776C1D5D1568003DEF9F /* SSSharedCredentials.m */; };
 		AE4177701D5D19CF003DEF9F /* SSSharedCredentialsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE41776F1D5D19CF003DEF9F /* SSSharedCredentialsTests.m */; };
-		AE4177731D5D2244003DEF9F /* SSStaticCredentials.h in Headers */ = {isa = PBXBuildFile; fileRef = AE4177711D5D2244003DEF9F /* SSStaticCredentials.h */; };
+		AE4177731D5D2244003DEF9F /* SSStaticCredentials.h in Headers */ = {isa = PBXBuildFile; fileRef = AE4177711D5D2244003DEF9F /* SSStaticCredentials.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE4177741D5D2244003DEF9F /* SSStaticCredentials.m in Sources */ = {isa = PBXBuildFile; fileRef = AE4177721D5D2244003DEF9F /* SSStaticCredentials.m */; };
 		AE4177761D5D2954003DEF9F /* SSStaticCredentialsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE4177751D5D2954003DEF9F /* SSStaticCredentialsTests.m */; };
-		AE4179511D6CB47B00BDDB7C /* SSStatusCodeSender.h in Headers */ = {isa = PBXBuildFile; fileRef = AE41794F1D6CB47B00BDDB7C /* SSStatusCodeSender.h */; };
+		AE4179511D6CB47B00BDDB7C /* SSStatusCodeSender.h in Headers */ = {isa = PBXBuildFile; fileRef = AE41794F1D6CB47B00BDDB7C /* SSStatusCodeSender.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE4179521D6CB47B00BDDB7C /* SSStatusCodeSender.m in Sources */ = {isa = PBXBuildFile; fileRef = AE4179501D6CB47B00BDDB7C /* SSStatusCodeSender.m */; };
 		AE4179541D6CCD4000BDDB7C /* SmartyErrors.m in Sources */ = {isa = PBXBuildFile; fileRef = AE4179531D6CCD4000BDDB7C /* SmartyErrors.m */; };
 		AE4179561D6CEFB300BDDB7C /* SSStatusCodeSenderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE4179551D6CEFB300BDDB7C /* SSStatusCodeSenderTests.m */; };
 		AE4179591D6CF08700BDDB7C /* SSMockStatusCodeSender.m in Sources */ = {isa = PBXBuildFile; fileRef = AE4179581D6CF08700BDDB7C /* SSMockStatusCodeSender.m */; };
 		AE42AE5F1DB2D56E002ACA27 /* SSJsonSerializerTestsForUSStreet.m in Sources */ = {isa = PBXBuildFile; fileRef = AE42AE5E1DB2D56E002ACA27 /* SSJsonSerializerTestsForUSStreet.m */; };
 		AE42AE611DB2F2F6002ACA27 /* SSJsonSerializerNullTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE42AE601DB2F2F6002ACA27 /* SSJsonSerializerNullTests.m */; };
-		AE5638BA1D92F84E007792E5 /* SSStreetBatch.h in Headers */ = {isa = PBXBuildFile; fileRef = AE5638B81D92F84E007792E5 /* SSStreetBatch.h */; };
+		AE5638BA1D92F84E007792E5 /* SSStreetBatch.h in Headers */ = {isa = PBXBuildFile; fileRef = AE5638B81D92F84E007792E5 /* SSStreetBatch.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE5638BB1D92F84E007792E5 /* SSStreetBatch.m in Sources */ = {isa = PBXBuildFile; fileRef = AE5638B91D92F84E007792E5 /* SSStreetBatch.m */; };
 		AE5638BD1D92F86D007792E5 /* SSStreetBatchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE5638BC1D92F86D007792E5 /* SSStreetBatchTests.m */; };
-		AE5638C01D9306E1007792E5 /* SSStreetClient.h in Headers */ = {isa = PBXBuildFile; fileRef = AE5638BE1D9306E1007792E5 /* SSStreetClient.h */; };
+		AE5638C01D9306E1007792E5 /* SSStreetClient.h in Headers */ = {isa = PBXBuildFile; fileRef = AE5638BE1D9306E1007792E5 /* SSStreetClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE5638C11D9306E1007792E5 /* SSStreetClient.m in Sources */ = {isa = PBXBuildFile; fileRef = AE5638BF1D9306E1007792E5 /* SSStreetClient.m */; };
 		AE5638C31D9306F5007792E5 /* SSStreetClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE5638C21D9306F5007792E5 /* SSStreetClientTests.m */; };
 		AE6C611E1D7488710022CB66 /* SSRetrySenderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6C611D1D7488710022CB66 /* SSRetrySenderTests.m */; };
 		AE6C61211D7488CC0022CB66 /* SSMockCrashingSender.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6C61201D7488CC0022CB66 /* SSMockCrashingSender.m */; };
-		AE6C61241D74B3110022CB66 /* SSJsonSerializer.h in Headers */ = {isa = PBXBuildFile; fileRef = AE6C61221D74B3110022CB66 /* SSJsonSerializer.h */; };
+		AE6C61241D74B3110022CB66 /* SSJsonSerializer.h in Headers */ = {isa = PBXBuildFile; fileRef = AE6C61221D74B3110022CB66 /* SSJsonSerializer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE6C61251D74B3110022CB66 /* SSJsonSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6C61231D74B3110022CB66 /* SSJsonSerializer.m */; };
 		AE6C61271D74C3CB0022CB66 /* SSJsonSerializerTestsForZipCode.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6C61261D74C3CB0022CB66 /* SSJsonSerializerTestsForZipCode.m */; };
-		AE727D2D1D79E44E004BF342 /* SSZipCode.h in Headers */ = {isa = PBXBuildFile; fileRef = AE727D2B1D79E44E004BF342 /* SSZipCode.h */; };
+		AE727D2D1D79E44E004BF342 /* SSZipCode.h in Headers */ = {isa = PBXBuildFile; fileRef = AE727D2B1D79E44E004BF342 /* SSZipCode.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE727D2E1D79E44E004BF342 /* SSZipCode.m in Sources */ = {isa = PBXBuildFile; fileRef = AE727D2C1D79E44E004BF342 /* SSZipCode.m */; };
-		AE727D321D79E485004BF342 /* SSMetadata.h in Headers */ = {isa = PBXBuildFile; fileRef = AE727D301D79E485004BF342 /* SSMetadata.h */; };
+		AE727D321D79E485004BF342 /* SSMetadata.h in Headers */ = {isa = PBXBuildFile; fileRef = AE727D301D79E485004BF342 /* SSMetadata.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE727D331D79E485004BF342 /* SSMetadata.m in Sources */ = {isa = PBXBuildFile; fileRef = AE727D311D79E485004BF342 /* SSMetadata.m */; };
-		AE727D3F1D79E777004BF342 /* SSResult.h in Headers */ = {isa = PBXBuildFile; fileRef = AE727D3D1D79E777004BF342 /* SSResult.h */; };
+		AE727D3F1D79E777004BF342 /* SSResult.h in Headers */ = {isa = PBXBuildFile; fileRef = AE727D3D1D79E777004BF342 /* SSResult.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE727D401D79E777004BF342 /* SSResult.m in Sources */ = {isa = PBXBuildFile; fileRef = AE727D3E1D79E777004BF342 /* SSResult.m */; };
-		AE727D431D79E881004BF342 /* SSCity.h in Headers */ = {isa = PBXBuildFile; fileRef = AE727D411D79E881004BF342 /* SSCity.h */; };
+		AE727D431D79E881004BF342 /* SSCity.h in Headers */ = {isa = PBXBuildFile; fileRef = AE727D411D79E881004BF342 /* SSCity.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE727D441D79E881004BF342 /* SSCity.m in Sources */ = {isa = PBXBuildFile; fileRef = AE727D421D79E881004BF342 /* SSCity.m */; };
-		AE727D471D79E91C004BF342 /* SSZipCodeLookup.h in Headers */ = {isa = PBXBuildFile; fileRef = AE727D451D79E91C004BF342 /* SSZipCodeLookup.h */; };
+		AE727D471D79E91C004BF342 /* SSZipCodeLookup.h in Headers */ = {isa = PBXBuildFile; fileRef = AE727D451D79E91C004BF342 /* SSZipCodeLookup.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE727D481D79E91C004BF342 /* SSZipCodeLookup.m in Sources */ = {isa = PBXBuildFile; fileRef = AE727D461D79E91C004BF342 /* SSZipCodeLookup.m */; };
 		AE727D4A1D79EDA8004BF342 /* SSResultTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE727D491D79EDA8004BF342 /* SSResultTests.m */; };
-		AE727D4F1D79F1D9004BF342 /* SSAnalysis.h in Headers */ = {isa = PBXBuildFile; fileRef = AE727D4D1D79F1D9004BF342 /* SSAnalysis.h */; };
+		AE727D4F1D79F1D9004BF342 /* SSAnalysis.h in Headers */ = {isa = PBXBuildFile; fileRef = AE727D4D1D79F1D9004BF342 /* SSAnalysis.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE727D501D79F1D9004BF342 /* SSAnalysis.m in Sources */ = {isa = PBXBuildFile; fileRef = AE727D4E1D79F1D9004BF342 /* SSAnalysis.m */; };
-		AE727D531D79F25D004BF342 /* SSComponents.h in Headers */ = {isa = PBXBuildFile; fileRef = AE727D511D79F25D004BF342 /* SSComponents.h */; };
+		AE727D531D79F25D004BF342 /* SSComponents.h in Headers */ = {isa = PBXBuildFile; fileRef = AE727D511D79F25D004BF342 /* SSComponents.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE727D541D79F25D004BF342 /* SSComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = AE727D521D79F25D004BF342 /* SSComponents.m */; };
-		AE727D571D79F382004BF342 /* SSCandidate.h in Headers */ = {isa = PBXBuildFile; fileRef = AE727D551D79F382004BF342 /* SSCandidate.h */; };
+		AE727D571D79F382004BF342 /* SSCandidate.h in Headers */ = {isa = PBXBuildFile; fileRef = AE727D551D79F382004BF342 /* SSCandidate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE727D581D79F382004BF342 /* SSCandidate.m in Sources */ = {isa = PBXBuildFile; fileRef = AE727D561D79F382004BF342 /* SSCandidate.m */; };
-		AE727D5B1D79F4FD004BF342 /* SSStreetLookup.h in Headers */ = {isa = PBXBuildFile; fileRef = AE727D591D79F4FD004BF342 /* SSStreetLookup.h */; };
+		AE727D5B1D79F4FD004BF342 /* SSStreetLookup.h in Headers */ = {isa = PBXBuildFile; fileRef = AE727D591D79F4FD004BF342 /* SSStreetLookup.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE727D5C1D79F4FD004BF342 /* SSStreetLookup.m in Sources */ = {isa = PBXBuildFile; fileRef = AE727D5A1D79F4FD004BF342 /* SSStreetLookup.m */; };
 		AE76B5ED1D5265030080C136 /* Smartystreets_iOS_SDK.h in Headers */ = {isa = PBXBuildFile; fileRef = AE76B5EC1D5265030080C136 /* Smartystreets_iOS_SDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE76B5F41D5265030080C136 /* Smartystreets_iOS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE76B5E91D5265030080C136 /* Smartystreets_iOS_SDK.framework */; };
 		AE76B5F91D5265030080C136 /* Smartystreets_iOS_SDKTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE76B5F81D5265030080C136 /* Smartystreets_iOS_SDKTests.m */; };
-		AE76B6081D5266BF0080C136 /* SmartyErrors.h in Headers */ = {isa = PBXBuildFile; fileRef = AE76B6071D5266BF0080C136 /* SmartyErrors.h */; };
-		AE76B6141D527CF60080C136 /* SSSender.h in Headers */ = {isa = PBXBuildFile; fileRef = AE76B6131D527CF60080C136 /* SSSender.h */; };
-		AE76B6181D527E750080C136 /* SSSerializer.h in Headers */ = {isa = PBXBuildFile; fileRef = AE76B6171D527E750080C136 /* SSSerializer.h */; };
-		AE76B61B1D528B8C0080C136 /* SSRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = AE76B6191D528B8C0080C136 /* SSRequest.h */; };
+		AE76B6081D5266BF0080C136 /* SmartyErrors.h in Headers */ = {isa = PBXBuildFile; fileRef = AE76B6071D5266BF0080C136 /* SmartyErrors.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE76B6181D527E750080C136 /* SSSerializer.h in Headers */ = {isa = PBXBuildFile; fileRef = AE76B6171D527E750080C136 /* SSSerializer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE76B61B1D528B8C0080C136 /* SSRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = AE76B6191D528B8C0080C136 /* SSRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE76B61C1D528B8C0080C136 /* SSRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AE76B61A1D528B8C0080C136 /* SSRequest.m */; };
 		AE76B6261D52CDCD0080C136 /* SSRequestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE76B6251D52CDCD0080C136 /* SSRequestTests.m */; };
-		AEA471101D9EF91400C6CA36 /* SSAlternateCounties.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA4710E1D9EF91400C6CA36 /* SSAlternateCounties.h */; };
+		AEA471101D9EF91400C6CA36 /* SSAlternateCounties.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA4710E1D9EF91400C6CA36 /* SSAlternateCounties.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AEA471111D9EF91400C6CA36 /* SSAlternateCounties.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA4710F1D9EF91400C6CA36 /* SSAlternateCounties.m */; };
 		AEAF15351D8C7E3600C58F2D /* SSMockDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = AEAF15341D8C7E3600C58F2D /* SSMockDeserializer.m */; };
-		AEB519F41D90558100BF785B /* SSZipCodeClientBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = AEB519F21D90558100BF785B /* SSZipCodeClientBuilder.h */; };
+		AEB519F41D90558100BF785B /* SSZipCodeClientBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = AEB519F21D90558100BF785B /* SSZipCodeClientBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AEB519F51D90558100BF785B /* SSZipCodeClientBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB519F31D90558100BF785B /* SSZipCodeClientBuilder.m */; };
-		AEB519FC1D905EDC00BF785B /* SSHttpSender.h in Headers */ = {isa = PBXBuildFile; fileRef = AEB519FA1D905EDC00BF785B /* SSHttpSender.h */; };
+		AEB519FC1D905EDC00BF785B /* SSHttpSender.h in Headers */ = {isa = PBXBuildFile; fileRef = AEB519FA1D905EDC00BF785B /* SSHttpSender.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AEB519FD1D905EDC00BF785B /* SSHttpSender.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB519FB1D905EDC00BF785B /* SSHttpSender.m */; };
-		AEBCE8471D6228600016A4FE /* SSSigningSender.h in Headers */ = {isa = PBXBuildFile; fileRef = AEBCE8451D6228600016A4FE /* SSSigningSender.h */; };
+		AEBCE8471D6228600016A4FE /* SSSigningSender.h in Headers */ = {isa = PBXBuildFile; fileRef = AEBCE8451D6228600016A4FE /* SSSigningSender.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AEBCE8481D6228600016A4FE /* SSSigningSender.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBCE8461D6228600016A4FE /* SSSigningSender.m */; };
 		AEBCE84C1D6246150016A4FE /* SSSigningSenderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBCE84B1D6246150016A4FE /* SSSigningSenderTests.m */; };
 		AEBCE8601D6254560016A4FE /* SSMockSender.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBCE85F1D6254560016A4FE /* SSMockSender.m */; };
-		AEEF17621D95D00F0067EE21 /* SSStreetClientBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = AEEF17601D95D00F0067EE21 /* SSStreetClientBuilder.h */; };
+		AED507AE1DCD003700953E1C /* SSSender.h in Headers */ = {isa = PBXBuildFile; fileRef = AE76B6131D527CF60080C136 /* SSSender.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AEEF17621D95D00F0067EE21 /* SSStreetClientBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = AEEF17601D95D00F0067EE21 /* SSStreetClientBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AEEF17631D95D00F0067EE21 /* SSStreetClientBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = AEEF17611D95D00F0067EE21 /* SSStreetClientBuilder.m */; };
 /* End PBXBuildFile section */
 
@@ -111,7 +111,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		AE07574D1D8865FE00565B8D /* SSZipCodeClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSZipCodeClient.h; sourceTree = "<group>"; };
+		AE07574D1D8865FE00565B8D /* SSZipCodeClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSZipCodeClient.h; path = Smartystreets_iOS_SDK/US_ZipCode/SSZipCodeClient.h; sourceTree = SOURCE_ROOT; };
 		AE07574E1D8865FE00565B8D /* SSZipCodeClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSZipCodeClient.m; sourceTree = "<group>"; };
 		AE0757511D8875E400565B8D /* SSZipCodeClientTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSZipCodeClientTests.m; sourceTree = "<group>"; };
 		AE0757531D88763F00565B8D /* SSRequestCapturingSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSRequestCapturingSender.h; sourceTree = "<group>"; };
@@ -173,7 +173,7 @@
 		AE727D591D79F4FD004BF342 /* SSStreetLookup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSStreetLookup.h; sourceTree = "<group>"; };
 		AE727D5A1D79F4FD004BF342 /* SSStreetLookup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSStreetLookup.m; sourceTree = "<group>"; };
 		AE76B5E91D5265030080C136 /* Smartystreets_iOS_SDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Smartystreets_iOS_SDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AE76B5EC1D5265030080C136 /* Smartystreets_iOS_SDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Smartystreets_iOS_SDK.h; sourceTree = "<group>"; };
+		AE76B5EC1D5265030080C136 /* Smartystreets_iOS_SDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Smartystreets_iOS_SDK.h; path = Smartystreets_iOS_SDK/Smartystreets_iOS_SDK.h; sourceTree = SOURCE_ROOT; };
 		AE76B5EE1D5265030080C136 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE76B5F31D5265030080C136 /* Smartystreets_iOS_SDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Smartystreets_iOS_SDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE76B5F81D5265030080C136 /* Smartystreets_iOS_SDKTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Smartystreets_iOS_SDKTests.m; sourceTree = "<group>"; };
@@ -319,6 +319,7 @@
 				AE727D341D79E48A004BF342 /* US_Street */,
 				AE727D2F1D79E456004BF342 /* US_ZipCode */,
 				AE76B5EE1D5265030080C136 /* Info.plist */,
+				AE76B5EC1D5265030080C136 /* Smartystreets_iOS_SDK.h */,
 				AE4177691D5D1450003DEF9F /* SSCredentials.h */,
 				AEB519FA1D905EDC00BF785B /* SSHttpSender.h */,
 				AEB519FB1D905EDC00BF785B /* SSHttpSender.m */,
@@ -343,7 +344,6 @@
 				AE4179501D6CB47B00BDDB7C /* SSStatusCodeSender.m */,
 				AE76B6071D5266BF0080C136 /* SmartyErrors.h */,
 				AE4179531D6CCD4000BDDB7C /* SmartyErrors.m */,
-				AE76B5EC1D5265030080C136 /* Smartystreets_iOS_SDK.h */,
 			);
 			path = Smartystreets_iOS_SDK;
 			sourceTree = "<group>";
@@ -400,7 +400,6 @@
 				AE76B6181D527E750080C136 /* SSSerializer.h in Headers */,
 				AE4177671D5CE19B003DEF9F /* SSResponse.h in Headers */,
 				AE727D531D79F25D004BF342 /* SSComponents.h in Headers */,
-				AE76B6141D527CF60080C136 /* SSSender.h in Headers */,
 				AE727D4F1D79F1D9004BF342 /* SSAnalysis.h in Headers */,
 				AE727D431D79E881004BF342 /* SSCity.h in Headers */,
 				AEEF17621D95D00F0067EE21 /* SSStreetClientBuilder.h in Headers */,
@@ -410,9 +409,7 @@
 				AE727D2D1D79E44E004BF342 /* SSZipCode.h in Headers */,
 				AE727D571D79F382004BF342 /* SSCandidate.h in Headers */,
 				AE5638C01D9306E1007792E5 /* SSStreetClient.h in Headers */,
-				AE76B5ED1D5265030080C136 /* Smartystreets_iOS_SDK.h in Headers */,
 				AEA471101D9EF91400C6CA36 /* SSAlternateCounties.h in Headers */,
-				AE41776A1D5D1450003DEF9F /* SSCredentials.h in Headers */,
 				AE727D321D79E485004BF342 /* SSMetadata.h in Headers */,
 				AE76B61B1D528B8C0080C136 /* SSRequest.h in Headers */,
 				AE41776D1D5D1568003DEF9F /* SSSharedCredentials.h in Headers */,
@@ -424,6 +421,9 @@
 				AEB519F41D90558100BF785B /* SSZipCodeClientBuilder.h in Headers */,
 				AE727D5B1D79F4FD004BF342 /* SSStreetLookup.h in Headers */,
 				AE258B461D6B551200EBD18E /* SSRetrySender.h in Headers */,
+				AED507AE1DCD003700953E1C /* SSSender.h in Headers */,
+				AE76B5ED1D5265030080C136 /* Smartystreets_iOS_SDK.h in Headers */,
+				AE41776A1D5D1450003DEF9F /* SSCredentials.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

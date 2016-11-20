@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE02A9231DC7C62100F53A7A /* SSZipCodeMultipleLookupsExample.m in Sources */ = {isa = PBXBuildFile; fileRef = AE02A9221DC7C62100F53A7A /* SSZipCodeMultipleLookupsExample.m */; };
 		AE2178061DB37E2D00D9CF69 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AE2178051DB37E2D00D9CF69 /* main.m */; };
 		AE2178091DB37E2D00D9CF69 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AE2178081DB37E2D00D9CF69 /* AppDelegate.m */; };
 		AE21780C1DB37E2D00D9CF69 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE21780B1DB37E2D00D9CF69 /* ViewController.m */; };
@@ -14,19 +15,20 @@
 		AE2178111DB37E2D00D9CF69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE2178101DB37E2D00D9CF69 /* Assets.xcassets */; };
 		AE2178141DB37E2D00D9CF69 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE2178121DB37E2D00D9CF69 /* LaunchScreen.storyboard */; };
 		AE21781D1DB37E4200D9CF69 /* SSZipCodeSingleLookupExample.m in Sources */ = {isa = PBXBuildFile; fileRef = AE21781C1DB37E4200D9CF69 /* SSZipCodeSingleLookupExample.m */; };
-		AED6FD9D1DB3823400F6C383 /* Smartystreets_iOS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AED6FD9C1DB3823400F6C383 /* Smartystreets_iOS_SDK.framework */; };
-		AED6FD9E1DB3823F00F6C383 /* Smartystreets_iOS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AED6FD9C1DB3823400F6C383 /* Smartystreets_iOS_SDK.framework */; };
-		AED6FD9F1DB3823F00F6C383 /* Smartystreets_iOS_SDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AED6FD9C1DB3823400F6C383 /* Smartystreets_iOS_SDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		AE53A9921DCD43B500EE58A8 /* SSUSStreetMultipleLookupsExample.m in Sources */ = {isa = PBXBuildFile; fileRef = AE53A9911DCD43B500EE58A8 /* SSUSStreetMultipleLookupsExample.m */; };
+		AE879ACB1DCA6A0E0078C0B0 /* SSUSStreetSingleAddressExample.m in Sources */ = {isa = PBXBuildFile; fileRef = AE879ACA1DCA6A0E0078C0B0 /* SSUSStreetSingleAddressExample.m */; };
+		AE879ACE1DCA6F020078C0B0 /* SSMyCredentials.m in Sources */ = {isa = PBXBuildFile; fileRef = AE879ACD1DCA6F020078C0B0 /* SSMyCredentials.m */; };
+		AED0E8C81DD643BC0041201A /* SSUSStreetLookupsWithMatchStrategyExamples.m in Sources */ = {isa = PBXBuildFile; fileRef = AED0E8C71DD643BC0041201A /* SSUSStreetLookupsWithMatchStrategyExamples.m */; };
+		AED507B11DCD00FE00953E1C /* Smartystreets_iOS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AED507AF1DCD00F300953E1C /* Smartystreets_iOS_SDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		AED6FDA01DB3823F00F6C383 /* Embed Frameworks */ = {
+		AED507AD1DCCFFB200953E1C /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				AED6FD9F1DB3823F00F6C383 /* Smartystreets_iOS_SDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -34,6 +36,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AE02A9211DC7C62100F53A7A /* SSZipCodeMultipleLookupsExample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSZipCodeMultipleLookupsExample.h; sourceTree = "<group>"; };
+		AE02A9221DC7C62100F53A7A /* SSZipCodeMultipleLookupsExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSZipCodeMultipleLookupsExample.m; sourceTree = "<group>"; };
 		AE2178011DB37E2D00D9CF69 /* Examples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Examples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE2178051DB37E2D00D9CF69 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AE2178071DB37E2D00D9CF69 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -46,7 +50,15 @@
 		AE2178151DB37E2D00D9CF69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE21781B1DB37E4200D9CF69 /* SSZipCodeSingleLookupExample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSZipCodeSingleLookupExample.h; sourceTree = "<group>"; };
 		AE21781C1DB37E4200D9CF69 /* SSZipCodeSingleLookupExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSZipCodeSingleLookupExample.m; sourceTree = "<group>"; };
-		AED6FD9C1DB3823400F6C383 /* Smartystreets_iOS_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Smartystreets_iOS_SDK.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/Smartystreets_iOS_SDK-hgqhnhhppaibdnfgaptgxhhngupi/Build/Products/Debug-iphonesimulator/Smartystreets_iOS_SDK.framework"; sourceTree = "<group>"; };
+		AE53A9901DCD43B500EE58A8 /* SSUSStreetMultipleLookupsExample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSUSStreetMultipleLookupsExample.h; sourceTree = "<group>"; };
+		AE53A9911DCD43B500EE58A8 /* SSUSStreetMultipleLookupsExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSUSStreetMultipleLookupsExample.m; sourceTree = "<group>"; };
+		AE879AC91DCA6A0E0078C0B0 /* SSUSStreetSingleAddressExample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSUSStreetSingleAddressExample.h; sourceTree = "<group>"; };
+		AE879ACA1DCA6A0E0078C0B0 /* SSUSStreetSingleAddressExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSUSStreetSingleAddressExample.m; sourceTree = "<group>"; };
+		AE879ACC1DCA6F020078C0B0 /* SSMyCredentials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSMyCredentials.h; sourceTree = "<group>"; };
+		AE879ACD1DCA6F020078C0B0 /* SSMyCredentials.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSMyCredentials.m; sourceTree = "<group>"; };
+		AED0E8C61DD643BC0041201A /* SSUSStreetLookupsWithMatchStrategyExamples.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSUSStreetLookupsWithMatchStrategyExamples.h; sourceTree = "<group>"; };
+		AED0E8C71DD643BC0041201A /* SSUSStreetLookupsWithMatchStrategyExamples.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSUSStreetLookupsWithMatchStrategyExamples.m; sourceTree = "<group>"; };
+		AED507AF1DCD00F300953E1C /* Smartystreets_iOS_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Smartystreets_iOS_SDK.framework; path = "/Users/oshion/src/github.com/smartystreets/smartystreets-ios-sdk/Smartystreets_iOS_SDK/build/Debug-iphoneos/Smartystreets_iOS_SDK.framework"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,8 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AED6FD9E1DB3823F00F6C383 /* Smartystreets_iOS_SDK.framework in Frameworks */,
-				AED6FD9D1DB3823400F6C383 /* Smartystreets_iOS_SDK.framework in Frameworks */,
+				AED507B11DCD00FE00953E1C /* Smartystreets_iOS_SDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,7 +76,6 @@
 		AE2177F81DB37E2D00D9CF69 = {
 			isa = PBXGroup;
 			children = (
-				AED6FD9C1DB3823400F6C383 /* Smartystreets_iOS_SDK.framework */,
 				AE2178031DB37E2D00D9CF69 /* Examples */,
 				AE2178021DB37E2D00D9CF69 /* Products */,
 			);
@@ -82,8 +92,18 @@
 		AE2178031DB37E2D00D9CF69 /* Examples */ = {
 			isa = PBXGroup;
 			children = (
+				AE879ACC1DCA6F020078C0B0 /* SSMyCredentials.h */,
+				AE879ACD1DCA6F020078C0B0 /* SSMyCredentials.m */,
 				AE21781B1DB37E4200D9CF69 /* SSZipCodeSingleLookupExample.h */,
 				AE21781C1DB37E4200D9CF69 /* SSZipCodeSingleLookupExample.m */,
+				AE02A9211DC7C62100F53A7A /* SSZipCodeMultipleLookupsExample.h */,
+				AE02A9221DC7C62100F53A7A /* SSZipCodeMultipleLookupsExample.m */,
+				AE879AC91DCA6A0E0078C0B0 /* SSUSStreetSingleAddressExample.h */,
+				AE879ACA1DCA6A0E0078C0B0 /* SSUSStreetSingleAddressExample.m */,
+				AE53A9901DCD43B500EE58A8 /* SSUSStreetMultipleLookupsExample.h */,
+				AE53A9911DCD43B500EE58A8 /* SSUSStreetMultipleLookupsExample.m */,
+				AED0E8C61DD643BC0041201A /* SSUSStreetLookupsWithMatchStrategyExamples.h */,
+				AED0E8C71DD643BC0041201A /* SSUSStreetLookupsWithMatchStrategyExamples.m */,
 				AE2178071DB37E2D00D9CF69 /* AppDelegate.h */,
 				AE2178081DB37E2D00D9CF69 /* AppDelegate.m */,
 				AE21780A1DB37E2D00D9CF69 /* ViewController.h */,
@@ -115,7 +135,7 @@
 				AE2177FD1DB37E2D00D9CF69 /* Sources */,
 				AE2177FE1DB37E2D00D9CF69 /* Frameworks */,
 				AE2177FF1DB37E2D00D9CF69 /* Resources */,
-				AED6FDA01DB3823F00F6C383 /* Embed Frameworks */,
+				AED507AD1DCCFFB200953E1C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -176,8 +196,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE879ACB1DCA6A0E0078C0B0 /* SSUSStreetSingleAddressExample.m in Sources */,
 				AE21780C1DB37E2D00D9CF69 /* ViewController.m in Sources */,
+				AE879ACE1DCA6F020078C0B0 /* SSMyCredentials.m in Sources */,
+				AED0E8C81DD643BC0041201A /* SSUSStreetLookupsWithMatchStrategyExamples.m in Sources */,
+				AE53A9921DCD43B500EE58A8 /* SSUSStreetMultipleLookupsExample.m in Sources */,
 				AE21781D1DB37E4200D9CF69 /* SSZipCodeSingleLookupExample.m in Sources */,
+				AE02A9231DC7C62100F53A7A /* SSZipCodeMultipleLookupsExample.m in Sources */,
 				AE2178091DB37E2D00D9CF69 /* AppDelegate.m in Sources */,
 				AE2178061DB37E2D00D9CF69 /* main.m in Sources */,
 			);

@@ -1,7 +1,4 @@
 #import "SSZipCodeMultipleLookupsExample.h"
-#import <Smartystreets_iOS_SDK/SSZipCodeClientBuilder.h>
-#import <Smartystreets_iOS_SDK/SSSharedCredentials.h>
-#import "SSMyCredentials.h"
 
 @implementation SSZipCodeMultipleLookupsExample
 
