@@ -29,12 +29,12 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         var result = ""
         
         if (pickerName == "ZipCodeSingleLookup") {
-            let example = SSZipCodeSingleLookupExample()
+            let example = ZipCodeSingleLookupExample()
             result = example.run()
         }
         else if (pickerName == "ZipCodeMultipleLookups") {
-//            SSZipCodeMultipleLookupsExample *example = [[SSZipCodeMultipleLookupsExample alloc] init];
-//            result = [example run];
+            let example = ZipCodeMultipleLookupsExample()
+            result = example.run()
         }
         else if (pickerName == "StreetSingleAddress") {
 //            SSUSStreetSingleAddressExample *example = [[SSUSStreetSingleAddressExample alloc] init];
@@ -48,6 +48,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
 //            SSUSStreetLookupsWithMatchStrategyExamples *example = [[SSUSStreetLookupsWithMatchStrategyExamples alloc] init];
 //            result = [example run];
         }
+        
+        self.resultsTextView.text = result;
     }
 
     override func didReceiveMemoryWarning() {

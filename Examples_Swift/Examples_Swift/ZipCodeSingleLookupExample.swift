@@ -1,13 +1,13 @@
 import Foundation
 import Smartystreets_iOS_SDK
 
-class SSZipCodeSingleLookupExample {
+class ZipCodeSingleLookupExample {
 
     func run() -> String {
 //        let mobile = SSSharedCredentials(id: "key", hostname: "host")
 //        let client = SSZipCodeClientBuilder(signer: mobile).build()
-        let client = SSZipCodeClientBuilder(authId: "AUTH_ID", //TODO: figure out why can't send request in Swift
-                                            authToken: "AUTH_TOKEN").build()
+        let client = SSZipCodeClientBuilder(authId: MyCredentials.AuthId,
+                                            authToken: MyCredentials.AuthToken).build()
         
         let lookup = SSZipCodeLookup()
         lookup.city = "Mountain View"
@@ -16,8 +16,8 @@ class SSZipCodeSingleLookupExample {
         var error: NSError?
         client!.send(lookup, error: &error)
         
-        if (error != nil) {
-            return "Error sending request"
+        if error != nil {
+            return "Error sending request" //TODO: handle errors
         }
         
         let result: SSResult = lookup.result
@@ -34,18 +34,15 @@ class SSZipCodeSingleLookupExample {
         for city in cities! {
             output += "\nCity: " + (city as! SSCity).city
             output += "\nState: " + (city as! SSCity).state
-            output += "\nMailable City: " + ((city as! SSCity).mailableCity ? "YES" : "NO")
-            output += "\n"
+            output += "\nMailable City: " + ((city as! SSCity).mailableCity ? "YES" : "NO") + "\n"
         }
         
         for zip in zipCodes! {
             output += "\nZIP Code: " + (zip as! SSZipCode).zipCode
-            output += "\nLatitude: " + String(format:"%@", (zip as! SSZipCode).latitude)
-            output += "\nLongitude: " + String(format:"%@", (zip as! SSZipCode).longitude)
-            output += "\n"
+            output += "\nLatitude: " + String(format:"%f", (zip as! SSZipCode).latitude)
+            output += "\nLongitude: " + String(format:"%f", (zip as! SSZipCode).longitude) + "\n"
         }
         
         return output
     }
-
 }
