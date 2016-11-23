@@ -7,17 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE0587A51DE4B566000A6079 /* MyCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0587A41DE4B566000A6079 /* MyCredentials.swift */; };
 		AE54787A1DDA3FD4005DEB61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5478791DDA3FD4005DEB61 /* AppDelegate.swift */; };
 		AE54787C1DDA3FD4005DEB61 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE54787B1DDA3FD4005DEB61 /* ViewController.swift */; };
 		AE54787F1DDA3FD4005DEB61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE54787D1DDA3FD4005DEB61 /* Main.storyboard */; };
 		AE5478811DDA3FD4005DEB61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE5478801DDA3FD4005DEB61 /* Assets.xcassets */; };
 		AE5478841DDA3FD4005DEB61 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE5478821DDA3FD4005DEB61 /* LaunchScreen.storyboard */; };
-		AE5478921DDA5CEA005DEB61 /* SSZipCodeSingleLookupExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5478911DDA5CEA005DEB61 /* SSZipCodeSingleLookupExample.swift */; };
+		AE5478921DDA5CEA005DEB61 /* ZipCodeSingleLookupExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5478911DDA5CEA005DEB61 /* ZipCodeSingleLookupExample.swift */; };
+		AE824C781DE4FBF9004F684E /* ZipCodeMultipleLookupsExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE824C771DE4FBF9004F684E /* ZipCodeMultipleLookupsExample.swift */; };
+		AE824C7A1DE5135E004F684E /* USStreetSingleAddressExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE824C791DE5135E004F684E /* USStreetSingleAddressExample.swift */; };
+		AE8B346D1DE60D0900FFE97A /* USStreetMultipleLookupsExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8B346C1DE60D0900FFE97A /* USStreetMultipleLookupsExample.swift */; };
+		AE8B346F1DE6435800FFE97A /* USStreetLookupsWithMatchStrategyExamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8B346E1DE6435800FFE97A /* USStreetLookupsWithMatchStrategyExamples.swift */; };
 		AEF138EE1DE12FB100E851AE /* Smartystreets_iOS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEF138ED1DE12FB100E851AE /* Smartystreets_iOS_SDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AE01B7571DE126C700363A59 /* Examples_Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Examples_Swift-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		AE0587A41DE4B566000A6079 /* MyCredentials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCredentials.swift; sourceTree = "<group>"; };
 		AE5478761DDA3FD4005DEB61 /* Examples_Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Examples_Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE5478791DDA3FD4005DEB61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE54787B1DDA3FD4005DEB61 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -25,7 +31,11 @@
 		AE5478801DDA3FD4005DEB61 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AE5478831DDA3FD4005DEB61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AE5478851DDA3FD4005DEB61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AE5478911DDA5CEA005DEB61 /* SSZipCodeSingleLookupExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSZipCodeSingleLookupExample.swift; sourceTree = "<group>"; };
+		AE5478911DDA5CEA005DEB61 /* ZipCodeSingleLookupExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZipCodeSingleLookupExample.swift; sourceTree = "<group>"; };
+		AE824C771DE4FBF9004F684E /* ZipCodeMultipleLookupsExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZipCodeMultipleLookupsExample.swift; sourceTree = "<group>"; };
+		AE824C791DE5135E004F684E /* USStreetSingleAddressExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = USStreetSingleAddressExample.swift; sourceTree = "<group>"; };
+		AE8B346C1DE60D0900FFE97A /* USStreetMultipleLookupsExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = USStreetMultipleLookupsExample.swift; sourceTree = "<group>"; };
+		AE8B346E1DE6435800FFE97A /* USStreetLookupsWithMatchStrategyExamples.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = USStreetLookupsWithMatchStrategyExamples.swift; sourceTree = "<group>"; };
 		AEF138ED1DE12FB100E851AE /* Smartystreets_iOS_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Smartystreets_iOS_SDK.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/Smartystreets_iOS_SDK-hgqhnhhppaibdnfgaptgxhhngupi/Build/Products/Debug-iphonesimulator/Smartystreets_iOS_SDK.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -61,7 +71,12 @@
 		AE5478781DDA3FD4005DEB61 /* Examples_Swift */ = {
 			isa = PBXGroup;
 			children = (
-				AE5478911DDA5CEA005DEB61 /* SSZipCodeSingleLookupExample.swift */,
+				AE0587A41DE4B566000A6079 /* MyCredentials.swift */,
+				AE5478911DDA5CEA005DEB61 /* ZipCodeSingleLookupExample.swift */,
+				AE824C771DE4FBF9004F684E /* ZipCodeMultipleLookupsExample.swift */,
+				AE824C791DE5135E004F684E /* USStreetSingleAddressExample.swift */,
+				AE8B346C1DE60D0900FFE97A /* USStreetMultipleLookupsExample.swift */,
+				AE8B346E1DE6435800FFE97A /* USStreetLookupsWithMatchStrategyExamples.swift */,
 				AE5478791DDA3FD4005DEB61 /* AppDelegate.swift */,
 				AE54787B1DDA3FD4005DEB61 /* ViewController.swift */,
 				AE54787D1DDA3FD4005DEB61 /* Main.storyboard */,
@@ -145,9 +160,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE8B346F1DE6435800FFE97A /* USStreetLookupsWithMatchStrategyExamples.swift in Sources */,
 				AE54787C1DDA3FD4005DEB61 /* ViewController.swift in Sources */,
 				AE54787A1DDA3FD4005DEB61 /* AppDelegate.swift in Sources */,
-				AE5478921DDA5CEA005DEB61 /* SSZipCodeSingleLookupExample.swift in Sources */,
+				AE824C7A1DE5135E004F684E /* USStreetSingleAddressExample.swift in Sources */,
+				AE0587A51DE4B566000A6079 /* MyCredentials.swift in Sources */,
+				AE8B346D1DE60D0900FFE97A /* USStreetMultipleLookupsExample.swift in Sources */,
+				AE824C781DE4FBF9004F684E /* ZipCodeMultipleLookupsExample.swift in Sources */,
+				AE5478921DDA5CEA005DEB61 /* ZipCodeSingleLookupExample.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

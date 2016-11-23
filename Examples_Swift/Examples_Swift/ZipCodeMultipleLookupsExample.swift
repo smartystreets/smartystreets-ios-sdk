@@ -39,7 +39,7 @@ class ZipCodeMultipleLookupsExample {
         var lookups = batch.allLookups as [AnyObject] as! Array<SSZipCodeLookup>
         var output = String()
         
-        for i in 0...batch.count() {
+        for i in 0...batch.count() - 1 {
             let result = lookups[Int(i)].result
             output += "\nLookup " + String(format:"%i", i) + "\n"
             

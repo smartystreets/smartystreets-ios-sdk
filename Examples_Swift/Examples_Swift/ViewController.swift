@@ -37,16 +37,16 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             result = example.run()
         }
         else if (pickerName == "StreetSingleAddress") {
-//            SSUSStreetSingleAddressExample *example = [[SSUSStreetSingleAddressExample alloc] init];
-//            result = [example run];
+            let example = USStreetSingleAddressExample()
+            result = example.run()
         }
         else if (pickerName == "StreetMultipleAddresses") {
-//            SSUSStreetMultipleLookupsExample *example = [[SSUSStreetMultipleLookupsExample alloc] init];
-//            result = [example run];
+          let example = USStreetMultipleLookupsExample()
+            result = example.run()
         }
         else if (pickerName == "StreetLookupsWithMatchStrategy") {
-//            SSUSStreetLookupsWithMatchStrategyExamples *example = [[SSUSStreetLookupsWithMatchStrategyExamples alloc] init];
-//            result = [example run];
+            let example = USStreetLookupsWithMatchStrategyExamples()
+            result = example.run()
         }
         
         self.resultsTextView.text = result;
