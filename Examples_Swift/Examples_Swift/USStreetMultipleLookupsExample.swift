@@ -22,23 +22,24 @@ class USStreetMultipleLookupsExample {
         let address3 = SSStreetLookup()
         address3.street = "1 Infinite Loop"
         address3.zipCode = "95014"
-        
-        batch.add(address0, error: &error)
-        batch.add(address1, error: &error)
-        batch.add(address2, error: &error)
-        batch.add(address3, error: &error)
-        
-        if error != nil {
-//            if error?.domain == "SSmartyErrorDomain" && error?.code == BatchFullError { //TODO: handle errors
-//                print("Description: %@", error?.localizedDescription)
-//                return "Error. The batch is already full"
-//            }
-        }
 
-        client?.send(batch, error: &error)
-        
-        if error != nil {
-            return "Error sending request" //TODO: handle errors
+        do {
+            try batch.add(address0)
+            try batch.add(address1)
+            try batch.add(address2)
+            try batch.add(address3)
+            try client?.send(batch)
+        } catch let error as NSError {
+            if error.domain == "SSSmartyErrorDomain" && error.code == SSErrors.BatchFullError.rawValue {
+                print(String(format: "Description: %@", error.localizedDescription))
+                return "Error. The batch is already full"
+            }
+            else {
+                print(String(format: "Domain: %@", error.domain))
+                print(String(format: "Error Code: %i", error.code))
+                print(String(format: "Description: %@", error.localizedDescription))
+                return "Error sending request"
+            }
         }
         
         var lookups = batch.allLookups as [AnyObject] as! Array<SSStreetLookup>

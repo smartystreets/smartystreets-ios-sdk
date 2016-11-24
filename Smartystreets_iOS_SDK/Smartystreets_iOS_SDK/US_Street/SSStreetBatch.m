@@ -14,21 +14,23 @@ int const kSSStreetMaxBatchSize = 100;
     return self;
 }
 
-- (void)add:(SSStreetLookup*)newAddress error:(NSError**)error {
+- (BOOL)add:(SSStreetLookup*)newAddress error:(NSError**)error {
     if (self.allLookups.count >= kSSStreetMaxBatchSize) {
         NSString *description = [NSString stringWithFormat:@"Batch size cannot exceed %i", kSSStreetMaxBatchSize];
         NSDictionary *details = @{NSLocalizedDescriptionKey: description};
         *error = [NSError errorWithDomain:SSErrorDomain code:BatchFullError userInfo:details];
-        return;
+        return NO;
     }
     
     [self.allLookups addObject:newAddress];
     
     NSString *key = newAddress.inputId;
     if (key == nil)
-        return;
+        return YES;
     
     [self.namedLookups setObject:newAddress forKey:key];
+    
+    return YES;
 }
 
 - (void)reset {

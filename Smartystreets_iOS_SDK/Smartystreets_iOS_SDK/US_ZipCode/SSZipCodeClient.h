@@ -7,7 +7,7 @@
 @interface SSZipCodeClient : NSObject
 
 - (instancetype)initWithUrlPrefix:(NSString*)urlPrefix withSender:(id<SSSender>)sender withSerializer:(id<SSSerializer>)serializer;
-- (void)sendLookup:(SSZipCodeLookup*)lookup error:(NSError**)error;
-- (void)sendBatch:(SSZipCodeBatch*)batch error:(NSError**)error;
+- (BOOL)sendLookup:(SSZipCodeLookup*)lookup error:(NSError**)error;
+- (BOOL)sendBatch:(SSZipCodeBatch*)batch error:(NSError**)error;
 
 @end

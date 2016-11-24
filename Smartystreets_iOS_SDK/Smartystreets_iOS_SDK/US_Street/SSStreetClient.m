@@ -19,17 +19,17 @@
     return self;
 }
 
-- (void)sendLookup:(SSStreetLookup*)lookup error:(NSError**)error {
+- (BOOL)sendLookup:(SSStreetLookup*)lookup error:(NSError**)error {
     SSStreetBatch *batch = [[SSStreetBatch alloc] init];
     [batch add:lookup error:error];
-    [self sendBatch:batch error:error];
+    return [self sendBatch:batch error:error];
 }
 
-- (void)sendBatch:(SSStreetBatch*)batch error:(NSError**)error {
+- (BOOL)sendBatch:(SSStreetBatch*)batch error:(NSError**)error {
     SSRequest *request = [[SSRequest alloc] initWithUrlPrefix:self.urlPrefix];
     
     if ([batch count] == 0)
-        return;
+        return NO;
     
     [self putHeaders:batch request:request];
     
@@ -44,6 +44,11 @@
     if (candidates == nil)
         candidates = [[NSArray<SSCandidate*> alloc] init];
     [self assignCandidatesToLookups:batch candidates:candidates];
+    
+    if (error != nil) {
+        return NO;
+    }
+    return YES;
 }
 
 - (void)putHeaders:(SSStreetBatch*)batch request:(SSRequest*)request {

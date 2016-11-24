@@ -4,7 +4,7 @@ import Smartystreets_iOS_SDK
 class ZipCodeSingleLookupExample {
 
     func run() -> String {
-//        let mobile = SSSharedCredentials(id: "key", hostname: "host")
+//        let mobile = SSSharedCredentials(id: "key", hostname: "host") //TODO test with mobile credentials
 //        let client = SSZipCodeClientBuilder(signer: mobile).build()
         let client = SSZipCodeClientBuilder(authId: MyCredentials.AuthId,
                                             authToken: MyCredentials.AuthToken).build()
@@ -13,11 +13,13 @@ class ZipCodeSingleLookupExample {
         lookup.city = "Mountain View"
         lookup.state = "California"
         
-        var error: NSError?
-        client!.send(lookup, error: &error)
-        
-        if error != nil {
-            return "Error sending request" //TODO: handle errors
+        do {
+            try client?.send(lookup)
+        } catch let error as NSError {
+            print(String(format: "Domain: %@", error.domain))
+            print(String(format: "Error Code: %i", error.code))
+            print(String(format: "Description: %@", error.localizedDescription))
+            return "Error sending request"
         }
         
         let result: SSResult = lookup.result

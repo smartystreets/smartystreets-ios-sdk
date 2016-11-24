@@ -6,7 +6,7 @@
 @interface SSStreetClient : NSObject
 
 - (instancetype)initWithUrlPrefix:(NSString*)urlPrefix withSender:(id<SSSender>)sender withSerializer:(id<SSSerializer>)serializer;
-- (void)sendLookup:(SSStreetLookup*)lookup error:(NSError**)error;
-- (void)sendBatch:(SSStreetBatch*)batch error:(NSError**)error;
+- (BOOL)sendLookup:(SSStreetLookup*)lookup error:(NSError**)error;
+- (BOOL)sendBatch:(SSStreetBatch*)batch error:(NSError**)error;
 
 @end

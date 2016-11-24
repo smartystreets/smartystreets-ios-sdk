@@ -14,11 +14,13 @@ class USStreetSingleAddressExample {
         lookup.city = "Mountain View"
         lookup.state = "CA"
         
-        var error: NSError?
-        client?.send(lookup, error: &error)
-        
-        if (error != nil) {
-            return "Error sending request" //TODO: handle errors
+        do {
+            try client?.send(lookup)
+        } catch let error as NSError {
+            print(String(format: "Domain: %@", error.domain))
+            print(String(format: "Error Code: %i", error.code))
+            print(String(format: "Description: %@", error.localizedDescription))
+            return "Error sending request"
         }
         
         let results = lookup.result

@@ -11,7 +11,7 @@ extern int const kSSStreetMaxBatchSize;
 @property (nonatomic) Boolean standardizeOnly;
 @property (nonatomic) Boolean includeInvalid;
 
-- (void)add:(SSStreetLookup*)newAddress error:(NSError**)error;
+- (BOOL)add:(SSStreetLookup*)newAddress error:(NSError**)error;
 - (void)reset;
 - (void)removeAllObjects;
 - (int)count;

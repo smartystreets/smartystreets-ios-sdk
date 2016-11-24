@@ -12,21 +12,23 @@ int const kSSZipCodeMaxBatchSize = 100;
     return self;
 }
 
-- (void)add:(SSZipCodeLookup*)lookup error:(NSError**)error {
+- (BOOL)add:(SSZipCodeLookup*)lookup error:(NSError**)error {
     if ([self.allLookups count] >= kSSZipCodeMaxBatchSize) {
         NSString *description = [NSString stringWithFormat:@"Batch size cannot exceed %i", kSSZipCodeMaxBatchSize];
         NSDictionary *details = @{NSLocalizedDescriptionKey: description};
         *error = [NSError errorWithDomain:SSErrorDomain code:BatchFullError userInfo:details];
-        return;
+        return NO;
     }
     
     [self.allLookups addObject:lookup];
     
     NSString *key = lookup.inputId;
     if (key == nil)
-        return;
+        return YES;
     
     [self.namedLookups setObject:lookup forKey:key];
+    
+    return YES;
 }
 
 - (void)removeAllObjects {

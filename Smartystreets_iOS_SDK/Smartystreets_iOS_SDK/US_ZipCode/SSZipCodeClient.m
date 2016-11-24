@@ -19,31 +19,42 @@
     return self;
 }
 
-- (void)sendLookup:(SSZipCodeLookup*)lookup error:(NSError**)error {
+- (BOOL)sendLookup:(SSZipCodeLookup*)lookup error:(NSError**)error {
     SSZipCodeBatch *batch = [[SSZipCodeBatch alloc] init];
     [batch add:lookup error:error];
-    [self sendBatch:batch error:error];
+    return [self sendBatch:batch error:error];
 }
 
-- (void)sendBatch:(SSZipCodeBatch*)batch error:(NSError**)error {
+- (BOOL)sendBatch:(SSZipCodeBatch*)batch error:(NSError**)error {
     SSRequest *request = [[SSRequest alloc] initWithUrlPrefix:self.urlPrefix];
     
     if ([batch count] == 0)
-        return;
+        return NO;
     
     if ([batch count] == 1)
         [self populateQueryString:[batch getLookupAtIndex:0] withRequest:request];
     else
         [request setPayload:[self.serializer serialize:batch.allLookups withClassType:[SSZipCodeLookup class] error:error]];
-        
+    
     SSResponse *response = [self.sender sendRequest:request error:error];
     
+    if (error != nil) //TODO: need this or if there are bad credentials the error will get set from 401 (BadCredentials) error code to error code 1 (ObjectNilError)
+        return NO;
+    
     NSArray *resultsDict = [self.serializer deserialize:response.payload withClassType:[SSResult class] error:error];
+    
+    if (error != nil) //TODO: how else should we handle errors. Should we just log an error to the console, and if the error gets set to anything else it will just return the final error to the user?, or should we exit the method right away?
+        return NO;
     
     if (resultsDict == nil)
         resultsDict = [NSArray<SSResult*> new];
 
     [self assignResultsToLookups:batch result:resultsDict];
+    
+    if (error != nil)
+        return NO;
+    
+    return YES;
 }
 
 - (void)populateQueryString:(SSZipCodeLookup*)lookup withRequest:(SSRequest*)request {

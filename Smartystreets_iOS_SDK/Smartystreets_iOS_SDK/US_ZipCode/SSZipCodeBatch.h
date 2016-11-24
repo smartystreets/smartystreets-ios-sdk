@@ -9,7 +9,7 @@ extern int const kSSZipCodeMaxBatchSize;
 @property (readonly ,nonatomic) NSMutableDictionary<NSString*, SSZipCodeLookup*> *namedLookups;
 @property (readonly, nonatomic) NSMutableArray<SSZipCodeLookup*> *allLookups;
 
-- (void)add:(SSZipCodeLookup*)lookup error:(NSError**)error;
+- (BOOL)add:(SSZipCodeLookup*)lookup error:(NSError**)error;
 - (void)removeAllObjects;
 - (int)count;
 - (SSZipCodeLookup*)getLookupById:(NSString*)inputId;

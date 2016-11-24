@@ -18,22 +18,22 @@ class ZipCodeMultipleLookupsExample {
         
         let lookup3 = SSZipCodeLookup(city: "cupertino", state: "CA", zipcode: "95014")
         
-        var error: NSError?
-        batch.add(lookup1, error: &error)
-        batch.add(lookup2, error: &error)
-        batch.add(lookup3, error: &error)
-        
-        if error != nil {
-//            if error?.domain == "SSmartyErrorDomain" && error?.code == BatchFullError { //TODO: handle errors
-//                print("Description: %@", error?.localizedDescription)
-//                return "Error. The batch is already full"
-//            }
-        }
-        
-        client?.send(batch, error: &error)
-        
-        if error != nil {
-            return "Error sending request" //TODO: handle errors
+        do {
+            try batch.add(lookup1)
+            try batch.add(lookup2)
+            try batch.add(lookup3)
+            try client?.send(batch)
+        } catch let error as NSError {
+            if error.domain == "SSSmartyErrorDomain" && error.code == SSErrors.BatchFullError.rawValue {
+                print(String(format: "Description: %@", error.localizedDescription))
+                return "Error. The batch is already full"
+            }
+            else {
+                print(String(format: "Domain: %@", error.domain))
+                print(String(format: "Error Code: %i", error.code))
+                print(String(format: "Description: %@", error.localizedDescription))
+                return "Error sending request"
+            }
         }
         
         var lookups = batch.allLookups as [AnyObject] as! Array<SSZipCodeLookup>

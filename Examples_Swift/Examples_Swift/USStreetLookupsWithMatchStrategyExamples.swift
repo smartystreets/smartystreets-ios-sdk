@@ -7,7 +7,6 @@ class USStreetLookupsWithMatchStrategyExamples {
                                             authToken: MyCredentials.AuthToken).build()
         
         let batch = SSStreetBatch()
-        var error: NSError?
         
         let addressWithStrictStrategy = SSStreetLookup()
         addressWithStrictStrategy.street = "691 W 1150 S"
@@ -27,21 +26,22 @@ class USStreetLookupsWithMatchStrategyExamples {
         addressWithInvalidStrategy.state = "utah"
         addressWithInvalidStrategy.matchStrategy = kSSInvalid
         
-        batch.add(addressWithStrictStrategy, error: &error)
-        batch.add(addressWithRangeStrategy, error: &error)
-        batch.add(addressWithInvalidStrategy, error: &error)
-        
-        if error != nil {
-            //            if error?.domain == "SSmartyErrorDomain" && error?.code == BatchFullError { //TODO: handle errors
-            //                print("Description: %@", error?.localizedDescription)
-            //                return "Error. The batch is already full"
-            //            }
-        }
-        
-        client?.send(batch, error: &error)
-        
-        if error != nil {
-            return "Error sending request" //TODO: handle errors
+        do {
+            try batch.add(addressWithStrictStrategy)
+            try batch.add(addressWithRangeStrategy)
+            try batch.add(addressWithInvalidStrategy)
+            try client?.send(batch)
+        } catch let error as NSError {
+            if error.domain == "SSSmartyErrorDomain" && error.code == SSErrors.BatchFullError.rawValue {
+                print(String(format: "Description: %@", error.localizedDescription))
+                return "Error. The batch is already full"
+            }
+            else {
+                print(String(format: "Domain: %@", error.domain))
+                print(String(format: "Error Code: %i", error.code))
+                print(String(format: "Description: %@", error.localizedDescription))
+                return "Error sending request"
+            }
         }
         
         var lookups = batch.allLookups as [AnyObject] as! Array<SSStreetLookup>
