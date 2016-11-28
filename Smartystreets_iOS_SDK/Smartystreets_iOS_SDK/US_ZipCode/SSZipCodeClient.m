@@ -38,12 +38,12 @@
     
     SSResponse *response = [self.sender sendRequest:request error:error];
     
-    if (error != nil) //TODO: need this or if there are bad credentials the error will get set from 401 (BadCredentials) error code to error code 1 (ObjectNilError)
+    if (*error != nil)
         return NO;
     
     NSArray *resultsDict = [self.serializer deserialize:response.payload withClassType:[SSResult class] error:error];
     
-    if (error != nil) //TODO: how else should we handle errors. Should we just log an error to the console, and if the error gets set to anything else it will just return the final error to the user?, or should we exit the method right away?
+    if (*error != nil)
         return NO;
     
     if (resultsDict == nil)
@@ -51,7 +51,7 @@
 
     [self assignResultsToLookups:batch result:resultsDict];
     
-    if (error != nil)
+    if (*error != nil)
         return NO;
     
     return YES;

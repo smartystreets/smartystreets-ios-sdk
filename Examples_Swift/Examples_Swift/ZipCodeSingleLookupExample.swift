@@ -4,10 +4,10 @@ import Smartystreets_iOS_SDK
 class ZipCodeSingleLookupExample {
 
     func run() -> String {
-//        let mobile = SSSharedCredentials(id: "key", hostname: "host") //TODO test with mobile credentials
-//        let client = SSZipCodeClientBuilder(signer: mobile).build()
-        let client = SSZipCodeClientBuilder(authId: MyCredentials.AuthId,
-                                            authToken: MyCredentials.AuthToken).build()
+        let mobile = SSSharedCredentials(id: MyCredentials.SmartyWebsiteKey, hostname: MyCredentials.Host)
+        let client = SSZipCodeClientBuilder(signer: mobile).build()
+//        let client = SSZipCodeClientBuilder(authId: MyCredentials.AuthId,
+//                                            authToken: MyCredentials.AuthToken).build()
         
         let lookup = SSZipCodeLookup()
         lookup.city = "Mountain View"

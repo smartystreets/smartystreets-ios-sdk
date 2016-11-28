@@ -4,10 +4,10 @@ import Smartystreets_iOS_SDK
 class USStreetSingleAddressExample {
     
     func run() -> String {
-        //        let mobile = SSSharedCredentials(id: "key", hostname: "host")
-        //        let client = SSZipCodeClientBuilder(signer: mobile).build()
-        let client = SSStreetClientBuilder(authId: MyCredentials.AuthId,
-                                            authToken: MyCredentials.AuthToken).build()
+        let mobile = SSSharedCredentials(id: MyCredentials.SmartyWebsiteKey, hostname: MyCredentials.Host)
+        let client = SSStreetClientBuilder(signer: mobile).build()
+//        let client = SSStreetClientBuilder(authId: MyCredentials.AuthId,
+//                                            authToken: MyCredentials.AuthToken).build()
         
         let lookup = SSStreetLookup()
         lookup.street = "1600 Amphitheatre Pkwy"
