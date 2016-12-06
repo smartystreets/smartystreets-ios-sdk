@@ -111,7 +111,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		AE07574D1D8865FE00565B8D /* SSZipCodeClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSZipCodeClient.h; path = Smartystreets_iOS_SDK/US_ZipCode/SSZipCodeClient.h; sourceTree = SOURCE_ROOT; };
+		AE07574D1D8865FE00565B8D /* SSZipCodeClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSZipCodeClient.h; sourceTree = "<group>"; };
 		AE07574E1D8865FE00565B8D /* SSZipCodeClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSZipCodeClient.m; sourceTree = "<group>"; };
 		AE0757511D8875E400565B8D /* SSZipCodeClientTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSZipCodeClientTests.m; sourceTree = "<group>"; };
 		AE0757531D88763F00565B8D /* SSRequestCapturingSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSRequestCapturingSender.h; sourceTree = "<group>"; };
@@ -173,7 +173,7 @@
 		AE727D591D79F4FD004BF342 /* SSStreetLookup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSStreetLookup.h; sourceTree = "<group>"; };
 		AE727D5A1D79F4FD004BF342 /* SSStreetLookup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSStreetLookup.m; sourceTree = "<group>"; };
 		AE76B5E91D5265030080C136 /* Smartystreets_iOS_SDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Smartystreets_iOS_SDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AE76B5EC1D5265030080C136 /* Smartystreets_iOS_SDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Smartystreets_iOS_SDK.h; path = Smartystreets_iOS_SDK/Smartystreets_iOS_SDK.h; sourceTree = SOURCE_ROOT; };
+		AE76B5EC1D5265030080C136 /* Smartystreets_iOS_SDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Smartystreets_iOS_SDK.h; sourceTree = "<group>"; };
 		AE76B5EE1D5265030080C136 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE76B5F31D5265030080C136 /* Smartystreets_iOS_SDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Smartystreets_iOS_SDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE76B5F81D5265030080C136 /* Smartystreets_iOS_SDKTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Smartystreets_iOS_SDKTests.m; sourceTree = "<group>"; };
@@ -299,8 +299,8 @@
 			isa = PBXGroup;
 			children = (
 				AE76B5EA1D5265030080C136 /* Products */,
-				AE76B5EB1D5265030080C136 /* Smartystreets_iOS_SDK */,
-				AE76B5F71D5265030080C136 /* Smartystreets_iOS_SDKTests */,
+				AE76B5EB1D5265030080C136 /* Sources */,
+				AE76B5F71D5265030080C136 /* Tests */,
 			);
 			sourceTree = "<group>";
 		};
@@ -313,13 +313,12 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		AE76B5EB1D5265030080C136 /* Smartystreets_iOS_SDK */ = {
+		AE76B5EB1D5265030080C136 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 				AE727D341D79E48A004BF342 /* US_Street */,
 				AE727D2F1D79E456004BF342 /* US_ZipCode */,
 				AE76B5EE1D5265030080C136 /* Info.plist */,
-				AE76B5EC1D5265030080C136 /* Smartystreets_iOS_SDK.h */,
 				AE4177691D5D1450003DEF9F /* SSCredentials.h */,
 				AEB519FA1D905EDC00BF785B /* SSHttpSender.h */,
 				AEB519FB1D905EDC00BF785B /* SSHttpSender.m */,
@@ -344,11 +343,12 @@
 				AE4179501D6CB47B00BDDB7C /* SSStatusCodeSender.m */,
 				AE76B6071D5266BF0080C136 /* SmartyErrors.h */,
 				AE4179531D6CCD4000BDDB7C /* SmartyErrors.m */,
+				AE76B5EC1D5265030080C136 /* Smartystreets_iOS_SDK.h */,
 			);
-			path = Smartystreets_iOS_SDK;
+			path = Sources;
 			sourceTree = "<group>";
 		};
-		AE76B5F71D5265030080C136 /* Smartystreets_iOS_SDKTests */ = {
+		AE76B5F71D5265030080C136 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
 				AEBCE8611D6255990016A4FE /* Mocks */,
@@ -364,7 +364,7 @@
 				AE4179551D6CEFB300BDDB7C /* SSStatusCodeSenderTests.m */,
 				AE76B5F81D5265030080C136 /* Smartystreets_iOS_SDKTests.m */,
 			);
-			path = Smartystreets_iOS_SDKTests;
+			path = Tests;
 			sourceTree = "<group>";
 		};
 		AEBCE8611D6255990016A4FE /* Mocks */ = {
@@ -698,7 +698,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = Smartystreets_iOS_SDK/Info.plist;
+				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.smartystreets.api.Smartystreets-iOS-SDK";
@@ -719,7 +719,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = Smartystreets_iOS_SDK/Info.plist;
+				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.smartystreets.api.Smartystreets-iOS-SDK";
@@ -731,7 +731,7 @@
 		AE76B6011D5265030080C136 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = Smartystreets_iOS_SDKTests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.smartystreets.api.Smartystreets-iOS-SDKTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -741,7 +741,7 @@
 		AE76B6021D5265030080C136 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = Smartystreets_iOS_SDKTests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.smartystreets.api.Smartystreets-iOS-SDKTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
