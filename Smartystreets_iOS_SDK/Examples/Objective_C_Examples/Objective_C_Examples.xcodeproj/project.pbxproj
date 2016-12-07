@@ -20,6 +20,8 @@
 		AE879ACE1DCA6F020078C0B0 /* SSMyCredentials.m in Sources */ = {isa = PBXBuildFile; fileRef = AE879ACD1DCA6F020078C0B0 /* SSMyCredentials.m */; };
 		AED0E8C81DD643BC0041201A /* SSUSStreetLookupsWithMatchStrategyExamples.m in Sources */ = {isa = PBXBuildFile; fileRef = AED0E8C71DD643BC0041201A /* SSUSStreetLookupsWithMatchStrategyExamples.m */; };
 		AEF3744A1DF890AE00DB3738 /* Smartystreets_iOS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEF374491DF890AE00DB3738 /* Smartystreets_iOS_SDK.framework */; };
+		AEF374581DF8952600DB3738 /* Smartystreets_iOS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEF374571DF8952600DB3738 /* Smartystreets_iOS_SDK.framework */; };
+		AEF374591DF8952600DB3738 /* Smartystreets_iOS_SDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AEF374571DF8952600DB3738 /* Smartystreets_iOS_SDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,6 +31,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				AEF374591DF8952600DB3738 /* Smartystreets_iOS_SDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -59,6 +62,7 @@
 		AED0E8C61DD643BC0041201A /* SSUSStreetLookupsWithMatchStrategyExamples.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSUSStreetLookupsWithMatchStrategyExamples.h; sourceTree = "<group>"; };
 		AED0E8C71DD643BC0041201A /* SSUSStreetLookupsWithMatchStrategyExamples.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSUSStreetLookupsWithMatchStrategyExamples.m; sourceTree = "<group>"; };
 		AEF374491DF890AE00DB3738 /* Smartystreets_iOS_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Smartystreets_iOS_SDK.framework; path = "../../build/Debug-iphoneos/Smartystreets_iOS_SDK.framework"; sourceTree = "<group>"; };
+		AEF374571DF8952600DB3738 /* Smartystreets_iOS_SDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Smartystreets_iOS_SDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEF374581DF8952600DB3738 /* Smartystreets_iOS_SDK.framework in Frameworks */,
 				AEF3744A1DF890AE00DB3738 /* Smartystreets_iOS_SDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -76,6 +81,7 @@
 		AE2177F81DB37E2D00D9CF69 = {
 			isa = PBXGroup;
 			children = (
+				AEF374571DF8952600DB3738 /* Smartystreets_iOS_SDK.framework */,
 				AE6860011DF23FEC00B243B7 /* Frameworks */,
 				AE2178021DB37E2D00D9CF69 /* Products */,
 				AE2178031DB37E2D00D9CF69 /* Sources */,
