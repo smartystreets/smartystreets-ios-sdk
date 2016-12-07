@@ -79,6 +79,7 @@
 		AEB519F51D90558100BF785B /* SSZipCodeClientBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB519F31D90558100BF785B /* SSZipCodeClientBuilder.m */; };
 		AEB519FC1D905EDC00BF785B /* SSHttpSender.h in Headers */ = {isa = PBXBuildFile; fileRef = AEB519FA1D905EDC00BF785B /* SSHttpSender.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AEB519FD1D905EDC00BF785B /* SSHttpSender.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB519FB1D905EDC00BF785B /* SSHttpSender.m */; };
+		AEB760BD1DF6AFA3007D59A6 /* Smartystreets_iOS_SDK.podspec in Resources */ = {isa = PBXBuildFile; fileRef = AEB760BC1DF6AFA3007D59A6 /* Smartystreets_iOS_SDK.podspec */; };
 		AEBCE8471D6228600016A4FE /* SSSigningSender.h in Headers */ = {isa = PBXBuildFile; fileRef = AEBCE8451D6228600016A4FE /* SSSigningSender.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AEBCE8481D6228600016A4FE /* SSSigningSender.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBCE8461D6228600016A4FE /* SSSigningSender.m */; };
 		AEBCE84C1D6246150016A4FE /* SSSigningSenderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBCE84B1D6246150016A4FE /* SSSigningSenderTests.m */; };
@@ -86,6 +87,8 @@
 		AED507AE1DCD003700953E1C /* SSSender.h in Headers */ = {isa = PBXBuildFile; fileRef = AE76B6131D527CF60080C136 /* SSSender.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AEEF17621D95D00F0067EE21 /* SSStreetClientBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = AEEF17601D95D00F0067EE21 /* SSStreetClientBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AEEF17631D95D00F0067EE21 /* SSStreetClientBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = AEEF17611D95D00F0067EE21 /* SSStreetClientBuilder.m */; };
+		AEF374251DF88BE300DB3738 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = AEF374231DF88BE300DB3738 /* LICENSE.txt */; };
+		AEF374261DF88BE300DB3738 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = AEF374241DF88BE300DB3738 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +98,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = AE76B5E81D5265030080C136;
 			remoteInfo = Smartystreets_iOS_SDK;
+		};
+		AEF3743F1DF88FE200DB3738 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEF3743B1DF88FE200DB3738 /* Swift_Examples.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AE5478761DDA3FD4005DEB61;
+			remoteInfo = Swift_Examples;
+		};
+		AEF374451DF88FEE00DB3738 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEF374411DF88FEE00DB3738 /* Objective_C_Examples.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AE2178011DB37E2D00D9CF69;
+			remoteInfo = Objective_C_Examples;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -192,6 +209,7 @@
 		AEB519F31D90558100BF785B /* SSZipCodeClientBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSZipCodeClientBuilder.m; sourceTree = "<group>"; };
 		AEB519FA1D905EDC00BF785B /* SSHttpSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSHttpSender.h; sourceTree = "<group>"; };
 		AEB519FB1D905EDC00BF785B /* SSHttpSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSHttpSender.m; sourceTree = "<group>"; };
+		AEB760BC1DF6AFA3007D59A6 /* Smartystreets_iOS_SDK.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Smartystreets_iOS_SDK.podspec; sourceTree = "<group>"; };
 		AEBCE8451D6228600016A4FE /* SSSigningSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSSigningSender.h; sourceTree = "<group>"; };
 		AEBCE8461D6228600016A4FE /* SSSigningSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSSigningSender.m; sourceTree = "<group>"; };
 		AEBCE84B1D6246150016A4FE /* SSSigningSenderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSSigningSenderTests.m; sourceTree = "<group>"; };
@@ -199,6 +217,10 @@
 		AEBCE85F1D6254560016A4FE /* SSMockSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSMockSender.m; sourceTree = "<group>"; };
 		AEEF17601D95D00F0067EE21 /* SSStreetClientBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSStreetClientBuilder.h; sourceTree = "<group>"; };
 		AEEF17611D95D00F0067EE21 /* SSStreetClientBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSStreetClientBuilder.m; sourceTree = "<group>"; };
+		AEF374231DF88BE300DB3738 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		AEF374241DF88BE300DB3738 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		AEF3743B1DF88FE200DB3738 /* Swift_Examples.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Swift_Examples.xcodeproj; path = Swift_Examples/Swift_Examples.xcodeproj; sourceTree = "<group>"; };
+		AEF374411DF88FEE00DB3738 /* Objective_C_Examples.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Objective_C_Examples.xcodeproj; path = Objective_C_Examples/Objective_C_Examples.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -298,6 +320,8 @@
 		AE76B5DF1D5265030080C136 = {
 			isa = PBXGroup;
 			children = (
+				AEF374271DF88C9200DB3738 /* Examples */,
+				AEF374221DF88BD400DB3738 /* Metadata */,
 				AE76B5EA1D5265030080C136 /* Products */,
 				AE76B5EB1D5265030080C136 /* Sources */,
 				AE76B5F71D5265030080C136 /* Tests */,
@@ -384,6 +408,41 @@
 				AE0757541D88763F00565B8D /* SSRequestCapturingSender.m */,
 			);
 			path = Mocks;
+			sourceTree = "<group>";
+		};
+		AEF374221DF88BD400DB3738 /* Metadata */ = {
+			isa = PBXGroup;
+			children = (
+				AEF374231DF88BE300DB3738 /* LICENSE.txt */,
+				AEF374241DF88BE300DB3738 /* README.md */,
+				AEB760BC1DF6AFA3007D59A6 /* Smartystreets_iOS_SDK.podspec */,
+			);
+			path = Metadata;
+			sourceTree = "<group>";
+		};
+		AEF374271DF88C9200DB3738 /* Examples */ = {
+			isa = PBXGroup;
+			children = (
+				AEF374411DF88FEE00DB3738 /* Objective_C_Examples.xcodeproj */,
+				AEF3743B1DF88FE200DB3738 /* Swift_Examples.xcodeproj */,
+			);
+			path = Examples;
+			sourceTree = "<group>";
+		};
+		AEF3743C1DF88FE200DB3738 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AEF374401DF88FE200DB3738 /* Swift_Examples.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AEF374421DF88FEE00DB3738 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AEF374461DF88FEE00DB3738 /* Objective_C_Examples.app */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -494,6 +553,16 @@
 			mainGroup = AE76B5DF1D5265030080C136;
 			productRefGroup = AE76B5EA1D5265030080C136 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = AEF374421DF88FEE00DB3738 /* Products */;
+					ProjectRef = AEF374411DF88FEE00DB3738 /* Objective_C_Examples.xcodeproj */;
+				},
+				{
+					ProductGroup = AEF3743C1DF88FE200DB3738 /* Products */;
+					ProjectRef = AEF3743B1DF88FE200DB3738 /* Swift_Examples.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				AE76B5E81D5265030080C136 /* Smartystreets_iOS_SDK */,
@@ -502,11 +571,30 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		AEF374401DF88FE200DB3738 /* Swift_Examples.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = Swift_Examples.app;
+			remoteRef = AEF3743F1DF88FE200DB3738 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AEF374461DF88FEE00DB3738 /* Objective_C_Examples.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = Objective_C_Examples.app;
+			remoteRef = AEF374451DF88FEE00DB3738 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		AE76B5E71D5265030080C136 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEF374251DF88BE300DB3738 /* LICENSE.txt in Resources */,
+				AEB760BD1DF6AFA3007D59A6 /* Smartystreets_iOS_SDK.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -539,6 +627,7 @@
 				AE258B471D6B551200EBD18E /* SSRetrySender.m in Sources */,
 				AE35B0451D87058D00C6B324 /* SSZipCodeBatch.m in Sources */,
 				AE76B61C1D528B8C0080C136 /* SSRequest.m in Sources */,
+				AEF374261DF88BE300DB3738 /* README.md in Sources */,
 				AE5638C11D9306E1007792E5 /* SSStreetClient.m in Sources */,
 				AEA471111D9EF91400C6CA36 /* SSAlternateCounties.m in Sources */,
 				AE5638BB1D92F84E007792E5 /* SSStreetBatch.m in Sources */,
@@ -700,6 +789,7 @@
 				);
 				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.smartystreets.api.Smartystreets-iOS-SDK";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -721,6 +811,7 @@
 				);
 				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.smartystreets.api.Smartystreets-iOS-SDK";
 				PRODUCT_NAME = "$(TARGET_NAME)";
