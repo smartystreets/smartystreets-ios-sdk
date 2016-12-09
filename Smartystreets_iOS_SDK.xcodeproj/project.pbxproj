@@ -6,6 +6,20 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		AE5DF4081DFB70A00060EF28 /* Smartystreets_iOS_SDK_Universal */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = AE5DF4091DFB70A00060EF28 /* Build configuration list for PBXAggregateTarget "Smartystreets_iOS_SDK_Universal" */;
+			buildPhases = (
+				AE5DF40C1DFB70BE0060EF28 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = Smartystreets_iOS_SDK_Universal;
+			productName = Smartystreets_iOS_SDK_Universal;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		AE07574F1D8865FE00565B8D /* SSZipCodeClient.h in Headers */ = {isa = PBXBuildFile; fileRef = AE07574D1D8865FE00565B8D /* SSZipCodeClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE0757501D8865FE00565B8D /* SSZipCodeClient.m in Sources */ = {isa = PBXBuildFile; fileRef = AE07574E1D8865FE00565B8D /* SSZipCodeClient.m */; };
@@ -89,6 +103,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		AE5DF41C1DFB77A60060EF28 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE5DF4181DFB77A60060EF28 /* Objective_C_Examples.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AE2178011DB37E2D00D9CF69;
+			remoteInfo = Objective_C_Examples;
+		};
+		AE5DF4221DFB77B50060EF28 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE5DF41E1DFB77B50060EF28 /* Swift_Examples.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AE5478761DDA3FD4005DEB61;
+			remoteInfo = Swift_Examples;
+		};
 		AE76B5F51D5265030080C136 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AE76B5E01D5265030080C136 /* Project object */;
@@ -141,7 +169,6 @@
 		AE4179581D6CF08700BDDB7C /* SSMockStatusCodeSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSMockStatusCodeSender.m; sourceTree = "<group>"; };
 		AE42AE5E1DB2D56E002ACA27 /* SSJsonSerializerTestsForUSStreet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSJsonSerializerTestsForUSStreet.m; sourceTree = "<group>"; };
 		AE42AE601DB2F2F6002ACA27 /* SSJsonSerializerNullTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSJsonSerializerNullTests.m; sourceTree = "<group>"; };
-		AE4C621B1DFB646D008B3786 /* LICENSE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		AE4C621C1DFB646D008B3786 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		AE4C621D1DFB646D008B3786 /* Smartystreets_iOS_SDK.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = Smartystreets_iOS_SDK.podspec; sourceTree = "<group>"; };
 		AE5638B81D92F84E007792E5 /* SSStreetBatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSStreetBatch.h; sourceTree = "<group>"; };
@@ -150,6 +177,9 @@
 		AE5638BE1D9306E1007792E5 /* SSStreetClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSStreetClient.h; sourceTree = "<group>"; };
 		AE5638BF1D9306E1007792E5 /* SSStreetClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSStreetClient.m; sourceTree = "<group>"; };
 		AE5638C21D9306F5007792E5 /* SSStreetClientTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSStreetClientTests.m; sourceTree = "<group>"; };
+		AE5DF4141DFB77640060EF28 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		AE5DF4181DFB77A60060EF28 /* Objective_C_Examples.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Objective_C_Examples.xcodeproj; path = Objective_C_Examples/Objective_C_Examples.xcodeproj; sourceTree = "<group>"; };
+		AE5DF41E1DFB77B50060EF28 /* Swift_Examples.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Swift_Examples.xcodeproj; path = Swift_Examples/Swift_Examples.xcodeproj; sourceTree = "<group>"; };
 		AE6C611D1D7488710022CB66 /* SSRetrySenderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSRetrySenderTests.m; sourceTree = "<group>"; };
 		AE6C611F1D7488CC0022CB66 /* SSMockCrashingSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSMockCrashingSender.h; sourceTree = "<group>"; };
 		AE6C61201D7488CC0022CB66 /* SSMockCrashingSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSMockCrashingSender.m; sourceTree = "<group>"; };
@@ -233,6 +263,41 @@
 			path = SSJsonSerializerTests;
 			sourceTree = "<group>";
 		};
+		AE5DF4111DFB76760060EF28 /* Examples */ = {
+			isa = PBXGroup;
+			children = (
+				AE5DF4181DFB77A60060EF28 /* Objective_C_Examples.xcodeproj */,
+				AE5DF41E1DFB77B50060EF28 /* Swift_Examples.xcodeproj */,
+			);
+			path = Examples;
+			sourceTree = "<group>";
+		};
+		AE5DF4191DFB77A60060EF28 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AE5DF41D1DFB77A60060EF28 /* Objective_C_Examples.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AE5DF41F1DFB77B50060EF28 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AE5DF4231DFB77B50060EF28 /* Swift_Examples.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AE5DF4241DFB780E0060EF28 /* Metadata */ = {
+			isa = PBXGroup;
+			children = (
+				AE5DF4141DFB77640060EF28 /* LICENSE.txt */,
+				AE4C621C1DFB646D008B3786 /* README.md */,
+				AE4C621D1DFB646D008B3786 /* Smartystreets_iOS_SDK.podspec */,
+			);
+			path = Metadata;
+			sourceTree = "<group>";
+		};
 		AE727D2F1D79E456004BF342 /* US_ZipCode */ = {
 			isa = PBXGroup;
 			children = (
@@ -301,9 +366,8 @@
 		AE76B5DF1D5265030080C136 = {
 			isa = PBXGroup;
 			children = (
-				AE4C621B1DFB646D008B3786 /* LICENSE.txt */,
-				AE4C621C1DFB646D008B3786 /* README.md */,
-				AE4C621D1DFB646D008B3786 /* Smartystreets_iOS_SDK.podspec */,
+				AE5DF4111DFB76760060EF28 /* Examples */,
+				AE5DF4241DFB780E0060EF28 /* Metadata */,
 				AE76B5EA1D5265030080C136 /* Products */,
 				AE76B5EB1D5265030080C136 /* Sources */,
 				AE76B5F71D5265030080C136 /* Tests */,
@@ -482,6 +546,10 @@
 				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = SmartyStreets;
 				TargetAttributes = {
+					AE5DF4081DFB70A00060EF28 = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+					};
 					AE76B5E81D5265030080C136 = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
@@ -500,13 +568,41 @@
 			mainGroup = AE76B5DF1D5265030080C136;
 			productRefGroup = AE76B5EA1D5265030080C136 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = AE5DF4191DFB77A60060EF28 /* Products */;
+					ProjectRef = AE5DF4181DFB77A60060EF28 /* Objective_C_Examples.xcodeproj */;
+				},
+				{
+					ProductGroup = AE5DF41F1DFB77B50060EF28 /* Products */;
+					ProjectRef = AE5DF41E1DFB77B50060EF28 /* Swift_Examples.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				AE76B5E81D5265030080C136 /* Smartystreets_iOS_SDK */,
 				AE76B5F21D5265030080C136 /* Smartystreets_iOS_SDKTests */,
+				AE5DF4081DFB70A00060EF28 /* Smartystreets_iOS_SDK_Universal */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		AE5DF41D1DFB77A60060EF28 /* Objective_C_Examples.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = Objective_C_Examples.app;
+			remoteRef = AE5DF41C1DFB77A60060EF28 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AE5DF4231DFB77B50060EF28 /* Swift_Examples.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = Swift_Examples.app;
+			remoteRef = AE5DF4221DFB77B50060EF28 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		AE76B5E71D5265030080C136 /* Resources */ = {
@@ -524,6 +620,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AE5DF40C1DFB70BE0060EF28 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 8;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "\n######################\n# Options\n######################\n\nREVEAL_ARCHIVE_IN_FINDER=false\n\nFRAMEWORK_NAME=\"${PROJECT_NAME}\"\n\nSIMULATOR_LIBRARY_PATH=\"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${FRAMEWORK_NAME}.framework\"\n\nDEVICE_LIBRARY_PATH=\"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${FRAMEWORK_NAME}.framework\"\n\nUNIVERSAL_LIBRARY_DIR=\"${BUILD_DIR}/${CONFIGURATION}-iphoneuniversal\"\n\nFRAMEWORK=\"${UNIVERSAL_LIBRARY_DIR}/${FRAMEWORK_NAME}.framework\"\n\n\n######################\n# Build Frameworks\n######################\n\nxcodebuild -workspace ${PROJECT_NAME}.xcworkspace -scheme ${PROJECT_NAME} -sdk iphonesimulator -configuration ${CONFIGURATION} clean build CONFIGURATION_BUILD_DIR=${BUILD_DIR}/${CONFIGURATION}-iphonesimulator 2>&1\n\nxcodebuild -workspace ${PROJECT_NAME}.xcworkspace -scheme ${PROJECT_NAME} -sdk iphoneos -configuration ${CONFIGURATION} clean build CONFIGURATION_BUILD_DIR=${BUILD_DIR}/${CONFIGURATION}-iphoneos 2>&1\n\n######################\n# Create directory for universal\n######################\n\nrm -rf \"${UNIVERSAL_LIBRARY_DIR}\"\n\nmkdir \"${UNIVERSAL_LIBRARY_DIR}\"\n\nmkdir \"${FRAMEWORK}\"\n\n\n######################\n# Copy files Framework\n######################\n\ncp -r \"${DEVICE_LIBRARY_PATH}/.\" \"${FRAMEWORK}\"\n\n\n######################\n# Make an universal binary\n######################\n\nlipo \"${SIMULATOR_LIBRARY_PATH}/${FRAMEWORK_NAME}\" \"${DEVICE_LIBRARY_PATH}/${FRAMEWORK_NAME}\" -create -output \"${FRAMEWORK}/${FRAMEWORK_NAME}\" | echo\n\n# For Swift framework, Swiftmodule needs to be copied in the universal framework\nif [ -d \"${SIMULATOR_LIBRARY_PATH}/Modules/${FRAMEWORK_NAME}.swiftmodule/\" ]; then\ncp -f ${SIMULATOR_LIBRARY_PATH}/Modules/${FRAMEWORK_NAME}.swiftmodule/* \"${FRAMEWORK}/Modules/${FRAMEWORK_NAME}.swiftmodule/\" | echo\n                                                                      fi\n                                                                      \n                                                                      if [ -d \"${DEVICE_LIBRARY_PATH}/Modules/${FRAMEWORK_NAME}.swiftmodule/\" ]; then\n                                                                      cp -f ${DEVICE_LIBRARY_PATH}/Modules/${FRAMEWORK_NAME}.swiftmodule/* \"${FRAMEWORK}/Modules/${FRAMEWORK_NAME}.swiftmodule/\" | echo\n                                                                      fi\n                                                                      \n                                                                      ######################\n                                                                      # On Release, copy the result to release directory\n                                                                      ######################\n                                                                      OUTPUT_DIR=\"${PROJECT_DIR}/Output/${FRAMEWORK_NAME}-${CONFIGURATION}-iphoneuniversal/\"\n                                                                      \n                                                                      rm -rf \"$OUTPUT_DIR\"\n                                                                      mkdir -p \"$OUTPUT_DIR\"\n                                                                      \n                                                                      cp -r \"${FRAMEWORK}\" \"$OUTPUT_DIR\"\n                                                                      \n                                                                      if [ ${REVEAL_ARCHIVE_IN_FINDER} = true ]; then\n                                                                      open \"${OUTPUT_DIR}/\"\n                                                                      fi\n                                                                      view rawgistfile1.sh hosted with ❤ by GitHub";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AE76B5E41D5265030080C136 /* Sources */ = {
@@ -598,6 +710,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		AE5DF40A1DFB70A00060EF28 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		AE5DF40B1DFB70A00060EF28 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		AE76B5FB1D5265030080C136 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -708,9 +834,11 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.smartystreets.api.Smartystreets-iOS-SDK";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				VALID_ARCHS = "arm64 armv7 armv7s i386 x86_64";
 			};
 			name = Debug;
 		};
@@ -730,9 +858,11 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.smartystreets.api.Smartystreets-iOS-SDK";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				VALID_ARCHS = "arm64 armv7 armv7s i386 x86_64";
 			};
 			name = Release;
 		};
@@ -759,6 +889,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		AE5DF4091DFB70A00060EF28 /* Build configuration list for PBXAggregateTarget "Smartystreets_iOS_SDK_Universal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE5DF40A1DFB70A00060EF28 /* Debug */,
+				AE5DF40B1DFB70A00060EF28 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		AE76B5E31D5265030080C136 /* Build configuration list for PBXProject "Smartystreets_iOS_SDK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

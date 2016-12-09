@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Examples_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2eF-3Z-5L8">
+                                <rect key="frame" x="0.0" y="47" width="600" height="216"/>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F05-s4-Me9">
+                                <rect key="frame" x="276" y="262" width="49" height="30"/>
+                                <state key="normal" title="Submit"/>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="b2g-j1-YdM">
+                                <rect key="frame" x="36" y="310" width="528" height="250"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="b2g-j1-YdM" secondAttribute="bottom" constant="40" id="4BC-7J-0we"/>
+                            <constraint firstItem="b2g-j1-YdM" firstAttribute="centerX" secondItem="F05-s4-Me9" secondAttribute="centerX" id="4v8-ai-1oa"/>
+                            <constraint firstItem="F05-s4-Me9" firstAttribute="centerX" secondItem="2eF-3Z-5L8" secondAttribute="centerX" id="9tA-mc-8qZ"/>
+                            <constraint firstItem="F05-s4-Me9" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="242" id="HGJ-F0-8C3"/>
+                            <constraint firstItem="b2g-j1-YdM" firstAttribute="top" secondItem="F05-s4-Me9" secondAttribute="bottom" constant="18" id="Jlc-IC-VOi"/>
+                            <constraint firstItem="b2g-j1-YdM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="16" id="baM-vK-hiQ"/>
+                            <constraint firstAttribute="trailing" secondItem="2eF-3Z-5L8" secondAttribute="trailing" id="h3V-UU-vYK"/>
+                            <constraint firstItem="2eF-3Z-5L8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="iXl-7i-YSl"/>
+                            <constraint firstItem="2eF-3Z-5L8" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="27" id="rIW-qy-dMf"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="picker" destination="2eF-3Z-5L8" id="1Ib-aZ-A53"/>
+                        <outlet property="resultsTextView" destination="b2g-j1-YdM" id="4Nl-eJ-P0g"/>
+                        <outlet property="submitButton" destination="F05-s4-Me9" id="dRd-jG-6Hp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="311" y="387"/>
+        </scene>
+    </scenes>
+</document>
