@@ -9,5 +9,5 @@ s.author       = { "SmartyStreets SDK Team" => "support@smartystreets.com" }
 s.ios.deployment_target = "8.4"
 
 s.source       = { :git => "https://github.com/smartystreets/smartystreets-ios-sdk.git", :tag => s.version }
-s.source_files = "Sources/*.h"
+s.source_files = "Sources/*.{h,m}"
 end
