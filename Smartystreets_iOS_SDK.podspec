@@ -4,7 +4,7 @@ s.version      = '1.0.3'
 s.summary      = 'A library to help iOS developers easily access the SmartyStreets APIs.'
 s.homepage     = 'https://github.com/smartystreets/smartystreets-ios-sdk'
 s.author       = { 'SmartyStreets SDK Team' => 'support@smartystreets.com' }
-s.license      = { :type => 'Apache 2.0', :file => 'LICENSE' }
+s.license      = { :type => 'Apache 2.0', :file => 'LICENSE.md' }
 
 public_header_files = 'include/**/SSRequest.h',
                       'include/**/SSZipCodeClient.h',
