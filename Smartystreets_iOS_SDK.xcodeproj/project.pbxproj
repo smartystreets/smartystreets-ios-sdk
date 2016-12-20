@@ -93,9 +93,6 @@
 		AEB519F51D90558100BF785B /* SSZipCodeClientBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB519F31D90558100BF785B /* SSZipCodeClientBuilder.m */; };
 		AEB519FC1D905EDC00BF785B /* SSHttpSender.h in Headers */ = {isa = PBXBuildFile; fileRef = AEB519FA1D905EDC00BF785B /* SSHttpSender.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AEB519FD1D905EDC00BF785B /* SSHttpSender.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB519FB1D905EDC00BF785B /* SSHttpSender.m */; };
-		AEB892A71E04A35900BAFC26 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = AEB892A41E04A35900BAFC26 /* LICENSE.txt */; };
-		AEB892A81E04A35900BAFC26 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = AEB892A51E04A35900BAFC26 /* README.md */; };
-		AEB892A91E04A35900BAFC26 /* Smartystreets_iOS_SDK.podspec in Resources */ = {isa = PBXBuildFile; fileRef = AEB892A61E04A35900BAFC26 /* Smartystreets_iOS_SDK.podspec */; };
 		AEBCE8471D6228600016A4FE /* SSSigningSender.h in Headers */ = {isa = PBXBuildFile; fileRef = AEBCE8451D6228600016A4FE /* SSSigningSender.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AEBCE8481D6228600016A4FE /* SSSigningSender.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBCE8461D6228600016A4FE /* SSSigningSender.m */; };
 		AEBCE84C1D6246150016A4FE /* SSSigningSenderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBCE84B1D6246150016A4FE /* SSSigningSenderTests.m */; };
@@ -604,8 +601,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AEB892A91E04A35900BAFC26 /* Smartystreets_iOS_SDK.podspec in Resources */,
-				AEB892A71E04A35900BAFC26 /* LICENSE.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -654,7 +649,6 @@
 				AE258B471D6B551200EBD18E /* SSRetrySender.m in Sources */,
 				AE35B0451D87058D00C6B324 /* SSZipCodeBatch.m in Sources */,
 				AE76B61C1D528B8C0080C136 /* SSRequest.m in Sources */,
-				AEB892A81E04A35900BAFC26 /* README.md in Sources */,
 				AE5638C11D9306E1007792E5 /* SSStreetClient.m in Sources */,
 				AEA471111D9EF91400C6CA36 /* SSAlternateCounties.m in Sources */,
 				AE5638BB1D92F84E007792E5 /* SSStreetBatch.m in Sources */,
