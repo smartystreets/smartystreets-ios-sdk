@@ -222,7 +222,6 @@
 		AEB519F31D90558100BF785B /* SSZipCodeClientBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSZipCodeClientBuilder.m; sourceTree = "<group>"; };
 		AEB519FA1D905EDC00BF785B /* SSHttpSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSHttpSender.h; sourceTree = "<group>"; };
 		AEB519FB1D905EDC00BF785B /* SSHttpSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSHttpSender.m; sourceTree = "<group>"; };
-		AEB892A41E04A35900BAFC26 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = SOURCE_ROOT; };
 		AEB892A51E04A35900BAFC26 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		AEB892A61E04A35900BAFC26 /* Smartystreets_iOS_SDK.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Smartystreets_iOS_SDK.podspec; sourceTree = SOURCE_ROOT; };
 		AEBCE8451D6228600016A4FE /* SSSigningSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSSigningSender.h; sourceTree = "<group>"; };
@@ -356,7 +355,6 @@
 		AE76B5DF1D5265030080C136 = {
 			isa = PBXGroup;
 			children = (
-				AEB892A41E04A35900BAFC26 /* LICENSE.txt */,
 				AEB892A51E04A35900BAFC26 /* README.md */,
 				AEB892A61E04A35900BAFC26 /* Smartystreets_iOS_SDK.podspec */,
 				AE5DF4111DFB76760060EF28 /* Examples */,
