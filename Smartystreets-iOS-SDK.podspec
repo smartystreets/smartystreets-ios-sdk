@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-s.name         = 'Smartystreets_iOS_SDK'
+s.name         = 'Smartystreets-iOS-SDK'
 s.version      = '1.0.3'
 s.summary      = 'A library to help iOS developers easily access the SmartyStreets APIs.'
 s.homepage     = 'https://github.com/smartystreets/smartystreets-ios-sdk'
