@@ -14,7 +14,7 @@ public_header_files = 'include/**/SSRequest.h',
                       'include/**/SSSharedCredentials.h'
 
 s.source       = { :git => 'https://github.com/smartystreets/smartystreets-ios-sdk.git', :tag => s.version }
-s.source_files = 'Sources/*.{h,m}',
+s.source_files = 'Sources/*.{h,m,plist}',
                  'Sources/US_Street/*.{h,m}',
                  'Sources/US_ZipCode/*.{h,m}'
 
