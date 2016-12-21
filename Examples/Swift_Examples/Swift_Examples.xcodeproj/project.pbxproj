@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		AE0587A51DE4B566000A6079 /* MyCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0587A41DE4B566000A6079 /* MyCredentials.swift */; };
+		AE429CFB1E0B4881004DA6C3 /* SmartystreetsSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE429CFA1E0B4881004DA6C3 /* SmartystreetsSDK.framework */; };
+		AE429CFC1E0B4887004DA6C3 /* SmartystreetsSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE429CFA1E0B4881004DA6C3 /* SmartystreetsSDK.framework */; };
+		AE429CFD1E0B4887004DA6C3 /* SmartystreetsSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AE429CFA1E0B4881004DA6C3 /* SmartystreetsSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AE54787A1DDA3FD4005DEB61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5478791DDA3FD4005DEB61 /* AppDelegate.swift */; };
 		AE54787C1DDA3FD4005DEB61 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE54787B1DDA3FD4005DEB61 /* ViewController.swift */; };
 		AE54787F1DDA3FD4005DEB61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE54787D1DDA3FD4005DEB61 /* Main.storyboard */; };
@@ -18,9 +21,6 @@
 		AE824C7A1DE5135E004F684E /* USStreetSingleAddressExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE824C791DE5135E004F684E /* USStreetSingleAddressExample.swift */; };
 		AE8B346D1DE60D0900FFE97A /* USStreetMultipleLookupsExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8B346C1DE60D0900FFE97A /* USStreetMultipleLookupsExample.swift */; };
 		AE8B346F1DE6435800FFE97A /* USStreetLookupsWithMatchStrategyExamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8B346E1DE6435800FFE97A /* USStreetLookupsWithMatchStrategyExamples.swift */; };
-		AEF374501DF8920800DB3738 /* Smartystreets_iOS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEF3744F1DF8920800DB3738 /* Smartystreets_iOS_SDK.framework */; };
-		AEF374551DF894EB00DB3738 /* Smartystreets_iOS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEF374541DF894EB00DB3738 /* Smartystreets_iOS_SDK.framework */; };
-		AEF374561DF894EB00DB3738 /* Smartystreets_iOS_SDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AEF374541DF894EB00DB3738 /* Smartystreets_iOS_SDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -30,7 +30,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				AEF374561DF894EB00DB3738 /* Smartystreets_iOS_SDK.framework in Embed Frameworks */,
+				AE429CFD1E0B4887004DA6C3 /* SmartystreetsSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -40,6 +40,7 @@
 /* Begin PBXFileReference section */
 		AE01B7571DE126C700363A59 /* Swift_Examples-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Swift_Examples-Bridging-Header.h"; sourceTree = "<group>"; };
 		AE0587A41DE4B566000A6079 /* MyCredentials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCredentials.swift; sourceTree = "<group>"; };
+		AE429CFA1E0B4881004DA6C3 /* SmartystreetsSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SmartystreetsSDK.framework; path = "../../../../../../Library/Developer/Xcode/DerivedData/SmartystreetsSDK-desxmyjjqbhasfhheoqpkyjxbfew/Build/Products/Debug-iphonesimulator/SmartystreetsSDK.framework"; sourceTree = "<group>"; };
 		AE5478761DDA3FD4005DEB61 /* Swift_Examples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swift_Examples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE5478791DDA3FD4005DEB61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE54787B1DDA3FD4005DEB61 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -52,8 +53,6 @@
 		AE824C791DE5135E004F684E /* USStreetSingleAddressExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = USStreetSingleAddressExample.swift; sourceTree = "<group>"; };
 		AE8B346C1DE60D0900FFE97A /* USStreetMultipleLookupsExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = USStreetMultipleLookupsExample.swift; sourceTree = "<group>"; };
 		AE8B346E1DE6435800FFE97A /* USStreetLookupsWithMatchStrategyExamples.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = USStreetLookupsWithMatchStrategyExamples.swift; sourceTree = "<group>"; };
-		AEF3744F1DF8920800DB3738 /* Smartystreets_iOS_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Smartystreets_iOS_SDK.framework; path = "../../build/Debug-iphoneos/Smartystreets_iOS_SDK.framework"; sourceTree = "<group>"; };
-		AEF374541DF894EB00DB3738 /* Smartystreets_iOS_SDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Smartystreets_iOS_SDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,8 +60,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AEF374551DF894EB00DB3738 /* Smartystreets_iOS_SDK.framework in Frameworks */,
-				AEF374501DF8920800DB3738 /* Smartystreets_iOS_SDK.framework in Frameworks */,
+				AE429CFC1E0B4887004DA6C3 /* SmartystreetsSDK.framework in Frameworks */,
+				AE429CFB1E0B4881004DA6C3 /* SmartystreetsSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,7 +71,7 @@
 		AE238A811DECC1A900C1447D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				AEF3744F1DF8920800DB3738 /* Smartystreets_iOS_SDK.framework */,
+				AE429CFA1E0B4881004DA6C3 /* SmartystreetsSDK.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -80,7 +79,6 @@
 		AE54786D1DDA3FD4005DEB61 = {
 			isa = PBXGroup;
 			children = (
-				AEF374541DF894EB00DB3738 /* Smartystreets_iOS_SDK.framework */,
 				AE238A811DECC1A900C1447D /* Frameworks */,
 				AE5478771DDA3FD4005DEB61 /* Products */,
 				AE5478781DDA3FD4005DEB61 /* Sources */,
