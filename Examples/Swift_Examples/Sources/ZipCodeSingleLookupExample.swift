@@ -1,5 +1,5 @@
 import Foundation
-import Smartystreets_iOS_SDK
+import SmartystreetsSDK
 
 class ZipCodeSingleLookupExample {
 

@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
-#import <Smartystreets_iOS_SDK/SSZipCodeClientBuilder.h>
+#import <SmartystreetsSDK/SSZipCodeClientBuilder.h>
 #import "SSMyCredentials.h"
 
 @interface SSZipCodeMultipleLookupsExample : NSObject

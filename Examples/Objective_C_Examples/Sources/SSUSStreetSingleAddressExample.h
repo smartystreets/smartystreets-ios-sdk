@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
-#import <Smartystreets_iOS_SDK/SSStreetClientBuilder.h>
-#import <Smartystreets_iOS_SDK/SSSharedCredentials.h>
+#import <SmartystreetsSDK/SSStreetClientBuilder.h>
+#import <SmartystreetsSDK/SSSharedCredentials.h>
 #import "SSMyCredentials.h"
 
 @interface SSUSStreetSingleAddressExample : NSObject

@@ -1,5 +1,5 @@
 import UIKit
-import Smartystreets_iOS_SDK
+import SmartystreetsSDK
 
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 

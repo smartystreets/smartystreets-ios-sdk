@@ -1,10 +1,10 @@
 #import <XCTest/XCTest.h>
 
-@interface Smartystreets_iOS_SDKTests : XCTestCase
+@interface SmartystreetsSDKTests : XCTestCase
 
 @end
 
-@implementation Smartystreets_iOS_SDKTests
+@implementation SmartystreetsSDKTests
 
 - (void)setUp {
     [super setUp];

@@ -7,15 +7,15 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
-		AE5DF4081DFB70A00060EF28 /* Smartystreets_iOS_SDK_Universal */ = {
+		AE5DF4081DFB70A00060EF28 /* SmartystreetsSDK_Universal */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = AE5DF4091DFB70A00060EF28 /* Build configuration list for PBXAggregateTarget "Smartystreets_iOS_SDK_Universal" */;
+			buildConfigurationList = AE5DF4091DFB70A00060EF28 /* Build configuration list for PBXAggregateTarget "SmartystreetsSDK_Universal" */;
 			buildPhases = (
 				AE5DF40C1DFB70BE0060EF28 /* ShellScript */,
 			);
 			dependencies = (
 			);
-			name = Smartystreets_iOS_SDK_Universal;
+			name = SmartystreetsSDK_Universal;
 			productName = Smartystreets_iOS_SDK_Universal;
 		};
 /* End PBXAggregateTarget section */
@@ -86,9 +86,9 @@
 		AE6C611E1D7488710022CB66 /* SSRetrySenderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6C611D1D7488710022CB66 /* SSRetrySenderTests.m */; };
 		AE6C61241D74B3110022CB66 /* SSJsonSerializer.h in Headers */ = {isa = PBXBuildFile; fileRef = AE6C61221D74B3110022CB66 /* SSJsonSerializer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE6C61251D74B3110022CB66 /* SSJsonSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6C61231D74B3110022CB66 /* SSJsonSerializer.m */; };
-		AE76B5ED1D5265030080C136 /* Smartystreets_iOS_SDK.h in Headers */ = {isa = PBXBuildFile; fileRef = AE76B5EC1D5265030080C136 /* Smartystreets_iOS_SDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AE76B5F41D5265030080C136 /* Smartystreets_iOS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE76B5E91D5265030080C136 /* Smartystreets_iOS_SDK.framework */; };
-		AE76B5F91D5265030080C136 /* Smartystreets_iOS_SDKTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE76B5F81D5265030080C136 /* Smartystreets_iOS_SDKTests.m */; };
+		AE76B5ED1D5265030080C136 /* SmartystreetsSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = AE76B5EC1D5265030080C136 /* SmartystreetsSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE76B5F41D5265030080C136 /* SmartystreetsSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE76B5E91D5265030080C136 /* SmartystreetsSDK.framework */; };
+		AE76B5F91D5265030080C136 /* SmartystreetsSDKTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE76B5F81D5265030080C136 /* SmartystreetsSDKTests.m */; };
 		AE76B6081D5266BF0080C136 /* SSSmartyErrors.h in Headers */ = {isa = PBXBuildFile; fileRef = AE76B6071D5266BF0080C136 /* SSSmartyErrors.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE76B6181D527E750080C136 /* SSSerializer.h in Headers */ = {isa = PBXBuildFile; fileRef = AE76B6171D527E750080C136 /* SSSerializer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE76B61B1D528B8C0080C136 /* SSRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = AE76B6191D528B8C0080C136 /* SSRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -212,11 +212,11 @@
 		AE6C611D1D7488710022CB66 /* SSRetrySenderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSRetrySenderTests.m; sourceTree = "<group>"; };
 		AE6C61221D74B3110022CB66 /* SSJsonSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSJsonSerializer.h; sourceTree = "<group>"; };
 		AE6C61231D74B3110022CB66 /* SSJsonSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSJsonSerializer.m; sourceTree = "<group>"; };
-		AE76B5E91D5265030080C136 /* Smartystreets_iOS_SDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Smartystreets_iOS_SDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AE76B5EC1D5265030080C136 /* Smartystreets_iOS_SDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Smartystreets_iOS_SDK.h; sourceTree = "<group>"; };
+		AE76B5E91D5265030080C136 /* SmartystreetsSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SmartystreetsSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE76B5EC1D5265030080C136 /* SmartystreetsSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SmartystreetsSDK.h; sourceTree = "<group>"; };
 		AE76B5EE1D5265030080C136 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AE76B5F31D5265030080C136 /* Smartystreets_iOS_SDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Smartystreets_iOS_SDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AE76B5F81D5265030080C136 /* Smartystreets_iOS_SDKTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Smartystreets_iOS_SDKTests.m; sourceTree = "<group>"; };
+		AE76B5F31D5265030080C136 /* SmartystreetsSDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmartystreetsSDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE76B5F81D5265030080C136 /* SmartystreetsSDKTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SmartystreetsSDKTests.m; sourceTree = "<group>"; };
 		AE76B5FA1D5265030080C136 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE76B6071D5266BF0080C136 /* SSSmartyErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSSmartyErrors.h; sourceTree = "<group>"; };
 		AE76B6131D527CF60080C136 /* SSSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSSender.h; sourceTree = "<group>"; };
@@ -227,7 +227,7 @@
 		AEB519FA1D905EDC00BF785B /* SSHttpSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSHttpSender.h; sourceTree = "<group>"; };
 		AEB519FB1D905EDC00BF785B /* SSHttpSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSHttpSender.m; sourceTree = "<group>"; };
 		AEB892A51E04A35900BAFC26 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
-		AEB892A61E04A35900BAFC26 /* Smartystreets-iOS-SDK.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Smartystreets-iOS-SDK.podspec"; sourceTree = SOURCE_ROOT; };
+		AEB892A61E04A35900BAFC26 /* SmartystreetsSDK.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SmartystreetsSDK.podspec; sourceTree = SOURCE_ROOT; };
 		AEBCE8451D6228600016A4FE /* SSSigningSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSSigningSender.h; sourceTree = "<group>"; };
 		AEBCE8461D6228600016A4FE /* SSSigningSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSSigningSender.m; sourceTree = "<group>"; };
 		AEBCE84B1D6246150016A4FE /* SSSigningSenderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSSigningSenderTests.m; sourceTree = "<group>"; };
@@ -245,7 +245,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE76B5F41D5265030080C136 /* Smartystreets_iOS_SDK.framework in Frameworks */,
+				AE76B5F41D5265030080C136 /* SmartystreetsSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,7 +375,7 @@
 			isa = PBXGroup;
 			children = (
 				AEB892A51E04A35900BAFC26 /* README.md */,
-				AEB892A61E04A35900BAFC26 /* Smartystreets-iOS-SDK.podspec */,
+				AEB892A61E04A35900BAFC26 /* SmartystreetsSDK.podspec */,
 				AE5DF4111DFB76760060EF28 /* Examples */,
 				AE76B5EA1D5265030080C136 /* Products */,
 				AE76B5EB1D5265030080C136 /* Sources */,
@@ -386,8 +386,8 @@
 		AE76B5EA1D5265030080C136 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AE76B5E91D5265030080C136 /* Smartystreets_iOS_SDK.framework */,
-				AE76B5F31D5265030080C136 /* Smartystreets_iOS_SDKTests.xctest */,
+				AE76B5E91D5265030080C136 /* SmartystreetsSDK.framework */,
+				AE76B5F31D5265030080C136 /* SmartystreetsSDKTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -398,6 +398,7 @@
 				AE38077E1E0A08B400F8A1C3 /* US_Street */,
 				AE3807A11E0A0A5C00F8A1C3 /* US_ZipCode */,
 				AE76B5EE1D5265030080C136 /* Info.plist */,
+				AE76B5EC1D5265030080C136 /* SmartystreetsSDK.h */,
 				AE4177691D5D1450003DEF9F /* SSCredentials.h */,
 				AEB519FA1D905EDC00BF785B /* SSHttpSender.h */,
 				AEB519FB1D905EDC00BF785B /* SSHttpSender.m */,
@@ -422,7 +423,6 @@
 				AE4179501D6CB47B00BDDB7C /* SSStatusCodeSender.m */,
 				AE76B6071D5266BF0080C136 /* SSSmartyErrors.h */,
 				AE4179531D6CCD4000BDDB7C /* SSSmartyErrors.m */,
-				AE76B5EC1D5265030080C136 /* Smartystreets_iOS_SDK.h */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -441,7 +441,7 @@
 				AEBCE84B1D6246150016A4FE /* SSSigningSenderTests.m */,
 				AE4177751D5D2954003DEF9F /* SSStaticCredentialsTests.m */,
 				AE4179551D6CEFB300BDDB7C /* SSStatusCodeSenderTests.m */,
-				AE76B5F81D5265030080C136 /* Smartystreets_iOS_SDKTests.m */,
+				AE76B5F81D5265030080C136 /* SmartystreetsSDKTests.m */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -482,7 +482,7 @@
 				AEBCE8471D6228600016A4FE /* SSSigningSender.h in Headers */,
 				AE258B461D6B551200EBD18E /* SSRetrySender.h in Headers */,
 				AED507AE1DCD003700953E1C /* SSSender.h in Headers */,
-				AE76B5ED1D5265030080C136 /* Smartystreets_iOS_SDK.h in Headers */,
+				AE76B5ED1D5265030080C136 /* SmartystreetsSDK.h in Headers */,
 				AE41776A1D5D1450003DEF9F /* SSCredentials.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -490,9 +490,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		AE76B5E81D5265030080C136 /* Smartystreets_iOS_SDK */ = {
+		AE76B5E81D5265030080C136 /* SmartystreetsSDK */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AE76B5FD1D5265030080C136 /* Build configuration list for PBXNativeTarget "Smartystreets_iOS_SDK" */;
+			buildConfigurationList = AE76B5FD1D5265030080C136 /* Build configuration list for PBXNativeTarget "SmartystreetsSDK" */;
 			buildPhases = (
 				AE76B5E41D5265030080C136 /* Sources */,
 				AE76B5E51D5265030080C136 /* Frameworks */,
@@ -504,14 +504,14 @@
 			);
 			dependencies = (
 			);
-			name = Smartystreets_iOS_SDK;
+			name = SmartystreetsSDK;
 			productName = Smartystreets_iOS_SDK;
-			productReference = AE76B5E91D5265030080C136 /* Smartystreets_iOS_SDK.framework */;
+			productReference = AE76B5E91D5265030080C136 /* SmartystreetsSDK.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		AE76B5F21D5265030080C136 /* Smartystreets_iOS_SDKTests */ = {
+		AE76B5F21D5265030080C136 /* SmartystreetsSDKTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AE76B6001D5265030080C136 /* Build configuration list for PBXNativeTarget "Smartystreets_iOS_SDKTests" */;
+			buildConfigurationList = AE76B6001D5265030080C136 /* Build configuration list for PBXNativeTarget "SmartystreetsSDKTests" */;
 			buildPhases = (
 				AE76B5EF1D5265030080C136 /* Sources */,
 				AE76B5F01D5265030080C136 /* Frameworks */,
@@ -522,9 +522,9 @@
 			dependencies = (
 				AE76B5F61D5265030080C136 /* PBXTargetDependency */,
 			);
-			name = Smartystreets_iOS_SDKTests;
+			name = SmartystreetsSDKTests;
 			productName = Smartystreets_iOS_SDKTests;
-			productReference = AE76B5F31D5265030080C136 /* Smartystreets_iOS_SDKTests.xctest */;
+			productReference = AE76B5F31D5265030080C136 /* SmartystreetsSDKTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -548,7 +548,7 @@
 					};
 				};
 			};
-			buildConfigurationList = AE76B5E31D5265030080C136 /* Build configuration list for PBXProject "Smartystreets_iOS_SDK" */;
+			buildConfigurationList = AE76B5E31D5265030080C136 /* Build configuration list for PBXProject "SmartystreetsSDK" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -570,9 +570,9 @@
 			);
 			projectRoot = "";
 			targets = (
-				AE76B5E81D5265030080C136 /* Smartystreets_iOS_SDK */,
-				AE76B5F21D5265030080C136 /* Smartystreets_iOS_SDKTests */,
-				AE5DF4081DFB70A00060EF28 /* Smartystreets_iOS_SDK_Universal */,
+				AE76B5E81D5265030080C136 /* SmartystreetsSDK */,
+				AE76B5F21D5265030080C136 /* SmartystreetsSDKTests */,
+				AE5DF4081DFB70A00060EF28 /* SmartystreetsSDK_Universal */,
 			);
 		};
 /* End PBXProject section */
@@ -674,7 +674,7 @@
 				AE3807DD1E0A0C3500F8A1C3 /* SSJsonSerializerNullTests.m in Sources */,
 				AE4177701D5D19CF003DEF9F /* SSSharedCredentialsTests.m in Sources */,
 				AE3807D41E0A0BE800F8A1C3 /* SSMockDeserializer.m in Sources */,
-				AE76B5F91D5265030080C136 /* Smartystreets_iOS_SDKTests.m in Sources */,
+				AE76B5F91D5265030080C136 /* SmartystreetsSDKTests.m in Sources */,
 				AE6C611E1D7488710022CB66 /* SSRetrySenderTests.m in Sources */,
 				AE3807D61E0A0BE800F8A1C3 /* SSMockSerializer.m in Sources */,
 				AE3807DF1E0A0C3500F8A1C3 /* SSJsonSerializerTestsForZipCode.m in Sources */,
@@ -694,7 +694,7 @@
 /* Begin PBXTargetDependency section */
 		AE76B5F61D5265030080C136 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = AE76B5E81D5265030080C136 /* Smartystreets_iOS_SDK */;
+			target = AE76B5E81D5265030080C136 /* SmartystreetsSDK */;
 			targetProxy = AE76B5F51D5265030080C136 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -828,7 +828,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.smartystreets.api.Smartystreets-iOS-SDK";
+				PRODUCT_BUNDLE_IDENTIFIER = com.smartystreets.api.SmartystreetsSDK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				VALID_ARCHS = "arm64 armv7 armv7s i386 x86_64";
@@ -853,7 +853,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.smartystreets.api.Smartystreets-iOS-SDK";
+				PRODUCT_BUNDLE_IDENTIFIER = com.smartystreets.api.SmartystreetsSDK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				VALID_ARCHS = "arm64 armv7 armv7s i386 x86_64";
@@ -883,7 +883,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AE5DF4091DFB70A00060EF28 /* Build configuration list for PBXAggregateTarget "Smartystreets_iOS_SDK_Universal" */ = {
+		AE5DF4091DFB70A00060EF28 /* Build configuration list for PBXAggregateTarget "SmartystreetsSDK_Universal" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AE5DF40A1DFB70A00060EF28 /* Debug */,
@@ -892,7 +892,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AE76B5E31D5265030080C136 /* Build configuration list for PBXProject "Smartystreets_iOS_SDK" */ = {
+		AE76B5E31D5265030080C136 /* Build configuration list for PBXProject "SmartystreetsSDK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AE76B5FB1D5265030080C136 /* Debug */,
@@ -901,7 +901,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AE76B5FD1D5265030080C136 /* Build configuration list for PBXNativeTarget "Smartystreets_iOS_SDK" */ = {
+		AE76B5FD1D5265030080C136 /* Build configuration list for PBXNativeTarget "SmartystreetsSDK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AE76B5FE1D5265030080C136 /* Debug */,
@@ -910,7 +910,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AE76B6001D5265030080C136 /* Build configuration list for PBXNativeTarget "Smartystreets_iOS_SDKTests" */ = {
+		AE76B6001D5265030080C136 /* Build configuration list for PBXNativeTarget "SmartystreetsSDKTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AE76B6011D5265030080C136 /* Debug */,

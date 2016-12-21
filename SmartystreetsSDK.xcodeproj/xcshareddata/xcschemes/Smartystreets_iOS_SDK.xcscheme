@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "AE76B5E81D5265030080C136"
-               BuildableName = "Smartystreets_iOS_SDK.framework"
-               BlueprintName = "Smartystreets_iOS_SDK"
-               ReferencedContainer = "container:Smartystreets_iOS_SDK.xcodeproj">
+               BuildableName = "SmartystreetsSDK.framework"
+               BlueprintName = "SmartystreetsSDK"
+               ReferencedContainer = "container:SmartystreetsSDK.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "AE76B5F21D5265030080C136"
-               BuildableName = "Smartystreets_iOS_SDKTests.xctest"
-               BlueprintName = "Smartystreets_iOS_SDKTests"
-               ReferencedContainer = "container:Smartystreets_iOS_SDK.xcodeproj">
+               BuildableName = "SmartystreetsSDKTests.xctest"
+               BlueprintName = "SmartystreetsSDKTests"
+               ReferencedContainer = "container:SmartystreetsSDK.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AE76B5E81D5265030080C136"
-            BuildableName = "Smartystreets_iOS_SDK.framework"
-            BlueprintName = "Smartystreets_iOS_SDK"
-            ReferencedContainer = "container:Smartystreets_iOS_SDK.xcodeproj">
+            BuildableName = "SmartystreetsSDK.framework"
+            BlueprintName = "SmartystreetsSDK"
+            ReferencedContainer = "container:SmartystreetsSDK.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -65,9 +65,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AE76B5E81D5265030080C136"
-            BuildableName = "Smartystreets_iOS_SDK.framework"
-            BlueprintName = "Smartystreets_iOS_SDK"
-            ReferencedContainer = "container:Smartystreets_iOS_SDK.xcodeproj">
+            BuildableName = "SmartystreetsSDK.framework"
+            BlueprintName = "SmartystreetsSDK"
+            ReferencedContainer = "container:SmartystreetsSDK.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -83,9 +83,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AE76B5E81D5265030080C136"
-            BuildableName = "Smartystreets_iOS_SDK.framework"
-            BlueprintName = "Smartystreets_iOS_SDK"
-            ReferencedContainer = "container:Smartystreets_iOS_SDK.xcodeproj">
+            BuildableName = "SmartystreetsSDK.framework"
+            BlueprintName = "SmartystreetsSDK"
+            ReferencedContainer = "container:SmartystreetsSDK.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

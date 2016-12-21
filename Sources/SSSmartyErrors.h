@@ -1,9 +1,6 @@
 #import <Foundation/Foundation.h>
 
-//@implementation SSSmartyErrors
-
 FOUNDATION_EXPORT NSString *const SSErrorDomain;
-//FOUNDATION_EXPORT NSString *const SSErrorDomain = @"com.smartystreets.Smartystreets_iOS_SDK.ErrorDomain";
 
 typedef NS_ENUM(NSInteger, SSErrors) {
     BatchFullError,

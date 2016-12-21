@@ -47,7 +47,7 @@
     for (NSString *key in [request.headers allKeys])
         [httpRequest addValue:request.headers[key] forHTTPHeaderField:key];
     
-    NSString *version = [[NSBundle bundleForClass:[@"Smartystreets_iOS_SDK" class]] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
+    NSString *version = [[NSBundle bundleForClass:[@"SmartystreetsSDK" class]] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
     NSString *userAgent = [[@"smartystreets (sdk:ios@" stringByAppendingString:version] stringByAppendingString:@")"];
     
     [httpRequest addValue:userAgent forHTTPHeaderField:@"User-Agent"];
