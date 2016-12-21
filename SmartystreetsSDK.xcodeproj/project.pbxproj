@@ -16,7 +16,7 @@
 			dependencies = (
 			);
 			name = SmartystreetsSDK_Universal;
-			productName = Smartystreets_iOS_SDK_Universal;
+			productName = SmartystreetsSDK_Universal;
 		};
 /* End PBXAggregateTarget section */
 
@@ -122,7 +122,7 @@
 			containerPortal = AE76B5E01D5265030080C136 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = AE76B5E81D5265030080C136;
-			remoteInfo = Smartystreets_iOS_SDK;
+			remoteInfo = SmartystreetsSDK;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -505,7 +505,7 @@
 			dependencies = (
 			);
 			name = SmartystreetsSDK;
-			productName = Smartystreets_iOS_SDK;
+			productName = SmartystreetsSDK;
 			productReference = AE76B5E91D5265030080C136 /* SmartystreetsSDK.framework */;
 			productType = "com.apple.product-type.framework";
 		};
@@ -523,7 +523,7 @@
 				AE76B5F61D5265030080C136 /* PBXTargetDependency */,
 			);
 			name = SmartystreetsSDKTests;
-			productName = Smartystreets_iOS_SDKTests;
+			productName = SmartystreetsSDKTests;
 			productReference = AE76B5F31D5265030080C136 /* SmartystreetsSDKTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
@@ -819,10 +819,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
@@ -844,10 +841,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
