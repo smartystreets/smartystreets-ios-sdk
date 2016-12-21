@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 #import "SSLookup.h"
 #import "SSCandidate.h"
-#import "SmartyErrors.h"
+#import "SSSmartyErrors.h"
 
 extern NSString *const kSSStrict;
 extern NSString *const kSSRange;

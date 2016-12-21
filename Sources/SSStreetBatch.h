@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 #import "SSStreetLookup.h"
-#import "SmartyErrors.h"
+#import "SSSmartyErrors.h"
 
 extern int const kSSStreetMaxBatchSize;
 

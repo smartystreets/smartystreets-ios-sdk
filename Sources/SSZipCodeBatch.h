@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 #import "SSZipCodeLookup.h"
-#import "SmartyErrors.h"
+#import "SSSmartyErrors.h"
 
 extern int const kSSZipCodeMaxBatchSize;
 

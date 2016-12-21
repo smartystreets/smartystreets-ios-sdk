@@ -7,10 +7,10 @@ FOUNDATION_EXPORT double Smartystreets_iOS_SDKVersionNumber;
 FOUNDATION_EXPORT const unsigned char Smartystreets_iOS_SDKVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <Smartystreets_iOS_SDK/PublicHeader.h>
-#import <Smartystreets_iOS_SDK/SSRequest.h>
-#import <Smartystreets_iOS_SDK/SSZipCodeClient.h>
-#import <Smartystreets_iOS_SDK/SSZipCodeClientBuilder.h>
-#import <Smartystreets_iOS_SDK/SSStreetClient.h>
-#import <Smartystreets_iOS_SDK/SSStreetClientBuilder.h>
-#import <Smartystreets_iOS_SDK/SSSharedCredentials.h>
+#import "SSRequest.h"
+#import "SSZipCodeClient.h"
+#import "SSZipCodeClientBuilder.h"
+#import "SSStreetClient.h"
+#import "SSStreetClientBuilder.h"
+#import "SSSharedCredentials.h"
 

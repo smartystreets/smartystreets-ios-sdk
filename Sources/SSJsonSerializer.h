@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 #import "SSSerializer.h"
-#import "SmartyErrors.h"
+#import "SSSmartyErrors.h"
 
 @interface SSJsonSerializer : NSObject <SSSerializer>
 

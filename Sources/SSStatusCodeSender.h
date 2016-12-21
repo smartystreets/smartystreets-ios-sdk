@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 #import "SSSender.h"
-#import "SmartyErrors.h"
+#import "SSSmartyErrors.h"
 
 @interface SSStatusCodeSender : NSObject <SSSender>
 

@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 #import "SSResponse.h"
 #import "SSRequest.h"
-#import "SmartyErrors.h"
+#import "SSSmartyErrors.h"
 
 @protocol SSSender;
 
