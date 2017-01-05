@@ -1,7 +1,5 @@
 #!/usr/bin/make -f
 
-SOURCE_VERSION := 2.0
-
 clean:
 	rm -rf ./Output
 
@@ -12,4 +10,4 @@ publish: tag
 	pod trunk push SmartystreetsSDK.podspec
 
 tag:
-	echo "todo"
+	@python tag.py
