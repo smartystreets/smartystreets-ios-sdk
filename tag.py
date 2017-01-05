@@ -16,10 +16,10 @@ def main():
 	replace_in_file('Sources/Info.plist', last_stable, incremented)
 	replace_in_file('SmartystreetsSDK.podspec', last_stable, incremented)
 
-	subprocess.check_call('git add Sources/Info.plist SmartystreetsSDK.podspec')
-	subprocess.check_call('git commit -m "Incremented version number to {0}'.format(incremented))
-	subprocess.check_call('git tag -a {0} -m ""'.format(incremented))
-	subprocess.check_call('git push origin master --tags')
+	subprocess.check_call('git add Sources/Info.plist SmartystreetsSDK.podspec', shell=True)
+	subprocess.check_call('git commit -m "Incremented version number to {0}"'.format(incremented), shell=True)
+	subprocess.check_call('git tag -a {0} -m ""'.format(incremented), shell=True)
+	subprocess.check_call('git push origin master --tags', shell=True)
 
 
 def replace_in_file(filename, search, replace):
