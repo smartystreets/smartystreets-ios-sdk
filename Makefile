@@ -1,5 +1,7 @@
 #!/usr/bin/make -f
 
+INCREMENT='patch' # or 'minor' or 'major'
+
 clean:
 	rm -rf ./Output
 
@@ -10,4 +12,4 @@ publish: tag
 	pod trunk push SmartystreetsSDK.podspec
 
 tag:
-	@python tag.py
+	@python tag.py $(INCREMENT)

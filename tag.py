@@ -1,8 +1,22 @@
 import subprocess
+import sys
+
 
 SOURCE_VERSION = "2.0"
+INCREMENTS = {
+	"patch": 2,
+	"minor": 1,
+	"major": 0,
+}
 
 def main():
+	increment = sys.argv[-1]
+	if increment not in ['patch', 'minor', 'major']:
+		print 'Invalid INCREMENT value. Please use "patch", "minor", or "major".'
+		os.Exit(1)
+
+	increment = INCREMENTS[increment] 
+
 	prefix = SOURCE_VERSION + "."
 	current = subprocess.check_output("git describe", shell=True)
 	last_stable = subprocess.check_output("git tag -l", shell=True).strip().split('\n')[-1]
@@ -10,8 +24,17 @@ def main():
 		return
 
 	last_stable_split = last_stable.split('.')
-	increment = int(last_stable_split[2]) + 1
-	incremented = '.'.join(last_stable_split[:2]) + '.' + str(increment)
+	last_stable_split[increment] = str(int(last_stable_split[increment]) + 1)
+	
+	if increment == 0:
+		last_stable_split[1] = "0"
+		last_stable_split[2] = "0"
+
+	if increment == 1:
+		last_stable_split[2] = "0"
+
+	incremented = '.'.join(last_stable_split)
+	print incremented
 
 	replace_in_file('Sources/Info.plist', last_stable, incremented)
 	replace_in_file('SmartystreetsSDK.podspec', last_stable, incremented)
