@@ -41,7 +41,7 @@ def main():
 
 	subprocess.check_call('git add Sources/Info.plist SmartystreetsSDK.podspec', shell=True)
 	subprocess.check_call('git commit -m "Incremented version number to {0}"'.format(incremented), shell=True)
-	subprocess.check_call('git tag -a {0} -m ""'.format(incremented), shell=True)
+	subprocess.check_call('git tag -a {0} -m "{0}"'.format(incremented), shell=True)
 	subprocess.check_call('git push origin master --tags', shell=True)
 
 
