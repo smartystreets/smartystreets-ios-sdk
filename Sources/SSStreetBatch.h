@@ -10,7 +10,6 @@ extern int const kSSStreetMaxBatchSize;
 @property (readonly, nonatomic) NSMutableArray<SSStreetLookup*> *allLookups;
 
 - (BOOL)add:(SSStreetLookup*)newAddress error:(NSError**)error;
-- (void)reset;
 - (void)removeAllObjects;
 - (int)count;
 - (SSStreetLookup*)getLookupById:(NSString*)inputId;
