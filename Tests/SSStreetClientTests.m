@@ -90,52 +90,6 @@
     XCTAssertEqualObjects(expectedPayload, sender.request.payload);
 }
 
-// Request Headers
-
-- (void)testNoHeadersAddedToRequest {
-    [self assertHeadersSetCorrectlyForIncludeInvalid:NO standardizeOnly:NO];
-}
-
-- (void)testIncludeInvalidHeaderCorrectlyAddedToRequest {
-    [self assertHeadersSetCorrectlyForIncludeInvalid:YES standardizeOnly:NO];
-}
-
-- (void)testStandardizeOnlyHeaderCorrectlyAddedToRequest {
-    [self assertHeadersSetCorrectlyForIncludeInvalid:NO standardizeOnly:YES];
-}
-
-- (void)testIncludeInvalidHeaderCorrectlyAddedToRequestWhenBothBatchOptionsAreSet {
-    [self assertHeadersSetCorrectlyForIncludeInvalid:YES standardizeOnly:YES];
-}
-
-- (void)assertHeadersSetCorrectlyForIncludeInvalid:(Boolean)includeInvalid standardizeOnly:(Boolean)standardizeOnly {
-    SSRequestCapturingSender *sender = [[SSRequestCapturingSender alloc] init];
-    SSMockSerializer *serializer = [[SSMockSerializer alloc] initWithBytes:[[NSMutableData alloc] init]];
-    SSStreetClient *client = [[SSStreetClient alloc] initWithUrlPrefix:@"http://localhost/" withSender:sender withSerializer:serializer];
-    SSStreetBatch *batch = [[SSStreetBatch alloc] init];
-    NSError *error = nil;
-    
-    [batch add:[[SSStreetLookup alloc] init] error:&error];
-    
-    batch.standardizeOnly = standardizeOnly;
-    batch.includeInvalid = includeInvalid;
-    [client sendBatch:batch error:&error];
-    
-    SSRequest *request = sender.request;
-    NSMutableDictionary *headers = request.headers;
-    
-    if (includeInvalid) {
-        XCTAssertEqualObjects(@"true", [headers objectForKey:@"X-Include-Invalid"]);
-        XCTAssertNil([headers objectForKey:@"X-Standard-Only"]);
-    } else if (standardizeOnly) {
-        XCTAssertEqualObjects(@"true", [headers objectForKey:@"X-Standardize-Only"]);
-        XCTAssertNil([headers objectForKey:@"X-Include-Invalid"]);
-    } else {
-        XCTAssertNil([headers objectForKey:@"X-Include-Invalid"]);
-        XCTAssertNil([headers objectForKey:@"X-Standardize-Only"]);
-    }
-}
-
 // Response Handling
 
 - (void)testDeserializeCalledWithResponseBody {

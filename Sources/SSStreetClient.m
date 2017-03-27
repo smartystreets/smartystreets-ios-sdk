@@ -28,10 +28,7 @@
 - (BOOL)sendBatch:(SSStreetBatch*)batch error:(NSError**)error {
     SSRequest *request = [[SSRequest alloc] initWithUrlPrefix:self.urlPrefix];
     
-    if ([batch count] == 0)
-        return NO;
-    
-    [self putHeaders:batch request:request];
+    if ([batch count] == 0) return NO;
     
     if ([batch count] == 1)
         [self populateQueryString:[batch getLookupAtIndex:0] withRequest:request];
@@ -40,29 +37,19 @@
     
     SSResponse *response = [self.sender sendRequest:request error:error];
     
-    if (*error != nil)
-        return NO;
+    if (*error != nil) return NO;
     
     NSArray<SSCandidate*> *candidates = [self.serializer deserialize:response.payload withClassType:[SSCandidate class] error:error];
     
-    if (*error != nil)
-        return NO;
+    if (*error != nil) return NO;
     
     if (candidates == nil)
         candidates = [[NSArray<SSCandidate*> alloc] init];
     [self assignCandidatesToLookups:batch candidates:candidates];
     
-    if (*error != nil)
-        return NO;
+    if (*error != nil) return NO;
     
     return YES;
-}
-
-- (void)putHeaders:(SSStreetBatch*)batch request:(SSRequest*)request {
-    if (batch.includeInvalid)
-        [request setValue:@"true" forHTTPHeaderField:@"X-Include-Invalid"];
-    else if (batch.standardizeOnly)
-        [request setValue:@"true" forHTTPHeaderField:@"X-Standardize-Only"];
 }
 
 - (void)populateQueryString:(SSStreetLookup*)lookup withRequest:(SSRequest*)request {

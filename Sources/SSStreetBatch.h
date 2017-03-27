@@ -8,8 +8,6 @@ extern int const kSSStreetMaxBatchSize;
 
 @property (readonly, nonatomic) NSMutableDictionary<NSString*, SSStreetLookup*> *namedLookups;
 @property (readonly, nonatomic) NSMutableArray<SSStreetLookup*> *allLookups;
-@property (nonatomic) Boolean standardizeOnly;
-@property (nonatomic) Boolean includeInvalid;
 
 - (BOOL)add:(SSStreetLookup*)newAddress error:(NSError**)error;
 - (void)reset;

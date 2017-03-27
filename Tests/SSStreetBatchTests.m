@@ -70,38 +70,18 @@
     XCTAssertEqualObjects(details, [error localizedDescription]);
 }
 
-- (void)testResetMethodResetsHeadersAndLookups {
+- (void)testClearMethodClearsBothLookupCollections {
     SSStreetBatch *batch = [[SSStreetBatch alloc] init];
     SSStreetLookup *lookup = [[SSStreetLookup alloc] init];
     NSError *error = nil;
-    batch.standardizeOnly = YES;
-    batch.includeInvalid = YES;
     
     [batch add:lookup error:&error];
-    
-    [batch reset];
-    
-    XCTAssertEqual(0, batch.allLookups.count);
-    XCTAssertEqual(0, batch.namedLookups.count);
-    XCTAssertFalse(batch.includeInvalid);
-    XCTAssertFalse(batch.standardizeOnly);
-}
-
-- (void)testClearMethodClearsBothLookupCollectionsButNotHeaders {
-    SSStreetBatch *batch = [[SSStreetBatch alloc] init];
-    SSStreetLookup *lookup = [[SSStreetLookup alloc] init];
-    NSError *error = nil;
-    batch.standardizeOnly = YES;
-    batch.includeInvalid = YES;
-    
     [batch add:lookup error:&error];
     
     [batch removeAllObjects];
     
     XCTAssertEqual(0, batch.allLookups.count);
     XCTAssertEqual(0, batch.namedLookups.count);
-    XCTAssertTrue(batch.includeInvalid);
-    XCTAssertTrue(batch.standardizeOnly);
 }
 
 @end

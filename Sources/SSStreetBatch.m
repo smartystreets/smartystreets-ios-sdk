@@ -6,8 +6,6 @@ int const kSSStreetMaxBatchSize = 100;
 
 - (instancetype)init {
     if (self = [super init]) {
-        _standardizeOnly = NO;
-        _includeInvalid = NO;
         _namedLookups = [[NSMutableDictionary alloc] init];
         _allLookups = [[NSMutableArray alloc] init];
     }
@@ -31,12 +29,6 @@ int const kSSStreetMaxBatchSize = 100;
     [self.namedLookups setObject:newAddress forKey:key];
     
     return YES;
-}
-
-- (void)reset {
-    [self removeAllObjects];
-    self.includeInvalid = NO;
-    self.standardizeOnly = NO;
 }
 
 - (void)removeAllObjects {
