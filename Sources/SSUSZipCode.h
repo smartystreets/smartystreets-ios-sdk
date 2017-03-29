@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 #import "SSAlternateCounties.h"
 
-@interface SSZipCode : NSObject
+@interface SSUSZipCode : NSObject
 
 @property (readonly, nonatomic) NSString *zipCode;
 @property (readonly, nonatomic) NSString *zipCodeType;

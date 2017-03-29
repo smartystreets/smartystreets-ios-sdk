@@ -1,6 +1,6 @@
 #import <UIKit/UIKit.h>
-#import "SSZipCodeSingleLookupExample.h"
-#import "SSZipCodeMultipleLookupsExample.h"
+#import "SSUSZipCodeSingleLookupExample.h"
+#import "SSUSZipCodeMultipleLookupsExample.h"
 #import "SSUSStreetSingleAddressExample.h"
 #import "SSUSStreetMultipleLookupsExample.h"
 #import "SSUSStreetLookupsWithMatchStrategyExamples.h"

@@ -1,6 +1,6 @@
-#import "SSZipCode.h"
+#import "SSUSZipCode.h"
 
-@implementation SSZipCode
+@implementation SSUSZipCode
 
 - (instancetype)initWithDictionary:(NSDictionary*)dictionary {
     if (self = [super init]) {

@@ -5,11 +5,11 @@ class ZipCodeSingleLookupExample {
 
     func run() -> String {
         let mobile = SSSharedCredentials(id: MyCredentials.SmartyWebsiteKey, hostname: MyCredentials.Host)
-        let client = SSZipCodeClientBuilder(signer: mobile).build()
-//        let client = SSZipCodeClientBuilder(authId: MyCredentials.AuthId,
+        let client = SSUSZipCodeClientBuilder(signer: mobile).build()
+//        let client = SSUSZipCodeClientBuilder(authId: MyCredentials.AuthId,
 //                                            authToken: MyCredentials.AuthToken).build()
         
-        let lookup = SSZipCodeLookup()
+        let lookup = SSUSZipCodeLookup()
         lookup.city = "Mountain View"
         lookup.state = "California"
         
@@ -22,7 +22,7 @@ class ZipCodeSingleLookupExample {
             return "Error sending request"
         }
         
-        let result: SSResult = lookup.result
+        let result: SSUSZipCodeResult = lookup.result
         let zipCodes = result.zipCodes
         let cities = result.cities
         
@@ -40,9 +40,9 @@ class ZipCodeSingleLookupExample {
         }
         
         for zip in zipCodes! {
-            output += "\nZIP Code: " + (zip as! SSZipCode).zipCode
-            output += "\nLatitude: " + String(format:"%f", (zip as! SSZipCode).latitude)
-            output += "\nLongitude: " + String(format:"%f", (zip as! SSZipCode).longitude) + "\n"
+            output += "\nZIP Code: " + (zip as! SSUSZipCode).zipCode
+            output += "\nLatitude: " + String(format:"%f", (zip as! SSUSZipCode).latitude)
+            output += "\nLongitude: " + String(format:"%f", (zip as! SSUSZipCode).longitude) + "\n"
         }
         
         return output

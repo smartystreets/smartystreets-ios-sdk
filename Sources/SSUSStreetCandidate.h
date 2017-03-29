@@ -1,9 +1,9 @@
 #import <Foundation/Foundation.h>
-#import "SSAnalysis.h"
-#import "SSComponents.h"
-#import "SSMetadata.h"
+#import "SSUSStreetAnalysis.h"
+#import "SSUSStreetComponents.h"
+#import "SSUSStreetMetadata.h"
 
-@interface SSCandidate : NSObject
+@interface SSUSStreetCandidate : NSObject
 
 @property (readonly, nonatomic) NSString *inputId;
 @property (readonly, nonatomic) int inputIndex;
@@ -13,9 +13,9 @@
 @property (readonly, nonatomic) NSString *deliveryLine2;
 @property (readonly, nonatomic) NSString *lastline;
 @property (readonly, nonatomic) NSString *deliveryPointBarcode;
-@property (readonly, nonatomic) SSComponents *components;
-@property (readonly, nonatomic) SSMetadata *metadata;
-@property (readonly, nonatomic) SSAnalysis *analysis;
+@property (readonly, nonatomic) SSUSStreetComponents *components;
+@property (readonly, nonatomic) SSUSStreetMetadata *metadata;
+@property (readonly, nonatomic) SSUSStreetAnalysis *analysis;
 
 - (instancetype)initWithDictionary:(NSDictionary*)dictionary;
 - (instancetype)initWithInputIndex:(int)inputIndex;

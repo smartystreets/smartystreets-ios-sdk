@@ -3,23 +3,23 @@ import SmartystreetsSDK
 
 class USStreetMultipleLookupsExample {
     func run() -> String {
-        let client = SSStreetClientBuilder(authId: MyCredentials.AuthId,
+        let client = SSUSStreetClientBuilder(authId: MyCredentials.AuthId,
                                             authToken: MyCredentials.AuthToken).build()
         
-        let batch = SSStreetBatch()
+        let batch = SSUSStreetBatch()
         var error: NSError?
         
-        let address0 = SSStreetLookup()
+        let address0 = SSUSStreetLookup()
         address0.street = "1600 amphitheatre parkway"
         address0.city = "Mountain View"
         address0.state = "california"
         
-        let address1 = SSStreetLookup(freeformAddress: "1 Rosedale, Baltimore, Maryland")
+        let address1 = SSUSStreetLookup(freeformAddress: "1 Rosedale, Baltimore, Maryland")
         address1?.setMaxCandidates(10, error: &error)
         
-        let address2 = SSStreetLookup(freeformAddress: "123 Bogus Street, Pretend Lake, Oklahoma")
+        let address2 = SSUSStreetLookup(freeformAddress: "123 Bogus Street, Pretend Lake, Oklahoma")
         
-        let address3 = SSStreetLookup()
+        let address3 = SSUSStreetLookup()
         address3.street = "1 Infinite Loop"
         address3.zipCode = "95014"
 
@@ -42,11 +42,11 @@ class USStreetMultipleLookupsExample {
             }
         }
         
-        var lookups = batch.allLookups as [AnyObject] as! Array<SSStreetLookup>
+        var lookups = batch.allLookups as [AnyObject] as! Array<SSUSStreetLookup>
         var output = String()
         
         for i in 0...batch.count() - 1 {
-            let candidates = lookups[Int(i)].result as [AnyObject] as! Array<SSCandidate>
+            let candidates = lookups[Int(i)].result as [AnyObject] as! Array<SSUSStreetCandidate>
             
             if candidates.count == 0 {
                 output += String(format: "\nAddress %i is invalid\n", i)

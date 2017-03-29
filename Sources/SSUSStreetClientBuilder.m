@@ -1,6 +1,6 @@
-#import "SSStreetClientBuilder.h"
+#import "SSUSStreetClientBuilder.h"
 
-@interface SSStreetClientBuilder()
+@interface SSUSStreetClientBuilder()
 
 @property (nonatomic) id<SSCredentials> signer;
 @property (nonatomic) id<SSSerializer> serializer;
@@ -11,7 +11,7 @@
 
 @end
 
-@implementation SSStreetClientBuilder
+@implementation SSUSStreetClientBuilder
 
 - (instancetype)init {
     if (self = [super init]) {
@@ -34,33 +34,33 @@
     return [self initWithSigner:credentials];
 }
 
-- (SSStreetClientBuilder*)retryAtMost:(int)maxRetries {
+- (SSUSStreetClientBuilder*)retryAtMost:(int)maxRetries {
     _maxRetries = maxRetries;
     return self;
 }
 
-- (SSStreetClientBuilder*)withMaxTimeout:(int)maxTimeout {
+- (SSUSStreetClientBuilder*)withMaxTimeout:(int)maxTimeout {
     _maxTimeout = maxTimeout;
     return self;
 }
 
-- (SSStreetClientBuilder*)withSender:(id<SSSender>)sender {
+- (SSUSStreetClientBuilder*)withSender:(id<SSSender>)sender {
     _httpSender = sender;
     return self;
 }
 
-- (SSStreetClientBuilder*)withSerializer:(id<SSSerializer>)serializer {
+- (SSUSStreetClientBuilder*)withSerializer:(id<SSSerializer>)serializer {
     _serializer = serializer;
     return self;
 }
 
-- (SSStreetClientBuilder*)withUrl:(NSString*)urlPrefix {
+- (SSUSStreetClientBuilder*)withUrl:(NSString*)urlPrefix {
     _urlPrefix = urlPrefix;
     return self;
 }
 
-- (SSStreetClient*)build {
-    SSStreetClient *client = [[SSStreetClient alloc] initWithUrlPrefix:self.urlPrefix withSender:[self buildSender] withSerializer:self.serializer];
+- (SSUSStreetClient*)build {
+    SSUSStreetClient *client = [[SSUSStreetClient alloc] initWithUrlPrefix:self.urlPrefix withSender:[self buildSender] withSerializer:self.serializer];
     return client;
 }
 

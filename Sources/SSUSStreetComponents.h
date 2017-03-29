@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 
-@interface SSComponents : NSObject
+@interface SSUSStreetComponents : NSObject
 
 @property (readonly, nonatomic) NSString *urbanization;
 @property (readonly, nonatomic) NSString *primaryNumber;

@@ -1,20 +1,20 @@
-#import "SSZipCodeBatch.h"
+#import "SSUSZipCodeBatch.h"
 
-int const kSSZipCodeMaxBatchSize = 100;
+int const kSSUSZipCodeMaxBatchSize = 100;
 
-@implementation SSZipCodeBatch
+@implementation SSUSZipCodeBatch
 
 - (instancetype)init {
     if (self = [super init]) {
-        _namedLookups = [[NSMutableDictionary<NSString*, SSZipCodeLookup*> alloc] init];
-        _allLookups = [[NSMutableArray<SSZipCodeLookup*> alloc] init];
+        _namedLookups = [[NSMutableDictionary<NSString*, SSUSZipCodeLookup*> alloc] init];
+        _allLookups = [[NSMutableArray<SSUSZipCodeLookup*> alloc] init];
     }
     return self;
 }
 
-- (BOOL)add:(SSZipCodeLookup*)lookup error:(NSError**)error {
-    if ([self.allLookups count] >= kSSZipCodeMaxBatchSize) {
-        NSString *description = [NSString stringWithFormat:@"Batch size cannot exceed %i", kSSZipCodeMaxBatchSize];
+- (BOOL)add:(SSUSZipCodeLookup*)lookup error:(NSError**)error {
+    if ([self.allLookups count] >= kSSUSZipCodeMaxBatchSize) {
+        NSString *description = [NSString stringWithFormat:@"Batch size cannot exceed %i", kSSUSZipCodeMaxBatchSize];
         NSDictionary *details = @{NSLocalizedDescriptionKey: description};
         *error = [NSError errorWithDomain:SSErrorDomain code:BatchFullError userInfo:details];
         return NO;
@@ -40,11 +40,11 @@ int const kSSZipCodeMaxBatchSize = 100;
     return (int)[self.allLookups count];
 }
 
-- (SSZipCodeLookup*)getLookupById:(NSString*)inputId {
+- (SSUSZipCodeLookup*)getLookupById:(NSString*)inputId {
     return [self.namedLookups objectForKey:inputId];
 }
 
-- (SSZipCodeLookup*)getLookupAtIndex:(int)inputIndex {
+- (SSUSZipCodeLookup*)getLookupAtIndex:(int)inputIndex {
     return [self.allLookups objectAtIndex:inputIndex];
 }
 

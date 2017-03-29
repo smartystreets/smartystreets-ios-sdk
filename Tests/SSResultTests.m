@@ -1,15 +1,15 @@
 #import <XCTest/XCTest.h>
-#import "SSResult.h"
+#import "SSUSZipCodeResult.h"
 
-@interface SSResultTests : XCTestCase
-@property (nonatomic) SSResult *result;
+@interface SSUSZipCodeResultTests : XCTestCase
+@property (nonatomic) SSUSZipCodeResult *result;
 @end
 
-@implementation SSResultTests
+@implementation SSUSZipCodeResultTests
 
 - (void)setUp {
     [super setUp];
-    _result = [[SSResult alloc] init];
+    _result = [[SSUSZipCodeResult alloc] init];
 }
 
 - (void)tearDown {

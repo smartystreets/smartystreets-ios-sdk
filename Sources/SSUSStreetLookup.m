@@ -1,15 +1,15 @@
-#import "SSStreetLookup.h"
+#import "SSUSStreetLookup.h"
 
 NSString *const kSSStrict = @"strict";
 NSString *const kSSRange = @"range";
 NSString *const kSSInvalid = @"invalid";
 
-@implementation SSStreetLookup
+@implementation SSUSStreetLookup
 
 - (instancetype)init {
     if (self = [super init]) {
         _maxCandidates = 1;
-        _result = [[NSMutableArray<SSCandidate*> alloc] init];
+        _result = [[NSMutableArray<SSUSStreetCandidate*> alloc] init];
     }
     return self;
 }
@@ -20,11 +20,11 @@ NSString *const kSSInvalid = @"invalid";
     return self;
 }
 
-- (void)addToResult:(SSCandidate*)newCandidate {
+- (void)addToResult:(SSUSStreetCandidate*)newCandidate {
     [self.result addObject:newCandidate];
 }
 
-- (SSCandidate*)getResultAtIndex:(int)index {
+- (SSUSStreetCandidate*)getResultAtIndex:(int)index {
     return [self.result objectAtIndex:index];
 }
 

@@ -1,6 +1,6 @@
-#import "SSStreetClient.h"
+#import "SSUSStreetClient.h"
 
-@interface SSStreetClient()
+@interface SSUSStreetClient()
 
 @property (readonly, nonatomic) NSString *urlPrefix;
 @property (readonly, nonatomic) id<SSSender> sender;
@@ -8,7 +8,7 @@
 
 @end
 
-@implementation SSStreetClient
+@implementation SSUSStreetClient
 
 - (instancetype)initWithUrlPrefix:(NSString*)urlPrefix withSender:(id<SSSender>)sender withSerializer:(id<SSSerializer>)serializer {
     if (self = [super init]) {
@@ -19,13 +19,13 @@
     return self;
 }
 
-- (BOOL)sendLookup:(SSStreetLookup*)lookup error:(NSError**)error {
-    SSStreetBatch *batch = [[SSStreetBatch alloc] init];
+- (BOOL)sendLookup:(SSUSStreetLookup*)lookup error:(NSError**)error {
+    SSUSStreetBatch *batch = [[SSUSStreetBatch alloc] init];
     [batch add:lookup error:error];
     return [self sendBatch:batch error:error];
 }
 
-- (BOOL)sendBatch:(SSStreetBatch*)batch error:(NSError**)error {
+- (BOOL)sendBatch:(SSUSStreetBatch*)batch error:(NSError**)error {
     SSRequest *request = [[SSRequest alloc] initWithUrlPrefix:self.urlPrefix];
     
     if ([batch count] == 0) return NO;
@@ -33,18 +33,18 @@
     if ([batch count] == 1)
         [self populateQueryString:[batch getLookupAtIndex:0] withRequest:request];
     else
-        [request setPayload:[self.serializer serialize:batch.allLookups withClassType:[SSStreetLookup class] error:error]];
+        [request setPayload:[self.serializer serialize:batch.allLookups withClassType:[SSUSStreetLookup class] error:error]];
     
     SSResponse *response = [self.sender sendRequest:request error:error];
     
     if (*error != nil) return NO;
     
-    NSArray<SSCandidate*> *candidates = [self.serializer deserialize:response.payload withClassType:[SSCandidate class] error:error];
+    NSArray<SSUSStreetCandidate*> *candidates = [self.serializer deserialize:response.payload withClassType:[SSUSStreetCandidate class] error:error];
     
     if (*error != nil) return NO;
     
     if (candidates == nil)
-        candidates = [[NSArray<SSCandidate*> alloc] init];
+        candidates = [[NSArray<SSUSStreetCandidate*> alloc] init];
     [self assignCandidatesToLookups:batch candidates:candidates];
     
     if (*error != nil) return NO;
@@ -52,7 +52,7 @@
     return YES;
 }
 
-- (void)populateQueryString:(SSStreetLookup*)lookup withRequest:(SSRequest*)request {
+- (void)populateQueryString:(SSUSStreetLookup*)lookup withRequest:(SSRequest*)request {
     [request setValue:lookup.street forHTTPParameterField:@"street"];
     [request setValue:lookup.street2 forHTTPParameterField:@"street2"];
     [request setValue:lookup.secondary forHTTPParameterField:@"secondary"];
@@ -69,8 +69,8 @@
     [request setValue:lookup.matchStrategy forHTTPHeaderField:@"match"];
 }
 
-- (void)assignCandidatesToLookups:(SSStreetBatch*)batch candidates:(NSArray<SSCandidate*>*)candidates {
-    for (SSCandidate *candidate in candidates)
+- (void)assignCandidatesToLookups:(SSUSStreetBatch*)batch candidates:(NSArray<SSUSStreetCandidate*>*)candidates {
+    for (SSUSStreetCandidate *candidate in candidates)
          [[batch getLookupAtIndex:candidate.inputIndex] addToResult:candidate];
 }
 

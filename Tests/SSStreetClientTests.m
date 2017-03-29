@@ -3,15 +3,15 @@
 #import "SSMockSerializer.h"
 #import "SSMockDeserializer.h"
 #import "SSMockSender.h"
-#import "SSStreetClient.h"
-#import "SSStreetLookup.h"
-#import "SSResult.h"
+#import "SSUSStreetClient.h"
+#import "SSUSStreetLookup.h"
+#import "SSUSZipCodeResult.h"
 
-@interface SSStreetClientTests : XCTestCase
+@interface SSUSStreetClientTests : XCTestCase
 
 @end
 
-@implementation SSStreetClientTests
+@implementation SSUSStreetClientTests
 
 - (void)setUp {
     [super setUp];
@@ -28,10 +28,10 @@
 - (void)testSendingSingleFreeformLookup {
     SSRequestCapturingSender *sender = [[SSRequestCapturingSender alloc] init];
     SSMockSerializer *serializer = [[SSMockSerializer alloc] init];
-    SSStreetClient *client = [[SSStreetClient alloc] initWithUrlPrefix:@"http://localhost/" withSender:sender withSerializer:serializer];
+    SSUSStreetClient *client = [[SSUSStreetClient alloc] initWithUrlPrefix:@"http://localhost/" withSender:sender withSerializer:serializer];
     NSError *error = nil;
     
-    [client sendLookup:[[SSStreetLookup alloc] initWithFreeformAddress:@"freeform"] error:&error];
+    [client sendLookup:[[SSUSStreetLookup alloc] initWithFreeformAddress:@"freeform"] error:&error];
     
     XCTAssertEqualObjects(@"http://localhost/?street=freeform", sender.request.getUrl);
 }
@@ -39,8 +39,8 @@
 - (void)testSendingSingleFullyPopulatedLookup {
     SSRequestCapturingSender *sender = [[SSRequestCapturingSender alloc] init];
     SSMockSerializer *serializer = [[SSMockSerializer alloc] init];
-    SSStreetClient *client = [[SSStreetClient alloc] initWithUrlPrefix:@"http://localhost" withSender:sender withSerializer:serializer];
-    SSStreetLookup *lookup = [[SSStreetLookup alloc] init];
+    SSUSStreetClient *client = [[SSUSStreetClient alloc] initWithUrlPrefix:@"http://localhost" withSender:sender withSerializer:serializer];
+    SSUSStreetLookup *lookup = [[SSUSStreetLookup alloc] init];
     NSError *error = nil;
     
     lookup.addressee = @"0";
@@ -64,10 +64,10 @@
 
 - (void)testEmptyBatchNotSent {
     SSRequestCapturingSender *sender = [[SSRequestCapturingSender alloc] init];
-    SSStreetClient *client = [[SSStreetClient alloc] initWithUrlPrefix:@"/" withSender:sender withSerializer:nil];
+    SSUSStreetClient *client = [[SSUSStreetClient alloc] initWithUrlPrefix:@"/" withSender:sender withSerializer:nil];
     NSError *error = nil;
     
-    [client sendBatch:[[SSStreetBatch alloc] init] error:&error];
+    [client sendBatch:[[SSUSStreetBatch alloc] init] error:&error];
     
     XCTAssertNil(sender.request);
 }
@@ -78,12 +78,12 @@
     
     SSRequestCapturingSender *sender = [[SSRequestCapturingSender alloc] init];
     SSMockSerializer *serializer = [[SSMockSerializer alloc] initWithBytes:expectedPayload];
-    SSStreetClient *client = [[SSStreetClient alloc] initWithUrlPrefix:@"http://localhost/" withSender:sender withSerializer:serializer];
+    SSUSStreetClient *client = [[SSUSStreetClient alloc] initWithUrlPrefix:@"http://localhost/" withSender:sender withSerializer:serializer];
     
     NSError *error = nil;
-    SSStreetBatch *batch = [[SSStreetBatch alloc] init];
-    [batch add:[[SSStreetLookup alloc] init] error:&error];
-    [batch add:[[SSStreetLookup alloc] init] error:&error];
+    SSUSStreetBatch *batch = [[SSUSStreetBatch alloc] init];
+    [batch add:[[SSUSStreetLookup alloc] init] error:&error];
+    [batch add:[[SSUSStreetLookup alloc] init] error:&error];
     
     [client sendBatch:batch error:&error];
     
@@ -99,24 +99,24 @@
     SSResponse *response = [[SSResponse alloc] initWithStatusCode:0 payload:data];
     SSMockSender *sender = [[SSMockSender alloc] initWithSSResponse:response];
     SSMockDeserializer *deserializer = [[SSMockDeserializer alloc] initWithDeserializedObject:nil];
-    SSStreetClient *client = [[SSStreetClient alloc] initWithUrlPrefix:@"/" withSender:sender withSerializer:deserializer];
+    SSUSStreetClient *client = [[SSUSStreetClient alloc] initWithUrlPrefix:@"/" withSender:sender withSerializer:deserializer];
     
     NSError *error = nil;
-    [client sendLookup:[[SSStreetLookup alloc] init] error:&error];
+    [client sendLookup:[[SSUSStreetLookup alloc] init] error:&error];
     
     XCTAssertEqual(response.payload, deserializer.payload);
 }
 
 - (void)testCandidatesCorrectlyAssignedToCorrespondingLookup {
-    NSMutableArray<SSCandidate*> *expectedCandidates = [[NSMutableArray<SSCandidate*> alloc] init];
-    [expectedCandidates insertObject:[[SSCandidate alloc] initWithInputIndex:0] atIndex:0];
-    [expectedCandidates insertObject:[[SSCandidate alloc] initWithInputIndex:1] atIndex:1];
-    [expectedCandidates insertObject:[[SSCandidate alloc] initWithInputIndex:1] atIndex:2];
-    SSStreetBatch *batch = [[SSStreetBatch alloc] init];
+    NSMutableArray<SSUSStreetCandidate*> *expectedCandidates = [[NSMutableArray<SSUSStreetCandidate*> alloc] init];
+    [expectedCandidates insertObject:[[SSUSStreetCandidate alloc] initWithInputIndex:0] atIndex:0];
+    [expectedCandidates insertObject:[[SSUSStreetCandidate alloc] initWithInputIndex:1] atIndex:1];
+    [expectedCandidates insertObject:[[SSUSStreetCandidate alloc] initWithInputIndex:1] atIndex:2];
+    SSUSStreetBatch *batch = [[SSUSStreetBatch alloc] init];
     NSError *error = nil;
     
-    [batch add:[[SSStreetLookup alloc] init] error:&error];
-    [batch add:[[SSStreetLookup alloc] init] error:&error];
+    [batch add:[[SSUSStreetLookup alloc] init] error:&error];
+    [batch add:[[SSUSStreetLookup alloc] init] error:&error];
     
     NSString *emptyString = @"[]";
     NSData *payload = [emptyString dataUsingEncoding:NSUTF8StringEncoding];
@@ -124,7 +124,7 @@
     
     SSMockSender *sender = [[SSMockSender alloc] initWithSSResponse:response];
     SSMockDeserializer *deserializer = [[SSMockDeserializer alloc] initWithDeserializedObject:expectedCandidates];
-    SSStreetClient *client = [[SSStreetClient alloc] initWithUrlPrefix:@"/" withSender:sender withSerializer:deserializer];
+    SSUSStreetClient *client = [[SSUSStreetClient alloc] initWithUrlPrefix:@"/" withSender:sender withSerializer:deserializer];
     
     [client sendBatch:batch error:&error];
     

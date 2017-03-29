@@ -1,10 +1,10 @@
-#import "SSZipCodeLookup.h"
+#import "SSUSZipCodeLookup.h"
 
-@implementation SSZipCodeLookup
+@implementation SSUSZipCodeLookup
 
 - (instancetype)init {
     if (self = [super init])
-        _result = [[SSResult alloc] init];
+        _result = [[SSUSZipCodeResult alloc] init];
     return self;
 }
 

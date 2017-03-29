@@ -1,18 +1,18 @@
 #import <Foundation/Foundation.h>
 #import "SSCity.h"
-#import "SSZipCode.h"
+#import "SSUSZipCode.h"
 
-@interface SSResult : NSObject
+@interface SSUSZipCodeResult : NSObject
 
 @property (nonatomic) NSString *status;
 @property (nonatomic) NSString *reason;
 @property (readonly, nonatomic) int inputIndex;
 @property (readonly, nonatomic) NSMutableArray<SSCity*> *cities;
-@property (readonly, nonatomic) NSMutableArray<SSZipCode*> *zipCodes;
+@property (readonly, nonatomic) NSMutableArray<SSUSZipCode*> *zipCodes;
 
 - (instancetype)initWithDictionary:(NSDictionary*)dictionary;
 - (bool)isValid;
 - (SSCity*)getCityAtIndex:(int)index;
-- (SSZipCode*)getZipCodeAtIndex:(int)index;
+- (SSUSZipCode*)getZipCodeAtIndex:(int)index;
 
 @end

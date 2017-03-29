@@ -5,11 +5,11 @@ class USStreetSingleAddressExample {
     
     func run() -> String {
         let mobile = SSSharedCredentials(id: MyCredentials.SmartyWebsiteKey, hostname: MyCredentials.Host)
-        let client = SSStreetClientBuilder(signer: mobile).build()
-//        let client = SSStreetClientBuilder(authId: MyCredentials.AuthId,
+        let client = SSUSStreetClientBuilder(signer: mobile).build()
+//        let client = SSUSStreetClientBuilder(authId: MyCredentials.AuthId,
 //                                            authToken: MyCredentials.AuthToken).build()
         
-        let lookup = SSStreetLookup()
+        let lookup = SSUSStreetLookup()
         lookup.street = "1600 Amphitheatre Pkwy"
         lookup.city = "Mountain View"
         lookup.state = "CA"
@@ -31,7 +31,7 @@ class USStreetSingleAddressExample {
             return output
         }
         
-        let candidate: SSCandidate = results?[0] as! SSCandidate
+        let candidate: SSUSStreetCandidate = results?[0] as! SSUSStreetCandidate
         
         output += "Address is valid. (There is at least one candidate)\n\n"
         output += "\nZIP Code: " + candidate.components.zipCode

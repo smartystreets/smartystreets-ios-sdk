@@ -4,10 +4,10 @@
 
 - (NSString*)run {
     id<SSCredentials> mobile = [[SSSharedCredentials alloc] initWithId:kSSSmartyWebsiteKey hostname:kSSHost];
-    SSStreetClient *client = [[SSStreetClientBuilder alloc] initWithSigner:mobile].build;
-//    SSStreetClient *client = [[SSStreetClientBuilder alloc] initWithAuthId:kSSAuthId authToken:kSSAuthToken].build;
+    SSUSStreetClient *client = [[SSUSStreetClientBuilder alloc] initWithSigner:mobile].build;
+//    SSUSStreetClient *client = [[SSUSStreetClientBuilder alloc] initWithAuthId:kSSAuthId authToken:kSSAuthToken].build;
     
-    SSStreetLookup *lookup = [[SSStreetLookup alloc] init];
+    SSUSStreetLookup *lookup = [[SSUSStreetLookup alloc] init];
     lookup.street = @"1600 Amphitheatre Pkwy";
     lookup.city = @"Mountain View";
     lookup.state = @"CA";
@@ -22,7 +22,7 @@
         return @"Error sending request";
     }
     
-    NSArray<SSCandidate*> *results = lookup.result;
+    NSArray<SSUSStreetCandidate*> *results = lookup.result;
     NSMutableString *output = [[NSMutableString alloc] init];
     
     if (results.count == 0) {
@@ -30,7 +30,7 @@
         return output;
     }
     
-    SSCandidate *candidate = [results objectAtIndex:0];
+    SSUSStreetCandidate *candidate = [results objectAtIndex:0];
     
     [output appendString:@"Address is valid. (There is at least one candidate)\n\n"];
     [output appendString:[@"\nZIP Code: " stringByAppendingString:candidate.components.zipCode]];

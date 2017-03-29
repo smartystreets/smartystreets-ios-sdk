@@ -3,22 +3,22 @@
 @implementation SSUSStreetMultipleLookupsExample
 
 - (NSString*)run {
-    SSStreetClient *client = [[SSStreetClientBuilder alloc] initWithAuthId:kSSAuthId authToken:kSSAuthToken].build;
+    SSUSStreetClient *client = [[SSUSStreetClientBuilder alloc] initWithAuthId:kSSAuthId authToken:kSSAuthToken].build;
     
-    SSStreetBatch *batch = [[SSStreetBatch alloc] init];
+    SSUSStreetBatch *batch = [[SSUSStreetBatch alloc] init];
     NSError *error = nil;
     
-    SSStreetLookup *address0 = [[SSStreetLookup alloc] init];
+    SSUSStreetLookup *address0 = [[SSUSStreetLookup alloc] init];
     address0.street = @"1600 amphitheatre parkway";
     address0.city = @"Mountain view";
     address0.state = @"california";
     
-    SSStreetLookup *address1 = [[SSStreetLookup alloc] initWithFreeformAddress:@"1 Rosedale, Baltimore, Maryland"];
+    SSUSStreetLookup *address1 = [[SSUSStreetLookup alloc] initWithFreeformAddress:@"1 Rosedale, Baltimore, Maryland"];
     [address1 setMaxCandidates:10 error:&error];
     
-    SSStreetLookup *address2 = [[SSStreetLookup alloc] initWithFreeformAddress:@"123 Bogus Street, Pretend Lake, Oklahoma"];
+    SSUSStreetLookup *address2 = [[SSUSStreetLookup alloc] initWithFreeformAddress:@"123 Bogus Street, Pretend Lake, Oklahoma"];
     
-    SSStreetLookup *address3 = [[SSStreetLookup alloc] init];
+    SSUSStreetLookup *address3 = [[SSUSStreetLookup alloc] init];
     address3.street = @"1 Infinite Loop";
     address3.zipCode = @"95014";
     
@@ -43,11 +43,11 @@
         return @"Error sending request";
     }
     
-    NSArray<SSStreetLookup*> *lookups = batch.allLookups;
+    NSArray<SSUSStreetLookup*> *lookups = batch.allLookups;
     NSMutableString *output = [[NSMutableString alloc] init];
     
     for (int i = 0; i < batch.count; i++) {
-        NSArray<SSCandidate*> *candidates = [[lookups objectAtIndex:i] result];
+        NSArray<SSUSStreetCandidate*> *candidates = [[lookups objectAtIndex:i] result];
         
         if (candidates.count == 0) {
             [output appendString:[NSString stringWithFormat:@"\nAddress %i is invalid\n", i]];
@@ -56,9 +56,9 @@
         
         [output appendString:[NSString stringWithFormat:@"\nAddress %i is valid. (There is at least one candidate)", i]];
         
-        for (SSCandidate *candidate in candidates) {
-            SSComponents const *components = candidate.components;
-            SSMetadata const *metadata = candidate.metadata;
+        for (SSUSStreetCandidate *candidate in candidates) {
+            SSUSStreetComponents const *components = candidate.components;
+            SSUSStreetMetadata const *metadata = candidate.metadata;
             
             [output appendString:[NSString stringWithFormat:@"\n\nCandidate %i :", candidate.candidateIndex]];
             [output appendString:[@"\nDelivery line 1:  " stringByAppendingString:candidate.deliveryLine1]];

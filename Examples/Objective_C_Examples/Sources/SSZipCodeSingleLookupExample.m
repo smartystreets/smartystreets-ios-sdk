@@ -1,13 +1,13 @@
-#import "SSZipCodeSingleLookupExample.h"
+#import "SSUSZipCodeSingleLookupExample.h"
 
-@implementation SSZipCodeSingleLookupExample
+@implementation SSUSZipCodeSingleLookupExample
 
 - (NSString*)run {
     id<SSCredentials> mobile = [[SSSharedCredentials alloc] initWithId:kSSSmartyWebsiteKey hostname:kSSHost];
-    SSZipCodeClient *client = [[SSZipCodeClientBuilder alloc] initWithSigner:mobile].build;
-//    SSZipCodeClient *client = [[SSZipCodeClientBuilder alloc] initWithAuthId:kSSAuthId authToken:kSSAuthToken].build;
+    SSUSZipCodeClient *client = [[SSUSZipCodeClientBuilder alloc] initWithSigner:mobile].build;
+//    SSUSZipCodeClient *client = [[SSUSZipCodeClientBuilder alloc] initWithAuthId:kSSAuthId authToken:kSSAuthToken].build;
     
-    SSZipCodeLookup *lookup = [[SSZipCodeLookup alloc] init];
+    SSUSZipCodeLookup *lookup = [[SSUSZipCodeLookup alloc] init];
     lookup.city = @"Mountain View";
     lookup.state = @"California";
     
@@ -21,8 +21,8 @@
         return @"Error sending request";
     }
     
-    SSResult *result = lookup.result;
-    NSArray<SSZipCode*> *zipCodes = result.zipCodes;
+    SSUSZipCodeResult *result = lookup.result;
+    NSArray<SSUSZipCode*> *zipCodes = result.zipCodes;
     NSArray<SSCity*> *cities = result.cities;
     
     NSMutableString *output = [[NSMutableString alloc] init];
@@ -39,7 +39,7 @@
         [output appendString:@"\n"];
     }
     
-    for (SSZipCode *zip in zipCodes) {
+    for (SSUSZipCode *zip in zipCodes) {
         [output appendString:[@"\nZIP Code: " stringByAppendingString:zip.zipCode]];
         NSNumber *latitude = [NSNumber numberWithDouble:zip.latitude];
         NSNumber *longitute = [NSNumber numberWithDouble:zip.longitude];

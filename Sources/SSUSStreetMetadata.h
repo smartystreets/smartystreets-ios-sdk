@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 
-@interface SSMetadata : NSObject
+@interface SSUSStreetMetadata : NSObject
 
 @property (readonly, nonatomic) NSString *recordType;
 @property (readonly, nonatomic) NSString *zipType;

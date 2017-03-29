@@ -3,24 +3,24 @@
 @implementation SSUSStreetLookupsWithMatchStrategyExamples
 
 - (NSString*)run {
-    SSStreetClient *client = [[SSStreetClientBuilder alloc] initWithAuthId:kSSAuthId authToken:kSSAuthToken].build;
+    SSUSStreetClient *client = [[SSUSStreetClientBuilder alloc] initWithAuthId:kSSAuthId authToken:kSSAuthToken].build;
     
-    SSStreetBatch *batch = [[SSStreetBatch alloc] init];
+    SSUSStreetBatch *batch = [[SSUSStreetBatch alloc] init];
     NSError *error = nil;
     
-    SSStreetLookup *addressWithStrictStrategy = [[SSStreetLookup alloc] init];
+    SSUSStreetLookup *addressWithStrictStrategy = [[SSUSStreetLookup alloc] init];
     addressWithStrictStrategy.street = @"691 W 1150 S";
     addressWithStrictStrategy.city = @"provo";
     addressWithStrictStrategy.state = @"utah";
     addressWithStrictStrategy.matchStrategy = kSSStrict;
     
-    SSStreetLookup *addressWithRangeStrategy = [[SSStreetLookup alloc] init];
+    SSUSStreetLookup *addressWithRangeStrategy = [[SSUSStreetLookup alloc] init];
     addressWithRangeStrategy.street = @"693 W 1150 S";
     addressWithRangeStrategy.city = @"provo";
     addressWithRangeStrategy.state = @"utah";
     addressWithRangeStrategy.matchStrategy = kSSRange;
     
-    SSStreetLookup *addressWithInvalidStrategy = [[SSStreetLookup alloc] init];
+    SSUSStreetLookup *addressWithInvalidStrategy = [[SSUSStreetLookup alloc] init];
     addressWithInvalidStrategy.street = @"9999 W 1150 S";
     addressWithInvalidStrategy.city = @"provo";
     addressWithInvalidStrategy.state = @"utah";
@@ -46,11 +46,11 @@
         return @"Error sending request";
     }
     
-    NSArray<SSStreetLookup*> *lookups = batch.allLookups;
+    NSArray<SSUSStreetLookup*> *lookups = batch.allLookups;
     NSMutableString *output = [[NSMutableString alloc] init];
     
     for (int i = 0; i < batch.count; i++) {
-        NSArray<SSCandidate*> *candidates = [[lookups objectAtIndex:i] result];
+        NSArray<SSUSStreetCandidate*> *candidates = [[lookups objectAtIndex:i] result];
         
         if (candidates.count == 0) {
             [output appendString:[NSString stringWithFormat:@"\nAddress %i is invalid\n", i]];
@@ -59,9 +59,9 @@
         
         [output appendString:[NSString stringWithFormat:@"\nAddress %i is valid. (There is at least one candidate)", i]];
         
-        for (SSCandidate *candidate in candidates) {
-            SSComponents const *components = candidate.components;
-            SSMetadata const *metadata = candidate.metadata;
+        for (SSUSStreetCandidate *candidate in candidates) {
+            SSUSStreetComponents const *components = candidate.components;
+            SSUSStreetMetadata const *metadata = candidate.metadata;
             
             [output appendString:[NSString stringWithFormat:@"\n\nCandidate %i ", candidate.candidateIndex]];
             NSString *match = [[batch getLookupAtIndex:i] matchStrategy];

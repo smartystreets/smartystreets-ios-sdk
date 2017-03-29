@@ -1,12 +1,12 @@
 #import <Foundation/Foundation.h>
 #import "SSSender.h"
 #import "SSSerializer.h"
-#import "SSStreetBatch.h"
+#import "SSUSStreetBatch.h"
 
-@interface SSStreetClient : NSObject
+@interface SSUSStreetClient : NSObject
 
 - (instancetype)initWithUrlPrefix:(NSString*)urlPrefix withSender:(id<SSSender>)sender withSerializer:(id<SSSerializer>)serializer;
-- (BOOL)sendLookup:(SSStreetLookup*)lookup error:(NSError**)error;
-- (BOOL)sendBatch:(SSStreetBatch*)batch error:(NSError**)error;
+- (BOOL)sendLookup:(SSUSStreetLookup*)lookup error:(NSError**)error;
+- (BOOL)sendBatch:(SSUSStreetBatch*)batch error:(NSError**)error;
 
 @end

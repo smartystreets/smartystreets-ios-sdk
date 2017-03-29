@@ -1,6 +1,6 @@
-#import "SSZipCodeClient.h"
+#import "SSUSZipCodeClient.h"
 
-@interface SSZipCodeClient()
+@interface SSUSZipCodeClient()
 
 @property (readonly, nonatomic) NSString *urlPrefix;
 @property (readonly, nonatomic) id<SSSender> sender;
@@ -8,7 +8,7 @@
 
 @end
 
-@implementation SSZipCodeClient
+@implementation SSUSZipCodeClient
 
 - (instancetype)initWithUrlPrefix:(NSString*)urlPrefix withSender:(id<SSSender>)sender withSerializer:(id<SSSerializer>)serializer {
     if (self = [super init]) {
@@ -19,13 +19,13 @@
     return self;
 }
 
-- (BOOL)sendLookup:(SSZipCodeLookup*)lookup error:(NSError**)error {
-    SSZipCodeBatch *batch = [[SSZipCodeBatch alloc] init];
+- (BOOL)sendLookup:(SSUSZipCodeLookup*)lookup error:(NSError**)error {
+    SSUSZipCodeBatch *batch = [[SSUSZipCodeBatch alloc] init];
     [batch add:lookup error:error];
     return [self sendBatch:batch error:error];
 }
 
-- (BOOL)sendBatch:(SSZipCodeBatch*)batch error:(NSError**)error {
+- (BOOL)sendBatch:(SSUSZipCodeBatch*)batch error:(NSError**)error {
     SSRequest *request = [[SSRequest alloc] initWithUrlPrefix:self.urlPrefix];
     
     if ([batch count] == 0)
@@ -34,20 +34,20 @@
     if ([batch count] == 1)
         [self populateQueryString:[batch getLookupAtIndex:0] withRequest:request];
     else
-        [request setPayload:[self.serializer serialize:batch.allLookups withClassType:[SSZipCodeLookup class] error:error]];
+        [request setPayload:[self.serializer serialize:batch.allLookups withClassType:[SSUSZipCodeLookup class] error:error]];
     
     SSResponse *response = [self.sender sendRequest:request error:error];
     
     if (*error != nil)
         return NO;
     
-    NSArray *resultsDict = [self.serializer deserialize:response.payload withClassType:[SSResult class] error:error];
+    NSArray *resultsDict = [self.serializer deserialize:response.payload withClassType:[SSUSZipCodeResult class] error:error];
     
     if (*error != nil)
         return NO;
     
     if (resultsDict == nil)
-        resultsDict = [NSArray<SSResult*> new];
+        resultsDict = [NSArray<SSUSZipCodeResult*> new];
 
     [self assignResultsToLookups:batch result:resultsDict];
     
@@ -57,14 +57,14 @@
     return YES;
 }
 
-- (void)populateQueryString:(SSZipCodeLookup*)lookup withRequest:(SSRequest*)request {
+- (void)populateQueryString:(SSUSZipCodeLookup*)lookup withRequest:(SSRequest*)request {
     [request setValue:lookup.inputId forHTTPParameterField:@"input_id"];
     [request setValue:lookup.city forHTTPParameterField:@"city"];
     [request setValue:lookup.state forHTTPParameterField:@"state"];
     [request setValue:lookup.zipcode forHTTPParameterField:@"zipcode"];
 }
 
-- (void)assignResultsToLookups:(SSZipCodeBatch*)batch result:(NSArray*)results {
+- (void)assignResultsToLookups:(SSUSZipCodeBatch*)batch result:(NSArray*)results {
     for (int i = 0; i < [results count]; i++)
         [[batch getLookupAtIndex:i] setResult:[results objectAtIndex:i]];
 }

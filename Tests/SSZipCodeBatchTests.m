@@ -1,5 +1,5 @@
 #import <XCTest/XCTest.h>
-#import "SSZipCodeBatch.h"
+#import "SSUSZipCodeBatch.h"
 
 @interface SSBatchTests : XCTestCase
 
@@ -18,8 +18,8 @@
 }
 
 - (void)testGetsLookupsByInputId {
-    SSZipCodeBatch *batch = [[SSZipCodeBatch alloc] init];
-    SSZipCodeLookup *lookup = [[SSZipCodeLookup alloc] init];
+    SSUSZipCodeBatch *batch = [[SSUSZipCodeBatch alloc] init];
+    SSUSZipCodeLookup *lookup = [[SSUSZipCodeLookup alloc] init];
     [lookup setInputId:@"hasInputId"];
     NSError *error = nil;
     
@@ -29,8 +29,8 @@
 }
 
 - (void)testGetsLookupsByIndex {
-    SSZipCodeBatch *batch = [[SSZipCodeBatch alloc] init];
-    SSZipCodeLookup *lookup = [[SSZipCodeLookup alloc] init];
+    SSUSZipCodeBatch *batch = [[SSUSZipCodeBatch alloc] init];
+    SSUSZipCodeLookup *lookup = [[SSUSZipCodeLookup alloc] init];
     [lookup setCity:@"Provo"];
     NSError *error = nil;
     
@@ -40,12 +40,12 @@
 }
 
 - (void)testReturnsCorrectSize {
-    SSZipCodeBatch *batch = [[SSZipCodeBatch alloc] init];
+    SSUSZipCodeBatch *batch = [[SSUSZipCodeBatch alloc] init];
     
-    SSZipCodeLookup *lookup1 = [[SSZipCodeLookup alloc] init];
+    SSUSZipCodeLookup *lookup1 = [[SSUSZipCodeLookup alloc] init];
     [lookup1 setInputId:@"inputId"];
-    SSZipCodeLookup *lookup2 = [[SSZipCodeLookup alloc] init];
-    SSZipCodeLookup *lookup3 = [[SSZipCodeLookup alloc] init];
+    SSUSZipCodeLookup *lookup2 = [[SSUSZipCodeLookup alloc] init];
+    SSUSZipCodeLookup *lookup3 = [[SSUSZipCodeLookup alloc] init];
     NSError *error = nil;
     
     [batch add:lookup1 error:&error];
@@ -56,25 +56,25 @@
 }
 
 - (void)testAddingALookupWhenThereIsABatchIsFullError {
-    SSZipCodeBatch *batch = [[SSZipCodeBatch alloc] init];
-    SSZipCodeLookup *lookup = [[SSZipCodeLookup alloc] init];
+    SSUSZipCodeBatch *batch = [[SSUSZipCodeBatch alloc] init];
+    SSUSZipCodeLookup *lookup = [[SSUSZipCodeLookup alloc] init];
     NSError *error = nil;
     
-    for (int i = 0; i < kSSZipCodeMaxBatchSize + 1; i++) {
+    for (int i = 0; i < kSSUSZipCodeMaxBatchSize + 1; i++) {
         [batch add:lookup error:&error];
         
         if (error != nil)
             break;
     }
     
-    XCTAssertEqual(kSSZipCodeMaxBatchSize, batch.count);
-    NSString *details = [NSString stringWithFormat:@"Batch size cannot exceed %i", kSSZipCodeMaxBatchSize];
+    XCTAssertEqual(kSSUSZipCodeMaxBatchSize, batch.count);
+    NSString *details = [NSString stringWithFormat:@"Batch size cannot exceed %i", kSSUSZipCodeMaxBatchSize];
     XCTAssertEqualObjects(details, [error localizedDescription]);
 }
 
 - (void)testClearMethodClearsBothLookupCollections {
-    SSZipCodeBatch *batch = [[SSZipCodeBatch alloc] init];
-    SSZipCodeLookup *lookup = [[SSZipCodeLookup alloc] init];
+    SSUSZipCodeBatch *batch = [[SSUSZipCodeBatch alloc] init];
+    SSUSZipCodeLookup *lookup = [[SSUSZipCodeLookup alloc] init];
     NSError *error = nil;
     
     [batch add:lookup error:&error];

@@ -1,10 +1,10 @@
 #import <Foundation/Foundation.h>
-#import "SSResult.h"
+#import "SSUSZipCodeResult.h"
 #import "SSLookup.h"
 
-@interface SSZipCodeLookup : NSObject <SSLookup>
+@interface SSUSZipCodeLookup : NSObject <SSLookup>
 
-@property (nonatomic) SSResult *result;
+@property (nonatomic) SSUSZipCodeResult *result;
 @property (nonatomic) NSString *inputId;
 @property (nonatomic) NSString *city;
 @property (nonatomic) NSString *state;

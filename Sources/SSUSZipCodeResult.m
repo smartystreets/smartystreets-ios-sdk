@@ -1,6 +1,6 @@
-#import "SSResult.h"
+#import "SSUSZipCodeResult.h"
 
-@implementation SSResult
+@implementation SSUSZipCodeResult
 
 - (instancetype)initWithDictionary:(NSDictionary*)dictionary {
     if (self = [super init]) {
@@ -14,7 +14,7 @@
             _cities = [NSMutableArray<SSCity*> new];
 
         if (self.zipCodes == nil)
-            _zipCodes = [NSMutableArray<SSZipCode*> new];
+            _zipCodes = [NSMutableArray<SSUSZipCode*> new];
             
         _cities = [self convertToCityObjects];
         _zipCodes = [self convertToZipCodeObjects];
@@ -32,11 +32,11 @@
     return cityObjects;
 }
 
-- (NSMutableArray<SSZipCode*>*)convertToZipCodeObjects {
-    NSMutableArray<SSZipCode*> *zipCodeObjects = [NSMutableArray<SSZipCode*> new];
+- (NSMutableArray<SSUSZipCode*>*)convertToZipCodeObjects {
+    NSMutableArray<SSUSZipCode*> *zipCodeObjects = [NSMutableArray<SSUSZipCode*> new];
     
     for (NSDictionary *zipCode in self.zipCodes) {
-        [zipCodeObjects addObject:[[SSZipCode alloc] initWithDictionary:zipCode]];
+        [zipCodeObjects addObject:[[SSUSZipCode alloc] initWithDictionary:zipCode]];
     }
     
     return zipCodeObjects;
@@ -50,7 +50,7 @@
     return [self.cities objectAtIndex:index];
 }
 
-- (SSZipCode*)getZipCodeAtIndex:(int)index {
+- (SSUSZipCode*)getZipCodeAtIndex:(int)index {
     return [self.zipCodes objectAtIndex:index];
 }
 

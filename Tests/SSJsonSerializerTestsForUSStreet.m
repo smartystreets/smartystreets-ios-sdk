@@ -1,7 +1,7 @@
 #import <XCTest/XCTest.h>
 #import "SSJsonSerializer.h"
-#import "SSStreetLookup.h"
-#import "SSCandidate.h"
+#import "SSUSStreetLookup.h"
+#import "SSUSStreetCandidate.h"
 
 @interface SSJsonSerializerTestsForUSStreet : XCTestCase {
     NSArray *expectedJsonInput;
@@ -32,7 +32,7 @@
     NSError *error = nil;
     NSMutableArray *lookups = [NSMutableArray new];
     
-    SSStreetLookup *lookup1 = [[SSStreetLookup alloc] init];
+    SSUSStreetLookup *lookup1 = [[SSUSStreetLookup alloc] init];
     lookup1.street = @"street_value";
     lookup1.street2 = @"street2_value";
     lookup1.secondary = @"secondary_value";
@@ -45,16 +45,16 @@
     [lookup1 setMaxCandidates:5 error:&error];
     lookup1.matchStrategy = @"match_value";
     
-    SSStreetLookup *lookup2 = [[SSStreetLookup alloc] init];
+    SSUSStreetLookup *lookup2 = [[SSUSStreetLookup alloc] init];
     lookup2.street = @"1600 amphitheatre parkway";
     lookup2.city = @"Mountain view";
     lookup2.state = @"California";
     
     [lookups addObject:lookup1];
     [lookups addObject:lookup2];
-    [lookups addObject:[[SSStreetLookup alloc] initWithFreeformAddress:@"1 Rosedale, Baltimore, Maryland"]];
+    [lookups addObject:[[SSUSStreetLookup alloc] initWithFreeformAddress:@"1 Rosedale, Baltimore, Maryland"]];
     
-    NSData *actualBytes = [serializer serialize:lookups withClassType:[SSStreetLookup class] error:&error];
+    NSData *actualBytes = [serializer serialize:lookups withClassType:[SSUSStreetLookup class] error:&error];
     NSArray *actualArray = [NSJSONSerialization JSONObjectWithData:actualBytes options:kNilOptions error:&error];
     
     NSData *expectedBytes = [NSJSONSerialization dataWithJSONObject:expectedJsonInput options:kNilOptions error:&error];
@@ -69,13 +69,13 @@
     NSError *error = nil;
     
     NSData *expectedJson = [NSJSONSerialization dataWithJSONObject:expectedJsonOutput options:NSJSONWritingPrettyPrinted error:&error];
-    NSArray<SSCandidate*> *candidates = [serializer deserialize:expectedJson withClassType:[SSCandidate class] error:&error];
+    NSArray<SSUSStreetCandidate*> *candidates = [serializer deserialize:expectedJson withClassType:[SSUSStreetCandidate class] error:&error];
     
     XCTAssertNotNil(candidates);
     
     //Candidate1
     XCTAssertNotNil([candidates objectAtIndex:0]);
-    SSCandidate *candidate1 = [candidates objectAtIndex:0];
+    SSUSStreetCandidate *candidate1 = [candidates objectAtIndex:0];
     XCTAssertEqualObjects(@"inputId1", candidate1.inputId);
     XCTAssertEqual(0, candidate1.inputIndex);
     XCTAssertEqual(0, candidate1.candidateIndex);
@@ -140,7 +140,7 @@
     
     //Candidate2
     XCTAssertNotNil([candidates objectAtIndex:1]);
-    SSCandidate *candidate2 = [candidates objectAtIndex:1];
+    SSUSStreetCandidate *candidate2 = [candidates objectAtIndex:1];
     XCTAssertEqualObjects(@"inputId2", candidate2.inputId);
     XCTAssertEqual(1, candidate2.inputIndex);
     XCTAssertEqual(1, candidate2.candidateIndex);

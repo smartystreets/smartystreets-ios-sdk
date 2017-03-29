@@ -1,11 +1,11 @@
 #import <XCTest/XCTest.h>
-#import "SSStreetBatch.h"
+#import "SSUSStreetBatch.h"
 
-@interface SSStreetBatchTests : XCTestCase
+@interface SSUSStreetBatchTests : XCTestCase
 
 @end
 
-@implementation SSStreetBatchTests
+@implementation SSUSStreetBatchTests
 
 - (void)setUp {
     [super setUp];
@@ -17,8 +17,8 @@
 }
 
 - (void)testGetsLookupByInputId {
-    SSStreetBatch *batch = [[SSStreetBatch alloc] init];
-    SSStreetLookup *lookup = [[SSStreetLookup alloc] init];
+    SSUSStreetBatch *batch = [[SSUSStreetBatch alloc] init];
+    SSUSStreetLookup *lookup = [[SSUSStreetLookup alloc] init];
     lookup.inputId = @"hasInputId";
     NSError *error = nil;
     
@@ -28,8 +28,8 @@
 }
 
 - (void)testGetsLookupByIndex {
-    SSStreetBatch *batch = [[SSStreetBatch alloc] init];
-    SSStreetLookup *lookup = [[SSStreetLookup alloc] init];
+    SSUSStreetBatch *batch = [[SSUSStreetBatch alloc] init];
+    SSUSStreetLookup *lookup = [[SSUSStreetLookup alloc] init];
     lookup.city = @"Provo";
     NSError *error = nil;
     
@@ -39,11 +39,11 @@
 }
 
 - (void)testReturnsCorrectSize {
-    SSStreetBatch *batch = [[SSStreetBatch alloc] init];
-    SSStreetLookup *lookup1 = [[SSStreetLookup alloc] init];
+    SSUSStreetBatch *batch = [[SSUSStreetBatch alloc] init];
+    SSUSStreetLookup *lookup1 = [[SSUSStreetLookup alloc] init];
     lookup1.inputId = @"inputId";
-    SSStreetLookup *lookup2 = [[SSStreetLookup alloc] init];
-    SSStreetLookup *lookup3 = [[SSStreetLookup alloc] init];
+    SSUSStreetLookup *lookup2 = [[SSUSStreetLookup alloc] init];
+    SSUSStreetLookup *lookup3 = [[SSUSStreetLookup alloc] init];
     NSError *error = nil;
     
     [batch add:lookup1 error:&error];
@@ -54,8 +54,8 @@
 }
 
 - (void)testAddingALookupWhenThereIsABatchIsFullError {
-    SSStreetBatch *batch = [[SSStreetBatch alloc] init];
-    SSStreetLookup *lookup = [[SSStreetLookup alloc] init];
+    SSUSStreetBatch *batch = [[SSUSStreetBatch alloc] init];
+    SSUSStreetLookup *lookup = [[SSUSStreetLookup alloc] init];
     NSError *error = nil;
     
     for (int i = 0; i < kSSStreetMaxBatchSize + 1; i++) {
@@ -71,8 +71,8 @@
 }
 
 - (void)testClearMethodClearsBothLookupCollections {
-    SSStreetBatch *batch = [[SSStreetBatch alloc] init];
-    SSStreetLookup *lookup = [[SSStreetLookup alloc] init];
+    SSUSStreetBatch *batch = [[SSUSStreetBatch alloc] init];
+    SSUSStreetLookup *lookup = [[SSUSStreetLookup alloc] init];
     NSError *error = nil;
     
     [batch add:lookup error:&error];

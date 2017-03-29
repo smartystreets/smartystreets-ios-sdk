@@ -26,11 +26,11 @@
 - (void)buttonPressed:(UIButton*)button {
     NSString *result = @"";
     if ([pickerName isEqualToString:@"ZipCodeSingleLookup"]) {
-        SSZipCodeSingleLookupExample *example = [[SSZipCodeSingleLookupExample alloc] init];
+        SSUSZipCodeSingleLookupExample *example = [[SSUSZipCodeSingleLookupExample alloc] init];
         result = [example run];
     }
     else if ([pickerName isEqualToString:@"ZipCodeMultipleLookups"]) {
-        SSZipCodeMultipleLookupsExample *example = [[SSZipCodeMultipleLookupsExample alloc] init];
+        SSUSZipCodeMultipleLookupsExample *example = [[SSUSZipCodeMultipleLookupsExample alloc] init];
         result = [example run];
     }
     else if ([pickerName isEqualToString:@"StreetSingleAddress"]) {

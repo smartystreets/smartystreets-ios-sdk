@@ -1,6 +1,6 @@
-#import "SSMetadata.h"
+#import "SSUSStreetMetadata.h"
 
-@implementation SSMetadata
+@implementation SSUSStreetMetadata
 
 - (instancetype)initWithDictionary:(NSDictionary*)dictionary {
     if (self = [super init]) {

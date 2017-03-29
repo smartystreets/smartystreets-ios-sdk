@@ -1,6 +1,6 @@
-#import "SSZipCodeClientBuilder.h"
+#import "SSUSZipCodeClientBuilder.h"
 
-@interface SSZipCodeClientBuilder()
+@interface SSUSZipCodeClientBuilder()
 
 @property (nonatomic) id<SSCredentials> signer;
 @property (nonatomic) id<SSSerializer> serializer;
@@ -11,7 +11,7 @@
 
 @end
 
-@implementation SSZipCodeClientBuilder
+@implementation SSUSZipCodeClientBuilder
 
 - (instancetype)init {
     if (self = [super init]) {
@@ -34,33 +34,33 @@
     return [self initWithSigner:credentials];
 }
 
-- (SSZipCodeClientBuilder*)retryAtMost:(int)maxRetries {
+- (SSUSZipCodeClientBuilder*)retryAtMost:(int)maxRetries {
     _maxRetries = maxRetries;
     return self;
 }
 
-- (SSZipCodeClientBuilder*)withMaxTimeout:(int)maxTimeout {
+- (SSUSZipCodeClientBuilder*)withMaxTimeout:(int)maxTimeout {
     _maxTimeout = maxTimeout;
     return self;
 }
 
-- (SSZipCodeClientBuilder*)withSender:(id<SSSender>)sender {
+- (SSUSZipCodeClientBuilder*)withSender:(id<SSSender>)sender {
     _httpSender = sender;
     return self;
 }
 
-- (SSZipCodeClientBuilder*)withSerializer:(id<SSSerializer>)serializer {
+- (SSUSZipCodeClientBuilder*)withSerializer:(id<SSSerializer>)serializer {
     _serializer = serializer;
     return self;
 }
 
-- (SSZipCodeClientBuilder*)withUrl:(NSString*)urlPrefix {
+- (SSUSZipCodeClientBuilder*)withUrl:(NSString*)urlPrefix {
     _urlPrefix = urlPrefix;
     return self;
 }
 
-- (SSZipCodeClient*)build {
-    SSZipCodeClient *client = [[SSZipCodeClient alloc] initWithUrlPrefix:self.urlPrefix withSender:[self buildSender] withSerializer:self.serializer];
+- (SSUSZipCodeClient*)build {
+    SSUSZipCodeClient *client = [[SSUSZipCodeClient alloc] initWithUrlPrefix:self.urlPrefix withSender:[self buildSender] withSerializer:self.serializer];
     return client;
 }
 

@@ -1,6 +1,6 @@
-#import "SSCandidate.h"
+#import "SSUSStreetCandidate.h"
 
-@implementation SSCandidate
+@implementation SSUSStreetCandidate
 
 - (instancetype)initWithDictionary:(NSDictionary*)dictionary {
     if (self = [super init]) {
@@ -17,13 +17,13 @@
         NSDictionary *analysis = dictionary[@"analysis"];
         
         if (components != nil)
-            _components = [[SSComponents alloc] initWithDictionary:components];
+            _components = [[SSUSStreetComponents alloc] initWithDictionary:components];
         
         if (metadata != nil)
-            _metadata = [[SSMetadata alloc] initWithDictionary:metadata];
+            _metadata = [[SSUSStreetMetadata alloc] initWithDictionary:metadata];
         
         if (analysis != nil)
-            _analysis = [[SSAnalysis alloc] initWithDictionary:analysis];
+            _analysis = [[SSUSStreetAnalysis alloc] initWithDictionary:analysis];
     }
     
     return self;

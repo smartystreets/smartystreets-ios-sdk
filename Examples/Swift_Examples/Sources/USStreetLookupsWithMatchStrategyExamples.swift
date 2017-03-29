@@ -3,24 +3,24 @@ import SmartystreetsSDK
 
 class USStreetLookupsWithMatchStrategyExamples {
     func run() -> String {
-        let client = SSStreetClientBuilder(authId: MyCredentials.AuthId,
+        let client = SSUSStreetClientBuilder(authId: MyCredentials.AuthId,
                                             authToken: MyCredentials.AuthToken).build()
         
-        let batch = SSStreetBatch()
+        let batch = SSUSStreetBatch()
         
-        let addressWithStrictStrategy = SSStreetLookup()
+        let addressWithStrictStrategy = SSUSStreetLookup()
         addressWithStrictStrategy.street = "691 W 1150 S"
         addressWithStrictStrategy.city = "provo"
         addressWithStrictStrategy.state = "utah"
         addressWithStrictStrategy.matchStrategy = kSSStrict
         
-        let addressWithRangeStrategy = SSStreetLookup()
+        let addressWithRangeStrategy = SSUSStreetLookup()
         addressWithRangeStrategy.street = "693 W 1150 S"
         addressWithRangeStrategy.city = "provo"
         addressWithRangeStrategy.state = "utah"
         addressWithRangeStrategy.matchStrategy = kSSRange
         
-        let addressWithInvalidStrategy = SSStreetLookup()
+        let addressWithInvalidStrategy = SSUSStreetLookup()
         addressWithInvalidStrategy.street = "9999 W 1150 S"
         addressWithInvalidStrategy.city = "provo"
         addressWithInvalidStrategy.state = "utah"
@@ -44,11 +44,11 @@ class USStreetLookupsWithMatchStrategyExamples {
             }
         }
         
-        var lookups = batch.allLookups as [AnyObject] as! Array<SSStreetLookup>
+        var lookups = batch.allLookups as [AnyObject] as! Array<SSUSStreetLookup>
         var output = String()
         
         for i in 0...batch.count() - 1 {
-            let candidates = lookups[Int(i)].result as [AnyObject] as! Array<SSCandidate>
+            let candidates = lookups[Int(i)].result as [AnyObject] as! Array<SSUSStreetCandidate>
             
             if candidates.count == 0 {
                 output += String(format: "\nAddress %i is invalid\n", i)

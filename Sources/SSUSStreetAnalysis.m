@@ -1,6 +1,6 @@
-#import "SSAnalysis.h"
+#import "SSUSStreetAnalysis.h"
 
-@implementation SSAnalysis
+@implementation SSUSStreetAnalysis
 
 - (instancetype)initWithDictionary:(NSDictionary*)dictionary {
     if (self = [super init]) {

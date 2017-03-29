@@ -1,20 +1,20 @@
-#import "SSZipCodeMultipleLookupsExample.h"
+#import "SSUSZipCodeMultipleLookupsExample.h"
 
-@implementation SSZipCodeMultipleLookupsExample
+@implementation SSUSZipCodeMultipleLookupsExample
 
 - (NSString*)run {
-    SSZipCodeClient *client = [[SSZipCodeClientBuilder alloc] initWithAuthId:kSSAuthId authToken:kSSAuthToken].build;
+    SSUSZipCodeClient *client = [[SSUSZipCodeClientBuilder alloc] initWithAuthId:kSSAuthId authToken:kSSAuthToken].build;
     
-    SSZipCodeBatch *batch = [[SSZipCodeBatch alloc] init];
+    SSUSZipCodeBatch *batch = [[SSUSZipCodeBatch alloc] init];
     
-    SSZipCodeLookup *lookup1 = [[SSZipCodeLookup alloc] init];
+    SSUSZipCodeLookup *lookup1 = [[SSUSZipCodeLookup alloc] init];
     lookup1.zipcode = @"12345"; // A Lookup may have a ZIP Code, city and state, or city, state, and ZIP Code
     
-    SSZipCodeLookup *lookup2 = [[SSZipCodeLookup alloc] init];
+    SSUSZipCodeLookup *lookup2 = [[SSUSZipCodeLookup alloc] init];
     lookup2.city = @"Phoenix";
     lookup2.state = @"Arizona";
     
-    SSZipCodeLookup *lookup3 = [[SSZipCodeLookup alloc] initWithCity:@"cupertino" state:@"CA" zipcode:@"95014"];
+    SSUSZipCodeLookup *lookup3 = [[SSUSZipCodeLookup alloc] initWithCity:@"cupertino" state:@"CA" zipcode:@"95014"];
     
     NSError *error = nil;
     [batch add:lookup1 error:&error];
@@ -41,7 +41,7 @@
     NSMutableString *output = [[NSMutableString alloc] init];
     
     for (int i = 0; i < batch.count; i++) {
-        SSResult *result = [[lookups objectAtIndex:i] result];
+        SSUSZipCodeResult *result = [[lookups objectAtIndex:i] result];
         [output appendString:[@"\nLookup " stringByAppendingString:[@(i) stringValue]]];
         [output appendString:@"\n\n"];
         
@@ -70,11 +70,11 @@
         }
 
         [output appendString:@"\n"];
-        NSArray<SSZipCode*> *zipCodes = result.zipCodes;
+        NSArray<SSUSZipCode*> *zipCodes = result.zipCodes;
         [output appendString:[@(zipCodes.count) stringValue]];
         [output appendString:@" ZIP Code match(es):"];
         
-        for (SSZipCode *zip in zipCodes) {
+        for (SSUSZipCode *zip in zipCodes) {
             [output appendString:[@"\nZIP Code: " stringByAppendingString:zip.zipCode]];
             [output appendString:[@"\nCounty: " stringByAppendingString:zip.countyName]];
             NSNumber *latitude = [NSNumber numberWithDouble:zip.latitude];

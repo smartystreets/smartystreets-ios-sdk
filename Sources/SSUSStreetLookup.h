@@ -1,15 +1,15 @@
 #import <Foundation/Foundation.h>
 #import "SSLookup.h"
-#import "SSCandidate.h"
+#import "SSUSStreetCandidate.h"
 #import "SSSmartyErrors.h"
 
 extern NSString *const kSSStrict;
 extern NSString *const kSSRange;
 extern NSString *const kSSInvalid;
 
-@interface SSStreetLookup : NSObject <SSLookup>
+@interface SSUSStreetLookup : NSObject <SSLookup>
 
-@property (readonly, nonatomic) NSMutableArray<SSCandidate*> *result;
+@property (readonly, nonatomic) NSMutableArray<SSUSStreetCandidate*> *result;
 @property (nonatomic) NSString *inputId;
 @property (nonatomic) NSString *street;
 @property (nonatomic) NSString *street2;
@@ -24,8 +24,8 @@ extern NSString *const kSSInvalid;
 @property (nonatomic) NSString *matchStrategy;
 
 - (instancetype)initWithFreeformAddress:(NSString*)freeformAddress;
-- (void)addToResult:(SSCandidate*)newCandidate;
-- (SSCandidate*)getResultAtIndex:(int)index;
+- (void)addToResult:(SSUSStreetCandidate*)newCandidate;
+- (SSUSStreetCandidate*)getResultAtIndex:(int)index;
 - (void)setMaxCandidates:(int)maxCandidates error:(NSError**)error;
 
 @end

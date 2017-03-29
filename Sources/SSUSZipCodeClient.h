@@ -2,12 +2,12 @@
 #import "SSResponse.h"
 #import "SSSender.h"
 #import "SSSerializer.h"
-#import "SSZipCodeBatch.h"
+#import "SSUSZipCodeBatch.h"
 
-@interface SSZipCodeClient : NSObject
+@interface SSUSZipCodeClient : NSObject
 
 - (instancetype)initWithUrlPrefix:(NSString*)urlPrefix withSender:(id<SSSender>)sender withSerializer:(id<SSSerializer>)serializer;
-- (BOOL)sendLookup:(SSZipCodeLookup*)lookup error:(NSError**)error;
-- (BOOL)sendBatch:(SSZipCodeBatch*)batch error:(NSError**)error;
+- (BOOL)sendLookup:(SSUSZipCodeLookup*)lookup error:(NSError**)error;
+- (BOOL)sendBatch:(SSUSZipCodeBatch*)batch error:(NSError**)error;
 
 @end

@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 
-@interface SSAnalysis : NSObject
+@interface SSUSStreetAnalysis : NSObject
 
 @property (readonly, nonatomic) NSString *dpvMatchCode;
 @property (readonly, nonatomic) NSString *dpvFootnotes;

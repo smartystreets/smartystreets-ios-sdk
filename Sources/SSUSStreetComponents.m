@@ -1,6 +1,6 @@
-#import "SSComponents.h"
+#import "SSUSStreetComponents.h"
 
-@implementation SSComponents
+@implementation SSUSStreetComponents
 
 - (instancetype)initWithDictionary:(NSDictionary*)dictionary {
     if (self = [super init]) {

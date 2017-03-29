@@ -1,7 +1,7 @@
 #import <XCTest/XCTest.h>
 #import "SSJsonSerializer.h"
-#import "SSZipCodeLookup.h"
-#import "SSResult.h"
+#import "SSUSZipCodeLookup.h"
+#import "SSUSZipCodeResult.h"
 
 @interface SSJsonSerializerTestsForZipCode : XCTestCase {
     NSArray *expectedJsonInput;
@@ -27,11 +27,11 @@
     SSJsonSerializer *serializer = [[SSJsonSerializer alloc] init];
     NSError *error = nil;
     NSMutableArray *lookups = [NSMutableArray new];
-    [lookups addObject:[[SSZipCodeLookup alloc] initWithCity:@"Las Vegas" state:@"NV" zipcode:@"12345"]];
-    [lookups addObject:[[SSZipCodeLookup alloc] initWithCity:@"Provo" state:@"Utah"]];
-    [lookups addObject:[[SSZipCodeLookup alloc] initWithZipcode:@"54321"]];
+    [lookups addObject:[[SSUSZipCodeLookup alloc] initWithCity:@"Las Vegas" state:@"NV" zipcode:@"12345"]];
+    [lookups addObject:[[SSUSZipCodeLookup alloc] initWithCity:@"Provo" state:@"Utah"]];
+    [lookups addObject:[[SSUSZipCodeLookup alloc] initWithZipcode:@"54321"]];
     
-    NSData *actualBytes = [serializer serialize:lookups withClassType:[SSZipCodeLookup class] error:&error];
+    NSData *actualBytes = [serializer serialize:lookups withClassType:[SSUSZipCodeLookup class] error:&error];
     NSData *expectedBytes = [NSJSONSerialization dataWithJSONObject:expectedJsonInput options:kNilOptions error:&error];
     
     XCTAssertNotNil(actualBytes);
@@ -43,13 +43,13 @@
     NSError *error = nil;
     
     NSData *expectedJson = [NSJSONSerialization dataWithJSONObject:expectedJsonOutput options:NSJSONWritingPrettyPrinted error:&error];
-    NSArray<SSResult*> *results = [serializer deserialize:expectedJson withClassType:[SSResult class] error:&error];
+    NSArray<SSUSZipCodeResult*> *results = [serializer deserialize:expectedJson withClassType:[SSUSZipCodeResult class] error:&error];
     
     XCTAssertNotNil(results);
     
     //Result1
     XCTAssertNotNil([results objectAtIndex:0]);
-    SSResult *result1 = [results objectAtIndex:0];
+    SSUSZipCodeResult *result1 = [results objectAtIndex:0];
     XCTAssertEqual(0, result1.inputIndex);
     
     XCTAssertNotNil([result1 getCityAtIndex:0]);
@@ -88,7 +88,7 @@
     
     //Result2
     XCTAssertNotNil([results objectAtIndex:1]);
-    SSResult *result2 = [results objectAtIndex:1];
+    SSUSZipCodeResult *result2 = [results objectAtIndex:1];
     XCTAssertEqual(1, [[results objectAtIndex:1] inputIndex]);
     XCTAssertEqualObjects(@"UT", [[result2 getCityAtIndex:0] stateAbbreviation]);
     XCTAssertEqualObjects(@"Utah", [[result2 getCityAtIndex:0] state]);
