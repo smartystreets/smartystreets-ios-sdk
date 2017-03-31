@@ -27,22 +27,14 @@
     return data;
 }
 
-- (NSArray*)deserialize:(NSData*)payload withClassType:(Class)classType error:(NSError**)error {
+- (NSArray*)deserialize:(NSData*)payload error:(NSError**)error {
     if (payload == nil) {
         NSDictionary *details = @{NSLocalizedDescriptionKey: @"The payload is nil."};
         *error = [NSError errorWithDomain:SSErrorDomain code:ObjectNilError userInfo:details];
         return nil;
     }
     
-    NSArray *json = [NSJSONSerialization JSONObjectWithData:payload options:NSJSONReadingMutableContainers error:error];
-    
-    NSMutableArray *results = [NSMutableArray new];
-    for (int i = 0; i < [json count]; i++) {
-        NSObject *result = [[classType alloc] initWithDictionary:[json objectAtIndex:i]];
-        [results addObject:result];
-    }
-    
-    return [NSArray arrayWithArray:results];
+    return [NSJSONSerialization JSONObjectWithData:payload options:NSJSONReadingMutableContainers error:error];
 }
 
 @end

@@ -26,7 +26,7 @@
 - (void)testDeserializationOfNullStream {
     SSJsonSerializer *serializer = [[SSJsonSerializer alloc] init];
     NSError *error = nil;
-    NSArray *result = [serializer deserialize:nil withClassType:nil error:&error];
+    NSArray *result = [serializer deserialize:nil error:&error];
     
     XCTAssertNil(result);
 }

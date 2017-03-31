@@ -15,11 +15,9 @@
 
 - (void)setUp {
     [super setUp];
-
 }
 
 - (void)tearDown {
-
     [super tearDown];
 }
 
@@ -108,13 +106,25 @@
 }
 
 - (void)testCandidatesCorrectlyAssignedToCorrespondingLookup {
+    NSMutableDictionary *rawResult1 = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                       [NSNumber numberWithInt:0], @"input_index",
+                                       @"addressee1", @"addressee", nil];
+    NSMutableDictionary *rawResult2 = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                       [NSNumber numberWithInt:1], @"input_index",
+                                       @"addressee2", @"addressee", nil];
+    NSMutableDictionary *rawResult3 = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                       [NSNumber numberWithInt:1], @"input_index",
+                                       @"addressee3", @"addressee", nil];
+    NSMutableArray *rawResults = [[NSMutableArray alloc] initWithObjects:rawResult1, rawResult2, rawResult3, nil];
+    
     NSMutableArray<SSUSStreetCandidate*> *expectedCandidates = [[NSMutableArray<SSUSStreetCandidate*> alloc] init];
-    [expectedCandidates insertObject:[[SSUSStreetCandidate alloc] initWithInputIndex:0] atIndex:0];
-    [expectedCandidates insertObject:[[SSUSStreetCandidate alloc] initWithInputIndex:1] atIndex:1];
-    [expectedCandidates insertObject:[[SSUSStreetCandidate alloc] initWithInputIndex:1] atIndex:2];
+    [expectedCandidates insertObject:[[SSUSStreetCandidate alloc] initWithDictionary:rawResult1] atIndex:0];
+    [expectedCandidates insertObject:[[SSUSStreetCandidate alloc] initWithDictionary:rawResult2] atIndex:1];
+    [expectedCandidates insertObject:[[SSUSStreetCandidate alloc] initWithDictionary:rawResult3] atIndex:2];
+    
     SSUSStreetBatch *batch = [[SSUSStreetBatch alloc] init];
     NSError *error = nil;
-    
+
     [batch add:[[SSUSStreetLookup alloc] init] error:&error];
     [batch add:[[SSUSStreetLookup alloc] init] error:&error];
     
@@ -123,14 +133,14 @@
     SSResponse *response = [[SSResponse alloc] initWithStatusCode:0 payload:payload];
     
     SSMockSender *sender = [[SSMockSender alloc] initWithSSResponse:response];
-    SSMockDeserializer *deserializer = [[SSMockDeserializer alloc] initWithDeserializedObject:expectedCandidates];
+    SSMockDeserializer *deserializer = [[SSMockDeserializer alloc] initWithDeserializedObject:rawResults];
     SSUSStreetClient *client = [[SSUSStreetClient alloc] initWithUrlPrefix:@"/" withSender:sender withSerializer:deserializer];
     
     [client sendBatch:batch error:&error];
     
-    XCTAssertEqual([expectedCandidates objectAtIndex:0], [[batch getLookupAtIndex:0] getResultAtIndex:0]);
-    XCTAssertEqual([expectedCandidates objectAtIndex:1], [[batch getLookupAtIndex:1] getResultAtIndex:0]);
-    XCTAssertEqual([expectedCandidates objectAtIndex:2], [[batch getLookupAtIndex:1] getResultAtIndex:1]);
+    XCTAssertEqual([[expectedCandidates objectAtIndex:0] addressee], [[[batch getLookupAtIndex:0] getResultAtIndex:0] addressee]);
+    XCTAssertEqual([[expectedCandidates objectAtIndex:1] addressee], [[[batch getLookupAtIndex:1] getResultAtIndex:0] addressee]);
+    XCTAssertEqual([[expectedCandidates objectAtIndex:2] addressee], [[[batch getLookupAtIndex:1] getResultAtIndex:1] addressee]);
 }
 
 @end

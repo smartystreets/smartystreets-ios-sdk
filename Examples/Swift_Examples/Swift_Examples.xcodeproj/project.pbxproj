@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		AE0587A51DE4B566000A6079 /* MyCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0587A41DE4B566000A6079 /* MyCredentials.swift */; };
-		AE429CFB1E0B4881004DA6C3 /* SmartystreetsSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE429CFA1E0B4881004DA6C3 /* SmartystreetsSDK.framework */; };
 		AE429CFC1E0B4887004DA6C3 /* SmartystreetsSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE429CFA1E0B4881004DA6C3 /* SmartystreetsSDK.framework */; };
 		AE429CFD1E0B4887004DA6C3 /* SmartystreetsSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AE429CFA1E0B4881004DA6C3 /* SmartystreetsSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AE54787A1DDA3FD4005DEB61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5478791DDA3FD4005DEB61 /* AppDelegate.swift */; };
@@ -61,7 +60,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE429CFC1E0B4887004DA6C3 /* SmartystreetsSDK.framework in Frameworks */,
-				AE429CFB1E0B4881004DA6C3 /* SmartystreetsSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,7 +139,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = SmartyStreets;
 				TargetAttributes = {
 					AE5478751DDA3FD4005DEB61 = {

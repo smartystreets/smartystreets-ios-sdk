@@ -18,7 +18,7 @@
     return [[NSData alloc] init];
 }
 
-- (NSArray*)deserialize:(NSData*)payload withClassType:(Class)classType error:(NSError**)error {
+- (NSArray*)deserialize:(NSData*)payload error:(NSError**)error {
     _payload = payload;
     return self.deserialized;
 }

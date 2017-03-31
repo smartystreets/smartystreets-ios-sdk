@@ -36,11 +36,9 @@
         [request setPayload:[self.serializer serialize:batch.allLookups withClassType:[SSUSStreetLookup class] error:error]];
     
     SSResponse *response = [self.sender sendRequest:request error:error];
-    
     if (*error != nil) return NO;
     
-    NSArray<SSUSStreetCandidate*> *candidates = [self.serializer deserialize:response.payload withClassType:[SSUSStreetCandidate class] error:error];
-    
+    NSArray<SSUSStreetCandidate*> *candidates = [self.serializer deserialize:response.payload error:error];
     if (*error != nil) return NO;
     
     if (candidates == nil)
@@ -69,9 +67,11 @@
     [request setValue:lookup.matchStrategy forHTTPHeaderField:@"match"];
 }
 
-- (void)assignCandidatesToLookups:(SSUSStreetBatch*)batch candidates:(NSArray<SSUSStreetCandidate*>*)candidates {
-    for (SSUSStreetCandidate *candidate in candidates)
-         [[batch getLookupAtIndex:candidate.inputIndex] addToResult:candidate];
+- (void)assignCandidatesToLookups:(SSUSStreetBatch*)batch candidates:(NSArray*)candidates {
+    for (int i = 0; i < [candidates count]; i++) {
+        SSUSStreetCandidate *candidate = [[SSUSStreetCandidate alloc] initWithDictionary:[candidates objectAtIndex:i]];
+        [[batch getLookupAtIndex:candidate.inputIndex] addToResult:candidate];
+    }
 }
 
 @end
