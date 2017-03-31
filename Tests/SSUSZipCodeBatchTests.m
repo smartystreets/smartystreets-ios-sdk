@@ -1,19 +1,17 @@
 #import <XCTest/XCTest.h>
 #import "SSUSZipCodeBatch.h"
 
-@interface SSBatchTests : XCTestCase
+@interface SSUSZipCodeBatchTests : XCTestCase
 
 @end
 
-@implementation SSBatchTests
+@implementation SSUSZipCodeBatchTests
 
 - (void)setUp {
     [super setUp];
-
 }
 
 - (void)tearDown {
-
     [super tearDown];
 }
 

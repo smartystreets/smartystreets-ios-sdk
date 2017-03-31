@@ -28,8 +28,7 @@
 - (BOOL)sendBatch:(SSUSZipCodeBatch*)batch error:(NSError**)error {
     SSRequest *request = [[SSRequest alloc] initWithUrlPrefix:self.urlPrefix];
     
-    if ([batch count] == 0)
-        return NO;
+    if ([batch count] == 0) return NO;
     
     if ([batch count] == 1)
         [self populateQueryString:[batch getLookupAtIndex:0] withRequest:request];
@@ -37,22 +36,16 @@
         [request setPayload:[self.serializer serialize:batch.allLookups withClassType:[SSUSZipCodeLookup class] error:error]];
     
     SSResponse *response = [self.sender sendRequest:request error:error];
+    if (*error != nil) return NO;
     
-    if (*error != nil)
-        return NO;
-    
-    NSArray *resultsDict = [self.serializer deserialize:response.payload withClassType:[SSUSZipCodeResult class] error:error];
-    
-    if (*error != nil)
-        return NO;
+    NSArray *resultsDict = [self.serializer deserialize:response.payload error:error];
+    if (*error != nil) return NO;
     
     if (resultsDict == nil)
         resultsDict = [NSArray<SSUSZipCodeResult*> new];
 
     [self assignResultsToLookups:batch result:resultsDict];
-    
-    if (*error != nil)
-        return NO;
+    if (*error != nil) return NO;
     
     return YES;
 }
@@ -65,8 +58,10 @@
 }
 
 - (void)assignResultsToLookups:(SSUSZipCodeBatch*)batch result:(NSArray*)results {
-    for (int i = 0; i < [results count]; i++)
-        [[batch getLookupAtIndex:i] setResult:[results objectAtIndex:i]];
+    for (int i = 0; i < [results count]; i++) {
+        SSUSZipCodeResult *result = [[SSUSZipCodeResult alloc] initWithDictionary:[results objectAtIndex:i]];
+        [[batch getLookupAtIndex:result.inputIndex] setResult:[results objectAtIndex:i]];
+    }
 }
 
 @end
