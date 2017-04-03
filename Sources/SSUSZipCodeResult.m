@@ -11,7 +11,7 @@
         _zipCodes = dictionary[@"zipcodes"];
         
         if (self.cities == nil)
-            _cities = [NSMutableArray<SSCity*> new];
+            _cities = [NSMutableArray<SSUSCity*> new];
 
         if (self.zipCodes == nil)
             _zipCodes = [NSMutableArray<SSUSZipCode*> new];
@@ -22,11 +22,11 @@
     return self;
 }
 
-- (NSMutableArray<SSCity*>*)convertToCityObjects {
-    NSMutableArray<SSCity*> *cityObjects = [NSMutableArray<SSCity*> new];
+- (NSMutableArray<SSUSCity*>*)convertToCityObjects {
+    NSMutableArray<SSUSCity*> *cityObjects = [NSMutableArray<SSUSCity*> new];
     
     for (NSDictionary *city in self.cities) {
-        [cityObjects addObject:[[SSCity alloc] initWithDictionary:city]];
+        [cityObjects addObject:[[SSUSCity alloc] initWithDictionary:city]];
     }
     
     return cityObjects;
@@ -46,7 +46,7 @@
     return (self.status == nil && self.reason == nil);
 }
 
-- (SSCity*)getCityAtIndex:(int)index {
+- (SSUSCity*)getCityAtIndex:(int)index {
     return [self.cities objectAtIndex:index];
 }
 

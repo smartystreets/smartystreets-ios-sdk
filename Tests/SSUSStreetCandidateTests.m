@@ -119,7 +119,7 @@
     XCTAssertTrue([actualArray isEqualToArray:expectedArray]);
 }
 
-- (void)testDeserializationOfKnownType {
+- (void)testAllFieldsFilledCorrectly {
     SSUSStreetCandidate *candidate = [[SSUSStreetCandidate alloc] initWithDictionary:obj];
     
     XCTAssertEqual(0, candidate.inputIndex);

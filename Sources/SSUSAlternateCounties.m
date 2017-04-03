@@ -1,6 +1,6 @@
-#import "SSAlternateCounties.h"
+#import "SSUSAlternateCounties.h"
 
-@implementation SSAlternateCounties
+@implementation SSUSAlternateCounties
 
 - (instancetype)initWithDictionary:(NSDictionary*)dictionary {
     if (self = [super init]) {

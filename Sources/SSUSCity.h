@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 
-@interface SSCity : NSObject
+@interface SSUSCity : NSObject
 
 @property (readonly, nonatomic) NSString *city;
 @property (readonly, nonatomic) bool mailableCity;

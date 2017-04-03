@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 
-@interface SSAlternateCounties : NSObject
+@interface SSUSAlternateCounties : NSObject
 
 @property (readonly, nonatomic) NSString *countyFips;
 @property (readonly, nonatomic) NSString *countyName;

@@ -5,7 +5,7 @@
 
 @interface SSUSZipCodeResultTests : XCTestCase {
     NSArray *expectedJsonInput;
-    NSArray *expectedJsonOutput;
+    NSDictionary *obj;
 }
 
 @property (nonatomic) SSUSZipCodeResult *result;
@@ -20,7 +20,38 @@
     
     expectedJsonInput = @[@{@"city":@"Las Vegas",@"state":@"NV",@"zipcode":@"12345"},@{@"city":@"Provo",@"state":@"Utah"},@{@"zipcode":@"54321"}];
     
-    expectedJsonOutput = @[@{@"input_index":@0,@"city_states":@[@{@"city":@"city1",@"state_abbreviation":@"CA",@"state":@"state1",@"mailable_city":@YES},@{@"city":@"city2",@"state_abbreviation":@"NV",@"state":@"state2",@"mailable_city":@NO}],@"zipcodes":@[@{@"zipcode":@"12345",@"zipcode_type":@"S",@"default_city":@"Los Angeles",@"county_fips":@"06037",@"county_name":@"Los Angeles",@"state_abbreviation":@"CA",@"state":@"California",@"latitude":@34.02425,@"longitude":@-118.20399,@"precision":@"Zip5",@"alternate_counties":@[@{@"county_fips":@"21047",@"county_name":@"Christian",@"state_abbreviation":@"KY",@"state":@"Kentucky"},@{@"county_fips":@"47125",@"county_name":@"Montgomery",@"state_abbreviation":@"TN",@"state":@"Tennessee"}]},@{@"zipcode":@"56789",@"zipcode_type":@"S",@"default_city":@"Los Vegas",@"county_fips":@"34567",@"county_name":@"Los Vegas",@"state_abbreviation":@"NV",@"state":@"Nevada",@"latitude":@35.02437,@"longitude":@-115.20356,@"precision":@"Zip5"}]},@{@"input_index":@1,@"city_states":@[@{@"city":@"Provo",@"state_abbreviation":@"UT",@"state":@"Utah",@"mailable_city":@YES}],@"zipcodes":@[@{@"zipcode":@"84606",@"zipcode_type":@"S",@"county_fips":@"11501",@"county_name":@"Utah",@"latitude":@38.89769,@"longitude":@-77.038,@"alternate_counties":@[@{@"county_fips":@"23456",@"county_name":@"County",@"state_abbreviation":@"AZ",@"state":@"Arizona"}]}]},@{@"input_index":@2,@"status":@"invalid_zipcode",@"reason":@"Invalid ZIP Code."}];
+    obj = @{
+            @"status": @"0",
+            @"reason": @"1",
+            @"input_index": [NSNumber numberWithInteger:2],
+            @"city_states": [NSArray arrayWithObjects:
+                             @{
+                    @"city": @"3",
+                    @"mailable_city": @YES,
+                    @"state_abbreviation": @"4",
+                    @"state": @"5"
+                }, nil],
+            @"zipcodes": [NSArray arrayWithObjects:
+                          @{
+                    @"zipcode": @"6",
+                    @"zipcode_type": @"7",
+                    @"default_city": @"8",
+                    @"county_fips": @"9",
+                    @"county_name": @"10",
+                    @"state_abbreviation": @"11",
+                    @"state": @"12",
+                    @"latitude": [NSNumber numberWithInteger:13],
+                    @"longitude": [NSNumber numberWithInteger:14],
+                    @"precision": @"15",
+                    @"alternate_counties": [NSArray arrayWithObjects:
+                                            @{
+                                @"county_fips": @"16",
+                                @"county_name": @"17",
+                                @"state_abbreviation": @"18",
+                                @"state": @"19"
+                            }, nil]
+                }, nil]
+            };
 }
 
 - (void)tearDown {
@@ -54,76 +85,36 @@
     XCTAssertTrue([expectedBytes isEqualToData:actualBytes]);
 }
 
-- (void)testDeserializationOfKnownType {
-    SSJsonSerializer *serializer = [[SSJsonSerializer alloc] init];
-    NSError *error = nil;
+- (void)testAllFieldsFilledCorrectly {
+    SSUSZipCodeResult *result = [[SSUSZipCodeResult alloc] initWithDictionary:obj];
     
-    NSData *expectedJson = [NSJSONSerialization dataWithJSONObject:expectedJsonOutput options:NSJSONWritingPrettyPrinted error:&error];
-    NSArray<SSUSZipCodeResult*> *results = [serializer deserialize:expectedJson error:&error];
+    XCTAssertEqual(@"0", result.status);
+    XCTAssertEqual(@"1", result.reason);
+    XCTAssertEqual(2, result.inputIndex);
     
-    XCTAssertNotNil(results);
+   SSUSCity *city = [result.cities objectAtIndex:0];
+    XCTAssertEqual(@"3", city.city);
+    XCTAssertTrue(city.mailableCity);
+    XCTAssertEqual(@"4", city.stateAbbreviation);
+    XCTAssertEqual(@"5", city.state);
     
-    //Result1
-    XCTAssertNotNil([results objectAtIndex:0]);
-    SSUSZipCodeResult *result1 = [results objectAtIndex:0];
-    XCTAssertEqual(0, result1.inputIndex);
+    SSUSZipCode *zip = [result.zipCodes objectAtIndex:0];
+    XCTAssertEqual(@"6", zip.zipCode);
+    XCTAssertEqual(@"7", zip.zipCodeType);
+    XCTAssertEqual(@"8", zip.defaultCity);
+    XCTAssertEqual(@"9", zip.countyFips);
+    XCTAssertEqual(@"10", zip.countyName);
+    XCTAssertEqual(@"11", zip.stateAbbreviation);
+    XCTAssertEqual(@"12", zip.state);
+    XCTAssertEqual(13, zip.latitude);
+    XCTAssertEqual(14, zip.longitude);
+    XCTAssertEqual(@"15", zip.precision);
     
-    XCTAssertNotNil([result1 getCityAtIndex:0]);
-    XCTAssertEqualObjects(@"city1", [[result1 getCityAtIndex:0] city]);
-    XCTAssertEqualObjects(@"CA", [[result1 getCityAtIndex:0] stateAbbreviation]);
-    XCTAssertEqualObjects(@"state1", [[result1 getCityAtIndex:0] state]);
-    XCTAssertTrue([[result1 getCityAtIndex:0] mailableCity]);
-    XCTAssertNotNil([result1 getCityAtIndex:1]);
-    XCTAssertEqualObjects(@"state2", [[result1 getCityAtIndex:1] state]);
-    XCTAssertFalse([[result1 getCityAtIndex:1] mailableCity]);
-    
-    XCTAssertNotNil([result1 getZipCodeAtIndex:0]);
-    XCTAssertEqualObjects(@"12345", [[result1 getZipCodeAtIndex:0] zipCode]);
-    XCTAssertEqualObjects(@"S", [[result1 getZipCodeAtIndex:0] zipCodeType]);
-    XCTAssertEqualObjects(@"Los Angeles", [[result1 getZipCodeAtIndex:0] defaultCity]);
-    XCTAssertEqualObjects(@"06037", [[result1 getZipCodeAtIndex:0] countyFips]);
-    XCTAssertEqualObjects(@"Los Angeles", [[result1 getZipCodeAtIndex:0] countyName]);
-    XCTAssertEqualObjects(@"CA", [[result1 getZipCodeAtIndex:0] stateAbbreviation]);
-    XCTAssertEqualObjects(@"California", [[result1 getZipCodeAtIndex:0] state]);
-    XCTAssertEqual(34.02425, [[result1 getZipCodeAtIndex:0] latitude]);
-    XCTAssertEqual(-118.20399, [[result1 getZipCodeAtIndex:0] longitude]);
-    XCTAssertEqualObjects(@"Zip5", [[result1 getZipCodeAtIndex:0] precision]);
-    XCTAssertEqualObjects(@"21047", [[[result1 getZipCodeAtIndex:0] getAlternateCountiesAtIndex:0] countyFips]);
-    XCTAssertEqualObjects(@"Christian", [[[result1 getZipCodeAtIndex:0] getAlternateCountiesAtIndex:0] countyName]);
-    XCTAssertEqualObjects(@"KY", [[[result1 getZipCodeAtIndex:0] getAlternateCountiesAtIndex:0] stateAbbreviation]);
-    XCTAssertEqualObjects(@"Kentucky", [[[result1 getZipCodeAtIndex:0] getAlternateCountiesAtIndex:0] state]);
-    XCTAssertEqualObjects(@"47125", [[[result1 getZipCodeAtIndex:0] getAlternateCountiesAtIndex:1] countyFips]);
-    XCTAssertEqualObjects(@"Montgomery", [[[result1 getZipCodeAtIndex:0] getAlternateCountiesAtIndex:1] countyName]);
-    XCTAssertEqualObjects(@"TN", [[[result1 getZipCodeAtIndex:0] getAlternateCountiesAtIndex:1] stateAbbreviation]);
-    XCTAssertEqualObjects(@"Tennessee", [[[result1 getZipCodeAtIndex:0] getAlternateCountiesAtIndex:1] state]);
-    
-    XCTAssertNotNil([result1 getZipCodeAtIndex:1]);
-    XCTAssertEqualObjects(@"56789", [[result1 getZipCodeAtIndex:1] zipCode]);
-    XCTAssertEqualObjects(@"Los Vegas", [[result1 getZipCodeAtIndex:1] defaultCity]);
-    XCTAssertEqual(35.02437, [[result1 getZipCodeAtIndex:1] latitude]);
-    
-    //Result2
-    XCTAssertNotNil([results objectAtIndex:1]);
-    SSUSZipCodeResult *result2 = [results objectAtIndex:1];
-    XCTAssertEqual(1, [[results objectAtIndex:1] inputIndex]);
-    XCTAssertEqualObjects(@"UT", [[result2 getCityAtIndex:0] stateAbbreviation]);
-    XCTAssertEqualObjects(@"Utah", [[result2 getCityAtIndex:0] state]);
-    XCTAssertTrue([[result2 getCityAtIndex:0] mailableCity]);
-    XCTAssertEqualObjects(@"84606", [[result2 getZipCodeAtIndex:0] zipCode]);
-    XCTAssertEqualObjects(@"S", [[result2 getZipCodeAtIndex:0] zipCodeType]);
-    XCTAssertEqualObjects(@"11501", [[result2 getZipCodeAtIndex:0] countyFips]);
-    XCTAssertEqualObjects(@"Utah", [[result2 getZipCodeAtIndex:0] countyName]);
-    XCTAssertEqual(38.89769, [[result2 getZipCodeAtIndex:0] latitude]);
-    XCTAssertEqual(-77.038, [[result2 getZipCodeAtIndex:0] longitude]);
-    XCTAssertEqualObjects(@"23456", [[[result2 getZipCodeAtIndex:0] getAlternateCountiesAtIndex:0] countyFips]);
-    XCTAssertEqualObjects(@"County", [[[result2 getZipCodeAtIndex:0] getAlternateCountiesAtIndex:0] countyName]);
-    XCTAssertEqualObjects(@"AZ", [[[result2 getZipCodeAtIndex:0] getAlternateCountiesAtIndex:0] stateAbbreviation]);
-    XCTAssertEqualObjects(@"Arizona", [[[result2 getZipCodeAtIndex:0] getAlternateCountiesAtIndex:0] state]);
-    
-    //Result3
-    XCTAssertNotNil([results objectAtIndex:2]);
-    XCTAssertEqualObjects(@"invalid_zipcode", [[results objectAtIndex:2] status]);
-    XCTAssertEqualObjects(@"Invalid ZIP Code.", [[results objectAtIndex:2] reason]);
+    SSUSAlternateCounties *altCounties = [zip.alternateCounties objectAtIndex:0];
+    XCTAssertEqual(@"16", altCounties.countyFips);
+    XCTAssertEqual(@"17", altCounties.countyName);
+    XCTAssertEqual(@"18", altCounties.stateAbbreviation);
+    XCTAssertEqual(@"19", altCounties.state);
 }
 
 @end

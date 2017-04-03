@@ -17,23 +17,23 @@
         _alternateCounties = dictionary[@"alternate_counties"];
         
         if (self.alternateCounties == nil)
-            _alternateCounties = [NSMutableArray<SSAlternateCounties*> new];
+            _alternateCounties = [NSMutableArray<SSUSAlternateCounties*> new];
         
         _alternateCounties = [self convertToAlternateCountyObjects];
     }
     return self;
 }
 
-- (NSMutableArray<SSAlternateCounties*>*)convertToAlternateCountyObjects {
-    NSMutableArray<SSAlternateCounties*> *altCountyObjects = [NSMutableArray<SSAlternateCounties*> new];
+- (NSMutableArray<SSUSAlternateCounties*>*)convertToAlternateCountyObjects {
+    NSMutableArray<SSUSAlternateCounties*> *altCountyObjects = [NSMutableArray<SSUSAlternateCounties*> new];
     
     for (NSDictionary *county in self.alternateCounties)
-        [altCountyObjects addObject:[[SSAlternateCounties alloc] initWithDictionary:county]];
+        [altCountyObjects addObject:[[SSUSAlternateCounties alloc] initWithDictionary:county]];
     
     return altCountyObjects;
 }
 
-- (SSAlternateCounties*)getAlternateCountiesAtIndex:(int)index {
+- (SSUSAlternateCounties*)getAlternateCountiesAtIndex:(int)index {
     return [self.alternateCounties objectAtIndex:index];
 }
 

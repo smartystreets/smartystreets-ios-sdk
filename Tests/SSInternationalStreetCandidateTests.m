@@ -1,11 +1,3 @@
-//
-//  SSInternationalStreetCandidateTests.m
-//  SmartystreetsSDK
-//
-//  Created by Oshion Niemela on 3/31/17.
-//  Copyright © 2017 SmartyStreets. All rights reserved.
-//
-
 #import <XCTest/XCTest.h>
 
 @interface SSInternationalStreetCandidateTests : XCTestCase

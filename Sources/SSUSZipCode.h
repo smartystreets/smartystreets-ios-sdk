@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
-#import "SSAlternateCounties.h"
+#import "SSUSAlternateCounties.h"
 
 @interface SSUSZipCode : NSObject
 
@@ -13,9 +13,9 @@
 @property (readonly, nonatomic) double latitude;
 @property (readonly, nonatomic) double longitude;
 @property (readonly, nonatomic) NSString *precision;
-@property (readonly, nonatomic) NSMutableArray<SSAlternateCounties*> *alternateCounties;
+@property (readonly, nonatomic) NSMutableArray<SSUSAlternateCounties*> *alternateCounties;
 
 - (instancetype)initWithDictionary:(NSDictionary*)dictionary;
-- (SSAlternateCounties*)getAlternateCountiesAtIndex:(int)index;
+- (SSUSAlternateCounties*)getAlternateCountiesAtIndex:(int)index;
 
 @end

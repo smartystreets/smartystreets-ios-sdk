@@ -2,19 +2,13 @@
 
 NSString *const kSSCharSet = @"UTF-8";
 
-@interface SSRequest()
-
-@property (readonly, nonatomic) NSString *urlPrefix;
-
-@end
-
 @implementation SSRequest
 
 - (instancetype)init {
     if (self = [super init]) {
-        _method = @"GET";
         _headers = [NSMutableDictionary new];
         _parameters = [NSMutableDictionary new];
+        _method = @"GET";
     }
     return self;
 }

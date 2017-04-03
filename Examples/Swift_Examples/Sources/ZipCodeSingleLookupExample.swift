@@ -34,9 +34,9 @@ class ZipCodeSingleLookupExample {
         }
         
         for city in cities! {
-            output += "\nCity: " + (city as! SSCity).city
-            output += "\nState: " + (city as! SSCity).state
-            output += "\nMailable City: " + ((city as! SSCity).mailableCity ? "YES" : "NO") + "\n"
+            output += "\nCity: " + (city as!SSUSCity).city
+            output += "\nState: " + (city as!SSUSCity).state
+            output += "\nMailable City: " + ((city as!SSUSCity).mailableCity ? "YES" : "NO") + "\n"
         }
         
         for zip in zipCodes! {

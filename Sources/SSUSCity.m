@@ -1,6 +1,6 @@
- #import "SSCity.h"
+ #import "SSUSCity.h"
 
-@implementation SSCity
+@implementation SSUSCity
 
 - (instancetype)initWithDictionary:(NSDictionary*)dictionary {
     if (self = [super init]) {
