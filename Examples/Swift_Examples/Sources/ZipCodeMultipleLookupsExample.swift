@@ -5,7 +5,7 @@ class ZipCodeMultipleLookupsExample {
     
     func run() -> String {
         let client = SSClientBuilder(authId: MyCredentials.AuthId,
-                                            authToken: MyCredentials.AuthToken).buildUsZIPCodeApiClient()()
+                                     authToken: MyCredentials.AuthToken).buildUsZIPCodeApiClient();
         
         let batch = SSUSZipCodeBatch()
         

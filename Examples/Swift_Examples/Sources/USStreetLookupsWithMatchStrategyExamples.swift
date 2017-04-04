@@ -4,7 +4,7 @@ import SmartystreetsSDK
 class USStreetLookupsWithMatchStrategyExamples {
     func run() -> String {
         let client = SSClientBuilder(authId: MyCredentials.AuthId,
-                                            authToken: MyCredentials.AuthToken).buildUsStreetApiClient()()
+                                     authToken: MyCredentials.AuthToken).buildUsStreetApiClient()
         
         let batch = SSUSStreetBatch()
         
