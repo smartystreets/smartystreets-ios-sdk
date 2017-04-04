@@ -1,11 +1,3 @@
-//
-//  AppDelegate.m
-//  Examples
-//
-//  Created by Oshion Niemela on 10/16/16.
-//  Copyright © 2016 SmartyStreets. All rights reserved.
-//
-
 #import "AppDelegate.h"
 
 @interface AppDelegate ()

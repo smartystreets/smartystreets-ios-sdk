@@ -4,8 +4,8 @@
 
 - (NSString*)run {
     id<SSCredentials> mobile = [[SSSharedCredentials alloc] initWithId:kSSSmartyWebsiteKey hostname:kSSHost];
-    SSUSStreetClient *client = [[SSUSStreetClientBuilder alloc] initWithSigner:mobile].build;
-//    SSUSStreetClient *client = [[SSUSStreetClientBuilder alloc] initWithAuthId:kSSAuthId authToken:kSSAuthToken].build;
+    SSUSStreetClient *client = [[SSClientBuilder alloc] initWithSigner:mobile].buildUsStreetApiClient;
+//    SSUSStreetClient *client = [[SSClientBuilder alloc] initWithAuthId:kSSAuthId authToken:kSSAuthToken].buildUsStreetApiClient;
     
     SSUSStreetLookup *lookup = [[SSUSStreetLookup alloc] init];
     lookup.street = @"1600 Amphitheatre Pkwy";

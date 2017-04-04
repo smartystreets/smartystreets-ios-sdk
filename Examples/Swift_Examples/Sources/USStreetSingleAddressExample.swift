@@ -5,9 +5,9 @@ class USStreetSingleAddressExample {
     
     func run() -> String {
         let mobile = SSSharedCredentials(id: MyCredentials.SmartyWebsiteKey, hostname: MyCredentials.Host)
-        let client = SSUSStreetClientBuilder(signer: mobile).build()
-//        let client = SSUSStreetClientBuilder(authId: MyCredentials.AuthId,
-//                                            authToken: MyCredentials.AuthToken).build()
+        let client = SSClientBuilder(signer: mobile).buildUsStreetApiClient()
+//        let client = SSClientBuilder(authId: MyCredentials.AuthId,
+//                                            authToken: MyCredentials.AuthToken).buildUsStreetApiClient()
         
         let lookup = SSUSStreetLookup()
         lookup.street = "1600 Amphitheatre Pkwy"

@@ -10,7 +10,6 @@
 @property (readonly, nonatomic) NSString *method;
 @property (nonatomic) NSString *contentType;
 
-- (instancetype)initWithUrlPrefix:(NSString*)urlPrefix;
 - (void)setValue:(NSString*)value forHTTPHeaderField:(NSString*)name;
 - (void)setValue:(NSString*)value forHTTPParameterField:(NSString*)name;
 - (NSString*)getUrl;

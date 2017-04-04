@@ -25,7 +25,7 @@
 - (void)testSendingSingleZipOnlyLookup {
     SSRequestCapturingSender *sender = [[SSRequestCapturingSender alloc] init];
     SSMockSerializer *serializer = [[SSMockSerializer alloc] initWithBytes:nil];
-    SSUSZipCodeClient *client = [[SSUSZipCodeClient alloc] initWithUrlPrefix:@"http://localhost/" withSender:sender withSerializer:serializer];
+    SSUSZipCodeClient *client = [[SSUSZipCodeClient alloc] initWithSender:sender withSerializer:serializer];
     NSError *error = nil;
     
     [client sendLookup:[[SSUSZipCodeLookup alloc] initWithZipcode:@"1"] error:&error];
@@ -36,7 +36,7 @@
 - (void)testSendingSingleFullyPopulatedLookup {
     SSRequestCapturingSender *sender = [[SSRequestCapturingSender alloc] init];
     SSMockSerializer *serializer = [[SSMockSerializer alloc] initWithBytes:nil];
-    SSUSZipCodeClient *client = [[SSUSZipCodeClient alloc] initWithUrlPrefix:@"http://localhost/" withSender:sender withSerializer:serializer];
+    SSUSZipCodeClient *client = [[SSUSZipCodeClient alloc] initWithSender:sender withSerializer:serializer];
     SSUSZipCodeLookup *lookup = [[SSUSZipCodeLookup alloc] init];
     lookup.city = @"1";
     lookup.state = @"2";
@@ -53,7 +53,7 @@
 
 - (void)testEmptyBatchNotSent {
     SSRequestCapturingSender *sender = [[SSRequestCapturingSender alloc] init];
-    SSUSZipCodeClient *client = [[SSUSZipCodeClient alloc] initWithUrlPrefix:@"/" withSender:sender withSerializer:nil];
+    SSUSZipCodeClient *client = [[SSUSZipCodeClient alloc] initWithSender:sender withSerializer:nil];
     NSError *error = nil;
     
     [client sendBatch:[[SSUSZipCodeBatch alloc] init] error:&error];
@@ -67,7 +67,7 @@
     
     SSRequestCapturingSender *sender = [[SSRequestCapturingSender alloc] init];
     SSMockSerializer *serializer = [[SSMockSerializer alloc] initWithBytes:expectedPayload];
-    SSUSZipCodeClient *client = [[SSUSZipCodeClient alloc] initWithUrlPrefix:@"http://localhost/" withSender:sender withSerializer:serializer];
+    SSUSZipCodeClient *client = [[SSUSZipCodeClient alloc] initWithSender:sender withSerializer:serializer];
     
     NSError *error = nil;
     SSUSZipCodeBatch *batch = [[SSUSZipCodeBatch alloc] init];
@@ -88,7 +88,7 @@
     SSResponse *response = [[SSResponse alloc] initWithStatusCode:0 payload:data];
     SSMockSender *sender = [[SSMockSender alloc] initWithSSResponse:response];
     SSMockDeserializer *deserializer = [[SSMockDeserializer alloc] initWithDeserializedObject:nil];
-    SSUSZipCodeClient *client = [[SSUSZipCodeClient alloc] initWithUrlPrefix:@"/" withSender:sender withSerializer:deserializer];
+    SSUSZipCodeClient *client = [[SSUSZipCodeClient alloc] initWithSender:sender withSerializer:deserializer];
     
     NSError *error = nil;
     [client sendLookup:[[SSUSZipCodeLookup alloc] init] error:&error];
@@ -97,12 +97,21 @@
 }
 
 - (void)testCandidatesCorrectlyAssignedToCorrespondingLookup {
-    NSMutableArray<SSUSZipCodeResult*> *expectedCandidates = [[NSMutableArray<SSUSZipCodeResult*> alloc] init];
-    [expectedCandidates insertObject:[[SSUSZipCodeResult alloc] init] atIndex:0];
-    [expectedCandidates insertObject:[[SSUSZipCodeResult alloc] init] atIndex:1];
-    SSUSZipCodeBatch *batch = [[SSUSZipCodeBatch alloc] init];
+    NSMutableDictionary *rawResult1 = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                       [NSNumber numberWithInt:0], @"input_index",
+                                       @"status1", @"status", nil];
+    NSMutableDictionary *rawResult2 = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                       [NSNumber numberWithInt:1], @"input_index",
+                                       @"status2", @"status", nil];
+    NSMutableArray *rawResults = [[NSMutableArray alloc] initWithObjects:rawResult1, rawResult2, nil];
     
+    NSMutableArray<SSUSZipCodeResult*> *expectedCandidates = [[NSMutableArray<SSUSZipCodeResult*> alloc] init];
+    [expectedCandidates insertObject:[[SSUSZipCodeResult alloc] initWithDictionary:rawResult1] atIndex:0];
+    [expectedCandidates insertObject:[[SSUSZipCodeResult alloc] initWithDictionary:rawResult2] atIndex:1];
+
+    SSUSZipCodeBatch *batch = [[SSUSZipCodeBatch alloc] init];
     NSError *error = nil;
+    
     [batch add:[[SSUSZipCodeLookup alloc] init] error:&error];
     [batch add:[[SSUSZipCodeLookup alloc] init] error:&error];
     
@@ -111,13 +120,13 @@
     SSResponse *response = [[SSResponse alloc] initWithStatusCode:0 payload:payload];
     
     SSMockSender *sender = [[SSMockSender alloc] initWithSSResponse:response];
-    SSMockDeserializer *deserializer = [[SSMockDeserializer alloc] initWithDeserializedObject:expectedCandidates];
-    SSUSZipCodeClient *client = [[SSUSZipCodeClient alloc] initWithUrlPrefix:@"/" withSender:sender withSerializer:deserializer];
+    SSMockDeserializer *deserializer = [[SSMockDeserializer alloc] initWithDeserializedObject:rawResults];
+    SSUSZipCodeClient *client = [[SSUSZipCodeClient alloc] initWithSender:sender withSerializer:deserializer];
     
     [client sendBatch:batch error:&error];
     
-    XCTAssertEqual([expectedCandidates objectAtIndex:0], [[batch getLookupAtIndex:0] result]);
-    XCTAssertEqual([expectedCandidates objectAtIndex:1], [[batch getLookupAtIndex:1] result]);
+    XCTAssertEqualObjects([[expectedCandidates objectAtIndex:0] status], [[[batch getLookupAtIndex:0] result] status]);
+    XCTAssertEqualObjects([[expectedCandidates objectAtIndex:1] status], [[[batch getLookupAtIndex:1] result] status]);
 }
 
 @end

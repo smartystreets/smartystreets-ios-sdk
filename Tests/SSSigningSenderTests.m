@@ -21,9 +21,10 @@
     SSStaticCredentials *signer = [[SSStaticCredentials alloc] initWithAuthId:@"authId" authToken:@"secret"];
     SSMockSender *mockSender = [[SSMockSender alloc] initWithSSResponse:nil];
     SSSigningSender *sender = [[SSSigningSender alloc] initWithSigner:signer inner:mockSender];
+    SSRequest *request = [[SSRequest alloc] init];
+    request.urlPrefix = @"http://localhost/";
     NSError *error = nil;
     
-    SSRequest *request = [[SSRequest alloc] initWithUrlPrefix:@"http://localhost/"];
     [sender sendRequest:request error:&error];
     
     NSString *expectedUrl = @"http://localhost/?auth-id=authId&auth-token=secret";
@@ -35,9 +36,10 @@
     SSResponse *expectedResponse = [[SSResponse alloc] initWithStatusCode:200 payload:nil];
     SSMockSender *mockSender = [[SSMockSender alloc] initWithSSResponse:expectedResponse];
     SSSigningSender *sender = [[SSSigningSender alloc] initWithSigner:signer inner:mockSender];
+    SSRequest *request = [[SSRequest alloc] init];
+    request.urlPrefix = @"http://localhost/";
     NSError *error = nil;
     
-    SSRequest *request = [[SSRequest alloc] initWithUrlPrefix:@"http://localhost/"];
     SSResponse *actualResponse = [sender sendRequest:request error:&error];
     
     XCTAssertEqualObjects(expectedResponse, actualResponse);

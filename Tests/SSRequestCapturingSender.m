@@ -4,6 +4,7 @@
 
 - (SSResponse*)sendRequest:(SSRequest *)request error:(NSError**)error {
     _request = request;
+    self.request.urlPrefix = @"http://localhost/?";
     
     NSString *emptyString = @"[]";
     NSData *data = [emptyString dataUsingEncoding:NSUTF8StringEncoding];

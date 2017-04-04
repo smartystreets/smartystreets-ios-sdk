@@ -6,6 +6,7 @@
 #import "SSUSStreetClient.h"
 #import "SSUSStreetLookup.h"
 #import "SSUSZipCodeResult.h"
+#import "SSURLPrefixSender.h"
 
 @interface SSUSStreetClientTests : XCTestCase
 
@@ -24,20 +25,25 @@
 // Single Lookup
 
 - (void)testSendingSingleFreeformLookup {
+    NSString *expectedUrl = @"http://localhost/?street=freeform";
     SSRequestCapturingSender *sender = [[SSRequestCapturingSender alloc] init];
     SSMockSerializer *serializer = [[SSMockSerializer alloc] init];
-    SSUSStreetClient *client = [[SSUSStreetClient alloc] initWithUrlPrefix:@"http://localhost/" withSender:sender withSerializer:serializer];
+    SSUSStreetClient *client = [[SSUSStreetClient alloc] initWithSender:sender withSerializer:serializer];
     NSError *error = nil;
     
     [client sendLookup:[[SSUSStreetLookup alloc] initWithFreeformAddress:@"freeform"] error:&error];
     
-    XCTAssertEqualObjects(@"http://localhost/?street=freeform", sender.request.getUrl);
+    NSString *actualUrl = sender.request.getUrl;
+    
+    XCTAssertEqualObjects(expectedUrl, actualUrl);
 }
 
 - (void)testSendingSingleFullyPopulatedLookup {
-    SSRequestCapturingSender *sender = [[SSRequestCapturingSender alloc] init];
+    SSRequestCapturingSender *capturingSender = [[SSRequestCapturingSender alloc] init];
+    SSURLPrefixSender *sender = [[SSURLPrefixSender alloc] initWithUrlPrefix:@"http://localhost/" inner:capturingSender];
+    
     SSMockSerializer *serializer = [[SSMockSerializer alloc] init];
-    SSUSStreetClient *client = [[SSUSStreetClient alloc] initWithUrlPrefix:@"http://localhost" withSender:sender withSerializer:serializer];
+    SSUSStreetClient *client = [[SSUSStreetClient alloc] initWithSender:sender withSerializer:serializer];
     SSUSStreetLookup *lookup = [[SSUSStreetLookup alloc] init];
     NSError *error = nil;
     
@@ -54,15 +60,14 @@
     
     [client sendLookup:lookup error:&error];
     
-    //TODO: change the test to not be dependent on the URL. Indivually test the urlPrefix, the slash, and the parameters
-    XCTAssertEqualObjects(@"http://localhost?street=1&city=5&lastline=8&addressee=0&zipcode=7&candidates=9&urbanization=4&street2=3&secondary=2&state=6", sender.request.getUrl);
+    XCTAssertEqualObjects(@"http://localhost/?street=1&city=5&lastline=8&addressee=0&zipcode=7&candidates=9&urbanization=4&street2=3&secondary=2&state=6", capturingSender.request.getUrl);
 }
 
 // Batch Lookup
 
 - (void)testEmptyBatchNotSent {
     SSRequestCapturingSender *sender = [[SSRequestCapturingSender alloc] init];
-    SSUSStreetClient *client = [[SSUSStreetClient alloc] initWithUrlPrefix:@"/" withSender:sender withSerializer:nil];
+    SSUSStreetClient *client = [[SSUSStreetClient alloc] initWithSender:sender withSerializer:nil];
     NSError *error = nil;
     
     [client sendBatch:[[SSUSStreetBatch alloc] init] error:&error];
@@ -76,7 +81,7 @@
     
     SSRequestCapturingSender *sender = [[SSRequestCapturingSender alloc] init];
     SSMockSerializer *serializer = [[SSMockSerializer alloc] initWithBytes:expectedPayload];
-    SSUSStreetClient *client = [[SSUSStreetClient alloc] initWithUrlPrefix:@"http://localhost/" withSender:sender withSerializer:serializer];
+    SSUSStreetClient *client = [[SSUSStreetClient alloc] initWithSender:sender withSerializer:serializer];
     
     NSError *error = nil;
     SSUSStreetBatch *batch = [[SSUSStreetBatch alloc] init];
@@ -97,7 +102,7 @@
     SSResponse *response = [[SSResponse alloc] initWithStatusCode:0 payload:data];
     SSMockSender *sender = [[SSMockSender alloc] initWithSSResponse:response];
     SSMockDeserializer *deserializer = [[SSMockDeserializer alloc] initWithDeserializedObject:nil];
-    SSUSStreetClient *client = [[SSUSStreetClient alloc] initWithUrlPrefix:@"/" withSender:sender withSerializer:deserializer];
+    SSUSStreetClient *client = [[SSUSStreetClient alloc] initWithSender:sender withSerializer:deserializer];
     
     NSError *error = nil;
     [client sendLookup:[[SSUSStreetLookup alloc] init] error:&error];
@@ -134,7 +139,7 @@
     
     SSMockSender *sender = [[SSMockSender alloc] initWithSSResponse:response];
     SSMockDeserializer *deserializer = [[SSMockDeserializer alloc] initWithDeserializedObject:rawResults];
-    SSUSStreetClient *client = [[SSUSStreetClient alloc] initWithUrlPrefix:@"/" withSender:sender withSerializer:deserializer];
+    SSUSStreetClient *client = [[SSUSStreetClient alloc] initWithSender:sender withSerializer:deserializer];
     
     [client sendBatch:batch error:&error];
     

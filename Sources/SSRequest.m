@@ -8,14 +8,9 @@ NSString *const kSSCharSet = @"UTF-8";
     if (self = [super init]) {
         _headers = [NSMutableDictionary new];
         _parameters = [NSMutableDictionary new];
+        _urlPrefix = @"";
         _method = @"GET";
-    }
-    return self;
-}
-
-- (instancetype)initWithUrlPrefix:(NSString *)urlPrefix {
-    if (self = [[super self] init]) {
-        _urlPrefix = urlPrefix;
+        _contentType = @"application/json";
     }
     return self;
 }

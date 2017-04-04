@@ -7,15 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AE02A9231DC7C62100F53A7A /* SSZipCodeMultipleLookupsExample.m in Sources */ = {isa = PBXBuildFile; fileRef = AE02A9221DC7C62100F53A7A /* SSZipCodeMultipleLookupsExample.m */; };
+		AE02A9231DC7C62100F53A7A /* SSUSZipCodeMultipleLookupsExample.m in Sources */ = {isa = PBXBuildFile; fileRef = AE02A9221DC7C62100F53A7A /* SSUSZipCodeMultipleLookupsExample.m */; };
 		AE2178061DB37E2D00D9CF69 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AE2178051DB37E2D00D9CF69 /* main.m */; };
 		AE2178091DB37E2D00D9CF69 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AE2178081DB37E2D00D9CF69 /* AppDelegate.m */; };
 		AE21780C1DB37E2D00D9CF69 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE21780B1DB37E2D00D9CF69 /* ViewController.m */; };
 		AE21780F1DB37E2D00D9CF69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE21780D1DB37E2D00D9CF69 /* Main.storyboard */; };
 		AE2178111DB37E2D00D9CF69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE2178101DB37E2D00D9CF69 /* Assets.xcassets */; };
 		AE2178141DB37E2D00D9CF69 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE2178121DB37E2D00D9CF69 /* LaunchScreen.storyboard */; };
-		AE21781D1DB37E4200D9CF69 /* SSZipCodeSingleLookupExample.m in Sources */ = {isa = PBXBuildFile; fileRef = AE21781C1DB37E4200D9CF69 /* SSZipCodeSingleLookupExample.m */; };
-		AE429CF71E0B485C004DA6C3 /* SmartystreetsSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE429CF61E0B485C004DA6C3 /* SmartystreetsSDK.framework */; };
+		AE21781D1DB37E4200D9CF69 /* SSUSZipCodeSingleLookupExample.m in Sources */ = {isa = PBXBuildFile; fileRef = AE21781C1DB37E4200D9CF69 /* SSUSZipCodeSingleLookupExample.m */; };
 		AE429CF81E0B4868004DA6C3 /* SmartystreetsSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE429CF61E0B485C004DA6C3 /* SmartystreetsSDK.framework */; };
 		AE429CF91E0B4868004DA6C3 /* SmartystreetsSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AE429CF61E0B485C004DA6C3 /* SmartystreetsSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AE53A9921DCD43B500EE58A8 /* SSUSStreetMultipleLookupsExample.m in Sources */ = {isa = PBXBuildFile; fileRef = AE53A9911DCD43B500EE58A8 /* SSUSStreetMultipleLookupsExample.m */; };
@@ -39,8 +38,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		AE02A9211DC7C62100F53A7A /* SSZipCodeMultipleLookupsExample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSZipCodeMultipleLookupsExample.h; sourceTree = "<group>"; };
-		AE02A9221DC7C62100F53A7A /* SSZipCodeMultipleLookupsExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSZipCodeMultipleLookupsExample.m; sourceTree = "<group>"; };
+		AE02A9211DC7C62100F53A7A /* SSUSZipCodeMultipleLookupsExample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSUSZipCodeMultipleLookupsExample.h; sourceTree = "<group>"; };
+		AE02A9221DC7C62100F53A7A /* SSUSZipCodeMultipleLookupsExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSUSZipCodeMultipleLookupsExample.m; sourceTree = "<group>"; };
 		AE2178011DB37E2D00D9CF69 /* Objective_C_Examples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Objective_C_Examples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE2178051DB37E2D00D9CF69 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AE2178071DB37E2D00D9CF69 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -51,8 +50,8 @@
 		AE2178101DB37E2D00D9CF69 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AE2178131DB37E2D00D9CF69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AE2178151DB37E2D00D9CF69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AE21781B1DB37E4200D9CF69 /* SSZipCodeSingleLookupExample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSZipCodeSingleLookupExample.h; sourceTree = "<group>"; };
-		AE21781C1DB37E4200D9CF69 /* SSZipCodeSingleLookupExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSZipCodeSingleLookupExample.m; sourceTree = "<group>"; };
+		AE21781B1DB37E4200D9CF69 /* SSUSZipCodeSingleLookupExample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSUSZipCodeSingleLookupExample.h; sourceTree = "<group>"; };
+		AE21781C1DB37E4200D9CF69 /* SSUSZipCodeSingleLookupExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSUSZipCodeSingleLookupExample.m; sourceTree = "<group>"; };
 		AE429CF61E0B485C004DA6C3 /* SmartystreetsSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SmartystreetsSDK.framework; path = "../../../../../../Library/Developer/Xcode/DerivedData/SmartystreetsSDK-desxmyjjqbhasfhheoqpkyjxbfew/Build/Products/Debug-iphonesimulator/SmartystreetsSDK.framework"; sourceTree = "<group>"; };
 		AE53A9901DCD43B500EE58A8 /* SSUSStreetMultipleLookupsExample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSUSStreetMultipleLookupsExample.h; sourceTree = "<group>"; };
 		AE53A9911DCD43B500EE58A8 /* SSUSStreetMultipleLookupsExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSUSStreetMultipleLookupsExample.m; sourceTree = "<group>"; };
@@ -70,7 +69,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE429CF81E0B4868004DA6C3 /* SmartystreetsSDK.framework in Frameworks */,
-				AE429CF71E0B485C004DA6C3 /* SmartystreetsSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,10 +110,10 @@
 				AE53A9911DCD43B500EE58A8 /* SSUSStreetMultipleLookupsExample.m */,
 				AE879AC91DCA6A0E0078C0B0 /* SSUSStreetSingleAddressExample.h */,
 				AE879ACA1DCA6A0E0078C0B0 /* SSUSStreetSingleAddressExample.m */,
-				AE02A9211DC7C62100F53A7A /* SSZipCodeMultipleLookupsExample.h */,
-				AE02A9221DC7C62100F53A7A /* SSZipCodeMultipleLookupsExample.m */,
-				AE21781B1DB37E4200D9CF69 /* SSZipCodeSingleLookupExample.h */,
-				AE21781C1DB37E4200D9CF69 /* SSZipCodeSingleLookupExample.m */,
+				AE02A9211DC7C62100F53A7A /* SSUSZipCodeMultipleLookupsExample.h */,
+				AE02A9221DC7C62100F53A7A /* SSUSZipCodeMultipleLookupsExample.m */,
+				AE21781B1DB37E4200D9CF69 /* SSUSZipCodeSingleLookupExample.h */,
+				AE21781C1DB37E4200D9CF69 /* SSUSZipCodeSingleLookupExample.m */,
 				AE21780A1DB37E2D00D9CF69 /* ViewController.h */,
 				AE21780B1DB37E2D00D9CF69 /* ViewController.m */,
 			);
@@ -165,7 +163,7 @@
 		AE2177F91DB37E2D00D9CF69 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = SmartyStreets;
 				TargetAttributes = {
 					AE2178001DB37E2D00D9CF69 = {
@@ -215,8 +213,8 @@
 				AE879ACE1DCA6F020078C0B0 /* SSMyCredentials.m in Sources */,
 				AED0E8C81DD643BC0041201A /* SSUSStreetLookupsWithMatchStrategyExamples.m in Sources */,
 				AE53A9921DCD43B500EE58A8 /* SSUSStreetMultipleLookupsExample.m in Sources */,
-				AE21781D1DB37E4200D9CF69 /* SSZipCodeSingleLookupExample.m in Sources */,
-				AE02A9231DC7C62100F53A7A /* SSZipCodeMultipleLookupsExample.m in Sources */,
+				AE21781D1DB37E4200D9CF69 /* SSUSZipCodeSingleLookupExample.m in Sources */,
+				AE02A9231DC7C62100F53A7A /* SSUSZipCodeMultipleLookupsExample.m in Sources */,
 				AE2178091DB37E2D00D9CF69 /* AppDelegate.m in Sources */,
 				AE2178061DB37E2D00D9CF69 /* main.m in Sources */,
 			);

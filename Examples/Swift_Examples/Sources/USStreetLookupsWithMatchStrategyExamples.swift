@@ -3,8 +3,8 @@ import SmartystreetsSDK
 
 class USStreetLookupsWithMatchStrategyExamples {
     func run() -> String {
-        let client = SSUSStreetClientBuilder(authId: MyCredentials.AuthId,
-                                            authToken: MyCredentials.AuthToken).build()
+        let client = SSClientBuilder(authId: MyCredentials.AuthId,
+                                            authToken: MyCredentials.AuthToken).buildUsStreetApiClient()()
         
         let batch = SSUSStreetBatch()
         

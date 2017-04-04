@@ -6,7 +6,7 @@
 
 @interface SSUSZipCodeClient : NSObject
 
-- (instancetype)initWithUrlPrefix:(NSString*)urlPrefix withSender:(id<SSSender>)sender withSerializer:(id<SSSerializer>)serializer;
+- (instancetype)initWithSender:(id<SSSender>)sender withSerializer:(id<SSSerializer>)serializer;
 - (BOOL)sendLookup:(SSUSZipCodeLookup*)lookup error:(NSError**)error;
 - (BOOL)sendBatch:(SSUSZipCodeBatch*)batch error:(NSError**)error;
 

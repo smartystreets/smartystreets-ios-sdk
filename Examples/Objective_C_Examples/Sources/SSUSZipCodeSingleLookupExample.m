@@ -4,8 +4,8 @@
 
 - (NSString*)run {
     id<SSCredentials> mobile = [[SSSharedCredentials alloc] initWithId:kSSSmartyWebsiteKey hostname:kSSHost];
-    SSUSZipCodeClient *client = [[SSUSZipCodeClientBuilder alloc] initWithSigner:mobile].build;
-//    SSUSZipCodeClient *client = [[SSUSZipCodeClientBuilder alloc] initWithAuthId:kSSAuthId authToken:kSSAuthToken].build;
+    SSUSZipCodeClient *client = [[SSClientBuilder alloc] initWithSigner:mobile].buildUsZIPCodeApiClient;
+//    SSUSZipCodeClient *client = [[SSClientBuilder alloc] initWithAuthId:kSSAuthId authToken:kSSAuthToken].buildUsZIPCodeApiClient;
     
     SSUSZipCodeLookup *lookup = [[SSUSZipCodeLookup alloc] init];
     lookup.city = @"Mountain View";
@@ -23,7 +23,7 @@
     
     SSUSZipCodeResult *result = lookup.result;
     NSArray<SSUSZipCode*> *zipCodes = result.zipCodes;
-    NSArray<SSCity*> *cities = result.cities;
+    NSArray<SSUSCity*> *cities = result.cities;
     
     NSMutableString *output = [[NSMutableString alloc] init];
     
@@ -32,7 +32,7 @@
         return output;
     }
     
-    for (SSCity *city in cities) {
+    for (SSUSCity *city in cities) {
         [output appendString:[@"\nCity: " stringByAppendingString:city.city]];
         [output appendString:[@"\nState: " stringByAppendingString:city.state]];
         [output appendString:[@"\nMailable City: " stringByAppendingString:city.mailableCity ? @"YES" : @"NO"]];

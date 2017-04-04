@@ -4,8 +4,8 @@ import SmartystreetsSDK
 class ZipCodeMultipleLookupsExample {
     
     func run() -> String {
-        let client = SSUSZipCodeClientBuilder(authId: MyCredentials.AuthId,
-                                            authToken: MyCredentials.AuthToken).build()
+        let client = SSClientBuilder(authId: MyCredentials.AuthId,
+                                            authToken: MyCredentials.AuthToken).buildUsZIPCodeApiClient()()
         
         let batch = SSUSZipCodeBatch()
         

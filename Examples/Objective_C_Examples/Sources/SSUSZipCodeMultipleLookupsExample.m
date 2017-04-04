@@ -3,7 +3,7 @@
 @implementation SSUSZipCodeMultipleLookupsExample
 
 - (NSString*)run {
-    SSUSZipCodeClient *client = [[SSUSZipCodeClientBuilder alloc] initWithAuthId:kSSAuthId authToken:kSSAuthToken].build;
+    SSUSZipCodeClient *client = [[SSClientBuilder alloc] initWithAuthId:kSSAuthId authToken:kSSAuthToken].buildUsZIPCodeApiClient;
     
     SSUSZipCodeBatch *batch = [[SSUSZipCodeBatch alloc] init];
     
@@ -58,11 +58,11 @@
             continue;
         }
         
-        NSArray<SSCity*> *cities = result.cities;
+        NSArray<SSUSCity*> *cities = result.cities;
         [output appendString:[@(cities.count) stringValue]];
         [output appendString:@" City and States match(es):"];
         
-        for (SSCity *city in cities) {
+        for (SSUSCity *city in cities) {
             [output appendString:[@"\nCity: " stringByAppendingString:city.city]];
             [output appendString:[@"\nState: " stringByAppendingString:city.state]];
             [output appendString:[@"\nMailable City: " stringByAppendingString:city.mailableCity ? @"YES" : @"NO"]];

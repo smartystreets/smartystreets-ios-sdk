@@ -3,7 +3,7 @@
 @implementation SSUSStreetLookupsWithMatchStrategyExamples
 
 - (NSString*)run {
-    SSUSStreetClient *client = [[SSUSStreetClientBuilder alloc] initWithAuthId:kSSAuthId authToken:kSSAuthToken].build;
+    SSUSStreetClient *client = [[SSClientBuilder alloc] initWithAuthId:kSSAuthId authToken:kSSAuthToken].buildUsStreetApiClient;
     
     SSUSStreetBatch *batch = [[SSUSStreetBatch alloc] init];
     NSError *error = nil;

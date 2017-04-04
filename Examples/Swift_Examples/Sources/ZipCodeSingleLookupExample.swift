@@ -5,9 +5,9 @@ class ZipCodeSingleLookupExample {
 
     func run() -> String {
         let mobile = SSSharedCredentials(id: MyCredentials.SmartyWebsiteKey, hostname: MyCredentials.Host)
-        let client = SSUSZipCodeClientBuilder(signer: mobile).build()
-//        let client = SSUSZipCodeClientBuilder(authId: MyCredentials.AuthId,
-//                                            authToken: MyCredentials.AuthToken).build()
+        let client = SSClientBuilder(signer: mobile).buildUsZIPCodeApiClient()
+//        let client = SSClientBuilder(authId: MyCredentials.AuthId,
+//                                            authToken: MyCredentials.AuthToken).buildUsZIPCodeApiClient()
         
         let lookup = SSUSZipCodeLookup()
         lookup.city = "Mountain View"

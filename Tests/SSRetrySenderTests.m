@@ -42,7 +42,8 @@
 }
 
 - (void)sendRequest:(NSString*)requestBehavior error:(NSError**)error {
-    SSRequest *request = [[SSRequest alloc] initWithUrlPrefix:requestBehavior];
+    SSRequest *request = [[SSRequest alloc] init];
+    request.urlPrefix = requestBehavior;
     SSRetrySender *retrySender = [[SSRetrySender alloc] initWithMaxRetries:5 inner:self.mockCrashingSender];
     
     [retrySender sendRequest:request error:error];

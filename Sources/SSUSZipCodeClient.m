@@ -2,7 +2,6 @@
 
 @interface SSUSZipCodeClient()
 
-@property (readonly, nonatomic) NSString *urlPrefix;
 @property (readonly, nonatomic) id<SSSender> sender;
 @property (readonly, nonatomic) id<SSSerializer> serializer;
 
@@ -10,9 +9,8 @@
 
 @implementation SSUSZipCodeClient
 
-- (instancetype)initWithUrlPrefix:(NSString*)urlPrefix withSender:(id<SSSender>)sender withSerializer:(id<SSSerializer>)serializer {
+- (instancetype)initWithSender:(id<SSSender>)sender withSerializer:(id<SSSerializer>)serializer {
     if (self = [super init]) {
-        _urlPrefix = urlPrefix;
         _sender = sender;
         _serializer = serializer;
     }
@@ -26,7 +24,7 @@
 }
 
 - (BOOL)sendBatch:(SSUSZipCodeBatch*)batch error:(NSError**)error {
-    SSRequest *request = [[SSRequest alloc] initWithUrlPrefix:self.urlPrefix];
+    SSRequest *request = [[SSRequest alloc] init];
     
     if ([batch count] == 0) return NO;
     
@@ -60,7 +58,7 @@
 - (void)assignResultsToLookups:(SSUSZipCodeBatch*)batch result:(NSArray*)results {
     for (int i = 0; i < [results count]; i++) {
         SSUSZipCodeResult *result = [[SSUSZipCodeResult alloc] initWithDictionary:[results objectAtIndex:i]];
-        [[batch getLookupAtIndex:result.inputIndex] setResult:[results objectAtIndex:i]];
+        [[batch getLookupAtIndex:result.inputIndex] setResult:result];
     }
 }
 

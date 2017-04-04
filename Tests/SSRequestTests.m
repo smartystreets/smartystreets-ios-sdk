@@ -24,7 +24,8 @@
 }
 
 -(void)assertQueryStringParametersField:(NSString*)name withValue:(NSString*)value withExpectedValue:(NSString*)expectedValue {
-    SSRequest *request = [[SSRequest alloc] initWithUrlPrefix:@"http://localhost/?"];
+    SSRequest *request = [[SSRequest alloc] init];
+    request.urlPrefix = @"http://localhost/?";
     
     [request setValue:value forHTTPParameterField:name];
     
@@ -32,7 +33,8 @@
 }
 
 - (void)testMultipleQueryStringParametersAreAdded {
-    SSRequest *request = [[SSRequest alloc] initWithUrlPrefix:@"http://localhost/?"];
+    SSRequest *request = [[SSRequest alloc] init];
+    request.urlPrefix = @"http://localhost/?";
     
     [request setValue:@"value1" forHTTPParameterField:@"name1"];
     [request setValue:@"value2" forHTTPParameterField:@"name2"];
@@ -43,7 +45,8 @@
 }
 
 - (void)testUrlEncodingOfQueryStringParameters {
-    SSRequest *request = [[SSRequest alloc] initWithUrlPrefix:@"http://localhost/"];
+    SSRequest *request = [[SSRequest alloc] init];
+    request.urlPrefix = @"http://localhost/";
     
     [request setValue:@"value" forHTTPParameterField:@"name&"];
     [request setValue:@"other !value$" forHTTPParameterField:@"name2"];
@@ -54,14 +57,16 @@
 }
 
 - (void)testUrlWithoutTrailingQuestionMark {
-    SSRequest *request = [[SSRequest alloc] initWithUrlPrefix:@"http://localhost/"];
+    SSRequest *request = [[SSRequest alloc] init];
+    request.urlPrefix = @"http://localhost/";
     
     NSString *const expectedValue = @"http://localhost/?";
     XCTAssertEqualObjects(expectedValue, [request getUrl]);
 }
 
 - (void)testHeadersAddedToRequest {
-    SSRequest *request = [[SSRequest alloc] initWithUrlPrefix:@"http://localhost/"];
+    SSRequest *request = [[SSRequest alloc] init];
+    request.urlPrefix = @"http://localhost/";
     
     [request setValue:@"value1" forHTTPHeaderField:@"header1"];
     [request setValue:@"value2" forHTTPHeaderField:@"header2"];
@@ -71,14 +76,16 @@
 }
 
 - (void)testGet {
-    SSRequest *request = [[SSRequest alloc] initWithUrlPrefix:@"http://localhost/"];
+    SSRequest *request = [[SSRequest alloc] init];
+    request.urlPrefix = @"http://localhost/";
     
     XCTAssertEqualObjects(@"GET", request.method);
     XCTAssertNil(request.payload);
 }
 
 - (void)testPost {
-    SSRequest *request = [[SSRequest alloc] initWithUrlPrefix:@"http://localhost"];
+    SSRequest *request = [[SSRequest alloc] init];
+    request.urlPrefix = @"http://localhost/";
     NSMutableData *data = [[NSMutableData alloc] init];
     NSArray *array = @[@0, @1, @2];
     for (NSInteger i = 0; i < array.count; i++) {
