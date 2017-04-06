@@ -5,7 +5,7 @@
 - (NSString*)run {
     SSUSZipCodeClient *client = [[SSClientBuilder alloc] initWithAuthId:kSSAuthId authToken:kSSAuthToken].buildUsZIPCodeApiClient;
     
-    SSUSZipCodeBatch *batch = [[SSUSZipCodeBatch alloc] init];
+    SSBatch *batch = [[SSBatch alloc] init];
     
     SSUSZipCodeLookup *lookup1 = [[SSUSZipCodeLookup alloc] init];
     lookup1.zipcode = @"12345"; // A Lookup may have a ZIP Code, city and state, or city, state, and ZIP Code

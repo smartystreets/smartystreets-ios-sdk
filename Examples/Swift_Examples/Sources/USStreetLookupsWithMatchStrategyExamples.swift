@@ -6,7 +6,7 @@ class USStreetLookupsWithMatchStrategyExamples {
         let client = SSClientBuilder(authId: MyCredentials.AuthId,
                                      authToken: MyCredentials.AuthToken).buildUsStreetApiClient()
         
-        let batch = SSUSStreetBatch()
+        let batch = SSBatch()
         
         let addressWithStrictStrategy = SSUSStreetLookup()
         addressWithStrictStrategy.street = "691 W 1150 S"
@@ -62,7 +62,8 @@ class USStreetLookupsWithMatchStrategyExamples {
                 let metadata = candidate.metadata
                 
                 output += String(format: "\nCandidate %i ", candidate.candidateIndex)
-                let match = batch.getLookupAt(i).matchStrategy
+                let lookup = batch.getLookupAt(i) as! SSUSStreetLookup
+                let match = lookup.matchStrategy
                 output += String(format: "with %@ strategy", match!)
                 output += "\nDelivery line 1:   " + candidate.deliveryLine1
                 output += "\nLast line:         " + candidate.lastline

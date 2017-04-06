@@ -18,12 +18,12 @@
 }
 
 - (BOOL)sendLookup:(SSUSZipCodeLookup*)lookup error:(NSError**)error {
-    SSUSZipCodeBatch *batch = [[SSUSZipCodeBatch alloc] init];
+    SSBatch *batch = [[SSBatch alloc] init];
     [batch add:lookup error:error];
     return [self sendBatch:batch error:error];
 }
 
-- (BOOL)sendBatch:(SSUSZipCodeBatch*)batch error:(NSError**)error {
+- (BOOL)sendBatch:(SSBatch*)batch error:(NSError**)error {
     SSRequest *request = [[SSRequest alloc] init];
     
     if ([batch count] == 0) return NO;
@@ -55,10 +55,12 @@
     [request setValue:lookup.zipcode forHTTPParameterField:@"zipcode"];
 }
 
-- (void)assignResultsToLookups:(SSUSZipCodeBatch*)batch result:(NSArray*)results {
+- (void)assignResultsToLookups:(SSBatch*)batch result:(NSArray*)results {
     for (int i = 0; i < [results count]; i++) {
         SSUSZipCodeResult *result = [[SSUSZipCodeResult alloc] initWithDictionary:[results objectAtIndex:i]];
-        [[batch getLookupAtIndex:result.inputIndex] setResult:result];
+        SSUSZipCodeLookup *lookup = [batch getLookupAtIndex:result.inputIndex];
+        
+        [lookup setResult:result];
     }
 }
 

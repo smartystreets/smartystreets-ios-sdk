@@ -70,7 +70,7 @@
     SSUSStreetClient *client = [[SSUSStreetClient alloc] initWithSender:sender withSerializer:nil];
     NSError *error = nil;
     
-    [client sendBatch:[[SSUSStreetBatch alloc] init] error:&error];
+    [client sendBatch:[[SSBatch alloc] init] error:&error];
     
     XCTAssertNil(sender.request);
 }
@@ -84,7 +84,7 @@
     SSUSStreetClient *client = [[SSUSStreetClient alloc] initWithSender:sender withSerializer:serializer];
     
     NSError *error = nil;
-    SSUSStreetBatch *batch = [[SSUSStreetBatch alloc] init];
+    SSBatch *batch = [[SSBatch alloc] init];
     [batch add:[[SSUSStreetLookup alloc] init] error:&error];
     [batch add:[[SSUSStreetLookup alloc] init] error:&error];
     
@@ -127,7 +127,7 @@
     [expectedCandidates insertObject:[[SSUSStreetCandidate alloc] initWithDictionary:rawResult2] atIndex:1];
     [expectedCandidates insertObject:[[SSUSStreetCandidate alloc] initWithDictionary:rawResult3] atIndex:2];
     
-    SSUSStreetBatch *batch = [[SSUSStreetBatch alloc] init];
+    SSBatch *batch = [[SSBatch alloc] init];
     NSError *error = nil;
 
     [batch add:[[SSUSStreetLookup alloc] init] error:&error];
@@ -143,9 +143,12 @@
     
     [client sendBatch:batch error:&error];
     
-    XCTAssertEqual([[expectedCandidates objectAtIndex:0] addressee], [[[batch getLookupAtIndex:0] getResultAtIndex:0] addressee]);
-    XCTAssertEqual([[expectedCandidates objectAtIndex:1] addressee], [[[batch getLookupAtIndex:1] getResultAtIndex:0] addressee]);
-    XCTAssertEqual([[expectedCandidates objectAtIndex:2] addressee], [[[batch getLookupAtIndex:1] getResultAtIndex:1] addressee]);
+    SSUSStreetLookup *lookup1 = [batch getLookupAtIndex:0];
+    SSUSStreetLookup *lookup2 = [batch getLookupAtIndex:1];
+    
+    XCTAssertEqual([[expectedCandidates objectAtIndex:0] addressee], [[lookup1 getResultAtIndex:0] addressee]);
+    XCTAssertEqual([[expectedCandidates objectAtIndex:1] addressee], [[lookup2 getResultAtIndex:0] addressee]);
+    XCTAssertEqual([[expectedCandidates objectAtIndex:2] addressee], [[lookup2 getResultAtIndex:1] addressee]);
 }
 
 @end

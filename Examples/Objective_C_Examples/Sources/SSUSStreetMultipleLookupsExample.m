@@ -5,7 +5,7 @@
 - (NSString*)run {
     SSUSStreetClient *client = [[SSClientBuilder alloc] initWithAuthId:kSSAuthId authToken:kSSAuthToken].buildUsStreetApiClient;
     
-    SSUSStreetBatch *batch = [[SSUSStreetBatch alloc] init];
+    SSBatch *batch = [[SSBatch alloc] init];
     NSError *error = nil;
     
     SSUSStreetLookup *address0 = [[SSUSStreetLookup alloc] init];

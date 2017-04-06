@@ -1,20 +1,20 @@
-#import "SSUSStreetBatch.h"
+#import "SSBatch.h"
 
-int const kSSStreetMaxBatchSize = 100;
+int const kSSMaxBatchSize = 100;
 
-@implementation SSUSStreetBatch
+@implementation SSBatch
 
 - (instancetype)init {
     if (self = [super init]) {
         _namedLookups = [[NSMutableDictionary alloc] init];
-        _allLookups = [[NSMutableArray alloc] init];
+        _allLookups = [[NSMutableArray<SSLookup> alloc] init];
     }
     return self;
 }
 
-- (BOOL)add:(SSUSStreetLookup*)newAddress error:(NSError**)error {
-    if (self.allLookups.count >= kSSStreetMaxBatchSize) {
-        NSString *description = [NSString stringWithFormat:@"Batch size cannot exceed %i", kSSStreetMaxBatchSize];
+- (BOOL)add:(id<SSLookup>)newAddress error:(NSError**)error {
+    if (self.allLookups.count >= kSSMaxBatchSize) {
+        NSString *description = [NSString stringWithFormat:@"Batch size cannot exceed %i", kSSMaxBatchSize];
         NSDictionary *details = @{NSLocalizedDescriptionKey: description};
         *error = [NSError errorWithDomain:SSErrorDomain code:BatchFullError userInfo:details];
         return NO;
@@ -40,11 +40,11 @@ int const kSSStreetMaxBatchSize = 100;
     return (int)[self.allLookups count];
 }
 
-- (SSUSStreetLookup*)getLookupById:(NSString*)inputId {
+- (id<SSLookup>)getLookupById:(NSString*)inputId {
     return [self.namedLookups objectForKey:inputId];
 }
 
-- (SSUSStreetLookup*)getLookupAtIndex:(int)inputIndex {
+- (id<SSLookup>)getLookupAtIndex:(int)inputIndex {
     return [self.allLookups objectAtIndex:inputIndex];
 }
 

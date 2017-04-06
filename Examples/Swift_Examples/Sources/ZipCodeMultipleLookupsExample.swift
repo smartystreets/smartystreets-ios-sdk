@@ -7,7 +7,7 @@ class ZipCodeMultipleLookupsExample {
         let client = SSClientBuilder(authId: MyCredentials.AuthId,
                                      authToken: MyCredentials.AuthToken).buildUsZIPCodeApiClient();
         
-        let batch = SSUSZipCodeBatch()
+        let batch = SSBatch()
         
         let lookup1 = SSUSZipCodeLookup()
         lookup1.zipcode = "12345" // A Lookup may have a ZIP Code, city and state, or city, state, and ZIP Code

@@ -5,7 +5,7 @@
 - (NSString*)run {
     SSUSStreetClient *client = [[SSClientBuilder alloc] initWithAuthId:kSSAuthId authToken:kSSAuthToken].buildUsStreetApiClient;
     
-    SSUSStreetBatch *batch = [[SSUSStreetBatch alloc] init];
+    SSBatch *batch = [[SSBatch alloc] init];
     NSError *error = nil;
     
     SSUSStreetLookup *addressWithStrictStrategy = [[SSUSStreetLookup alloc] init];
@@ -64,7 +64,8 @@
             SSUSStreetMetadata const *metadata = candidate.metadata;
             
             [output appendString:[NSString stringWithFormat:@"\n\nCandidate %i ", candidate.candidateIndex]];
-            NSString *match = [[batch getLookupAtIndex:i] matchStrategy];
+            SSUSStreetLookup *lookup = [batch getLookupAtIndex:i];
+            NSString *match = lookup.matchStrategy;
             [output appendString:[NSString stringWithFormat:@"with %@ strategy", match]];
             [output appendString:[@"\nDelivery line 1:  " stringByAppendingString:candidate.deliveryLine1]];
             [output appendString:[@"\nLast line:        " stringByAppendingString:candidate.lastline]];

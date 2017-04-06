@@ -6,7 +6,7 @@ class USStreetMultipleLookupsExample {
         let client = SSClientBuilder(authId: MyCredentials.AuthId,
                                     authToken: MyCredentials.AuthToken).buildUsStreetApiClient()
         
-        let batch = SSUSStreetBatch()
+        let batch = SSBatch()
         var error: NSError?
         
         let address0 = SSUSStreetLookup()

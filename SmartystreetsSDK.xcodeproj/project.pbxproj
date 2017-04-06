@@ -40,8 +40,6 @@
 		AE38078A1E0A093200F8A1C3 /* SSUSStreetComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3807841E0A093200F8A1C3 /* SSUSStreetComponents.m */; };
 		AE38078D1E0A094800F8A1C3 /* SSUSStreetMetadata.h in Headers */ = {isa = PBXBuildFile; fileRef = AE38078B1E0A094800F8A1C3 /* SSUSStreetMetadata.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE38078E1E0A094800F8A1C3 /* SSUSStreetMetadata.m in Sources */ = {isa = PBXBuildFile; fileRef = AE38078C1E0A094800F8A1C3 /* SSUSStreetMetadata.m */; };
-		AE3807971E0A095800F8A1C3 /* SSUSStreetBatch.h in Headers */ = {isa = PBXBuildFile; fileRef = AE38078F1E0A095800F8A1C3 /* SSUSStreetBatch.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AE3807981E0A095800F8A1C3 /* SSUSStreetBatch.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3807901E0A095800F8A1C3 /* SSUSStreetBatch.m */; };
 		AE3807991E0A095800F8A1C3 /* SSUSStreetClient.h in Headers */ = {isa = PBXBuildFile; fileRef = AE3807911E0A095800F8A1C3 /* SSUSStreetClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE38079A1E0A095800F8A1C3 /* SSUSStreetClient.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3807921E0A095800F8A1C3 /* SSUSStreetClient.m */; };
 		AE38079D1E0A095800F8A1C3 /* SSUSStreetLookup.h in Headers */ = {isa = PBXBuildFile; fileRef = AE3807951E0A095800F8A1C3 /* SSUSStreetLookup.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -54,8 +52,6 @@
 		AE3807AF1E0A0AB100F8A1C3 /* SSUSZipCodeResult.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3807AD1E0A0AB100F8A1C3 /* SSUSZipCodeResult.m */; };
 		AE3807BA1E0A0ABF00F8A1C3 /* SSUSZipCode.h in Headers */ = {isa = PBXBuildFile; fileRef = AE3807B01E0A0ABF00F8A1C3 /* SSUSZipCode.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE3807BB1E0A0ABF00F8A1C3 /* SSUSZipCode.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3807B11E0A0ABF00F8A1C3 /* SSUSZipCode.m */; };
-		AE3807BC1E0A0ABF00F8A1C3 /* SSUSZipCodeBatch.h in Headers */ = {isa = PBXBuildFile; fileRef = AE3807B21E0A0ABF00F8A1C3 /* SSUSZipCodeBatch.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AE3807BD1E0A0ABF00F8A1C3 /* SSUSZipCodeBatch.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3807B31E0A0ABF00F8A1C3 /* SSUSZipCodeBatch.m */; };
 		AE3807BE1E0A0ABF00F8A1C3 /* SSUSZipCodeClient.h in Headers */ = {isa = PBXBuildFile; fileRef = AE3807B41E0A0ABF00F8A1C3 /* SSUSZipCodeClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE3807BF1E0A0ABF00F8A1C3 /* SSUSZipCodeClient.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3807B51E0A0ABF00F8A1C3 /* SSUSZipCodeClient.m */; };
 		AE3807C21E0A0ABF00F8A1C3 /* SSUSZipCodeLookup.h in Headers */ = {isa = PBXBuildFile; fileRef = AE3807B81E0A0ABF00F8A1C3 /* SSUSZipCodeLookup.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -68,10 +64,8 @@
 		AE3807D81E0A0BE800F8A1C3 /* SSRequestCapturingSender.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3807D21E0A0BDE00F8A1C3 /* SSRequestCapturingSender.m */; };
 		AE3807DD1E0A0C3500F8A1C3 /* SSJsonSerializerNullTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3807DA1E0A0C3500F8A1C3 /* SSJsonSerializerNullTests.m */; };
 		AE3807DE1E0A0C3500F8A1C3 /* SSUSStreetCandidateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3807DB1E0A0C3500F8A1C3 /* SSUSStreetCandidateTests.m */; };
-		AE3807E31E0A0C6800F8A1C3 /* SSUSStreetBatchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3807E11E0A0C6800F8A1C3 /* SSUSStreetBatchTests.m */; };
 		AE3807E41E0A0C6800F8A1C3 /* SSUSStreetClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3807E21E0A0C6800F8A1C3 /* SSUSStreetClientTests.m */; };
 		AE3807E91E0A0C9900F8A1C3 /* SSUSZipCodeResultTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3807E61E0A0C9900F8A1C3 /* SSUSZipCodeResultTests.m */; };
-		AE3807EA1E0A0C9900F8A1C3 /* SSUSZipCodeBatchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3807E71E0A0C9900F8A1C3 /* SSUSZipCodeBatchTests.m */; };
 		AE3807EB1E0A0C9900F8A1C3 /* SSUSZipCodeClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3807E81E0A0C9900F8A1C3 /* SSUSZipCodeClientTests.m */; };
 		AE4177671D5CE19B003DEF9F /* SSResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = AE4177651D5CE19B003DEF9F /* SSResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE4177681D5CE19B003DEF9F /* SSResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = AE4177661D5CE19B003DEF9F /* SSResponse.m */; };
@@ -105,6 +99,9 @@
 		AE76B61B1D528B8C0080C136 /* SSRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = AE76B6191D528B8C0080C136 /* SSRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE76B61C1D528B8C0080C136 /* SSRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AE76B61A1D528B8C0080C136 /* SSRequest.m */; };
 		AE76B6261D52CDCD0080C136 /* SSRequestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE76B6251D52CDCD0080C136 /* SSRequestTests.m */; };
+		AE7C4E0A1E96BD7B00C63520 /* SSBatch.h in Headers */ = {isa = PBXBuildFile; fileRef = AE7C4E081E96BD7B00C63520 /* SSBatch.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE7C4E0B1E96BD7B00C63520 /* SSBatch.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7C4E091E96BD7B00C63520 /* SSBatch.m */; };
+		AE7C4E0F1E96C03000C63520 /* SSBatchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7C4E0E1E96C03000C63520 /* SSBatchTests.m */; };
 		AEB519FC1D905EDC00BF785B /* SSHttpSender.h in Headers */ = {isa = PBXBuildFile; fileRef = AEB519FA1D905EDC00BF785B /* SSHttpSender.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AEB519FD1D905EDC00BF785B /* SSHttpSender.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB519FB1D905EDC00BF785B /* SSHttpSender.m */; };
 		AEBCE8471D6228600016A4FE /* SSSigningSender.h in Headers */ = {isa = PBXBuildFile; fileRef = AEBCE8451D6228600016A4FE /* SSSigningSender.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -169,8 +166,6 @@
 		AE3807841E0A093200F8A1C3 /* SSUSStreetComponents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSUSStreetComponents.m; sourceTree = "<group>"; };
 		AE38078B1E0A094800F8A1C3 /* SSUSStreetMetadata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSUSStreetMetadata.h; sourceTree = "<group>"; };
 		AE38078C1E0A094800F8A1C3 /* SSUSStreetMetadata.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSUSStreetMetadata.m; sourceTree = "<group>"; };
-		AE38078F1E0A095800F8A1C3 /* SSUSStreetBatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSUSStreetBatch.h; sourceTree = "<group>"; };
-		AE3807901E0A095800F8A1C3 /* SSUSStreetBatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSUSStreetBatch.m; sourceTree = "<group>"; };
 		AE3807911E0A095800F8A1C3 /* SSUSStreetClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSUSStreetClient.h; sourceTree = "<group>"; };
 		AE3807921E0A095800F8A1C3 /* SSUSStreetClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSUSStreetClient.m; sourceTree = "<group>"; };
 		AE3807951E0A095800F8A1C3 /* SSUSStreetLookup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSUSStreetLookup.h; sourceTree = "<group>"; };
@@ -183,8 +178,6 @@
 		AE3807AD1E0A0AB100F8A1C3 /* SSUSZipCodeResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSUSZipCodeResult.m; sourceTree = "<group>"; };
 		AE3807B01E0A0ABF00F8A1C3 /* SSUSZipCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSUSZipCode.h; sourceTree = "<group>"; };
 		AE3807B11E0A0ABF00F8A1C3 /* SSUSZipCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSUSZipCode.m; sourceTree = "<group>"; };
-		AE3807B21E0A0ABF00F8A1C3 /* SSUSZipCodeBatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSUSZipCodeBatch.h; sourceTree = "<group>"; };
-		AE3807B31E0A0ABF00F8A1C3 /* SSUSZipCodeBatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSUSZipCodeBatch.m; sourceTree = "<group>"; };
 		AE3807B41E0A0ABF00F8A1C3 /* SSUSZipCodeClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSUSZipCodeClient.h; sourceTree = "<group>"; };
 		AE3807B51E0A0ABF00F8A1C3 /* SSUSZipCodeClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSUSZipCodeClient.m; sourceTree = "<group>"; };
 		AE3807B81E0A0ABF00F8A1C3 /* SSUSZipCodeLookup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSUSZipCodeLookup.h; sourceTree = "<group>"; };
@@ -203,10 +196,8 @@
 		AE3807D21E0A0BDE00F8A1C3 /* SSRequestCapturingSender.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSRequestCapturingSender.m; sourceTree = "<group>"; };
 		AE3807DA1E0A0C3500F8A1C3 /* SSJsonSerializerNullTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSJsonSerializerNullTests.m; sourceTree = "<group>"; };
 		AE3807DB1E0A0C3500F8A1C3 /* SSUSStreetCandidateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSUSStreetCandidateTests.m; sourceTree = "<group>"; };
-		AE3807E11E0A0C6800F8A1C3 /* SSUSStreetBatchTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSUSStreetBatchTests.m; sourceTree = "<group>"; };
 		AE3807E21E0A0C6800F8A1C3 /* SSUSStreetClientTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSUSStreetClientTests.m; sourceTree = "<group>"; };
 		AE3807E61E0A0C9900F8A1C3 /* SSUSZipCodeResultTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSUSZipCodeResultTests.m; sourceTree = "<group>"; };
-		AE3807E71E0A0C9900F8A1C3 /* SSUSZipCodeBatchTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSUSZipCodeBatchTests.m; sourceTree = "<group>"; };
 		AE3807E81E0A0C9900F8A1C3 /* SSUSZipCodeClientTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSUSZipCodeClientTests.m; sourceTree = "<group>"; };
 		AE4177651D5CE19B003DEF9F /* SSResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSResponse.h; sourceTree = "<group>"; };
 		AE4177661D5CE19B003DEF9F /* SSResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSResponse.m; sourceTree = "<group>"; };
@@ -246,6 +237,9 @@
 		AE76B6191D528B8C0080C136 /* SSRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSRequest.h; sourceTree = "<group>"; };
 		AE76B61A1D528B8C0080C136 /* SSRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSRequest.m; sourceTree = "<group>"; };
 		AE76B6251D52CDCD0080C136 /* SSRequestTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSRequestTests.m; sourceTree = "<group>"; };
+		AE7C4E081E96BD7B00C63520 /* SSBatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSBatch.h; sourceTree = "<group>"; };
+		AE7C4E091E96BD7B00C63520 /* SSBatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSBatch.m; sourceTree = "<group>"; };
+		AE7C4E0E1E96C03000C63520 /* SSBatchTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSBatchTests.m; sourceTree = "<group>"; };
 		AEB519FA1D905EDC00BF785B /* SSHttpSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSHttpSender.h; sourceTree = "<group>"; };
 		AEB519FB1D905EDC00BF785B /* SSHttpSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSHttpSender.m; sourceTree = "<group>"; };
 		AEB892A51E04A35900BAFC26 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
@@ -310,8 +304,6 @@
 				AE3807841E0A093200F8A1C3 /* SSUSStreetComponents.m */,
 				AE38078B1E0A094800F8A1C3 /* SSUSStreetMetadata.h */,
 				AE38078C1E0A094800F8A1C3 /* SSUSStreetMetadata.m */,
-				AE38078F1E0A095800F8A1C3 /* SSUSStreetBatch.h */,
-				AE3807901E0A095800F8A1C3 /* SSUSStreetBatch.m */,
 				AE3807911E0A095800F8A1C3 /* SSUSStreetClient.h */,
 				AE3807921E0A095800F8A1C3 /* SSUSStreetClient.m */,
 				AE3807951E0A095800F8A1C3 /* SSUSStreetLookup.h */,
@@ -331,8 +323,6 @@
 				AE3807AD1E0A0AB100F8A1C3 /* SSUSZipCodeResult.m */,
 				AE3807B01E0A0ABF00F8A1C3 /* SSUSZipCode.h */,
 				AE3807B11E0A0ABF00F8A1C3 /* SSUSZipCode.m */,
-				AE3807B21E0A0ABF00F8A1C3 /* SSUSZipCodeBatch.h */,
-				AE3807B31E0A0ABF00F8A1C3 /* SSUSZipCodeBatch.m */,
 				AE3807B41E0A0ABF00F8A1C3 /* SSUSZipCodeClient.h */,
 				AE3807B51E0A0ABF00F8A1C3 /* SSUSZipCodeClient.m */,
 				AE3807B81E0A0ABF00F8A1C3 /* SSUSZipCodeLookup.h */,
@@ -371,7 +361,6 @@
 		AE3807E01E0A0C4200F8A1C3 /* US_Street */ = {
 			isa = PBXGroup;
 			children = (
-				AE3807E11E0A0C6800F8A1C3 /* SSUSStreetBatchTests.m */,
 				AE3807DB1E0A0C3500F8A1C3 /* SSUSStreetCandidateTests.m */,
 				AE3807E21E0A0C6800F8A1C3 /* SSUSStreetClientTests.m */,
 			);
@@ -382,7 +371,6 @@
 			isa = PBXGroup;
 			children = (
 				AE3807E61E0A0C9900F8A1C3 /* SSUSZipCodeResultTests.m */,
-				AE3807E71E0A0C9900F8A1C3 /* SSUSZipCodeBatchTests.m */,
 				AE3807E81E0A0C9900F8A1C3 /* SSUSZipCodeClientTests.m */,
 			);
 			name = US_ZipCode;
@@ -442,6 +430,8 @@
 				AE3807A11E0A0A5C00F8A1C3 /* US_ZipCode */,
 				AE76B5EE1D5265030080C136 /* Info.plist */,
 				AE76B5EC1D5265030080C136 /* SmartystreetsSDK.h */,
+				AE7C4E081E96BD7B00C63520 /* SSBatch.h */,
+				AE7C4E091E96BD7B00C63520 /* SSBatch.m */,
 				AE1E80451E9332AE007F822E /* SSClientBuilder.h */,
 				AE1E80461E9332AE007F822E /* SSClientBuilder.m */,
 				AE4177691D5D1450003DEF9F /* SSCredentials.h */,
@@ -483,6 +473,7 @@
 				AE3807E01E0A0C4200F8A1C3 /* US_Street */,
 				AE3807E51E0A0C7100F8A1C3 /* US_ZipCode */,
 				AE76B5FA1D5265030080C136 /* Info.plist */,
+				AE7C4E0E1E96C03000C63520 /* SSBatchTests.m */,
 				AE76B6251D52CDCD0080C136 /* SSRequestTests.m */,
 				AE6C611D1D7488710022CB66 /* SSRetrySenderTests.m */,
 				AE41776F1D5D19CF003DEF9F /* SSSharedCredentialsTests.m */,
@@ -510,7 +501,6 @@
 				AE4177671D5CE19B003DEF9F /* SSResponse.h in Headers */,
 				AE3807991E0A095800F8A1C3 /* SSUSStreetClient.h in Headers */,
 				AE3807BE1E0A0ABF00F8A1C3 /* SSUSZipCodeClient.h in Headers */,
-				AE3807BC1E0A0ABF00F8A1C3 /* SSUSZipCodeBatch.h in Headers */,
 				AE3807871E0A093200F8A1C3 /* SSUSStreetCandidate.h in Headers */,
 				AE3807AE1E0A0AB100F8A1C3 /* SSUSZipCodeResult.h in Headers */,
 				AE3807891E0A093200F8A1C3 /* SSUSStreetComponents.h in Headers */,
@@ -518,7 +508,6 @@
 				AE3807BA1E0A0ABF00F8A1C3 /* SSUSZipCode.h in Headers */,
 				AE3807A61E0A0AA100F8A1C3 /* SSUSAlternateCounties.h in Headers */,
 				AE38079D1E0A095800F8A1C3 /* SSUSStreetLookup.h in Headers */,
-				AE3807971E0A095800F8A1C3 /* SSUSStreetBatch.h in Headers */,
 				AE38078D1E0A094800F8A1C3 /* SSUSStreetMetadata.h in Headers */,
 				AE3807C21E0A0ABF00F8A1C3 /* SSUSZipCodeLookup.h in Headers */,
 				AE3807851E0A093200F8A1C3 /* SSUSStreetAnalysis.h in Headers */,
@@ -537,6 +526,7 @@
 				AE258B461D6B551200EBD18E /* SSRetrySender.h in Headers */,
 				AED507AE1DCD003700953E1C /* SSSender.h in Headers */,
 				AE76B5ED1D5265030080C136 /* SmartystreetsSDK.h in Headers */,
+				AE7C4E0A1E96BD7B00C63520 /* SSBatch.h in Headers */,
 				AE41776A1D5D1450003DEF9F /* SSCredentials.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -687,7 +677,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE4A544C1E8C2CD700584749 /* SSInternationalStreetCandidate.m in Sources */,
-				AE3807BD1E0A0ABF00F8A1C3 /* SSUSZipCodeBatch.m in Sources */,
 				AE6C61251D74B3110022CB66 /* SSJsonSerializer.m in Sources */,
 				AE38078E1E0A094800F8A1C3 /* SSUSStreetMetadata.m in Sources */,
 				AE3807A71E0A0AA100F8A1C3 /* SSUSAlternateCounties.m in Sources */,
@@ -698,6 +687,7 @@
 				AE3807861E0A093200F8A1C3 /* SSUSStreetAnalysis.m in Sources */,
 				AE38078A1E0A093200F8A1C3 /* SSUSStreetComponents.m in Sources */,
 				AE3807AF1E0A0AB100F8A1C3 /* SSUSZipCodeResult.m in Sources */,
+				AE7C4E0B1E96BD7B00C63520 /* SSBatch.m in Sources */,
 				AE258B471D6B551200EBD18E /* SSRetrySender.m in Sources */,
 				AE3807AB1E0A0AAA00F8A1C3 /* SSUSCity.m in Sources */,
 				AE76B61C1D528B8C0080C136 /* SSRequest.m in Sources */,
@@ -705,7 +695,6 @@
 				AE3807BF1E0A0ABF00F8A1C3 /* SSUSZipCodeClient.m in Sources */,
 				AE3807BB1E0A0ABF00F8A1C3 /* SSUSZipCode.m in Sources */,
 				AE17C8941E8C258C009D5746 /* SSInternationalStreetAnalysis.m in Sources */,
-				AE3807981E0A095800F8A1C3 /* SSUSStreetBatch.m in Sources */,
 				AEBCE8481D6228600016A4FE /* SSSigningSender.m in Sources */,
 				AE1E80421E930B65007F822E /* SSURLPrefixSender.m in Sources */,
 				AE4A54481E8C2A1200584749 /* SSInternationalStreetComponents.m in Sources */,
@@ -726,7 +715,6 @@
 			files = (
 				AEBCE84C1D6246150016A4FE /* SSSigningSenderTests.m in Sources */,
 				AE3807E41E0A0C6800F8A1C3 /* SSUSStreetClientTests.m in Sources */,
-				AE3807E31E0A0C6800F8A1C3 /* SSUSStreetBatchTests.m in Sources */,
 				AE3807D81E0A0BE800F8A1C3 /* SSRequestCapturingSender.m in Sources */,
 				AE3807D31E0A0BE800F8A1C3 /* SSMockCrashingSender.m in Sources */,
 				AE4177761D5D2954003DEF9F /* SSStaticCredentialsTests.m in Sources */,
@@ -742,7 +730,7 @@
 				AE3807D71E0A0BE800F8A1C3 /* SSMockStatusCodeSender.m in Sources */,
 				AE3807DE1E0A0C3500F8A1C3 /* SSUSStreetCandidateTests.m in Sources */,
 				AE3807E91E0A0C9900F8A1C3 /* SSUSZipCodeResultTests.m in Sources */,
-				AE3807EA1E0A0C9900F8A1C3 /* SSUSZipCodeBatchTests.m in Sources */,
+				AE7C4E0F1E96C03000C63520 /* SSBatchTests.m in Sources */,
 				AE4179561D6CEFB300BDDB7C /* SSStatusCodeSenderTests.m in Sources */,
 				AE1E80441E930B8C007F822E /* SSURLPrefixSenderTests.m in Sources */,
 				AE76B6261D52CDCD0080C136 /* SSRequestTests.m in Sources */,

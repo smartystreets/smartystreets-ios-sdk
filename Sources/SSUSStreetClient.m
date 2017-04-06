@@ -18,12 +18,12 @@
 }
 
 - (BOOL)sendLookup:(SSUSStreetLookup*)lookup error:(NSError**)error {
-    SSUSStreetBatch *batch = [[SSUSStreetBatch alloc] init];
+    SSBatch *batch = [[SSBatch alloc] init];
     [batch add:lookup error:error];
     return [self sendBatch:batch error:error];
 }
 
-- (BOOL)sendBatch:(SSUSStreetBatch*)batch error:(NSError**)error {
+- (BOOL)sendBatch:(SSBatch*)batch error:(NSError**)error {
     SSRequest *request = [[SSRequest alloc] init];
     
     if ([batch count] == 0) return NO;
@@ -65,10 +65,12 @@
     [request setValue:lookup.matchStrategy forHTTPHeaderField:@"match"];
 }
 
-- (void)assignCandidatesToLookups:(SSUSStreetBatch*)batch candidates:(NSArray*)candidates {
+- (void)assignCandidatesToLookups:(SSBatch*)batch candidates:(NSArray*)candidates {
     for (int i = 0; i < [candidates count]; i++) {
         SSUSStreetCandidate *candidate = [[SSUSStreetCandidate alloc] initWithDictionary:[candidates objectAtIndex:i]];
-        [[batch getLookupAtIndex:candidate.inputIndex] addToResult:candidate];
+        SSUSStreetLookup *lookup = [batch getLookupAtIndex:candidate.inputIndex];
+        
+        [lookup addToResult:candidate];
     }
 }
 

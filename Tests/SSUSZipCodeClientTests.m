@@ -56,7 +56,7 @@
     SSUSZipCodeClient *client = [[SSUSZipCodeClient alloc] initWithSender:sender withSerializer:nil];
     NSError *error = nil;
     
-    [client sendBatch:[[SSUSZipCodeBatch alloc] init] error:&error];
+    [client sendBatch:[[SSBatch alloc] init] error:&error];
     
     XCTAssertNil(sender.request);
 }
@@ -70,7 +70,7 @@
     SSUSZipCodeClient *client = [[SSUSZipCodeClient alloc] initWithSender:sender withSerializer:serializer];
     
     NSError *error = nil;
-    SSUSZipCodeBatch *batch = [[SSUSZipCodeBatch alloc] init];
+    SSBatch *batch = [[SSBatch alloc] init];
     [batch add:[[SSUSZipCodeLookup alloc] init] error:&error];
     [batch add:[[SSUSZipCodeLookup alloc] init] error:&error];
     
@@ -109,7 +109,7 @@
     [expectedCandidates insertObject:[[SSUSZipCodeResult alloc] initWithDictionary:rawResult1] atIndex:0];
     [expectedCandidates insertObject:[[SSUSZipCodeResult alloc] initWithDictionary:rawResult2] atIndex:1];
 
-    SSUSZipCodeBatch *batch = [[SSUSZipCodeBatch alloc] init];
+    SSBatch *batch = [[SSBatch alloc] init];
     NSError *error = nil;
     
     [batch add:[[SSUSZipCodeLookup alloc] init] error:&error];
@@ -125,8 +125,11 @@
     
     [client sendBatch:batch error:&error];
     
-    XCTAssertEqualObjects([[expectedCandidates objectAtIndex:0] status], [[[batch getLookupAtIndex:0] result] status]);
-    XCTAssertEqualObjects([[expectedCandidates objectAtIndex:1] status], [[[batch getLookupAtIndex:1] result] status]);
+    SSUSZipCodeLookup *lookup1 = [batch getLookupAtIndex:0];
+    SSUSZipCodeLookup *lookup2 = [batch getLookupAtIndex:1];
+    
+    XCTAssertEqualObjects([[expectedCandidates objectAtIndex:0] status], [[lookup1 result] status]);
+    XCTAssertEqualObjects([[expectedCandidates objectAtIndex:1] status], [[lookup2 result] status]);
 }
 
 @end
