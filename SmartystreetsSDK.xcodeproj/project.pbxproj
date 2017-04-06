@@ -281,14 +281,14 @@
 			children = (
 				AE17C8911E8C258B009D5746 /* SSInternationalStreetAnalysis.h */,
 				AE17C8921E8C258B009D5746 /* SSInternationalStreetAnalysis.m */,
-				AE4A543F1E8C26F500584749 /* SSInternationalStreetMetadata.h */,
-				AE4A54401E8C26F500584749 /* SSInternationalStreetMetadata.m */,
-				AE4A54451E8C2A1200584749 /* SSInternationalStreetComponents.h */,
-				AE4A54461E8C2A1200584749 /* SSInternationalStreetComponents.m */,
 				AE4A54491E8C2CD700584749 /* SSInternationalStreetCandidate.h */,
 				AE4A544A1E8C2CD700584749 /* SSInternationalStreetCandidate.m */,
+				AE4A54451E8C2A1200584749 /* SSInternationalStreetComponents.h */,
+				AE4A54461E8C2A1200584749 /* SSInternationalStreetComponents.m */,
 				AE4A544D1E8C324700584749 /* SSLanguageMode.h */,
 				AE4A544E1E8C324700584749 /* SSLanguageMode.m */,
+				AE4A543F1E8C26F500584749 /* SSInternationalStreetMetadata.h */,
+				AE4A54401E8C26F500584749 /* SSInternationalStreetMetadata.m */,
 			);
 			name = International_Street;
 			sourceTree = "<group>";
