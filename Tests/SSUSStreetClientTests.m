@@ -111,21 +111,24 @@
 }
 
 - (void)testCandidatesCorrectlyAssignedToCorrespondingLookup {
-    NSMutableDictionary *rawResult1 = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-                                       [NSNumber numberWithInt:0], @"input_index",
-                                       @"addressee1", @"addressee", nil];
-    NSMutableDictionary *rawResult2 = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-                                       [NSNumber numberWithInt:1], @"input_index",
-                                       @"addressee2", @"addressee", nil];
-    NSMutableDictionary *rawResult3 = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-                                       [NSNumber numberWithInt:1], @"input_index",
-                                       @"addressee3", @"addressee", nil];
-    NSMutableArray *rawResults = [[NSMutableArray alloc] initWithObjects:rawResult1, rawResult2, rawResult3, nil];
+    NSArray *rawResults = [NSArray arrayWithObjects:
+                                 @{
+                                   @"input_index": [NSNumber numberWithInt:0],
+                                   @"addressee": @"addressee1"
+                                   },
+                                 @{
+                                   @"input_index": [NSNumber numberWithInt:1],
+                                   @"addressee": @"addressee2"
+                                   },
+                                 @{
+                                   @"input_index": [NSNumber numberWithInt:1],
+                                   @"addressee": @"addressee3"
+                                   }, nil];
     
     NSMutableArray<SSUSStreetCandidate*> *expectedCandidates = [[NSMutableArray<SSUSStreetCandidate*> alloc] init];
-    [expectedCandidates insertObject:[[SSUSStreetCandidate alloc] initWithDictionary:rawResult1] atIndex:0];
-    [expectedCandidates insertObject:[[SSUSStreetCandidate alloc] initWithDictionary:rawResult2] atIndex:1];
-    [expectedCandidates insertObject:[[SSUSStreetCandidate alloc] initWithDictionary:rawResult3] atIndex:2];
+    [expectedCandidates insertObject:[[SSUSStreetCandidate alloc] initWithDictionary:[rawResults objectAtIndex:0]] atIndex:0];
+    [expectedCandidates insertObject:[[SSUSStreetCandidate alloc] initWithDictionary:[rawResults objectAtIndex:1]] atIndex:1];
+    [expectedCandidates insertObject:[[SSUSStreetCandidate alloc] initWithDictionary:[rawResults objectAtIndex:2]] atIndex:2];
     
     SSBatch *batch = [[SSBatch alloc] init];
     NSError *error = nil;

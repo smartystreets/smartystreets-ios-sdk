@@ -1,7 +1,6 @@
 #import <Foundation/Foundation.h>
 #import "SSUSZipCodeClient.h"
 #import "SSUSStreetClient.h"
-
 #import "SSCredentials.h"
 #import "SSJsonSerializer.h"
 #import "SSStaticCredentials.h"

@@ -97,17 +97,19 @@
 }
 
 - (void)testCandidatesCorrectlyAssignedToCorrespondingLookup {
-    NSMutableDictionary *rawResult1 = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-                                       [NSNumber numberWithInt:0], @"input_index",
-                                       @"status1", @"status", nil];
-    NSMutableDictionary *rawResult2 = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-                                       [NSNumber numberWithInt:1], @"input_index",
-                                       @"status2", @"status", nil];
-    NSMutableArray *rawResults = [[NSMutableArray alloc] initWithObjects:rawResult1, rawResult2, nil];
+    NSArray *rawResults = [NSArray arrayWithObjects:
+                           @{
+                             @"input_index": [NSNumber numberWithInt:0],
+                             @"status": @"status1"
+                             },
+                           @{
+                             @"input_index": [NSNumber numberWithInt:1],
+                             @"status": @"status2"
+                             }, nil];
     
     NSMutableArray<SSUSZipCodeResult*> *expectedCandidates = [[NSMutableArray<SSUSZipCodeResult*> alloc] init];
-    [expectedCandidates insertObject:[[SSUSZipCodeResult alloc] initWithDictionary:rawResult1] atIndex:0];
-    [expectedCandidates insertObject:[[SSUSZipCodeResult alloc] initWithDictionary:rawResult2] atIndex:1];
+    [expectedCandidates insertObject:[[SSUSZipCodeResult alloc] initWithDictionary:[rawResults objectAtIndex:0]] atIndex:0];
+    [expectedCandidates insertObject:[[SSUSZipCodeResult alloc] initWithDictionary:[rawResults objectAtIndex:1]] atIndex:1];
 
     SSBatch *batch = [[SSBatch alloc] init];
     NSError *error = nil;
