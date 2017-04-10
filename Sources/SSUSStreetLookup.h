@@ -9,7 +9,7 @@ extern NSString *const kSSInvalid;
 
 @interface SSUSStreetLookup : NSObject <SSLookup>
 
-@property (readonly, nonatomic) NSMutableArray<SSUSStreetCandidate*> *result;
+@property (nonatomic) NSMutableArray<SSUSStreetCandidate*> *result;
 @property (nonatomic) NSString *inputId;
 @property (nonatomic) NSString *street;
 @property (nonatomic) NSString *street2;
