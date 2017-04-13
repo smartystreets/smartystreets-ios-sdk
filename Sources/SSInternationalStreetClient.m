@@ -18,7 +18,7 @@
 }
 
 - (BOOL)sendLookup:(SSInternationalStreetLookup*)lookup error:(NSError**)error {
-//    [self ensureEnoughInfo:lookup];
+    [self ensureEnoughInfo:lookup error:error];
     SSRequest *request = [self buildRequest:lookup];
     
     SSResponse *response = [self.sender sendRequest:request error:error];
@@ -56,12 +56,40 @@
     return request;
 }
 
-- (void)ensureEnoughInfo:(SSInternationalStreetLookup*)lookup {
+- (void)ensureEnoughInfo:(SSInternationalStreetLookup*)lookup error:(NSError**)error {
+    if ([lookup missingCountry]) {
+        NSDictionary *details = @{NSLocalizedDescriptionKey: @"Country field is required."};
+        *error = [NSError errorWithDomain:SSErrorDomain code:UnprocessableEntityError userInfo:details];
+        return;
+    }
     
+    if ([lookup hasFreeform])
+        return;
+    
+    if ([lookup missingAddress1]) {
+        NSDictionary *details = @{NSLocalizedDescriptionKey: @"Either freeform or address1 is required."};
+        *error = [NSError errorWithDomain:SSErrorDomain code:UnprocessableEntityError userInfo:details];
+        return;
+    }
+
+    if ([lookup hasPostalCode])
+        return;
+    
+    if ([lookup missingLocalityOrAdministrativeArea]) {
+        NSDictionary *details = @{NSLocalizedDescriptionKey: @"Insufficient information: One or more required fields were not set on the lookup."};
+        *error = [NSError errorWithDomain:SSErrorDomain code:UnprocessableEntityError userInfo:details];
+        return;
+    }
 }
 
-- (void)assignResultsToLookup:(SSInternationalStreetLookup*)lookup withCandidates:(NSArray<SSInternationalStreetCandidate*>*)candidates {
+- (void)assignResultsToLookup:(SSInternationalStreetLookup*)lookup withCandidates:(NSArray*)candidates {
+    NSMutableArray<SSInternationalStreetCandidate*> *result = [NSMutableArray new];
     
+    for (int i = 0; i < [candidates count]; i++) {
+        SSInternationalStreetCandidate *candidate = [[SSInternationalStreetCandidate alloc] initWithDictionary:[candidates objectAtIndex:i]];
+        [result addObject:candidate];
+    }
+    lookup.result = result;
 }
 
 @end

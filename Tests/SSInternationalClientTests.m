@@ -2,6 +2,8 @@
 #import "SSRequestCapturingSender.h"
 #import "SSURLPrefixSender.h"
 #import "SSMockSerializer.h"
+#import "SSMockDeserializer.h"
+#import "SSMockSender.h"
 #import "SSInternationalStreetClient.h"
 #import "SSInternationalStreetLookup.h"
 
@@ -57,13 +59,118 @@
     
     [client sendLookup:lookup error:&error];
     
-    NSString *actualResult = [capturingSender.request getUrl];
-    
     XCTAssertEqualObjects(expectedUrl, [capturingSender.request getUrl]);
 }
 
 - (void)testEmptyLookupRejected {
-    //TODO: finish these tests
+    [self assertLookupRejected:[[SSInternationalStreetLookup alloc] init]];
+}
+
+- (void)testRejectsLookupsWithOnlyCountry {
+    SSInternationalStreetLookup *lookup = [[SSInternationalStreetLookup alloc] init];
+    lookup.country = @"0";
+    [self assertLookupRejected:lookup];
+}
+
+- (void)testRejectsLookupsWithOnlyCountryAndAddress1 {
+    SSInternationalStreetLookup *lookup = [[SSInternationalStreetLookup alloc] init];
+    lookup.country = @"0";
+    lookup.address1 = @"1";
+    [self assertLookupRejected:lookup];
+}
+
+
+- (void)testRejectsLookupsWithOnlyCountryAndAddress1AndLocality {
+    SSInternationalStreetLookup *lookup = [[SSInternationalStreetLookup alloc] init];
+    lookup.country = @"0";
+    lookup.address1 = @"1";
+    lookup.locality = @"2";
+    [self assertLookupRejected:lookup];
+}
+
+
+- (void)testRejectsLookupsWithOnlyCountryAndAddress1AndAdministrativeArea {
+    SSInternationalStreetLookup *lookup = [[SSInternationalStreetLookup alloc] init];
+    lookup.country = @"0";
+    lookup.address1 = @"1";
+    lookup.administrativeArea = @"2";
+    [self assertLookupRejected:lookup];
+}
+
+- (void)assertLookupRejected:(SSInternationalStreetLookup*)lookup {
+    SSMockSender *sender = [[SSMockSender alloc] init];
+    SSInternationalStreetClient *client = [[SSInternationalStreetClient alloc] initWithSender:sender withSerializer:nil];
+    NSError *error = nil;
+    
+    [client sendLookup:lookup error:&error];
+    XCTAssertNotNil(error);
+}
+
+- (void)testAcceptsLookupsWithEnoughInfo {
+    SSRequestCapturingSender *sender = [[SSRequestCapturingSender alloc] init];
+    SSMockSerializer *serializer = [[SSMockSerializer alloc] initWithBytes:nil];
+    SSInternationalStreetClient *client = [[SSInternationalStreetClient alloc] initWithSender:sender withSerializer:serializer];
+    SSInternationalStreetLookup *lookup = [[SSInternationalStreetLookup alloc] init];
+    NSError *error = nil;
+    
+    lookup.country = @"0";
+    lookup.freeform = @"1";
+    [client sendLookup:lookup error:&error];
+    
+    lookup.freeform = nil;
+    lookup.address1 = @"1";
+    lookup.postalCode = @"2";
+    [client sendLookup:lookup error:&error];
+    
+    lookup.postalCode = nil;
+    lookup.locality = @"3";
+    lookup.administrativeArea = @"4";
+    [client sendLookup:lookup error:&error];
+    
+    XCTAssertNil(error);
+}
+
+- (void)testDeserializeCalledWithResponseBody {
+    NSString *helloWorld = @"Hello, World!";
+    NSData *data = [helloWorld dataUsingEncoding:NSUTF8StringEncoding];
+    SSResponse *response = [[SSResponse alloc] initWithStatusCode:0 payload:data];
+    SSMockSender *sender = [[SSMockSender alloc] initWithSSResponse:response];
+    SSMockDeserializer *deserializer = [[SSMockDeserializer alloc] initWithDeserializedObject:nil];
+    SSInternationalStreetClient *client = [[SSInternationalStreetClient alloc] initWithSender:sender withSerializer:deserializer];
+    NSError *error = nil;
+    
+    [client sendLookup:[[SSInternationalStreetLookup alloc] initWithFreeform:@"1" withCountry:@"2"] error:&error];
+    
+    XCTAssertEqual(response.payload, deserializer.payload);
+}
+
+- (void)testCandidatesCorrectlyAssignedToCorrespondingLookup {
+    NSArray *rawResults = [NSArray arrayWithObjects:
+                           @{
+                             @"organization": @"1"
+                             },
+                           @{
+                             @"address1": @"2"
+                             }, nil];
+    
+    NSMutableArray<SSInternationalStreetCandidate*> *expectedCandidates = [[NSMutableArray<SSInternationalStreetCandidate*> alloc] init];
+    [expectedCandidates insertObject:[[SSInternationalStreetCandidate alloc] initWithDictionary:[rawResults objectAtIndex:0]] atIndex:0];
+    [expectedCandidates insertObject:[[SSInternationalStreetCandidate alloc] initWithDictionary:[rawResults objectAtIndex:1]] atIndex:1];
+    SSInternationalStreetLookup *lookup = [[SSInternationalStreetLookup alloc] initWithFreeform:@"1" withCountry:@"2"];
+    
+    NSString *emptyString = @"[]";
+    NSData *payload = [emptyString dataUsingEncoding:NSUTF8StringEncoding];
+    SSResponse *response = [[SSResponse alloc] initWithStatusCode:0 payload:payload];
+    
+    SSMockSender *sender = [[SSMockSender alloc] initWithSSResponse:response];
+    SSMockDeserializer *deserializer = [[SSMockDeserializer alloc] initWithDeserializedObject:rawResults];
+    SSInternationalStreetClient *client = [[SSInternationalStreetClient alloc] initWithSender:sender withSerializer:deserializer];
+    NSError *error = nil;
+    
+    [client sendLookup:lookup error:&error];
+    
+    XCTAssertEqual([[expectedCandidates objectAtIndex:0] organization], [[lookup getResultAtIndex:0] organization]);
+    XCTAssertEqual([[expectedCandidates objectAtIndex:1] address1], [[lookup getResultAtIndex:1] address1]);
 }
 
 @end
