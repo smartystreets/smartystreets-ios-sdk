@@ -42,6 +42,10 @@
     [self assertSendWithStatusCode:413];
 }
 
+- (void)test422ResponseThrowsUnprocessableEntityError {
+    [self assertSendWithStatusCode:422];
+}
+
 - (void)test429ResponseThrowsTooManyRequestsError {
     [self assertSendWithStatusCode:429];
 }
@@ -52,6 +56,10 @@
 
 - (void)test503ResponseThrowsServiceUnavailableError {
     [self assertSendWithStatusCode:503];
+}
+
+- (void)test504ResponseThrowsGatewayTimeoutException {
+    [self assertSendWithStatusCode:504];
 }
 
 - (void)assertSendWithStatusCode:(int)statusCode {

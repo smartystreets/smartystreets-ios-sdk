@@ -42,6 +42,10 @@
             details = @{NSLocalizedDescriptionKey: @"Request Entity Too Large: The request body has exceeded the maximum size."};
             *error = [NSError errorWithDomain:SSErrorDomain code:RequestEntityTooLargeError userInfo:details];
             return nil;
+        case 422:
+            details = @{NSLocalizedDescriptionKey: @"GET request lacked required fields."};
+            *error = [NSError errorWithDomain:SSErrorDomain code:UnprocessableEntityError userInfo:details];
+            return nil;
         case 429:
             details = @{NSLocalizedDescriptionKey: @"When using public \"website key\" authentication, we restrict the number of requests coming from a given source over too short of a time."};
             *error = [NSError errorWithDomain:SSErrorDomain code:TooManyRequestsError userInfo:details];
@@ -53,6 +57,10 @@
         case 503:
             details = @{NSLocalizedDescriptionKey: @"Service Unavailable. Try again later."};
             *error = [NSError errorWithDomain:SSErrorDomain code:ServiceUnavailableError userInfo:details];
+            return nil;
+        case 504:
+            details = @{NSLocalizedDescriptionKey: @"The upstream data provider did not respond in a timely fashion and the request failed. A serious, yet rare occurrence indeed."};
+            *error = [NSError errorWithDomain:SSErrorDomain code:GatewayTimeoutError userInfo:details];
             return nil;
         default:
             return nil;
