@@ -68,7 +68,7 @@
     return [self.result objectAtIndex:index];
 }
 
-- (void)setGeocode:(BOOL)geocode {
+- (void)setGeocodeType:(BOOL)geocode {
     if (geocode)
         _geocode = @"true";
     else
