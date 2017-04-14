@@ -12,8 +12,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    pickerData = @[@"ZipCodeSingleLookup", @"ZipCodeMultipleLookups",
-                @"StreetSingleAddress", @"StreetMultipleAddresses", @"StreetLookupsWithMatchStrategy"];
+    pickerData = @[
+                   @"InternationalStreet",
+                   @"StreetSingleAddress",
+                   @"StreetMultipleAddresses",
+                   @"StreetLookupsWithMatchStrategy",
+                   @"ZipCodeSingleLookup",
+                   @"ZipCodeMultipleLookups"];
     pickerName = pickerData[0];
     
     [_submitButton addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
@@ -25,12 +30,8 @@
 
 - (void)buttonPressed:(UIButton*)button {
     NSString *result = @"";
-    if ([pickerName isEqualToString:@"ZipCodeSingleLookup"]) {
-        SSUSZipCodeSingleLookupExample *example = [[SSUSZipCodeSingleLookupExample alloc] init];
-        result = [example run];
-    }
-    else if ([pickerName isEqualToString:@"ZipCodeMultipleLookups"]) {
-        SSUSZipCodeMultipleLookupsExample *example = [[SSUSZipCodeMultipleLookupsExample alloc] init];
+    if ([pickerName isEqualToString:@"InternationalStreet"]) {
+        SSInternationalStreetExample *example = [[SSInternationalStreetExample alloc] init];
         result = [example run];
     }
     else if ([pickerName isEqualToString:@"StreetSingleAddress"]) {
@@ -43,6 +44,14 @@
     }
     else if ([pickerName isEqualToString:@"StreetLookupsWithMatchStrategy"]) {
         SSUSStreetLookupsWithMatchStrategyExamples *example = [[SSUSStreetLookupsWithMatchStrategyExamples alloc] init];
+        result = [example run];
+    }
+    else if ([pickerName isEqualToString:@"ZipCodeSingleLookup"]) {
+        SSUSZipCodeSingleLookupExample *example = [[SSUSZipCodeSingleLookupExample alloc] init];
+        result = [example run];
+    }
+    else if ([pickerName isEqualToString:@"ZipCodeMultipleLookups"]) {
+        SSUSZipCodeMultipleLookupsExample *example = [[SSUSZipCodeMultipleLookupsExample alloc] init];
         result = [example run];
     }
     

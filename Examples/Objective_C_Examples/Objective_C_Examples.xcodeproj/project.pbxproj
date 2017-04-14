@@ -15,22 +15,24 @@
 		AE2178111DB37E2D00D9CF69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE2178101DB37E2D00D9CF69 /* Assets.xcassets */; };
 		AE2178141DB37E2D00D9CF69 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE2178121DB37E2D00D9CF69 /* LaunchScreen.storyboard */; };
 		AE21781D1DB37E4200D9CF69 /* SSUSZipCodeSingleLookupExample.m in Sources */ = {isa = PBXBuildFile; fileRef = AE21781C1DB37E4200D9CF69 /* SSUSZipCodeSingleLookupExample.m */; };
-		AE429CF81E0B4868004DA6C3 /* SmartystreetsSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE429CF61E0B485C004DA6C3 /* SmartystreetsSDK.framework */; };
-		AE429CF91E0B4868004DA6C3 /* SmartystreetsSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AE429CF61E0B485C004DA6C3 /* SmartystreetsSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AE53A9921DCD43B500EE58A8 /* SSUSStreetMultipleLookupsExample.m in Sources */ = {isa = PBXBuildFile; fileRef = AE53A9911DCD43B500EE58A8 /* SSUSStreetMultipleLookupsExample.m */; };
+		AE545C921EA0382A00D63F91 /* SSInternationalStreetExample.m in Sources */ = {isa = PBXBuildFile; fileRef = AE545C911EA0382A00D63F91 /* SSInternationalStreetExample.m */; };
 		AE879ACB1DCA6A0E0078C0B0 /* SSUSStreetSingleAddressExample.m in Sources */ = {isa = PBXBuildFile; fileRef = AE879ACA1DCA6A0E0078C0B0 /* SSUSStreetSingleAddressExample.m */; };
 		AE879ACE1DCA6F020078C0B0 /* SSMyCredentials.m in Sources */ = {isa = PBXBuildFile; fileRef = AE879ACD1DCA6F020078C0B0 /* SSMyCredentials.m */; };
 		AED0E8C81DD643BC0041201A /* SSUSStreetLookupsWithMatchStrategyExamples.m in Sources */ = {isa = PBXBuildFile; fileRef = AED0E8C71DD643BC0041201A /* SSUSStreetLookupsWithMatchStrategyExamples.m */; };
+		AEF32FC91EA136FC0067AD57 /* SmartystreetsSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEF32FC81EA136FC0067AD57 /* SmartystreetsSDK.framework */; };
+		AEF32FCA1EA1370B0067AD57 /* SmartystreetsSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEF32FC81EA136FC0067AD57 /* SmartystreetsSDK.framework */; };
+		AEF32FCB1EA1370B0067AD57 /* SmartystreetsSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AEF32FC81EA136FC0067AD57 /* SmartystreetsSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		AEF3744E1DF890C000DB3738 /* Embed Frameworks */ = {
+		AEF32FCC1EA1370B0067AD57 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				AE429CF91E0B4868004DA6C3 /* SmartystreetsSDK.framework in Embed Frameworks */,
+				AEF32FCB1EA1370B0067AD57 /* SmartystreetsSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -52,15 +54,17 @@
 		AE2178151DB37E2D00D9CF69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE21781B1DB37E4200D9CF69 /* SSUSZipCodeSingleLookupExample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSUSZipCodeSingleLookupExample.h; sourceTree = "<group>"; };
 		AE21781C1DB37E4200D9CF69 /* SSUSZipCodeSingleLookupExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSUSZipCodeSingleLookupExample.m; sourceTree = "<group>"; };
-		AE429CF61E0B485C004DA6C3 /* SmartystreetsSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SmartystreetsSDK.framework; path = "../../../../../../Library/Developer/Xcode/DerivedData/SmartystreetsSDK-desxmyjjqbhasfhheoqpkyjxbfew/Build/Products/Debug-iphonesimulator/SmartystreetsSDK.framework"; sourceTree = "<group>"; };
 		AE53A9901DCD43B500EE58A8 /* SSUSStreetMultipleLookupsExample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSUSStreetMultipleLookupsExample.h; sourceTree = "<group>"; };
 		AE53A9911DCD43B500EE58A8 /* SSUSStreetMultipleLookupsExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSUSStreetMultipleLookupsExample.m; sourceTree = "<group>"; };
+		AE545C901EA0382A00D63F91 /* SSInternationalStreetExample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSInternationalStreetExample.h; sourceTree = "<group>"; };
+		AE545C911EA0382A00D63F91 /* SSInternationalStreetExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSInternationalStreetExample.m; sourceTree = "<group>"; };
 		AE879AC91DCA6A0E0078C0B0 /* SSUSStreetSingleAddressExample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSUSStreetSingleAddressExample.h; sourceTree = "<group>"; };
 		AE879ACA1DCA6A0E0078C0B0 /* SSUSStreetSingleAddressExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSUSStreetSingleAddressExample.m; sourceTree = "<group>"; };
 		AE879ACC1DCA6F020078C0B0 /* SSMyCredentials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSMyCredentials.h; sourceTree = "<group>"; };
 		AE879ACD1DCA6F020078C0B0 /* SSMyCredentials.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSMyCredentials.m; sourceTree = "<group>"; };
 		AED0E8C61DD643BC0041201A /* SSUSStreetLookupsWithMatchStrategyExamples.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSUSStreetLookupsWithMatchStrategyExamples.h; sourceTree = "<group>"; };
 		AED0E8C71DD643BC0041201A /* SSUSStreetLookupsWithMatchStrategyExamples.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSUSStreetLookupsWithMatchStrategyExamples.m; sourceTree = "<group>"; };
+		AEF32FC81EA136FC0067AD57 /* SmartystreetsSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SmartystreetsSDK.framework; path = "../../Output/SmartystreetsSDK-Debug-iphoneuniversal/SmartystreetsSDK.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +72,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE429CF81E0B4868004DA6C3 /* SmartystreetsSDK.framework in Frameworks */,
+				AEF32FCA1EA1370B0067AD57 /* SmartystreetsSDK.framework in Frameworks */,
+				AEF32FC91EA136FC0067AD57 /* SmartystreetsSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,6 +109,8 @@
 				AE21780D1DB37E2D00D9CF69 /* Main.storyboard */,
 				AE879ACC1DCA6F020078C0B0 /* SSMyCredentials.h */,
 				AE879ACD1DCA6F020078C0B0 /* SSMyCredentials.m */,
+				AE545C901EA0382A00D63F91 /* SSInternationalStreetExample.h */,
+				AE545C911EA0382A00D63F91 /* SSInternationalStreetExample.m */,
 				AED0E8C61DD643BC0041201A /* SSUSStreetLookupsWithMatchStrategyExamples.h */,
 				AED0E8C71DD643BC0041201A /* SSUSStreetLookupsWithMatchStrategyExamples.m */,
 				AE53A9901DCD43B500EE58A8 /* SSUSStreetMultipleLookupsExample.h */,
@@ -131,7 +138,7 @@
 		AE6860011DF23FEC00B243B7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				AE429CF61E0B485C004DA6C3 /* SmartystreetsSDK.framework */,
+				AEF32FC81EA136FC0067AD57 /* SmartystreetsSDK.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -146,7 +153,7 @@
 				AE2177FD1DB37E2D00D9CF69 /* Sources */,
 				AE2177FE1DB37E2D00D9CF69 /* Frameworks */,
 				AE2177FF1DB37E2D00D9CF69 /* Resources */,
-				AEF3744E1DF890C000DB3738 /* Embed Frameworks */,
+				AEF32FCC1EA1370B0067AD57 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -216,6 +223,7 @@
 				AE21781D1DB37E4200D9CF69 /* SSUSZipCodeSingleLookupExample.m in Sources */,
 				AE02A9231DC7C62100F53A7A /* SSUSZipCodeMultipleLookupsExample.m in Sources */,
 				AE2178091DB37E2D00D9CF69 /* AppDelegate.m in Sources */,
+				AE545C921EA0382A00D63F91 /* SSInternationalStreetExample.m in Sources */,
 				AE2178061DB37E2D00D9CF69 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

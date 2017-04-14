@@ -1,9 +1,10 @@
 #import <UIKit/UIKit.h>
-#import "SSUSZipCodeSingleLookupExample.h"
-#import "SSUSZipCodeMultipleLookupsExample.h"
+#import "SSInternationalStreetExample.h"
 #import "SSUSStreetSingleAddressExample.h"
 #import "SSUSStreetMultipleLookupsExample.h"
 #import "SSUSStreetLookupsWithMatchStrategyExamples.h"
+#import "SSUSZipCodeSingleLookupExample.h"
+#import "SSUSZipCodeMultipleLookupsExample.h"
 
 @interface ViewController : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate>
 
