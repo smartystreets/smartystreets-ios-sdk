@@ -1,7 +1,7 @@
 import Foundation
 import SmartystreetsSDK
 
-class ZipCodeMultipleLookupsExample {
+class USZipCodeMultipleLookupsExample {
     
     func run() -> String {
         let client = SSClientBuilder(authId: MyCredentials.AuthId,

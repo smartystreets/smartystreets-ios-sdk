@@ -18,12 +18,12 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
         //Input data into the Array:
         self.pickerData = [
-                        "InternationalStreet",
-                        "StreetSingleAddress",
-                        "StreetMultipleAddresses",
-                        "StreetLookupsWithMatchStrategy",
-                        "ZipCodeSingleLookup",
-                        "ZipCodeMultipleLookups"]
+                        "USStreetSingleAddress",
+                        "USStreetMultipleAddresses",
+                        "USStreetLookupsWithMatchStrategy",
+                        "USZipCodeSingleLookup",
+                        "USZipCodeMultipleLookups",
+                        "InternationalStreet"]
         
         self.pickerName = pickerData[0]
         
@@ -33,28 +33,28 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     func buttonClicked(_ sender:UIButton) {
         var result = ""
         
-        if (pickerName == "InternationalStreet") {
-            let example = InternationalStreetExample()
-            result = example.run()
-        }
-        else if (pickerName == "StreetSingleAddress") {
+        if (pickerName == "USStreetSingleAddress") {
             let example = USStreetSingleAddressExample()
             result = example.run()
         }
-        else if (pickerName == "StreetMultipleAddresses") {
+        else if (pickerName == "USStreetMultipleAddresses") {
           let example = USStreetMultipleLookupsExample()
             result = example.run()
         }
-        else if (pickerName == "StreetLookupsWithMatchStrategy") {
+        else if (pickerName == "USStreetLookupsWithMatchStrategy") {
             let example = USStreetLookupsWithMatchStrategyExamples()
             result = example.run()
         }
-        else if (pickerName == "ZipCodeSingleLookup") {
-            let example = ZipCodeSingleLookupExample()
+        else if (pickerName == "USZipCodeSingleLookup") {
+            let example = USZipCodeSingleLookupExample()
             result = example.run()
         }
-        else if (pickerName == "ZipCodeMultipleLookups") {
-            let example = ZipCodeMultipleLookupsExample()
+        else if (pickerName == "USZipCodeMultipleLookups") {
+            let example = USZipCodeMultipleLookupsExample()
+            result = example.run()
+        }
+        if (pickerName == "InternationalStreet") {
+            let example = InternationalStreetExample()
             result = example.run()
         }
         

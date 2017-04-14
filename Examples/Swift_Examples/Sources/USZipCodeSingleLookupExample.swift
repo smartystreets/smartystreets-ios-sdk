@@ -1,7 +1,7 @@
 import Foundation
 import SmartystreetsSDK
 
-class ZipCodeSingleLookupExample {
+class USZipCodeSingleLookupExample {
 
     func run() -> String {
         let mobile = SSSharedCredentials(id: MyCredentials.SmartyWebsiteKey, hostname: MyCredentials.Host)

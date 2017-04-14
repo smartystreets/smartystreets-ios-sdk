@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
-#import <SmartytreetsSDK/SSClientBuilder.h>
+#import <SmartystreetsSDK/SSClientBuilder.h>
 #import "SSMyCredentials.h"
 
 @interface SSInternationalStreetExample : NSObject

@@ -11,16 +11,16 @@
     
     [client sendLookup:lookup error:&error];
     
-    SSInternationalStreetCandidate = lookup.result[0];
+    SSInternationalStreetCandidate *firstCandidate = lookup.result[0];
     NSMutableString *output = [NSMutableString new];
     
-    output += @"Address is " + firstCandidate.analysis.verificationStatus;
-    output += @"\nAddress precision: " + firstCandidate.analysis.addressPrecision + @"\n";
-    
-    output += @"\nFirst Line: " + firstCandidate.address1;
-    output += @"\nSecond Line: " + firstCandidate.address2;
-    output += @"\nThird Line: " + firstCandidate.address3;
-    output += @"\nFourth Line: " + firstCandidate.address4;
+    [output appendString:[@"Address is " stringByAppendingString:firstCandidate.analysis.verificationStatus]];
+    [output appendString:[@"\nAddress precision: " stringByAppendingString:firstCandidate.analysis.addressPrecision]];
+    [output appendString:@"\n"];
+    [output appendString:[@"\nFirst Line: " stringByAppendingString:firstCandidate.address1]];
+    [output appendString:[@"\nSecond Line: " stringByAppendingString:firstCandidate.address2]];
+    [output appendString:[@"\nThird Line: " stringByAppendingString:firstCandidate.address3]];
+    [output appendString:[@"\nFourth Line: " stringByAppendingString:firstCandidate.address4]];
     
     SSInternationalStreetMetadata *metadata = firstCandidate.metadata;
     NSNumber *latitude = [NSNumber numberWithDouble:metadata.latitude];

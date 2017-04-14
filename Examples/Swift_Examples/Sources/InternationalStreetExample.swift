@@ -7,7 +7,7 @@ class InternationalStreetExample {
                                    authToken: MyCredentials.AuthToken).buildInternationalStreetApiClient()
         
         let lookup = SSInternationalStreetLookup(freeform: "Rua Padre Antonio D'Angelo 121 Casa Verde, Sao Paulo", withCountry: "Brazil")
-        lookup?.setGeocode(true)
+        lookup?.enableGeocode(true)
         
         do {
             try client?.send(lookup)

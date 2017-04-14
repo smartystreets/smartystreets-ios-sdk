@@ -11,14 +11,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
     pickerData = @[
-                   @"InternationalStreet",
-                   @"StreetSingleAddress",
-                   @"StreetMultipleAddresses",
-                   @"StreetLookupsWithMatchStrategy",
-                   @"ZipCodeSingleLookup",
-                   @"ZipCodeMultipleLookups"];
+                   @"USStreetSingleAddress",
+                   @"USStreetMultipleAddresses",
+                   @"USStreetLookupsWithMatchStrategy",
+                   @"USZipCodeSingleLookup",
+                   @"USZipCodeMultipleLookups",
+                   @"InternationalStreet"];
     pickerName = pickerData[0];
     
     [_submitButton addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
@@ -30,31 +30,30 @@
 
 - (void)buttonPressed:(UIButton*)button {
     NSString *result = @"";
+    if ([pickerName isEqualToString:@"USStreetSingleAddress"]) {
+        SSUSStreetSingleAddressExample *example = [[SSUSStreetSingleAddressExample alloc] init];
+        result = [example run];
+    }
+    else if ([pickerName isEqualToString:@"USStreetMultipleAddresses"]) {
+        SSUSStreetMultipleLookupsExample *example = [[SSUSStreetMultipleLookupsExample alloc] init];
+        result = [example run];
+    }
+    else if ([pickerName isEqualToString:@"USStreetLookupsWithMatchStrategy"]) {
+        SSUSStreetLookupsWithMatchStrategyExamples *example = [[SSUSStreetLookupsWithMatchStrategyExamples alloc] init];
+        result = [example run];
+    }
+    else if ([pickerName isEqualToString:@"USZipCodeSingleLookup"]) {
+        SSUSZipCodeSingleLookupExample *example = [[SSUSZipCodeSingleLookupExample alloc] init];
+        result = [example run];
+    }
+    else if ([pickerName isEqualToString:@"USZipCodeMultipleLookups"]) {
+        SSUSZipCodeMultipleLookupsExample *example = [[SSUSZipCodeMultipleLookupsExample alloc] init];
+        result = [example run];
+    }
     if ([pickerName isEqualToString:@"InternationalStreet"]) {
         SSInternationalStreetExample *example = [[SSInternationalStreetExample alloc] init];
         result = [example run];
     }
-    else if ([pickerName isEqualToString:@"StreetSingleAddress"]) {
-        SSUSStreetSingleAddressExample *example = [[SSUSStreetSingleAddressExample alloc] init];
-        result = [example run];
-    }
-    else if ([pickerName isEqualToString:@"StreetMultipleAddresses"]) {
-        SSUSStreetMultipleLookupsExample *example = [[SSUSStreetMultipleLookupsExample alloc] init];
-        result = [example run];
-    }
-    else if ([pickerName isEqualToString:@"StreetLookupsWithMatchStrategy"]) {
-        SSUSStreetLookupsWithMatchStrategyExamples *example = [[SSUSStreetLookupsWithMatchStrategyExamples alloc] init];
-        result = [example run];
-    }
-    else if ([pickerName isEqualToString:@"ZipCodeSingleLookup"]) {
-        SSUSZipCodeSingleLookupExample *example = [[SSUSZipCodeSingleLookupExample alloc] init];
-        result = [example run];
-    }
-    else if ([pickerName isEqualToString:@"ZipCodeMultipleLookups"]) {
-        SSUSZipCodeMultipleLookupsExample *example = [[SSUSZipCodeMultipleLookupsExample alloc] init];
-        result = [example run];
-    }
-    
     
     self.resultsTextView.text = result;
 }
