@@ -7,8 +7,9 @@ s.author       = { 'SmartyStreets SDK Team' => 'support@smartystreets.com' }
 s.license      = { :type => 'Apache 2.0', :file => 'LICENSE.md' }
 
 public_header_files = 'include/**/SSRequest.h',
-                      'include/**/SSUSZipCodeClient.h',
+                      'include/**/SSInternationalStreetClient.h',
                       'include/**/SSUSStreetClient.h',
+                      'include/**/SSUSZipCodeClient.h',
                       'include/**/SSClientBuilder.h',
                       'include/**/SSSharedCredentials.h'
 

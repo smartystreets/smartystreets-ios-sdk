@@ -17,8 +17,13 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         self.picker.dataSource = self
         
         //Input data into the Array:
-        self.pickerData = ["ZipCodeSingleLookup", "ZipCodeMultipleLookups",
-                       "StreetSingleAddress", "StreetMultipleAddresses", "StreetLookupsWithMatchStrategy"]
+        self.pickerData = [
+                        "InternationalStreet",
+                        "StreetSingleAddress",
+                        "StreetMultipleAddresses",
+                        "StreetLookupsWithMatchStrategy",
+                        "ZipCodeSingleLookup",
+                        "ZipCodeMultipleLookups"]
         
         self.pickerName = pickerData[0]
         
@@ -28,12 +33,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     func buttonClicked(_ sender:UIButton) {
         var result = ""
         
-        if (pickerName == "ZipCodeSingleLookup") {
-            let example = ZipCodeSingleLookupExample()
-            result = example.run()
-        }
-        else if (pickerName == "ZipCodeMultipleLookups") {
-            let example = ZipCodeMultipleLookupsExample()
+        if (pickerName == "InternationalStreet") {
+            let example = InternationalStreetExample()
             result = example.run()
         }
         else if (pickerName == "StreetSingleAddress") {
@@ -46,6 +47,14 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         }
         else if (pickerName == "StreetLookupsWithMatchStrategy") {
             let example = USStreetLookupsWithMatchStrategyExamples()
+            result = example.run()
+        }
+        else if (pickerName == "ZipCodeSingleLookup") {
+            let example = ZipCodeSingleLookupExample()
+            result = example.run()
+        }
+        else if (pickerName == "ZipCodeMultipleLookups") {
+            let example = ZipCodeMultipleLookupsExample()
             result = example.run()
         }
         

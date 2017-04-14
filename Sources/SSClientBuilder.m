@@ -68,6 +68,11 @@
     return self;
 }
 
+- (SSInternationalStreetClient*)buildInternationalStreetApiClient {
+    [self ensureURLPrefixNotNil:self.internationalStreetApiURL];
+    return [[SSInternationalStreetClient alloc] initWithSender:[self buildSender] withSerializer:self.serializer];
+}
+
 - (SSUSStreetClient*)buildUsStreetApiClient {
     [self ensureURLPrefixNotNil:self.usStreetApiURL];
     return [[SSUSStreetClient alloc] initWithSender:[self buildSender] withSerializer:self.serializer];

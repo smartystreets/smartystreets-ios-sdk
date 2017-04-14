@@ -24,7 +24,7 @@
 		AE0D45141DAC15EE00FFAA95 /* SSLookup.h in Headers */ = {isa = PBXBuildFile; fileRef = AE0D45131DAC15EE00FFAA95 /* SSLookup.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE1461231E8EC43B0066F907 /* SSInternationalStreetCandidateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE1461221E8EC43B0066F907 /* SSInternationalStreetCandidateTests.m */; };
 		AE162FBC1E9BFADF00041911 /* SSInternationalClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE162FBB1E9BFADF00041911 /* SSInternationalClientTests.m */; };
-		AE162FC11E9BFBD500041911 /* SSInternationalStreetLookup.h in Headers */ = {isa = PBXBuildFile; fileRef = AE162FBF1E9BFBD500041911 /* SSInternationalStreetLookup.h */; };
+		AE162FC11E9BFBD500041911 /* SSInternationalStreetLookup.h in Headers */ = {isa = PBXBuildFile; fileRef = AE162FBF1E9BFBD500041911 /* SSInternationalStreetLookup.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE162FC21E9BFBD500041911 /* SSInternationalStreetLookup.m in Sources */ = {isa = PBXBuildFile; fileRef = AE162FC01E9BFBD500041911 /* SSInternationalStreetLookup.m */; };
 		AE17C8931E8C258C009D5746 /* SSInternationalStreetAnalysis.h in Headers */ = {isa = PBXBuildFile; fileRef = AE17C8911E8C258B009D5746 /* SSInternationalStreetAnalysis.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE17C8941E8C258C009D5746 /* SSInternationalStreetAnalysis.m in Sources */ = {isa = PBXBuildFile; fileRef = AE17C8921E8C258B009D5746 /* SSInternationalStreetAnalysis.m */; };
@@ -35,7 +35,7 @@
 		AE1E80481E9332AE007F822E /* SSClientBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = AE1E80461E9332AE007F822E /* SSClientBuilder.m */; };
 		AE258B461D6B551200EBD18E /* SSRetrySender.h in Headers */ = {isa = PBXBuildFile; fileRef = AE258B441D6B551200EBD18E /* SSRetrySender.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE258B471D6B551200EBD18E /* SSRetrySender.m in Sources */ = {isa = PBXBuildFile; fileRef = AE258B451D6B551200EBD18E /* SSRetrySender.m */; };
-		AE3296411E96E0A5002F5450 /* SSInternationalStreetClient.h in Headers */ = {isa = PBXBuildFile; fileRef = AE32963F1E96E0A5002F5450 /* SSInternationalStreetClient.h */; };
+		AE3296411E96E0A5002F5450 /* SSInternationalStreetClient.h in Headers */ = {isa = PBXBuildFile; fileRef = AE32963F1E96E0A5002F5450 /* SSInternationalStreetClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE3296421E96E0A5002F5450 /* SSInternationalStreetClient.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3296401E96E0A5002F5450 /* SSInternationalStreetClient.m */; };
 		AE3807851E0A093200F8A1C3 /* SSUSStreetAnalysis.h in Headers */ = {isa = PBXBuildFile; fileRef = AE38077F1E0A093200F8A1C3 /* SSUSStreetAnalysis.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE3807861E0A093200F8A1C3 /* SSUSStreetAnalysis.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3807801E0A093200F8A1C3 /* SSUSStreetAnalysis.m */; };
@@ -515,7 +515,6 @@
 				AE76B6181D527E750080C136 /* SSSerializer.h in Headers */,
 				AE4177671D5CE19B003DEF9F /* SSResponse.h in Headers */,
 				AE3807991E0A095800F8A1C3 /* SSUSStreetClient.h in Headers */,
-				AE3296411E96E0A5002F5450 /* SSInternationalStreetClient.h in Headers */,
 				AE3807BE1E0A0ABF00F8A1C3 /* SSUSZipCodeClient.h in Headers */,
 				AE3807871E0A093200F8A1C3 /* SSUSStreetCandidate.h in Headers */,
 				AE3807AE1E0A0AB100F8A1C3 /* SSUSZipCodeResult.h in Headers */,
@@ -539,10 +538,11 @@
 				AE4179511D6CB47B00BDDB7C /* SSStatusCodeSender.h in Headers */,
 				AE76B6081D5266BF0080C136 /* SSSmartyErrors.h in Headers */,
 				AEBCE8471D6228600016A4FE /* SSSigningSender.h in Headers */,
-				AE162FC11E9BFBD500041911 /* SSInternationalStreetLookup.h in Headers */,
 				AE258B461D6B551200EBD18E /* SSRetrySender.h in Headers */,
 				AED507AE1DCD003700953E1C /* SSSender.h in Headers */,
 				AE76B5ED1D5265030080C136 /* SmartystreetsSDK.h in Headers */,
+				AE3296411E96E0A5002F5450 /* SSInternationalStreetClient.h in Headers */,
+				AE162FC11E9BFBD500041911 /* SSInternationalStreetLookup.h in Headers */,
 				AE7C4E0A1E96BD7B00C63520 /* SSBatch.h in Headers */,
 				AE41776A1D5D1450003DEF9F /* SSCredentials.h in Headers */,
 			);
