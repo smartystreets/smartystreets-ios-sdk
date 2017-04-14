@@ -30,6 +30,6 @@
 - (BOOL)fieldIsSet:(NSString*)field;
 - (BOOL)fieldIsMissing:(NSString*)field;
 - (SSInternationalStreetCandidate*)getResultAtIndex:(int)index;
-- (void)setGeocodeType:(BOOL)geocode;
+- (void)enableGeocode:(BOOL)geocode;
 
 @end
