@@ -117,6 +117,9 @@
 		AEF32FED1EA16CAA0067AD57 /* SSGeolocateType.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF32FEB1EA16CAA0067AD57 /* SSGeolocateType.m */; };
 		AEF32FF11EA16DE20067AD57 /* SSUSAutocompleteSuggestion.h in Headers */ = {isa = PBXBuildFile; fileRef = AEF32FEF1EA16DE20067AD57 /* SSUSAutocompleteSuggestion.h */; };
 		AEF32FF21EA16DE20067AD57 /* SSUSAutocompleteSuggestion.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF32FF01EA16DE20067AD57 /* SSUSAutocompleteSuggestion.m */; };
+		AEF32FF51EA16F590067AD57 /* SSUSAutocompleteResult.h in Headers */ = {isa = PBXBuildFile; fileRef = AEF32FF31EA16F590067AD57 /* SSUSAutocompleteResult.h */; };
+		AEF32FF61EA16F590067AD57 /* SSUSAutocompleteResult.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF32FF41EA16F590067AD57 /* SSUSAutocompleteResult.m */; };
+		AEF32FF81EA16F760067AD57 /* SSUSAutocompleteResultTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF32FF71EA16F760067AD57 /* SSUSAutocompleteResultTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -265,6 +268,9 @@
 		AEF32FEB1EA16CAA0067AD57 /* SSGeolocateType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSGeolocateType.m; sourceTree = "<group>"; };
 		AEF32FEF1EA16DE20067AD57 /* SSUSAutocompleteSuggestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSUSAutocompleteSuggestion.h; sourceTree = "<group>"; };
 		AEF32FF01EA16DE20067AD57 /* SSUSAutocompleteSuggestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSUSAutocompleteSuggestion.m; sourceTree = "<group>"; };
+		AEF32FF31EA16F590067AD57 /* SSUSAutocompleteResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSUSAutocompleteResult.h; sourceTree = "<group>"; };
+		AEF32FF41EA16F590067AD57 /* SSUSAutocompleteResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSUSAutocompleteResult.m; sourceTree = "<group>"; };
+		AEF32FF71EA16F760067AD57 /* SSUSAutocompleteResultTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSUSAutocompleteResultTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -494,6 +500,7 @@
 				AE3807C41E0A0B6000F8A1C3 /* Mocks */,
 				AE3807D91E0A0C1800F8A1C3 /* SSJsonSerializerTests */,
 				AE1461241E8EC4500066F907 /* International_Street */,
+				AEF32FF91EA16F7A0067AD57 /* US_Autocomplete */,
 				AE3807E01E0A0C4200F8A1C3 /* US_Street */,
 				AE3807E51E0A0C7100F8A1C3 /* US_ZipCode */,
 				AE76B5FA1D5265030080C136 /* Info.plist */,
@@ -517,6 +524,16 @@
 				AEF32FEB1EA16CAA0067AD57 /* SSGeolocateType.m */,
 				AEF32FEF1EA16DE20067AD57 /* SSUSAutocompleteSuggestion.h */,
 				AEF32FF01EA16DE20067AD57 /* SSUSAutocompleteSuggestion.m */,
+				AEF32FF31EA16F590067AD57 /* SSUSAutocompleteResult.h */,
+				AEF32FF41EA16F590067AD57 /* SSUSAutocompleteResult.m */,
+			);
+			name = US_Autocomplete;
+			sourceTree = "<group>";
+		};
+		AEF32FF91EA16F7A0067AD57 /* US_Autocomplete */ = {
+			isa = PBXGroup;
+			children = (
+				AEF32FF71EA16F760067AD57 /* SSUSAutocompleteResultTests.m */,
 			);
 			name = US_Autocomplete;
 			sourceTree = "<group>";
@@ -541,6 +558,7 @@
 				AE3807AE1E0A0AB100F8A1C3 /* SSUSZipCodeResult.h in Headers */,
 				AE3807891E0A093200F8A1C3 /* SSUSStreetComponents.h in Headers */,
 				AE3807AA1E0A0AAA00F8A1C3 /* SSUSCity.h in Headers */,
+				AEF32FF51EA16F590067AD57 /* SSUSAutocompleteResult.h in Headers */,
 				AE3807BA1E0A0ABF00F8A1C3 /* SSUSZipCode.h in Headers */,
 				AE3807A61E0A0AA100F8A1C3 /* SSUSAlternateCounties.h in Headers */,
 				AE38079D1E0A095800F8A1C3 /* SSUSStreetLookup.h in Headers */,
@@ -733,6 +751,7 @@
 				AE3807AB1E0A0AAA00F8A1C3 /* SSUSCity.m in Sources */,
 				AE76B61C1D528B8C0080C136 /* SSRequest.m in Sources */,
 				AE38079A1E0A095800F8A1C3 /* SSUSStreetClient.m in Sources */,
+				AEF32FF61EA16F590067AD57 /* SSUSAutocompleteResult.m in Sources */,
 				AE3807BF1E0A0ABF00F8A1C3 /* SSUSZipCodeClient.m in Sources */,
 				AEF32FF21EA16DE20067AD57 /* SSUSAutocompleteSuggestion.m in Sources */,
 				AE3807BB1E0A0ABF00F8A1C3 /* SSUSZipCode.m in Sources */,
@@ -763,6 +782,7 @@
 				AE3807D31E0A0BE800F8A1C3 /* SSMockCrashingSender.m in Sources */,
 				AE4177761D5D2954003DEF9F /* SSStaticCredentialsTests.m in Sources */,
 				AE3807DD1E0A0C3500F8A1C3 /* SSJsonSerializerNullTests.m in Sources */,
+				AEF32FF81EA16F760067AD57 /* SSUSAutocompleteResultTests.m in Sources */,
 				AE1461231E8EC43B0066F907 /* SSInternationalStreetCandidateTests.m in Sources */,
 				AE4177701D5D19CF003DEF9F /* SSSharedCredentialsTests.m in Sources */,
 				AE3807D41E0A0BE800F8A1C3 /* SSMockDeserializer.m in Sources */,

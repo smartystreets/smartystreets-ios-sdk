@@ -45,7 +45,7 @@
     NSError *error = nil;
     
     lookup.country = @"0";
-    lookup.geocode = YES;
+    [lookup enableGeocode:YES];
     lookup.language = [[SSLanguageMode alloc] initWithName:kSSNative];
     lookup.freeform = @"1";
     lookup.address1 = @"2";
