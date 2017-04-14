@@ -115,6 +115,8 @@
 		AED507AE1DCD003700953E1C /* SSSender.h in Headers */ = {isa = PBXBuildFile; fileRef = AE76B6131D527CF60080C136 /* SSSender.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AEF32FEC1EA16CAA0067AD57 /* SSGeolocateType.h in Headers */ = {isa = PBXBuildFile; fileRef = AEF32FEA1EA16CAA0067AD57 /* SSGeolocateType.h */; };
 		AEF32FED1EA16CAA0067AD57 /* SSGeolocateType.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF32FEB1EA16CAA0067AD57 /* SSGeolocateType.m */; };
+		AEF32FF11EA16DE20067AD57 /* SSUSAutocompleteSuggestion.h in Headers */ = {isa = PBXBuildFile; fileRef = AEF32FEF1EA16DE20067AD57 /* SSUSAutocompleteSuggestion.h */; };
+		AEF32FF21EA16DE20067AD57 /* SSUSAutocompleteSuggestion.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF32FF01EA16DE20067AD57 /* SSUSAutocompleteSuggestion.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -261,6 +263,8 @@
 		AEBCE84B1D6246150016A4FE /* SSSigningSenderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSSigningSenderTests.m; sourceTree = "<group>"; };
 		AEF32FEA1EA16CAA0067AD57 /* SSGeolocateType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSGeolocateType.h; sourceTree = "<group>"; };
 		AEF32FEB1EA16CAA0067AD57 /* SSGeolocateType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSGeolocateType.m; sourceTree = "<group>"; };
+		AEF32FEF1EA16DE20067AD57 /* SSUSAutocompleteSuggestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSUSAutocompleteSuggestion.h; sourceTree = "<group>"; };
+		AEF32FF01EA16DE20067AD57 /* SSUSAutocompleteSuggestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSUSAutocompleteSuggestion.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -511,6 +515,8 @@
 			children = (
 				AEF32FEA1EA16CAA0067AD57 /* SSGeolocateType.h */,
 				AEF32FEB1EA16CAA0067AD57 /* SSGeolocateType.m */,
+				AEF32FEF1EA16DE20067AD57 /* SSUSAutocompleteSuggestion.h */,
+				AEF32FF01EA16DE20067AD57 /* SSUSAutocompleteSuggestion.m */,
 			);
 			name = US_Autocomplete;
 			sourceTree = "<group>";
@@ -530,6 +536,7 @@
 				AE4177671D5CE19B003DEF9F /* SSResponse.h in Headers */,
 				AE3807991E0A095800F8A1C3 /* SSUSStreetClient.h in Headers */,
 				AE3807BE1E0A0ABF00F8A1C3 /* SSUSZipCodeClient.h in Headers */,
+				AEF32FF11EA16DE20067AD57 /* SSUSAutocompleteSuggestion.h in Headers */,
 				AE3807871E0A093200F8A1C3 /* SSUSStreetCandidate.h in Headers */,
 				AE3807AE1E0A0AB100F8A1C3 /* SSUSZipCodeResult.h in Headers */,
 				AE3807891E0A093200F8A1C3 /* SSUSStreetComponents.h in Headers */,
@@ -727,6 +734,7 @@
 				AE76B61C1D528B8C0080C136 /* SSRequest.m in Sources */,
 				AE38079A1E0A095800F8A1C3 /* SSUSStreetClient.m in Sources */,
 				AE3807BF1E0A0ABF00F8A1C3 /* SSUSZipCodeClient.m in Sources */,
+				AEF32FF21EA16DE20067AD57 /* SSUSAutocompleteSuggestion.m in Sources */,
 				AE3807BB1E0A0ABF00F8A1C3 /* SSUSZipCode.m in Sources */,
 				AE17C8941E8C258C009D5746 /* SSInternationalStreetAnalysis.m in Sources */,
 				AEBCE8481D6228600016A4FE /* SSSigningSender.m in Sources */,
