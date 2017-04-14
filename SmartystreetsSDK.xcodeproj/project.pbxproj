@@ -113,6 +113,8 @@
 		AEBCE8481D6228600016A4FE /* SSSigningSender.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBCE8461D6228600016A4FE /* SSSigningSender.m */; };
 		AEBCE84C1D6246150016A4FE /* SSSigningSenderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBCE84B1D6246150016A4FE /* SSSigningSenderTests.m */; };
 		AED507AE1DCD003700953E1C /* SSSender.h in Headers */ = {isa = PBXBuildFile; fileRef = AE76B6131D527CF60080C136 /* SSSender.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AEF32FEC1EA16CAA0067AD57 /* SSGeolocateType.h in Headers */ = {isa = PBXBuildFile; fileRef = AEF32FEA1EA16CAA0067AD57 /* SSGeolocateType.h */; };
+		AEF32FED1EA16CAA0067AD57 /* SSGeolocateType.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF32FEB1EA16CAA0067AD57 /* SSGeolocateType.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -257,6 +259,8 @@
 		AEBCE8451D6228600016A4FE /* SSSigningSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSSigningSender.h; sourceTree = "<group>"; };
 		AEBCE8461D6228600016A4FE /* SSSigningSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSSigningSender.m; sourceTree = "<group>"; };
 		AEBCE84B1D6246150016A4FE /* SSSigningSenderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSSigningSenderTests.m; sourceTree = "<group>"; };
+		AEF32FEA1EA16CAA0067AD57 /* SSGeolocateType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSGeolocateType.h; sourceTree = "<group>"; };
+		AEF32FEB1EA16CAA0067AD57 /* SSGeolocateType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSGeolocateType.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -441,6 +445,7 @@
 			isa = PBXGroup;
 			children = (
 				AE17C8951E8C2599009D5746 /* International_Street */,
+				AEF32FEE1EA16CAE0067AD57 /* US_Autocomplete */,
 				AE38077E1E0A08B400F8A1C3 /* US_Street */,
 				AE3807A11E0A0A5C00F8A1C3 /* US_ZipCode */,
 				AE76B5EE1D5265030080C136 /* Info.plist */,
@@ -501,6 +506,15 @@
 			path = Tests;
 			sourceTree = "<group>";
 		};
+		AEF32FEE1EA16CAE0067AD57 /* US_Autocomplete */ = {
+			isa = PBXGroup;
+			children = (
+				AEF32FEA1EA16CAA0067AD57 /* SSGeolocateType.h */,
+				AEF32FEB1EA16CAA0067AD57 /* SSGeolocateType.m */,
+			);
+			name = US_Autocomplete;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -542,6 +556,7 @@
 				AED507AE1DCD003700953E1C /* SSSender.h in Headers */,
 				AE76B5ED1D5265030080C136 /* SmartystreetsSDK.h in Headers */,
 				AE3296411E96E0A5002F5450 /* SSInternationalStreetClient.h in Headers */,
+				AEF32FEC1EA16CAA0067AD57 /* SSGeolocateType.h in Headers */,
 				AE162FC11E9BFBD500041911 /* SSInternationalStreetLookup.h in Headers */,
 				AE7C4E0A1E96BD7B00C63520 /* SSBatch.h in Headers */,
 				AE41776A1D5D1450003DEF9F /* SSCredentials.h in Headers */,
@@ -699,6 +714,7 @@
 				AE3807A71E0A0AA100F8A1C3 /* SSUSAlternateCounties.m in Sources */,
 				AE3807881E0A093200F8A1C3 /* SSUSStreetCandidate.m in Sources */,
 				AE4177741D5D2244003DEF9F /* SSStaticCredentials.m in Sources */,
+				AEF32FED1EA16CAA0067AD57 /* SSGeolocateType.m in Sources */,
 				AE41776E1D5D1568003DEF9F /* SSSharedCredentials.m in Sources */,
 				AE4177681D5CE19B003DEF9F /* SSResponse.m in Sources */,
 				AE3807861E0A093200F8A1C3 /* SSUSStreetAnalysis.m in Sources */,
