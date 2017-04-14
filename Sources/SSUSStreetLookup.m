@@ -33,7 +33,7 @@ NSString *const kSSInvalid = @"invalid";
         _maxCandidates = maxCandidates;
     else {
         NSDictionary *details = @{NSLocalizedDescriptionKey: @"Max candidates must be a positive integer."};
-        *error = [NSError errorWithDomain:SSErrorDomain code:MaxCandidatesNotPositiveIntegerError userInfo:details]; 
+        *error = [NSError errorWithDomain:SSErrorDomain code:NotPositiveIntegerError userInfo:details]; 
     }
 }
 

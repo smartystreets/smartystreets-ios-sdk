@@ -120,6 +120,8 @@
 		AEF32FF51EA16F590067AD57 /* SSUSAutocompleteResult.h in Headers */ = {isa = PBXBuildFile; fileRef = AEF32FF31EA16F590067AD57 /* SSUSAutocompleteResult.h */; };
 		AEF32FF61EA16F590067AD57 /* SSUSAutocompleteResult.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF32FF41EA16F590067AD57 /* SSUSAutocompleteResult.m */; };
 		AEF32FF81EA16F760067AD57 /* SSUSAutocompleteResultTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF32FF71EA16F760067AD57 /* SSUSAutocompleteResultTests.m */; };
+		AEF32FFC1EA174770067AD57 /* SSUSAutocompleteLookup.h in Headers */ = {isa = PBXBuildFile; fileRef = AEF32FFA1EA174770067AD57 /* SSUSAutocompleteLookup.h */; };
+		AEF32FFD1EA174770067AD57 /* SSUSAutocompleteLookup.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF32FFB1EA174770067AD57 /* SSUSAutocompleteLookup.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -271,6 +273,8 @@
 		AEF32FF31EA16F590067AD57 /* SSUSAutocompleteResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSUSAutocompleteResult.h; sourceTree = "<group>"; };
 		AEF32FF41EA16F590067AD57 /* SSUSAutocompleteResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSUSAutocompleteResult.m; sourceTree = "<group>"; };
 		AEF32FF71EA16F760067AD57 /* SSUSAutocompleteResultTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSUSAutocompleteResultTests.m; sourceTree = "<group>"; };
+		AEF32FFA1EA174770067AD57 /* SSUSAutocompleteLookup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSUSAutocompleteLookup.h; sourceTree = "<group>"; };
+		AEF32FFB1EA174770067AD57 /* SSUSAutocompleteLookup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSUSAutocompleteLookup.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -526,6 +530,8 @@
 				AEF32FF01EA16DE20067AD57 /* SSUSAutocompleteSuggestion.m */,
 				AEF32FF31EA16F590067AD57 /* SSUSAutocompleteResult.h */,
 				AEF32FF41EA16F590067AD57 /* SSUSAutocompleteResult.m */,
+				AEF32FFA1EA174770067AD57 /* SSUSAutocompleteLookup.h */,
+				AEF32FFB1EA174770067AD57 /* SSUSAutocompleteLookup.m */,
 			);
 			name = US_Autocomplete;
 			sourceTree = "<group>";
@@ -580,6 +586,7 @@
 				AE258B461D6B551200EBD18E /* SSRetrySender.h in Headers */,
 				AED507AE1DCD003700953E1C /* SSSender.h in Headers */,
 				AE76B5ED1D5265030080C136 /* SmartystreetsSDK.h in Headers */,
+				AEF32FFC1EA174770067AD57 /* SSUSAutocompleteLookup.h in Headers */,
 				AE3296411E96E0A5002F5450 /* SSInternationalStreetClient.h in Headers */,
 				AEF32FEC1EA16CAA0067AD57 /* SSGeolocateType.h in Headers */,
 				AE162FC11E9BFBD500041911 /* SSInternationalStreetLookup.h in Headers */,
@@ -750,6 +757,7 @@
 				AE258B471D6B551200EBD18E /* SSRetrySender.m in Sources */,
 				AE3807AB1E0A0AAA00F8A1C3 /* SSUSCity.m in Sources */,
 				AE76B61C1D528B8C0080C136 /* SSRequest.m in Sources */,
+				AEF32FFD1EA174770067AD57 /* SSUSAutocompleteLookup.m in Sources */,
 				AE38079A1E0A095800F8A1C3 /* SSUSStreetClient.m in Sources */,
 				AEF32FF61EA16F590067AD57 /* SSUSAutocompleteResult.m in Sources */,
 				AE3807BF1E0A0ABF00F8A1C3 /* SSUSZipCodeClient.m in Sources */,

@@ -6,7 +6,7 @@ typedef NS_ENUM(NSInteger, SSErrors) {
     BatchFullError,
     ObjectNilError,
     ObjectInvalidTypeError,
-    MaxCandidatesNotPositiveIntegerError,
+    NotPositiveIntegerError,
     BadRequestError = 400,
     BadCredentialsError = 401,
     PaymentRequiredError = 402,
