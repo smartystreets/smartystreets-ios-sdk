@@ -4,6 +4,7 @@ FOUNDATION_EXPORT NSString *const SSErrorDomain;
 
 typedef NS_ENUM(NSInteger, SSErrors) {
     BatchFullError,
+    FieldNotSetError,
     ObjectNilError,
     ObjectInvalidTypeError,
     NotPositiveIntegerError,
