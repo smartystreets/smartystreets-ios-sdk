@@ -3,6 +3,7 @@
 @interface SSMockSerializer()
 
 @property (readonly, nonatomic) NSData *bytes;
+@property (readonly, nonatomic) NSObject *result;
 
 @end
 
@@ -11,6 +12,12 @@
 - (instancetype)initWithBytes:(NSData*)bytes {
     if (self = [super init])
         _bytes = bytes;
+    return self;
+}
+
+- (instancetype)initWithResult:(NSObject*)result {
+    if (self = [super init])
+        _result = result;
     return self;
 }
 
