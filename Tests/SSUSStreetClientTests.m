@@ -125,10 +125,10 @@
                                    @"addressee": @"addressee3"
                                    }, nil];
     
-    NSMutableArray<SSUSStreetCandidate*> *expectedCandidates = [[NSMutableArray<SSUSStreetCandidate*> alloc] init];
-    [expectedCandidates insertObject:[[SSUSStreetCandidate alloc] initWithDictionary:[rawResults objectAtIndex:0]] atIndex:0];
-    [expectedCandidates insertObject:[[SSUSStreetCandidate alloc] initWithDictionary:[rawResults objectAtIndex:1]] atIndex:1];
-    [expectedCandidates insertObject:[[SSUSStreetCandidate alloc] initWithDictionary:[rawResults objectAtIndex:2]] atIndex:2];
+    NSMutableArray<SSUSStreetCandidate*> *expectedCandidates = [NSMutableArray<SSUSStreetCandidate*> arrayWithObjects:
+                       [[SSUSStreetCandidate alloc] initWithDictionary:[rawResults objectAtIndex:0]],
+                       [[SSUSStreetCandidate alloc] initWithDictionary:[rawResults objectAtIndex:1]],
+                       [[SSUSStreetCandidate alloc] initWithDictionary:[rawResults objectAtIndex:2]], nil];
     
     SSBatch *batch = [[SSBatch alloc] init];
     NSError *error = nil;

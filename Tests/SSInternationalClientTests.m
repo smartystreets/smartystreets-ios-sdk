@@ -153,9 +153,9 @@
                              @"address1": @"2"
                              }, nil];
     
-    NSMutableArray<SSInternationalStreetCandidate*> *expectedCandidates = [[NSMutableArray<SSInternationalStreetCandidate*> alloc] init];
-    [expectedCandidates insertObject:[[SSInternationalStreetCandidate alloc] initWithDictionary:[rawResults objectAtIndex:0]] atIndex:0];
-    [expectedCandidates insertObject:[[SSInternationalStreetCandidate alloc] initWithDictionary:[rawResults objectAtIndex:1]] atIndex:1];
+    NSMutableArray<SSInternationalStreetCandidate*> *expectedCandidates = [NSMutableArray<SSInternationalStreetCandidate*> arrayWithObjects:
+                            [[SSInternationalStreetCandidate alloc] initWithDictionary:[rawResults objectAtIndex:0]],
+                            [[SSInternationalStreetCandidate alloc] initWithDictionary:[rawResults objectAtIndex:1]], nil];
     SSInternationalStreetLookup *lookup = [[SSInternationalStreetLookup alloc] initWithFreeform:@"1" withCountry:@"2"];
     
     NSString *emptyString = @"[]";

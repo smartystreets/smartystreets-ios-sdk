@@ -107,9 +107,9 @@
                              @"status": @"status2"
                              }, nil];
     
-    NSMutableArray<SSUSZipCodeResult*> *expectedCandidates = [[NSMutableArray<SSUSZipCodeResult*> alloc] init];
-    [expectedCandidates insertObject:[[SSUSZipCodeResult alloc] initWithDictionary:[rawResults objectAtIndex:0]] atIndex:0];
-    [expectedCandidates insertObject:[[SSUSZipCodeResult alloc] initWithDictionary:[rawResults objectAtIndex:1]] atIndex:1];
+    NSMutableArray<SSUSZipCodeResult*> *expectedCandidates = [NSMutableArray<SSUSZipCodeResult*> arrayWithObjects:
+                                            [[SSUSZipCodeResult alloc] initWithDictionary:[rawResults objectAtIndex:0]],
+                                            [[SSUSZipCodeResult alloc] initWithDictionary:[rawResults objectAtIndex:1]], nil];
 
     SSBatch *batch = [[SSBatch alloc] init];
     NSError *error = nil;
