@@ -5,6 +5,6 @@
 
 @property (readonly, nonatomic) NSData *payload;
 
-- (instancetype)initWithDeserializedObject:(NSArray*)deserialized;
+- (instancetype)initWithDeserializedObject:(id)deserialized;
 
 @end

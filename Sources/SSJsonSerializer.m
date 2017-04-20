@@ -27,7 +27,7 @@
     return data;
 }
 
-- (NSArray*)deserialize:(NSData*)payload error:(NSError**)error {
+- (id)deserialize:(NSData*)payload error:(NSError**)error {
     if (payload == nil) {
         NSDictionary *details = @{NSLocalizedDescriptionKey: @"The payload is nil."};
         *error = [NSError errorWithDomain:SSErrorDomain code:ObjectNilError userInfo:details];

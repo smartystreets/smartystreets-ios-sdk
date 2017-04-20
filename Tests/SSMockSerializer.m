@@ -26,7 +26,7 @@
     return self.bytes;
 }
 
-- (NSArray*)deserialize:(NSData *)payload error:(NSError**)error {
+- (id)deserialize:(NSData *)payload error:(NSError**)error {
     return nil;
 }
 
