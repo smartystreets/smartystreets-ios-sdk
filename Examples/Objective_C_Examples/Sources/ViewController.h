@@ -5,6 +5,7 @@
 #import "SSUSStreetLookupsWithMatchStrategyExamples.h"
 #import "SSUSZipCodeSingleLookupExample.h"
 #import "SSUSZipCodeMultipleLookupsExample.h"
+#import "SSUSAutocompleteExample.h"
 
 @interface ViewController : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate>
 

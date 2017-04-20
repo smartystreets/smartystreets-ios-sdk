@@ -58,7 +58,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             let example = USAutocompleteExample()
             result = example.run()
         }
-
         else if (pickerName == "InternationalStreet") {
             let example = InternationalStreetExample()
             result = example.run()

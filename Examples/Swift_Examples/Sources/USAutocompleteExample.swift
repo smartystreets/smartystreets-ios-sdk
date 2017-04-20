@@ -17,9 +17,7 @@ class USAutocompleteExample {
             return "Error sending request"
         }
         
-        var output = String()
-        
-        output += "*** Result with no filter ***\n"
+        var output = "*** Result with no filter ***\n"
         
         let result1 = lookup?.result as! Array<SSUSAutocompleteSuggestion>
         
@@ -28,12 +26,11 @@ class USAutocompleteExample {
         }
         
         var error: NSError?
-        
         lookup?.addStateFilter("IL")
         lookup?.setMaxSuggestions(5, error: &error)
         
         do {
-            try client?.send(lookup) //The client will also return the suggestions directly
+            try client?.send(lookup)
         } catch let error as NSError {
             print(String(format: "Domain: %@", error.domain))
             print(String(format: "Error Code: %i", error.code))

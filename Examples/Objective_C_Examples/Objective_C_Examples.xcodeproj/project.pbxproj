@@ -17,6 +17,7 @@
 		AE21781D1DB37E4200D9CF69 /* SSUSZipCodeSingleLookupExample.m in Sources */ = {isa = PBXBuildFile; fileRef = AE21781C1DB37E4200D9CF69 /* SSUSZipCodeSingleLookupExample.m */; };
 		AE53A9921DCD43B500EE58A8 /* SSUSStreetMultipleLookupsExample.m in Sources */ = {isa = PBXBuildFile; fileRef = AE53A9911DCD43B500EE58A8 /* SSUSStreetMultipleLookupsExample.m */; };
 		AE545C921EA0382A00D63F91 /* SSInternationalStreetExample.m in Sources */ = {isa = PBXBuildFile; fileRef = AE545C911EA0382A00D63F91 /* SSInternationalStreetExample.m */; };
+		AE60298C1EA88424004BF2A7 /* SSUSAutocompleteExample.m in Sources */ = {isa = PBXBuildFile; fileRef = AE60298B1EA88424004BF2A7 /* SSUSAutocompleteExample.m */; };
 		AE879ACB1DCA6A0E0078C0B0 /* SSUSStreetSingleAddressExample.m in Sources */ = {isa = PBXBuildFile; fileRef = AE879ACA1DCA6A0E0078C0B0 /* SSUSStreetSingleAddressExample.m */; };
 		AE879ACE1DCA6F020078C0B0 /* SSMyCredentials.m in Sources */ = {isa = PBXBuildFile; fileRef = AE879ACD1DCA6F020078C0B0 /* SSMyCredentials.m */; };
 		AED0E8C81DD643BC0041201A /* SSUSStreetLookupsWithMatchStrategyExamples.m in Sources */ = {isa = PBXBuildFile; fileRef = AED0E8C71DD643BC0041201A /* SSUSStreetLookupsWithMatchStrategyExamples.m */; };
@@ -58,6 +59,8 @@
 		AE53A9911DCD43B500EE58A8 /* SSUSStreetMultipleLookupsExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSUSStreetMultipleLookupsExample.m; sourceTree = "<group>"; };
 		AE545C901EA0382A00D63F91 /* SSInternationalStreetExample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSInternationalStreetExample.h; sourceTree = "<group>"; };
 		AE545C911EA0382A00D63F91 /* SSInternationalStreetExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSInternationalStreetExample.m; sourceTree = "<group>"; };
+		AE60298A1EA88424004BF2A7 /* SSUSAutocompleteExample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSUSAutocompleteExample.h; sourceTree = "<group>"; };
+		AE60298B1EA88424004BF2A7 /* SSUSAutocompleteExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSUSAutocompleteExample.m; sourceTree = "<group>"; };
 		AE879AC91DCA6A0E0078C0B0 /* SSUSStreetSingleAddressExample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSUSStreetSingleAddressExample.h; sourceTree = "<group>"; };
 		AE879ACA1DCA6A0E0078C0B0 /* SSUSStreetSingleAddressExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSUSStreetSingleAddressExample.m; sourceTree = "<group>"; };
 		AE879ACC1DCA6F020078C0B0 /* SSMyCredentials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSMyCredentials.h; sourceTree = "<group>"; };
@@ -121,6 +124,8 @@
 				AE02A9221DC7C62100F53A7A /* SSUSZipCodeMultipleLookupsExample.m */,
 				AE21781B1DB37E4200D9CF69 /* SSUSZipCodeSingleLookupExample.h */,
 				AE21781C1DB37E4200D9CF69 /* SSUSZipCodeSingleLookupExample.m */,
+				AE60298A1EA88424004BF2A7 /* SSUSAutocompleteExample.h */,
+				AE60298B1EA88424004BF2A7 /* SSUSAutocompleteExample.m */,
 				AE21780A1DB37E2D00D9CF69 /* ViewController.h */,
 				AE21780B1DB37E2D00D9CF69 /* ViewController.m */,
 			);
@@ -220,6 +225,7 @@
 				AE879ACE1DCA6F020078C0B0 /* SSMyCredentials.m in Sources */,
 				AED0E8C81DD643BC0041201A /* SSUSStreetLookupsWithMatchStrategyExamples.m in Sources */,
 				AE53A9921DCD43B500EE58A8 /* SSUSStreetMultipleLookupsExample.m in Sources */,
+				AE60298C1EA88424004BF2A7 /* SSUSAutocompleteExample.m in Sources */,
 				AE21781D1DB37E4200D9CF69 /* SSUSZipCodeSingleLookupExample.m in Sources */,
 				AE02A9231DC7C62100F53A7A /* SSUSZipCodeMultipleLookupsExample.m in Sources */,
 				AE2178091DB37E2D00D9CF69 /* AppDelegate.m in Sources */,

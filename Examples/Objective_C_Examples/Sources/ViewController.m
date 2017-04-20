@@ -18,6 +18,7 @@
                    @"USStreetLookupsWithMatchStrategy",
                    @"USZipCodeSingleLookup",
                    @"USZipCodeMultipleLookups",
+                   @"USAutocomplete",
                    @"InternationalStreet"];
     pickerName = pickerData[0];
     
@@ -50,7 +51,11 @@
         SSUSZipCodeMultipleLookupsExample *example = [[SSUSZipCodeMultipleLookupsExample alloc] init];
         result = [example run];
     }
-    if ([pickerName isEqualToString:@"InternationalStreet"]) {
+    else if ([pickerName isEqualToString:@"USAutocomplete"]) {
+        SSUSAutocompleteExample *example = [[SSUSAutocompleteExample alloc] init];
+        result = [example run];
+    }
+    else if ([pickerName isEqualToString:@"InternationalStreet"]) {
         SSInternationalStreetExample *example = [[SSInternationalStreetExample alloc] init];
         result = [example run];
     }
