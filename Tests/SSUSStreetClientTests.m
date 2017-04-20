@@ -5,7 +5,6 @@
 #import "SSMockSender.h"
 #import "SSUSStreetClient.h"
 #import "SSUSStreetLookup.h"
-#import "SSUSZipCodeResult.h"
 #import "SSURLPrefixSender.h"
 
 @interface SSUSStreetClientTests : XCTestCase
