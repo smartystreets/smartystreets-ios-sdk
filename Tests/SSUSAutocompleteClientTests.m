@@ -46,7 +46,6 @@
     SSUSAutocompleteClient *client = [[SSUSAutocompleteClient alloc] initWithSender:sender withSerializer:serializer];
     NSError *error = nil;
     
-    NSString *expectedUrl = @"http://localhost/?prefer=5&prefix=1&state_filter=4&geolocate=true&city_filter=3&suggestions=2&geolocate_precision=state";
     SSUSAutocompleteLookup *lookup = [[SSUSAutocompleteLookup alloc] init];
     lookup.prefix = @"1";
     [lookup setMaxSuggestions:2 error:&error];
@@ -57,7 +56,29 @@
     
     [client sendLookup:lookup error:&error];
     
-    XCTAssertEqualObjects(expectedUrl, [capturingSender.request getUrl]);
+    XCTAssertEqualObjects(@"1", capturingSender.request.parameters[@"prefix"]);
+    XCTAssertEqualObjects(@"2", capturingSender.request.parameters[@"suggestions"]);
+    XCTAssertEqualObjects(@"3", capturingSender.request.parameters[@"city_filter"]);
+    XCTAssertEqualObjects(@"true", capturingSender.request.parameters[@"geolocate"]);
+    XCTAssertEqualObjects(@"state", capturingSender.request.parameters[@"geolocate_precision"]);
+    XCTAssertEqualObjects(@"4", capturingSender.request.parameters[@"state_filter"]);
+    XCTAssertEqualObjects(@"5", capturingSender.request.parameters[@"prefer"]);
+}
+
+- (void)testSendingLookupWithGeolocateTypeSetToNone {
+    SSRequestCapturingSender *capturingSender = [[SSRequestCapturingSender alloc] init];
+    SSURLPrefixSender *sender = [[SSURLPrefixSender alloc] initWithUrlPrefix:@"http://localhost/" inner:capturingSender];
+    SSMockSerializer *serializer = [[SSMockSerializer alloc] initWithResult:[[SSUSAutocompleteResult alloc] init]];
+    SSUSAutocompleteClient *client = [[SSUSAutocompleteClient alloc] initWithSender:sender withSerializer:serializer];
+    NSError *error = nil;
+    
+    SSUSAutocompleteLookup *lookup = [[SSUSAutocompleteLookup alloc] init];
+    lookup.prefix = @"1";
+    [lookup setGeolocateType:[[SSGeolocateType alloc] initWithName:kSSGeolocateTypeNone]];
+    
+    [client sendLookup:lookup error:&error];
+    
+    XCTAssertEqualObjects(@"false", capturingSender.request.parameters[@"geolocate"]);
 }
 
 // Response Handling

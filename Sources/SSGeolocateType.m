@@ -2,7 +2,7 @@
 
 NSString *const kSSGeolocateTypeCity = @"city";
 NSString *const kSSGeolocateTypeState = @"state";
-NSObject *const kSSGeolocateTypeNone = nil;
+NSString *const kSSGeolocateTypeNone = @"null";
 
 @implementation SSGeolocateType
 

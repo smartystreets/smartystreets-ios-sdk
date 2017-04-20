@@ -46,7 +46,7 @@
     [request setValue:[self buildFilterString:lookup.cityFilter] forHTTPParameterField:@"city_filter"];
     [request setValue:[self buildFilterString:lookup.stateFilter] forHTTPParameterField:@"state_filter"];
     [request setValue:[self buildFilterString:lookup.prefer] forHTTPParameterField:@"prefer"];
-    if (lookup.geolocateType != kSSGeolocateTypeNone) {
+    if (lookup.geolocateType.name != kSSGeolocateTypeNone) {
         [request setValue:@"true" forHTTPParameterField:@"geolocate"];
         [request setValue:lookup.geolocateType.name forHTTPParameterField:@"geolocate_precision"];
     }
@@ -61,6 +61,5 @@
     
     return [list componentsJoinedByString:@","];
 }
-
 
 @end
