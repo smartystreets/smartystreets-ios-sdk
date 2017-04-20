@@ -78,17 +78,9 @@
 }
 
 - (void)testResultCorrectlyAssignedToCorrespondingLookup {
-    NSArray *rawResults = [NSArray arrayWithObjects:
-                           @{@"text": @"1"}, @{@"text": @"2"}, nil];
-    
-    NSArray<SSUSAutocompleteSuggestion*> *suggestions =
-            [NSMutableArray<SSUSAutocompleteSuggestion*> arrayWithObjects:
-             [rawResults objectAtIndex:0],
-             [rawResults objectAtIndex:1], nil];
-    
-    SSUSAutocompleteResult *expectedResult = [[SSUSAutocompleteResult alloc] initWithDictionary:
-                                              @{@"suggestions": suggestions}];
-    
+    NSArray *rawSuggestions = [NSArray arrayWithObjects: @{@"text": @"1"}, @{@"text": @"2"}, nil];
+    NSDictionary *rawResult = @{@"suggestions": rawSuggestions};
+    SSUSAutocompleteResult *expectedResult = [[SSUSAutocompleteResult alloc] initWithDictionary: rawResult];
     SSUSAutocompleteLookup *lookup = [[SSUSAutocompleteLookup alloc] initWithPrefix:@"1"];
 
     NSString *emptyString = @"[]";
@@ -97,14 +89,14 @@
     
     SSMockSender *mockSender = [[SSMockSender alloc] initWithSSResponse:response];
     SSURLPrefixSender *sender = [[SSURLPrefixSender alloc] initWithUrlPrefix:@"http://localhost/" inner:mockSender];
-    SSMockDeserializer *deserializer = [[SSMockDeserializer alloc] initWithDeserializedObject:rawResults];
+    SSMockDeserializer *deserializer = [[SSMockDeserializer alloc] initWithDeserializedObject:rawResult];
     SSUSAutocompleteClient *client = [[SSUSAutocompleteClient alloc] initWithSender:sender withSerializer:deserializer];
     NSError *error = nil;
     
     [client sendLookup:lookup error:&error];
     
-    XCTAssertEqual(expectedResult.suggestions, lookup.result);
+    XCTAssertEqual([[expectedResult.suggestions objectAtIndex:0] text], [[lookup.result objectAtIndex:0] text]);
+    XCTAssertEqual([[expectedResult.suggestions objectAtIndex:1] text], [[lookup.result objectAtIndex:1] text]);
 }
-
 
 @end

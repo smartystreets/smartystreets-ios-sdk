@@ -29,10 +29,10 @@
     SSResponse *response = [self.sender sendRequest:request error:error];
     if (*error != nil) return NO;
     
-    NSArray *result = [self.serializer deserialize:response.payload error:error];
+    NSDictionary *result = [self.serializer deserialize:response.payload error:error];
     if (result == nil) return NO;
     
-    lookup.result = [[[SSUSAutocompleteResult alloc] initWithDictionary:[result objectAtIndex:0]] suggestions];
+    lookup.result = [[[SSUSAutocompleteResult alloc] initWithDictionary:result] suggestions];
     if (*error != nil) return NO;
     
     return YES;
