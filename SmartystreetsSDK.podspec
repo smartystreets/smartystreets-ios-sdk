@@ -8,6 +8,7 @@ s.license      = { :type => 'Apache 2.0', :file => 'LICENSE.md' }
 
 public_header_files = 'include/**/SSRequest.h',
                       'include/**/SSInternationalStreetClient.h',
+                      'include/**/SSUSAutocompleteClient.h',
                       'include/**/SSUSStreetClient.h',
                       'include/**/SSUSZipCodeClient.h',
                       'include/**/SSClientBuilder.h',
@@ -16,6 +17,7 @@ public_header_files = 'include/**/SSRequest.h',
 s.source       = { :git => 'https://github.com/smartystreets/smartystreets-ios-sdk.git', :tag => s.version }
 s.source_files = 'Sources/*.{h,m,plist}',
                  'Sources/International_Street/*.{h,m}',
+                 'Sources/USAutocomplete/*.{h,m}',
                  'Sources/US_Street/*.{h,m}',
                  'Sources/US_ZipCode/*.{h,m}'
 
