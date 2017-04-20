@@ -145,13 +145,7 @@
 }
 
 - (void)testCandidatesCorrectlyAssignedToCorrespondingLookup {
-    NSArray *rawResults = [NSArray arrayWithObjects:
-                           @{
-                             @"organization": @"1"
-                             },
-                           @{
-                             @"address1": @"2"
-                             }, nil];
+    NSArray *rawResults = [NSArray arrayWithObjects: @{@"organization": @"1"}, @{@"address1": @"2"}, nil];
     
     NSMutableArray<SSInternationalStreetCandidate*> *expectedCandidates = [NSMutableArray<SSInternationalStreetCandidate*> arrayWithObjects:
                             [[SSInternationalStreetCandidate alloc] initWithDictionary:[rawResults objectAtIndex:0]],

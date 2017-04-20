@@ -98,14 +98,8 @@
 
 - (void)testCandidatesCorrectlyAssignedToCorrespondingLookup {
     NSArray *rawResults = [NSArray arrayWithObjects:
-                           @{
-                             @"input_index": [NSNumber numberWithInt:0],
-                             @"status": @"status1"
-                             },
-                           @{
-                             @"input_index": [NSNumber numberWithInt:1],
-                             @"status": @"status2"
-                             }, nil];
+                           @{@"input_index": [NSNumber numberWithInt:0], @"status": @"status1"},
+                           @{@"input_index": [NSNumber numberWithInt:1], @"status": @"status2"}, nil];
     
     NSMutableArray<SSUSZipCodeResult*> *expectedCandidates = [NSMutableArray<SSUSZipCodeResult*> arrayWithObjects:
                                             [[SSUSZipCodeResult alloc] initWithDictionary:[rawResults objectAtIndex:0]],

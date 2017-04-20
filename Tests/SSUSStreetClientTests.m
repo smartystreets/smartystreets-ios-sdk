@@ -112,18 +112,9 @@
 
 - (void)testCandidatesCorrectlyAssignedToCorrespondingLookup {
     NSArray *rawResults = [NSArray arrayWithObjects:
-                                 @{
-                                   @"input_index": [NSNumber numberWithInt:0],
-                                   @"addressee": @"addressee1"
-                                   },
-                                 @{
-                                   @"input_index": [NSNumber numberWithInt:1],
-                                   @"addressee": @"addressee2"
-                                   },
-                                 @{
-                                   @"input_index": [NSNumber numberWithInt:1],
-                                   @"addressee": @"addressee3"
-                                   }, nil];
+                                 @{@"input_index": [NSNumber numberWithInt:0], @"addressee": @"addressee1"},
+                                 @{@"input_index": [NSNumber numberWithInt:1], @"addressee": @"addressee2"},
+                                 @{@"input_index": [NSNumber numberWithInt:1], @"addressee": @"addressee3"}, nil];
     
     NSMutableArray<SSUSStreetCandidate*> *expectedCandidates = [NSMutableArray<SSUSStreetCandidate*> arrayWithObjects:
                        [[SSUSStreetCandidate alloc] initWithDictionary:[rawResults objectAtIndex:0]],

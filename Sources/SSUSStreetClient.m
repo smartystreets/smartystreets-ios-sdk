@@ -36,11 +36,11 @@
     SSResponse *response = [self.sender sendRequest:request error:error];
     if (*error != nil) return NO;
     
-    NSArray<SSUSStreetCandidate*> *candidates = [self.serializer deserialize:response.payload error:error];
+    NSArray *candidates = [self.serializer deserialize:response.payload error:error];
     if (*error != nil) return NO;
     
     if (candidates == nil)
-        candidates = [[NSArray<SSUSStreetCandidate*> alloc] init];
+        candidates = [NSArray new];
     [self assignCandidatesToLookups:batch candidates:candidates];
     
     if (*error != nil) return NO;
