@@ -73,6 +73,11 @@
     return [[SSInternationalStreetClient alloc] initWithSender:[self buildSender] withSerializer:self.serializer];
 }
 
+- (SSUSAutocompleteClient*)buildUsAutocompleteClient {
+    [self ensureURLPrefixNotNil:self.usAutocopmleteApiURL];
+    return [[SSUSAutocompleteClient alloc] initWithSender:[self buildSender] withSerializer:self.serializer];
+}
+
 - (SSUSStreetClient*)buildUsStreetApiClient {
     [self ensureURLPrefixNotNil:self.usStreetApiURL];
     return [[SSUSStreetClient alloc] initWithSender:[self buildSender] withSerializer:self.serializer];

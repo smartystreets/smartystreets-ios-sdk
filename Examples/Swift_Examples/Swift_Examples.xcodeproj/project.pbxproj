@@ -20,6 +20,7 @@
 		AE824C7A1DE5135E004F684E /* USStreetSingleAddressExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE824C791DE5135E004F684E /* USStreetSingleAddressExample.swift */; };
 		AE8B346D1DE60D0900FFE97A /* USStreetMultipleLookupsExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8B346C1DE60D0900FFE97A /* USStreetMultipleLookupsExample.swift */; };
 		AE8B346F1DE6435800FFE97A /* USStreetLookupsWithMatchStrategyExamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8B346E1DE6435800FFE97A /* USStreetLookupsWithMatchStrategyExamples.swift */; };
+		AEA472781EA847CD007FA510 /* USAutocompleteExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA472771EA847CD007FA510 /* USAutocompleteExample.swift */; };
 		AED368E61EA047E0008045B5 /* InternationalStreetExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED368E51EA047E0008045B5 /* InternationalStreetExample.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		AE824C791DE5135E004F684E /* USStreetSingleAddressExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = USStreetSingleAddressExample.swift; sourceTree = "<group>"; };
 		AE8B346C1DE60D0900FFE97A /* USStreetMultipleLookupsExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = USStreetMultipleLookupsExample.swift; sourceTree = "<group>"; };
 		AE8B346E1DE6435800FFE97A /* USStreetLookupsWithMatchStrategyExamples.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = USStreetLookupsWithMatchStrategyExamples.swift; sourceTree = "<group>"; };
+		AEA472771EA847CD007FA510 /* USAutocompleteExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = USAutocompleteExample.swift; sourceTree = "<group>"; };
 		AED368E51EA047E0008045B5 /* InternationalStreetExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InternationalStreetExample.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,6 +111,7 @@
 				AE8B346C1DE60D0900FFE97A /* USStreetMultipleLookupsExample.swift */,
 				AE8B346E1DE6435800FFE97A /* USStreetLookupsWithMatchStrategyExamples.swift */,
 				AED368E51EA047E0008045B5 /* InternationalStreetExample.swift */,
+				AEA472771EA847CD007FA510 /* USAutocompleteExample.swift */,
 				AE54787B1DDA3FD4005DEB61 /* ViewController.swift */,
 			);
 			path = Sources;
@@ -192,6 +195,7 @@
 				AE54787C1DDA3FD4005DEB61 /* ViewController.swift in Sources */,
 				AE54787A1DDA3FD4005DEB61 /* AppDelegate.swift in Sources */,
 				AE824C7A1DE5135E004F684E /* USStreetSingleAddressExample.swift in Sources */,
+				AEA472781EA847CD007FA510 /* USAutocompleteExample.swift in Sources */,
 				AED368E61EA047E0008045B5 /* InternationalStreetExample.swift in Sources */,
 				AE0587A51DE4B566000A6079 /* MyCredentials.swift in Sources */,
 				AE8B346D1DE60D0900FFE97A /* USStreetMultipleLookupsExample.swift in Sources */,

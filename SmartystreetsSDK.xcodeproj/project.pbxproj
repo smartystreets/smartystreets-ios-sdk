@@ -107,7 +107,7 @@
 		AE7C4E0A1E96BD7B00C63520 /* SSBatch.h in Headers */ = {isa = PBXBuildFile; fileRef = AE7C4E081E96BD7B00C63520 /* SSBatch.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE7C4E0B1E96BD7B00C63520 /* SSBatch.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7C4E091E96BD7B00C63520 /* SSBatch.m */; };
 		AE7C4E0F1E96C03000C63520 /* SSBatchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7C4E0E1E96C03000C63520 /* SSBatchTests.m */; };
-		AE7CC8881EA6B9980082EDD9 /* SSUSAutocompleteClient.h in Headers */ = {isa = PBXBuildFile; fileRef = AE7CC8861EA6B9980082EDD9 /* SSUSAutocompleteClient.h */; };
+		AE7CC8881EA6B9980082EDD9 /* SSUSAutocompleteClient.h in Headers */ = {isa = PBXBuildFile; fileRef = AE7CC8861EA6B9980082EDD9 /* SSUSAutocompleteClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE7CC8891EA6B9980082EDD9 /* SSUSAutocompleteClient.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7CC8871EA6B9980082EDD9 /* SSUSAutocompleteClient.m */; };
 		AE7CC88D1EA6B9AE0082EDD9 /* SSUSAutocompleteClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7CC88C1EA6B9AE0082EDD9 /* SSUSAutocompleteClientTests.m */; };
 		AEB519FC1D905EDC00BF785B /* SSHttpSender.h in Headers */ = {isa = PBXBuildFile; fileRef = AEB519FA1D905EDC00BF785B /* SSHttpSender.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -116,14 +116,14 @@
 		AEBCE8481D6228600016A4FE /* SSSigningSender.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBCE8461D6228600016A4FE /* SSSigningSender.m */; };
 		AEBCE84C1D6246150016A4FE /* SSSigningSenderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBCE84B1D6246150016A4FE /* SSSigningSenderTests.m */; };
 		AED507AE1DCD003700953E1C /* SSSender.h in Headers */ = {isa = PBXBuildFile; fileRef = AE76B6131D527CF60080C136 /* SSSender.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AEF32FEC1EA16CAA0067AD57 /* SSGeolocateType.h in Headers */ = {isa = PBXBuildFile; fileRef = AEF32FEA1EA16CAA0067AD57 /* SSGeolocateType.h */; };
+		AEF32FEC1EA16CAA0067AD57 /* SSGeolocateType.h in Headers */ = {isa = PBXBuildFile; fileRef = AEF32FEA1EA16CAA0067AD57 /* SSGeolocateType.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AEF32FED1EA16CAA0067AD57 /* SSGeolocateType.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF32FEB1EA16CAA0067AD57 /* SSGeolocateType.m */; };
-		AEF32FF11EA16DE20067AD57 /* SSUSAutocompleteSuggestion.h in Headers */ = {isa = PBXBuildFile; fileRef = AEF32FEF1EA16DE20067AD57 /* SSUSAutocompleteSuggestion.h */; };
+		AEF32FF11EA16DE20067AD57 /* SSUSAutocompleteSuggestion.h in Headers */ = {isa = PBXBuildFile; fileRef = AEF32FEF1EA16DE20067AD57 /* SSUSAutocompleteSuggestion.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AEF32FF21EA16DE20067AD57 /* SSUSAutocompleteSuggestion.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF32FF01EA16DE20067AD57 /* SSUSAutocompleteSuggestion.m */; };
-		AEF32FF51EA16F590067AD57 /* SSUSAutocompleteResult.h in Headers */ = {isa = PBXBuildFile; fileRef = AEF32FF31EA16F590067AD57 /* SSUSAutocompleteResult.h */; };
+		AEF32FF51EA16F590067AD57 /* SSUSAutocompleteResult.h in Headers */ = {isa = PBXBuildFile; fileRef = AEF32FF31EA16F590067AD57 /* SSUSAutocompleteResult.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AEF32FF61EA16F590067AD57 /* SSUSAutocompleteResult.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF32FF41EA16F590067AD57 /* SSUSAutocompleteResult.m */; };
 		AEF32FF81EA16F760067AD57 /* SSUSAutocompleteResultTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF32FF71EA16F760067AD57 /* SSUSAutocompleteResultTests.m */; };
-		AEF32FFC1EA174770067AD57 /* SSUSAutocompleteLookup.h in Headers */ = {isa = PBXBuildFile; fileRef = AEF32FFA1EA174770067AD57 /* SSUSAutocompleteLookup.h */; };
+		AEF32FFC1EA174770067AD57 /* SSUSAutocompleteLookup.h in Headers */ = {isa = PBXBuildFile; fileRef = AEF32FFA1EA174770067AD57 /* SSUSAutocompleteLookup.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AEF32FFD1EA174770067AD57 /* SSUSAutocompleteLookup.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF32FFB1EA174770067AD57 /* SSUSAutocompleteLookup.m */; };
 /* End PBXBuildFile section */
 
@@ -567,14 +567,11 @@
 				AE76B6181D527E750080C136 /* SSSerializer.h in Headers */,
 				AE4177671D5CE19B003DEF9F /* SSResponse.h in Headers */,
 				AE3807991E0A095800F8A1C3 /* SSUSStreetClient.h in Headers */,
-				AE7CC8881EA6B9980082EDD9 /* SSUSAutocompleteClient.h in Headers */,
 				AE3807BE1E0A0ABF00F8A1C3 /* SSUSZipCodeClient.h in Headers */,
-				AEF32FF11EA16DE20067AD57 /* SSUSAutocompleteSuggestion.h in Headers */,
 				AE3807871E0A093200F8A1C3 /* SSUSStreetCandidate.h in Headers */,
 				AE3807AE1E0A0AB100F8A1C3 /* SSUSZipCodeResult.h in Headers */,
 				AE3807891E0A093200F8A1C3 /* SSUSStreetComponents.h in Headers */,
 				AE3807AA1E0A0AAA00F8A1C3 /* SSUSCity.h in Headers */,
-				AEF32FF51EA16F590067AD57 /* SSUSAutocompleteResult.h in Headers */,
 				AE3807BA1E0A0ABF00F8A1C3 /* SSUSZipCode.h in Headers */,
 				AE3807A61E0A0AA100F8A1C3 /* SSUSAlternateCounties.h in Headers */,
 				AE38079D1E0A095800F8A1C3 /* SSUSStreetLookup.h in Headers */,
@@ -596,9 +593,12 @@
 				AE258B461D6B551200EBD18E /* SSRetrySender.h in Headers */,
 				AED507AE1DCD003700953E1C /* SSSender.h in Headers */,
 				AE76B5ED1D5265030080C136 /* SmartystreetsSDK.h in Headers */,
+				AE7CC8881EA6B9980082EDD9 /* SSUSAutocompleteClient.h in Headers */,
+				AEF32FF11EA16DE20067AD57 /* SSUSAutocompleteSuggestion.h in Headers */,
+				AEF32FF51EA16F590067AD57 /* SSUSAutocompleteResult.h in Headers */,
 				AEF32FFC1EA174770067AD57 /* SSUSAutocompleteLookup.h in Headers */,
-				AE3296411E96E0A5002F5450 /* SSInternationalStreetClient.h in Headers */,
 				AEF32FEC1EA16CAA0067AD57 /* SSGeolocateType.h in Headers */,
+				AE3296411E96E0A5002F5450 /* SSInternationalStreetClient.h in Headers */,
 				AE162FC11E9BFBD500041911 /* SSInternationalStreetLookup.h in Headers */,
 				AE7C4E0A1E96BD7B00C63520 /* SSBatch.h in Headers */,
 				AE41776A1D5D1450003DEF9F /* SSCredentials.h in Headers */,

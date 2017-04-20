@@ -12,16 +12,10 @@ class InternationalStreetExample {
         do {
             try client?.send(lookup)
         } catch let error as NSError {
-            if error.domain == "SSSmartyErrorDomain" && error.code == SSErrors.BatchFullError.rawValue {
-                print(String(format: "Description: %@", error.localizedDescription))
-                return "Error. The batch is already full"
-            }
-            else {
-                print(String(format: "Domain: %@", error.domain))
-                print(String(format: "Error Code: %i", error.code))
-                print(String(format: "Description: %@", error.localizedDescription))
-                return "Error sending request"
-            }
+            print(String(format: "Domain: %@", error.domain))
+            print(String(format: "Error Code: %i", error.code))
+            print(String(format: "Description: %@", error.localizedDescription))
+            return "Error sending request"
         }
         
         let firstCandidate = lookup?.result[0] as! SSInternationalStreetCandidate
