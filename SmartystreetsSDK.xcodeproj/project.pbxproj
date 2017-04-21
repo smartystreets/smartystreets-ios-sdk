@@ -35,16 +35,16 @@
 		AE1E80481E9332AE007F822E /* SSClientBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = AE1E80461E9332AE007F822E /* SSClientBuilder.m */; };
 		AE258B461D6B551200EBD18E /* SSRetrySender.h in Headers */ = {isa = PBXBuildFile; fileRef = AE258B441D6B551200EBD18E /* SSRetrySender.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE258B471D6B551200EBD18E /* SSRetrySender.m in Sources */ = {isa = PBXBuildFile; fileRef = AE258B451D6B551200EBD18E /* SSRetrySender.m */; };
-		AE2E2E7A1EA92A53007DA4B3 /* SSUSExtractMetadata.h in Headers */ = {isa = PBXBuildFile; fileRef = AE2E2E781EA92A53007DA4B3 /* SSUSExtractMetadata.h */; };
+		AE2E2E7A1EA92A53007DA4B3 /* SSUSExtractMetadata.h in Headers */ = {isa = PBXBuildFile; fileRef = AE2E2E781EA92A53007DA4B3 /* SSUSExtractMetadata.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE2E2E7B1EA92A53007DA4B3 /* SSUSExtractMetadata.m in Sources */ = {isa = PBXBuildFile; fileRef = AE2E2E791EA92A53007DA4B3 /* SSUSExtractMetadata.m */; };
-		AE2E2E811EA92D44007DA4B3 /* SSUSExtractAddress.h in Headers */ = {isa = PBXBuildFile; fileRef = AE2E2E7F1EA92D44007DA4B3 /* SSUSExtractAddress.h */; };
+		AE2E2E811EA92D44007DA4B3 /* SSUSExtractAddress.h in Headers */ = {isa = PBXBuildFile; fileRef = AE2E2E7F1EA92D44007DA4B3 /* SSUSExtractAddress.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE2E2E821EA92D44007DA4B3 /* SSUSExtractAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = AE2E2E801EA92D44007DA4B3 /* SSUSExtractAddress.m */; };
-		AE2E2E851EA93396007DA4B3 /* SSUSExtractResult.h in Headers */ = {isa = PBXBuildFile; fileRef = AE2E2E831EA93396007DA4B3 /* SSUSExtractResult.h */; };
+		AE2E2E851EA93396007DA4B3 /* SSUSExtractResult.h in Headers */ = {isa = PBXBuildFile; fileRef = AE2E2E831EA93396007DA4B3 /* SSUSExtractResult.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE2E2E861EA93396007DA4B3 /* SSUSExtractResult.m in Sources */ = {isa = PBXBuildFile; fileRef = AE2E2E841EA93396007DA4B3 /* SSUSExtractResult.m */; };
 		AE2E2E881EA94C0D007DA4B3 /* SSUSExtractResultTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE2E2E871EA94C0D007DA4B3 /* SSUSExtractResultTests.m */; };
-		AE2E2E8C1EA95924007DA4B3 /* SSUSExtractLookup.h in Headers */ = {isa = PBXBuildFile; fileRef = AE2E2E8A1EA95924007DA4B3 /* SSUSExtractLookup.h */; };
+		AE2E2E8C1EA95924007DA4B3 /* SSUSExtractLookup.h in Headers */ = {isa = PBXBuildFile; fileRef = AE2E2E8A1EA95924007DA4B3 /* SSUSExtractLookup.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE2E2E8D1EA95924007DA4B3 /* SSUSExtractLookup.m in Sources */ = {isa = PBXBuildFile; fileRef = AE2E2E8B1EA95924007DA4B3 /* SSUSExtractLookup.m */; };
-		AE2E2E901EA95B72007DA4B3 /* SSUSExtractClient.h in Headers */ = {isa = PBXBuildFile; fileRef = AE2E2E8E1EA95B72007DA4B3 /* SSUSExtractClient.h */; };
+		AE2E2E901EA95B72007DA4B3 /* SSUSExtractClient.h in Headers */ = {isa = PBXBuildFile; fileRef = AE2E2E8E1EA95B72007DA4B3 /* SSUSExtractClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE2E2E911EA95B72007DA4B3 /* SSUSExtractClient.m in Sources */ = {isa = PBXBuildFile; fileRef = AE2E2E8F1EA95B72007DA4B3 /* SSUSExtractClient.m */; };
 		AE2E2E931EA95C63007DA4B3 /* SSUSExtractClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE2E2E921EA95C63007DA4B3 /* SSUSExtractClientTests.m */; };
 		AE3296411E96E0A5002F5450 /* SSInternationalStreetClient.h in Headers */ = {isa = PBXBuildFile; fileRef = AE32963F1E96E0A5002F5450 /* SSInternationalStreetClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -622,7 +622,6 @@
 				AE3807BE1E0A0ABF00F8A1C3 /* SSUSZipCodeClient.h in Headers */,
 				AE3807871E0A093200F8A1C3 /* SSUSStreetCandidate.h in Headers */,
 				AE3807AE1E0A0AB100F8A1C3 /* SSUSZipCodeResult.h in Headers */,
-				AE2E2E7A1EA92A53007DA4B3 /* SSUSExtractMetadata.h in Headers */,
 				AE3807891E0A093200F8A1C3 /* SSUSStreetComponents.h in Headers */,
 				AE3807AA1E0A0AAA00F8A1C3 /* SSUSCity.h in Headers */,
 				AE3807BA1E0A0ABF00F8A1C3 /* SSUSZipCode.h in Headers */,
@@ -632,15 +631,11 @@
 				AE3807C21E0A0ABF00F8A1C3 /* SSUSZipCodeLookup.h in Headers */,
 				AE3807851E0A093200F8A1C3 /* SSUSStreetAnalysis.h in Headers */,
 				AE76B61B1D528B8C0080C136 /* SSRequest.h in Headers */,
-				AE2E2E901EA95B72007DA4B3 /* SSUSExtractClient.h in Headers */,
-				AE2E2E8C1EA95924007DA4B3 /* SSUSExtractLookup.h in Headers */,
 				AE41776D1D5D1568003DEF9F /* SSSharedCredentials.h in Headers */,
-				AE2E2E811EA92D44007DA4B3 /* SSUSExtractAddress.h in Headers */,
 				AE4A544B1E8C2CD700584749 /* SSInternationalStreetCandidate.h in Headers */,
 				AE4A54471E8C2A1200584749 /* SSInternationalStreetComponents.h in Headers */,
 				AE1E80411E930B65007F822E /* SSURLPrefixSender.h in Headers */,
 				AE1E80471E9332AE007F822E /* SSClientBuilder.h in Headers */,
-				AE2E2E851EA93396007DA4B3 /* SSUSExtractResult.h in Headers */,
 				AE17C8931E8C258C009D5746 /* SSInternationalStreetAnalysis.h in Headers */,
 				AE4A544F1E8C324700584749 /* SSLanguageMode.h in Headers */,
 				AE4A54411E8C26F500584749 /* SSInternationalStreetMetadata.h in Headers */,
@@ -654,6 +649,11 @@
 				AEF32FF11EA16DE20067AD57 /* SSUSAutocompleteSuggestion.h in Headers */,
 				AEF32FF51EA16F590067AD57 /* SSUSAutocompleteResult.h in Headers */,
 				AEF32FFC1EA174770067AD57 /* SSUSAutocompleteLookup.h in Headers */,
+				AE2E2E7A1EA92A53007DA4B3 /* SSUSExtractMetadata.h in Headers */,
+				AE2E2E901EA95B72007DA4B3 /* SSUSExtractClient.h in Headers */,
+				AE2E2E8C1EA95924007DA4B3 /* SSUSExtractLookup.h in Headers */,
+				AE2E2E811EA92D44007DA4B3 /* SSUSExtractAddress.h in Headers */,
+				AE2E2E851EA93396007DA4B3 /* SSUSExtractResult.h in Headers */,
 				AEF32FEC1EA16CAA0067AD57 /* SSGeolocateType.h in Headers */,
 				AE3296411E96E0A5002F5450 /* SSInternationalStreetClient.h in Headers */,
 				AE162FC11E9BFBD500041911 /* SSInternationalStreetLookup.h in Headers */,

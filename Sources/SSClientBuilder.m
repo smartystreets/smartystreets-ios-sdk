@@ -73,9 +73,14 @@
     return [[SSInternationalStreetClient alloc] initWithSender:[self buildSender] withSerializer:self.serializer];
 }
 
-- (SSUSAutocompleteClient*)buildUsAutocompleteClient {
+- (SSUSAutocompleteClient*)buildUsAutocompleteApiClient {
     [self ensureURLPrefixNotNil:self.usAutocopmleteApiURL];
     return [[SSUSAutocompleteClient alloc] initWithSender:[self buildSender] withSerializer:self.serializer];
+}
+
+- (SSUSExtractClient*)buildUsExtractApiClient {
+    [self ensureURLPrefixNotNil:self.usExtractApiURL];
+    return [[SSUSExtractClient alloc] initWithSender:[self buildSender] withSerializer:self.serializer];
 }
 
 - (SSUSStreetClient*)buildUsStreetApiClient {

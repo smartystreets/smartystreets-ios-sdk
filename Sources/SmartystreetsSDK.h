@@ -10,6 +10,7 @@ FOUNDATION_EXPORT const unsigned char SmartystreetsSDKVersionString[];
 #import "SSRequest.h"
 #import <SmartystreetsSDK/SSInternationalStreetClient.h>
 #import <SmartystreetsSDK/SSUSAutocompleteClient.h>
+#import <SmartystreetsSDK/SSUSExtractClient.h>
 #import <SmartystreetsSDK/SSUSStreetClient.h>
 #import <SmartystreetsSDK/SSUSZipCodeClient.h>
 #import <SmartystreetsSDK/SSClientBuilder.h>

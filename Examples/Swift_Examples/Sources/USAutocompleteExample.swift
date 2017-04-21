@@ -4,7 +4,7 @@ import SmartystreetsSDK
 class USAutocompleteExample {
     func run() -> String {
         let client = SSClientBuilder(authId: MyCredentials.AuthId,
-                                     authToken: MyCredentials.AuthToken).buildUsAutocompleteClient()
+                                     authToken: MyCredentials.AuthToken).buildUsAutocompleteApiClient()
         
         let lookup = SSUSAutocompleteLookup(prefix: "4770 Lincoln Ave O")
         

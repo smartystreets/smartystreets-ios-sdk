@@ -3,6 +3,7 @@
 #import "SSUSStreetClient.h"
 #import "SSInternationalStreetClient.h"
 #import "SSUSAutocompleteClient.h"
+#import "SSUSExtractClient.h"
 #import "SSCredentials.h"
 #import "SSJsonSerializer.h"
 #import "SSStaticCredentials.h"
@@ -25,6 +26,7 @@
 - (SSUSZipCodeClient*)buildUsZIPCodeApiClient;
 - (SSUSStreetClient*)buildUsStreetApiClient;
 - (SSInternationalStreetClient*)buildInternationalStreetApiClient;
-- (SSUSAutocompleteClient*)buildUsAutocompleteClient;
+- (SSUSAutocompleteClient*)buildUsAutocompleteApiClient;
+- (SSUSExtractClient*)buildUsExtractApiClient;
 
 @end

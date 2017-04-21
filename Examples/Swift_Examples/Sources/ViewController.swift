@@ -24,6 +24,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                         "USZipCodeSingleLookup",
                         "USZipCodeMultipleLookups",
                         "USAutocomplete",
+                        "USExtract",
                         "InternationalStreet"]
         
         self.pickerName = pickerData[0]
@@ -56,6 +57,10 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         }
         else if (pickerName == "USAutocomplete") {
             let example = USAutocompleteExample()
+            result = example.run()
+        }
+        else if (pickerName == "USExtract") {
+            let example = USExtractExample()
             result = example.run()
         }
         else if (pickerName == "InternationalStreet") {
