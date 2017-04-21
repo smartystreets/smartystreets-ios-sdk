@@ -31,7 +31,7 @@ class USExtractExample {
         output += "Addresses: \n**********************\n"
         
         for address in addresses! {
-            output += "\n" + address.text + "\n"
+            output += "\n\"" + address.text + "\"\n"
             output += "\nVerified? " + "\(address.isVerified())"
             if (address.candidates.count > 0) {
                 output += "\nMatches:"

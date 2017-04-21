@@ -23,6 +23,7 @@
 		AE87BD971EA889A80067F028 /* SmartystreetsSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE87BD961EA889A80067F028 /* SmartystreetsSDK.framework */; };
 		AE87BD981EA889B50067F028 /* SmartystreetsSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE87BD961EA889A80067F028 /* SmartystreetsSDK.framework */; };
 		AE87BD991EA889B50067F028 /* SmartystreetsSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AE87BD961EA889A80067F028 /* SmartystreetsSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		AEB7E5541EA9950E00360D84 /* SSUSExtractExample.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB7E5531EA9950E00360D84 /* SSUSExtractExample.m */; };
 		AED0E8C81DD643BC0041201A /* SSUSStreetLookupsWithMatchStrategyExamples.m in Sources */ = {isa = PBXBuildFile; fileRef = AED0E8C71DD643BC0041201A /* SSUSStreetLookupsWithMatchStrategyExamples.m */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +67,8 @@
 		AE879ACC1DCA6F020078C0B0 /* SSMyCredentials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSMyCredentials.h; sourceTree = "<group>"; };
 		AE879ACD1DCA6F020078C0B0 /* SSMyCredentials.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSMyCredentials.m; sourceTree = "<group>"; };
 		AE87BD961EA889A80067F028 /* SmartystreetsSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SmartystreetsSDK.framework; path = "../../../../../../Library/Developer/Xcode/DerivedData/SmartystreetsSDK-desxmyjjqbhasfhheoqpkyjxbfew/Build/Products/Debug-iphonesimulator/SmartystreetsSDK.framework"; sourceTree = "<group>"; };
+		AEB7E5521EA9950E00360D84 /* SSUSExtractExample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSUSExtractExample.h; sourceTree = "<group>"; };
+		AEB7E5531EA9950E00360D84 /* SSUSExtractExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSUSExtractExample.m; sourceTree = "<group>"; };
 		AED0E8C61DD643BC0041201A /* SSUSStreetLookupsWithMatchStrategyExamples.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSUSStreetLookupsWithMatchStrategyExamples.h; sourceTree = "<group>"; };
 		AED0E8C71DD643BC0041201A /* SSUSStreetLookupsWithMatchStrategyExamples.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSUSStreetLookupsWithMatchStrategyExamples.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -126,6 +129,8 @@
 				AE21781C1DB37E4200D9CF69 /* SSUSZipCodeSingleLookupExample.m */,
 				AE60298A1EA88424004BF2A7 /* SSUSAutocompleteExample.h */,
 				AE60298B1EA88424004BF2A7 /* SSUSAutocompleteExample.m */,
+				AEB7E5521EA9950E00360D84 /* SSUSExtractExample.h */,
+				AEB7E5531EA9950E00360D84 /* SSUSExtractExample.m */,
 				AE21780A1DB37E2D00D9CF69 /* ViewController.h */,
 				AE21780B1DB37E2D00D9CF69 /* ViewController.m */,
 			);
@@ -220,6 +225,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEB7E5541EA9950E00360D84 /* SSUSExtractExample.m in Sources */,
 				AE879ACB1DCA6A0E0078C0B0 /* SSUSStreetSingleAddressExample.m in Sources */,
 				AE21780C1DB37E2D00D9CF69 /* ViewController.m in Sources */,
 				AE879ACE1DCA6F020078C0B0 /* SSMyCredentials.m in Sources */,

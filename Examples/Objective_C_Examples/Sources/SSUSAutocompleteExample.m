@@ -4,7 +4,7 @@
 
 - (NSString*)run {
     id<SSCredentials> mobile = [[SSSharedCredentials alloc] initWithId:kSSSmartyWebsiteKey hostname:kSSHost];
-    SSUSAutocompleteClient *client = [[SSClientBuilder alloc] initWithSigner:mobile].buildUsAutocompleteClient;
+    SSUSAutocompleteClient *client = [[SSClientBuilder alloc] initWithSigner:mobile].buildUsAutocompleteApiClient;
     
     SSUSAutocompleteLookup *lookup = [[SSUSAutocompleteLookup alloc] initWithPrefix:@"4770 Lincoln Ave O"];
     NSError *error = nil;
