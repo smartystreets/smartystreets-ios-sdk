@@ -122,6 +122,14 @@
 		AE7CC8881EA6B9980082EDD9 /* SSUSAutocompleteClient.h in Headers */ = {isa = PBXBuildFile; fileRef = AE7CC8861EA6B9980082EDD9 /* SSUSAutocompleteClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE7CC8891EA6B9980082EDD9 /* SSUSAutocompleteClient.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7CC8871EA6B9980082EDD9 /* SSUSAutocompleteClient.m */; };
 		AE7CC88D1EA6B9AE0082EDD9 /* SSUSAutocompleteClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7CC88C1EA6B9AE0082EDD9 /* SSUSAutocompleteClientTests.m */; };
+		AE87A68F1EAFF24C00376EEE /* SSLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = AE8EB7B41EAFD08B005C598E /* SSLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE87A6921EAFF25300376EEE /* SSSleeper.h in Headers */ = {isa = PBXBuildFile; fileRef = AE8EB7BB1EAFDC82005C598E /* SSSleeper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE87A6931EAFF2E300376EEE /* SSMockLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8595C51EAFDE6A000657F5 /* SSMockLogger.m */; };
+		AE87A6941EAFF2EA00376EEE /* SSMockSleeper.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8595CB1EAFDF60000657F5 /* SSMockSleeper.m */; };
+		AE8EB7B91EAFD0F5005C598E /* SSMyLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = AE8EB7B71EAFD0F5005C598E /* SSMyLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE8EB7BA1EAFD0F5005C598E /* SSMyLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8EB7B81EAFD0F5005C598E /* SSMyLogger.m */; };
+		AE8EB7BE1EAFDCD6005C598E /* SSMySleeper.h in Headers */ = {isa = PBXBuildFile; fileRef = AE8EB7BC1EAFDCD6005C598E /* SSMySleeper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE8EB7BF1EAFDCD6005C598E /* SSMySleeper.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8EB7BD1EAFDCD6005C598E /* SSMySleeper.m */; };
 		AEB519FC1D905EDC00BF785B /* SSHttpSender.h in Headers */ = {isa = PBXBuildFile; fileRef = AEB519FA1D905EDC00BF785B /* SSHttpSender.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AEB519FD1D905EDC00BF785B /* SSHttpSender.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB519FB1D905EDC00BF785B /* SSHttpSender.m */; };
 		AEBCE8471D6228600016A4FE /* SSSigningSender.h in Headers */ = {isa = PBXBuildFile; fileRef = AEBCE8451D6228600016A4FE /* SSSigningSender.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -289,6 +297,16 @@
 		AE7CC8861EA6B9980082EDD9 /* SSUSAutocompleteClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSUSAutocompleteClient.h; sourceTree = "<group>"; };
 		AE7CC8871EA6B9980082EDD9 /* SSUSAutocompleteClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSUSAutocompleteClient.m; sourceTree = "<group>"; };
 		AE7CC88C1EA6B9AE0082EDD9 /* SSUSAutocompleteClientTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSUSAutocompleteClientTests.m; sourceTree = "<group>"; };
+		AE8595C41EAFDE6A000657F5 /* SSMockLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSMockLogger.h; sourceTree = "<group>"; };
+		AE8595C51EAFDE6A000657F5 /* SSMockLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSMockLogger.m; sourceTree = "<group>"; };
+		AE8595CA1EAFDF60000657F5 /* SSMockSleeper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSMockSleeper.h; sourceTree = "<group>"; };
+		AE8595CB1EAFDF60000657F5 /* SSMockSleeper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSMockSleeper.m; sourceTree = "<group>"; };
+		AE8EB7B41EAFD08B005C598E /* SSLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSLogger.h; sourceTree = "<group>"; };
+		AE8EB7B71EAFD0F5005C598E /* SSMyLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSMyLogger.h; sourceTree = "<group>"; };
+		AE8EB7B81EAFD0F5005C598E /* SSMyLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSMyLogger.m; sourceTree = "<group>"; };
+		AE8EB7BB1EAFDC82005C598E /* SSSleeper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSSleeper.h; sourceTree = "<group>"; };
+		AE8EB7BC1EAFDCD6005C598E /* SSMySleeper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSMySleeper.h; sourceTree = "<group>"; };
+		AE8EB7BD1EAFDCD6005C598E /* SSMySleeper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSMySleeper.m; sourceTree = "<group>"; };
 		AEB519FA1D905EDC00BF785B /* SSHttpSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSHttpSender.h; sourceTree = "<group>"; };
 		AEB519FB1D905EDC00BF785B /* SSHttpSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSHttpSender.m; sourceTree = "<group>"; };
 		AEB892A51E04A35900BAFC26 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
@@ -435,6 +453,10 @@
 				AE3807D01E0A0BDE00F8A1C3 /* SSMockStatusCodeSender.m */,
 				AE3807D11E0A0BDE00F8A1C3 /* SSRequestCapturingSender.h */,
 				AE3807D21E0A0BDE00F8A1C3 /* SSRequestCapturingSender.m */,
+				AE8595C41EAFDE6A000657F5 /* SSMockLogger.h */,
+				AE8595C51EAFDE6A000657F5 /* SSMockLogger.m */,
+				AE8595CA1EAFDF60000657F5 /* SSMockSleeper.h */,
+				AE8595CB1EAFDF60000657F5 /* SSMockSleeper.m */,
 			);
 			name = Mocks;
 			sourceTree = "<group>";
@@ -530,6 +552,9 @@
 				AEB519FB1D905EDC00BF785B /* SSHttpSender.m */,
 				AE6C61221D74B3110022CB66 /* SSJsonSerializer.h */,
 				AE6C61231D74B3110022CB66 /* SSJsonSerializer.m */,
+				AE8EB7B41EAFD08B005C598E /* SSLogger.h */,
+				AE8EB7B71EAFD0F5005C598E /* SSMyLogger.h */,
+				AE8EB7B81EAFD0F5005C598E /* SSMyLogger.m */,
 				AE0D45131DAC15EE00FFAA95 /* SSLookup.h */,
 				AE76B6191D528B8C0080C136 /* SSRequest.h */,
 				AE76B61A1D528B8C0080C136 /* SSRequest.m */,
@@ -539,6 +564,9 @@
 				AE258B451D6B551200EBD18E /* SSRetrySender.m */,
 				AE76B6131D527CF60080C136 /* SSSender.h */,
 				AE76B6171D527E750080C136 /* SSSerializer.h */,
+				AE8EB7BB1EAFDC82005C598E /* SSSleeper.h */,
+				AE8EB7BC1EAFDCD6005C598E /* SSMySleeper.h */,
+				AE8EB7BD1EAFDCD6005C598E /* SSMySleeper.m */,
 				AE41776B1D5D1568003DEF9F /* SSSharedCredentials.h */,
 				AE41776C1D5D1568003DEF9F /* SSSharedCredentials.m */,
 				AEBCE8451D6228600016A4FE /* SSSigningSender.h */,
@@ -631,6 +659,7 @@
 				AE3807C21E0A0ABF00F8A1C3 /* SSUSZipCodeLookup.h in Headers */,
 				AE3807851E0A093200F8A1C3 /* SSUSStreetAnalysis.h in Headers */,
 				AE76B61B1D528B8C0080C136 /* SSRequest.h in Headers */,
+				AE87A6921EAFF25300376EEE /* SSSleeper.h in Headers */,
 				AE41776D1D5D1568003DEF9F /* SSSharedCredentials.h in Headers */,
 				AE4A544B1E8C2CD700584749 /* SSInternationalStreetCandidate.h in Headers */,
 				AE4A54471E8C2A1200584749 /* SSInternationalStreetComponents.h in Headers */,
@@ -656,6 +685,9 @@
 				AE2E2E851EA93396007DA4B3 /* SSUSExtractResult.h in Headers */,
 				AEF32FEC1EA16CAA0067AD57 /* SSGeolocateType.h in Headers */,
 				AE3296411E96E0A5002F5450 /* SSInternationalStreetClient.h in Headers */,
+				AE8EB7BE1EAFDCD6005C598E /* SSMySleeper.h in Headers */,
+				AE87A68F1EAFF24C00376EEE /* SSLogger.h in Headers */,
+				AE8EB7B91EAFD0F5005C598E /* SSMyLogger.h in Headers */,
 				AE162FC11E9BFBD500041911 /* SSInternationalStreetLookup.h in Headers */,
 				AE7C4E0A1E96BD7B00C63520 /* SSBatch.h in Headers */,
 				AE41776A1D5D1450003DEF9F /* SSCredentials.h in Headers */,
@@ -827,6 +859,7 @@
 				AE2E2E7B1EA92A53007DA4B3 /* SSUSExtractMetadata.m in Sources */,
 				AE7C4E0B1E96BD7B00C63520 /* SSBatch.m in Sources */,
 				AE258B471D6B551200EBD18E /* SSRetrySender.m in Sources */,
+				AE8EB7BF1EAFDCD6005C598E /* SSMySleeper.m in Sources */,
 				AE3807AB1E0A0AAA00F8A1C3 /* SSUSCity.m in Sources */,
 				AE76B61C1D528B8C0080C136 /* SSRequest.m in Sources */,
 				AEF32FFD1EA174770067AD57 /* SSUSAutocompleteLookup.m in Sources */,
@@ -836,6 +869,7 @@
 				AE3807BF1E0A0ABF00F8A1C3 /* SSUSZipCodeClient.m in Sources */,
 				AEF32FF21EA16DE20067AD57 /* SSUSAutocompleteSuggestion.m in Sources */,
 				AE3807BB1E0A0ABF00F8A1C3 /* SSUSZipCode.m in Sources */,
+				AE8EB7BA1EAFD0F5005C598E /* SSMyLogger.m in Sources */,
 				AE17C8941E8C258C009D5746 /* SSInternationalStreetAnalysis.m in Sources */,
 				AEBCE8481D6228600016A4FE /* SSSigningSender.m in Sources */,
 				AE1E80421E930B65007F822E /* SSURLPrefixSender.m in Sources */,
@@ -866,6 +900,7 @@
 				AE3807DD1E0A0C3500F8A1C3 /* SSJsonSerializerNullTests.m in Sources */,
 				AEF32FF81EA16F760067AD57 /* SSUSAutocompleteResultTests.m in Sources */,
 				AE1461231E8EC43B0066F907 /* SSInternationalStreetCandidateTests.m in Sources */,
+				AE87A6941EAFF2EA00376EEE /* SSMockSleeper.m in Sources */,
 				AE4177701D5D19CF003DEF9F /* SSSharedCredentialsTests.m in Sources */,
 				AE7CC88D1EA6B9AE0082EDD9 /* SSUSAutocompleteClientTests.m in Sources */,
 				AE3807D41E0A0BE800F8A1C3 /* SSMockDeserializer.m in Sources */,
@@ -880,6 +915,7 @@
 				AE3807E91E0A0C9900F8A1C3 /* SSUSZipCodeResultTests.m in Sources */,
 				AE7C4E0F1E96C03000C63520 /* SSBatchTests.m in Sources */,
 				AE4179561D6CEFB300BDDB7C /* SSStatusCodeSenderTests.m in Sources */,
+				AE87A6931EAFF2E300376EEE /* SSMockLogger.m in Sources */,
 				AE1E80441E930B8C007F822E /* SSURLPrefixSenderTests.m in Sources */,
 				AE76B6261D52CDCD0080C136 /* SSRequestTests.m in Sources */,
 			);

@@ -12,6 +12,8 @@
 #import "SSSigningSender.h"
 #import "SSRetrySender.h"
 #import "SSURLPrefixSender.h"
+#import "SSMyLogger.h"
+#import "SSMySleeper.h"
 
 @interface SSClientBuilder : NSObject
 

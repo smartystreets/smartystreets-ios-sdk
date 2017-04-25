@@ -1,4 +1,6 @@
 #import "SSClientBuilder.h"
+#import "SSMySleeper.h"
+#import "SSMyLogger.h"
 
 @interface SSClientBuilder()
 
@@ -102,7 +104,7 @@
     sender = [[SSStatusCodeSender alloc] initWithInner:sender];
     
     if (self.maxRetries > 0)
-        sender = [[SSRetrySender alloc] initWithMaxRetries:self.maxRetries inner:sender];
+        sender = [[SSRetrySender alloc] initWithMaxRetries:self.maxRetries withSleeper:[[SSMySleeper alloc] init] withLogger:[[SSMyLogger alloc] init] inner:sender];
     
     if (self.signer != nil)
         sender = [[SSSigningSender alloc] initWithSigner:self.signer inner:sender];

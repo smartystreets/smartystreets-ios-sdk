@@ -27,6 +27,13 @@ int const kStatusCode = 200;
         *error = [NSError errorWithDomain:NSCocoaErrorDomain code:[*error code] userInfo:details];
         return nil;
     }
+    else if ([request.getUrl containsString:@"RetryFifteenTimes"]) {
+        if (self.sendCount <= 14) {
+            details = @{NSLocalizedDescriptionKey: @"You need to retry"};
+            *error = [NSError errorWithDomain:NSCocoaErrorDomain code:[*error code] userInfo:details];
+            return nil;
+        }
+    }
     
     return [[SSResponse alloc] initWithStatusCode:kStatusCode payload:[[NSMutableData alloc] init]];
 }

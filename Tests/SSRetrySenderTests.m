@@ -1,10 +1,14 @@
 #import <XCTest/XCTest.h>
 #import "SSRetrySender.h"
 #import "SSMockCrashingSender.h"
+#import "SSMockLogger.h"
+#import "SSMockSleeper.h"
 
 @interface SSRetrySenderTests : XCTestCase
 
 @property (nonatomic) SSMockCrashingSender *mockCrashingSender;
+@property (nonatomic) SSMockLogger *mockLogger;
+@property (nonatomic) SSMockSleeper *mockSleeper;
 
 @end
 
@@ -13,6 +17,8 @@
 - (void)setUp {
     [super setUp];
     self.mockCrashingSender = [[SSMockCrashingSender alloc] init];
+    self.mockLogger = [[SSMockLogger alloc] init];
+    self.mockSleeper = [[SSMockSleeper alloc] init];
 }
 
 - (void)tearDown {
@@ -41,10 +47,20 @@
     XCTAssertNotNil(error);
 }
 
+- (void)testBackoffDoesNotExceedMax {
+    NSArray *expectedDurations = [[NSArray alloc] initWithObjects:@(0), @(1), @(2), @(3), @(4), @(5), @(6), @(7), @(8), @(9), @(10), @(10), @(10), @(10), nil];
+    NSError *error = nil;
+    
+    [self sendRequest:@"RetryFifteenTimes" error:&error];
+    
+    XCTAssertEqual(15, self.mockCrashingSender.sendCount);
+    XCTAssertEqualObjects(expectedDurations, self.mockSleeper.sleepDurations);
+}
+
 - (void)sendRequest:(NSString*)requestBehavior error:(NSError**)error {
     SSRequest *request = [[SSRequest alloc] init];
     request.urlPrefix = requestBehavior;
-    SSRetrySender *retrySender = [[SSRetrySender alloc] initWithMaxRetries:5 inner:self.mockCrashingSender];
+    SSRetrySender *retrySender = [[SSRetrySender alloc] initWithMaxRetries:15 withSleeper:self.mockSleeper withLogger:self.mockLogger inner:self.mockCrashingSender];
     
     [retrySender sendRequest:request error:error];
 }
