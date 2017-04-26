@@ -1,6 +1,13 @@
 #import <Foundation/Foundation.h>
 #import "SSUSAlternateCounties.h"
 
+/*!
+ @class SSUSZipCode
+ 
+ @brief The US ZIPCode class
+ 
+ @see https://smartystreets.com/docs/cloud/us-zipcode-api#zipcodes
+ */
 @interface SSUSZipCode : NSObject
 
 @property (readonly, nonatomic) NSString *zipCode;
