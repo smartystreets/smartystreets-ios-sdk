@@ -1,5 +1,12 @@
 #import <Foundation/Foundation.h>
 
+/*!
+ @class SSUSStreetAnalysis
+ 
+ @brief The US Street Analysis class
+ 
+ @see https://smartystreets.com/docs/cloud/us-street-api#analysis
+ */
 @interface SSUSStreetAnalysis : NSObject
 
 @property (readonly, nonatomic) NSString *dpvMatchCode;

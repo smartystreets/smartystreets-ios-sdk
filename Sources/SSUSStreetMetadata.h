@@ -1,5 +1,12 @@
 #import <Foundation/Foundation.h>
 
+/*!
+ @class SSUSStreetMetadata
+ 
+ @brief The US Street Metadata class
+ 
+ @see https://smartystreets.com/docs/cloud/us-street-api#metadata
+ */
 @interface SSUSStreetMetadata : NSObject
 
 @property (readonly, nonatomic) NSString *recordType;

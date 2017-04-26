@@ -3,6 +3,15 @@
 #import "SSUSStreetComponents.h"
 #import "SSUSStreetMetadata.h"
 
+/*!
+ @class SSUSStreetCandidate
+ 
+ @brief The US Street Candidate class
+ 
+ @description A candidate is a possible match for an address that was submitted. A lookup can have multiple candidates if the address was ambiguous, and the maxCandidates field is set higher than 1.
+ 
+ @see https://smartystreets.com/docs/cloud/us-street-api#root
+ */
 @interface SSUSStreetCandidate : NSObject
 
 @property (readonly, nonatomic) NSString *inputId;

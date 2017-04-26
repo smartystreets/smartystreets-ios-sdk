@@ -7,6 +7,15 @@ extern NSString *const kSSStrict;
 extern NSString *const kSSRange;
 extern NSString *const kSSInvalid;
 
+/*!
+ @class SSUSStreetLookup
+ 
+ @brief The US Street Lookup class
+ 
+ @description In addition to holding all of the input data for this lookup, this class also will contain the result of the lookup after it comes back from the API.
+ 
+ @see https://smartystreets.com/docs/cloud/us-street-api#input-fields
+ */
 @interface SSUSStreetLookup : NSObject <SSLookup>
 
 @property (nonatomic) NSMutableArray<SSUSStreetCandidate*> *result;
@@ -23,9 +32,18 @@ extern NSString *const kSSInvalid;
 @property (readonly, nonatomic) int maxCandidates;
 @property (nonatomic) NSString *matchStrategy;
 
+/*!
+ @brief This constructor accepts a freeform address. That means the whole address is in one string.
+ */
 - (instancetype)initWithFreeformAddress:(NSString*)freeformAddress;
 - (void)addToResult:(SSUSStreetCandidate*)newCandidate;
 - (SSUSStreetCandidate*)getResultAtIndex:(int)index;
+
+/*!
+ @brief Sets the maximum number of valid addresses returned when the input is ambiguous.
+ 
+ @param maxCandidates Defaults to 1. Must be an integer between 1 and 10, inclusive.
+ */
 - (void)setMaxCandidates:(int)maxCandidates error:(NSError**)error;
 
 @end

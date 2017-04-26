@@ -1,5 +1,14 @@
 #import <Foundation/Foundation.h>
 
+/*!
+ @class SSUSStreetComponents
+ 
+ @brief The US Street Components class
+ 
+ @description This class contains the matched address broken down into its fundamental pieces.
+ 
+ @see https://smartystreets.com/docs/cloud/us-street-api#components
+ */
 @interface SSUSStreetComponents : NSObject
 
 @property (readonly, nonatomic) NSString *urbanization;
