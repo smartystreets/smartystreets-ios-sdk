@@ -1,5 +1,12 @@
 #import <Foundation/Foundation.h>
 
+/*!
+ @class SSUSAutocompleteSuggestion
+ 
+ @brief The US Autocomplete Suggestion class
+ 
+ @see https://smartystreets.com/docs/cloud/us-autocomplete-api#http-response
+ */
 @interface SSUSAutocompleteSuggestion : NSObject
 
 @property (readonly, nonatomic) NSString *text;
