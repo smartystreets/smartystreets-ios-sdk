@@ -3,6 +3,15 @@
 #import "SSInternationalStreetMetadata.h"
 #import "SSInternationalStreetAnalysis.h"
 
+/*!
+ @class SSInternationalStreetCandidate
+ 
+ @brief The International Street Candidate class
+ 
+ @description A candidate is a possible match for an address that was submitted.<br> A lookup can have multiple candidates if the address was ambiguous.
+ 
+ @see https://smartystreets.com/docs/cloud/international-street-api#root
+ */
 @interface SSInternationalStreetCandidate : NSObject
 
 @property (readonly, nonatomic) NSString *organization;

@@ -1,5 +1,12 @@
 #import <Foundation/Foundation.h>
 
+/*!
+ @class SSInternationalStreetComponents
+ 
+ @brief The International Street Components class
+ 
+ @see https://smartystreets.com/docs/cloud/international-street-api#components
+ */
 @interface SSInternationalStreetComponents : NSObject
 
 @property (readonly, nonatomic) NSString *countryIso3;
