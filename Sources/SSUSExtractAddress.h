@@ -1,6 +1,13 @@
 #import <Foundation/Foundation.h>
 #import "SSUSStreetCandidate.h"
 
+/*!
+ @class SSUSExtractAddress
+ 
+ @brief The US Extract Address class
+ 
+ @see https://smartystreets.com/docs/cloud/us-extract-api#http-response-status
+ */
 @interface SSUSExtractAddress : NSObject
 
 @property (readonly, nonatomic) NSString *text;
