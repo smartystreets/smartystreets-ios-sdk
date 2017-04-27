@@ -15,14 +15,55 @@
 #import "SSMyLogger.h"
 #import "SSMySleeper.h"
 
+/*!
+ @class SSClientBuilder
+ 
+ @brief The ClientBuilder class
+ 
+ @description The ClientBuilder class helps you build a client object for one of the supported SmartyStreets APIs. You can use ClientBuilder's methods to customize settings like maximum retries or timeout duration. These methods are chainable, so you can usually get set up with one line of code.
+ */
 @interface SSClientBuilder : NSObject
 
 - (instancetype)initWithSigner:(id<SSCredentials>)signer;
 - (instancetype)initWithAuthId:(NSString*)authId authToken:(NSString*)authToken;
+
+/*!
+ @param maxRetries The maximum number of times to retry sending the request to the API. (Default is 5)
+ 
+ @return Returns <b>self</b> to accommodate method chaining.
+ */
 - (SSClientBuilder*)retryAtMost:(int)maxRetries;
+
+/*!
+ @param maxTimeout The maximum time (in milliseconds) to wait for a connection, and also to wait for <br>the response to be read. (Default is 10000)
+ 
+ @return Returns <b>this</b> to accommodate method chaining.
+ */
 - (SSClientBuilder*)withMaxTimeout:(int)maxTimeout;
+
+/*!
+ @param sender Default is a series of nested senders. See <b>buildSender()</b>.
+ 
+ @return Returns <b>this</b> to accommodate method chaining.
+ */
 - (SSClientBuilder*)withSender:(id<SSSender>)sender;
+
+/*!
+ @brief Changes the <b>Serializer</b> from the default <b>JsonSerializer</b>.
+ 
+ @param serializer An object that implements the <b>Serializer</b> interface.
+ 
+ @return Returns <b>this</b> to accommodate method chaining.
+ */
 - (SSClientBuilder*)withSerializer:(id<SSSerializer>)serializer;
+
+/*!
+ @brief This may be useful when using a local installation of the SmartyStreets APIs.
+ 
+ @param urlPrefix Defaults to the URL for the API corresponding to the <b>Client</b> object being built.
+ 
+ @return Returns <b>this</b> to accommodate method chaining.
+ */
 - (SSClientBuilder*)withUrl:(NSString*)urlPrefix;
 
 - (SSUSZipCodeClient*)buildUsZIPCodeApiClient;
