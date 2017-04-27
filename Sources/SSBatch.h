@@ -24,7 +24,7 @@ extern int const kSSMaxBatchSize;
  */
 - (void)removeAllObjects;
 
-/*! @return Returns the number of lookups currently in this batch */
+/*! @return the number of lookups currently in this batch */
 - (int)count;
 - (id<SSLookup>)getLookupById:(NSString*)inputId;
 - (id<SSLookup>)getLookupAtIndex:(int)inputIndex;

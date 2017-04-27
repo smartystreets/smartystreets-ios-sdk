@@ -30,21 +30,21 @@
 /*!
  @param maxRetries The maximum number of times to retry sending the request to the API. (Default is 5)
  
- @return Returns <b>self</b> to accommodate method chaining.
+ @return <b>self</b> to accommodate method chaining.
  */
 - (SSClientBuilder*)retryAtMost:(int)maxRetries;
 
 /*!
  @param maxTimeout The maximum time (in milliseconds) to wait for a connection, and also to wait for <br>the response to be read. (Default is 10000)
  
- @return Returns <b>this</b> to accommodate method chaining.
+ @return <b>this</b> to accommodate method chaining.
  */
 - (SSClientBuilder*)withMaxTimeout:(int)maxTimeout;
 
 /*!
  @param sender Default is a series of nested senders. See <b>buildSender()</b>.
  
- @return Returns <b>this</b> to accommodate method chaining.
+ @return <b>this</b> to accommodate method chaining.
  */
 - (SSClientBuilder*)withSender:(id<SSSender>)sender;
 
@@ -53,7 +53,7 @@
  
  @param serializer An object that implements the <b>Serializer</b> interface.
  
- @return Returns <b>this</b> to accommodate method chaining.
+ @return <b>this</b> to accommodate method chaining.
  */
 - (SSClientBuilder*)withSerializer:(id<SSSerializer>)serializer;
 
@@ -62,7 +62,7 @@
  
  @param urlPrefix Defaults to the URL for the API corresponding to the <b>Client</b> object being built.
  
- @return Returns <b>this</b> to accommodate method chaining.
+ @return <b>this</b> to accommodate method chaining.
  */
 - (SSClientBuilder*)withUrl:(NSString*)urlPrefix;
 
