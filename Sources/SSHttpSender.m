@@ -1,6 +1,8 @@
 #import "SSHttpSender.h"
 
-@interface SSHttpSender()
+@interface SSHttpSender() {
+    __block SSResponse *myResponse;
+}
     
 @property (nonatomic) int maxTimeout;
 
@@ -55,7 +57,6 @@
 
 - (SSResponse*)buildResponse:(NSMutableURLRequest*)httpRequest {
     NSURLSession *session = [NSURLSession sharedSession];
-    __block SSResponse *myResponse;
     
     NSURLSessionDataTask *task = [session dataTaskWithRequest:httpRequest
         completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
@@ -68,8 +69,6 @@
         }];
     
     [task resume];
-    
-    CFRunLoopRunInMode(kCFRunLoopDefaultMode, .1, false);
     
     return myResponse;
 }
