@@ -3,13 +3,21 @@
 @implementation SSInternationalStreetExample
 
 - (NSString*)run {
-    SSInternationalStreetClient *client = [[SSClientBuilder alloc] initWithAuthId:kSSAuthId authToken:kSSAuthToken].buildInternationalStreetApiClient;
+    id<SSCredentials> mobile = [[SSSharedCredentials alloc] initWithId:kSSSmartyWebsiteKey hostname:kSSHost];
+    SSInternationalStreetClient *client = [[SSClientBuilder alloc] initWithSigner:mobile].buildInternationalStreetApiClient;
     
     SSInternationalStreetLookup *lookup = [[SSInternationalStreetLookup alloc] initWithFreeform:@"Rua Padre Antonio D'Angelo 121 Casa Verde, Sao Paulo" withCountry:@"Brazil"];
     [lookup enableGeocode:true];
     NSError *error = nil;
     
     [client sendLookup:lookup error:&error];
+    
+    if (error != nil) {
+        NSLog(@"Domain: %@", error.domain);
+        NSLog(@"Error Code: %i", (int)error.code);
+        NSLog(@"Description: %@", [error localizedDescription]);
+        return @"Error sending request";
+    }
     
     SSInternationalStreetCandidate *firstCandidate = lookup.result[0];
     NSMutableString *output = [NSMutableString new];
