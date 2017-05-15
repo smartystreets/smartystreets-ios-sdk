@@ -6,20 +6,6 @@
 	objectVersion = 46;
 	objects = {
 
-/* Begin PBXAggregateTarget section */
-		AE5DF4081DFB70A00060EF28 /* SmartystreetsSDK_Universal */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = AE5DF4091DFB70A00060EF28 /* Build configuration list for PBXAggregateTarget "SmartystreetsSDK_Universal" */;
-			buildPhases = (
-				AEBDD3051E0DC6E100ADAA29 /* ShellScript */,
-			);
-			dependencies = (
-			);
-			name = SmartystreetsSDK_Universal;
-			productName = SmartystreetsSDK_Universal;
-		};
-/* End PBXAggregateTarget section */
-
 /* Begin PBXBuildFile section */
 		AE0D45141DAC15EE00FFAA95 /* SSLookup.h in Headers */ = {isa = PBXBuildFile; fileRef = AE0D45131DAC15EE00FFAA95 /* SSLookup.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE1461231E8EC43B0066F907 /* SSInternationalStreetCandidateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE1461221E8EC43B0066F907 /* SSInternationalStreetCandidateTests.m */; };
@@ -743,10 +729,6 @@
 				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = SmartyStreets;
 				TargetAttributes = {
-					AE5DF4081DFB70A00060EF28 = {
-						CreatedOnToolsVersion = 8.1;
-						ProvisioningStyle = Automatic;
-					};
 					AE76B5E81D5265030080C136 = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
@@ -779,7 +761,6 @@
 			targets = (
 				AE76B5E81D5265030080C136 /* SmartystreetsSDK */,
 				AE76B5F21D5265030080C136 /* SmartystreetsSDKTests */,
-				AE5DF4081DFB70A00060EF28 /* SmartystreetsSDK_Universal */,
 			);
 		};
 /* End PBXProject section */
@@ -817,22 +798,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		AEBDD3051E0DC6E100ADAA29 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 12;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\n######################\n# Options\n######################\n\nREVEAL_ARCHIVE_IN_FINDER=false\n\nFRAMEWORK_NAME=\"${PROJECT_NAME}\"\n\nSIMULATOR_LIBRARY_PATH=\"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${FRAMEWORK_NAME}.framework\"\n\nDEVICE_LIBRARY_PATH=\"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${FRAMEWORK_NAME}.framework\"\n\nUNIVERSAL_LIBRARY_DIR=\"${BUILD_DIR}/${CONFIGURATION}-iphoneuniversal\"\n\nFRAMEWORK=\"${UNIVERSAL_LIBRARY_DIR}/${FRAMEWORK_NAME}.framework\"\n\n\n######################\n# Build Frameworks\n######################\n\nxcodebuild -workspace ${PROJECT_NAME}.xcworkspace -scheme ${PROJECT_NAME} -sdk iphonesimulator -configuration ${CONFIGURATION} clean build CONFIGURATION_BUILD_DIR=${BUILD_DIR}/${CONFIGURATION}-iphonesimulator 2>&1\n\nxcodebuild -workspace ${PROJECT_NAME}.xcworkspace -scheme ${PROJECT_NAME} -sdk iphoneos -configuration ${CONFIGURATION} clean build CONFIGURATION_BUILD_DIR=${BUILD_DIR}/${CONFIGURATION}-iphoneos 2>&1\n\n######################\n# Create directory for universal\n######################\n\nrm -rf \"${UNIVERSAL_LIBRARY_DIR}\"\n\nmkdir \"${UNIVERSAL_LIBRARY_DIR}\"\n\nmkdir \"${FRAMEWORK}\"\n\n\n######################\n# Copy files Framework\n######################\n\ncp -r \"${DEVICE_LIBRARY_PATH}/.\" \"${FRAMEWORK}\"\n\n\n######################\n# Make an universal binary\n######################\n\nlipo \"${SIMULATOR_LIBRARY_PATH}/${FRAMEWORK_NAME}\" \"${DEVICE_LIBRARY_PATH}/${FRAMEWORK_NAME}\" -create -output \"${FRAMEWORK}/${FRAMEWORK_NAME}\" | echo\n\n# For Swift framework, Swiftmodule needs to be copied in the universal framework\nif [ -d \"${SIMULATOR_LIBRARY_PATH}/Modules/${FRAMEWORK_NAME}.swiftmodule/\" ]; then\ncp -f ${SIMULATOR_LIBRARY_PATH}/Modules/${FRAMEWORK_NAME}.swiftmodule/* \"${FRAMEWORK}/Modules/${FRAMEWORK_NAME}.swiftmodule/\" | echo\n                                                                      fi\n                                                                      \n                                                                      if [ -d \"${DEVICE_LIBRARY_PATH}/Modules/${FRAMEWORK_NAME}.swiftmodule/\" ]; then\n                                                                      cp -f ${DEVICE_LIBRARY_PATH}/Modules/${FRAMEWORK_NAME}.swiftmodule/* \"${FRAMEWORK}/Modules/${FRAMEWORK_NAME}.swiftmodule/\" | echo\n                                                                      fi\n                                                                      \n                                                                      ######################\n                                                                      # On Release, copy the result to release directory\n                                                                      ######################\n                                                                      OUTPUT_DIR=\"${PROJECT_DIR}/Output/${FRAMEWORK_NAME}-${CONFIGURATION}-iphoneuniversal/\"\n                                                                      \n                                                                      rm -rf \"$OUTPUT_DIR\"\n                                                                      mkdir -p \"$OUTPUT_DIR\"\n                                                                      \n                                                                      cp -r \"${FRAMEWORK}\" \"$OUTPUT_DIR\"\n                                                                      \n                                                                      if [ ${REVEAL_ARCHIVE_IN_FINDER} = true ]; then\n                                                                      open \"${OUTPUT_DIR}/\"\n                                                                      fi\n                                                                      view rawgistfile1.sh hosted with ❤ by GitHub";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AE76B5E41D5265030080C136 /* Sources */ = {
@@ -932,22 +897,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		AE5DF40A1DFB70A00060EF28 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		AE5DF40B1DFB70A00060EF28 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 		AE76B5FB1D5265030080C136 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1111,15 +1060,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AE5DF4091DFB70A00060EF28 /* Build configuration list for PBXAggregateTarget "SmartystreetsSDK_Universal" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AE5DF40A1DFB70A00060EF28 /* Debug */,
-				AE5DF40B1DFB70A00060EF28 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		AE76B5E31D5265030080C136 /* Build configuration list for PBXProject "SmartystreetsSDK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
