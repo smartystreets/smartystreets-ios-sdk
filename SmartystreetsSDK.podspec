@@ -25,4 +25,5 @@ s.source_files = 'Sources/*.{h,m,plist}',
 
 s.ios.deployment_target = '8.4'
 s.osx.deployment_target = '10.10'
+
 end
