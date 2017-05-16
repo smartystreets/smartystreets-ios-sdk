@@ -24,4 +24,5 @@ s.source_files = 'Sources/*.{h,m,plist}',
                  'Sources/US_ZipCode/*.{h,m}'
 
 s.ios.deployment_target = '8.4'
+s.osx.deployment_target = '10.10'
 end
