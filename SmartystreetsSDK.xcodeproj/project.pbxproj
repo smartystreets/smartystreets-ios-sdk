@@ -70,8 +70,8 @@
 		AE3807E41E0A0C6800F8A1C3 /* SSUSStreetClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3807E21E0A0C6800F8A1C3 /* SSUSStreetClientTests.m */; };
 		AE3807E91E0A0C9900F8A1C3 /* SSUSZipCodeResultTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3807E61E0A0C9900F8A1C3 /* SSUSZipCodeResultTests.m */; };
 		AE3807EB1E0A0C9900F8A1C3 /* SSUSZipCodeClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3807E81E0A0C9900F8A1C3 /* SSUSZipCodeClientTests.m */; };
-		AE4177671D5CE19B003DEF9F /* SSResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = AE4177651D5CE19B003DEF9F /* SSResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AE4177681D5CE19B003DEF9F /* SSResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = AE4177661D5CE19B003DEF9F /* SSResponse.m */; };
+		AE4177671D5CE19B003DEF9F /* SSSmartyResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = AE4177651D5CE19B003DEF9F /* SSSmartyResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE4177681D5CE19B003DEF9F /* SSSmartyResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = AE4177661D5CE19B003DEF9F /* SSSmartyResponse.m */; };
 		AE41776A1D5D1450003DEF9F /* SSCredentials.h in Headers */ = {isa = PBXBuildFile; fileRef = AE4177691D5D1450003DEF9F /* SSCredentials.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE41776D1D5D1568003DEF9F /* SSSharedCredentials.h in Headers */ = {isa = PBXBuildFile; fileRef = AE41776B1D5D1568003DEF9F /* SSSharedCredentials.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE41776E1D5D1568003DEF9F /* SSSharedCredentials.m in Sources */ = {isa = PBXBuildFile; fileRef = AE41776C1D5D1568003DEF9F /* SSSharedCredentials.m */; };
@@ -99,16 +99,16 @@
 		AE76B5F91D5265030080C136 /* SmartystreetsSDKTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE76B5F81D5265030080C136 /* SmartystreetsSDKTests.m */; };
 		AE76B6081D5266BF0080C136 /* SSSmartyErrors.h in Headers */ = {isa = PBXBuildFile; fileRef = AE76B6071D5266BF0080C136 /* SSSmartyErrors.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE76B6181D527E750080C136 /* SSSerializer.h in Headers */ = {isa = PBXBuildFile; fileRef = AE76B6171D527E750080C136 /* SSSerializer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AE76B61B1D528B8C0080C136 /* SSRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = AE76B6191D528B8C0080C136 /* SSRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AE76B61C1D528B8C0080C136 /* SSRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AE76B61A1D528B8C0080C136 /* SSRequest.m */; };
-		AE76B6261D52CDCD0080C136 /* SSRequestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE76B6251D52CDCD0080C136 /* SSRequestTests.m */; };
+		AE76B61B1D528B8C0080C136 /* SSSmartyRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = AE76B6191D528B8C0080C136 /* SSSmartyRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE76B61C1D528B8C0080C136 /* SSSmartyRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AE76B61A1D528B8C0080C136 /* SSSmartyRequest.m */; };
+		AE76B6261D52CDCD0080C136 /* SSSmartyRequestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE76B6251D52CDCD0080C136 /* SSSmartyRequestTests.m */; };
 		AE7C4E0A1E96BD7B00C63520 /* SSBatch.h in Headers */ = {isa = PBXBuildFile; fileRef = AE7C4E081E96BD7B00C63520 /* SSBatch.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE7C4E0B1E96BD7B00C63520 /* SSBatch.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7C4E091E96BD7B00C63520 /* SSBatch.m */; };
 		AE7C4E0F1E96C03000C63520 /* SSBatchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7C4E0E1E96C03000C63520 /* SSBatchTests.m */; };
 		AE7CC8881EA6B9980082EDD9 /* SSUSAutocompleteClient.h in Headers */ = {isa = PBXBuildFile; fileRef = AE7CC8861EA6B9980082EDD9 /* SSUSAutocompleteClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE7CC8891EA6B9980082EDD9 /* SSUSAutocompleteClient.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7CC8871EA6B9980082EDD9 /* SSUSAutocompleteClient.m */; };
 		AE7CC88D1EA6B9AE0082EDD9 /* SSUSAutocompleteClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7CC88C1EA6B9AE0082EDD9 /* SSUSAutocompleteClientTests.m */; };
-		AE87A68F1EAFF24C00376EEE /* SSLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = AE8EB7B41EAFD08B005C598E /* SSLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE87A68F1EAFF24C00376EEE /* SSSmartyLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = AE8EB7B41EAFD08B005C598E /* SSSmartyLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE87A6921EAFF25300376EEE /* SSSleeper.h in Headers */ = {isa = PBXBuildFile; fileRef = AE8EB7BB1EAFDC82005C598E /* SSSleeper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE87A6931EAFF2E300376EEE /* SSMockLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8595C51EAFDE6A000657F5 /* SSMockLogger.m */; };
 		AE87A6941EAFF2EA00376EEE /* SSMockSleeper.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8595CB1EAFDF60000657F5 /* SSMockSleeper.m */; };
@@ -239,8 +239,8 @@
 		AE3807E21E0A0C6800F8A1C3 /* SSUSStreetClientTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSUSStreetClientTests.m; sourceTree = "<group>"; };
 		AE3807E61E0A0C9900F8A1C3 /* SSUSZipCodeResultTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSUSZipCodeResultTests.m; sourceTree = "<group>"; };
 		AE3807E81E0A0C9900F8A1C3 /* SSUSZipCodeClientTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSUSZipCodeClientTests.m; sourceTree = "<group>"; };
-		AE4177651D5CE19B003DEF9F /* SSResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSResponse.h; sourceTree = "<group>"; };
-		AE4177661D5CE19B003DEF9F /* SSResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSResponse.m; sourceTree = "<group>"; };
+		AE4177651D5CE19B003DEF9F /* SSSmartyResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSSmartyResponse.h; sourceTree = "<group>"; };
+		AE4177661D5CE19B003DEF9F /* SSSmartyResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSSmartyResponse.m; sourceTree = "<group>"; };
 		AE4177691D5D1450003DEF9F /* SSCredentials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSCredentials.h; sourceTree = "<group>"; };
 		AE41776B1D5D1568003DEF9F /* SSSharedCredentials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSSharedCredentials.h; sourceTree = "<group>"; };
 		AE41776C1D5D1568003DEF9F /* SSSharedCredentials.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSSharedCredentials.m; sourceTree = "<group>"; };
@@ -274,9 +274,9 @@
 		AE76B6071D5266BF0080C136 /* SSSmartyErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSSmartyErrors.h; sourceTree = "<group>"; };
 		AE76B6131D527CF60080C136 /* SSSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSSender.h; sourceTree = "<group>"; };
 		AE76B6171D527E750080C136 /* SSSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSSerializer.h; sourceTree = "<group>"; };
-		AE76B6191D528B8C0080C136 /* SSRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSRequest.h; sourceTree = "<group>"; };
-		AE76B61A1D528B8C0080C136 /* SSRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSRequest.m; sourceTree = "<group>"; };
-		AE76B6251D52CDCD0080C136 /* SSRequestTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSRequestTests.m; sourceTree = "<group>"; };
+		AE76B6191D528B8C0080C136 /* SSSmartyRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSSmartyRequest.h; sourceTree = "<group>"; };
+		AE76B61A1D528B8C0080C136 /* SSSmartyRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSSmartyRequest.m; sourceTree = "<group>"; };
+		AE76B6251D52CDCD0080C136 /* SSSmartyRequestTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSSmartyRequestTests.m; sourceTree = "<group>"; };
 		AE7C4E081E96BD7B00C63520 /* SSBatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSBatch.h; sourceTree = "<group>"; };
 		AE7C4E091E96BD7B00C63520 /* SSBatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSBatch.m; sourceTree = "<group>"; };
 		AE7C4E0E1E96C03000C63520 /* SSBatchTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSBatchTests.m; sourceTree = "<group>"; };
@@ -287,7 +287,7 @@
 		AE8595C51EAFDE6A000657F5 /* SSMockLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSMockLogger.m; sourceTree = "<group>"; };
 		AE8595CA1EAFDF60000657F5 /* SSMockSleeper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSMockSleeper.h; sourceTree = "<group>"; };
 		AE8595CB1EAFDF60000657F5 /* SSMockSleeper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSMockSleeper.m; sourceTree = "<group>"; };
-		AE8EB7B41EAFD08B005C598E /* SSLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSLogger.h; sourceTree = "<group>"; };
+		AE8EB7B41EAFD08B005C598E /* SSSmartyLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSSmartyLogger.h; sourceTree = "<group>"; };
 		AE8EB7B71EAFD0F5005C598E /* SSMyLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSMyLogger.h; sourceTree = "<group>"; };
 		AE8EB7B81EAFD0F5005C598E /* SSMyLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSMyLogger.m; sourceTree = "<group>"; };
 		AE8EB7BB1EAFDC82005C598E /* SSSleeper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSSleeper.h; sourceTree = "<group>"; };
@@ -538,14 +538,14 @@
 				AEB519FB1D905EDC00BF785B /* SSHttpSender.m */,
 				AE6C61221D74B3110022CB66 /* SSJsonSerializer.h */,
 				AE6C61231D74B3110022CB66 /* SSJsonSerializer.m */,
-				AE8EB7B41EAFD08B005C598E /* SSLogger.h */,
+				AE8EB7B41EAFD08B005C598E /* SSSmartyLogger.h */,
 				AE8EB7B71EAFD0F5005C598E /* SSMyLogger.h */,
 				AE8EB7B81EAFD0F5005C598E /* SSMyLogger.m */,
 				AE0D45131DAC15EE00FFAA95 /* SSLookup.h */,
-				AE76B6191D528B8C0080C136 /* SSRequest.h */,
-				AE76B61A1D528B8C0080C136 /* SSRequest.m */,
-				AE4177651D5CE19B003DEF9F /* SSResponse.h */,
-				AE4177661D5CE19B003DEF9F /* SSResponse.m */,
+				AE76B6191D528B8C0080C136 /* SSSmartyRequest.h */,
+				AE76B61A1D528B8C0080C136 /* SSSmartyRequest.m */,
+				AE4177651D5CE19B003DEF9F /* SSSmartyResponse.h */,
+				AE4177661D5CE19B003DEF9F /* SSSmartyResponse.m */,
 				AE258B441D6B551200EBD18E /* SSRetrySender.h */,
 				AE258B451D6B551200EBD18E /* SSRetrySender.m */,
 				AE76B6131D527CF60080C136 /* SSSender.h */,
@@ -581,7 +581,7 @@
 				AE3807E51E0A0C7100F8A1C3 /* US_ZipCode */,
 				AE76B5FA1D5265030080C136 /* Info.plist */,
 				AE7C4E0E1E96C03000C63520 /* SSBatchTests.m */,
-				AE76B6251D52CDCD0080C136 /* SSRequestTests.m */,
+				AE76B6251D52CDCD0080C136 /* SSSmartyRequestTests.m */,
 				AE6C611D1D7488710022CB66 /* SSRetrySenderTests.m */,
 				AE41776F1D5D19CF003DEF9F /* SSSharedCredentialsTests.m */,
 				AEBCE84B1D6246150016A4FE /* SSSigningSenderTests.m */,
@@ -631,7 +631,7 @@
 				AE4177731D5D2244003DEF9F /* SSStaticCredentials.h in Headers */,
 				AEB519FC1D905EDC00BF785B /* SSHttpSender.h in Headers */,
 				AE76B6181D527E750080C136 /* SSSerializer.h in Headers */,
-				AE4177671D5CE19B003DEF9F /* SSResponse.h in Headers */,
+				AE4177671D5CE19B003DEF9F /* SSSmartyResponse.h in Headers */,
 				AE3807991E0A095800F8A1C3 /* SSUSStreetClient.h in Headers */,
 				AE3807BE1E0A0ABF00F8A1C3 /* SSUSZipCodeClient.h in Headers */,
 				AE3807871E0A093200F8A1C3 /* SSUSStreetCandidate.h in Headers */,
@@ -644,7 +644,7 @@
 				AE38078D1E0A094800F8A1C3 /* SSUSStreetMetadata.h in Headers */,
 				AE3807C21E0A0ABF00F8A1C3 /* SSUSZipCodeLookup.h in Headers */,
 				AE3807851E0A093200F8A1C3 /* SSUSStreetAnalysis.h in Headers */,
-				AE76B61B1D528B8C0080C136 /* SSRequest.h in Headers */,
+				AE76B61B1D528B8C0080C136 /* SSSmartyRequest.h in Headers */,
 				AE87A6921EAFF25300376EEE /* SSSleeper.h in Headers */,
 				AE41776D1D5D1568003DEF9F /* SSSharedCredentials.h in Headers */,
 				AE4A544B1E8C2CD700584749 /* SSInternationalStreetCandidate.h in Headers */,
@@ -672,7 +672,7 @@
 				AEF32FEC1EA16CAA0067AD57 /* SSGeolocateType.h in Headers */,
 				AE3296411E96E0A5002F5450 /* SSInternationalStreetClient.h in Headers */,
 				AE8EB7BE1EAFDCD6005C598E /* SSMySleeper.h in Headers */,
-				AE87A68F1EAFF24C00376EEE /* SSLogger.h in Headers */,
+				AE87A68F1EAFF24C00376EEE /* SSSmartyLogger.h in Headers */,
 				AE8EB7B91EAFD0F5005C598E /* SSMyLogger.h in Headers */,
 				AE162FC11E9BFBD500041911 /* SSInternationalStreetLookup.h in Headers */,
 				AE7C4E0A1E96BD7B00C63520 /* SSBatch.h in Headers */,
@@ -813,7 +813,7 @@
 				AE2E2E861EA93396007DA4B3 /* SSUSExtractResult.m in Sources */,
 				AEF32FED1EA16CAA0067AD57 /* SSGeolocateType.m in Sources */,
 				AE41776E1D5D1568003DEF9F /* SSSharedCredentials.m in Sources */,
-				AE4177681D5CE19B003DEF9F /* SSResponse.m in Sources */,
+				AE4177681D5CE19B003DEF9F /* SSSmartyResponse.m in Sources */,
 				AE3807861E0A093200F8A1C3 /* SSUSStreetAnalysis.m in Sources */,
 				AE38078A1E0A093200F8A1C3 /* SSUSStreetComponents.m in Sources */,
 				AE162FC21E9BFBD500041911 /* SSInternationalStreetLookup.m in Sources */,
@@ -826,7 +826,7 @@
 				AE258B471D6B551200EBD18E /* SSRetrySender.m in Sources */,
 				AE8EB7BF1EAFDCD6005C598E /* SSMySleeper.m in Sources */,
 				AE3807AB1E0A0AAA00F8A1C3 /* SSUSCity.m in Sources */,
-				AE76B61C1D528B8C0080C136 /* SSRequest.m in Sources */,
+				AE76B61C1D528B8C0080C136 /* SSSmartyRequest.m in Sources */,
 				AEF32FFD1EA174770067AD57 /* SSUSAutocompleteLookup.m in Sources */,
 				AE38079A1E0A095800F8A1C3 /* SSUSStreetClient.m in Sources */,
 				AE7CC8891EA6B9980082EDD9 /* SSUSAutocompleteClient.m in Sources */,
@@ -882,7 +882,7 @@
 				AE4179561D6CEFB300BDDB7C /* SSStatusCodeSenderTests.m in Sources */,
 				AE87A6931EAFF2E300376EEE /* SSMockLogger.m in Sources */,
 				AE1E80441E930B8C007F822E /* SSURLPrefixSenderTests.m in Sources */,
-				AE76B6261D52CDCD0080C136 /* SSRequestTests.m in Sources */,
+				AE76B6261D52CDCD0080C136 /* SSSmartyRequestTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,14 +6,14 @@ int const kSSMaxBackoffDuration = 10;
 
 @property (readonly, nonatomic) int maxRetries;
 @property (readonly, nonatomic) id<SSSender> inner;
-@property (readonly, nonatomic) id<SSLogger> logger;
+@property (readonly, nonatomic) id<SSSmartyLogger> logger;
 @property (readonly, nonatomic) id<SSSleeper> sleeper;
 
 @end
 
 @implementation SSRetrySender
 
-- (instancetype)initWithMaxRetries:(int)maxRetries withSleeper:(id<SSSleeper>)sleeper withLogger:(id<SSLogger>)logger inner:(id<SSSender>)inner {
+- (instancetype)initWithMaxRetries:(int)maxRetries withSleeper:(id<SSSleeper>)sleeper withLogger:(id<SSSmartyLogger>)logger inner:(id<SSSender>)inner {
     if (self = [super init]) {
         _maxRetries = maxRetries;
         _sleeper = sleeper;
@@ -23,17 +23,17 @@ int const kSSMaxBackoffDuration = 10;
     return self;
 }
 
-- (SSResponse*)sendRequest:(SSRequest*)request error:(NSError **)error {
+- (SSSmartyResponse*)sendRequest:(SSSmartyRequest*)request error:(NSError **)error {
     for (int i = 0; i <= self.maxRetries; i++) {
-        SSResponse *response = [self trySendingRequest:request attempts:i error:error];
+        SSSmartyResponse *response = [self trySendingRequest:request attempts:i error:error];
         if (response != nil)
             return response;
     }
     return nil;
 }
 
-- (SSResponse*)trySendingRequest:(SSRequest*)request attempts:(int)attempt error:(NSError **)error {
-    SSResponse *response;
+- (SSSmartyResponse*)trySendingRequest:(SSSmartyRequest*)request attempts:(int)attempt error:(NSError **)error {
+    SSSmartyResponse *response;
     if (self.inner && [self.inner respondsToSelector:@selector(sendRequest:error:)]) {
         response = [self.inner sendRequest:request error:error];
     }

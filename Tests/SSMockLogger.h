@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
-#import "SSLogger.h"
+#import "SSSmartyLogger.h"
 
-@interface SSMockLogger : NSObject <SSLogger>
+@interface SSMockLogger : NSObject <SSSmartyLogger>
 
 @property (readonly, nonatomic) NSMutableArray<NSString*> *log;
 

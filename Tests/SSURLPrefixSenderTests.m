@@ -1,6 +1,6 @@
 #import <XCTest/XCTest.h>
-#import "SSRequest.h"
-#import "SSResponse.h"
+#import "SSSmartyRequest.h"
+#import "SSSmartyResponse.h"
 #import "SSMockSender.h"
 #import "SSURLPrefixSender.h"
 
@@ -19,10 +19,10 @@
 }
 
 - (void)testProvidedURLOverridesRequestURL {
-    SSRequest *request = [[SSRequest alloc] init];
+    SSSmartyRequest *request = [[SSSmartyRequest alloc] init];
     [request setUrlPrefix:@"original"];
     NSString *override = @"override?";
-    SSMockSender *inner = [[SSMockSender alloc] initWithSSResponse:[[SSResponse alloc] initWithStatusCode:123 payload:nil]];
+    SSMockSender *inner = [[SSMockSender alloc] initWithSSSmartyResponse:[[SSSmartyResponse alloc] initWithStatusCode:123 payload:nil]];
     SSURLPrefixSender *sender = [[SSURLPrefixSender alloc] initWithUrlPrefix:override inner:inner];
     NSError *error = nil;
     

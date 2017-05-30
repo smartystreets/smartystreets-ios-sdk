@@ -85,8 +85,8 @@
     NSString *helloWorld = @"Hello, World!";
     NSData *data = [helloWorld dataUsingEncoding:NSUTF8StringEncoding];
     
-    SSResponse *response = [[SSResponse alloc] initWithStatusCode:0 payload:data];
-    SSMockSender *sender = [[SSMockSender alloc] initWithSSResponse:response];
+    SSSmartyResponse *response = [[SSSmartyResponse alloc] initWithStatusCode:0 payload:data];
+    SSMockSender *sender = [[SSMockSender alloc] initWithSSSmartyResponse:response];
     SSMockDeserializer *deserializer = [[SSMockDeserializer alloc] initWithDeserializedObject:nil];
     SSUSZipCodeClient *client = [[SSUSZipCodeClient alloc] initWithSender:sender withSerializer:deserializer];
     
@@ -113,9 +113,9 @@
     
     NSString *emptyString = @"[]";
     NSData *payload = [emptyString dataUsingEncoding:NSUTF8StringEncoding];
-    SSResponse *response = [[SSResponse alloc] initWithStatusCode:0 payload:payload];
+    SSSmartyResponse *response = [[SSSmartyResponse alloc] initWithStatusCode:0 payload:payload];
     
-    SSMockSender *sender = [[SSMockSender alloc] initWithSSResponse:response];
+    SSMockSender *sender = [[SSMockSender alloc] initWithSSSmartyResponse:response];
     SSMockDeserializer *deserializer = [[SSMockDeserializer alloc] initWithDeserializedObject:rawResults];
     SSUSZipCodeClient *client = [[SSUSZipCodeClient alloc] initWithSender:sender withSerializer:deserializer];
     

@@ -15,11 +15,11 @@
     return self;
 }
 
-- (SSResponse*)sendRequest:(SSRequest*)request error:(NSError**)error {
+- (SSSmartyResponse*)sendRequest:(SSSmartyRequest*)request error:(NSError**)error {
     if (self.statusCode == 0)
         return nil;
     
-    return [[SSResponse alloc] initWithStatusCode:self.statusCode payload:nil];
+    return [[SSSmartyResponse alloc] initWithStatusCode:self.statusCode payload:nil];
 }
 
 @end

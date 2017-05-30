@@ -3,8 +3,8 @@
 
 @interface SSMockSender : NSObject <SSSender>
 
-@property (readonly, nonatomic) SSRequest *request;
+@property (readonly, nonatomic) SSSmartyRequest *request;
 
-- (instancetype)initWithSSResponse:(SSResponse*)response;
+- (instancetype)initWithSSSmartyResponse:(SSSmartyResponse*)response;
 
 @end

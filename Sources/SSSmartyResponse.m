@@ -1,6 +1,6 @@
-#import "SSResponse.h"
+#import "SSSmartyResponse.h"
 
-@implementation SSResponse
+@implementation SSSmartyResponse
 
 - (instancetype)initWithStatusCode:(NSInteger)statusCode payload:(NSData*)payload {
     if (self = [super init]) {

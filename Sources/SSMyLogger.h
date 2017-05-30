@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
-#import "SSLogger.h"
+#import "SSSmartyLogger.h"
 
-@interface SSMyLogger : NSObject <SSLogger>
+@interface SSMyLogger : NSObject <SSSmartyLogger>
 
 @end

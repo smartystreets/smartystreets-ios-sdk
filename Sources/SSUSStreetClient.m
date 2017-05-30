@@ -24,7 +24,7 @@
 }
 
 - (BOOL)sendBatch:(SSBatch*)batch error:(NSError**)error {
-    SSRequest *request = [[SSRequest alloc] init];
+    SSSmartyRequest *request = [[SSSmartyRequest alloc] init];
     
     if ([batch count] == 0) return NO;
     
@@ -33,7 +33,7 @@
     else
         [request setPayload:[self.serializer serialize:batch.allLookups withClassType:[SSUSStreetLookup class] error:error]];
     
-    SSResponse *response = [self.sender sendRequest:request error:error];
+    SSSmartyResponse *response = [self.sender sendRequest:request error:error];
     if (*error != nil) return NO;
     
     NSArray *candidates = [self.serializer deserialize:response.payload error:error];
@@ -48,7 +48,7 @@
     return YES;
 }
 
-- (void)populateQueryString:(SSUSStreetLookup*)lookup withRequest:(SSRequest*)request {
+- (void)populateQueryString:(SSUSStreetLookup*)lookup withRequest:(SSSmartyRequest*)request {
     [request setValue:lookup.street forHTTPParameterField:@"street"];
     [request setValue:lookup.street2 forHTTPParameterField:@"street2"];
     [request setValue:lookup.secondary forHTTPParameterField:@"secondary"];

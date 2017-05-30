@@ -1,7 +1,7 @@
 #import "SSHttpSender.h"
 
 @interface SSHttpSender() {
-    __block SSResponse *myResponse;
+    __block SSSmartyResponse *myResponse;
 }
     
 @property (nonatomic) int maxTimeout;
@@ -24,14 +24,14 @@
     return self;
 }
 
-- (SSResponse*)sendRequest:(SSRequest*)request error:(NSError**)error {
+- (SSSmartyResponse*)sendRequest:(SSSmartyRequest*)request error:(NSError**)error {
     NSMutableURLRequest *httpRequest = [self buildHttpRequest:request];
     [self copyHeaders:request httpRequest:httpRequest];
     
     return [self buildResponse:httpRequest];
 }
 
-- (NSMutableURLRequest*)buildHttpRequest:(SSRequest*)request {
+- (NSMutableURLRequest*)buildHttpRequest:(SSSmartyRequest*)request {
     NSURL *url = [NSURL URLWithString:[request getUrl]];
     
     NSMutableURLRequest *httpRequest = [NSMutableURLRequest requestWithURL:url];;
@@ -45,7 +45,7 @@
     return httpRequest;
 }
 
-- (void)copyHeaders:(SSRequest*)request httpRequest:(NSMutableURLRequest*)httpRequest {
+- (void)copyHeaders:(SSSmartyRequest*)request httpRequest:(NSMutableURLRequest*)httpRequest {
     for (NSString *key in [request.headers allKeys])
         [httpRequest addValue:request.headers[key] forHTTPHeaderField:key];
     
@@ -55,7 +55,7 @@
     [httpRequest addValue:userAgent forHTTPHeaderField:@"User-Agent"];
 }
 
-- (SSResponse*)buildResponse:(NSMutableURLRequest*)httpRequest {
+- (SSSmartyResponse*)buildResponse:(NSMutableURLRequest*)httpRequest {
     NSURLSession *session = [NSURLSession sharedSession];
     
     NSURLSessionDataTask *task = [session dataTaskWithRequest:httpRequest
@@ -64,7 +64,7 @@
                 int statusCode = (int)[(NSHTTPURLResponse *) response statusCode];
                 NSData *payload = data;
                 
-                myResponse = [[SSResponse alloc] initWithStatusCode:statusCode payload:payload];
+                myResponse = [[SSSmartyResponse alloc] initWithStatusCode:statusCode payload:payload];
             }
         }];
     

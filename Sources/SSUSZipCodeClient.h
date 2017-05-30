@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
-#import "SSResponse.h"
+#import "SSSmartyResponse.h"
 #import "SSSender.h"
 #import "SSSerializer.h"
 #import "SSUSZipCodeLookup.h"

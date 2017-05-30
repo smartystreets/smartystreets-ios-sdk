@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 
-@interface SSRequest : NSObject
+@interface SSSmartyRequest : NSObject
 
 @property (readonly, nonatomic) NSMutableDictionary *headers;
 @property (readonly, nonatomic) NSMutableDictionary *parameters;

@@ -10,7 +10,7 @@
     return self;
 }
 
-- (void)sign:(SSRequest *)request {
+- (void)sign:(SSSmartyRequest *)request {
     [request setValue:self.authId forHTTPParameterField:@"auth-id"];
     [request setValue:self.authToken forHTTPParameterField:@"auth-token"];
 }

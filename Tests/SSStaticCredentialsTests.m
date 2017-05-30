@@ -25,7 +25,7 @@
 
 - (void)assertSignedRequestWithAuthId:(NSString*)authId secret:(NSString*)secret expectedValue:(NSString*)expectedValue {
     SSStaticCredentials *credentials = [[SSStaticCredentials alloc] initWithAuthId:authId authToken:secret];
-    SSRequest *request = [[SSRequest alloc] init];
+    SSSmartyRequest *request = [[SSSmartyRequest alloc] init];
     request.urlPrefix = @"https://api.smartystreets.com/street-address";
     
     [credentials sign:request];

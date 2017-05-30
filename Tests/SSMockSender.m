@@ -2,20 +2,20 @@
 
 @interface SSMockSender()
 
-@property (readonly, nonatomic) SSResponse *response;
+@property (readonly, nonatomic) SSSmartyResponse *response;
 
 @end
 
 @implementation SSMockSender
 
-- (instancetype)initWithSSResponse:(SSResponse*)response {
+- (instancetype)initWithSSSmartyResponse:(SSSmartyResponse*)response {
     if (self = [super init]) {
         _response = response;
     }
     return self;
 }
 
-- (SSResponse*)sendRequest:(SSRequest*)request error:(NSError**)error {
+- (SSSmartyResponse*)sendRequest:(SSSmartyRequest*)request error:(NSError**)error {
     _request = request;
     return self.response;
 }

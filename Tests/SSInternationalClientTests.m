@@ -133,8 +133,8 @@
 - (void)testDeserializeCalledWithResponseBody {
     NSString *helloWorld = @"Hello, World!";
     NSData *data = [helloWorld dataUsingEncoding:NSUTF8StringEncoding];
-    SSResponse *response = [[SSResponse alloc] initWithStatusCode:0 payload:data];
-    SSMockSender *sender = [[SSMockSender alloc] initWithSSResponse:response];
+    SSSmartyResponse *response = [[SSSmartyResponse alloc] initWithStatusCode:0 payload:data];
+    SSMockSender *sender = [[SSMockSender alloc] initWithSSSmartyResponse:response];
     SSMockDeserializer *deserializer = [[SSMockDeserializer alloc] initWithDeserializedObject:nil];
     SSInternationalStreetClient *client = [[SSInternationalStreetClient alloc] initWithSender:sender withSerializer:deserializer];
     NSError *error = nil;
@@ -154,9 +154,9 @@
     
     NSString *emptyString = @"[]";
     NSData *payload = [emptyString dataUsingEncoding:NSUTF8StringEncoding];
-    SSResponse *response = [[SSResponse alloc] initWithStatusCode:0 payload:payload];
+    SSSmartyResponse *response = [[SSSmartyResponse alloc] initWithStatusCode:0 payload:payload];
     
-    SSMockSender *sender = [[SSMockSender alloc] initWithSSResponse:response];
+    SSMockSender *sender = [[SSMockSender alloc] initWithSSSmartyResponse:response];
     SSMockDeserializer *deserializer = [[SSMockDeserializer alloc] initWithDeserializedObject:rawResults];
     SSInternationalStreetClient *client = [[SSInternationalStreetClient alloc] initWithSender:sender withSerializer:deserializer];
     NSError *error = nil;

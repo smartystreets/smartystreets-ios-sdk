@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
-#import "SSRequest.h"
+#import "SSSmartyRequest.h"
 
 /*!
  @protocol SSCredentials
@@ -18,7 +18,7 @@
 
 @protocol SSCredentials <NSObject>
 
-- (void)sign:(SSRequest*)request;
+- (void)sign:(SSSmartyRequest*)request;
 
 @end
 

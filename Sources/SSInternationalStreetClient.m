@@ -19,9 +19,9 @@
 
 - (BOOL)sendLookup:(SSInternationalStreetLookup*)lookup error:(NSError**)error {
     [self ensureEnoughInfo:lookup error:error];
-    SSRequest *request = [self buildRequest:lookup];
+    SSSmartyRequest *request = [self buildRequest:lookup];
     
-    SSResponse *response = [self.sender sendRequest:request error:error];
+    SSSmartyResponse *response = [self.sender sendRequest:request error:error];
     if (*error != nil) return NO;
     
     NSArray<SSInternationalStreetCandidate*> *candidates = [self.serializer deserialize:response.payload error:error];
@@ -36,8 +36,8 @@
     return YES;
 }
 
-- (SSRequest*)buildRequest:(SSInternationalStreetLookup*)lookup {
-    SSRequest *request = [[SSRequest alloc] init];
+- (SSSmartyRequest*)buildRequest:(SSInternationalStreetLookup*)lookup {
+    SSSmartyRequest *request = [[SSSmartyRequest alloc] init];
     
     [request setValue:lookup.country forHTTPParameterField:@"country"];
     [request setValue:lookup.geocode forHTTPParameterField:@"geocode"];

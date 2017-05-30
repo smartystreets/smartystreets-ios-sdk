@@ -24,9 +24,9 @@
         return NO;
     }
     
-    SSRequest *request = [self buildRequest:lookup];
+    SSSmartyRequest *request = [self buildRequest:lookup];
     
-    SSResponse *response = [self.sender sendRequest:request error:error];
+    SSSmartyResponse *response = [self.sender sendRequest:request error:error];
     if (*error != nil) return NO;
     
     NSDictionary *result = [self.serializer deserialize:response.payload error:error];
@@ -38,8 +38,8 @@
     return YES;
 }
 
-- (SSRequest*)buildRequest:(SSUSAutocompleteLookup*)lookup {
-    SSRequest *request = [[SSRequest alloc] init];
+- (SSSmartyRequest*)buildRequest:(SSUSAutocompleteLookup*)lookup {
+    SSSmartyRequest *request = [[SSSmartyRequest alloc] init];
     
     [request setValue:lookup.prefix forHTTPParameterField:@"prefix"];
     [request setValue:[@(lookup.maxSuggestions) stringValue] forHTTPParameterField:@"suggestions"];

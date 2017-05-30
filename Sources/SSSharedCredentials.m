@@ -10,7 +10,7 @@
     return self;
 }
 
-- (void)sign:(SSRequest*)request {
+- (void)sign:(SSSmartyRequest*)request {
     [request setValue:self.id forHTTPParameterField:@"auth-id"];
     
     NSString *fullHostname = [@"https://" stringByAppendingString:self.hostname];

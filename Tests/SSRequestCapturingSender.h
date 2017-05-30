@@ -3,6 +3,6 @@
 
 @interface SSRequestCapturingSender : NSObject <SSSender>
 
-@property (readonly, nonatomic) SSRequest *request;
+@property (readonly, nonatomic) SSSmartyRequest *request;
 
 @end

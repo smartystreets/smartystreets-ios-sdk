@@ -87,8 +87,8 @@
     NSString *helloWorld = @"Hello, World!";
     NSData *data = [helloWorld dataUsingEncoding:NSUTF8StringEncoding];
     
-    SSResponse *response = [[SSResponse alloc] initWithStatusCode:0 payload:data];
-    SSMockSender *sender = [[SSMockSender alloc] initWithSSResponse:response];
+    SSSmartyResponse *response = [[SSSmartyResponse alloc] initWithStatusCode:0 payload:data];
+    SSMockSender *sender = [[SSMockSender alloc] initWithSSSmartyResponse:response];
     SSMockDeserializer *deserializer = [[SSMockDeserializer alloc] initWithDeserializedObject:nil];
     SSUSAutocompleteClient *client = [[SSUSAutocompleteClient alloc] initWithSender:sender withSerializer:deserializer];
     
@@ -106,9 +106,9 @@
 
     NSString *emptyString = @"[]";
     NSData *payload = [emptyString dataUsingEncoding:NSUTF8StringEncoding];
-    SSResponse *response = [[SSResponse alloc] initWithStatusCode:0 payload:payload];
+    SSSmartyResponse *response = [[SSSmartyResponse alloc] initWithStatusCode:0 payload:payload];
     
-    SSMockSender *mockSender = [[SSMockSender alloc] initWithSSResponse:response];
+    SSMockSender *mockSender = [[SSMockSender alloc] initWithSSSmartyResponse:response];
     SSURLPrefixSender *sender = [[SSURLPrefixSender alloc] initWithUrlPrefix:@"http://localhost/" inner:mockSender];
     SSMockDeserializer *deserializer = [[SSMockDeserializer alloc] initWithDeserializedObject:rawResult];
     SSUSAutocompleteClient *client = [[SSUSAutocompleteClient alloc] initWithSender:sender withSerializer:deserializer];

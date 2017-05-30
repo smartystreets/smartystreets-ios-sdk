@@ -15,8 +15,8 @@
     return self;
 }
 
-- (SSResponse*)sendRequest:(SSRequest*)request error:(NSError**)error {
-    SSResponse *response;
+- (SSSmartyResponse*)sendRequest:(SSSmartyRequest*)request error:(NSError**)error {
+    SSSmartyResponse *response;
     if (self.inner && [self.inner respondsToSelector:@selector(sendRequest:error:)]) {
         response = [self.inner sendRequest:request error:error];
     }

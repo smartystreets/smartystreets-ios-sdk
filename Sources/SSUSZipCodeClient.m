@@ -24,7 +24,7 @@
 }
 
 - (BOOL)sendBatch:(SSBatch*)batch error:(NSError**)error {
-    SSRequest *request = [[SSRequest alloc] init];
+    SSSmartyRequest *request = [[SSSmartyRequest alloc] init];
     
     if ([batch count] == 0) return NO;
     
@@ -33,7 +33,7 @@
     else
         [request setPayload:[self.serializer serialize:batch.allLookups withClassType:[SSUSZipCodeLookup class] error:error]];
     
-    SSResponse *response = [self.sender sendRequest:request error:error];
+    SSSmartyResponse *response = [self.sender sendRequest:request error:error];
     if (*error != nil) return NO;
     
     NSArray *resultsDict = [self.serializer deserialize:response.payload error:error];
@@ -48,7 +48,7 @@
     return YES;
 }
 
-- (void)populateQueryString:(SSUSZipCodeLookup*)lookup withRequest:(SSRequest*)request {
+- (void)populateQueryString:(SSUSZipCodeLookup*)lookup withRequest:(SSSmartyRequest*)request {
     [request setValue:lookup.inputId forHTTPParameterField:@"input_id"];
     [request setValue:lookup.city forHTTPParameterField:@"city"];
     [request setValue:lookup.state forHTTPParameterField:@"state"];

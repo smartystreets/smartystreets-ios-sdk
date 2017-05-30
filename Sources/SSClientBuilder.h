@@ -39,7 +39,7 @@
  
  @return <b>this</b> to accommodate method chaining.
  */
-- (SSClientBuilder*)withMaxTimeout:(int)maxTimeout;
+- (SSClientBuilder*)withMaxTimeout:(int)maxTimeout; 
 
 /*!
  @param sender Default is a series of nested senders. See <b>buildSender()</b>.

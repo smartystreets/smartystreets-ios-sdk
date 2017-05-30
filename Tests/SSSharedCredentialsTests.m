@@ -3,7 +3,7 @@
 
 @interface SSSharedCredentialsTests : XCTestCase
 
-@property (nonatomic) SSRequest *request;
+@property (nonatomic) SSSmartyRequest *request;
 
 @end
 
@@ -13,7 +13,7 @@
     [super setUp];
 
     SSSharedCredentials *mobile = [[SSSharedCredentials alloc] initWithId:@"3516378604772256" hostname:@"example.com"];
-    _request = [[SSRequest alloc] init];
+    _request = [[SSSmartyRequest alloc] init];
     self.request.urlPrefix = @"https://api.smartystreets.com/street-address?";
     
     [mobile sign:self.request];

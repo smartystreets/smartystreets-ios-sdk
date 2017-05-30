@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 #import "SSSender.h"
-#import "SSResponse.h"
+#import "SSSmartyResponse.h"
 #import "SSCredentials.h"
 #import "SSSender.h"
 

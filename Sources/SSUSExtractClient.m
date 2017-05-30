@@ -24,8 +24,8 @@
         return NO;
     }
     
-    SSRequest *request = [self buildRequest:lookup];
-    SSResponse * response = [self.sender sendRequest:request error:error];
+    SSSmartyRequest *request = [self buildRequest:lookup];
+    SSSmartyResponse * response = [self.sender sendRequest:request error:error];
     if (*error != nil) return NO;
     
     NSDictionary *result = [self.serializer deserialize:response.payload error:error];
@@ -37,8 +37,8 @@
     return YES;
 }
 
-- (SSRequest*)buildRequest:(SSUSExtractLookup*)lookup {
-    SSRequest *request = [[SSRequest alloc] init];
+- (SSSmartyRequest*)buildRequest:(SSUSExtractLookup*)lookup {
+    SSSmartyRequest *request = [[SSSmartyRequest alloc] init];
     request.contentType = @"text/plain";
     NSData *payload = [lookup.text dataUsingEncoding:NSUTF8StringEncoding];
     request.payload = payload;

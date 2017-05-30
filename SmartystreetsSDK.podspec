@@ -6,7 +6,7 @@ s.homepage     = 'https://github.com/smartystreets/smartystreets-ios-sdk'
 s.author       = { 'SmartyStreets SDK Team' => 'support@smartystreets.com' }
 s.license      = { :type => 'Apache 2.0', :file => 'LICENSE.md' }
 
-public_header_files = 'include/**/SSRequest.h',
+public_header_files = 'include/**/SSSmartyRequest.h',
                       'include/**/SSInternationalStreetClient.h',
                       'include/**/SSUSAutocompleteClient.h',
                       'include/**/SSUSExtractClient.h',

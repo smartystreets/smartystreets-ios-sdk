@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
-#import "SSResponse.h"
-#import "SSRequest.h"
+#import "SSSmartyResponse.h"
+#import "SSSmartyRequest.h"
 #import "SSSmartyErrors.h"
 
 @protocol SSSender;
@@ -13,6 +13,6 @@
 
 @protocol SSSender <NSObject>
 
-- (SSResponse*)sendRequest:(SSRequest*)request error:(NSError**)error;
+- (SSSmartyResponse*)sendRequest:(SSSmartyRequest*)request error:(NSError**)error;
 
 @end

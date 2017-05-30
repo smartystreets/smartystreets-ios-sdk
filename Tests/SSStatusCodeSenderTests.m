@@ -21,7 +21,7 @@
     SSStatusCodeSender *sender = [[SSStatusCodeSender alloc] initWithInner:mockStatusCodeSender];
     NSError *error = nil;
     
-    SSResponse *response = [sender sendRequest:[[SSRequest alloc] init] error:&error];
+    SSSmartyResponse *response = [sender sendRequest:[[SSSmartyRequest alloc] init] error:&error];
     
     XCTAssertEqual(200, response.statusCode);
 }
@@ -67,7 +67,7 @@
     SSStatusCodeSender *sender = [[SSStatusCodeSender alloc] initWithInner:mockStatusCodeSender];
     NSError *error = nil;
     
-    [sender sendRequest:[[SSRequest alloc] init] error:&error];
+    [sender sendRequest:[[SSSmartyRequest alloc] init] error:&error];
     XCTAssertEqual(statusCode, [error code]);
 }
 

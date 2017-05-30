@@ -10,7 +10,7 @@ int const kStatusCode = 200;
     return self;
 }
 
-- (SSResponse*)sendRequest:(SSRequest*)request error:(NSError**)error {
+- (SSSmartyResponse*)sendRequest:(SSSmartyRequest*)request error:(NSError**)error {
     _sendCount++;
     
     NSDictionary *details;
@@ -35,7 +35,7 @@ int const kStatusCode = 200;
         }
     }
     
-    return [[SSResponse alloc] initWithStatusCode:kStatusCode payload:[[NSMutableData alloc] init]];
+    return [[SSSmartyResponse alloc] initWithStatusCode:kStatusCode payload:[[NSMutableData alloc] init]];
 }
 
 @end

@@ -1,11 +1,11 @@
 #import <XCTest/XCTest.h>
-#import "SSRequest.h"
+#import "SSSmartyRequest.h"
 
-@interface SSRequestTests : XCTestCase
+@interface SSSmartyRequestTests : XCTestCase
 
 @end
 
-@implementation SSRequestTests
+@implementation SSSmartyRequestTests
 
 - (void)testNullNameQueryStringParameterNotAdded {
     [self assertQueryStringParametersField:nil withValue:@"value" withExpectedValue:@"http://localhost/?"];
@@ -24,7 +24,7 @@
 }
 
 -(void)assertQueryStringParametersField:(NSString*)name withValue:(NSString*)value withExpectedValue:(NSString*)expectedValue {
-    SSRequest *request = [[SSRequest alloc] init];
+    SSSmartyRequest *request = [[SSSmartyRequest alloc] init];
     request.urlPrefix = @"http://localhost/?";
     
     [request setValue:value forHTTPParameterField:name];
@@ -33,7 +33,7 @@
 }
 
 - (void)testMultipleQueryStringParametersAreAdded {
-    SSRequest *request = [[SSRequest alloc] init];
+    SSSmartyRequest *request = [[SSSmartyRequest alloc] init];
     request.urlPrefix = @"http://localhost/?";
     
     [request setValue:@"value1" forHTTPParameterField:@"name1"];
@@ -45,7 +45,7 @@
 }
 
 - (void)testUrlEncodingOfQueryStringParameters {
-    SSRequest *request = [[SSRequest alloc] init];
+    SSSmartyRequest *request = [[SSSmartyRequest alloc] init];
     request.urlPrefix = @"http://localhost/";
     
     [request setValue:@"value" forHTTPParameterField:@"name&"];
@@ -57,7 +57,7 @@
 }
 
 - (void)testUrlWithoutTrailingQuestionMark {
-    SSRequest *request = [[SSRequest alloc] init];
+    SSSmartyRequest *request = [[SSSmartyRequest alloc] init];
     request.urlPrefix = @"http://localhost/";
     
     NSString *const expectedValue = @"http://localhost/?";
@@ -65,7 +65,7 @@
 }
 
 - (void)testHeadersAddedToRequest {
-    SSRequest *request = [[SSRequest alloc] init];
+    SSSmartyRequest *request = [[SSSmartyRequest alloc] init];
     request.urlPrefix = @"http://localhost/";
     
     [request setValue:@"value1" forHTTPHeaderField:@"header1"];
@@ -76,7 +76,7 @@
 }
 
 - (void)testGet {
-    SSRequest *request = [[SSRequest alloc] init];
+    SSSmartyRequest *request = [[SSSmartyRequest alloc] init];
     request.urlPrefix = @"http://localhost/";
     
     XCTAssertEqualObjects(@"GET", request.method);
@@ -84,7 +84,7 @@
 }
 
 - (void)testPost {
-    SSRequest *request = [[SSRequest alloc] init];
+    SSSmartyRequest *request = [[SSSmartyRequest alloc] init];
     request.urlPrefix = @"http://localhost/";
     NSMutableData *data = [[NSMutableData alloc] init];
     NSArray *array = @[@0, @1, @2];

@@ -74,8 +74,8 @@
 - (void)testDeserializeCalledWithResponseBody {
     NSString *helloWorld = @"Hello, World!";
     NSData *expectedPayload = [helloWorld dataUsingEncoding:NSUTF8StringEncoding];
-    SSResponse *response = [[SSResponse alloc] initWithStatusCode:0 payload:expectedPayload];
-    SSMockSender *sender = [[SSMockSender alloc] initWithSSResponse:response];
+    SSSmartyResponse *response = [[SSSmartyResponse alloc] initWithStatusCode:0 payload:expectedPayload];
+    SSMockSender *sender = [[SSMockSender alloc] initWithSSSmartyResponse:response];
     SSMockDeserializer *deserializer = [[SSMockDeserializer alloc] initWithDeserializedObject:nil];
     SSUSExtractClient *client = [[SSUSExtractClient alloc] initWithSender:sender withSerializer:deserializer];
     NSError *error = nil;
@@ -95,7 +95,7 @@
     
     NSString *emptyString = @"[]";
     NSData *payload = [emptyString dataUsingEncoding:NSUTF8StringEncoding];
-    SSMockSender *sender = [[SSMockSender alloc] initWithSSResponse:[[SSResponse alloc] initWithStatusCode:0 payload:payload]];
+    SSMockSender *sender = [[SSMockSender alloc] initWithSSSmartyResponse:[[SSSmartyResponse alloc] initWithStatusCode:0 payload:payload]];
     SSMockDeserializer *deserializer = [[SSMockDeserializer alloc] initWithDeserializedObject:rawResult];
     SSUSExtractClient *client = [[SSUSExtractClient alloc] initWithSender:sender withSerializer:deserializer];
     NSError *error = nil;

@@ -1,8 +1,8 @@
-#import "SSRequest.h"
+#import "SSSmartyRequest.h"
 
 NSString *const kSSCharSet = @"UTF-8";
 
-@implementation SSRequest
+@implementation SSSmartyRequest
 
 - (instancetype)init {
     if (self = [super init]) {

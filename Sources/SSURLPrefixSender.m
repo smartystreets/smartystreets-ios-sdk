@@ -16,7 +16,7 @@
     return self;
 }
 
-- (SSResponse*)sendRequest:(SSRequest *)request error:(NSError**)error {
+- (SSSmartyResponse*)sendRequest:(SSSmartyRequest *)request error:(NSError**)error {
     request.urlPrefix = self.urlPrefix;
     return [self.inner sendRequest:request error:error];
 }

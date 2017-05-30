@@ -19,9 +19,9 @@
 
 - (void)testSigningOfRequest {
     SSStaticCredentials *signer = [[SSStaticCredentials alloc] initWithAuthId:@"authId" authToken:@"secret"];
-    SSMockSender *mockSender = [[SSMockSender alloc] initWithSSResponse:nil];
+    SSMockSender *mockSender = [[SSMockSender alloc] initWithSSSmartyResponse:nil];
     SSSigningSender *sender = [[SSSigningSender alloc] initWithSigner:signer inner:mockSender];
-    SSRequest *request = [[SSRequest alloc] init];
+    SSSmartyRequest *request = [[SSSmartyRequest alloc] init];
     request.urlPrefix = @"http://localhost/";
     NSError *error = nil;
     
@@ -33,14 +33,14 @@
 
 - (void)testResponseReturnedCorrectly {
     SSStaticCredentials *signer = [[SSStaticCredentials alloc] initWithAuthId:@"authId" authToken:@"secret"];
-    SSResponse *expectedResponse = [[SSResponse alloc] initWithStatusCode:200 payload:nil];
-    SSMockSender *mockSender = [[SSMockSender alloc] initWithSSResponse:expectedResponse];
+    SSSmartyResponse *expectedResponse = [[SSSmartyResponse alloc] initWithStatusCode:200 payload:nil];
+    SSMockSender *mockSender = [[SSMockSender alloc] initWithSSSmartyResponse:expectedResponse];
     SSSigningSender *sender = [[SSSigningSender alloc] initWithSigner:signer inner:mockSender];
-    SSRequest *request = [[SSRequest alloc] init];
+    SSSmartyRequest *request = [[SSSmartyRequest alloc] init];
     request.urlPrefix = @"http://localhost/";
     NSError *error = nil;
     
-    SSResponse *actualResponse = [sender sendRequest:request error:&error];
+    SSSmartyResponse *actualResponse = [sender sendRequest:request error:&error];
     
     XCTAssertEqualObjects(expectedResponse, actualResponse);
 }
