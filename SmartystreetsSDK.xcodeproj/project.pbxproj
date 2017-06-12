@@ -155,6 +155,13 @@
 			remoteGlobalIDString = AE76B5E81D5265030080C136;
 			remoteInfo = SmartystreetsSDK;
 		};
+		AE9EE3761EEF3675007DF5AF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE9EE3721EEF3675007DF5AF /* Integration_Tests.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AEAE6D751ECB7682005BDDDD;
+			remoteInfo = Integration_Tests;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -293,6 +300,7 @@
 		AE8EB7BB1EAFDC82005C598E /* SSSleeper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSSleeper.h; sourceTree = "<group>"; };
 		AE8EB7BC1EAFDCD6005C598E /* SSMySleeper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSMySleeper.h; sourceTree = "<group>"; };
 		AE8EB7BD1EAFDCD6005C598E /* SSMySleeper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSMySleeper.m; sourceTree = "<group>"; };
+		AE9EE3721EEF3675007DF5AF /* Integration_Tests.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Integration_Tests.xcodeproj; path = Integration_Tests/Integration_Tests.xcodeproj; sourceTree = SOURCE_ROOT; };
 		AEB519FA1D905EDC00BF785B /* SSHttpSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSHttpSender.h; sourceTree = "<group>"; };
 		AEB519FB1D905EDC00BF785B /* SSHttpSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSHttpSender.m; sourceTree = "<group>"; };
 		AEB892A51E04A35900BAFC26 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
@@ -337,6 +345,15 @@
 				AE162FBB1E9BFADF00041911 /* SSInternationalClientTests.m */,
 			);
 			name = International_Street;
+			sourceTree = "<group>";
+		};
+		AE16C4FC1EEEFD3B00890B37 /* Integration_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				AE9EE3721EEF3675007DF5AF /* Integration_Tests.xcodeproj */,
+			);
+			name = Integration_Tests;
+			path = Tests;
 			sourceTree = "<group>";
 		};
 		AE17C8951E8C2599009D5746 /* International_Street */ = {
@@ -506,6 +523,7 @@
 				AE5DF4111DFB76760060EF28 /* Examples */,
 				AE76B5EA1D5265030080C136 /* Products */,
 				AE76B5EB1D5265030080C136 /* Sources */,
+				AE16C4FC1EEEFD3B00890B37 /* Integration_Tests */,
 				AE76B5F71D5265030080C136 /* Tests */,
 			);
 			sourceTree = "<group>";
@@ -591,6 +609,14 @@
 				AE1E80431E930B8C007F822E /* SSURLPrefixSenderTests.m */,
 			);
 			path = Tests;
+			sourceTree = "<group>";
+		};
+		AE9EE3731EEF3675007DF5AF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AE9EE3771EEF3675007DF5AF /* Integration_Tests */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		AEF32FEE1EA16CAE0067AD57 /* US_Autocomplete */ = {
@@ -749,6 +775,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = AE9EE3731EEF3675007DF5AF /* Products */;
+					ProjectRef = AE9EE3721EEF3675007DF5AF /* Integration_Tests.xcodeproj */;
+				},
+				{
 					ProductGroup = AE5DF4191DFB77A60060EF28 /* Products */;
 					ProjectRef = AE5DF4181DFB77A60060EF28 /* Objective_C_Examples.xcodeproj */;
 				},
@@ -778,6 +808,13 @@
 			fileType = wrapper.application;
 			path = Swift_Examples.app;
 			remoteRef = AE5DF4221DFB77B50060EF28 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AE9EE3771EEF3675007DF5AF /* Integration_Tests */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = Integration_Tests;
+			remoteRef = AE9EE3761EEF3675007DF5AF /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
