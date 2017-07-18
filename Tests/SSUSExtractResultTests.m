@@ -63,4 +63,22 @@
     XCTAssertNotNil(address.candidates);
 }
 
+- (void)testWhenCandidatesIsNullCreatesNewNSMutableArray {
+    NSNull *nullObj = [NSNull null];
+    obj = @{
+            @"api_output": nullObj
+            };
+    SSUSExtractAddress *address = [[SSUSExtractAddress alloc] initWithDictionary:obj];
+    XCTAssertNotNil(address.candidates);
+}
+
+- (void)testWhenAddressIsNullCreatesNewNSMutableArray {
+    NSNull *nullObj = [NSNull null];
+    obj = @{
+            @"addresses": nullObj
+            };
+    SSUSExtractResult *result = [[SSUSExtractResult alloc] initWithDictionary:obj];
+    XCTAssertNotNil(result.addresses);
+}
+
 @end

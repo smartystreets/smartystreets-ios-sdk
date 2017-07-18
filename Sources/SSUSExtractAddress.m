@@ -18,27 +18,23 @@
         _line = (int)[dictionary[@"line"] integerValue];
         _start = (int)[dictionary[@"start"] integerValue];
         _end = (int)[dictionary[@"end"] integerValue];
+        _candidates = dictionary[@"api_output"];
+        
+        if ([self.candidates isEqual:[NSNull null]])
+            _candidates = [NSMutableArray<SSUSStreetCandidate*> new];
+        
         _candidates = [self convertToCandidateObjects:dictionary];
     }
     return self;
 }
 
 - (NSArray<SSUSStreetCandidate*>*)convertToCandidateObjects:(NSDictionary*)dictionary {
-    NSArray *candidates = [self getCandidatesFromDictionary:dictionary];
     NSMutableArray<SSUSStreetCandidate*> *candidateObjects = [NSMutableArray<SSUSStreetCandidate*> new];
     
-    for (NSDictionary *c in candidates)
+    for (NSDictionary *c in self.candidates)
         [candidateObjects addObject:[[SSUSStreetCandidate alloc] initWithDictionary:c]];
     
     return candidateObjects;
-}
-
-- (NSArray*)getCandidatesFromDictionary:(NSDictionary*)dictionary {
-    NSArray *candidates = dictionary[@"api_output"];
-    if (candidates != nil)
-        return candidates;
-    else
-        return [NSMutableArray<SSUSStreetCandidate*> new];;
 }
 
 - (bool)isVerified {

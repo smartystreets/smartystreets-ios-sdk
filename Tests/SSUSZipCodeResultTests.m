@@ -116,4 +116,24 @@
     XCTAssertEqual(@"19", altCounties.state);
 }
 
+- (void)testWhenZipCodesAndCitiesAreNullCreatesNewNSMutableArray {
+    NSNull *nullObj = [NSNull null];
+    obj = @{
+            @"zipcodes": nullObj,
+            @"city_states": nullObj
+            };
+    SSUSZipCodeResult *result = [[SSUSZipCodeResult alloc] initWithDictionary:obj];
+    XCTAssertNotNil(result.zipCodes);
+    XCTAssertNotNil(result.cities);
+}
+
+- (void)testWhenAlternateCountiesIsNullCreatesNewNSMutableArray {
+    NSNull *nullObj = [NSNull null];
+    obj = @{
+            @"alternate_counties": nullObj
+            };
+    SSUSZipCode *zipCode = [[SSUSZipCode alloc] initWithDictionary:obj];
+    XCTAssertNotNil(zipCode.alternateCounties);
+}
+
 @end

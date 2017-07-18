@@ -6,7 +6,7 @@
     if (self = [super init]) {
         _suggestions = dictionary[@"suggestions"];
         
-        if (self.suggestions == nil)
+        if ([self.suggestions isEqual:[NSNull null]])
             _suggestions = [NSMutableArray<SSUSAutocompleteSuggestion*> new];
         
         _suggestions = [self convertToSuggestionObjects];
@@ -20,7 +20,6 @@
     for (NSDictionary *suggestion in self.suggestions) {
         [suggestionObjects addObject:[[SSUSAutocompleteSuggestion alloc] initWithDictionary:suggestion]];
     }
-    
     return suggestionObjects;
 }
 

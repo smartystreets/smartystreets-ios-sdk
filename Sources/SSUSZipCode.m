@@ -16,7 +16,7 @@
         _precision = dictionary[@"precision"];
         _alternateCounties = dictionary[@"alternate_counties"];
         
-        if (self.alternateCounties == nil)
+        if ([self.alternateCounties isEqual:[NSNull null]])
             _alternateCounties = [NSMutableArray<SSUSAlternateCounties*> new];
         
         _alternateCounties = [self convertToAlternateCountyObjects];

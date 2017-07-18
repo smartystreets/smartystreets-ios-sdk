@@ -10,10 +10,10 @@
         _cities = dictionary[@"city_states"];
         _zipCodes = dictionary[@"zipcodes"];
         
-        if (self.cities == nil)
+        if ([self.cities isEqual:[NSNull null]])
             _cities = [NSMutableArray<SSUSCity*> new];
 
-        if (self.zipCodes == nil)
+        if ([self.zipCodes isEqual:[NSNull null]])
             _zipCodes = [NSMutableArray<SSUSZipCode*> new];
             
         _cities = [self convertToCityObjects];

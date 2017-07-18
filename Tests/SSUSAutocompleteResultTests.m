@@ -38,4 +38,14 @@
     XCTAssertEqual(@"4", suggestion.state);
 }
 
+- (void)testWhenSuggestionsIsNullCreatesNewNSMutableArray {
+    NSNull *nullObj = [NSNull null];
+    obj = @{
+            @"suggestions": nullObj
+            };
+    
+    SSUSAutocompleteResult *result = [[SSUSAutocompleteResult alloc] initWithDictionary:obj];
+    XCTAssertNotNil(result.suggestions);
+}
+
 @end
