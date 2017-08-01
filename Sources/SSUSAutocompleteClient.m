@@ -42,10 +42,12 @@
     SSSmartyRequest *request = [[SSSmartyRequest alloc] init];
     
     [request setValue:lookup.prefix forHTTPParameterField:@"prefix"];
-    [request setValue:[@(lookup.maxSuggestions) stringValue] forHTTPParameterField:@"suggestions"];
+    [request setValue:[lookup GetMaxSuggestionsStringIfSet] forHTTPParameterField:@"suggestions"];
     [request setValue:[self buildFilterString:lookup.cityFilter] forHTTPParameterField:@"city_filter"];
     [request setValue:[self buildFilterString:lookup.stateFilter] forHTTPParameterField:@"state_filter"];
     [request setValue:[self buildFilterString:lookup.prefer] forHTTPParameterField:@"prefer"];
+    [request setValue:[lookup GetPreferRatioStringIfSet] forHTTPParameterField:@"prefer_ratio"];
+    
     if (lookup.geolocateType.name != kSSGeolocateTypeNone) {
         [request setValue:@"true" forHTTPParameterField:@"geolocate"];
         [request setValue:lookup.geolocateType.name forHTTPParameterField:@"geolocate_precision"];

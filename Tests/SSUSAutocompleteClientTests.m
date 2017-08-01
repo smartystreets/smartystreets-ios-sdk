@@ -36,7 +36,11 @@
     
     [client sendLookup:[[SSUSAutocompleteLookup alloc] initWithPrefix:@"1"] error:&error];
     
-    XCTAssertEqualObjects(@"http://localhost/?suggestions=10&geolocate_precision=city&geolocate=true&prefix=1", [capturingSender.request getUrl]);
+    XCTAssertEqualObjects(@"1", capturingSender.request.parameters[@"prefix"]);
+    XCTAssertEqualObjects(@"city", capturingSender.request.parameters[@"geolocate_precision"]);
+    XCTAssertEqualObjects(@"true", capturingSender.request.parameters[@"geolocate"]);
+    XCTAssertNil(capturingSender.request.parameters[@"suggestions"]);
+    XCTAssertNil(capturingSender.request.parameters[@"prefer_ratio"]);
 }
 
 - (void)testSendingSingleFullyPopulatedLookup {
@@ -52,6 +56,7 @@
     [lookup addCityFilter:@"3"];
     [lookup addStateFilter:@"4"];
     [lookup addPrefer:@"5"];
+    [lookup setPreferRatio:0.6];
     [lookup setGeolocateType:[[SSGeolocateType alloc] initWithName:kSSGeolocateTypeState]];
     
     [client sendLookup:lookup error:&error];
@@ -63,6 +68,7 @@
     XCTAssertEqualObjects(@"state", capturingSender.request.parameters[@"geolocate_precision"]);
     XCTAssertEqualObjects(@"4", capturingSender.request.parameters[@"state_filter"]);
     XCTAssertEqualObjects(@"5", capturingSender.request.parameters[@"prefer"]);
+    XCTAssertEqualObjects(@"0.600000", capturingSender.request.parameters[@"prefer_ratio"]);
 }
 
 - (void)testSendingLookupWithGeolocateTypeSetToNone {

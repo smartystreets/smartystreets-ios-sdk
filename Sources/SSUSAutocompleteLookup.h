@@ -22,6 +22,7 @@
 @property (nonatomic) NSMutableArray<NSString*> *stateFilter;
 @property (nonatomic) NSMutableArray<NSString*> *prefer;
 @property (nonatomic) SSGeolocateType *geolocateType;
+@property (nonatomic) double preferRatio;
 
 /*!
  @param prefix The beginning of an address
@@ -30,7 +31,9 @@
 - (void)addCityFilter:(NSString*)city;
 - (void)addStateFilter:(NSString*)state;
 - (void)addPrefer:(NSString*)cityOrState;
--(SSUSAutocompleteSuggestion*)getResultAtIndex:(int)index;
+- (SSUSAutocompleteSuggestion*)getResultAtIndex:(int)index;
 - (void)setMaxSuggestions:(int)maxSuggestions error:(NSError**)error;
+- (NSString*)GetMaxSuggestionsStringIfSet;
+- (NSString*)GetPreferRatioStringIfSet;
 
 @end

@@ -1,14 +1,18 @@
 #import "SSUSAutocompleteLookup.h"
 
+const int kSSMaxSuggestions = 10;
+const double kSSPreferRatio = 1 / 3;
+
 @implementation SSUSAutocompleteLookup
 
 - (instancetype)init {
     if (self = [super init]) {
-        _maxSuggestions = 10;
+        _maxSuggestions = kSSMaxSuggestions;
         _cityFilter = [NSMutableArray<NSString*> new];
         _stateFilter = [NSMutableArray<NSString*> new];
         _prefer = [NSMutableArray<NSString*> new];
         _geolocateType = [[SSGeolocateType alloc] initWithName:kSSGeolocateTypeCity];
+        _preferRatio = kSSPreferRatio;
     }
     return self;
 }
@@ -18,6 +22,31 @@
         _prefix = prefix;
     }
     return self;
+}
+
+-(SSUSAutocompleteSuggestion*)getResultAtIndex:(int)index {
+    return [self.result objectAtIndex:index];
+}
+
+- (NSString*)GetMaxSuggestionsStringIfSet {
+    if (self.maxSuggestions == kSSMaxSuggestions)
+        return nil;
+    return [NSString stringWithFormat:@"%d", self.maxSuggestions];
+}
+
+- (NSString*)GetPreferRatioStringIfSet {
+    if (self.preferRatio == kSSPreferRatio)
+        return nil;
+    return [NSString stringWithFormat:@"%f", self.preferRatio];
+}
+
+- (void)setMaxSuggestions:(int)maxSuggestions error:(NSError**)error {
+    if (self.maxSuggestions > 0 && self.maxSuggestions <= 10)
+        _maxSuggestions = maxSuggestions;
+    else {
+        NSDictionary *details = @{NSLocalizedDescriptionKey: @"Max suggestions must be a positive integer no larger than 10."};
+        *error = [NSError errorWithDomain:SSErrorDomain code:NotPositiveIntegerError userInfo:details];
+    }
 }
 
 - (void)addCityFilter:(NSString*)city {
@@ -30,19 +59,6 @@
 
 - (void)addPrefer:(NSString*)cityOrState {
     [self.prefer addObject:cityOrState];
-}
-
--(SSUSAutocompleteSuggestion*)getResultAtIndex:(int)index {
-    return [self.result objectAtIndex:index];
-}
-
-- (void)setMaxSuggestions:(int)maxSuggestions error:(NSError**)error {
-    if (self.maxSuggestions > 0 && self.maxSuggestions <= 10)
-        _maxSuggestions = maxSuggestions;
-    else {
-        NSDictionary *details = @{NSLocalizedDescriptionKey: @"Max suggestions must be a positive integer no larger than 10."};
-        *error = [NSError errorWithDomain:SSErrorDomain code:NotPositiveIntegerError userInfo:details];
-    }
 }
 
 @end
