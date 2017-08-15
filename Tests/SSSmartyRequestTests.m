@@ -56,6 +56,18 @@
     XCTAssertEqualObjects(expectedValue, [request getUrl]);
 }
 
+- (void)testUrlEncodingOfUnicodeCharacters {
+    SSSmartyRequest *request = [[SSSmartyRequest alloc] init];
+    request.urlPrefix = @"http://localhost/";
+    
+    [request setValue:@"&foo=bar" forHTTPParameterField:@"needs_encoding"];
+    [request setValue:@"Sjömadsvägen" forHTTPParameterField:@"unicode"];
+    
+    NSString *const expectedValue = @"http://localhost/?needs_encoding=%26foo%3Dbar&unicode=Sj%C3%B6madsv%C3%A4gen";
+    
+    XCTAssertEqualObjects(expectedValue, [request getUrl]);
+}
+
 - (void)testUrlWithoutTrailingQuestionMark {
     SSSmartyRequest *request = [[SSSmartyRequest alloc] init];
     request.urlPrefix = @"http://localhost/";
