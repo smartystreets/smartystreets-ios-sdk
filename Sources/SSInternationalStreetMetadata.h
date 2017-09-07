@@ -13,6 +13,7 @@
 @property (readonly, nonatomic) double longitude;
 @property (readonly, nonatomic) NSString *geocodePrecision;
 @property (readonly, nonatomic) NSString *maxGeocodePrecision;
+@property (readonly, nonatomic) NSString *addressFormat;
 
 - (instancetype)initWithDictionary:(NSDictionary*)dictionary;
 

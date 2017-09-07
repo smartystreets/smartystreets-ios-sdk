@@ -8,6 +8,7 @@
         _longitude = [dictionary[@"longitude"] doubleValue];
         _geocodePrecision = dictionary[@"geocode_precision"];
         _maxGeocodePrecision = dictionary[@"max_geocode_precision"];
+        _addressFormat = dictionary[@"address_format"];
     }
     return self;
 }
