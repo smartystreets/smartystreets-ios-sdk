@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/oshion/src/github.com/smartystreets/smartystreets-ios-sdk/SmartystreetsSDK.xcodeproj">
+      location = "group:SmartystreetsSDK.xcodeproj">
    </FileRef>
 </Workspace>
