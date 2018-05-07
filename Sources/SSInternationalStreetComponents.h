@@ -23,6 +23,7 @@
 @property (readonly, nonatomic) NSString *premise;
 @property (readonly, nonatomic) NSString *premiseExtra;
 @property (readonly, nonatomic) NSString *premiseNumber;
+@property (readonly, nonatomic) NSString *premisePrefixNumber;
 @property (readonly, nonatomic) NSString *premiseType;
 @property (readonly, nonatomic) NSString *thoroughfare;
 @property (readonly, nonatomic) NSString *thoroughfarePredirection;

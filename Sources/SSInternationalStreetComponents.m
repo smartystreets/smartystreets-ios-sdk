@@ -18,6 +18,7 @@
         _premise = dictionary[@"premise"];
         _premiseExtra = dictionary[@"premise_extra"];
         _premiseNumber = dictionary[@"premise_number"];
+        _premisePrefixNumber = dictionary[@"premise_prefix_number"];
         _premiseType = dictionary[@"premise_type"];
         _thoroughfare = dictionary[@"thoroughfare"];
         _thoroughfarePredirection = dictionary[@"thoroughfare_predirection"];

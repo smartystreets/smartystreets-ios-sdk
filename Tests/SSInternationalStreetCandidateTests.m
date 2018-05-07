@@ -41,6 +41,7 @@
                     @"premise": @"25",
                     @"premise_extra": @"26",
                     @"premise_number": @"27",
+                    @"premise_prefix_number": @"27.5",
                     @"premise_type": @"28",
                     @"thoroughfare": @"29",
                     @"thoroughfare_predirection": @"30",
@@ -118,6 +119,7 @@
     XCTAssertEqual(@"25", components.premise);
     XCTAssertEqual(@"26", components.premiseExtra);
     XCTAssertEqual(@"27", components.premiseNumber);
+    XCTAssertEqual(@"27.5", components.premisePrefixNumber);
     XCTAssertEqual(@"28", components.premiseType);
     XCTAssertEqual(@"29", components.thoroughfare);
     XCTAssertEqual(@"30", components.thoroughfarePredirection);
