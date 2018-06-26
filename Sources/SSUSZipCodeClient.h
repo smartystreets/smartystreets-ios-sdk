@@ -16,6 +16,11 @@
 
 - (instancetype)initWithSender:(id<SSSender>)sender withSerializer:(id<SSSerializer>)serializer;
 - (BOOL)sendLookup:(SSUSZipCodeLookup*)lookup error:(NSError**)error;
+
+/*!
+ Sends a batch of up to 100 Lookup objects.
+ @param batch must contain between 1 and 100 Lookup objects
+ */
 - (BOOL)sendBatch:(SSBatch*)batch error:(NSError**)error;
 
 @end

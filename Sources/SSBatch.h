@@ -16,7 +16,7 @@ extern int const kSSMaxBatchSize;
 @property (readonly, nonatomic) NSMutableDictionary<NSString*, id<SSLookup>> *namedLookups;
 @property (readonly, nonatomic) NSMutableArray<SSLookup> *allLookups;
 
-/*! @brief Adds a lookup to the Batch */
+/*! @brief Adds a lookup to the Batch as long as there are not already 100 lookups in the batch.*/
 - (BOOL)add:(id<SSLookup>)newAddress error:(NSError**)error;
 
 /*! 
