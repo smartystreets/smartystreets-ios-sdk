@@ -57,6 +57,8 @@
 
 - (SSSmartyResponse*)buildResponse:(NSMutableURLRequest*)httpRequest {
     NSURLSession *session = [NSURLSession sharedSession];
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+    dispatch_time_t timeout = dispatch_time(DISPATCH_TIME_NOW, _maxTimeout * 1000000);
     
     NSURLSessionDataTask *task = [session dataTaskWithRequest:httpRequest
         completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
@@ -65,10 +67,12 @@
                 NSData *payload = data;
                 
                 myResponse = [[SSSmartyResponse alloc] initWithStatusCode:statusCode payload:payload];
+                dispatch_semaphore_signal(semaphore);
             }
         }];
     
     [task resume];
+    dispatch_semaphore_wait(semaphore, timeout);
     
     return myResponse;
 }
