@@ -57,6 +57,13 @@
  */
 - (SSClientBuilder*)withSerializer:(id<SSSerializer>)serializer;
 
+/*!
+ @brief Specifies a proxy through which the lookups will be sent.
+ 
+ @param host The proxy host (without the scheme or port).
+ 
+ @param port The proxy port.
+ */
 - (SSClientBuilder*)withProxy:(NSString*)host port:(int)port;
 
 /*!
