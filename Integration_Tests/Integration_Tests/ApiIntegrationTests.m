@@ -106,7 +106,7 @@
 
 - (void)testReturnsCorrectNumberOfResultsViaProxy:(SSStaticCredentials*)credentials {
     NSError *error = nil;
-    SSUSZipCodeClient *client = [[[[[SSClientBuilder alloc] initWithSigner:credentials] retryAtMost:2] viaProxy:@"http://localhost" proxyPort:@"8080" proxyUsername:@"username" proxyPassword:@"password" error:&error] buildUsZIPCodeApiClient];
+    SSUSZipCodeClient *client = [[[[[SSClientBuilder alloc] initWithSigner:credentials] retryAtMost:2] withProxy:@"localhost" port:8080] buildUsZIPCodeApiClient];
     SSUSZipCodeLookup *lookup = [[SSUSZipCodeLookup alloc] initWithZipcode:@"38852"];
     
     [client sendLookup:lookup error:&error];

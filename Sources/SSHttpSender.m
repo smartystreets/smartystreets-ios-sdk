@@ -5,6 +5,7 @@
 }
     
 @property (nonatomic) int maxTimeout;
+@property (nonatomic) NSDictionary *proxy;
 
 @end
 
@@ -17,9 +18,10 @@
     return self;
 }
 
-- (instancetype)initWithMaxTimeout:(int)maxTimeout {
+- (instancetype)initWithMaxTimeout:(int)maxTimeout andProxy:(NSDictionary*)proxy{
     if (self = [[super self] init]) {
         _maxTimeout = maxTimeout;
+        _proxy = proxy;
     }
     return self;
 }
@@ -56,7 +58,10 @@
 }
 
 - (SSSmartyResponse*)buildResponse:(NSMutableURLRequest*)httpRequest {
-    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration ephemeralSessionConfiguration];
+    configuration.connectionProxyDictionary = _proxy;
+    
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
     dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
     dispatch_time_t timeout = dispatch_time(DISPATCH_TIME_NOW, _maxTimeout * 1000000);
     

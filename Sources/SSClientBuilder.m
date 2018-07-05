@@ -8,6 +8,7 @@
 @property (nonatomic) int maxRetries;
 @property (nonatomic) int maxTimeout;
 @property (nonatomic) NSString *urlPrefix;
+@property (nonatomic) NSDictionary *proxy;
 @property (readonly, nonatomic) NSString *internationalStreetApiURL;
 @property (readonly, nonatomic) NSString *usAutocopmleteApiURL;
 @property (readonly, nonatomic) NSString *usExtractApiURL;
@@ -68,6 +69,20 @@
     return self;
 }
 
+- (SSClientBuilder*)withProxy:(NSString*)host port:(int)portRaw {
+    NSNumber* port = [NSNumber numberWithInt:portRaw];
+    _proxy = @{
+               @"HTTPEnable"  : [NSNumber numberWithInt:1],
+               (NSString *)kCFStreamPropertyHTTPProxyHost  : host,
+               (NSString *)kCFStreamPropertyHTTPProxyPort  : port,
+               
+               @"HTTPSEnable" : [NSNumber numberWithInt:1],
+               (NSString *)kCFStreamPropertyHTTPSProxyHost : host,
+               (NSString *)kCFStreamPropertyHTTPSProxyPort : port,
+               };
+    return self;
+}
+
 - (SSInternationalStreetClient*)buildInternationalStreetApiClient {
     [self ensureURLPrefixNotNil:self.internationalStreetApiURL];
     return [[SSInternationalStreetClient alloc] initWithSender:[self buildSender] withSerializer:self.serializer];
@@ -97,7 +112,7 @@
     if (self.httpSender != nil)
         return self.httpSender;
     
-    id<SSSender> sender = [[SSHttpSender alloc] initWithMaxTimeout:self.maxTimeout];
+    id<SSSender> sender = [[SSHttpSender alloc] initWithMaxTimeout:self.maxTimeout andProxy:self.proxy];
     
     sender = [[SSStatusCodeSender alloc] initWithInner:sender];
     

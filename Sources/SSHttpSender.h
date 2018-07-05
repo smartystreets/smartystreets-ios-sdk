@@ -3,6 +3,6 @@
 
 @interface SSHttpSender : NSObject <SSSender>
 
-- (instancetype)initWithMaxTimeout:(int)maxTimeout;
+- (instancetype)initWithMaxTimeout:(int)maxTimeout andProxy:(NSDictionary*)proxy;
 
 @end

@@ -20,9 +20,6 @@
 		AE60298C1EA88424004BF2A7 /* SSUSAutocompleteExample.m in Sources */ = {isa = PBXBuildFile; fileRef = AE60298B1EA88424004BF2A7 /* SSUSAutocompleteExample.m */; };
 		AE879ACB1DCA6A0E0078C0B0 /* SSUSStreetSingleAddressExample.m in Sources */ = {isa = PBXBuildFile; fileRef = AE879ACA1DCA6A0E0078C0B0 /* SSUSStreetSingleAddressExample.m */; };
 		AE879ACE1DCA6F020078C0B0 /* SSMyCredentials.m in Sources */ = {isa = PBXBuildFile; fileRef = AE879ACD1DCA6F020078C0B0 /* SSMyCredentials.m */; };
-		AE87BD971EA889A80067F028 /* SmartystreetsSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE87BD961EA889A80067F028 /* SmartystreetsSDK.framework */; };
-		AE87BD981EA889B50067F028 /* SmartystreetsSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE87BD961EA889A80067F028 /* SmartystreetsSDK.framework */; };
-		AE87BD991EA889B50067F028 /* SmartystreetsSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AE87BD961EA889A80067F028 /* SmartystreetsSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AEB7E5541EA9950E00360D84 /* SSUSExtractExample.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB7E5531EA9950E00360D84 /* SSUSExtractExample.m */; };
 		AED0E8C81DD643BC0041201A /* SSUSStreetLookupsWithMatchStrategyExamples.m in Sources */ = {isa = PBXBuildFile; fileRef = AED0E8C71DD643BC0041201A /* SSUSStreetLookupsWithMatchStrategyExamples.m */; };
 /* End PBXBuildFile section */
@@ -34,7 +31,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				AE87BD991EA889B50067F028 /* SmartystreetsSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -66,7 +62,6 @@
 		AE879ACA1DCA6A0E0078C0B0 /* SSUSStreetSingleAddressExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSUSStreetSingleAddressExample.m; sourceTree = "<group>"; };
 		AE879ACC1DCA6F020078C0B0 /* SSMyCredentials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSMyCredentials.h; sourceTree = "<group>"; };
 		AE879ACD1DCA6F020078C0B0 /* SSMyCredentials.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSMyCredentials.m; sourceTree = "<group>"; };
-		AE87BD961EA889A80067F028 /* SmartystreetsSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SmartystreetsSDK.framework; path = "../../../../../../Library/Developer/Xcode/DerivedData/SmartystreetsSDK-desxmyjjqbhasfhheoqpkyjxbfew/Build/Products/Debug-iphonesimulator/SmartystreetsSDK.framework"; sourceTree = "<group>"; };
 		AEB7E5521EA9950E00360D84 /* SSUSExtractExample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSUSExtractExample.h; sourceTree = "<group>"; };
 		AEB7E5531EA9950E00360D84 /* SSUSExtractExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSUSExtractExample.m; sourceTree = "<group>"; };
 		AED0E8C61DD643BC0041201A /* SSUSStreetLookupsWithMatchStrategyExamples.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSUSStreetLookupsWithMatchStrategyExamples.h; sourceTree = "<group>"; };
@@ -78,8 +73,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE87BD981EA889B50067F028 /* SmartystreetsSDK.framework in Frameworks */,
-				AE87BD971EA889A80067F028 /* SmartystreetsSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,7 +141,6 @@
 		AE6860011DF23FEC00B243B7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				AE87BD961EA889A80067F028 /* SmartystreetsSDK.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -180,7 +172,7 @@
 		AE2177F91DB37E2D00D9CF69 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = SmartyStreets;
 				TargetAttributes = {
 					AE2178001DB37E2D00D9CF69 = {
@@ -273,14 +265,22 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -320,14 +320,22 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

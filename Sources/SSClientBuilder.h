@@ -57,6 +57,8 @@
  */
 - (SSClientBuilder*)withSerializer:(id<SSSerializer>)serializer;
 
+- (SSClientBuilder*)withProxy:(NSString*)host port:(int)port;
+
 /*!
  @brief This may be useful when using a local installation of the SmartyStreets APIs.
  
