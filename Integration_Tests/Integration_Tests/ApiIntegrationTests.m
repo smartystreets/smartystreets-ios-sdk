@@ -25,9 +25,8 @@
     [self testUSExtractRequestReturnsWithCorrectNumberOfResults:credentials];
     [self testUSStreetRequestReturnsWithCorrectNumberOfResults:credentials];
     [self testUSZIPCodeRequestReturnsWithCorrectNumberOfResults:credentials];
-//    [self testReturnsCorrectNumberOfResultsViaProxy:credentials];
+    [self testReturnsCorrectNumberOfResultsViaProxy:credentials];
     
-    //[[SSStaticCredentials alloc] initWithAuthId:@"" authToken:@""]
     NSLog(@"%@", self.result);
 }
 
@@ -42,7 +41,7 @@
     if (error == nil)
         candidates = (int)lookup.result.count;
     
-    [self assertResults:@"Internation_Street" actualResultCount:candidates expectedResultCount:1];
+    [self assertResults:@"International_Street" actualResultCount:candidates expectedResultCount:1];
 }
 
 - (void)testUSAutocompleteRequestReturnsWithCorrectNumberOfResults:(SSStaticCredentials*)credentials {
@@ -115,7 +114,7 @@
     if (error == nil)
         citiesAmount = (int)lookup.result.cities.count;
     
-    [self assertResults:@"US_ZIPCode" actualResultCount:citiesAmount expectedResultCount:7];
+    [self assertResults:@"US_ZIPCode-proxy" actualResultCount:citiesAmount expectedResultCount:7];
 }
 
 - (void)assertResults:(NSString*)apiType actualResultCount:(int)actual expectedResultCount:(int)expected {
