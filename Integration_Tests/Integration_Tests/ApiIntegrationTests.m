@@ -16,8 +16,8 @@
 }
 
 - (void)runAllApiIntegrationTests {
-    NSString *authID = @(getenv("SMARTY_AUTH_ID"));
-    NSString *authToken = @(getenv("SMARTY_AUTH_TOKEN"));
+    NSString *authID = [[[NSProcessInfo processInfo] environment] objectForKey:@"SMARTY_AUTH_ID"];
+    NSString *authToken = [[[NSProcessInfo processInfo] environment] objectForKey:@"SMARTY_AUTH_TOKEN"];
     SSStaticCredentials *credentials = [[SSStaticCredentials alloc] initWithAuthId:authID authToken:authToken];
     
     [self testInternationalStreetRequestReturnsWithCorrectNumberOfResults:credentials];
