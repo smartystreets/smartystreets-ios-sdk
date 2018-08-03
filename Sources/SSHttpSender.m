@@ -71,6 +71,9 @@
                 int statusCode = (int)[(NSHTTPURLResponse *) response statusCode];
                 NSData *payload = data;
                 
+                //TODO finish this
+                NSLog(@"\nRequest body:\n\n%@", [[NSString alloc] initWithData:[httpRequest HTTPBody] encoding:NSUTF8StringEncoding]);
+                
                 myResponse = [[SSSmartyResponse alloc] initWithStatusCode:statusCode payload:payload];
                 dispatch_semaphore_signal(semaphore);
             }
