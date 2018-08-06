@@ -17,3 +17,6 @@ publish-minor:
 publish-major:
 	@python tag.py major
 	pod trunk push SmartystreetsSDK.podspec
+
+dependencies: 
+	gem install cocoapods
