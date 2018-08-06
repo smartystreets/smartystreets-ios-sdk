@@ -13,7 +13,7 @@ test:
 local-publish: clean
 	sed -i "s/0\.0\.0/$(shell git describe)/g" "$(PLIST_FILE)"
 	sed -i "s/0\.0\.0/$(shell git describe)/g" "$(PODSPEC_FILE)"
-	pod trunk push "$(PODSPEC_FILE)""
+	pod trunk push "$(PODSPEC_FILE)"
 	git checkout "$(PODSPEC_FILE)"
 	git checkout "$(PLIST_FILE)"
 
