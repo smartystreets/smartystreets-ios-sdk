@@ -1,22 +1,34 @@
 #!/usr/bin/make -f
 
-test:
-	xcodebuild test -scheme SmartystreetsSDK -destination "platform=iOS Simulator,name=iPhone 7,OS=10.2"
+SOURCE_VERSION := 7.4
+PLIST_FILE = Sources/Info.plist
+PODSPEC_FILE = SmartystreetsSDK.podspec
 
 clean:
 	rm -rf ./Output
 
-publish-patch:
-	@python tag.py patch
-	pod trunk push SmartystreetsSDK.podspec
+test:
+	xcodebuild test -scheme SmartystreetsSDK -destination "platform=iOS Simulator,name=iPhone 7,OS=10.2"
 
-publish-minor:
-	@python tag.py minor
-	pod trunk push SmartystreetsSDK.podspec
-
-publish-major:
-	@python tag.py major
-	pod trunk push SmartystreetsSDK.podspec
+local-publish: clean
+	sed -i "s/0\.0\.0/$(shell git describe)/g" "$(PLIST_FILE)"
+	sed -i "s/0\.0\.0/$(shell git describe)/g" "$(PODSPEC_FILE)"
+	pod trunk push "$(PODSPEC_FILE)""
+	git checkout "$(PODSPEC_FILE)"
+	git checkout "$(PLIST_FILE)"
 
 dependencies: 
 	gem install cocoapods
+
+version:
+	$(eval PREFIX := $(SOURCE_VERSION).)
+	$(eval CURRENT := $(shell git describe 2>/dev/null))
+	$(eval EXPECTED := $(PREFIX)$(shell git tag -l "$(PREFIX)*" | wc -l | xargs expr -1 +))
+	$(eval INCREMENTED := $(PREFIX)$(shell git tag -l "$(PREFIX)*" | wc -l | xargs expr 0 +))
+	@if [ "$(CURRENT)" != "$(EXPECTED)" ]; then git tag -a "$(INCREMENTED)" -m "" 2>/dev/null || true; fi
+
+###################################################################################
+
+publish: version
+	docker-compose run sdk make local-publish
+	git push origin --tags
