@@ -7,3 +7,4 @@ services:
     environment:
       - SMARTY_AUTH_ID
       - SMARTY_AUTH_TOKEN
+      - COCOAPODS_TRUNK_TOKEN
