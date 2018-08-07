@@ -13,7 +13,7 @@ test:
 local-publish: clean
 	sed -i "s/0\.0\.0/$(shell git describe)/g" "$(PLIST_FILE)"
 	sed -i "s/0\.0\.0/$(shell git describe)/g" "$(PODSPEC_FILE)"
-	pod trunk push "$(PODSPEC_FILE)"
+	-pod trunk push "$(PODSPEC_FILE)"
 
 dependencies: 
 	gem install cocoapods
@@ -29,6 +29,6 @@ version:
 
 publish: version
 	git push origin --tags 
-	docker-compose run sdk make local-publish
+	-docker-compose run sdk make local-publish
 	git checkout "$(PODSPEC_FILE)"
 	git checkout "$(PLIST_FILE)"
