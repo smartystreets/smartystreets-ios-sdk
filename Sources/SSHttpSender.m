@@ -72,6 +72,7 @@
                 NSData *payload = data;
                 
                 //TODO finish this
+                NSLog(@"\nMethod: %@", [httpRequest HTTPMethod]);
                 NSLog(@"\nRequest body:\n\n%@", [[NSString alloc] initWithData:[httpRequest HTTPBody] encoding:NSUTF8StringEncoding]);
                 
                 myResponse = [[SSSmartyResponse alloc] initWithStatusCode:statusCode payload:payload];
