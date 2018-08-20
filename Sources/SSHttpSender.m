@@ -6,6 +6,7 @@
     
 @property (nonatomic) int maxTimeout;
 @property (nonatomic) NSDictionary *proxy;
+@property (nonatomic) bool debug;
 
 @end
 
@@ -14,14 +15,16 @@
 - (instancetype)init {
     if (self = [super init]) {
         _maxTimeout = 10000;
+        _debug = false;
     }
     return self;
 }
 
-- (instancetype)initWithMaxTimeout:(int)maxTimeout andProxy:(NSDictionary*)proxy{
+- (instancetype)initWithMaxTimeout:(int)maxTimeout andProxy:(NSDictionary*)proxy andDebug:(bool)debug{
     if (self = [[super self] init]) {
         _maxTimeout = maxTimeout;
         _proxy = proxy;
+        _debug = debug;
     }
     return self;
 }
@@ -71,9 +74,8 @@
                 int statusCode = (int)[(NSHTTPURLResponse *) response statusCode];
                 NSData *payload = data;
                 
-                //TODO finish this
-                NSLog(@"\nMethod: %@", [httpRequest HTTPMethod]);
-                NSLog(@"\nRequest body:\n\n%@", [[NSString alloc] initWithData:[httpRequest HTTPBody] encoding:NSUTF8StringEncoding]);
+                if(_debug)
+                    [self logHttpRequest:httpRequest andResponse:(NSHTTPURLResponse *)response withPayload:payload];
                 
                 myResponse = [[SSSmartyResponse alloc] initWithStatusCode:statusCode payload:payload];
                 dispatch_semaphore_signal(semaphore);
@@ -84,6 +86,21 @@
     dispatch_semaphore_wait(semaphore, timeout);
     
     return myResponse;
+}
+
+- (void)logHttpRequest:(NSMutableURLRequest*)httpRequest andResponse:(NSHTTPURLResponse*)response withPayload:(NSData*)payload {
+    NSMutableString *message = [[NSMutableString alloc]init];
+    [message appendString:@"\n***Request***\n"];
+    [message appendFormat:@"\nMethod: %@\n", [httpRequest HTTPMethod] ];
+    [message appendFormat:@"\nURL: %@\n", [httpRequest URL]];
+    [message appendFormat:@"\nHeaders: %@\n", [httpRequest allHTTPHeaderFields]];
+    [message appendFormat:@"\nRequest body:\n%@\n", [ [NSString alloc] initWithData:[httpRequest HTTPBody] encoding:NSUTF8StringEncoding] ];
+    
+    [message appendString:@"\n***Response***\n"];
+    [message appendFormat:@"\nHeaders:\n%@\n", [response allHeaderFields]];
+    [message appendFormat:@"\nStatus: %d\n", (int)[response statusCode]];
+    [message appendFormat:@"\nBody: \n%@\n", [ [NSString alloc] initWithData:payload encoding:NSUTF8StringEncoding] ];
+    NSLog(@"%@", message);
 }
 
 @end
