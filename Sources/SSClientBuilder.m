@@ -7,6 +7,7 @@
 @property (nonatomic) id<SSSender> httpSender;
 @property (nonatomic) int maxRetries;
 @property (nonatomic) int maxTimeout;
+@property (nonatomic) bool debug;
 @property (nonatomic) NSString *urlPrefix;
 @property (nonatomic) NSDictionary *proxy;
 @property (readonly, nonatomic) NSString *internationalStreetApiURL;
@@ -24,6 +25,7 @@
         _serializer = [[SSJsonSerializer alloc] init];
         _maxRetries = 5;
         _maxTimeout = 10000;
+        _debug = false;
         _internationalStreetApiURL = @"https://international-street.api.smartystreets.com/verify";
         _usAutocopmleteApiURL = @"https://us-autocomplete.api.smartystreets.com/suggest";
         _usExtractApiURL = @"https://us-extract.api.smartystreets.com";
@@ -83,6 +85,11 @@
     return self;
 }
 
+- (SSClientBuilder*)withDebug {
+    _debug = true;
+    return self;
+}
+
 - (SSInternationalStreetClient*)buildInternationalStreetApiClient {
     [self ensureURLPrefixNotNil:self.internationalStreetApiURL];
     return [[SSInternationalStreetClient alloc] initWithSender:[self buildSender] withSerializer:self.serializer];
@@ -112,7 +119,7 @@
     if (self.httpSender != nil)
         return self.httpSender;
     
-    id<SSSender> sender = [[SSHttpSender alloc] initWithMaxTimeout:self.maxTimeout andProxy:self.proxy];
+    id<SSSender> sender = [[SSHttpSender alloc] initWithMaxTimeout:self.maxTimeout andProxy:self.proxy andDebug:self.debug];
     
     sender = [[SSStatusCodeSender alloc] initWithInner:sender];
     
