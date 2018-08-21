@@ -7,3 +7,4 @@ Output/
 SmartystreetsSDK/
 .idea
 .vagrant/machines/default/virtualbox
+*.xcscheme

@@ -1,6 +1,6 @@
 #!/usr/bin/make -f
 
-SOURCE_VERSION := 7.4
+SOURCE_VERSION := 7.5
 PLIST_FILE = Sources/Info.plist
 PODSPEC_FILE = SmartystreetsSDK.podspec
 
