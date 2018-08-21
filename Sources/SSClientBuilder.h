@@ -75,6 +75,13 @@
  */
 - (SSClientBuilder*)withUrl:(NSString*)urlPrefix;
 
+/*!
+ @brief Activates debug mode, which logs information about the HTTP requests and responses for debugging purposes.
+ 
+ @return <b>this</b> to accommodate method chaining.
+ */
+- (SSClientBuilder*)withDebug;
+
 - (SSUSZipCodeClient*)buildUsZIPCodeApiClient;
 - (SSUSStreetClient*)buildUsStreetApiClient;
 - (SSInternationalStreetClient*)buildInternationalStreetApiClient;
