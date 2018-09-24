@@ -26,8 +26,8 @@ workspace:
 release: clean
 	git add "$(PLIST_FILE)" "$(PODSPEC_FILE)" \
 		&& git commit -m "Incremeted version to $(VERSION)." \
-		&& tagit -p
-		&& git push origin master --tags
+		&& tagit -p \
+		&& git push origin master --tags \
 		&& docker-compose run sdk make publish
 
 .PHONY: clean test publish version workspace release
