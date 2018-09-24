@@ -9,21 +9,21 @@ clean:
 	git checkout "$(PLIST_FILE)" "$(PODSPEC_FILE)"
 
 test:
-	xcodebuild test -scheme SmartystreetsSDK -destination "platform=iOS Simulator,name=iPhone 8,OS=11.4"
-
-version:
-	sed -i -E 's/[0-9]+\.[0-9]+\.[0-9]+/$(VERSION)/g' "$(PLIST_FILE)"
-	sed -i -E 's/[0-9]+\.[0-9]+\.[0-9]+/$(VERSION)/g' "$(PODSPEC_FILE)"
+	xcodebuild test -scheme SmartystreetsSDK -destination "platform=iOS Simulator,name=iPhone 8,OS=12.0"
 
 publish: version
 	pod trunk push "$(PODSPEC_FILE)"
 
 ##########################################################
 
+version:
+	sed -i '' -E 's/[0-9]+\.[0-9]+\.[0-9]+/$(VERSION)/g' "$(PLIST_FILE)"
+	sed -i '' -E 's/[0-9]+\.[0-9]+\.[0-9]+/$(VERSION)/g' "$(PODSPEC_FILE)"
+
 workspace:
 	docker-compose run sdk /bin/sh
 
-release: clean
+release: clean version test
 	git add "$(PLIST_FILE)" "$(PODSPEC_FILE)" \
 		&& git commit -m "Incremeted version to $(VERSION)." \
 		&& tagit -p \
