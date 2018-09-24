@@ -11,7 +11,7 @@ clean:
 test:
 	xcodebuild test -scheme SmartystreetsSDK -destination "platform=iOS Simulator,name=iPhone 8,OS=12.0"
 
-publish: version
+publish:
 	pod trunk push "$(PODSPEC_FILE)"
 
 ##########################################################
