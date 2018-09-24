@@ -21,11 +21,12 @@ version:
 	sed -i '' -E 's/[0-9]+\.[0-9]+\.[0-9]+/$(VERSION)/g' "$(PLIST_FILE)"
 	sed -i '' -E 's/[0-9]+\.[0-9]+\.[0-9]+/$(VERSION)/g' "$(PODSPEC_FILE)"
 
-release: clean version
+tag:
 	git add "$(PLIST_FILE)" "$(PODSPEC_FILE)" \
 		&& git commit -m "Incremeted version to $(VERSION)." \
 		&& tagit -p \
-		&& git push origin master --tags \
-		&& docker-compose run sdk make publish
+		&& git push origin master --tags 
 
-.PHONY: clean test publish version release
+release: clean version tag publish
+
+.PHONY: clean test publish version tag release
