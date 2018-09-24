@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name         = 'SmartystreetsSDK'
-s.version      = '7.5.0'
+s.version      = '7.5.1'
 s.summary      = 'A library to help iOS developers easily access the SmartyStreets APIs.'
 s.homepage     = 'https://github.com/smartystreets/smartystreets-ios-sdk'
 s.author       = { 'SmartyStreets SDK Team' => 'support@smartystreets.com' }
