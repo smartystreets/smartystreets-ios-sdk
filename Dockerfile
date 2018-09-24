@@ -1,10 +1,8 @@
 FROM ruby:alpine
-
-RUN adduser -D -g '' docker
-
-COPY . /code
 WORKDIR /code
-
-RUN apk add -U make git && make dependencies
-
+COPY . .
+RUN apk add -U make git \
+	&& wget -q -O - "bit.ly/version-tools" | sh \
+	&& gem install cocoapods \
+	&& adduser -D -g '' docker
 USER docker
