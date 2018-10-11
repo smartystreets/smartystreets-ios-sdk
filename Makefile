@@ -23,7 +23,7 @@ version:
 
 tag:
 	git add "$(PLIST_FILE)" "$(PODSPEC_FILE)" \
-		&& git commit -m "Incremeted version to $(VERSION)." \
+		&& git commit -m "Incremented version to $(VERSION)." \
 		&& tagit -p \
 		&& git push origin master --tags 
 
