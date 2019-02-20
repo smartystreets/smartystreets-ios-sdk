@@ -25,6 +25,7 @@
 @property (readonly, nonatomic) NSString *timeZone;
 @property (readonly, nonatomic) double utcOffset;
 @property (readonly, nonatomic) bool obeysDst;
+@property (readonly, nonatomic) bool isEwsMatch;
 
 - (instancetype)initWithDictionary:(NSDictionary*)dictionary;
 

@@ -61,7 +61,8 @@
                     @"precision": @"38",
                     @"time_zone": @"39",
                     @"utc_offset": [NSNumber numberWithDouble:40.0],
-                    @"dst": @YES
+                    @"dst": @YES,
+                    @"ews_match": @YES
             },
             @"analysis": @{
                     @"dpv_match_code": @"42",
@@ -168,6 +169,7 @@
     XCTAssertEqual(@"39", metadata.timeZone);
     XCTAssertEqual(40, metadata.utcOffset);
     XCTAssertEqual(YES, metadata.obeysDst);
+    XCTAssertEqual(YES, metadata.isEwsMatch);
     
     SSUSStreetAnalysis *analysis = candidate.analysis;
     XCTAssertEqual(@"42", analysis.dpvMatchCode);
@@ -175,7 +177,7 @@
     XCTAssertEqual(@"44", analysis.cmra);
     XCTAssertEqual(@"45", analysis.vacant);
     XCTAssertEqual(@"46", analysis.active);
-    XCTAssertEqual(YES, analysis.isEwsMatch);
+    XCTAssertEqual(NO, analysis.isEwsMatch);
     XCTAssertEqual(@"48", analysis.footnotes);
     XCTAssertEqual(@"49", analysis.lacsLinkCode);
     XCTAssertEqual(@"50", analysis.lacsLinkIndicator);

@@ -22,6 +22,10 @@
         
         if ([dictionary[@"dst"] boolValue])
             _obeysDst = YES;
+
+        if ([dictionary[@"ews_match"] boolValue])
+            _isEwsMatch = YES;
+
     }
     return self;
 }

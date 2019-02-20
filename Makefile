@@ -9,7 +9,7 @@ clean:
 	git checkout "$(PLIST_FILE)" "$(PODSPEC_FILE)"
 
 test:
-	xcodebuild test -scheme SmartystreetsSDK -destination "platform=iOS Simulator,name=iPhone 8,OS=12.0"
+	xcodebuild test -scheme SmartystreetsSDK -destination "platform=iOS Simulator,name=iPhone XS Max,OS=12.1"
 
 publish:
 	pod trunk push "$(PODSPEC_FILE)"

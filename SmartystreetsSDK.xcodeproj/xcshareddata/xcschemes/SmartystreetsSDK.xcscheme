@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "AE76B5E81D5265030080C136"
-               BuildableName = "SmartystreetsSDK.framework"
+               BuildableName = "SmartystreetsSDK"
                BlueprintName = "SmartystreetsSDK"
                ReferencedContainer = "container:SmartystreetsSDK.xcodeproj">
             </BuildableReference>

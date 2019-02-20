@@ -9,10 +9,11 @@
         _cmra = dictionary[@"dpv_cmra"];
         _vacant = dictionary[@"dpv_vacant"];
         _active = dictionary[@"active"];
-        
-        if ([dictionary[@"ews_match"] boolValue])
-            _isEwsMatch = YES;
-        
+        _isEwsMatch = NO;
+//
+//        if ([dictionary[@"ews_match"] boolValue])
+//            _isEwsMatch = YES;
+//
         _footnotes = dictionary[@"footnotes"];
         _lacsLinkCode = dictionary[@"lacslink_code"];
         _lacsLinkIndicator = dictionary[@"lacslink_indicator"];
