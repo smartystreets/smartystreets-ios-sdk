@@ -177,7 +177,6 @@
     XCTAssertEqual(@"44", analysis.cmra);
     XCTAssertEqual(@"45", analysis.vacant);
     XCTAssertEqual(@"46", analysis.active);
-    XCTAssertEqual(NO, analysis.isEwsMatch);
     XCTAssertEqual(@"48", analysis.footnotes);
     XCTAssertEqual(@"49", analysis.lacsLinkCode);
     XCTAssertEqual(@"50", analysis.lacsLinkIndicator);

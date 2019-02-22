@@ -14,7 +14,7 @@
 @property (readonly, nonatomic) NSString *cmra;
 @property (readonly, nonatomic) NSString *vacant;
 @property (readonly, nonatomic) NSString *active;
-@property (readonly, nonatomic) bool isEwsMatch;
+@property (readonly, nonatomic) bool isEwsMatch __attribute__((deprecated));
 @property (readonly, nonatomic) NSString *footnotes;
 @property (readonly, nonatomic) NSString *lacsLinkCode;
 @property (readonly, nonatomic) NSString *lacsLinkIndicator;
