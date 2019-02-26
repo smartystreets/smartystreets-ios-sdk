@@ -12,6 +12,7 @@
     address0.street = @"1600 amphitheatre parkway";
     address0.city = @"Mountain view";
     address0.state = @"california";
+    address0.matchStrategy = @"invalid";
     
     SSUSStreetLookup *address1 = [[SSUSStreetLookup alloc] initWithFreeformAddress:@"1 Rosedale, Baltimore, Maryland"];
     [address1 setMaxCandidates:10 error:&error];

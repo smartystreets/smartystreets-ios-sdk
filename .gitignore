@@ -1,7 +1,7 @@
 *DS_Store*
 *.swp
 __MACOSX
-/.idea/
+.idea/
 /workspace/
 
 /build/

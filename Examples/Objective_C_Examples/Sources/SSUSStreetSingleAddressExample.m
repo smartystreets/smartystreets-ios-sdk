@@ -11,6 +11,7 @@
     lookup.street = @"1600 Amphitheatre Pkwy";
     lookup.city = @"Mountain View";
     lookup.state = @"CA";
+    lookup.matchStrategy = @"invalid";
     
     NSError *error = nil;
     [client sendLookup:lookup error:&error];
