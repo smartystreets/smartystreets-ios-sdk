@@ -12,7 +12,7 @@ test:
 	xcodebuild test -scheme SmartystreetsSDK -destination "platform=iOS Simulator,name=iPhone XS Max,OS=12.1"
 
 publish:
-	pod trunk push "$(PODSPEC_FILE)"
+	pod trunk push "$(PODSPEC_FILE)" --allow-warnings
 
 dependencies:
 	gem install cocoapods
