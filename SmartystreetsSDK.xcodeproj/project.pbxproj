@@ -116,6 +116,8 @@
 		AE8EB7BA1EAFD0F5005C598E /* SSMyLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8EB7B81EAFD0F5005C598E /* SSMyLogger.m */; };
 		AE8EB7BE1EAFDCD6005C598E /* SSMySleeper.h in Headers */ = {isa = PBXBuildFile; fileRef = AE8EB7BC1EAFDCD6005C598E /* SSMySleeper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE8EB7BF1EAFDCD6005C598E /* SSMySleeper.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8EB7BD1EAFDCD6005C598E /* SSMySleeper.m */; };
+		AE9C33B82236F05F00DA0157 /* SSInternationalChanges.h in Headers */ = {isa = PBXBuildFile; fileRef = AE9C33B62236F05F00DA0157 /* SSInternationalChanges.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE9C33B92236F05F00DA0157 /* SSInternationalChanges.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9C33B72236F05F00DA0157 /* SSInternationalChanges.m */; };
 		AEB519FC1D905EDC00BF785B /* SSHttpSender.h in Headers */ = {isa = PBXBuildFile; fileRef = AEB519FA1D905EDC00BF785B /* SSHttpSender.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AEB519FD1D905EDC00BF785B /* SSHttpSender.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB519FB1D905EDC00BF785B /* SSHttpSender.m */; };
 		AEBCE8471D6228600016A4FE /* SSSigningSender.h in Headers */ = {isa = PBXBuildFile; fileRef = AEBCE8451D6228600016A4FE /* SSSigningSender.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -300,6 +302,8 @@
 		AE8EB7BB1EAFDC82005C598E /* SSSleeper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSSleeper.h; sourceTree = "<group>"; };
 		AE8EB7BC1EAFDCD6005C598E /* SSMySleeper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSMySleeper.h; sourceTree = "<group>"; };
 		AE8EB7BD1EAFDCD6005C598E /* SSMySleeper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSMySleeper.m; sourceTree = "<group>"; };
+		AE9C33B62236F05F00DA0157 /* SSInternationalChanges.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSInternationalChanges.h; sourceTree = "<group>"; };
+		AE9C33B72236F05F00DA0157 /* SSInternationalChanges.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSInternationalChanges.m; sourceTree = "<group>"; };
 		AE9EE3721EEF3675007DF5AF /* Integration_Tests.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Integration_Tests.xcodeproj; path = Integration_Tests/Integration_Tests.xcodeproj; sourceTree = SOURCE_ROOT; };
 		AEB519FA1D905EDC00BF785B /* SSHttpSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSHttpSender.h; sourceTree = "<group>"; };
 		AEB519FB1D905EDC00BF785B /* SSHttpSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSHttpSender.m; sourceTree = "<group>"; };
@@ -373,6 +377,8 @@
 				AE4A54401E8C26F500584749 /* SSInternationalStreetMetadata.m */,
 				AE162FBF1E9BFBD500041911 /* SSInternationalStreetLookup.h */,
 				AE162FC01E9BFBD500041911 /* SSInternationalStreetLookup.m */,
+				AE9C33B62236F05F00DA0157 /* SSInternationalChanges.h */,
+				AE9C33B72236F05F00DA0157 /* SSInternationalChanges.m */,
 			);
 			name = International_Street;
 			sourceTree = "<group>";
@@ -677,6 +683,7 @@
 				AE4A54471E8C2A1200584749 /* SSInternationalStreetComponents.h in Headers */,
 				AE1E80411E930B65007F822E /* SSURLPrefixSender.h in Headers */,
 				AE1E80471E9332AE007F822E /* SSClientBuilder.h in Headers */,
+				AE9C33B82236F05F00DA0157 /* SSInternationalChanges.h in Headers */,
 				AE17C8931E8C258C009D5746 /* SSInternationalStreetAnalysis.h in Headers */,
 				AE4A544F1E8C324700584749 /* SSLanguageMode.h in Headers */,
 				AE4A54411E8C26F500584749 /* SSInternationalStreetMetadata.h in Headers */,
@@ -850,6 +857,7 @@
 				AE2E2E861EA93396007DA4B3 /* SSUSExtractResult.m in Sources */,
 				AEF32FED1EA16CAA0067AD57 /* SSGeolocateType.m in Sources */,
 				AE41776E1D5D1568003DEF9F /* SSSharedCredentials.m in Sources */,
+				AE9C33B92236F05F00DA0157 /* SSInternationalChanges.m in Sources */,
 				AE4177681D5CE19B003DEF9F /* SSSmartyResponse.m in Sources */,
 				AE3807861E0A093200F8A1C3 /* SSUSStreetAnalysis.m in Sources */,
 				AE38078A1E0A093200F8A1C3 /* SSUSStreetComponents.m in Sources */,
