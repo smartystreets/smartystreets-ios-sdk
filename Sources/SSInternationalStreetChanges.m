@@ -1,8 +1,8 @@
-#import "SSInternationalStreetCandidate.h"
+#import "SSInternationalStreetChanges.h"
 
-@implementation SSInternationalStreetCandidate
+@implementation SSInternationalStreetChanges
 
-- (instancetype)initWithDictionary:(NSDictionary*)dictionary {
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary{
     if (self = [super init]) {
         self.organization = dictionary[@"organization"];
         self.address1 = dictionary[@"address1"];
@@ -18,19 +18,11 @@
         self.address11 = dictionary[@"address11"];
         self.address12 = dictionary[@"address12"];
         NSDictionary *components = dictionary[@"components"];
-        NSDictionary *metadata = dictionary[@"metadata"];
-        NSDictionary *analysis = dictionary[@"analysis"];
         
         if (components != nil)
             _components = [[SSInternationalStreetComponents alloc] initWithDictionary:components];
         
-        if (metadata != nil)
-            _metadata = [[SSInternationalStreetMetadata alloc] initWithDictionary:metadata];
-        
-        if (analysis != nil)
-            _analysis = [[SSInternationalStreetAnalysis alloc] initWithDictionary:analysis];
     }
     return self;
 }
-
 @end

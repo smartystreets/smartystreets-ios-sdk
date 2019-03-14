@@ -74,10 +74,10 @@
                 int statusCode = (int)[(NSHTTPURLResponse *) response statusCode];
                 NSData *payload = data;
                 
-                if(_debug)
+                if(self->_debug)
                     [self logHttpRequest:httpRequest andResponse:(NSHTTPURLResponse *)response withPayload:payload];
                 
-                myResponse = [[SSSmartyResponse alloc] initWithStatusCode:statusCode payload:payload];
+                self->myResponse = [[SSSmartyResponse alloc] initWithStatusCode:statusCode payload:payload];
                 dispatch_semaphore_signal(semaphore);
             }
         }];

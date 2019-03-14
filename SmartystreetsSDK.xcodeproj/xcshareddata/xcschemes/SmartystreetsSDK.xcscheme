@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0940"
+   LastUpgradeVersion = "1010"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "AE76B5E81D5265030080C136"
-               BuildableName = "SmartystreetsSDK"
+               BuildableName = "SmartystreetsSDK.framework"
                BlueprintName = "SmartystreetsSDK"
                ReferencedContainer = "container:SmartystreetsSDK.xcodeproj">
             </BuildableReference>
