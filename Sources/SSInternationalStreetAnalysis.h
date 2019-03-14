@@ -1,4 +1,5 @@
 #import <Foundation/Foundation.h>
+#import "SSInternationalStreetChanges.h"
 
 /*!
  @class SSInternationalStreetAnalysis
@@ -12,6 +13,7 @@
 @property (readonly, nonatomic) NSString *verificationStatus;
 @property (readonly, nonatomic) NSString *addressPrecision;
 @property (readonly, nonatomic) NSString *maxAddressPrecision;
+@property (readonly, nonatomic) SSInternationalStreetChanges *changes;
 
 - (instancetype)initWithDictionary:(NSDictionary*)dictionary;
 

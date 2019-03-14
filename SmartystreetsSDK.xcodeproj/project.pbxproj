@@ -91,6 +91,10 @@
 		AE4A544C1E8C2CD700584749 /* SSInternationalStreetCandidate.m in Sources */ = {isa = PBXBuildFile; fileRef = AE4A544A1E8C2CD700584749 /* SSInternationalStreetCandidate.m */; };
 		AE4A544F1E8C324700584749 /* SSLanguageMode.h in Headers */ = {isa = PBXBuildFile; fileRef = AE4A544D1E8C324700584749 /* SSLanguageMode.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE4A54501E8C324700584749 /* SSLanguageMode.m in Sources */ = {isa = PBXBuildFile; fileRef = AE4A544E1E8C324700584749 /* SSLanguageMode.m */; };
+		AE698FD7223AE8DE005F5450 /* SSInternationalStreetRootLevel.h in Headers */ = {isa = PBXBuildFile; fileRef = AE698FD5223AE8DE005F5450 /* SSInternationalStreetRootLevel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE698FDB223B017E005F5450 /* SSInternationalStreetChanges.h in Headers */ = {isa = PBXBuildFile; fileRef = AE698FD9223B017E005F5450 /* SSInternationalStreetChanges.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE698FDC223B017E005F5450 /* SSInternationalStreetChanges.m in Sources */ = {isa = PBXBuildFile; fileRef = AE698FDA223B017E005F5450 /* SSInternationalStreetChanges.m */; };
+		AE698FDD223B0384005F5450 /* SSInternationalStreetRootLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = AE698FD6223AE8DE005F5450 /* SSInternationalStreetRootLevel.m */; };
 		AE6C611E1D7488710022CB66 /* SSRetrySenderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6C611D1D7488710022CB66 /* SSRetrySenderTests.m */; };
 		AE6C61241D74B3110022CB66 /* SSJsonSerializer.h in Headers */ = {isa = PBXBuildFile; fileRef = AE6C61221D74B3110022CB66 /* SSJsonSerializer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE6C61251D74B3110022CB66 /* SSJsonSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6C61231D74B3110022CB66 /* SSJsonSerializer.m */; };
@@ -269,6 +273,10 @@
 		AE4A544E1E8C324700584749 /* SSLanguageMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSLanguageMode.m; sourceTree = "<group>"; };
 		AE5DF4181DFB77A60060EF28 /* Objective_C_Examples.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Objective_C_Examples.xcodeproj; path = Objective_C_Examples/Objective_C_Examples.xcodeproj; sourceTree = "<group>"; };
 		AE5DF41E1DFB77B50060EF28 /* Swift_Examples.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Swift_Examples.xcodeproj; path = Swift_Examples/Swift_Examples.xcodeproj; sourceTree = "<group>"; };
+		AE698FD5223AE8DE005F5450 /* SSInternationalStreetRootLevel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSInternationalStreetRootLevel.h; sourceTree = "<group>"; };
+		AE698FD6223AE8DE005F5450 /* SSInternationalStreetRootLevel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSInternationalStreetRootLevel.m; sourceTree = "<group>"; };
+		AE698FD9223B017E005F5450 /* SSInternationalStreetChanges.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSInternationalStreetChanges.h; sourceTree = "<group>"; };
+		AE698FDA223B017E005F5450 /* SSInternationalStreetChanges.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSInternationalStreetChanges.m; sourceTree = "<group>"; };
 		AE6C611D1D7488710022CB66 /* SSRetrySenderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSRetrySenderTests.m; sourceTree = "<group>"; };
 		AE6C61221D74B3110022CB66 /* SSJsonSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSJsonSerializer.h; sourceTree = "<group>"; };
 		AE6C61231D74B3110022CB66 /* SSJsonSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSJsonSerializer.m; sourceTree = "<group>"; };
@@ -373,6 +381,10 @@
 				AE4A54401E8C26F500584749 /* SSInternationalStreetMetadata.m */,
 				AE162FBF1E9BFBD500041911 /* SSInternationalStreetLookup.h */,
 				AE162FC01E9BFBD500041911 /* SSInternationalStreetLookup.m */,
+				AE698FD5223AE8DE005F5450 /* SSInternationalStreetRootLevel.h */,
+				AE698FD6223AE8DE005F5450 /* SSInternationalStreetRootLevel.m */,
+				AE698FD9223B017E005F5450 /* SSInternationalStreetChanges.h */,
+				AE698FDA223B017E005F5450 /* SSInternationalStreetChanges.m */,
 			);
 			name = International_Street;
 			sourceTree = "<group>";
@@ -702,6 +714,8 @@
 				AE8EB7B91EAFD0F5005C598E /* SSMyLogger.h in Headers */,
 				AE162FC11E9BFBD500041911 /* SSInternationalStreetLookup.h in Headers */,
 				AE7C4E0A1E96BD7B00C63520 /* SSBatch.h in Headers */,
+				AE698FDB223B017E005F5450 /* SSInternationalStreetChanges.h in Headers */,
+				AE698FD7223AE8DE005F5450 /* SSInternationalStreetRootLevel.h in Headers */,
 				AE41776A1D5D1450003DEF9F /* SSCredentials.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -752,7 +766,7 @@
 		AE76B5E01D5265030080C136 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = SmartyStreets;
 				TargetAttributes = {
 					AE76B5E81D5265030080C136 = {
@@ -842,6 +856,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE4A544C1E8C2CD700584749 /* SSInternationalStreetCandidate.m in Sources */,
+				AE698FDD223B0384005F5450 /* SSInternationalStreetRootLevel.m in Sources */,
 				AE6C61251D74B3110022CB66 /* SSJsonSerializer.m in Sources */,
 				AE38078E1E0A094800F8A1C3 /* SSUSStreetMetadata.m in Sources */,
 				AE3807A71E0A0AA100F8A1C3 /* SSUSAlternateCounties.m in Sources */,
@@ -857,6 +872,7 @@
 				AE2E2E8D1EA95924007DA4B3 /* SSUSExtractLookup.m in Sources */,
 				AE2E2E821EA92D44007DA4B3 /* SSUSExtractAddress.m in Sources */,
 				AE3807AF1E0A0AB100F8A1C3 /* SSUSZipCodeResult.m in Sources */,
+				AE698FDC223B017E005F5450 /* SSInternationalStreetChanges.m in Sources */,
 				AE2E2E911EA95B72007DA4B3 /* SSUSExtractClient.m in Sources */,
 				AE2E2E7B1EA92A53007DA4B3 /* SSUSExtractMetadata.m in Sources */,
 				AE7C4E0B1E96BD7B00C63520 /* SSBatch.m in Sources */,
@@ -943,14 +959,22 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -995,14 +1019,22 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
