@@ -6,6 +6,8 @@ class MockSender: SmartySender {
     var response:SmartyResponse!
     var request:SmartyRequest!
     
+    override init() {    }
+    
     init(response:SmartyResponse!) {
         self.response = response
         self.request = nil

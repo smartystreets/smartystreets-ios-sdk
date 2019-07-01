@@ -19,7 +19,7 @@ class USStreetClientTests: XCTestCase {
         self.error = nil
     }
     
-    func testExample() {
+    func testSendingSingleFreeformLookup() {
         let expectedUrl = "http://localhost/?street=freeform"
         let sender = RequestCapturingSender()
         let client = USStreetClient(sender: sender, serializer: serializer)

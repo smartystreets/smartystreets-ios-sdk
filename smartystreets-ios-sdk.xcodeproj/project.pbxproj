@@ -1,0 +1,1023 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		"smartystreets-ios-sdk::smartystreets-ios-sdkPackageTests::ProductTarget" /* smartystreets-ios-sdkPackageTests */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = OBJ_31 /* Build configuration list for PBXAggregateTarget "smartystreets-ios-sdkPackageTests" */;
+			buildPhases = (
+			);
+			dependencies = (
+				OBJ_34 /* PBXTargetDependency */,
+			);
+			name = "smartystreets-ios-sdkPackageTests";
+			productName = "smartystreets-ios-sdkPackageTests";
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		AE6F434322C53447001F3CC5 /* StatusCodeSenderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F434222C53447001F3CC5 /* StatusCodeSenderTests.swift */; };
+		AE6F434722C534D1001F3CC5 /* MockStatusCodeSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F434522C534B7001F3CC5 /* MockStatusCodeSender.swift */; };
+		AE6F434922C5356C001F3CC5 /* StatusCodeSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F434822C5356C001F3CC5 /* StatusCodeSender.swift */; };
+		AE6F434B22C535C0001F3CC5 /* SmartySender.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F434A22C535C0001F3CC5 /* SmartySender.swift */; };
+		AE6F434D22C53648001F3CC5 /* SmartyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F434C22C53648001F3CC5 /* SmartyRequest.swift */; };
+		AE6F434F22C536DD001F3CC5 /* SmartyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F434E22C536DD001F3CC5 /* SmartyResponse.swift */; };
+		AE6F435122C537A5001F3CC5 /* SmartyErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F435022C537A5001F3CC5 /* SmartyErrors.swift */; };
+		AE6F435222C5383F001F3CC5 /* StatusCodeSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F434822C5356C001F3CC5 /* StatusCodeSender.swift */; };
+		AE6F435322C53844001F3CC5 /* SmartySender.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F434A22C535C0001F3CC5 /* SmartySender.swift */; };
+		AE6F435422C53848001F3CC5 /* SmartyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F434C22C53648001F3CC5 /* SmartyRequest.swift */; };
+		AE6F435522C5384C001F3CC5 /* SmartyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F434E22C536DD001F3CC5 /* SmartyResponse.swift */; };
+		AE6F435622C5384F001F3CC5 /* SmartyErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F435022C537A5001F3CC5 /* SmartyErrors.swift */; };
+		AE6F435822C53A98001F3CC5 /* SmartyResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F435722C53A98001F3CC5 /* SmartyResponseTests.swift */; };
+		AE6F435A22C53B16001F3CC5 /* SigningSenderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F435922C53B16001F3CC5 /* SigningSenderTests.swift */; };
+		AE6F435D22C53B84001F3CC5 /* MockSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F435B22C53B82001F3CC5 /* MockSender.swift */; };
+		AE6F435F22C53BE0001F3CC5 /* SmartyCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F435E22C53BE0001F3CC5 /* SmartyCredentials.swift */; };
+		AE6F436022C53BE0001F3CC5 /* SmartyCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F435E22C53BE0001F3CC5 /* SmartyCredentials.swift */; };
+		AE6F436222C53C1D001F3CC5 /* StaticCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F436122C53C1D001F3CC5 /* StaticCredentials.swift */; };
+		AE6F436322C53C1D001F3CC5 /* StaticCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F436122C53C1D001F3CC5 /* StaticCredentials.swift */; };
+		AE6F436522C53C66001F3CC5 /* SigningSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F436422C53C66001F3CC5 /* SigningSender.swift */; };
+		AE6F436622C53C66001F3CC5 /* SigningSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F436422C53C66001F3CC5 /* SigningSender.swift */; };
+		AE6F436822C53D69001F3CC5 /* SmartySenderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F436722C53D69001F3CC5 /* SmartySenderTests.swift */; };
+		AE6F436A22C53DD2001F3CC5 /* HttpSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F436922C53DD2001F3CC5 /* HttpSender.swift */; };
+		AE6F436B22C53DD2001F3CC5 /* HttpSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F436922C53DD2001F3CC5 /* HttpSender.swift */; };
+		AE6F436D22C53E46001F3CC5 /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F436C22C53E46001F3CC5 /* Version.swift */; };
+		AE6F436E22C53E46001F3CC5 /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F436C22C53E46001F3CC5 /* Version.swift */; };
+		AE6F437022C5508D001F3CC5 /* RetrySenderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F436F22C5508D001F3CC5 /* RetrySenderTests.swift */; };
+		AE6F437222C550F5001F3CC5 /* MockCrashingSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F437122C550F5001F3CC5 /* MockCrashingSender.swift */; };
+		AE6F437522C5515D001F3CC5 /* MockLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F437322C5515D001F3CC5 /* MockLogger.swift */; };
+		AE6F437722C55243001F3CC5 /* SmartyLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F437622C55243001F3CC5 /* SmartyLogger.swift */; };
+		AE6F437822C55243001F3CC5 /* SmartyLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F437622C55243001F3CC5 /* SmartyLogger.swift */; };
+		AE6F437B22C552F3001F3CC5 /* MockSleeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F437922C552F3001F3CC5 /* MockSleeper.swift */; };
+		AE6F437D22C55364001F3CC5 /* SmartySleeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F437C22C55364001F3CC5 /* SmartySleeper.swift */; };
+		AE6F437E22C55364001F3CC5 /* SmartySleeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F437C22C55364001F3CC5 /* SmartySleeper.swift */; };
+		AE6F438022C553F5001F3CC5 /* RetrySender.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F437F22C553F5001F3CC5 /* RetrySender.swift */; };
+		AE6F438122C553F5001F3CC5 /* RetrySender.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F437F22C553F5001F3CC5 /* RetrySender.swift */; };
+		AE6F438322C554BE001F3CC5 /* SmartyCredentialsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F438222C554BE001F3CC5 /* SmartyCredentialsTests.swift */; };
+		AE6F438522C55513001F3CC5 /* SharedCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F438422C55513001F3CC5 /* SharedCredentials.swift */; };
+		AE6F438622C55513001F3CC5 /* SharedCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F438422C55513001F3CC5 /* SharedCredentials.swift */; };
+		AE6F438822C555A9001F3CC5 /* ClientBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F438722C555A9001F3CC5 /* ClientBuilderTests.swift */; };
+		AE6F438A22C55627001F3CC5 /* ClientBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F438922C55627001F3CC5 /* ClientBuilder.swift */; };
+		AE6F438B22C55627001F3CC5 /* ClientBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F438922C55627001F3CC5 /* ClientBuilder.swift */; };
+		AE6F438D22C556C9001F3CC5 /* SmartySerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F438C22C556C9001F3CC5 /* SmartySerializer.swift */; };
+		AE6F438E22C556C9001F3CC5 /* SmartySerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F438C22C556C9001F3CC5 /* SmartySerializer.swift */; };
+		AE6F439122C55752001F3CC5 /* USZipCodeSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F439022C55752001F3CC5 /* USZipCodeSerializer.swift */; };
+		AE6F439222C55752001F3CC5 /* USZipCodeSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F439022C55752001F3CC5 /* USZipCodeSerializer.swift */; };
+		AE6F439422C557A4001F3CC5 /* USZipCodeLookup.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F439322C557A4001F3CC5 /* USZipCodeLookup.swift */; };
+		AE6F439522C557A4001F3CC5 /* USZipCodeLookup.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F439322C557A4001F3CC5 /* USZipCodeLookup.swift */; };
+		AE6F439722C557D9001F3CC5 /* USZipCodeResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F439622C557D9001F3CC5 /* USZipCodeResult.swift */; };
+		AE6F439822C557D9001F3CC5 /* USZipCodeResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F439622C557D9001F3CC5 /* USZipCodeResult.swift */; };
+		AE6F439A22C558B5001F3CC5 /* USCity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F439922C558B5001F3CC5 /* USCity.swift */; };
+		AE6F439B22C558B5001F3CC5 /* USCity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F439922C558B5001F3CC5 /* USCity.swift */; };
+		AE6F439D22C558EE001F3CC5 /* USZipCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F439C22C558EE001F3CC5 /* USZipCode.swift */; };
+		AE6F439E22C558EE001F3CC5 /* USZipCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F439C22C558EE001F3CC5 /* USZipCode.swift */; };
+		AE6F43A022C55928001F3CC5 /* USAlternateCounties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F439F22C55928001F3CC5 /* USAlternateCounties.swift */; };
+		AE6F43A122C55928001F3CC5 /* USAlternateCounties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F439F22C55928001F3CC5 /* USAlternateCounties.swift */; };
+		AE6F43A322C559AB001F3CC5 /* URLPrefixSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43A222C559AB001F3CC5 /* URLPrefixSender.swift */; };
+		AE6F43A422C559AB001F3CC5 /* URLPrefixSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43A222C559AB001F3CC5 /* URLPrefixSender.swift */; };
+		AE6F43A622C559E4001F3CC5 /* USZipCodeClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43A522C559E4001F3CC5 /* USZipCodeClient.swift */; };
+		AE6F43A722C559E4001F3CC5 /* USZipCodeClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43A522C559E4001F3CC5 /* USZipCodeClient.swift */; };
+		AE6F43A922C55A38001F3CC5 /* USZipCodeBatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43A822C55A38001F3CC5 /* USZipCodeBatch.swift */; };
+		AE6F43AA22C55A38001F3CC5 /* USZipCodeBatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43A822C55A38001F3CC5 /* USZipCodeBatch.swift */; };
+		AE6F43AC22C55A6C001F3CC5 /* SmartyBatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43AB22C55A6C001F3CC5 /* SmartyBatch.swift */; };
+		AE6F43AD22C55A6C001F3CC5 /* SmartyBatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43AB22C55A6C001F3CC5 /* SmartyBatch.swift */; };
+		AE6F43B022C55B58001F3CC5 /* USStreetClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43AF22C55B58001F3CC5 /* USStreetClient.swift */; };
+		AE6F43B122C55B58001F3CC5 /* USStreetClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43AF22C55B58001F3CC5 /* USStreetClient.swift */; };
+		AE6F43B322C55BC0001F3CC5 /* USStreetSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43B222C55BC0001F3CC5 /* USStreetSerializer.swift */; };
+		AE6F43B422C55BC0001F3CC5 /* USStreetSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43B222C55BC0001F3CC5 /* USStreetSerializer.swift */; };
+		AE6F43B622C55C0F001F3CC5 /* USStreetLookup.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43B522C55C0F001F3CC5 /* USStreetLookup.swift */; };
+		AE6F43B722C55C0F001F3CC5 /* USStreetLookup.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43B522C55C0F001F3CC5 /* USStreetLookup.swift */; };
+		AE6F43B922C55C37001F3CC5 /* USStreetCandidate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43B822C55C37001F3CC5 /* USStreetCandidate.swift */; };
+		AE6F43BA22C55C37001F3CC5 /* USStreetCandidate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43B822C55C37001F3CC5 /* USStreetCandidate.swift */; };
+		AE6F43BC22C55C6D001F3CC5 /* USStreetComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43BB22C55C6D001F3CC5 /* USStreetComponents.swift */; };
+		AE6F43BD22C55C6D001F3CC5 /* USStreetComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43BB22C55C6D001F3CC5 /* USStreetComponents.swift */; };
+		AE6F43BF22C55C8E001F3CC5 /* USStreetMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43BE22C55C8E001F3CC5 /* USStreetMetadata.swift */; };
+		AE6F43C022C55C8E001F3CC5 /* USStreetMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43BE22C55C8E001F3CC5 /* USStreetMetadata.swift */; };
+		AE6F43C222C55CC3001F3CC5 /* USStreetAnalysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43C122C55CC3001F3CC5 /* USStreetAnalysis.swift */; };
+		AE6F43C322C55CC3001F3CC5 /* USStreetAnalysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43C122C55CC3001F3CC5 /* USStreetAnalysis.swift */; };
+		AE6F43C522C55CFC001F3CC5 /* USStreetBatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43C422C55CFC001F3CC5 /* USStreetBatch.swift */; };
+		AE6F43C622C55CFC001F3CC5 /* USStreetBatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43C422C55CFC001F3CC5 /* USStreetBatch.swift */; };
+		AE6F43C922C55D88001F3CC5 /* InternationalStreetClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43C822C55D88001F3CC5 /* InternationalStreetClient.swift */; };
+		AE6F43CA22C55D88001F3CC5 /* InternationalStreetClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43C822C55D88001F3CC5 /* InternationalStreetClient.swift */; };
+		AE6F43CC22C55DF3001F3CC5 /* InternationalStreetLookup.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43CB22C55DF3001F3CC5 /* InternationalStreetLookup.swift */; };
+		AE6F43CD22C55DF3001F3CC5 /* InternationalStreetLookup.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43CB22C55DF3001F3CC5 /* InternationalStreetLookup.swift */; };
+		AE6F43CF22C55E40001F3CC5 /* InternationalStreetCandidate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43CE22C55E40001F3CC5 /* InternationalStreetCandidate.swift */; };
+		AE6F43D022C55E40001F3CC5 /* InternationalStreetCandidate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43CE22C55E40001F3CC5 /* InternationalStreetCandidate.swift */; };
+		AE6F43D222C55E6A001F3CC5 /* InternationalStreetComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43D122C55E6A001F3CC5 /* InternationalStreetComponents.swift */; };
+		AE6F43D322C55E6A001F3CC5 /* InternationalStreetComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43D122C55E6A001F3CC5 /* InternationalStreetComponents.swift */; };
+		AE6F43D522C55E98001F3CC5 /* InternationalStreetMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43D422C55E98001F3CC5 /* InternationalStreetMetadata.swift */; };
+		AE6F43D622C55E98001F3CC5 /* InternationalStreetMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43D422C55E98001F3CC5 /* InternationalStreetMetadata.swift */; };
+		AE6F43D822C55EC0001F3CC5 /* InternationalStreetAnalysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43D722C55EC0001F3CC5 /* InternationalStreetAnalysis.swift */; };
+		AE6F43D922C55EC0001F3CC5 /* InternationalStreetAnalysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43D722C55EC0001F3CC5 /* InternationalStreetAnalysis.swift */; };
+		AE6F43DB22C55EE8001F3CC5 /* InternationalStreetChanges.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43DA22C55EE8001F3CC5 /* InternationalStreetChanges.swift */; };
+		AE6F43DC22C55EE8001F3CC5 /* InternationalStreetChanges.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43DA22C55EE8001F3CC5 /* InternationalStreetChanges.swift */; };
+		AE6F43DE22C55F0D001F3CC5 /* InternationalStreetRootLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43DD22C55F0D001F3CC5 /* InternationalStreetRootLevel.swift */; };
+		AE6F43DF22C55F0D001F3CC5 /* InternationalStreetRootLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43DD22C55F0D001F3CC5 /* InternationalStreetRootLevel.swift */; };
+		AE6F43E122C55F50001F3CC5 /* LanguageMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43E022C55F50001F3CC5 /* LanguageMode.swift */; };
+		AE6F43E222C55F50001F3CC5 /* LanguageMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43E022C55F50001F3CC5 /* LanguageMode.swift */; };
+		AE6F43E422C55F73001F3CC5 /* InternationalStreetSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43E322C55F73001F3CC5 /* InternationalStreetSerializer.swift */; };
+		AE6F43E522C55F73001F3CC5 /* InternationalStreetSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43E322C55F73001F3CC5 /* InternationalStreetSerializer.swift */; };
+		AE6F43E822C56094001F3CC5 /* USAutocompleteClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43E722C56094001F3CC5 /* USAutocompleteClient.swift */; };
+		AE6F43E922C56094001F3CC5 /* USAutocompleteClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43E722C56094001F3CC5 /* USAutocompleteClient.swift */; };
+		AE6F43EB22C560CB001F3CC5 /* USAutocompleteLookup.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43EA22C560CB001F3CC5 /* USAutocompleteLookup.swift */; };
+		AE6F43EC22C560CB001F3CC5 /* USAutocompleteLookup.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43EA22C560CB001F3CC5 /* USAutocompleteLookup.swift */; };
+		AE6F43EE22C560F1001F3CC5 /* USAutocompleteResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43ED22C560F1001F3CC5 /* USAutocompleteResult.swift */; };
+		AE6F43EF22C560F1001F3CC5 /* USAutocompleteResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43ED22C560F1001F3CC5 /* USAutocompleteResult.swift */; };
+		AE6F43F122C56111001F3CC5 /* USAutocompleteSuggestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43F022C56111001F3CC5 /* USAutocompleteSuggestion.swift */; };
+		AE6F43F222C56111001F3CC5 /* USAutocompleteSuggestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43F022C56111001F3CC5 /* USAutocompleteSuggestion.swift */; };
+		AE6F43F422C5614E001F3CC5 /* USAutocompleteSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43F322C5614E001F3CC5 /* USAutocompleteSerializer.swift */; };
+		AE6F43F522C5614E001F3CC5 /* USAutocompleteSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43F322C5614E001F3CC5 /* USAutocompleteSerializer.swift */; };
+		AE6F43F722C56165001F3CC5 /* GeolocateType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43F622C56165001F3CC5 /* GeolocateType.swift */; };
+		AE6F43F822C56165001F3CC5 /* GeolocateType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43F622C56165001F3CC5 /* GeolocateType.swift */; };
+		AE6F43FB22C561A1001F3CC5 /* USExtractClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43FA22C561A1001F3CC5 /* USExtractClient.swift */; };
+		AE6F43FC22C561A1001F3CC5 /* USExtractClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43FA22C561A1001F3CC5 /* USExtractClient.swift */; };
+		AE6F43FE22C561CC001F3CC5 /* USExtractLookup.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43FD22C561CC001F3CC5 /* USExtractLookup.swift */; };
+		AE6F43FF22C561CC001F3CC5 /* USExtractLookup.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43FD22C561CC001F3CC5 /* USExtractLookup.swift */; };
+		AE6F440122C561E6001F3CC5 /* USExtractResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F440022C561E6001F3CC5 /* USExtractResult.swift */; };
+		AE6F440222C561E6001F3CC5 /* USExtractResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F440022C561E6001F3CC5 /* USExtractResult.swift */; };
+		AE6F440422C56206001F3CC5 /* USExtractMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F440322C56206001F3CC5 /* USExtractMetadata.swift */; };
+		AE6F440522C56206001F3CC5 /* USExtractMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F440322C56206001F3CC5 /* USExtractMetadata.swift */; };
+		AE6F440722C56223001F3CC5 /* USExtractAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F440622C56222001F3CC5 /* USExtractAddress.swift */; };
+		AE6F440822C56223001F3CC5 /* USExtractAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F440622C56222001F3CC5 /* USExtractAddress.swift */; };
+		AE6F440A22C5624E001F3CC5 /* USExtractSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F440922C5624E001F3CC5 /* USExtractSerializer.swift */; };
+		AE6F440B22C5624E001F3CC5 /* USExtractSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F440922C5624E001F3CC5 /* USExtractSerializer.swift */; };
+		AE6F440D22C56472001F3CC5 /* SmartyRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F440C22C56472001F3CC5 /* SmartyRequestTests.swift */; };
+		AE6F440F22C5650E001F3CC5 /* SerializerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F440E22C5650E001F3CC5 /* SerializerTests.swift */; };
+		AE6F441222C5662A001F3CC5 /* InternationalStreetClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F441122C5662A001F3CC5 /* InternationalStreetClientTests.swift */; };
+		AE6F441522C56667001F3CC5 /* RequestCapturingSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F441322C56667001F3CC5 /* RequestCapturingSender.swift */; };
+		AE6F441722C568A4001F3CC5 /* InternationalStreetCandidateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F441622C568A4001F3CC5 /* InternationalStreetCandidateTests.swift */; };
+		AE6F441A22C569BD001F3CC5 /* USAutocompleteClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F441922C569BD001F3CC5 /* USAutocompleteClientTests.swift */; };
+		AE6F441D22C56A0E001F3CC5 /* MockSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F441B22C56A0E001F3CC5 /* MockSerializer.swift */; };
+		AE6F441F22C56AA4001F3CC5 /* USAutocompleteResultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F441E22C56AA4001F3CC5 /* USAutocompleteResultTests.swift */; };
+		AE6F442222C56B45001F3CC5 /* USExtractClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F442122C56B45001F3CC5 /* USExtractClientTests.swift */; };
+		AE6F442422C56BCD001F3CC5 /* USExtractResultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F442322C56BCD001F3CC5 /* USExtractResultTests.swift */; };
+		AE6F442722C56C44001F3CC5 /* USStreetClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F442622C56C44001F3CC5 /* USStreetClientTests.swift */; };
+		AE6F442922C56CA5001F3CC5 /* USStreetCandidateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F442822C56CA5001F3CC5 /* USStreetCandidateTests.swift */; };
+		AE6F442C22C56DC6001F3CC5 /* USZipCodeClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F442B22C56DC6001F3CC5 /* USZipCodeClientTests.swift */; };
+		AE6F442E22C56E3D001F3CC5 /* USZipCodeResultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F442D22C56E3D001F3CC5 /* USZipCodeResultTests.swift */; };
+		AE6F443022C56EDF001F3CC5 /* USZipCodeBatchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F442F22C56EDF001F3CC5 /* USZipCodeBatchTests.swift */; };
+		OBJ_22 /* smartystreets_ios_sdk.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* smartystreets_ios_sdk.swift */; };
+		OBJ_29 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
+		OBJ_40 /* XCTestManifests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* XCTestManifests.swift */; };
+		OBJ_41 /* smartystreets_ios_sdkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* smartystreets_ios_sdkTests.swift */; };
+		OBJ_43 /* smartystreets_ios_sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "smartystreets-ios-sdk::smartystreets-ios-sdk::Product" /* smartystreets_ios_sdk.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AE6F434022C533F7001F3CC5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "smartystreets-ios-sdk::smartystreets-ios-sdk";
+			remoteInfo = "smartystreets-ios-sdk";
+		};
+		AE6F434122C533F8001F3CC5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "smartystreets-ios-sdk::smartystreets-ios-sdkTests";
+			remoteInfo = "smartystreets-ios-sdkTests";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AE6F434222C53447001F3CC5 /* StatusCodeSenderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCodeSenderTests.swift; sourceTree = "<group>"; };
+		AE6F434522C534B7001F3CC5 /* MockStatusCodeSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockStatusCodeSender.swift; sourceTree = "<group>"; };
+		AE6F434822C5356C001F3CC5 /* StatusCodeSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCodeSender.swift; sourceTree = "<group>"; };
+		AE6F434A22C535C0001F3CC5 /* SmartySender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartySender.swift; sourceTree = "<group>"; };
+		AE6F434C22C53648001F3CC5 /* SmartyRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartyRequest.swift; sourceTree = "<group>"; };
+		AE6F434E22C536DD001F3CC5 /* SmartyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartyResponse.swift; sourceTree = "<group>"; };
+		AE6F435022C537A5001F3CC5 /* SmartyErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartyErrors.swift; sourceTree = "<group>"; };
+		AE6F435722C53A98001F3CC5 /* SmartyResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartyResponseTests.swift; sourceTree = "<group>"; };
+		AE6F435922C53B16001F3CC5 /* SigningSenderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigningSenderTests.swift; sourceTree = "<group>"; };
+		AE6F435B22C53B82001F3CC5 /* MockSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSender.swift; sourceTree = "<group>"; };
+		AE6F435E22C53BE0001F3CC5 /* SmartyCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartyCredentials.swift; sourceTree = "<group>"; };
+		AE6F436122C53C1D001F3CC5 /* StaticCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticCredentials.swift; sourceTree = "<group>"; };
+		AE6F436422C53C66001F3CC5 /* SigningSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigningSender.swift; sourceTree = "<group>"; };
+		AE6F436722C53D69001F3CC5 /* SmartySenderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartySenderTests.swift; sourceTree = "<group>"; };
+		AE6F436922C53DD2001F3CC5 /* HttpSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpSender.swift; sourceTree = "<group>"; };
+		AE6F436C22C53E46001F3CC5 /* Version.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
+		AE6F436F22C5508D001F3CC5 /* RetrySenderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrySenderTests.swift; sourceTree = "<group>"; };
+		AE6F437122C550F5001F3CC5 /* MockCrashingSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCrashingSender.swift; sourceTree = "<group>"; };
+		AE6F437322C5515D001F3CC5 /* MockLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLogger.swift; sourceTree = "<group>"; };
+		AE6F437622C55243001F3CC5 /* SmartyLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartyLogger.swift; sourceTree = "<group>"; };
+		AE6F437922C552F3001F3CC5 /* MockSleeper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSleeper.swift; sourceTree = "<group>"; };
+		AE6F437C22C55364001F3CC5 /* SmartySleeper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartySleeper.swift; sourceTree = "<group>"; };
+		AE6F437F22C553F5001F3CC5 /* RetrySender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrySender.swift; sourceTree = "<group>"; };
+		AE6F438222C554BE001F3CC5 /* SmartyCredentialsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartyCredentialsTests.swift; sourceTree = "<group>"; };
+		AE6F438422C55513001F3CC5 /* SharedCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedCredentials.swift; sourceTree = "<group>"; };
+		AE6F438722C555A9001F3CC5 /* ClientBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientBuilderTests.swift; sourceTree = "<group>"; };
+		AE6F438922C55627001F3CC5 /* ClientBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientBuilder.swift; sourceTree = "<group>"; };
+		AE6F438C22C556C9001F3CC5 /* SmartySerializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartySerializer.swift; sourceTree = "<group>"; };
+		AE6F439022C55752001F3CC5 /* USZipCodeSerializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USZipCodeSerializer.swift; sourceTree = "<group>"; };
+		AE6F439322C557A4001F3CC5 /* USZipCodeLookup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USZipCodeLookup.swift; sourceTree = "<group>"; };
+		AE6F439622C557D9001F3CC5 /* USZipCodeResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USZipCodeResult.swift; sourceTree = "<group>"; };
+		AE6F439922C558B5001F3CC5 /* USCity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USCity.swift; sourceTree = "<group>"; };
+		AE6F439C22C558EE001F3CC5 /* USZipCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USZipCode.swift; sourceTree = "<group>"; };
+		AE6F439F22C55928001F3CC5 /* USAlternateCounties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USAlternateCounties.swift; sourceTree = "<group>"; };
+		AE6F43A222C559AB001F3CC5 /* URLPrefixSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLPrefixSender.swift; sourceTree = "<group>"; };
+		AE6F43A522C559E4001F3CC5 /* USZipCodeClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USZipCodeClient.swift; sourceTree = "<group>"; };
+		AE6F43A822C55A38001F3CC5 /* USZipCodeBatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USZipCodeBatch.swift; sourceTree = "<group>"; };
+		AE6F43AB22C55A6C001F3CC5 /* SmartyBatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartyBatch.swift; sourceTree = "<group>"; };
+		AE6F43AF22C55B58001F3CC5 /* USStreetClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USStreetClient.swift; sourceTree = "<group>"; };
+		AE6F43B222C55BC0001F3CC5 /* USStreetSerializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USStreetSerializer.swift; sourceTree = "<group>"; };
+		AE6F43B522C55C0F001F3CC5 /* USStreetLookup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USStreetLookup.swift; sourceTree = "<group>"; };
+		AE6F43B822C55C37001F3CC5 /* USStreetCandidate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USStreetCandidate.swift; sourceTree = "<group>"; };
+		AE6F43BB22C55C6D001F3CC5 /* USStreetComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USStreetComponents.swift; sourceTree = "<group>"; };
+		AE6F43BE22C55C8E001F3CC5 /* USStreetMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USStreetMetadata.swift; sourceTree = "<group>"; };
+		AE6F43C122C55CC3001F3CC5 /* USStreetAnalysis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USStreetAnalysis.swift; sourceTree = "<group>"; };
+		AE6F43C422C55CFC001F3CC5 /* USStreetBatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USStreetBatch.swift; sourceTree = "<group>"; };
+		AE6F43C822C55D88001F3CC5 /* InternationalStreetClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternationalStreetClient.swift; sourceTree = "<group>"; };
+		AE6F43CB22C55DF3001F3CC5 /* InternationalStreetLookup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternationalStreetLookup.swift; sourceTree = "<group>"; };
+		AE6F43CE22C55E40001F3CC5 /* InternationalStreetCandidate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternationalStreetCandidate.swift; sourceTree = "<group>"; };
+		AE6F43D122C55E6A001F3CC5 /* InternationalStreetComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternationalStreetComponents.swift; sourceTree = "<group>"; };
+		AE6F43D422C55E98001F3CC5 /* InternationalStreetMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternationalStreetMetadata.swift; sourceTree = "<group>"; };
+		AE6F43D722C55EC0001F3CC5 /* InternationalStreetAnalysis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternationalStreetAnalysis.swift; sourceTree = "<group>"; };
+		AE6F43DA22C55EE8001F3CC5 /* InternationalStreetChanges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternationalStreetChanges.swift; sourceTree = "<group>"; };
+		AE6F43DD22C55F0D001F3CC5 /* InternationalStreetRootLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternationalStreetRootLevel.swift; sourceTree = "<group>"; };
+		AE6F43E022C55F50001F3CC5 /* LanguageMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageMode.swift; sourceTree = "<group>"; };
+		AE6F43E322C55F73001F3CC5 /* InternationalStreetSerializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternationalStreetSerializer.swift; sourceTree = "<group>"; };
+		AE6F43E722C56094001F3CC5 /* USAutocompleteClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USAutocompleteClient.swift; sourceTree = "<group>"; };
+		AE6F43EA22C560CB001F3CC5 /* USAutocompleteLookup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USAutocompleteLookup.swift; sourceTree = "<group>"; };
+		AE6F43ED22C560F1001F3CC5 /* USAutocompleteResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USAutocompleteResult.swift; sourceTree = "<group>"; };
+		AE6F43F022C56111001F3CC5 /* USAutocompleteSuggestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USAutocompleteSuggestion.swift; sourceTree = "<group>"; };
+		AE6F43F322C5614E001F3CC5 /* USAutocompleteSerializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USAutocompleteSerializer.swift; sourceTree = "<group>"; };
+		AE6F43F622C56165001F3CC5 /* GeolocateType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeolocateType.swift; sourceTree = "<group>"; };
+		AE6F43FA22C561A1001F3CC5 /* USExtractClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USExtractClient.swift; sourceTree = "<group>"; };
+		AE6F43FD22C561CC001F3CC5 /* USExtractLookup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USExtractLookup.swift; sourceTree = "<group>"; };
+		AE6F440022C561E6001F3CC5 /* USExtractResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USExtractResult.swift; sourceTree = "<group>"; };
+		AE6F440322C56206001F3CC5 /* USExtractMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USExtractMetadata.swift; sourceTree = "<group>"; };
+		AE6F440622C56222001F3CC5 /* USExtractAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USExtractAddress.swift; sourceTree = "<group>"; };
+		AE6F440922C5624E001F3CC5 /* USExtractSerializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USExtractSerializer.swift; sourceTree = "<group>"; };
+		AE6F440C22C56472001F3CC5 /* SmartyRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartyRequestTests.swift; sourceTree = "<group>"; };
+		AE6F440E22C5650E001F3CC5 /* SerializerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerializerTests.swift; sourceTree = "<group>"; };
+		AE6F441122C5662A001F3CC5 /* InternationalStreetClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternationalStreetClientTests.swift; sourceTree = "<group>"; };
+		AE6F441322C56667001F3CC5 /* RequestCapturingSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestCapturingSender.swift; sourceTree = "<group>"; };
+		AE6F441622C568A4001F3CC5 /* InternationalStreetCandidateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternationalStreetCandidateTests.swift; sourceTree = "<group>"; };
+		AE6F441922C569BD001F3CC5 /* USAutocompleteClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USAutocompleteClientTests.swift; sourceTree = "<group>"; };
+		AE6F441B22C56A0E001F3CC5 /* MockSerializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSerializer.swift; sourceTree = "<group>"; };
+		AE6F441E22C56AA4001F3CC5 /* USAutocompleteResultTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USAutocompleteResultTests.swift; sourceTree = "<group>"; };
+		AE6F442122C56B45001F3CC5 /* USExtractClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USExtractClientTests.swift; sourceTree = "<group>"; };
+		AE6F442322C56BCD001F3CC5 /* USExtractResultTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USExtractResultTests.swift; sourceTree = "<group>"; };
+		AE6F442622C56C44001F3CC5 /* USStreetClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USStreetClientTests.swift; sourceTree = "<group>"; };
+		AE6F442822C56CA5001F3CC5 /* USStreetCandidateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USStreetCandidateTests.swift; sourceTree = "<group>"; };
+		AE6F442B22C56DC6001F3CC5 /* USZipCodeClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USZipCodeClientTests.swift; sourceTree = "<group>"; };
+		AE6F442D22C56E3D001F3CC5 /* USZipCodeResultTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USZipCodeResultTests.swift; sourceTree = "<group>"; };
+		AE6F442F22C56EDF001F3CC5 /* USZipCodeBatchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USZipCodeBatchTests.swift; sourceTree = "<group>"; };
+		OBJ_12 /* XCTestManifests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
+		OBJ_13 /* smartystreets_ios_sdkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = smartystreets_ios_sdkTests.swift; sourceTree = "<group>"; };
+		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		OBJ_9 /* smartystreets_ios_sdk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = smartystreets_ios_sdk.swift; sourceTree = "<group>"; };
+		"smartystreets-ios-sdk::smartystreets-ios-sdk::Product" /* smartystreets_ios_sdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = smartystreets_ios_sdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"smartystreets-ios-sdk::smartystreets-ios-sdkTests::Product" /* smartystreets_ios_sdkTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; name = smartystreets_ios_sdkTests.xctest; path = "smartystreets-ios-sdkTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		OBJ_23 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_42 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_43 /* smartystreets_ios_sdk.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AE6F434422C534AD001F3CC5 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				AE6F434522C534B7001F3CC5 /* MockStatusCodeSender.swift */,
+				AE6F435B22C53B82001F3CC5 /* MockSender.swift */,
+				AE6F437122C550F5001F3CC5 /* MockCrashingSender.swift */,
+				AE6F437322C5515D001F3CC5 /* MockLogger.swift */,
+				AE6F437922C552F3001F3CC5 /* MockSleeper.swift */,
+				AE6F441322C56667001F3CC5 /* RequestCapturingSender.swift */,
+				AE6F441B22C56A0E001F3CC5 /* MockSerializer.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		AE6F438F22C55738001F3CC5 /* USZipCode */ = {
+			isa = PBXGroup;
+			children = (
+				AE6F439022C55752001F3CC5 /* USZipCodeSerializer.swift */,
+				AE6F439322C557A4001F3CC5 /* USZipCodeLookup.swift */,
+				AE6F439622C557D9001F3CC5 /* USZipCodeResult.swift */,
+				AE6F439922C558B5001F3CC5 /* USCity.swift */,
+				AE6F439C22C558EE001F3CC5 /* USZipCode.swift */,
+				AE6F439F22C55928001F3CC5 /* USAlternateCounties.swift */,
+				AE6F43A522C559E4001F3CC5 /* USZipCodeClient.swift */,
+				AE6F43A822C55A38001F3CC5 /* USZipCodeBatch.swift */,
+			);
+			path = USZipCode;
+			sourceTree = "<group>";
+		};
+		AE6F43AE22C55B44001F3CC5 /* USStreet */ = {
+			isa = PBXGroup;
+			children = (
+				AE6F43AF22C55B58001F3CC5 /* USStreetClient.swift */,
+				AE6F43B222C55BC0001F3CC5 /* USStreetSerializer.swift */,
+				AE6F43B522C55C0F001F3CC5 /* USStreetLookup.swift */,
+				AE6F43B822C55C37001F3CC5 /* USStreetCandidate.swift */,
+				AE6F43BB22C55C6D001F3CC5 /* USStreetComponents.swift */,
+				AE6F43BE22C55C8E001F3CC5 /* USStreetMetadata.swift */,
+				AE6F43C122C55CC3001F3CC5 /* USStreetAnalysis.swift */,
+				AE6F43C422C55CFC001F3CC5 /* USStreetBatch.swift */,
+			);
+			path = USStreet;
+			sourceTree = "<group>";
+		};
+		AE6F43C722C55D63001F3CC5 /* InternationalStreet */ = {
+			isa = PBXGroup;
+			children = (
+				AE6F43C822C55D88001F3CC5 /* InternationalStreetClient.swift */,
+				AE6F43CB22C55DF3001F3CC5 /* InternationalStreetLookup.swift */,
+				AE6F43CE22C55E40001F3CC5 /* InternationalStreetCandidate.swift */,
+				AE6F43D122C55E6A001F3CC5 /* InternationalStreetComponents.swift */,
+				AE6F43D422C55E98001F3CC5 /* InternationalStreetMetadata.swift */,
+				AE6F43D722C55EC0001F3CC5 /* InternationalStreetAnalysis.swift */,
+				AE6F43DA22C55EE8001F3CC5 /* InternationalStreetChanges.swift */,
+				AE6F43DD22C55F0D001F3CC5 /* InternationalStreetRootLevel.swift */,
+				AE6F43E022C55F50001F3CC5 /* LanguageMode.swift */,
+				AE6F43E322C55F73001F3CC5 /* InternationalStreetSerializer.swift */,
+			);
+			path = InternationalStreet;
+			sourceTree = "<group>";
+		};
+		AE6F43E622C5607E001F3CC5 /* USAutocomplete */ = {
+			isa = PBXGroup;
+			children = (
+				AE6F43E722C56094001F3CC5 /* USAutocompleteClient.swift */,
+				AE6F43EA22C560CB001F3CC5 /* USAutocompleteLookup.swift */,
+				AE6F43ED22C560F1001F3CC5 /* USAutocompleteResult.swift */,
+				AE6F43F022C56111001F3CC5 /* USAutocompleteSuggestion.swift */,
+				AE6F43F322C5614E001F3CC5 /* USAutocompleteSerializer.swift */,
+				AE6F43F622C56165001F3CC5 /* GeolocateType.swift */,
+			);
+			path = USAutocomplete;
+			sourceTree = "<group>";
+		};
+		AE6F43F922C56190001F3CC5 /* USExtract */ = {
+			isa = PBXGroup;
+			children = (
+				AE6F43FA22C561A1001F3CC5 /* USExtractClient.swift */,
+				AE6F43FD22C561CC001F3CC5 /* USExtractLookup.swift */,
+				AE6F440022C561E6001F3CC5 /* USExtractResult.swift */,
+				AE6F440322C56206001F3CC5 /* USExtractMetadata.swift */,
+				AE6F440622C56222001F3CC5 /* USExtractAddress.swift */,
+				AE6F440922C5624E001F3CC5 /* USExtractSerializer.swift */,
+			);
+			path = USExtract;
+			sourceTree = "<group>";
+		};
+		AE6F441022C56602001F3CC5 /* InternationalStreetTests */ = {
+			isa = PBXGroup;
+			children = (
+				AE6F441122C5662A001F3CC5 /* InternationalStreetClientTests.swift */,
+				AE6F441622C568A4001F3CC5 /* InternationalStreetCandidateTests.swift */,
+			);
+			path = InternationalStreetTests;
+			sourceTree = "<group>";
+		};
+		AE6F441822C5697C001F3CC5 /* USAutocompleteTests */ = {
+			isa = PBXGroup;
+			children = (
+				AE6F441922C569BD001F3CC5 /* USAutocompleteClientTests.swift */,
+				AE6F441E22C56AA4001F3CC5 /* USAutocompleteResultTests.swift */,
+			);
+			path = USAutocompleteTests;
+			sourceTree = "<group>";
+		};
+		AE6F442022C56B29001F3CC5 /* USExtractTests */ = {
+			isa = PBXGroup;
+			children = (
+				AE6F442122C56B45001F3CC5 /* USExtractClientTests.swift */,
+				AE6F442322C56BCD001F3CC5 /* USExtractResultTests.swift */,
+			);
+			path = USExtractTests;
+			sourceTree = "<group>";
+		};
+		AE6F442522C56C31001F3CC5 /* USStreetTests */ = {
+			isa = PBXGroup;
+			children = (
+				AE6F442622C56C44001F3CC5 /* USStreetClientTests.swift */,
+				AE6F442822C56CA5001F3CC5 /* USStreetCandidateTests.swift */,
+			);
+			path = USStreetTests;
+			sourceTree = "<group>";
+		};
+		AE6F442A22C56DB0001F3CC5 /* USZipCodeTests */ = {
+			isa = PBXGroup;
+			children = (
+				AE6F442B22C56DC6001F3CC5 /* USZipCodeClientTests.swift */,
+				AE6F442D22C56E3D001F3CC5 /* USZipCodeResultTests.swift */,
+				AE6F442F22C56EDF001F3CC5 /* USZipCodeBatchTests.swift */,
+			);
+			path = USZipCodeTests;
+			sourceTree = "<group>";
+		};
+		OBJ_10 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_11 /* smartystreets-ios-sdkTests */,
+			);
+			name = Tests;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_11 /* smartystreets-ios-sdkTests */ = {
+			isa = PBXGroup;
+			children = (
+				AE6F442A22C56DB0001F3CC5 /* USZipCodeTests */,
+				AE6F442522C56C31001F3CC5 /* USStreetTests */,
+				AE6F442022C56B29001F3CC5 /* USExtractTests */,
+				AE6F441822C5697C001F3CC5 /* USAutocompleteTests */,
+				AE6F441022C56602001F3CC5 /* InternationalStreetTests */,
+				AE6F434422C534AD001F3CC5 /* Mocks */,
+				OBJ_12 /* XCTestManifests.swift */,
+				OBJ_13 /* smartystreets_ios_sdkTests.swift */,
+				AE6F434222C53447001F3CC5 /* StatusCodeSenderTests.swift */,
+				AE6F435722C53A98001F3CC5 /* SmartyResponseTests.swift */,
+				AE6F435922C53B16001F3CC5 /* SigningSenderTests.swift */,
+				AE6F436722C53D69001F3CC5 /* SmartySenderTests.swift */,
+				AE6F436F22C5508D001F3CC5 /* RetrySenderTests.swift */,
+				AE6F438222C554BE001F3CC5 /* SmartyCredentialsTests.swift */,
+				AE6F438722C555A9001F3CC5 /* ClientBuilderTests.swift */,
+				AE6F440C22C56472001F3CC5 /* SmartyRequestTests.swift */,
+				AE6F440E22C5650E001F3CC5 /* SerializerTests.swift */,
+			);
+			name = "smartystreets-ios-sdkTests";
+			path = "Tests/smartystreets-ios-sdkTests";
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_14 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				"smartystreets-ios-sdk::smartystreets-ios-sdk::Product" /* smartystreets_ios_sdk.framework */,
+				"smartystreets-ios-sdk::smartystreets-ios-sdkTests::Product" /* smartystreets_ios_sdkTests.xctest */,
+			);
+			name = Products;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		OBJ_5 /*  */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_6 /* Package.swift */,
+				OBJ_7 /* Sources */,
+				OBJ_10 /* Tests */,
+				OBJ_14 /* Products */,
+			);
+			name = "";
+			sourceTree = "<group>";
+		};
+		OBJ_7 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_8 /* smartystreets-ios-sdk */,
+			);
+			name = Sources;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_8 /* smartystreets-ios-sdk */ = {
+			isa = PBXGroup;
+			children = (
+				AE6F43F922C56190001F3CC5 /* USExtract */,
+				AE6F43E622C5607E001F3CC5 /* USAutocomplete */,
+				AE6F43C722C55D63001F3CC5 /* InternationalStreet */,
+				AE6F43AE22C55B44001F3CC5 /* USStreet */,
+				AE6F438F22C55738001F3CC5 /* USZipCode */,
+				OBJ_9 /* smartystreets_ios_sdk.swift */,
+				AE6F434822C5356C001F3CC5 /* StatusCodeSender.swift */,
+				AE6F434A22C535C0001F3CC5 /* SmartySender.swift */,
+				AE6F434C22C53648001F3CC5 /* SmartyRequest.swift */,
+				AE6F434E22C536DD001F3CC5 /* SmartyResponse.swift */,
+				AE6F435022C537A5001F3CC5 /* SmartyErrors.swift */,
+				AE6F435E22C53BE0001F3CC5 /* SmartyCredentials.swift */,
+				AE6F436122C53C1D001F3CC5 /* StaticCredentials.swift */,
+				AE6F436422C53C66001F3CC5 /* SigningSender.swift */,
+				AE6F436922C53DD2001F3CC5 /* HttpSender.swift */,
+				AE6F436C22C53E46001F3CC5 /* Version.swift */,
+				AE6F437622C55243001F3CC5 /* SmartyLogger.swift */,
+				AE6F437C22C55364001F3CC5 /* SmartySleeper.swift */,
+				AE6F437F22C553F5001F3CC5 /* RetrySender.swift */,
+				AE6F438422C55513001F3CC5 /* SharedCredentials.swift */,
+				AE6F438922C55627001F3CC5 /* ClientBuilder.swift */,
+				AE6F438C22C556C9001F3CC5 /* SmartySerializer.swift */,
+				AE6F43A222C559AB001F3CC5 /* URLPrefixSender.swift */,
+				AE6F43AB22C55A6C001F3CC5 /* SmartyBatch.swift */,
+			);
+			name = "smartystreets-ios-sdk";
+			path = "Sources/smartystreets-ios-sdk";
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		"smartystreets-ios-sdk::SwiftPMPackageDescription" /* smartystreets-ios-sdkPackageDescription */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_25 /* Build configuration list for PBXNativeTarget "smartystreets-ios-sdkPackageDescription" */;
+			buildPhases = (
+				OBJ_28 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "smartystreets-ios-sdkPackageDescription";
+			productName = "smartystreets-ios-sdkPackageDescription";
+			productType = "com.apple.product-type.framework";
+		};
+		"smartystreets-ios-sdk::smartystreets-ios-sdk" /* smartystreets-ios-sdk */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_18 /* Build configuration list for PBXNativeTarget "smartystreets-ios-sdk" */;
+			buildPhases = (
+				OBJ_21 /* Sources */,
+				OBJ_23 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "smartystreets-ios-sdk";
+			productName = smartystreets_ios_sdk;
+			productReference = "smartystreets-ios-sdk::smartystreets-ios-sdk::Product" /* smartystreets_ios_sdk.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		"smartystreets-ios-sdk::smartystreets-ios-sdkTests" /* smartystreets-ios-sdkTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_36 /* Build configuration list for PBXNativeTarget "smartystreets-ios-sdkTests" */;
+			buildPhases = (
+				OBJ_39 /* Sources */,
+				OBJ_42 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				OBJ_44 /* PBXTargetDependency */,
+			);
+			name = "smartystreets-ios-sdkTests";
+			productName = smartystreets_ios_sdkTests;
+			productReference = "smartystreets-ios-sdk::smartystreets-ios-sdkTests::Product" /* smartystreets_ios_sdkTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		OBJ_1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftMigration = 9999;
+				LastUpgradeCheck = 9999;
+			};
+			buildConfigurationList = OBJ_2 /* Build configuration list for PBXProject "smartystreets-ios-sdk" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				English,
+				en,
+			);
+			mainGroup = OBJ_5 /*  */;
+			productRefGroup = OBJ_14 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				"smartystreets-ios-sdk::smartystreets-ios-sdk" /* smartystreets-ios-sdk */,
+				"smartystreets-ios-sdk::SwiftPMPackageDescription" /* smartystreets-ios-sdkPackageDescription */,
+				"smartystreets-ios-sdk::smartystreets-ios-sdkPackageTests::ProductTarget" /* smartystreets-ios-sdkPackageTests */,
+				"smartystreets-ios-sdk::smartystreets-ios-sdkTests" /* smartystreets-ios-sdkTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		OBJ_21 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				AE6F43A622C559E4001F3CC5 /* USZipCodeClient.swift in Sources */,
+				AE6F43FE22C561CC001F3CC5 /* USExtractLookup.swift in Sources */,
+				AE6F43E422C55F73001F3CC5 /* InternationalStreetSerializer.swift in Sources */,
+				AE6F43B022C55B58001F3CC5 /* USStreetClient.swift in Sources */,
+				AE6F43F122C56111001F3CC5 /* USAutocompleteSuggestion.swift in Sources */,
+				AE6F439122C55752001F3CC5 /* USZipCodeSerializer.swift in Sources */,
+				AE6F43D222C55E6A001F3CC5 /* InternationalStreetComponents.swift in Sources */,
+				AE6F43DB22C55EE8001F3CC5 /* InternationalStreetChanges.swift in Sources */,
+				AE6F437D22C55364001F3CC5 /* SmartySleeper.swift in Sources */,
+				AE6F43C922C55D88001F3CC5 /* InternationalStreetClient.swift in Sources */,
+				AE6F438022C553F5001F3CC5 /* RetrySender.swift in Sources */,
+				AE6F43AC22C55A6C001F3CC5 /* SmartyBatch.swift in Sources */,
+				AE6F43CC22C55DF3001F3CC5 /* InternationalStreetLookup.swift in Sources */,
+				AE6F43F722C56165001F3CC5 /* GeolocateType.swift in Sources */,
+				AE6F43B322C55BC0001F3CC5 /* USStreetSerializer.swift in Sources */,
+				AE6F436A22C53DD2001F3CC5 /* HttpSender.swift in Sources */,
+				AE6F440422C56206001F3CC5 /* USExtractMetadata.swift in Sources */,
+				AE6F436222C53C1D001F3CC5 /* StaticCredentials.swift in Sources */,
+				AE6F43EE22C560F1001F3CC5 /* USAutocompleteResult.swift in Sources */,
+				AE6F438A22C55627001F3CC5 /* ClientBuilder.swift in Sources */,
+				AE6F434B22C535C0001F3CC5 /* SmartySender.swift in Sources */,
+				OBJ_22 /* smartystreets_ios_sdk.swift in Sources */,
+				AE6F43A022C55928001F3CC5 /* USAlternateCounties.swift in Sources */,
+				AE6F435122C537A5001F3CC5 /* SmartyErrors.swift in Sources */,
+				AE6F43B922C55C37001F3CC5 /* USStreetCandidate.swift in Sources */,
+				AE6F43A922C55A38001F3CC5 /* USZipCodeBatch.swift in Sources */,
+				AE6F440A22C5624E001F3CC5 /* USExtractSerializer.swift in Sources */,
+				AE6F435F22C53BE0001F3CC5 /* SmartyCredentials.swift in Sources */,
+				AE6F43D522C55E98001F3CC5 /* InternationalStreetMetadata.swift in Sources */,
+				AE6F43DE22C55F0D001F3CC5 /* InternationalStreetRootLevel.swift in Sources */,
+				AE6F43D822C55EC0001F3CC5 /* InternationalStreetAnalysis.swift in Sources */,
+				AE6F43B622C55C0F001F3CC5 /* USStreetLookup.swift in Sources */,
+				AE6F438D22C556C9001F3CC5 /* SmartySerializer.swift in Sources */,
+				AE6F43E122C55F50001F3CC5 /* LanguageMode.swift in Sources */,
+				AE6F434922C5356C001F3CC5 /* StatusCodeSender.swift in Sources */,
+				AE6F440722C56223001F3CC5 /* USExtractAddress.swift in Sources */,
+				AE6F436522C53C66001F3CC5 /* SigningSender.swift in Sources */,
+				AE6F440122C561E6001F3CC5 /* USExtractResult.swift in Sources */,
+				AE6F439722C557D9001F3CC5 /* USZipCodeResult.swift in Sources */,
+				AE6F43BF22C55C8E001F3CC5 /* USStreetMetadata.swift in Sources */,
+				AE6F43E822C56094001F3CC5 /* USAutocompleteClient.swift in Sources */,
+				AE6F438522C55513001F3CC5 /* SharedCredentials.swift in Sources */,
+				AE6F434F22C536DD001F3CC5 /* SmartyResponse.swift in Sources */,
+				AE6F43FB22C561A1001F3CC5 /* USExtractClient.swift in Sources */,
+				AE6F43BC22C55C6D001F3CC5 /* USStreetComponents.swift in Sources */,
+				AE6F437722C55243001F3CC5 /* SmartyLogger.swift in Sources */,
+				AE6F43CF22C55E40001F3CC5 /* InternationalStreetCandidate.swift in Sources */,
+				AE6F43A322C559AB001F3CC5 /* URLPrefixSender.swift in Sources */,
+				AE6F439422C557A4001F3CC5 /* USZipCodeLookup.swift in Sources */,
+				AE6F43EB22C560CB001F3CC5 /* USAutocompleteLookup.swift in Sources */,
+				AE6F434D22C53648001F3CC5 /* SmartyRequest.swift in Sources */,
+				AE6F43C222C55CC3001F3CC5 /* USStreetAnalysis.swift in Sources */,
+				AE6F439A22C558B5001F3CC5 /* USCity.swift in Sources */,
+				AE6F439D22C558EE001F3CC5 /* USZipCode.swift in Sources */,
+				AE6F43F422C5614E001F3CC5 /* USAutocompleteSerializer.swift in Sources */,
+				AE6F436D22C53E46001F3CC5 /* Version.swift in Sources */,
+				AE6F43C522C55CFC001F3CC5 /* USStreetBatch.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_28 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_29 /* Package.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_39 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				AE6F439522C557A4001F3CC5 /* USZipCodeLookup.swift in Sources */,
+				AE6F440B22C5624E001F3CC5 /* USExtractSerializer.swift in Sources */,
+				AE6F43EC22C560CB001F3CC5 /* USAutocompleteLookup.swift in Sources */,
+				AE6F436622C53C66001F3CC5 /* SigningSender.swift in Sources */,
+				AE6F43B122C55B58001F3CC5 /* USStreetClient.swift in Sources */,
+				AE6F43D322C55E6A001F3CC5 /* InternationalStreetComponents.swift in Sources */,
+				AE6F435822C53A98001F3CC5 /* SmartyResponseTests.swift in Sources */,
+				AE6F439222C55752001F3CC5 /* USZipCodeSerializer.swift in Sources */,
+				AE6F436022C53BE0001F3CC5 /* SmartyCredentials.swift in Sources */,
+				AE6F436322C53C1D001F3CC5 /* StaticCredentials.swift in Sources */,
+				AE6F442422C56BCD001F3CC5 /* USExtractResultTests.swift in Sources */,
+				AE6F438622C55513001F3CC5 /* SharedCredentials.swift in Sources */,
+				AE6F438E22C556C9001F3CC5 /* SmartySerializer.swift in Sources */,
+				AE6F43C322C55CC3001F3CC5 /* USStreetAnalysis.swift in Sources */,
+				AE6F440F22C5650E001F3CC5 /* SerializerTests.swift in Sources */,
+				AE6F43C022C55C8E001F3CC5 /* USStreetMetadata.swift in Sources */,
+				AE6F439B22C558B5001F3CC5 /* USCity.swift in Sources */,
+				AE6F435322C53844001F3CC5 /* SmartySender.swift in Sources */,
+				AE6F437222C550F5001F3CC5 /* MockCrashingSender.swift in Sources */,
+				AE6F43D922C55EC0001F3CC5 /* InternationalStreetAnalysis.swift in Sources */,
+				AE6F437E22C55364001F3CC5 /* SmartySleeper.swift in Sources */,
+				AE6F43C622C55CFC001F3CC5 /* USStreetBatch.swift in Sources */,
+				AE6F43BD22C55C6D001F3CC5 /* USStreetComponents.swift in Sources */,
+				AE6F435222C5383F001F3CC5 /* StatusCodeSender.swift in Sources */,
+				AE6F43BA22C55C37001F3CC5 /* USStreetCandidate.swift in Sources */,
+				AE6F438B22C55627001F3CC5 /* ClientBuilder.swift in Sources */,
+				AE6F442C22C56DC6001F3CC5 /* USZipCodeClientTests.swift in Sources */,
+				AE6F43E922C56094001F3CC5 /* USAutocompleteClient.swift in Sources */,
+				AE6F438322C554BE001F3CC5 /* SmartyCredentialsTests.swift in Sources */,
+				AE6F441D22C56A0E001F3CC5 /* MockSerializer.swift in Sources */,
+				AE6F43FC22C561A1001F3CC5 /* USExtractClient.swift in Sources */,
+				AE6F43E222C55F50001F3CC5 /* LanguageMode.swift in Sources */,
+				AE6F43A722C559E4001F3CC5 /* USZipCodeClient.swift in Sources */,
+				AE6F43D022C55E40001F3CC5 /* InternationalStreetCandidate.swift in Sources */,
+				AE6F436822C53D69001F3CC5 /* SmartySenderTests.swift in Sources */,
+				AE6F440D22C56472001F3CC5 /* SmartyRequestTests.swift in Sources */,
+				AE6F43E522C55F73001F3CC5 /* InternationalStreetSerializer.swift in Sources */,
+				AE6F441A22C569BD001F3CC5 /* USAutocompleteClientTests.swift in Sources */,
+				AE6F435A22C53B16001F3CC5 /* SigningSenderTests.swift in Sources */,
+				AE6F437022C5508D001F3CC5 /* RetrySenderTests.swift in Sources */,
+				AE6F441522C56667001F3CC5 /* RequestCapturingSender.swift in Sources */,
+				AE6F442E22C56E3D001F3CC5 /* USZipCodeResultTests.swift in Sources */,
+				AE6F43CD22C55DF3001F3CC5 /* InternationalStreetLookup.swift in Sources */,
+				AE6F43B422C55BC0001F3CC5 /* USStreetSerializer.swift in Sources */,
+				OBJ_40 /* XCTestManifests.swift in Sources */,
+				AE6F440822C56223001F3CC5 /* USExtractAddress.swift in Sources */,
+				AE6F43F822C56165001F3CC5 /* GeolocateType.swift in Sources */,
+				AE6F438122C553F5001F3CC5 /* RetrySender.swift in Sources */,
+				AE6F43DF22C55F0D001F3CC5 /* InternationalStreetRootLevel.swift in Sources */,
+				AE6F434322C53447001F3CC5 /* StatusCodeSenderTests.swift in Sources */,
+				AE6F43AD22C55A6C001F3CC5 /* SmartyBatch.swift in Sources */,
+				AE6F436E22C53E46001F3CC5 /* Version.swift in Sources */,
+				AE6F440522C56206001F3CC5 /* USExtractMetadata.swift in Sources */,
+				AE6F440222C561E6001F3CC5 /* USExtractResult.swift in Sources */,
+				AE6F443022C56EDF001F3CC5 /* USZipCodeBatchTests.swift in Sources */,
+				AE6F435422C53848001F3CC5 /* SmartyRequest.swift in Sources */,
+				AE6F43AA22C55A38001F3CC5 /* USZipCodeBatch.swift in Sources */,
+				AE6F43A422C559AB001F3CC5 /* URLPrefixSender.swift in Sources */,
+				AE6F442722C56C44001F3CC5 /* USStreetClientTests.swift in Sources */,
+				AE6F439822C557D9001F3CC5 /* USZipCodeResult.swift in Sources */,
+				AE6F435622C5384F001F3CC5 /* SmartyErrors.swift in Sources */,
+				AE6F441F22C56AA4001F3CC5 /* USAutocompleteResultTests.swift in Sources */,
+				AE6F43F222C56111001F3CC5 /* USAutocompleteSuggestion.swift in Sources */,
+				AE6F442922C56CA5001F3CC5 /* USStreetCandidateTests.swift in Sources */,
+				AE6F43D622C55E98001F3CC5 /* InternationalStreetMetadata.swift in Sources */,
+				OBJ_41 /* smartystreets_ios_sdkTests.swift in Sources */,
+				AE6F43A122C55928001F3CC5 /* USAlternateCounties.swift in Sources */,
+				AE6F43EF22C560F1001F3CC5 /* USAutocompleteResult.swift in Sources */,
+				AE6F438822C555A9001F3CC5 /* ClientBuilderTests.swift in Sources */,
+				AE6F43FF22C561CC001F3CC5 /* USExtractLookup.swift in Sources */,
+				AE6F43DC22C55EE8001F3CC5 /* InternationalStreetChanges.swift in Sources */,
+				AE6F442222C56B45001F3CC5 /* USExtractClientTests.swift in Sources */,
+				AE6F437522C5515D001F3CC5 /* MockLogger.swift in Sources */,
+				AE6F439E22C558EE001F3CC5 /* USZipCode.swift in Sources */,
+				AE6F437822C55243001F3CC5 /* SmartyLogger.swift in Sources */,
+				AE6F441722C568A4001F3CC5 /* InternationalStreetCandidateTests.swift in Sources */,
+				AE6F43B722C55C0F001F3CC5 /* USStreetLookup.swift in Sources */,
+				AE6F43F522C5614E001F3CC5 /* USAutocompleteSerializer.swift in Sources */,
+				AE6F436B22C53DD2001F3CC5 /* HttpSender.swift in Sources */,
+				AE6F437B22C552F3001F3CC5 /* MockSleeper.swift in Sources */,
+				AE6F435522C5384C001F3CC5 /* SmartyResponse.swift in Sources */,
+				AE6F435D22C53B84001F3CC5 /* MockSender.swift in Sources */,
+				AE6F434722C534D1001F3CC5 /* MockStatusCodeSender.swift in Sources */,
+				AE6F441222C5662A001F3CC5 /* InternationalStreetClientTests.swift in Sources */,
+				AE6F43CA22C55D88001F3CC5 /* InternationalStreetClient.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		OBJ_34 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "smartystreets-ios-sdk::smartystreets-ios-sdkTests" /* smartystreets-ios-sdkTests */;
+			targetProxy = AE6F434122C533F8001F3CC5 /* PBXContainerItemProxy */;
+		};
+		OBJ_44 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "smartystreets-ios-sdk::smartystreets-ios-sdk" /* smartystreets-ios-sdk */;
+			targetProxy = AE6F434022C533F7001F3CC5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		OBJ_19 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = "smartystreets-ios-sdk.xcodeproj/smartystreets_ios_sdk_Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = "smartystreets-ios-sdk";
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 5.0;
+				TARGET_NAME = "smartystreets-ios-sdk";
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		OBJ_20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = "smartystreets-ios-sdk.xcodeproj/smartystreets_ios_sdk_Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = "smartystreets-ios-sdk";
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 5.0;
+				TARGET_NAME = "smartystreets-ios-sdk";
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		OBJ_26 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 5 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4_2 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		OBJ_27 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 5 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4_2 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		OBJ_3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"SWIFT_PACKAGE=1",
+					"DEBUG=1",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "-DXcode";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) SWIFT_PACKAGE DEBUG";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				USE_HEADERMAP = NO;
+			};
+			name = Debug;
+		};
+		OBJ_32 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		OBJ_33 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		OBJ_37 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = "smartystreets-ios-sdk.xcodeproj/smartystreets_ios_sdkTests_Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 5.0;
+				TARGET_NAME = "smartystreets-ios-sdkTests";
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		OBJ_38 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = "smartystreets-ios-sdk.xcodeproj/smartystreets_ios_sdkTests_Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 5.0;
+				TARGET_NAME = "smartystreets-ios-sdkTests";
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		OBJ_4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"SWIFT_PACKAGE=1",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_SWIFT_FLAGS = "-DXcode";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) SWIFT_PACKAGE";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				USE_HEADERMAP = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		OBJ_18 /* Build configuration list for PBXNativeTarget "smartystreets-ios-sdk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_19 /* Debug */,
+				OBJ_20 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_2 /* Build configuration list for PBXProject "smartystreets-ios-sdk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_3 /* Debug */,
+				OBJ_4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_25 /* Build configuration list for PBXNativeTarget "smartystreets-ios-sdkPackageDescription" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_26 /* Debug */,
+				OBJ_27 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_31 /* Build configuration list for PBXAggregateTarget "smartystreets-ios-sdkPackageTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_32 /* Debug */,
+				OBJ_33 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_36 /* Build configuration list for PBXNativeTarget "smartystreets-ios-sdkTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_37 /* Debug */,
+				OBJ_38 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = OBJ_1 /* Project object */;
+}

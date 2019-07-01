@@ -56,7 +56,7 @@ final class smartystreets_ios_sdkTests: XCTestCase {
         ("testAllFieldsFilledCorrectly", USExtractResultTests.testAllFieldsFilledCorrectly),
         ("testSerializationOfUSStreetCandidates", USStreetCandidateTests.testSerialization),
         ("testAllFieldsFilledCorrectlyUSStreetCandidates", USStreetCandidateTests.testAllFieldsFilledCorrectly),
-        ("testExampleUSStreetClient", USStreetClientTests.testExample),
+        ("testSendingSingleFreeformLookup", USStreetClientTests.testSendingSingleFreeformLookup),
         ("testSendingSingleFullyPopulatedLookup", USStreetClientTests.testSendingSingleFullyPopulatedLookup),
         ("testEmptyBatchNotSent", USStreetClientTests.testEmptyBatchNotSent),
         ("testSendingSingleZipOnlyLookup", USZipCodeClientTests.testSendingSingleZipOnlyLookup),

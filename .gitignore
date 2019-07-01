@@ -1,4 +1,8 @@
-.DS_Store
-/.build
-/Packages
-/*.xcodeproj
+*DS_Store*
+*.swp
+_MACOSX
+*.xcuserdatad
+*.xcuserstate
+*.xcscheme
+*.xcworkspace
+*.build

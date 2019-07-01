@@ -57,4 +57,71 @@ class InternationalStreetClientTests: XCTestCase {
         XCTAssertNil(self.error)
         XCTAssertNotNil(capturingSender.request.getUrl())
     }
+    
+    func testEmptyLookupRejected() {
+        var lookup = InternationalStreetLookup()
+        assertLookupRejected(lookup: &lookup)
+    }
+    
+    func testRejectsLookupWithOnlyCountry() {
+        var lookup = InternationalStreetLookup()
+        lookup.country = "0"
+        assertLookupRejected(lookup: &lookup)
+    }
+    
+    func testRejectsLookupsWithOnlyCountryAndAddress1() {
+        var lookup = InternationalStreetLookup()
+        lookup.country = "0"
+        lookup.address1 = "1"
+        assertLookupRejected(lookup: &lookup)
+    }
+    
+    func testRejectsLookupsWithOnlycountryAndAddress1AndLocality() {
+        var lookup = InternationalStreetLookup()
+        lookup.country = "0"
+        lookup.address1 = "1"
+        lookup.locality = "2"
+        assertLookupRejected(lookup: &lookup)
+    }
+    
+    func testRejectsLookupsWithOnlyCountryAndAddress1AndAdministrativeArea() {
+        var lookup = InternationalStreetLookup()
+        lookup.country = "0"
+        lookup.address1 = "1"
+        lookup.administrativeArea = "2"
+        assertLookupRejected(lookup: &lookup)
+    }
+    
+    func testAcceptsLookupsWithEnoughInfo() {
+        let sender = RequestCapturingSender()
+        let serializer = InternationalStreetSerializer()
+        let client = InternationalStreetClient(sender: sender, serializer: serializer)
+        var lookup = InternationalStreetLookup()
+        
+        lookup.country = "0"
+        lookup.freeform = "1"
+        _ = client.sendLookup(lookup: &lookup, error: &self.error)
+        
+        lookup.freeform = nil
+        lookup.address1 = "1"
+        lookup.postalCode = "2"
+        _ = client.sendLookup(lookup: &lookup, error: &self.error)
+        
+        lookup.postalCode = nil
+        lookup.locality = "3"
+        lookup.administrativeArea = "4"
+        _ = client.sendLookup(lookup: &lookup, error: &self.error)
+        
+        XCTAssertNil(error)
+    }
+    
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+    func assertLookupRejected(lookup: inout InternationalStreetLookup) {
+        let sender = MockSender()
+        let client = InternationalStreetClient(sender: sender, serializer: InternationalStreetSerializer())
+        
+        _ = client.sendLookup(lookup: &lookup, error: &self.error)
+        XCTAssertNotNil(self.error)
+    }
 }
