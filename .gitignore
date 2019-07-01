@@ -1,13 +1,4 @@
-*DS_Store*
-*.swp
-__MACOSX
-.idea/
-/workspace/
-
-/build/
-/xcuserdata/
-*.xcuserstate
-*.xcscheme
-/DerivedData/
-/Output/
-SmartystreetsSDK/
+.DS_Store
+/.build
+/Packages
+/*.xcodeproj
