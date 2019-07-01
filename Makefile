@@ -1,32 +1,24 @@
 #!/usr/bin/make -f
 
-PLIST_FILE     := Sources/Info.plist
-PODSPEC_FILE   := SmartystreetsSDK.podspec
-VERSION        := $(shell tagit -p --dry-run)
+VERSION_FILE := Sources/smartystreets-ios-sdk/Version.swift
+VERSION      := $(shell tagit -p --dryrun)
 
 clean:
-	rm -rf ./Output
-	git checkout "$(PLIST_FILE)" "$(PODSPEC_FILE)"
+	@git checkout "$(VERSION_FILE)"
+	@rm -rf .build
 
 test:
-	xcodebuild test -scheme SmartystreetsSDK -destination "platform=iOS Simulator,name=iPhone XS Max,OS=12.1"
+	swift test
 
-publish:
-	pod trunk push "$(PODSPEC_FILE)" --allow-warnings
-
-dependencies:
-	gem install cocoapods
+compile: clean
+	swift build
 
 version:
-	sed -i '' -E 's/[0-9]+\.[0-9]+\.[0-9]+/$(VERSION)/g' "$(PLIST_FILE)"
-	sed -i '' -E 's/[0-9]+\.[0-9]+\.[0-9]+/$(VERSION)/g' "$(PODSPEC_FILE)"
+	@printf 'class Version {\n    let version = "%s"\n}\n' "$(VERSION)" > "$(VERSION_FILE)"
 
-tag:
-	git add "$(PLIST_FILE)" "$(PODSPEC_FILE)" \
-		&& git commit -m "Incremented version to $(VERSION)." \
+publish: compile test version
+	git commit -am "Incremented version." \
 		&& tagit -p \
-		&& git push origin master --tags 
+		&& git push origin master --tags
 
-release: clean version tag publish
-
-.PHONY: clean test publish version tag release
+.PHONY: clean test compile version publish
