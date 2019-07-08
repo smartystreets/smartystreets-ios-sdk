@@ -9,11 +9,11 @@
 /* Begin PBXAggregateTarget section */
 		"smartystreets-ios-sdk::smartystreets-ios-sdkPackageTests::ProductTarget" /* smartystreets-ios-sdkPackageTests */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = OBJ_31 /* Build configuration list for PBXAggregateTarget "smartystreets-ios-sdkPackageTests" */;
+			buildConfigurationList = OBJ_186 /* Build configuration list for PBXAggregateTarget "smartystreets-ios-sdkPackageTests" */;
 			buildPhases = (
 			);
 			dependencies = (
-				OBJ_34 /* PBXTargetDependency */,
+				OBJ_189 /* PBXTargetDependency */,
 			);
 			name = "smartystreets-ios-sdkPackageTests";
 			productName = "smartystreets-ios-sdkPackageTests";
@@ -21,160 +21,103 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		AE6F434322C53447001F3CC5 /* StatusCodeSenderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F434222C53447001F3CC5 /* StatusCodeSenderTests.swift */; };
-		AE6F434722C534D1001F3CC5 /* MockStatusCodeSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F434522C534B7001F3CC5 /* MockStatusCodeSender.swift */; };
-		AE6F434922C5356C001F3CC5 /* StatusCodeSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F434822C5356C001F3CC5 /* StatusCodeSender.swift */; };
-		AE6F434B22C535C0001F3CC5 /* SmartySender.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F434A22C535C0001F3CC5 /* SmartySender.swift */; };
-		AE6F434D22C53648001F3CC5 /* SmartyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F434C22C53648001F3CC5 /* SmartyRequest.swift */; };
-		AE6F434F22C536DD001F3CC5 /* SmartyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F434E22C536DD001F3CC5 /* SmartyResponse.swift */; };
-		AE6F435122C537A5001F3CC5 /* SmartyErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F435022C537A5001F3CC5 /* SmartyErrors.swift */; };
-		AE6F435222C5383F001F3CC5 /* StatusCodeSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F434822C5356C001F3CC5 /* StatusCodeSender.swift */; };
-		AE6F435322C53844001F3CC5 /* SmartySender.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F434A22C535C0001F3CC5 /* SmartySender.swift */; };
-		AE6F435422C53848001F3CC5 /* SmartyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F434C22C53648001F3CC5 /* SmartyRequest.swift */; };
-		AE6F435522C5384C001F3CC5 /* SmartyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F434E22C536DD001F3CC5 /* SmartyResponse.swift */; };
-		AE6F435622C5384F001F3CC5 /* SmartyErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F435022C537A5001F3CC5 /* SmartyErrors.swift */; };
-		AE6F435822C53A98001F3CC5 /* SmartyResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F435722C53A98001F3CC5 /* SmartyResponseTests.swift */; };
-		AE6F435A22C53B16001F3CC5 /* SigningSenderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F435922C53B16001F3CC5 /* SigningSenderTests.swift */; };
-		AE6F435D22C53B84001F3CC5 /* MockSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F435B22C53B82001F3CC5 /* MockSender.swift */; };
-		AE6F435F22C53BE0001F3CC5 /* SmartyCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F435E22C53BE0001F3CC5 /* SmartyCredentials.swift */; };
-		AE6F436022C53BE0001F3CC5 /* SmartyCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F435E22C53BE0001F3CC5 /* SmartyCredentials.swift */; };
-		AE6F436222C53C1D001F3CC5 /* StaticCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F436122C53C1D001F3CC5 /* StaticCredentials.swift */; };
-		AE6F436322C53C1D001F3CC5 /* StaticCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F436122C53C1D001F3CC5 /* StaticCredentials.swift */; };
-		AE6F436522C53C66001F3CC5 /* SigningSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F436422C53C66001F3CC5 /* SigningSender.swift */; };
-		AE6F436622C53C66001F3CC5 /* SigningSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F436422C53C66001F3CC5 /* SigningSender.swift */; };
-		AE6F436822C53D69001F3CC5 /* SmartySenderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F436722C53D69001F3CC5 /* SmartySenderTests.swift */; };
-		AE6F436A22C53DD2001F3CC5 /* HttpSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F436922C53DD2001F3CC5 /* HttpSender.swift */; };
-		AE6F436B22C53DD2001F3CC5 /* HttpSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F436922C53DD2001F3CC5 /* HttpSender.swift */; };
-		AE6F436D22C53E46001F3CC5 /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F436C22C53E46001F3CC5 /* Version.swift */; };
-		AE6F436E22C53E46001F3CC5 /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F436C22C53E46001F3CC5 /* Version.swift */; };
-		AE6F437022C5508D001F3CC5 /* RetrySenderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F436F22C5508D001F3CC5 /* RetrySenderTests.swift */; };
-		AE6F437222C550F5001F3CC5 /* MockCrashingSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F437122C550F5001F3CC5 /* MockCrashingSender.swift */; };
-		AE6F437522C5515D001F3CC5 /* MockLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F437322C5515D001F3CC5 /* MockLogger.swift */; };
-		AE6F437722C55243001F3CC5 /* SmartyLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F437622C55243001F3CC5 /* SmartyLogger.swift */; };
-		AE6F437822C55243001F3CC5 /* SmartyLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F437622C55243001F3CC5 /* SmartyLogger.swift */; };
-		AE6F437B22C552F3001F3CC5 /* MockSleeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F437922C552F3001F3CC5 /* MockSleeper.swift */; };
-		AE6F437D22C55364001F3CC5 /* SmartySleeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F437C22C55364001F3CC5 /* SmartySleeper.swift */; };
-		AE6F437E22C55364001F3CC5 /* SmartySleeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F437C22C55364001F3CC5 /* SmartySleeper.swift */; };
-		AE6F438022C553F5001F3CC5 /* RetrySender.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F437F22C553F5001F3CC5 /* RetrySender.swift */; };
-		AE6F438122C553F5001F3CC5 /* RetrySender.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F437F22C553F5001F3CC5 /* RetrySender.swift */; };
-		AE6F438322C554BE001F3CC5 /* SmartyCredentialsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F438222C554BE001F3CC5 /* SmartyCredentialsTests.swift */; };
-		AE6F438522C55513001F3CC5 /* SharedCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F438422C55513001F3CC5 /* SharedCredentials.swift */; };
-		AE6F438622C55513001F3CC5 /* SharedCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F438422C55513001F3CC5 /* SharedCredentials.swift */; };
-		AE6F438822C555A9001F3CC5 /* ClientBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F438722C555A9001F3CC5 /* ClientBuilderTests.swift */; };
-		AE6F438A22C55627001F3CC5 /* ClientBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F438922C55627001F3CC5 /* ClientBuilder.swift */; };
-		AE6F438B22C55627001F3CC5 /* ClientBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F438922C55627001F3CC5 /* ClientBuilder.swift */; };
-		AE6F438D22C556C9001F3CC5 /* SmartySerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F438C22C556C9001F3CC5 /* SmartySerializer.swift */; };
-		AE6F438E22C556C9001F3CC5 /* SmartySerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F438C22C556C9001F3CC5 /* SmartySerializer.swift */; };
-		AE6F439122C55752001F3CC5 /* USZipCodeSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F439022C55752001F3CC5 /* USZipCodeSerializer.swift */; };
-		AE6F439222C55752001F3CC5 /* USZipCodeSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F439022C55752001F3CC5 /* USZipCodeSerializer.swift */; };
-		AE6F439422C557A4001F3CC5 /* USZipCodeLookup.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F439322C557A4001F3CC5 /* USZipCodeLookup.swift */; };
-		AE6F439522C557A4001F3CC5 /* USZipCodeLookup.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F439322C557A4001F3CC5 /* USZipCodeLookup.swift */; };
-		AE6F439722C557D9001F3CC5 /* USZipCodeResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F439622C557D9001F3CC5 /* USZipCodeResult.swift */; };
-		AE6F439822C557D9001F3CC5 /* USZipCodeResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F439622C557D9001F3CC5 /* USZipCodeResult.swift */; };
-		AE6F439A22C558B5001F3CC5 /* USCity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F439922C558B5001F3CC5 /* USCity.swift */; };
-		AE6F439B22C558B5001F3CC5 /* USCity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F439922C558B5001F3CC5 /* USCity.swift */; };
-		AE6F439D22C558EE001F3CC5 /* USZipCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F439C22C558EE001F3CC5 /* USZipCode.swift */; };
-		AE6F439E22C558EE001F3CC5 /* USZipCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F439C22C558EE001F3CC5 /* USZipCode.swift */; };
-		AE6F43A022C55928001F3CC5 /* USAlternateCounties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F439F22C55928001F3CC5 /* USAlternateCounties.swift */; };
-		AE6F43A122C55928001F3CC5 /* USAlternateCounties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F439F22C55928001F3CC5 /* USAlternateCounties.swift */; };
-		AE6F43A322C559AB001F3CC5 /* URLPrefixSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43A222C559AB001F3CC5 /* URLPrefixSender.swift */; };
-		AE6F43A422C559AB001F3CC5 /* URLPrefixSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43A222C559AB001F3CC5 /* URLPrefixSender.swift */; };
-		AE6F43A622C559E4001F3CC5 /* USZipCodeClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43A522C559E4001F3CC5 /* USZipCodeClient.swift */; };
-		AE6F43A722C559E4001F3CC5 /* USZipCodeClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43A522C559E4001F3CC5 /* USZipCodeClient.swift */; };
-		AE6F43A922C55A38001F3CC5 /* USZipCodeBatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43A822C55A38001F3CC5 /* USZipCodeBatch.swift */; };
-		AE6F43AA22C55A38001F3CC5 /* USZipCodeBatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43A822C55A38001F3CC5 /* USZipCodeBatch.swift */; };
-		AE6F43AC22C55A6C001F3CC5 /* SmartyBatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43AB22C55A6C001F3CC5 /* SmartyBatch.swift */; };
-		AE6F43AD22C55A6C001F3CC5 /* SmartyBatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43AB22C55A6C001F3CC5 /* SmartyBatch.swift */; };
-		AE6F43B022C55B58001F3CC5 /* USStreetClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43AF22C55B58001F3CC5 /* USStreetClient.swift */; };
-		AE6F43B122C55B58001F3CC5 /* USStreetClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43AF22C55B58001F3CC5 /* USStreetClient.swift */; };
-		AE6F43B322C55BC0001F3CC5 /* USStreetSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43B222C55BC0001F3CC5 /* USStreetSerializer.swift */; };
-		AE6F43B422C55BC0001F3CC5 /* USStreetSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43B222C55BC0001F3CC5 /* USStreetSerializer.swift */; };
-		AE6F43B622C55C0F001F3CC5 /* USStreetLookup.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43B522C55C0F001F3CC5 /* USStreetLookup.swift */; };
-		AE6F43B722C55C0F001F3CC5 /* USStreetLookup.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43B522C55C0F001F3CC5 /* USStreetLookup.swift */; };
-		AE6F43B922C55C37001F3CC5 /* USStreetCandidate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43B822C55C37001F3CC5 /* USStreetCandidate.swift */; };
-		AE6F43BA22C55C37001F3CC5 /* USStreetCandidate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43B822C55C37001F3CC5 /* USStreetCandidate.swift */; };
-		AE6F43BC22C55C6D001F3CC5 /* USStreetComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43BB22C55C6D001F3CC5 /* USStreetComponents.swift */; };
-		AE6F43BD22C55C6D001F3CC5 /* USStreetComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43BB22C55C6D001F3CC5 /* USStreetComponents.swift */; };
-		AE6F43BF22C55C8E001F3CC5 /* USStreetMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43BE22C55C8E001F3CC5 /* USStreetMetadata.swift */; };
-		AE6F43C022C55C8E001F3CC5 /* USStreetMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43BE22C55C8E001F3CC5 /* USStreetMetadata.swift */; };
-		AE6F43C222C55CC3001F3CC5 /* USStreetAnalysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43C122C55CC3001F3CC5 /* USStreetAnalysis.swift */; };
-		AE6F43C322C55CC3001F3CC5 /* USStreetAnalysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43C122C55CC3001F3CC5 /* USStreetAnalysis.swift */; };
-		AE6F43C522C55CFC001F3CC5 /* USStreetBatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43C422C55CFC001F3CC5 /* USStreetBatch.swift */; };
-		AE6F43C622C55CFC001F3CC5 /* USStreetBatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43C422C55CFC001F3CC5 /* USStreetBatch.swift */; };
-		AE6F43C922C55D88001F3CC5 /* InternationalStreetClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43C822C55D88001F3CC5 /* InternationalStreetClient.swift */; };
-		AE6F43CA22C55D88001F3CC5 /* InternationalStreetClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43C822C55D88001F3CC5 /* InternationalStreetClient.swift */; };
-		AE6F43CC22C55DF3001F3CC5 /* InternationalStreetLookup.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43CB22C55DF3001F3CC5 /* InternationalStreetLookup.swift */; };
-		AE6F43CD22C55DF3001F3CC5 /* InternationalStreetLookup.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43CB22C55DF3001F3CC5 /* InternationalStreetLookup.swift */; };
-		AE6F43CF22C55E40001F3CC5 /* InternationalStreetCandidate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43CE22C55E40001F3CC5 /* InternationalStreetCandidate.swift */; };
-		AE6F43D022C55E40001F3CC5 /* InternationalStreetCandidate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43CE22C55E40001F3CC5 /* InternationalStreetCandidate.swift */; };
-		AE6F43D222C55E6A001F3CC5 /* InternationalStreetComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43D122C55E6A001F3CC5 /* InternationalStreetComponents.swift */; };
-		AE6F43D322C55E6A001F3CC5 /* InternationalStreetComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43D122C55E6A001F3CC5 /* InternationalStreetComponents.swift */; };
-		AE6F43D522C55E98001F3CC5 /* InternationalStreetMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43D422C55E98001F3CC5 /* InternationalStreetMetadata.swift */; };
-		AE6F43D622C55E98001F3CC5 /* InternationalStreetMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43D422C55E98001F3CC5 /* InternationalStreetMetadata.swift */; };
-		AE6F43D822C55EC0001F3CC5 /* InternationalStreetAnalysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43D722C55EC0001F3CC5 /* InternationalStreetAnalysis.swift */; };
-		AE6F43D922C55EC0001F3CC5 /* InternationalStreetAnalysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43D722C55EC0001F3CC5 /* InternationalStreetAnalysis.swift */; };
-		AE6F43DB22C55EE8001F3CC5 /* InternationalStreetChanges.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43DA22C55EE8001F3CC5 /* InternationalStreetChanges.swift */; };
-		AE6F43DC22C55EE8001F3CC5 /* InternationalStreetChanges.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43DA22C55EE8001F3CC5 /* InternationalStreetChanges.swift */; };
-		AE6F43DE22C55F0D001F3CC5 /* InternationalStreetRootLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43DD22C55F0D001F3CC5 /* InternationalStreetRootLevel.swift */; };
-		AE6F43DF22C55F0D001F3CC5 /* InternationalStreetRootLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43DD22C55F0D001F3CC5 /* InternationalStreetRootLevel.swift */; };
-		AE6F43E122C55F50001F3CC5 /* LanguageMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43E022C55F50001F3CC5 /* LanguageMode.swift */; };
-		AE6F43E222C55F50001F3CC5 /* LanguageMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43E022C55F50001F3CC5 /* LanguageMode.swift */; };
-		AE6F43E422C55F73001F3CC5 /* InternationalStreetSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43E322C55F73001F3CC5 /* InternationalStreetSerializer.swift */; };
-		AE6F43E522C55F73001F3CC5 /* InternationalStreetSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43E322C55F73001F3CC5 /* InternationalStreetSerializer.swift */; };
-		AE6F43E822C56094001F3CC5 /* USAutocompleteClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43E722C56094001F3CC5 /* USAutocompleteClient.swift */; };
-		AE6F43E922C56094001F3CC5 /* USAutocompleteClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43E722C56094001F3CC5 /* USAutocompleteClient.swift */; };
-		AE6F43EB22C560CB001F3CC5 /* USAutocompleteLookup.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43EA22C560CB001F3CC5 /* USAutocompleteLookup.swift */; };
-		AE6F43EC22C560CB001F3CC5 /* USAutocompleteLookup.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43EA22C560CB001F3CC5 /* USAutocompleteLookup.swift */; };
-		AE6F43EE22C560F1001F3CC5 /* USAutocompleteResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43ED22C560F1001F3CC5 /* USAutocompleteResult.swift */; };
-		AE6F43EF22C560F1001F3CC5 /* USAutocompleteResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43ED22C560F1001F3CC5 /* USAutocompleteResult.swift */; };
-		AE6F43F122C56111001F3CC5 /* USAutocompleteSuggestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43F022C56111001F3CC5 /* USAutocompleteSuggestion.swift */; };
-		AE6F43F222C56111001F3CC5 /* USAutocompleteSuggestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43F022C56111001F3CC5 /* USAutocompleteSuggestion.swift */; };
-		AE6F43F422C5614E001F3CC5 /* USAutocompleteSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43F322C5614E001F3CC5 /* USAutocompleteSerializer.swift */; };
-		AE6F43F522C5614E001F3CC5 /* USAutocompleteSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43F322C5614E001F3CC5 /* USAutocompleteSerializer.swift */; };
-		AE6F43F722C56165001F3CC5 /* GeolocateType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43F622C56165001F3CC5 /* GeolocateType.swift */; };
-		AE6F43F822C56165001F3CC5 /* GeolocateType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43F622C56165001F3CC5 /* GeolocateType.swift */; };
-		AE6F43FB22C561A1001F3CC5 /* USExtractClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43FA22C561A1001F3CC5 /* USExtractClient.swift */; };
-		AE6F43FC22C561A1001F3CC5 /* USExtractClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43FA22C561A1001F3CC5 /* USExtractClient.swift */; };
-		AE6F43FE22C561CC001F3CC5 /* USExtractLookup.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43FD22C561CC001F3CC5 /* USExtractLookup.swift */; };
-		AE6F43FF22C561CC001F3CC5 /* USExtractLookup.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F43FD22C561CC001F3CC5 /* USExtractLookup.swift */; };
-		AE6F440122C561E6001F3CC5 /* USExtractResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F440022C561E6001F3CC5 /* USExtractResult.swift */; };
-		AE6F440222C561E6001F3CC5 /* USExtractResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F440022C561E6001F3CC5 /* USExtractResult.swift */; };
-		AE6F440422C56206001F3CC5 /* USExtractMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F440322C56206001F3CC5 /* USExtractMetadata.swift */; };
-		AE6F440522C56206001F3CC5 /* USExtractMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F440322C56206001F3CC5 /* USExtractMetadata.swift */; };
-		AE6F440722C56223001F3CC5 /* USExtractAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F440622C56222001F3CC5 /* USExtractAddress.swift */; };
-		AE6F440822C56223001F3CC5 /* USExtractAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F440622C56222001F3CC5 /* USExtractAddress.swift */; };
-		AE6F440A22C5624E001F3CC5 /* USExtractSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F440922C5624E001F3CC5 /* USExtractSerializer.swift */; };
-		AE6F440B22C5624E001F3CC5 /* USExtractSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F440922C5624E001F3CC5 /* USExtractSerializer.swift */; };
-		AE6F440D22C56472001F3CC5 /* SmartyRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F440C22C56472001F3CC5 /* SmartyRequestTests.swift */; };
-		AE6F440F22C5650E001F3CC5 /* SerializerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F440E22C5650E001F3CC5 /* SerializerTests.swift */; };
-		AE6F441222C5662A001F3CC5 /* InternationalStreetClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F441122C5662A001F3CC5 /* InternationalStreetClientTests.swift */; };
-		AE6F441522C56667001F3CC5 /* RequestCapturingSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F441322C56667001F3CC5 /* RequestCapturingSender.swift */; };
-		AE6F441722C568A4001F3CC5 /* InternationalStreetCandidateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F441622C568A4001F3CC5 /* InternationalStreetCandidateTests.swift */; };
-		AE6F441A22C569BD001F3CC5 /* USAutocompleteClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F441922C569BD001F3CC5 /* USAutocompleteClientTests.swift */; };
-		AE6F441D22C56A0E001F3CC5 /* MockSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F441B22C56A0E001F3CC5 /* MockSerializer.swift */; };
-		AE6F441F22C56AA4001F3CC5 /* USAutocompleteResultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F441E22C56AA4001F3CC5 /* USAutocompleteResultTests.swift */; };
-		AE6F442222C56B45001F3CC5 /* USExtractClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F442122C56B45001F3CC5 /* USExtractClientTests.swift */; };
-		AE6F442422C56BCD001F3CC5 /* USExtractResultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F442322C56BCD001F3CC5 /* USExtractResultTests.swift */; };
-		AE6F442722C56C44001F3CC5 /* USStreetClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F442622C56C44001F3CC5 /* USStreetClientTests.swift */; };
-		AE6F442922C56CA5001F3CC5 /* USStreetCandidateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F442822C56CA5001F3CC5 /* USStreetCandidateTests.swift */; };
-		AE6F442C22C56DC6001F3CC5 /* USZipCodeClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F442B22C56DC6001F3CC5 /* USZipCodeClientTests.swift */; };
-		AE6F442E22C56E3D001F3CC5 /* USZipCodeResultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F442D22C56E3D001F3CC5 /* USZipCodeResultTests.swift */; };
-		AE6F443022C56EDF001F3CC5 /* USZipCodeBatchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F442F22C56EDF001F3CC5 /* USZipCodeBatchTests.swift */; };
-		OBJ_29 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
-		OBJ_40 /* XCTestManifests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* XCTestManifests.swift */; };
-		OBJ_41 /* smartystreets_ios_sdkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* smartystreets_ios_sdkTests.swift */; };
-		OBJ_43 /* smartystreets_ios_sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "smartystreets-ios-sdk::smartystreets-ios-sdk::Product" /* smartystreets_ios_sdk.framework */; };
+		OBJ_122 /* ClientBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* ClientBuilder.swift */; };
+		OBJ_123 /* HttpSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* HttpSender.swift */; };
+		OBJ_124 /* InternationalStreetAnalysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* InternationalStreetAnalysis.swift */; };
+		OBJ_125 /* InternationalStreetCandidate.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_15 /* InternationalStreetCandidate.swift */; };
+		OBJ_126 /* InternationalStreetChanges.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_16 /* InternationalStreetChanges.swift */; };
+		OBJ_127 /* InternationalStreetClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_17 /* InternationalStreetClient.swift */; };
+		OBJ_128 /* InternationalStreetComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_18 /* InternationalStreetComponents.swift */; };
+		OBJ_129 /* InternationalStreetLookup.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_19 /* InternationalStreetLookup.swift */; };
+		OBJ_130 /* InternationalStreetMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_20 /* InternationalStreetMetadata.swift */; };
+		OBJ_131 /* InternationalStreetRootLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_21 /* InternationalStreetRootLevel.swift */; };
+		OBJ_132 /* InternationalStreetSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_22 /* InternationalStreetSerializer.swift */; };
+		OBJ_133 /* LanguageMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_23 /* LanguageMode.swift */; };
+		OBJ_134 /* RetrySender.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_24 /* RetrySender.swift */; };
+		OBJ_135 /* SharedCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_25 /* SharedCredentials.swift */; };
+		OBJ_136 /* SigningSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_26 /* SigningSender.swift */; };
+		OBJ_137 /* SmartyBatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_27 /* SmartyBatch.swift */; };
+		OBJ_138 /* SmartyCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_28 /* SmartyCredentials.swift */; };
+		OBJ_139 /* SmartyErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_29 /* SmartyErrors.swift */; };
+		OBJ_140 /* SmartyLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_30 /* SmartyLogger.swift */; };
+		OBJ_141 /* SmartyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_31 /* SmartyRequest.swift */; };
+		OBJ_142 /* SmartyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_32 /* SmartyResponse.swift */; };
+		OBJ_143 /* SmartySender.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_33 /* SmartySender.swift */; };
+		OBJ_144 /* SmartySerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_34 /* SmartySerializer.swift */; };
+		OBJ_145 /* SmartySleeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_35 /* SmartySleeper.swift */; };
+		OBJ_146 /* StaticCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_36 /* StaticCredentials.swift */; };
+		OBJ_147 /* StatusCodeSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_37 /* StatusCodeSender.swift */; };
+		OBJ_148 /* URLPrefixSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_38 /* URLPrefixSender.swift */; };
+		OBJ_149 /* GeolocateType.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_40 /* GeolocateType.swift */; };
+		OBJ_150 /* USAutocompleteClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_41 /* USAutocompleteClient.swift */; };
+		OBJ_151 /* USAutocompleteLookup.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_42 /* USAutocompleteLookup.swift */; };
+		OBJ_152 /* USAutocompleteResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_43 /* USAutocompleteResult.swift */; };
+		OBJ_153 /* USAutocompleteSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_44 /* USAutocompleteSerializer.swift */; };
+		OBJ_154 /* USAutocompleteSuggestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_45 /* USAutocompleteSuggestion.swift */; };
+		OBJ_155 /* USExtractAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_47 /* USExtractAddress.swift */; };
+		OBJ_156 /* USExtractClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_48 /* USExtractClient.swift */; };
+		OBJ_157 /* USExtractLookup.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_49 /* USExtractLookup.swift */; };
+		OBJ_158 /* USExtractMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_50 /* USExtractMetadata.swift */; };
+		OBJ_159 /* USExtractResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_51 /* USExtractResult.swift */; };
+		OBJ_160 /* USExtractSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_52 /* USExtractSerializer.swift */; };
+		OBJ_161 /* USStreetAnalysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_54 /* USStreetAnalysis.swift */; };
+		OBJ_162 /* USStreetBatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_55 /* USStreetBatch.swift */; };
+		OBJ_163 /* USStreetCandidate.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_56 /* USStreetCandidate.swift */; };
+		OBJ_164 /* USStreetClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_57 /* USStreetClient.swift */; };
+		OBJ_165 /* USStreetComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_58 /* USStreetComponents.swift */; };
+		OBJ_166 /* USStreetLookup.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_59 /* USStreetLookup.swift */; };
+		OBJ_167 /* USStreetMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_60 /* USStreetMetadata.swift */; };
+		OBJ_168 /* USStreetSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_61 /* USStreetSerializer.swift */; };
+		OBJ_169 /* USAlternateCounties.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_63 /* USAlternateCounties.swift */; };
+		OBJ_170 /* USCity.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_64 /* USCity.swift */; };
+		OBJ_171 /* USZipCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_65 /* USZipCode.swift */; };
+		OBJ_172 /* USZipCodeBatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_66 /* USZipCodeBatch.swift */; };
+		OBJ_173 /* USZipCodeClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_67 /* USZipCodeClient.swift */; };
+		OBJ_174 /* USZipCodeLookup.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_68 /* USZipCodeLookup.swift */; };
+		OBJ_175 /* USZipCodeResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_69 /* USZipCodeResult.swift */; };
+		OBJ_176 /* USZipCodeSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_70 /* USZipCodeSerializer.swift */; };
+		OBJ_177 /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_71 /* Version.swift */; };
+		OBJ_184 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
+		OBJ_195 /* ClientBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_74 /* ClientBuilderTests.swift */; };
+		OBJ_196 /* InternationalStreetCandidateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_76 /* InternationalStreetCandidateTests.swift */; };
+		OBJ_197 /* InternationalStreetClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_77 /* InternationalStreetClientTests.swift */; };
+		OBJ_198 /* MockCrashingSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_79 /* MockCrashingSender.swift */; };
+		OBJ_199 /* MockLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_80 /* MockLogger.swift */; };
+		OBJ_200 /* MockSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_81 /* MockSender.swift */; };
+		OBJ_201 /* MockSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_82 /* MockSerializer.swift */; };
+		OBJ_202 /* MockSleeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_83 /* MockSleeper.swift */; };
+		OBJ_203 /* MockStatusCodeSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_84 /* MockStatusCodeSender.swift */; };
+		OBJ_204 /* RequestCapturingSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_85 /* RequestCapturingSender.swift */; };
+		OBJ_205 /* RetrySenderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_86 /* RetrySenderTests.swift */; };
+		OBJ_206 /* SerializerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_87 /* SerializerTests.swift */; };
+		OBJ_207 /* SigningSenderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_88 /* SigningSenderTests.swift */; };
+		OBJ_208 /* SmartyCredentialsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_89 /* SmartyCredentialsTests.swift */; };
+		OBJ_209 /* SmartyRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_90 /* SmartyRequestTests.swift */; };
+		OBJ_210 /* SmartyResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_91 /* SmartyResponseTests.swift */; };
+		OBJ_211 /* SmartySenderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_92 /* SmartySenderTests.swift */; };
+		OBJ_212 /* StatusCodeSenderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_93 /* StatusCodeSenderTests.swift */; };
+		OBJ_213 /* USAutocompleteClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_95 /* USAutocompleteClientTests.swift */; };
+		OBJ_214 /* USAutocompleteResultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_96 /* USAutocompleteResultTests.swift */; };
+		OBJ_215 /* USExtractClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_98 /* USExtractClientTests.swift */; };
+		OBJ_216 /* USExtractResultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_99 /* USExtractResultTests.swift */; };
+		OBJ_217 /* USStreetCandidateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_101 /* USStreetCandidateTests.swift */; };
+		OBJ_218 /* USStreetClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_102 /* USStreetClientTests.swift */; };
+		OBJ_219 /* USZipCodeBatchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_104 /* USZipCodeBatchTests.swift */; };
+		OBJ_220 /* USZipCodeClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_105 /* USZipCodeClientTests.swift */; };
+		OBJ_221 /* USZipCodeResultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_106 /* USZipCodeResultTests.swift */; };
+		OBJ_222 /* XCTestManifests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_107 /* XCTestManifests.swift */; };
+		OBJ_223 /* smartystreets_ios_sdkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_108 /* smartystreets_ios_sdkTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		AE6F434022C533F7001F3CC5 /* PBXContainerItemProxy */ = {
+		AE9001B222D3A32000D9E703 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "smartystreets-ios-sdk::smartystreets-ios-sdk";
 			remoteInfo = "smartystreets-ios-sdk";
 		};
-		AE6F434122C533F8001F3CC5 /* PBXContainerItemProxy */ = {
+		AE9001B322D3A34900D9E703 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
@@ -184,347 +127,353 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		AE6F434222C53447001F3CC5 /* StatusCodeSenderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCodeSenderTests.swift; sourceTree = "<group>"; };
-		AE6F434522C534B7001F3CC5 /* MockStatusCodeSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockStatusCodeSender.swift; sourceTree = "<group>"; };
-		AE6F434822C5356C001F3CC5 /* StatusCodeSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCodeSender.swift; sourceTree = "<group>"; };
-		AE6F434A22C535C0001F3CC5 /* SmartySender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartySender.swift; sourceTree = "<group>"; };
-		AE6F434C22C53648001F3CC5 /* SmartyRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartyRequest.swift; sourceTree = "<group>"; };
-		AE6F434E22C536DD001F3CC5 /* SmartyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartyResponse.swift; sourceTree = "<group>"; };
-		AE6F435022C537A5001F3CC5 /* SmartyErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartyErrors.swift; sourceTree = "<group>"; };
-		AE6F435722C53A98001F3CC5 /* SmartyResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartyResponseTests.swift; sourceTree = "<group>"; };
-		AE6F435922C53B16001F3CC5 /* SigningSenderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigningSenderTests.swift; sourceTree = "<group>"; };
-		AE6F435B22C53B82001F3CC5 /* MockSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSender.swift; sourceTree = "<group>"; };
-		AE6F435E22C53BE0001F3CC5 /* SmartyCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartyCredentials.swift; sourceTree = "<group>"; };
-		AE6F436122C53C1D001F3CC5 /* StaticCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticCredentials.swift; sourceTree = "<group>"; };
-		AE6F436422C53C66001F3CC5 /* SigningSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigningSender.swift; sourceTree = "<group>"; };
-		AE6F436722C53D69001F3CC5 /* SmartySenderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartySenderTests.swift; sourceTree = "<group>"; };
-		AE6F436922C53DD2001F3CC5 /* HttpSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpSender.swift; sourceTree = "<group>"; };
-		AE6F436C22C53E46001F3CC5 /* Version.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
-		AE6F436F22C5508D001F3CC5 /* RetrySenderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrySenderTests.swift; sourceTree = "<group>"; };
-		AE6F437122C550F5001F3CC5 /* MockCrashingSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCrashingSender.swift; sourceTree = "<group>"; };
-		AE6F437322C5515D001F3CC5 /* MockLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLogger.swift; sourceTree = "<group>"; };
-		AE6F437622C55243001F3CC5 /* SmartyLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartyLogger.swift; sourceTree = "<group>"; };
-		AE6F437922C552F3001F3CC5 /* MockSleeper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSleeper.swift; sourceTree = "<group>"; };
-		AE6F437C22C55364001F3CC5 /* SmartySleeper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartySleeper.swift; sourceTree = "<group>"; };
-		AE6F437F22C553F5001F3CC5 /* RetrySender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrySender.swift; sourceTree = "<group>"; };
-		AE6F438222C554BE001F3CC5 /* SmartyCredentialsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartyCredentialsTests.swift; sourceTree = "<group>"; };
-		AE6F438422C55513001F3CC5 /* SharedCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedCredentials.swift; sourceTree = "<group>"; };
-		AE6F438722C555A9001F3CC5 /* ClientBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientBuilderTests.swift; sourceTree = "<group>"; };
-		AE6F438922C55627001F3CC5 /* ClientBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientBuilder.swift; sourceTree = "<group>"; };
-		AE6F438C22C556C9001F3CC5 /* SmartySerializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartySerializer.swift; sourceTree = "<group>"; };
-		AE6F439022C55752001F3CC5 /* USZipCodeSerializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USZipCodeSerializer.swift; sourceTree = "<group>"; };
-		AE6F439322C557A4001F3CC5 /* USZipCodeLookup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USZipCodeLookup.swift; sourceTree = "<group>"; };
-		AE6F439622C557D9001F3CC5 /* USZipCodeResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USZipCodeResult.swift; sourceTree = "<group>"; };
-		AE6F439922C558B5001F3CC5 /* USCity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USCity.swift; sourceTree = "<group>"; };
-		AE6F439C22C558EE001F3CC5 /* USZipCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USZipCode.swift; sourceTree = "<group>"; };
-		AE6F439F22C55928001F3CC5 /* USAlternateCounties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USAlternateCounties.swift; sourceTree = "<group>"; };
-		AE6F43A222C559AB001F3CC5 /* URLPrefixSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLPrefixSender.swift; sourceTree = "<group>"; };
-		AE6F43A522C559E4001F3CC5 /* USZipCodeClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USZipCodeClient.swift; sourceTree = "<group>"; };
-		AE6F43A822C55A38001F3CC5 /* USZipCodeBatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USZipCodeBatch.swift; sourceTree = "<group>"; };
-		AE6F43AB22C55A6C001F3CC5 /* SmartyBatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartyBatch.swift; sourceTree = "<group>"; };
-		AE6F43AF22C55B58001F3CC5 /* USStreetClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USStreetClient.swift; sourceTree = "<group>"; };
-		AE6F43B222C55BC0001F3CC5 /* USStreetSerializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USStreetSerializer.swift; sourceTree = "<group>"; };
-		AE6F43B522C55C0F001F3CC5 /* USStreetLookup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USStreetLookup.swift; sourceTree = "<group>"; };
-		AE6F43B822C55C37001F3CC5 /* USStreetCandidate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USStreetCandidate.swift; sourceTree = "<group>"; };
-		AE6F43BB22C55C6D001F3CC5 /* USStreetComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USStreetComponents.swift; sourceTree = "<group>"; };
-		AE6F43BE22C55C8E001F3CC5 /* USStreetMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USStreetMetadata.swift; sourceTree = "<group>"; };
-		AE6F43C122C55CC3001F3CC5 /* USStreetAnalysis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USStreetAnalysis.swift; sourceTree = "<group>"; };
-		AE6F43C422C55CFC001F3CC5 /* USStreetBatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USStreetBatch.swift; sourceTree = "<group>"; };
-		AE6F43C822C55D88001F3CC5 /* InternationalStreetClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternationalStreetClient.swift; sourceTree = "<group>"; };
-		AE6F43CB22C55DF3001F3CC5 /* InternationalStreetLookup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternationalStreetLookup.swift; sourceTree = "<group>"; };
-		AE6F43CE22C55E40001F3CC5 /* InternationalStreetCandidate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternationalStreetCandidate.swift; sourceTree = "<group>"; };
-		AE6F43D122C55E6A001F3CC5 /* InternationalStreetComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternationalStreetComponents.swift; sourceTree = "<group>"; };
-		AE6F43D422C55E98001F3CC5 /* InternationalStreetMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternationalStreetMetadata.swift; sourceTree = "<group>"; };
-		AE6F43D722C55EC0001F3CC5 /* InternationalStreetAnalysis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternationalStreetAnalysis.swift; sourceTree = "<group>"; };
-		AE6F43DA22C55EE8001F3CC5 /* InternationalStreetChanges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternationalStreetChanges.swift; sourceTree = "<group>"; };
-		AE6F43DD22C55F0D001F3CC5 /* InternationalStreetRootLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternationalStreetRootLevel.swift; sourceTree = "<group>"; };
-		AE6F43E022C55F50001F3CC5 /* LanguageMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageMode.swift; sourceTree = "<group>"; };
-		AE6F43E322C55F73001F3CC5 /* InternationalStreetSerializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternationalStreetSerializer.swift; sourceTree = "<group>"; };
-		AE6F43E722C56094001F3CC5 /* USAutocompleteClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USAutocompleteClient.swift; sourceTree = "<group>"; };
-		AE6F43EA22C560CB001F3CC5 /* USAutocompleteLookup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USAutocompleteLookup.swift; sourceTree = "<group>"; };
-		AE6F43ED22C560F1001F3CC5 /* USAutocompleteResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USAutocompleteResult.swift; sourceTree = "<group>"; };
-		AE6F43F022C56111001F3CC5 /* USAutocompleteSuggestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USAutocompleteSuggestion.swift; sourceTree = "<group>"; };
-		AE6F43F322C5614E001F3CC5 /* USAutocompleteSerializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USAutocompleteSerializer.swift; sourceTree = "<group>"; };
-		AE6F43F622C56165001F3CC5 /* GeolocateType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeolocateType.swift; sourceTree = "<group>"; };
-		AE6F43FA22C561A1001F3CC5 /* USExtractClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USExtractClient.swift; sourceTree = "<group>"; };
-		AE6F43FD22C561CC001F3CC5 /* USExtractLookup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USExtractLookup.swift; sourceTree = "<group>"; };
-		AE6F440022C561E6001F3CC5 /* USExtractResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USExtractResult.swift; sourceTree = "<group>"; };
-		AE6F440322C56206001F3CC5 /* USExtractMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USExtractMetadata.swift; sourceTree = "<group>"; };
-		AE6F440622C56222001F3CC5 /* USExtractAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USExtractAddress.swift; sourceTree = "<group>"; };
-		AE6F440922C5624E001F3CC5 /* USExtractSerializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USExtractSerializer.swift; sourceTree = "<group>"; };
-		AE6F440C22C56472001F3CC5 /* SmartyRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartyRequestTests.swift; sourceTree = "<group>"; };
-		AE6F440E22C5650E001F3CC5 /* SerializerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerializerTests.swift; sourceTree = "<group>"; };
-		AE6F441122C5662A001F3CC5 /* InternationalStreetClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternationalStreetClientTests.swift; sourceTree = "<group>"; };
-		AE6F441322C56667001F3CC5 /* RequestCapturingSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestCapturingSender.swift; sourceTree = "<group>"; };
-		AE6F441622C568A4001F3CC5 /* InternationalStreetCandidateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternationalStreetCandidateTests.swift; sourceTree = "<group>"; };
-		AE6F441922C569BD001F3CC5 /* USAutocompleteClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USAutocompleteClientTests.swift; sourceTree = "<group>"; };
-		AE6F441B22C56A0E001F3CC5 /* MockSerializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSerializer.swift; sourceTree = "<group>"; };
-		AE6F441E22C56AA4001F3CC5 /* USAutocompleteResultTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USAutocompleteResultTests.swift; sourceTree = "<group>"; };
-		AE6F442122C56B45001F3CC5 /* USExtractClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USExtractClientTests.swift; sourceTree = "<group>"; };
-		AE6F442322C56BCD001F3CC5 /* USExtractResultTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USExtractResultTests.swift; sourceTree = "<group>"; };
-		AE6F442622C56C44001F3CC5 /* USStreetClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USStreetClientTests.swift; sourceTree = "<group>"; };
-		AE6F442822C56CA5001F3CC5 /* USStreetCandidateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USStreetCandidateTests.swift; sourceTree = "<group>"; };
-		AE6F442B22C56DC6001F3CC5 /* USZipCodeClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USZipCodeClientTests.swift; sourceTree = "<group>"; };
-		AE6F442D22C56E3D001F3CC5 /* USZipCodeResultTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USZipCodeResultTests.swift; sourceTree = "<group>"; };
-		AE6F442F22C56EDF001F3CC5 /* USZipCodeBatchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USZipCodeBatchTests.swift; sourceTree = "<group>"; };
-		OBJ_12 /* XCTestManifests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
-		OBJ_13 /* smartystreets_ios_sdkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = smartystreets_ios_sdkTests.swift; sourceTree = "<group>"; };
+		OBJ_101 /* USStreetCandidateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USStreetCandidateTests.swift; sourceTree = "<group>"; };
+		OBJ_102 /* USStreetClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USStreetClientTests.swift; sourceTree = "<group>"; };
+		OBJ_104 /* USZipCodeBatchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USZipCodeBatchTests.swift; sourceTree = "<group>"; };
+		OBJ_105 /* USZipCodeClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USZipCodeClientTests.swift; sourceTree = "<group>"; };
+		OBJ_106 /* USZipCodeResultTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USZipCodeResultTests.swift; sourceTree = "<group>"; };
+		OBJ_107 /* XCTestManifests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
+		OBJ_108 /* smartystreets_ios_sdkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = smartystreets_ios_sdkTests.swift; sourceTree = "<group>"; };
+		OBJ_11 /* ClientBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientBuilder.swift; sourceTree = "<group>"; };
+		OBJ_112 /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
+		OBJ_113 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
+		OBJ_114 /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		OBJ_115 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		OBJ_12 /* HttpSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpSender.swift; sourceTree = "<group>"; };
+		OBJ_14 /* InternationalStreetAnalysis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternationalStreetAnalysis.swift; sourceTree = "<group>"; };
+		OBJ_15 /* InternationalStreetCandidate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternationalStreetCandidate.swift; sourceTree = "<group>"; };
+		OBJ_16 /* InternationalStreetChanges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternationalStreetChanges.swift; sourceTree = "<group>"; };
+		OBJ_17 /* InternationalStreetClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternationalStreetClient.swift; sourceTree = "<group>"; };
+		OBJ_18 /* InternationalStreetComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternationalStreetComponents.swift; sourceTree = "<group>"; };
+		OBJ_19 /* InternationalStreetLookup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternationalStreetLookup.swift; sourceTree = "<group>"; };
+		OBJ_20 /* InternationalStreetMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternationalStreetMetadata.swift; sourceTree = "<group>"; };
+		OBJ_21 /* InternationalStreetRootLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternationalStreetRootLevel.swift; sourceTree = "<group>"; };
+		OBJ_22 /* InternationalStreetSerializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternationalStreetSerializer.swift; sourceTree = "<group>"; };
+		OBJ_23 /* LanguageMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageMode.swift; sourceTree = "<group>"; };
+		OBJ_24 /* RetrySender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrySender.swift; sourceTree = "<group>"; };
+		OBJ_25 /* SharedCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedCredentials.swift; sourceTree = "<group>"; };
+		OBJ_26 /* SigningSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigningSender.swift; sourceTree = "<group>"; };
+		OBJ_27 /* SmartyBatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartyBatch.swift; sourceTree = "<group>"; };
+		OBJ_28 /* SmartyCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartyCredentials.swift; sourceTree = "<group>"; };
+		OBJ_29 /* SmartyErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartyErrors.swift; sourceTree = "<group>"; };
+		OBJ_30 /* SmartyLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartyLogger.swift; sourceTree = "<group>"; };
+		OBJ_31 /* SmartyRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartyRequest.swift; sourceTree = "<group>"; };
+		OBJ_32 /* SmartyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartyResponse.swift; sourceTree = "<group>"; };
+		OBJ_33 /* SmartySender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartySender.swift; sourceTree = "<group>"; };
+		OBJ_34 /* SmartySerializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartySerializer.swift; sourceTree = "<group>"; };
+		OBJ_35 /* SmartySleeper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartySleeper.swift; sourceTree = "<group>"; };
+		OBJ_36 /* StaticCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticCredentials.swift; sourceTree = "<group>"; };
+		OBJ_37 /* StatusCodeSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCodeSender.swift; sourceTree = "<group>"; };
+		OBJ_38 /* URLPrefixSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLPrefixSender.swift; sourceTree = "<group>"; };
+		OBJ_40 /* GeolocateType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeolocateType.swift; sourceTree = "<group>"; };
+		OBJ_41 /* USAutocompleteClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USAutocompleteClient.swift; sourceTree = "<group>"; };
+		OBJ_42 /* USAutocompleteLookup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USAutocompleteLookup.swift; sourceTree = "<group>"; };
+		OBJ_43 /* USAutocompleteResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USAutocompleteResult.swift; sourceTree = "<group>"; };
+		OBJ_44 /* USAutocompleteSerializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USAutocompleteSerializer.swift; sourceTree = "<group>"; };
+		OBJ_45 /* USAutocompleteSuggestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USAutocompleteSuggestion.swift; sourceTree = "<group>"; };
+		OBJ_47 /* USExtractAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USExtractAddress.swift; sourceTree = "<group>"; };
+		OBJ_48 /* USExtractClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USExtractClient.swift; sourceTree = "<group>"; };
+		OBJ_49 /* USExtractLookup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USExtractLookup.swift; sourceTree = "<group>"; };
+		OBJ_50 /* USExtractMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USExtractMetadata.swift; sourceTree = "<group>"; };
+		OBJ_51 /* USExtractResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USExtractResult.swift; sourceTree = "<group>"; };
+		OBJ_52 /* USExtractSerializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USExtractSerializer.swift; sourceTree = "<group>"; };
+		OBJ_54 /* USStreetAnalysis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USStreetAnalysis.swift; sourceTree = "<group>"; };
+		OBJ_55 /* USStreetBatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USStreetBatch.swift; sourceTree = "<group>"; };
+		OBJ_56 /* USStreetCandidate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USStreetCandidate.swift; sourceTree = "<group>"; };
+		OBJ_57 /* USStreetClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USStreetClient.swift; sourceTree = "<group>"; };
+		OBJ_58 /* USStreetComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USStreetComponents.swift; sourceTree = "<group>"; };
+		OBJ_59 /* USStreetLookup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USStreetLookup.swift; sourceTree = "<group>"; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
-		"smartystreets-ios-sdk::smartystreets-ios-sdk::Product" /* smartystreets_ios_sdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = smartystreets_ios_sdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		OBJ_60 /* USStreetMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USStreetMetadata.swift; sourceTree = "<group>"; };
+		OBJ_61 /* USStreetSerializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USStreetSerializer.swift; sourceTree = "<group>"; };
+		OBJ_63 /* USAlternateCounties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USAlternateCounties.swift; sourceTree = "<group>"; };
+		OBJ_64 /* USCity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USCity.swift; sourceTree = "<group>"; };
+		OBJ_65 /* USZipCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USZipCode.swift; sourceTree = "<group>"; };
+		OBJ_66 /* USZipCodeBatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USZipCodeBatch.swift; sourceTree = "<group>"; };
+		OBJ_67 /* USZipCodeClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USZipCodeClient.swift; sourceTree = "<group>"; };
+		OBJ_68 /* USZipCodeLookup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USZipCodeLookup.swift; sourceTree = "<group>"; };
+		OBJ_69 /* USZipCodeResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USZipCodeResult.swift; sourceTree = "<group>"; };
+		OBJ_70 /* USZipCodeSerializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USZipCodeSerializer.swift; sourceTree = "<group>"; };
+		OBJ_71 /* Version.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
+		OBJ_74 /* ClientBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientBuilderTests.swift; sourceTree = "<group>"; };
+		OBJ_76 /* InternationalStreetCandidateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternationalStreetCandidateTests.swift; sourceTree = "<group>"; };
+		OBJ_77 /* InternationalStreetClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternationalStreetClientTests.swift; sourceTree = "<group>"; };
+		OBJ_79 /* MockCrashingSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCrashingSender.swift; sourceTree = "<group>"; };
+		OBJ_80 /* MockLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLogger.swift; sourceTree = "<group>"; };
+		OBJ_81 /* MockSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSender.swift; sourceTree = "<group>"; };
+		OBJ_82 /* MockSerializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSerializer.swift; sourceTree = "<group>"; };
+		OBJ_83 /* MockSleeper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSleeper.swift; sourceTree = "<group>"; };
+		OBJ_84 /* MockStatusCodeSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockStatusCodeSender.swift; sourceTree = "<group>"; };
+		OBJ_85 /* RequestCapturingSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestCapturingSender.swift; sourceTree = "<group>"; };
+		OBJ_86 /* RetrySenderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrySenderTests.swift; sourceTree = "<group>"; };
+		OBJ_87 /* SerializerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerializerTests.swift; sourceTree = "<group>"; };
+		OBJ_88 /* SigningSenderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigningSenderTests.swift; sourceTree = "<group>"; };
+		OBJ_89 /* SmartyCredentialsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartyCredentialsTests.swift; sourceTree = "<group>"; };
+		OBJ_90 /* SmartyRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartyRequestTests.swift; sourceTree = "<group>"; };
+		OBJ_91 /* SmartyResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartyResponseTests.swift; sourceTree = "<group>"; };
+		OBJ_92 /* SmartySenderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartySenderTests.swift; sourceTree = "<group>"; };
+		OBJ_93 /* StatusCodeSenderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCodeSenderTests.swift; sourceTree = "<group>"; };
+		OBJ_95 /* USAutocompleteClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USAutocompleteClientTests.swift; sourceTree = "<group>"; };
+		OBJ_96 /* USAutocompleteResultTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USAutocompleteResultTests.swift; sourceTree = "<group>"; };
+		OBJ_98 /* USExtractClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USExtractClientTests.swift; sourceTree = "<group>"; };
+		OBJ_99 /* USExtractResultTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USExtractResultTests.swift; sourceTree = "<group>"; };
+		"smartystreets-ios-sdk::smartystreets-ios-sdk::Product" /* smartystreets-ios-sdk */ = {isa = PBXFileReference; lastKnownFileType = text; path = "smartystreets-ios-sdk"; sourceTree = BUILT_PRODUCTS_DIR; };
 		"smartystreets-ios-sdk::smartystreets-ios-sdkTests::Product" /* smartystreets_ios_sdkTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; name = smartystreets_ios_sdkTests.xctest; path = "smartystreets-ios-sdkTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		OBJ_23 /* Frameworks */ = {
+		OBJ_178 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_42 /* Frameworks */ = {
+		OBJ_224 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_43 /* smartystreets_ios_sdk.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AE6F434422C534AD001F3CC5 /* Mocks */ = {
+		OBJ_10 /* smartystreets-ios-sdk */ = {
 			isa = PBXGroup;
 			children = (
-				AE6F434522C534B7001F3CC5 /* MockStatusCodeSender.swift */,
-				AE6F435B22C53B82001F3CC5 /* MockSender.swift */,
-				AE6F437122C550F5001F3CC5 /* MockCrashingSender.swift */,
-				AE6F437322C5515D001F3CC5 /* MockLogger.swift */,
-				AE6F437922C552F3001F3CC5 /* MockSleeper.swift */,
-				AE6F441322C56667001F3CC5 /* RequestCapturingSender.swift */,
-				AE6F441B22C56A0E001F3CC5 /* MockSerializer.swift */,
+				OBJ_11 /* ClientBuilder.swift */,
+				OBJ_12 /* HttpSender.swift */,
+				OBJ_24 /* RetrySender.swift */,
+				OBJ_25 /* SharedCredentials.swift */,
+				OBJ_26 /* SigningSender.swift */,
+				OBJ_27 /* SmartyBatch.swift */,
+				OBJ_28 /* SmartyCredentials.swift */,
+				OBJ_29 /* SmartyErrors.swift */,
+				OBJ_30 /* SmartyLogger.swift */,
+				OBJ_31 /* SmartyRequest.swift */,
+				OBJ_32 /* SmartyResponse.swift */,
+				OBJ_33 /* SmartySender.swift */,
+				OBJ_34 /* SmartySerializer.swift */,
+				OBJ_35 /* SmartySleeper.swift */,
+				OBJ_36 /* StaticCredentials.swift */,
+				OBJ_37 /* StatusCodeSender.swift */,
+				OBJ_38 /* URLPrefixSender.swift */,
+				OBJ_71 /* Version.swift */,
+				OBJ_13 /* InternationalStreet */,
+				OBJ_39 /* USAutocomplete */,
+				OBJ_46 /* USExtract */,
+				OBJ_53 /* USStreet */,
+				OBJ_62 /* USZipCode */,
 			);
-			path = Mocks;
+			path = "smartystreets-ios-sdk";
 			sourceTree = "<group>";
 		};
-		AE6F438F22C55738001F3CC5 /* USZipCode */ = {
+		OBJ_100 /* USStreetTests */ = {
 			isa = PBXGroup;
 			children = (
-				AE6F439022C55752001F3CC5 /* USZipCodeSerializer.swift */,
-				AE6F439322C557A4001F3CC5 /* USZipCodeLookup.swift */,
-				AE6F439622C557D9001F3CC5 /* USZipCodeResult.swift */,
-				AE6F439922C558B5001F3CC5 /* USCity.swift */,
-				AE6F439C22C558EE001F3CC5 /* USZipCode.swift */,
-				AE6F439F22C55928001F3CC5 /* USAlternateCounties.swift */,
-				AE6F43A522C559E4001F3CC5 /* USZipCodeClient.swift */,
-				AE6F43A822C55A38001F3CC5 /* USZipCodeBatch.swift */,
-			);
-			path = USZipCode;
-			sourceTree = "<group>";
-		};
-		AE6F43AE22C55B44001F3CC5 /* USStreet */ = {
-			isa = PBXGroup;
-			children = (
-				AE6F43AF22C55B58001F3CC5 /* USStreetClient.swift */,
-				AE6F43B222C55BC0001F3CC5 /* USStreetSerializer.swift */,
-				AE6F43B522C55C0F001F3CC5 /* USStreetLookup.swift */,
-				AE6F43B822C55C37001F3CC5 /* USStreetCandidate.swift */,
-				AE6F43BB22C55C6D001F3CC5 /* USStreetComponents.swift */,
-				AE6F43BE22C55C8E001F3CC5 /* USStreetMetadata.swift */,
-				AE6F43C122C55CC3001F3CC5 /* USStreetAnalysis.swift */,
-				AE6F43C422C55CFC001F3CC5 /* USStreetBatch.swift */,
-			);
-			path = USStreet;
-			sourceTree = "<group>";
-		};
-		AE6F43C722C55D63001F3CC5 /* InternationalStreet */ = {
-			isa = PBXGroup;
-			children = (
-				AE6F43C822C55D88001F3CC5 /* InternationalStreetClient.swift */,
-				AE6F43CB22C55DF3001F3CC5 /* InternationalStreetLookup.swift */,
-				AE6F43CE22C55E40001F3CC5 /* InternationalStreetCandidate.swift */,
-				AE6F43D122C55E6A001F3CC5 /* InternationalStreetComponents.swift */,
-				AE6F43D422C55E98001F3CC5 /* InternationalStreetMetadata.swift */,
-				AE6F43D722C55EC0001F3CC5 /* InternationalStreetAnalysis.swift */,
-				AE6F43DA22C55EE8001F3CC5 /* InternationalStreetChanges.swift */,
-				AE6F43DD22C55F0D001F3CC5 /* InternationalStreetRootLevel.swift */,
-				AE6F43E022C55F50001F3CC5 /* LanguageMode.swift */,
-				AE6F43E322C55F73001F3CC5 /* InternationalStreetSerializer.swift */,
-			);
-			path = InternationalStreet;
-			sourceTree = "<group>";
-		};
-		AE6F43E622C5607E001F3CC5 /* USAutocomplete */ = {
-			isa = PBXGroup;
-			children = (
-				AE6F43E722C56094001F3CC5 /* USAutocompleteClient.swift */,
-				AE6F43EA22C560CB001F3CC5 /* USAutocompleteLookup.swift */,
-				AE6F43ED22C560F1001F3CC5 /* USAutocompleteResult.swift */,
-				AE6F43F022C56111001F3CC5 /* USAutocompleteSuggestion.swift */,
-				AE6F43F322C5614E001F3CC5 /* USAutocompleteSerializer.swift */,
-				AE6F43F622C56165001F3CC5 /* GeolocateType.swift */,
-			);
-			path = USAutocomplete;
-			sourceTree = "<group>";
-		};
-		AE6F43F922C56190001F3CC5 /* USExtract */ = {
-			isa = PBXGroup;
-			children = (
-				AE6F43FA22C561A1001F3CC5 /* USExtractClient.swift */,
-				AE6F43FD22C561CC001F3CC5 /* USExtractLookup.swift */,
-				AE6F440022C561E6001F3CC5 /* USExtractResult.swift */,
-				AE6F440322C56206001F3CC5 /* USExtractMetadata.swift */,
-				AE6F440622C56222001F3CC5 /* USExtractAddress.swift */,
-				AE6F440922C5624E001F3CC5 /* USExtractSerializer.swift */,
-			);
-			path = USExtract;
-			sourceTree = "<group>";
-		};
-		AE6F441022C56602001F3CC5 /* InternationalStreetTests */ = {
-			isa = PBXGroup;
-			children = (
-				AE6F441122C5662A001F3CC5 /* InternationalStreetClientTests.swift */,
-				AE6F441622C568A4001F3CC5 /* InternationalStreetCandidateTests.swift */,
-			);
-			path = InternationalStreetTests;
-			sourceTree = "<group>";
-		};
-		AE6F441822C5697C001F3CC5 /* USAutocompleteTests */ = {
-			isa = PBXGroup;
-			children = (
-				AE6F441922C569BD001F3CC5 /* USAutocompleteClientTests.swift */,
-				AE6F441E22C56AA4001F3CC5 /* USAutocompleteResultTests.swift */,
-			);
-			path = USAutocompleteTests;
-			sourceTree = "<group>";
-		};
-		AE6F442022C56B29001F3CC5 /* USExtractTests */ = {
-			isa = PBXGroup;
-			children = (
-				AE6F442122C56B45001F3CC5 /* USExtractClientTests.swift */,
-				AE6F442322C56BCD001F3CC5 /* USExtractResultTests.swift */,
-			);
-			path = USExtractTests;
-			sourceTree = "<group>";
-		};
-		AE6F442522C56C31001F3CC5 /* USStreetTests */ = {
-			isa = PBXGroup;
-			children = (
-				AE6F442622C56C44001F3CC5 /* USStreetClientTests.swift */,
-				AE6F442822C56CA5001F3CC5 /* USStreetCandidateTests.swift */,
+				OBJ_101 /* USStreetCandidateTests.swift */,
+				OBJ_102 /* USStreetClientTests.swift */,
 			);
 			path = USStreetTests;
 			sourceTree = "<group>";
 		};
-		AE6F442A22C56DB0001F3CC5 /* USZipCodeTests */ = {
+		OBJ_103 /* USZipCodeTests */ = {
 			isa = PBXGroup;
 			children = (
-				AE6F442B22C56DC6001F3CC5 /* USZipCodeClientTests.swift */,
-				AE6F442D22C56E3D001F3CC5 /* USZipCodeResultTests.swift */,
-				AE6F442F22C56EDF001F3CC5 /* USZipCodeBatchTests.swift */,
+				OBJ_104 /* USZipCodeBatchTests.swift */,
+				OBJ_105 /* USZipCodeClientTests.swift */,
+				OBJ_106 /* USZipCodeResultTests.swift */,
 			);
 			path = USZipCodeTests;
 			sourceTree = "<group>";
 		};
-		OBJ_10 /* Tests */ = {
+		OBJ_109 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_11 /* smartystreets-ios-sdkTests */,
-			);
-			name = Tests;
-			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_11 /* smartystreets-ios-sdkTests */ = {
-			isa = PBXGroup;
-			children = (
-				AE6F442A22C56DB0001F3CC5 /* USZipCodeTests */,
-				AE6F442522C56C31001F3CC5 /* USStreetTests */,
-				AE6F442022C56B29001F3CC5 /* USExtractTests */,
-				AE6F441822C5697C001F3CC5 /* USAutocompleteTests */,
-				AE6F441022C56602001F3CC5 /* InternationalStreetTests */,
-				AE6F434422C534AD001F3CC5 /* Mocks */,
-				OBJ_12 /* XCTestManifests.swift */,
-				OBJ_13 /* smartystreets_ios_sdkTests.swift */,
-				AE6F434222C53447001F3CC5 /* StatusCodeSenderTests.swift */,
-				AE6F435722C53A98001F3CC5 /* SmartyResponseTests.swift */,
-				AE6F435922C53B16001F3CC5 /* SigningSenderTests.swift */,
-				AE6F436722C53D69001F3CC5 /* SmartySenderTests.swift */,
-				AE6F436F22C5508D001F3CC5 /* RetrySenderTests.swift */,
-				AE6F438222C554BE001F3CC5 /* SmartyCredentialsTests.swift */,
-				AE6F438722C555A9001F3CC5 /* ClientBuilderTests.swift */,
-				AE6F440C22C56472001F3CC5 /* SmartyRequestTests.swift */,
-				AE6F440E22C5650E001F3CC5 /* SerializerTests.swift */,
-			);
-			name = "smartystreets-ios-sdkTests";
-			path = "Tests/smartystreets-ios-sdkTests";
-			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_14 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				"smartystreets-ios-sdk::smartystreets-ios-sdk::Product" /* smartystreets_ios_sdk.framework */,
+				"smartystreets-ios-sdk::smartystreets-ios-sdk::Product" /* smartystreets-ios-sdk */,
 				"smartystreets-ios-sdk::smartystreets-ios-sdkTests::Product" /* smartystreets_ios_sdkTests.xctest */,
 			);
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		OBJ_5 = {
+		OBJ_13 /* InternationalStreet */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_14 /* InternationalStreetAnalysis.swift */,
+				OBJ_15 /* InternationalStreetCandidate.swift */,
+				OBJ_16 /* InternationalStreetChanges.swift */,
+				OBJ_17 /* InternationalStreetClient.swift */,
+				OBJ_18 /* InternationalStreetComponents.swift */,
+				OBJ_19 /* InternationalStreetLookup.swift */,
+				OBJ_20 /* InternationalStreetMetadata.swift */,
+				OBJ_21 /* InternationalStreetRootLevel.swift */,
+				OBJ_22 /* InternationalStreetSerializer.swift */,
+				OBJ_23 /* LanguageMode.swift */,
+			);
+			path = InternationalStreet;
+			sourceTree = "<group>";
+		};
+		OBJ_39 /* USAutocomplete */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_40 /* GeolocateType.swift */,
+				OBJ_41 /* USAutocompleteClient.swift */,
+				OBJ_42 /* USAutocompleteLookup.swift */,
+				OBJ_43 /* USAutocompleteResult.swift */,
+				OBJ_44 /* USAutocompleteSerializer.swift */,
+				OBJ_45 /* USAutocompleteSuggestion.swift */,
+			);
+			path = USAutocomplete;
+			sourceTree = "<group>";
+		};
+		OBJ_46 /* USExtract */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_47 /* USExtractAddress.swift */,
+				OBJ_48 /* USExtractClient.swift */,
+				OBJ_49 /* USExtractLookup.swift */,
+				OBJ_50 /* USExtractMetadata.swift */,
+				OBJ_51 /* USExtractResult.swift */,
+				OBJ_52 /* USExtractSerializer.swift */,
+			);
+			path = USExtract;
+			sourceTree = "<group>";
+		};
+		OBJ_5 /*  */ = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
 				OBJ_7 /* Sources */,
-				OBJ_10 /* Tests */,
-				OBJ_14 /* Products */,
+				OBJ_72 /* Tests */,
+				OBJ_109 /* Products */,
+				OBJ_112 /* LICENSE.md */,
+				OBJ_113 /* CHANGELOG.md */,
+				OBJ_114 /* Makefile */,
+				OBJ_115 /* README.md */,
 			);
+			name = "";
+			sourceTree = "<group>";
+		};
+		OBJ_53 /* USStreet */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_54 /* USStreetAnalysis.swift */,
+				OBJ_55 /* USStreetBatch.swift */,
+				OBJ_56 /* USStreetCandidate.swift */,
+				OBJ_57 /* USStreetClient.swift */,
+				OBJ_58 /* USStreetComponents.swift */,
+				OBJ_59 /* USStreetLookup.swift */,
+				OBJ_60 /* USStreetMetadata.swift */,
+				OBJ_61 /* USStreetSerializer.swift */,
+			);
+			path = USStreet;
+			sourceTree = "<group>";
+		};
+		OBJ_62 /* USZipCode */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_63 /* USAlternateCounties.swift */,
+				OBJ_64 /* USCity.swift */,
+				OBJ_65 /* USZipCode.swift */,
+				OBJ_66 /* USZipCodeBatch.swift */,
+				OBJ_67 /* USZipCodeClient.swift */,
+				OBJ_68 /* USZipCodeLookup.swift */,
+				OBJ_69 /* USZipCodeResult.swift */,
+				OBJ_70 /* USZipCodeSerializer.swift */,
+			);
+			path = USZipCode;
 			sourceTree = "<group>";
 		};
 		OBJ_7 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_8 /* smartystreets-ios-sdk */,
+				OBJ_10 /* smartystreets-ios-sdk */,
 			);
-			name = Sources;
+			path = Sources;
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_8 /* smartystreets-ios-sdk */ = {
+		OBJ_72 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				AE6F43F922C56190001F3CC5 /* USExtract */,
-				AE6F43E622C5607E001F3CC5 /* USAutocomplete */,
-				AE6F43C722C55D63001F3CC5 /* InternationalStreet */,
-				AE6F43AE22C55B44001F3CC5 /* USStreet */,
-				AE6F438F22C55738001F3CC5 /* USZipCode */,
-				AE6F434822C5356C001F3CC5 /* StatusCodeSender.swift */,
-				AE6F434A22C535C0001F3CC5 /* SmartySender.swift */,
-				AE6F434C22C53648001F3CC5 /* SmartyRequest.swift */,
-				AE6F434E22C536DD001F3CC5 /* SmartyResponse.swift */,
-				AE6F435022C537A5001F3CC5 /* SmartyErrors.swift */,
-				AE6F435E22C53BE0001F3CC5 /* SmartyCredentials.swift */,
-				AE6F436122C53C1D001F3CC5 /* StaticCredentials.swift */,
-				AE6F436422C53C66001F3CC5 /* SigningSender.swift */,
-				AE6F436922C53DD2001F3CC5 /* HttpSender.swift */,
-				AE6F436C22C53E46001F3CC5 /* Version.swift */,
-				AE6F437622C55243001F3CC5 /* SmartyLogger.swift */,
-				AE6F437C22C55364001F3CC5 /* SmartySleeper.swift */,
-				AE6F437F22C553F5001F3CC5 /* RetrySender.swift */,
-				AE6F438422C55513001F3CC5 /* SharedCredentials.swift */,
-				AE6F438922C55627001F3CC5 /* ClientBuilder.swift */,
-				AE6F438C22C556C9001F3CC5 /* SmartySerializer.swift */,
-				AE6F43A222C559AB001F3CC5 /* URLPrefixSender.swift */,
-				AE6F43AB22C55A6C001F3CC5 /* SmartyBatch.swift */,
+				OBJ_73 /* smartystreets-ios-sdkTests */,
 			);
-			name = "smartystreets-ios-sdk";
-			path = "Sources/smartystreets-ios-sdk";
+			path = Tests;
 			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_73 /* smartystreets-ios-sdkTests */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_74 /* ClientBuilderTests.swift */,
+				OBJ_75 /* InternationalStreetTests */,
+				OBJ_78 /* Mocks */,
+				OBJ_86 /* RetrySenderTests.swift */,
+				OBJ_87 /* SerializerTests.swift */,
+				OBJ_88 /* SigningSenderTests.swift */,
+				OBJ_89 /* SmartyCredentialsTests.swift */,
+				OBJ_90 /* SmartyRequestTests.swift */,
+				OBJ_91 /* SmartyResponseTests.swift */,
+				OBJ_92 /* SmartySenderTests.swift */,
+				OBJ_93 /* StatusCodeSenderTests.swift */,
+				OBJ_94 /* USAutocompleteTests */,
+				OBJ_97 /* USExtractTests */,
+				OBJ_100 /* USStreetTests */,
+				OBJ_103 /* USZipCodeTests */,
+				OBJ_107 /* XCTestManifests.swift */,
+				OBJ_108 /* smartystreets_ios_sdkTests.swift */,
+			);
+			path = "smartystreets-ios-sdkTests";
+			sourceTree = "<group>";
+		};
+		OBJ_75 /* InternationalStreetTests */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_76 /* InternationalStreetCandidateTests.swift */,
+				OBJ_77 /* InternationalStreetClientTests.swift */,
+			);
+			path = InternationalStreetTests;
+			sourceTree = "<group>";
+		};
+		OBJ_78 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_79 /* MockCrashingSender.swift */,
+				OBJ_80 /* MockLogger.swift */,
+				OBJ_81 /* MockSender.swift */,
+				OBJ_82 /* MockSerializer.swift */,
+				OBJ_83 /* MockSleeper.swift */,
+				OBJ_84 /* MockStatusCodeSender.swift */,
+				OBJ_85 /* RequestCapturingSender.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		OBJ_94 /* USAutocompleteTests */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_95 /* USAutocompleteClientTests.swift */,
+				OBJ_96 /* USAutocompleteResultTests.swift */,
+			);
+			path = USAutocompleteTests;
+			sourceTree = "<group>";
+		};
+		OBJ_97 /* USExtractTests */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_98 /* USExtractClientTests.swift */,
+				OBJ_99 /* USExtractResultTests.swift */,
+			);
+			path = USExtractTests;
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
 		"smartystreets-ios-sdk::SwiftPMPackageDescription" /* smartystreets-ios-sdkPackageDescription */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_25 /* Build configuration list for PBXNativeTarget "smartystreets-ios-sdkPackageDescription" */;
+			buildConfigurationList = OBJ_180 /* Build configuration list for PBXNativeTarget "smartystreets-ios-sdkPackageDescription" */;
 			buildPhases = (
-				OBJ_28 /* Sources */,
+				OBJ_183 /* Sources */,
 			);
 			buildRules = (
 			);
@@ -536,10 +485,10 @@
 		};
 		"smartystreets-ios-sdk::smartystreets-ios-sdk" /* smartystreets-ios-sdk */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_18 /* Build configuration list for PBXNativeTarget "smartystreets-ios-sdk" */;
+			buildConfigurationList = OBJ_117 /* Build configuration list for PBXNativeTarget "smartystreets-ios-sdk" */;
 			buildPhases = (
-				OBJ_21 /* Sources */,
-				OBJ_23 /* Frameworks */,
+				OBJ_120 /* Sources */,
+				OBJ_178 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -547,20 +496,20 @@
 			);
 			name = "smartystreets-ios-sdk";
 			productName = smartystreets_ios_sdk;
-			productReference = "smartystreets-ios-sdk::smartystreets-ios-sdk::Product" /* smartystreets_ios_sdk.framework */;
-			productType = "com.apple.product-type.framework";
+			productReference = "smartystreets-ios-sdk::smartystreets-ios-sdk::Product" /* smartystreets-ios-sdk */;
+			productType = "com.apple.product-type.tool";
 		};
 		"smartystreets-ios-sdk::smartystreets-ios-sdkTests" /* smartystreets-ios-sdkTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_36 /* Build configuration list for PBXNativeTarget "smartystreets-ios-sdkTests" */;
+			buildConfigurationList = OBJ_191 /* Build configuration list for PBXNativeTarget "smartystreets-ios-sdkTests" */;
 			buildPhases = (
-				OBJ_39 /* Sources */,
-				OBJ_42 /* Frameworks */,
+				OBJ_194 /* Sources */,
+				OBJ_224 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				OBJ_44 /* PBXTargetDependency */,
+				OBJ_225 /* PBXTargetDependency */,
 			);
 			name = "smartystreets-ios-sdkTests";
 			productName = smartystreets_ios_sdkTests;
@@ -584,8 +533,8 @@
 				English,
 				en,
 			);
-			mainGroup = OBJ_5;
-			productRefGroup = OBJ_14 /* Products */;
+			mainGroup = OBJ_5 /*  */;
+			productRefGroup = OBJ_109 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -598,189 +547,132 @@
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		OBJ_21 /* Sources */ = {
+		OBJ_120 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				AE6F43A622C559E4001F3CC5 /* USZipCodeClient.swift in Sources */,
-				AE6F43FE22C561CC001F3CC5 /* USExtractLookup.swift in Sources */,
-				AE6F43E422C55F73001F3CC5 /* InternationalStreetSerializer.swift in Sources */,
-				AE6F43B022C55B58001F3CC5 /* USStreetClient.swift in Sources */,
-				AE6F43F122C56111001F3CC5 /* USAutocompleteSuggestion.swift in Sources */,
-				AE6F439122C55752001F3CC5 /* USZipCodeSerializer.swift in Sources */,
-				AE6F43D222C55E6A001F3CC5 /* InternationalStreetComponents.swift in Sources */,
-				AE6F43DB22C55EE8001F3CC5 /* InternationalStreetChanges.swift in Sources */,
-				AE6F437D22C55364001F3CC5 /* SmartySleeper.swift in Sources */,
-				AE6F43C922C55D88001F3CC5 /* InternationalStreetClient.swift in Sources */,
-				AE6F438022C553F5001F3CC5 /* RetrySender.swift in Sources */,
-				AE6F43AC22C55A6C001F3CC5 /* SmartyBatch.swift in Sources */,
-				AE6F43CC22C55DF3001F3CC5 /* InternationalStreetLookup.swift in Sources */,
-				AE6F43F722C56165001F3CC5 /* GeolocateType.swift in Sources */,
-				AE6F43B322C55BC0001F3CC5 /* USStreetSerializer.swift in Sources */,
-				AE6F436A22C53DD2001F3CC5 /* HttpSender.swift in Sources */,
-				AE6F440422C56206001F3CC5 /* USExtractMetadata.swift in Sources */,
-				AE6F436222C53C1D001F3CC5 /* StaticCredentials.swift in Sources */,
-				AE6F43EE22C560F1001F3CC5 /* USAutocompleteResult.swift in Sources */,
-				AE6F438A22C55627001F3CC5 /* ClientBuilder.swift in Sources */,
-				AE6F434B22C535C0001F3CC5 /* SmartySender.swift in Sources */,
-				AE6F43A022C55928001F3CC5 /* USAlternateCounties.swift in Sources */,
-				AE6F435122C537A5001F3CC5 /* SmartyErrors.swift in Sources */,
-				AE6F43B922C55C37001F3CC5 /* USStreetCandidate.swift in Sources */,
-				AE6F43A922C55A38001F3CC5 /* USZipCodeBatch.swift in Sources */,
-				AE6F440A22C5624E001F3CC5 /* USExtractSerializer.swift in Sources */,
-				AE6F435F22C53BE0001F3CC5 /* SmartyCredentials.swift in Sources */,
-				AE6F43D522C55E98001F3CC5 /* InternationalStreetMetadata.swift in Sources */,
-				AE6F43DE22C55F0D001F3CC5 /* InternationalStreetRootLevel.swift in Sources */,
-				AE6F43D822C55EC0001F3CC5 /* InternationalStreetAnalysis.swift in Sources */,
-				AE6F43B622C55C0F001F3CC5 /* USStreetLookup.swift in Sources */,
-				AE6F438D22C556C9001F3CC5 /* SmartySerializer.swift in Sources */,
-				AE6F43E122C55F50001F3CC5 /* LanguageMode.swift in Sources */,
-				AE6F434922C5356C001F3CC5 /* StatusCodeSender.swift in Sources */,
-				AE6F440722C56223001F3CC5 /* USExtractAddress.swift in Sources */,
-				AE6F436522C53C66001F3CC5 /* SigningSender.swift in Sources */,
-				AE6F440122C561E6001F3CC5 /* USExtractResult.swift in Sources */,
-				AE6F439722C557D9001F3CC5 /* USZipCodeResult.swift in Sources */,
-				AE6F43BF22C55C8E001F3CC5 /* USStreetMetadata.swift in Sources */,
-				AE6F43E822C56094001F3CC5 /* USAutocompleteClient.swift in Sources */,
-				AE6F438522C55513001F3CC5 /* SharedCredentials.swift in Sources */,
-				AE6F434F22C536DD001F3CC5 /* SmartyResponse.swift in Sources */,
-				AE6F43FB22C561A1001F3CC5 /* USExtractClient.swift in Sources */,
-				AE6F43BC22C55C6D001F3CC5 /* USStreetComponents.swift in Sources */,
-				AE6F437722C55243001F3CC5 /* SmartyLogger.swift in Sources */,
-				AE6F43CF22C55E40001F3CC5 /* InternationalStreetCandidate.swift in Sources */,
-				AE6F43A322C559AB001F3CC5 /* URLPrefixSender.swift in Sources */,
-				AE6F439422C557A4001F3CC5 /* USZipCodeLookup.swift in Sources */,
-				AE6F43EB22C560CB001F3CC5 /* USAutocompleteLookup.swift in Sources */,
-				AE6F434D22C53648001F3CC5 /* SmartyRequest.swift in Sources */,
-				AE6F43C222C55CC3001F3CC5 /* USStreetAnalysis.swift in Sources */,
-				AE6F439A22C558B5001F3CC5 /* USCity.swift in Sources */,
-				AE6F439D22C558EE001F3CC5 /* USZipCode.swift in Sources */,
-				AE6F43F422C5614E001F3CC5 /* USAutocompleteSerializer.swift in Sources */,
-				AE6F436D22C53E46001F3CC5 /* Version.swift in Sources */,
-				AE6F43C522C55CFC001F3CC5 /* USStreetBatch.swift in Sources */,
+				OBJ_122 /* ClientBuilder.swift in Sources */,
+				OBJ_123 /* HttpSender.swift in Sources */,
+				OBJ_124 /* InternationalStreetAnalysis.swift in Sources */,
+				OBJ_125 /* InternationalStreetCandidate.swift in Sources */,
+				OBJ_126 /* InternationalStreetChanges.swift in Sources */,
+				OBJ_127 /* InternationalStreetClient.swift in Sources */,
+				OBJ_128 /* InternationalStreetComponents.swift in Sources */,
+				OBJ_129 /* InternationalStreetLookup.swift in Sources */,
+				OBJ_130 /* InternationalStreetMetadata.swift in Sources */,
+				OBJ_131 /* InternationalStreetRootLevel.swift in Sources */,
+				OBJ_132 /* InternationalStreetSerializer.swift in Sources */,
+				OBJ_133 /* LanguageMode.swift in Sources */,
+				OBJ_134 /* RetrySender.swift in Sources */,
+				OBJ_135 /* SharedCredentials.swift in Sources */,
+				OBJ_136 /* SigningSender.swift in Sources */,
+				OBJ_137 /* SmartyBatch.swift in Sources */,
+				OBJ_138 /* SmartyCredentials.swift in Sources */,
+				OBJ_139 /* SmartyErrors.swift in Sources */,
+				OBJ_140 /* SmartyLogger.swift in Sources */,
+				OBJ_141 /* SmartyRequest.swift in Sources */,
+				OBJ_142 /* SmartyResponse.swift in Sources */,
+				OBJ_143 /* SmartySender.swift in Sources */,
+				OBJ_144 /* SmartySerializer.swift in Sources */,
+				OBJ_145 /* SmartySleeper.swift in Sources */,
+				OBJ_146 /* StaticCredentials.swift in Sources */,
+				OBJ_147 /* StatusCodeSender.swift in Sources */,
+				OBJ_148 /* URLPrefixSender.swift in Sources */,
+				OBJ_149 /* GeolocateType.swift in Sources */,
+				OBJ_150 /* USAutocompleteClient.swift in Sources */,
+				OBJ_151 /* USAutocompleteLookup.swift in Sources */,
+				OBJ_152 /* USAutocompleteResult.swift in Sources */,
+				OBJ_153 /* USAutocompleteSerializer.swift in Sources */,
+				OBJ_154 /* USAutocompleteSuggestion.swift in Sources */,
+				OBJ_155 /* USExtractAddress.swift in Sources */,
+				OBJ_156 /* USExtractClient.swift in Sources */,
+				OBJ_157 /* USExtractLookup.swift in Sources */,
+				OBJ_158 /* USExtractMetadata.swift in Sources */,
+				OBJ_159 /* USExtractResult.swift in Sources */,
+				OBJ_160 /* USExtractSerializer.swift in Sources */,
+				OBJ_161 /* USStreetAnalysis.swift in Sources */,
+				OBJ_162 /* USStreetBatch.swift in Sources */,
+				OBJ_163 /* USStreetCandidate.swift in Sources */,
+				OBJ_164 /* USStreetClient.swift in Sources */,
+				OBJ_165 /* USStreetComponents.swift in Sources */,
+				OBJ_166 /* USStreetLookup.swift in Sources */,
+				OBJ_167 /* USStreetMetadata.swift in Sources */,
+				OBJ_168 /* USStreetSerializer.swift in Sources */,
+				OBJ_169 /* USAlternateCounties.swift in Sources */,
+				OBJ_170 /* USCity.swift in Sources */,
+				OBJ_171 /* USZipCode.swift in Sources */,
+				OBJ_172 /* USZipCodeBatch.swift in Sources */,
+				OBJ_173 /* USZipCodeClient.swift in Sources */,
+				OBJ_174 /* USZipCodeLookup.swift in Sources */,
+				OBJ_175 /* USZipCodeResult.swift in Sources */,
+				OBJ_176 /* USZipCodeSerializer.swift in Sources */,
+				OBJ_177 /* Version.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_28 /* Sources */ = {
+		OBJ_183 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_29 /* Package.swift in Sources */,
+				OBJ_184 /* Package.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_39 /* Sources */ = {
+		OBJ_194 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				AE6F439522C557A4001F3CC5 /* USZipCodeLookup.swift in Sources */,
-				AE6F440B22C5624E001F3CC5 /* USExtractSerializer.swift in Sources */,
-				AE6F43EC22C560CB001F3CC5 /* USAutocompleteLookup.swift in Sources */,
-				AE6F436622C53C66001F3CC5 /* SigningSender.swift in Sources */,
-				AE6F43B122C55B58001F3CC5 /* USStreetClient.swift in Sources */,
-				AE6F43D322C55E6A001F3CC5 /* InternationalStreetComponents.swift in Sources */,
-				AE6F435822C53A98001F3CC5 /* SmartyResponseTests.swift in Sources */,
-				AE6F439222C55752001F3CC5 /* USZipCodeSerializer.swift in Sources */,
-				AE6F436022C53BE0001F3CC5 /* SmartyCredentials.swift in Sources */,
-				AE6F436322C53C1D001F3CC5 /* StaticCredentials.swift in Sources */,
-				AE6F442422C56BCD001F3CC5 /* USExtractResultTests.swift in Sources */,
-				AE6F438622C55513001F3CC5 /* SharedCredentials.swift in Sources */,
-				AE6F438E22C556C9001F3CC5 /* SmartySerializer.swift in Sources */,
-				AE6F43C322C55CC3001F3CC5 /* USStreetAnalysis.swift in Sources */,
-				AE6F440F22C5650E001F3CC5 /* SerializerTests.swift in Sources */,
-				AE6F43C022C55C8E001F3CC5 /* USStreetMetadata.swift in Sources */,
-				AE6F439B22C558B5001F3CC5 /* USCity.swift in Sources */,
-				AE6F435322C53844001F3CC5 /* SmartySender.swift in Sources */,
-				AE6F437222C550F5001F3CC5 /* MockCrashingSender.swift in Sources */,
-				AE6F43D922C55EC0001F3CC5 /* InternationalStreetAnalysis.swift in Sources */,
-				AE6F437E22C55364001F3CC5 /* SmartySleeper.swift in Sources */,
-				AE6F43C622C55CFC001F3CC5 /* USStreetBatch.swift in Sources */,
-				AE6F43BD22C55C6D001F3CC5 /* USStreetComponents.swift in Sources */,
-				AE6F435222C5383F001F3CC5 /* StatusCodeSender.swift in Sources */,
-				AE6F43BA22C55C37001F3CC5 /* USStreetCandidate.swift in Sources */,
-				AE6F438B22C55627001F3CC5 /* ClientBuilder.swift in Sources */,
-				AE6F442C22C56DC6001F3CC5 /* USZipCodeClientTests.swift in Sources */,
-				AE6F43E922C56094001F3CC5 /* USAutocompleteClient.swift in Sources */,
-				AE6F438322C554BE001F3CC5 /* SmartyCredentialsTests.swift in Sources */,
-				AE6F441D22C56A0E001F3CC5 /* MockSerializer.swift in Sources */,
-				AE6F43FC22C561A1001F3CC5 /* USExtractClient.swift in Sources */,
-				AE6F43E222C55F50001F3CC5 /* LanguageMode.swift in Sources */,
-				AE6F43A722C559E4001F3CC5 /* USZipCodeClient.swift in Sources */,
-				AE6F43D022C55E40001F3CC5 /* InternationalStreetCandidate.swift in Sources */,
-				AE6F436822C53D69001F3CC5 /* SmartySenderTests.swift in Sources */,
-				AE6F440D22C56472001F3CC5 /* SmartyRequestTests.swift in Sources */,
-				AE6F43E522C55F73001F3CC5 /* InternationalStreetSerializer.swift in Sources */,
-				AE6F441A22C569BD001F3CC5 /* USAutocompleteClientTests.swift in Sources */,
-				AE6F435A22C53B16001F3CC5 /* SigningSenderTests.swift in Sources */,
-				AE6F437022C5508D001F3CC5 /* RetrySenderTests.swift in Sources */,
-				AE6F441522C56667001F3CC5 /* RequestCapturingSender.swift in Sources */,
-				AE6F442E22C56E3D001F3CC5 /* USZipCodeResultTests.swift in Sources */,
-				AE6F43CD22C55DF3001F3CC5 /* InternationalStreetLookup.swift in Sources */,
-				AE6F43B422C55BC0001F3CC5 /* USStreetSerializer.swift in Sources */,
-				OBJ_40 /* XCTestManifests.swift in Sources */,
-				AE6F440822C56223001F3CC5 /* USExtractAddress.swift in Sources */,
-				AE6F43F822C56165001F3CC5 /* GeolocateType.swift in Sources */,
-				AE6F438122C553F5001F3CC5 /* RetrySender.swift in Sources */,
-				AE6F43DF22C55F0D001F3CC5 /* InternationalStreetRootLevel.swift in Sources */,
-				AE6F434322C53447001F3CC5 /* StatusCodeSenderTests.swift in Sources */,
-				AE6F43AD22C55A6C001F3CC5 /* SmartyBatch.swift in Sources */,
-				AE6F436E22C53E46001F3CC5 /* Version.swift in Sources */,
-				AE6F440522C56206001F3CC5 /* USExtractMetadata.swift in Sources */,
-				AE6F440222C561E6001F3CC5 /* USExtractResult.swift in Sources */,
-				AE6F443022C56EDF001F3CC5 /* USZipCodeBatchTests.swift in Sources */,
-				AE6F435422C53848001F3CC5 /* SmartyRequest.swift in Sources */,
-				AE6F43AA22C55A38001F3CC5 /* USZipCodeBatch.swift in Sources */,
-				AE6F43A422C559AB001F3CC5 /* URLPrefixSender.swift in Sources */,
-				AE6F442722C56C44001F3CC5 /* USStreetClientTests.swift in Sources */,
-				AE6F439822C557D9001F3CC5 /* USZipCodeResult.swift in Sources */,
-				AE6F435622C5384F001F3CC5 /* SmartyErrors.swift in Sources */,
-				AE6F441F22C56AA4001F3CC5 /* USAutocompleteResultTests.swift in Sources */,
-				AE6F43F222C56111001F3CC5 /* USAutocompleteSuggestion.swift in Sources */,
-				AE6F442922C56CA5001F3CC5 /* USStreetCandidateTests.swift in Sources */,
-				AE6F43D622C55E98001F3CC5 /* InternationalStreetMetadata.swift in Sources */,
-				OBJ_41 /* smartystreets_ios_sdkTests.swift in Sources */,
-				AE6F43A122C55928001F3CC5 /* USAlternateCounties.swift in Sources */,
-				AE6F43EF22C560F1001F3CC5 /* USAutocompleteResult.swift in Sources */,
-				AE6F438822C555A9001F3CC5 /* ClientBuilderTests.swift in Sources */,
-				AE6F43FF22C561CC001F3CC5 /* USExtractLookup.swift in Sources */,
-				AE6F43DC22C55EE8001F3CC5 /* InternationalStreetChanges.swift in Sources */,
-				AE6F442222C56B45001F3CC5 /* USExtractClientTests.swift in Sources */,
-				AE6F437522C5515D001F3CC5 /* MockLogger.swift in Sources */,
-				AE6F439E22C558EE001F3CC5 /* USZipCode.swift in Sources */,
-				AE6F437822C55243001F3CC5 /* SmartyLogger.swift in Sources */,
-				AE6F441722C568A4001F3CC5 /* InternationalStreetCandidateTests.swift in Sources */,
-				AE6F43B722C55C0F001F3CC5 /* USStreetLookup.swift in Sources */,
-				AE6F43F522C5614E001F3CC5 /* USAutocompleteSerializer.swift in Sources */,
-				AE6F436B22C53DD2001F3CC5 /* HttpSender.swift in Sources */,
-				AE6F437B22C552F3001F3CC5 /* MockSleeper.swift in Sources */,
-				AE6F435522C5384C001F3CC5 /* SmartyResponse.swift in Sources */,
-				AE6F435D22C53B84001F3CC5 /* MockSender.swift in Sources */,
-				AE6F434722C534D1001F3CC5 /* MockStatusCodeSender.swift in Sources */,
-				AE6F441222C5662A001F3CC5 /* InternationalStreetClientTests.swift in Sources */,
-				AE6F43CA22C55D88001F3CC5 /* InternationalStreetClient.swift in Sources */,
+				OBJ_195 /* ClientBuilderTests.swift in Sources */,
+				OBJ_196 /* InternationalStreetCandidateTests.swift in Sources */,
+				OBJ_197 /* InternationalStreetClientTests.swift in Sources */,
+				OBJ_198 /* MockCrashingSender.swift in Sources */,
+				OBJ_199 /* MockLogger.swift in Sources */,
+				OBJ_200 /* MockSender.swift in Sources */,
+				OBJ_201 /* MockSerializer.swift in Sources */,
+				OBJ_202 /* MockSleeper.swift in Sources */,
+				OBJ_203 /* MockStatusCodeSender.swift in Sources */,
+				OBJ_204 /* RequestCapturingSender.swift in Sources */,
+				OBJ_205 /* RetrySenderTests.swift in Sources */,
+				OBJ_206 /* SerializerTests.swift in Sources */,
+				OBJ_207 /* SigningSenderTests.swift in Sources */,
+				OBJ_208 /* SmartyCredentialsTests.swift in Sources */,
+				OBJ_209 /* SmartyRequestTests.swift in Sources */,
+				OBJ_210 /* SmartyResponseTests.swift in Sources */,
+				OBJ_211 /* SmartySenderTests.swift in Sources */,
+				OBJ_212 /* StatusCodeSenderTests.swift in Sources */,
+				OBJ_213 /* USAutocompleteClientTests.swift in Sources */,
+				OBJ_214 /* USAutocompleteResultTests.swift in Sources */,
+				OBJ_215 /* USExtractClientTests.swift in Sources */,
+				OBJ_216 /* USExtractResultTests.swift in Sources */,
+				OBJ_217 /* USStreetCandidateTests.swift in Sources */,
+				OBJ_218 /* USStreetClientTests.swift in Sources */,
+				OBJ_219 /* USZipCodeBatchTests.swift in Sources */,
+				OBJ_220 /* USZipCodeClientTests.swift in Sources */,
+				OBJ_221 /* USZipCodeResultTests.swift in Sources */,
+				OBJ_222 /* XCTestManifests.swift in Sources */,
+				OBJ_223 /* smartystreets_ios_sdkTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		OBJ_34 /* PBXTargetDependency */ = {
+		OBJ_189 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "smartystreets-ios-sdk::smartystreets-ios-sdkTests" /* smartystreets-ios-sdkTests */;
-			targetProxy = AE6F434122C533F8001F3CC5 /* PBXContainerItemProxy */;
+			targetProxy = AE9001B322D3A34900D9E703 /* PBXContainerItemProxy */;
 		};
-		OBJ_44 /* PBXTargetDependency */ = {
+		OBJ_225 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "smartystreets-ios-sdk::smartystreets-ios-sdk" /* smartystreets-ios-sdk */;
-			targetProxy = AE6F434022C533F7001F3CC5 /* PBXContainerItemProxy */;
+			targetProxy = AE9001B222D3A32000D9E703 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		OBJ_19 /* Debug */ = {
+		OBJ_118 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
@@ -788,16 +680,14 @@
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "smartystreets-ios-sdk.xcodeproj/smartystreets_ios_sdk_Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx @executable_path";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = "smartystreets-ios-sdk";
-				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_FORCE_DYNAMIC_LINK_STDLIB = YES;
+				SWIFT_FORCE_STATIC_LINK_STDLIB = NO;
 				SWIFT_VERSION = 5.0;
 				TARGET_NAME = "smartystreets-ios-sdk";
 				TVOS_DEPLOYMENT_TARGET = 9.0;
@@ -805,10 +695,9 @@
 			};
 			name = Debug;
 		};
-		OBJ_20 /* Release */ = {
+		OBJ_119 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
@@ -816,16 +705,14 @@
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "smartystreets-ios-sdk.xcodeproj/smartystreets_ios_sdk_Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx @executable_path";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = "smartystreets-ios-sdk";
-				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_FORCE_DYNAMIC_LINK_STDLIB = YES;
+				SWIFT_FORCE_STATIC_LINK_STDLIB = NO;
 				SWIFT_VERSION = 5.0;
 				TARGET_NAME = "smartystreets-ios-sdk";
 				TVOS_DEPLOYMENT_TARGET = 9.0;
@@ -833,7 +720,7 @@
 			};
 			name = Release;
 		};
-		OBJ_26 /* Debug */ = {
+		OBJ_181 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				LD = /usr/bin/true;
@@ -842,12 +729,74 @@
 			};
 			name = Debug;
 		};
-		OBJ_27 /* Release */ = {
+		OBJ_182 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				LD = /usr/bin/true;
 				OTHER_SWIFT_FLAGS = "-swift-version 5 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4_2 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk";
 				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		OBJ_187 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		OBJ_188 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		OBJ_192 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = "smartystreets-ios-sdk.xcodeproj/smartystreets_ios_sdkTests_Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 5.0;
+				TARGET_NAME = "smartystreets-ios-sdkTests";
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		OBJ_193 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = "smartystreets-ios-sdk.xcodeproj/smartystreets_ios_sdkTests_Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 5.0;
+				TARGET_NAME = "smartystreets-ios-sdkTests";
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
 		};
@@ -878,68 +827,6 @@
 			};
 			name = Debug;
 		};
-		OBJ_32 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-			};
-			name = Debug;
-		};
-		OBJ_33 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-			};
-			name = Release;
-		};
-		OBJ_37 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
-				);
-				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = "smartystreets-ios-sdk.xcodeproj/smartystreets_ios_sdkTests_Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				OTHER_CFLAGS = "$(inherited)";
-				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
-				SWIFT_VERSION = 5.0;
-				TARGET_NAME = "smartystreets-ios-sdkTests";
-				TVOS_DEPLOYMENT_TARGET = 9.0;
-				WATCHOS_DEPLOYMENT_TARGET = 2.0;
-			};
-			name = Debug;
-		};
-		OBJ_38 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
-				);
-				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = "smartystreets-ios-sdk.xcodeproj/smartystreets_ios_sdkTests_Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				OTHER_CFLAGS = "$(inherited)";
-				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
-				SWIFT_VERSION = 5.0;
-				TARGET_NAME = "smartystreets-ios-sdkTests";
-				TVOS_DEPLOYMENT_TARGET = 9.0;
-				WATCHOS_DEPLOYMENT_TARGET = 2.0;
-			};
-			name = Release;
-		};
 		OBJ_4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -967,11 +854,38 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		OBJ_18 /* Build configuration list for PBXNativeTarget "smartystreets-ios-sdk" */ = {
+		OBJ_117 /* Build configuration list for PBXNativeTarget "smartystreets-ios-sdk" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_19 /* Debug */,
-				OBJ_20 /* Release */,
+				OBJ_118 /* Debug */,
+				OBJ_119 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_180 /* Build configuration list for PBXNativeTarget "smartystreets-ios-sdkPackageDescription" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_181 /* Debug */,
+				OBJ_182 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_186 /* Build configuration list for PBXAggregateTarget "smartystreets-ios-sdkPackageTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_187 /* Debug */,
+				OBJ_188 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_191 /* Build configuration list for PBXNativeTarget "smartystreets-ios-sdkTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_192 /* Debug */,
+				OBJ_193 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -981,33 +895,6 @@
 			buildConfigurations = (
 				OBJ_3 /* Debug */,
 				OBJ_4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		OBJ_25 /* Build configuration list for PBXNativeTarget "smartystreets-ios-sdkPackageDescription" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				OBJ_26 /* Debug */,
-				OBJ_27 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		OBJ_31 /* Build configuration list for PBXAggregateTarget "smartystreets-ios-sdkPackageTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				OBJ_32 /* Debug */,
-				OBJ_33 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		OBJ_36 /* Build configuration list for PBXNativeTarget "smartystreets-ios-sdkTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				OBJ_37 /* Debug */,
-				OBJ_38 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -4,6 +4,9 @@ import PackageDescription
 
 let package = Package(
     name: "smartystreets-ios-sdk",
+    products: [
+        .library(name: "smartystreets-ios-sdk", targets: ["smartystreets-ios-sdk"]),
+    ],
     dependencies: [],
     targets: [
         .target(
