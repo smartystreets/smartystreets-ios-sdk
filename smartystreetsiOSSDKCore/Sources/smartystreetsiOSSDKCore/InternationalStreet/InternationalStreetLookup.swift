@@ -14,20 +14,20 @@ import Foundation
     //    When set to language_mode.Latin, the results will always be provided using a Latin character set.
     
     public var result:[InternationalStreetCandidate]?
-    var inputId:String?
-    var country:String?
-    var geocode:String?
+    public var inputId:String?
+    public var country:String?
+    public var geocode:String?
     
-    var language:LanguageMode?
-    var freeform:String?
-    var address1:String?
-    var address2:String?
-    var address3:String?
-    var address4:String?
-    var organization:String?
-    var locality:String?
-    var administrativeArea:String?
-    var postalCode:String?
+    public var language:LanguageMode?
+    public var freeform:String?
+    public var address1:String?
+    public var address2:String?
+    public var address3:String?
+    public var address4:String?
+    public var organization:String?
+    public var locality:String?
+    public var administrativeArea:String?
+    public var postalCode:String?
     
     override public init() {    }
     

@@ -13,7 +13,15 @@ class InternationalStreetExample {
         // Documentation for input fields can be found at:
         // https://smartystreets.com/docs/cloud/international-street-api#http-input-fields
         
-        var lookup = InternationalStreetLookup(freeform: "Rua Padre Antonio D'Angelo 121 Casa Verde, Sao Paulo", country: "Brazil", inputId: nil)
+        var lookup = InternationalStreetLookup()
+        lookup.inputId = "ID-8675309"
+        lookup.organization = "John Doe"
+        lookup.address1 = "Rua Padre Antonio D'Angelo 121"
+        lookup.address2 = "Casa Verde"
+        lookup.locality = "Sao Paulo"
+        lookup.administrativeArea = "SP"
+        lookup.country = "Brazil"
+        lookup.postalCode = "02516-050"
         lookup.enableGeocode(geocode: true)
         
         var error: NSError! = nil
