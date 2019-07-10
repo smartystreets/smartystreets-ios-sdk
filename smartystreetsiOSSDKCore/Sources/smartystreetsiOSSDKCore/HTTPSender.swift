@@ -98,28 +98,40 @@ class HttpSender: SmartySender {
             return nil
         }
         
-        let httpResponse = response as! HTTPURLResponse
-        let statusCode = httpResponse.statusCode
+        let httpResponse:HTTPURLResponse? = response as? HTTPURLResponse
+        let statusCode:Int? = httpResponse?.statusCode
         
         if self.debug {
-            self.logHttpRequest(httpRequest: httpRequest, response: httpResponse, payload: data!)
+                _ = self.logHttpRequest(httpRequest: httpRequest, response: httpResponse, payload: data)
         }
-        self.myResponse = SmartyResponse(statusCode: statusCode, payload: data!)
+        if let statusCode = statusCode {
+            self.myResponse = SmartyResponse(statusCode: statusCode, payload: data!)
+        }
         
         return self.myResponse
     }
     
-    func logHttpRequest(httpRequest:URLRequest, response: HTTPURLResponse, payload:Data) {
+    func logHttpRequest(httpRequest:URLRequest, response: HTTPURLResponse?, payload:Data?) -> String {
         var message = String()
         message.append("\n***Request***\n")
         message.append("\nMethod: \(httpRequest.httpMethod!)\n")
         message.append("\nURL: \(httpRequest.url!)\n")
         message.append("\nHeaders: \(httpRequest.allHTTPHeaderFields!)\n")
-        message.append("\nRequest body: \n \(httpRequest.httpBody!)\n")
+        if let httpBody = httpRequest.httpBody {
+            message.append("\nRequest body: \n \(httpBody)\n")
+        }
         
         message.append("\n***Response***\n")
-        message.append("\nHeaders:\n \(response.allHeaderFields)\n")
-        message.append("\nStatus: \(response.statusCode)")
-        message.append("\nBody: \n\(payload)")
+        if let response = response {
+            message.append("\nHeaders:\n \(response.allHeaderFields)\n")
+            message.append("\nStatus: \(response.statusCode)")
+        } else {
+            message.append("\nEmpty Response\n")
+        }
+        if let payload = payload {
+            message.append("\nBody: \n\(payload)")
+        }
+        SmartyLogger().log(message: message)
+        return message
     }
 }

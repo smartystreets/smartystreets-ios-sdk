@@ -49,4 +49,21 @@ class SmartySenderTests: XCTestCase {
         sender.copyHeaders(request: self.request, httpRequest: &httpRequest)
         XCTAssertNotNil(httpRequest.allHTTPHeaderFields!["User-Agent"])
     }
+    
+    func testDebugger() {
+        let expectedPayload = "Hello, World!"
+        let mockPayload = expectedPayload.data(using: .utf8)
+        self.request.payload = mockPayload
+        let sender = HttpSender()
+        let httpRequest = sender.buildHttpRequest(request: self.request)
+        let mockResponse = HTTPURLResponse(url: URL(fileURLWithPath: self.request.urlPrefix), statusCode: 200, httpVersion: String(), headerFields: ["Test Header": "Test Value"])
+        let debugMessage = sender.logHttpRequest(httpRequest: httpRequest, response: mockResponse, payload: mockPayload)
+        XCTAssert(debugMessage.contains("Method: \(httpRequest.httpMethod!)"))
+        XCTAssert(debugMessage.contains("URL: \(httpRequest.url!)"))
+        XCTAssert(debugMessage.contains("Headers: \(httpRequest.allHTTPHeaderFields!)"))
+        
+        XCTAssert(debugMessage.contains("\(mockResponse!.allHeaderFields)"))
+        XCTAssert(debugMessage.contains("Status: \(mockResponse!.statusCode)"))
+        XCTAssert(debugMessage.contains("\(mockPayload ?? Data())"))
+    }
 }

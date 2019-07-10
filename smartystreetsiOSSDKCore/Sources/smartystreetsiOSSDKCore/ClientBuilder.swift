@@ -38,7 +38,7 @@ import Foundation
         self.serializer = SmartySerializer()
     }
     
-    func retryAtMost(maxRetries:Int) -> ClientBuilder {
+    public func retryAtMost(maxRetries:Int) -> ClientBuilder {
         //        Sets the maximum number of times to retry sending the request to the API. (Default is 5)
         //
         //        Returns self to accommodate method chaining.
@@ -47,7 +47,7 @@ import Foundation
         return self
     }
     
-    func withMaxTimeout(maxTimeout:Int) -> ClientBuilder {
+    public func withMaxTimeout(maxTimeout:Int) -> ClientBuilder {
         //        The maximum time (in milliseconds) to wait for a connection, and also to wait for
         //        the response to be read. (Default is 10000)
         //
@@ -57,7 +57,7 @@ import Foundation
         return self
     }
     
-    func withSender(sender:SmartySender) -> ClientBuilder {
+    public func withSender(sender:SmartySender) -> ClientBuilder {
         //        Default is a series of nested senders.
         //
         //        Returns self to accommodate method chaining.
@@ -66,7 +66,7 @@ import Foundation
         return self
     }
     
-    func withSerializer(serializer:USZipCodeSerializer) -> ClientBuilder {
+    public func withSerializer(serializer:USZipCodeSerializer) -> ClientBuilder {
         //        Changes the Serializer from the default.
         //
         //        Returns self to accommodate method chaining.
@@ -75,7 +75,7 @@ import Foundation
         return self
     }
     
-    func withUrl(urlPrefix:String) -> ClientBuilder {
+    public func withUrl(urlPrefix:String) -> ClientBuilder {
         //        This may be useful when using a local installation of the SmartyStreets APIs.
         //        Url is a string that defaults to the URL for the API corresponding to the Client object being built.
         //
@@ -85,7 +85,7 @@ import Foundation
         return self
     }
     
-    func withProxy(host:String, port:Int) -> ClientBuilder {
+    public func withProxy(host:String, port:Int) -> ClientBuilder {
         //        Assigns a proxy through which to send all Lookups.
         
         //        Returns self to accommodate method chaining.
@@ -94,7 +94,7 @@ import Foundation
         return self
     }
     
-    func withDebug() -> ClientBuilder {
+    public func withDebug() -> ClientBuilder {
         //        Enables debug mode, which will print information about the HTTP request and response to the console.
         //
         //        Returns self to accommodate method chaining.

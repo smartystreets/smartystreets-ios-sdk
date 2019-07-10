@@ -7,7 +7,7 @@ class USZipCodeSingleLookupExample {
         //        let authToken = ProcessInfo.processInfo.environment["SMARTY_AUTH_TOKEN"]
         //        let client = ClientBuilder(authId: authId ?? "", authToken: authToken ?? "").buildUsZIPCodeApiClient()
         let authId = "ID"
-        let authToken = "TOKEN"
+        let authToken = "Token"
         let client = ClientBuilder(authId: authId, authToken: authToken).buildUsZIPCodeApiClient()
         
         //        Documentation for input fields can be found at:
