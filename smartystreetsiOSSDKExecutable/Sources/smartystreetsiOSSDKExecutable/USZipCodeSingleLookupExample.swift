@@ -13,8 +13,10 @@ class USZipCodeSingleLookupExample {
         //        Documentation for input fields can be found at:
         //        https://smartystreet.com/docs/us-zipcode-api#input-fields
         var lookup = USZipCodeLookup()
+        lookup.inputId = "dfc33cb6-829e-4fea-aa1b-b6d6580f0817" // Optional ID from your system
         lookup.city = "Mountain View"
         lookup.state = "California"
+        lookup.zipcode = "94043"
         
         var error:NSError! = nil
         _ = client.sendLookup(lookup: &lookup, error: &error)

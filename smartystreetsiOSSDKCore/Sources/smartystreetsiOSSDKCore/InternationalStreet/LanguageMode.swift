@@ -1,6 +1,6 @@
 import Foundation
 
-@objcMembers class LanguageMode: NSObject, Codable {
+@objcMembers public class LanguageMode: NSObject, Codable {
     
     let Native = "native"
     let Latin = "latin"

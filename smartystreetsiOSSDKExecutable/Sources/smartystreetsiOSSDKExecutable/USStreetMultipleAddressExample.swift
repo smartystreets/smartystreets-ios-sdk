@@ -16,20 +16,31 @@ class USStreetMultipleAddressExample {
         //        Documentation for input fields can be found at:
         //        https://smartystreets.com/docs/us-street-api#input-fields
         let address1 = USStreetLookup()
+        address1.inputId = "24601"
+        address1.addressee = "John Doe"
         address1.street = "1600 amphitheatre parkway"
-        address1.city = "Mountain View"
-        address1.state = "california"
+        address1.street2 = "closet under the stairs"
+        address1.secondary = "APT 2"
+        address1.urbanization = "" // Only applies to Puerto Rico addresses
+        address1.lastline = "Mountain view, california"
+        address1.matchStrategy = "invalid"
+        address1.maxCandidates = 5
         
         let address2 = USStreetLookup(freeformAddress: "1 Rosedale, Baltimore, Maryland")
         address2.setMaxCandidates(max: 10, error: &error)
         
-        let address3 = USStreetLookup()
-        address3.street = "1 Infinite Loop"
-        address3.zipCode = "95014"
+        let address3 = USStreetLookup(freeformAddress: "123 Bogus Street, Pretend Lake, Oklahoma")
+        
+        let address4 = USStreetLookup()
+        address4.inputId = "8675309"
+        address4.street = "1 Infinite Loop"
+        address4.zipCode = "95014"
+        address4.maxCandidates = 1
         
         _ = batch.add(newAddress: address1, error: &error)
         _ = batch.add(newAddress: address2, error: &error)
         _ = batch.add(newAddress: address3, error: &error)
+        _ = batch.add(newAddress: address4, error: &error)
         
         if let error = error {
             let output = """

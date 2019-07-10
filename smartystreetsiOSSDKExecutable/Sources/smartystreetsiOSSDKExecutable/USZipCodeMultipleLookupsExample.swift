@@ -16,7 +16,8 @@ class USZipCodeMultipleLookupsExample {
         //        Documentation for input fields can be found at:
         //        https://smartystreet.com/docs/us-zipcode-api#input-fields
         let lookup1 = USZipCodeLookup()
-        lookup1.zipcode = "12345"
+        lookup1.inputId = "011889998819991197253" // Optional ID from your system
+        lookup1.zipcode = "12345" // A Lookup may have a ZIP Code, city and state, or city, state, and ZIP Code
         
         let lookup2 = USZipCodeLookup()
         lookup2.city = "Phoenix"
