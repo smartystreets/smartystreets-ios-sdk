@@ -13,10 +13,17 @@ class USStreetSingleAddressExample {
         //        Documentation for input fields can be found at:
         //        https://smartystreets.com/docs/us-street-api#input-fields
         var lookup = USStreetLookup()
+        lookup.inputId = "24601"
+        lookup.addressee = "John Doe"
         lookup.street = "1600 Amphitheatre Pkwy"
+        lookup.street2 = "closet under the stairs"
+        lookup.secondary = "APT 2"
+        lookup.urbanization = "" // Only applies to Puerto Rico addresses
         lookup.city = "Mountain View"
         lookup.state = "CA"
+        lookup.zipCode = "94043"
         lookup.matchStrategy = "invalid"
+        lookup.maxCandidates = 3
         
         var error: NSError! = nil
         _ = client.sendLookup(lookup: &lookup, error: &error)

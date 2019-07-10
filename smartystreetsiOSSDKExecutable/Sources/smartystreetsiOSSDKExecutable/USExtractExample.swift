@@ -18,6 +18,9 @@ class USExtractExample {
         "\r\nMeet me at 1 Rosedale Baltimore Maryland, not at 123 Phony Street, Boise Idaho."
         
         var lookup = USExtractLookup().withText(text: text)
+        lookup.aggressive = true
+        lookup.addressesHaveLineBreaks = false
+        lookup.addressesPerLine = 1
         var error: NSError! = nil
         
         _ = client.sendLookup(lookup: &lookup, error: &error)
