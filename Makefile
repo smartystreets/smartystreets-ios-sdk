@@ -1,6 +1,6 @@
 #!/usr/bin/make -f
 
-VERSION_FILE := smartystreetsiOSSDKCore/Sources/smartystreetsiOSSDKCore/Version.swift
+VERSION_FILE := sdk/Sources/sdk/Version.swift
 VERSION      := $(shell tagit -p --dryrun)
 
 clean:
@@ -8,13 +8,13 @@ clean:
 	@rm -rf .build
 
 test:
-	(cd smartystreetsiOSSDKCore && swift test)
+	(cd sdk && swift test)
 
 run:
-	(cd smartystreetsiOSSDKExecutable && swift run)
+	(cd samples && swift run)
 
 compile:
-	(cd smartystreetsiOSSDKCore && swift build) && (cd smartystreetsiOSSDKExecutable && swift build)
+	(cd sdk && swift build) && (cd samples && swift build)
 
 version:
 	@printf 'class Version {\n    let version = "%s"\n}\n' "$(VERSION)" > "$(VERSION_FILE)"

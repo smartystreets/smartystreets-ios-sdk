@@ -6,3 +6,5 @@ _MACOSX
 *.xcscheme
 *.xcworkspace
 *.build
+*.xcodeproj
+Packages
