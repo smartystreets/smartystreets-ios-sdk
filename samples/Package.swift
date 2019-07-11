@@ -9,9 +9,11 @@ let package = Package(
     targets: [
         .target(
             name: "samples",
-            dependencies: ["sdk"]),
+            dependencies: ["sdk"],
+            path: "Sources"),
         .testTarget(
             name: "samplesTests",
-            dependencies: ["samples"]),
+            dependencies: ["samples"],
+            path: "Tests"),
     ]
 )
