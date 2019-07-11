@@ -8,13 +8,13 @@ clean:
 	@rm -rf .build
 
 test:
-	cd smartystreetsiOSSDKCore && swift test && cd ..
+	(cd smartystreetsiOSSDKCore && swift test)
 
 run:
-	cd smartystreetsiOSSDKExecutable && swift run && cd ..
+	(cd smartystreetsiOSSDKExecutable && swift run)
 
 compile:
-	cd smartystreetsiOSSDKCore && swift build && cd ../smartystreetsiOSSDKExecutable && swift build && cd ..
+	(cd smartystreetsiOSSDKCore && swift build) && (cd smartystreetsiOSSDKExecutable && swift build)
 
 version:
 	@printf 'class Version {\n    let version = "%s"\n}\n' "$(VERSION)" > "$(VERSION_FILE)"
