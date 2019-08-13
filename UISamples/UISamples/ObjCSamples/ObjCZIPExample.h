@@ -4,7 +4,6 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ObjCZIPExample : UIViewController
-@property (readonly, nonatomic) USZipCodeBatch *batch;
 
 @property (weak, nonatomic) IBOutlet UITextField *city;
 @property (weak, nonatomic) IBOutlet UITextField *state;
@@ -16,7 +15,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 - (IBAction)lookup:(UIButton *)sender;
-- (IBAction)add:(UIButton *)sender;
 - (NSString*)run;
 - (IBAction)Return:(UIButton *)sender;
 

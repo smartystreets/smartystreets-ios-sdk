@@ -29,10 +29,7 @@ class SwiftAutocompleteExample: UIViewController, UITextFieldDelegate {
     }
     
     func run() -> String {
-//        let client = ClientBuilder(id: "key", hostname: "hostname").buildUSAutocompleteApiClient()
-        let authId = "af79ba24-4971-9d11-ec86-e0c768a7694e"
-        let authToken = "DGQcdrLC2TmOm913YUe7"
-        let client = ClientBuilder(authId: authId, authToken: authToken).buildUSAutocompleteApiClient()
+        let client = ClientBuilder(id: "key", hostname: "hostname").buildUSAutocompleteApiClient()
         
         if let prefix = self.prefix.text {
             //            Documentation for input fields can be found at:

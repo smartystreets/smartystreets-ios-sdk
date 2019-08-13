@@ -22,13 +22,11 @@ class SwiftInternationalExample: UIViewController, UITextFieldDelegate {
     
     @IBAction func Execute(_ sender: Any) {
         result.text = run()
+        self.view.endEditing(true)
     }
     
     func run() -> String {
-//        let client = ClientBuilder(id: "KEY", hostname: "hostname").buildInternationalStreetApiClient()
-        let authId = "af79ba24-4971-9d11-ec86-e0c768a7694e"
-        let authToken = "DGQcdrLC2TmOm913YUe7"
-        let client = ClientBuilder(authId: authId, authToken: authToken).buildInternationalStreetApiClient()
+        let client = ClientBuilder(id: "KEY", hostname: "hostname").buildInternationalStreetApiClient()
         
         // Documentation for input fields can be found at:
         // https://smartystreets.com/docs/cloud/international-street-api#http-input-fields

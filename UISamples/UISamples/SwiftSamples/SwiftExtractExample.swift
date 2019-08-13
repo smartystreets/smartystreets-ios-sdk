@@ -18,12 +18,11 @@ class SwiftExtractExample: UIViewController {
     
     @IBAction func Run(_ sender: Any) {
         result.text = run()
+        self.view.endEditing(true)
     }
     
     func run() -> String {
-        let authId = "af79ba24-4971-9d11-ec86-e0c768a7694e"
-        let authToken = "DGQcdrLC2TmOm913YUe7"
-        let client = ClientBuilder(authId: authId, authToken: authToken).buildUsExtractApiClient()
+        let client = ClientBuilder(id: "key", hostname: "hostname").buildUsExtractApiClient()
         
         if let text = input.text {
             //            Documentation for input fields can be found at:

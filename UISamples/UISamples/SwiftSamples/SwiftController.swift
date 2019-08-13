@@ -33,8 +33,9 @@ class SwiftController: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
         return examples.count
     }
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return examples[row]
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        let name = NSAttributedString(string: examples[row], attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
+        return name
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {

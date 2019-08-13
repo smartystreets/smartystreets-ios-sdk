@@ -18,14 +18,15 @@
 }
 
 - (IBAction)search:(UIButton *)sender {
+    [self.view endEditing:true];
     _result.text = [self run];
 }
 
 - (NSString*)run {
-//    InternationalStreetClient* client = [[ClientBuilder alloc] initWithId:@"KEY" hostname:@"hostname"].buildInternationalStreetApiClient;
-    NSString* authId = @"af79ba24-4971-9d11-ec86-e0c768a7694e";
-    NSString* authToken = @"DGQcdrLC2TmOm913YUe7";
-    InternationalStreetClient* client = [[ClientBuilder alloc] initWithAuthId:authId authToken:authToken].buildInternationalStreetApiClient;
+    InternationalStreetClient* client = [[ClientBuilder alloc] initWithId:@"KEY" hostname:@"hostname"].buildInternationalStreetApiClient;
+    
+    // Documentation for input fields can be found at:
+    // https://smartystreets.com/docs/cloud/international-street-api#http-input-fields
     
     InternationalStreetLookup* lookup = [[InternationalStreetLookup alloc] initWithFreeform:_freeform.text country:_country.text inputId:nil];
     [lookup enableGeocodeWithGeocode:true];

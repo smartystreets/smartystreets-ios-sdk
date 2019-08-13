@@ -11,9 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UITextField *state;
 @property (weak, nonatomic) IBOutlet UITextView *result;
 
-@property (readonly, nonatomic) USStreetBatch *batch;
 - (IBAction)search:(UIButton *)sender;
-- (IBAction)add:(UIButton *)sender;
 - (NSString *)run;
 - (IBAction)Return:(UIButton *)sender;
 

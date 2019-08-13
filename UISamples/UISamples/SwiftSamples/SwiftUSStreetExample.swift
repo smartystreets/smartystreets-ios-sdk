@@ -3,7 +3,6 @@ import sdk
 
 class SwiftUSStreetExample: UIViewController, UITextFieldDelegate {
 
-    var batch = USStreetBatch()
     @IBOutlet weak var freeform: UITextField!
     @IBOutlet weak var street: UITextField!
     @IBOutlet weak var city: UITextField!
@@ -25,49 +24,30 @@ class SwiftUSStreetExample: UIViewController, UITextFieldDelegate {
         freeform.delegate = self
     }
     
-    @IBAction func add(_ sender: Any) {
-        //        Documentation for input fields can be found at:
-        //        https://smartystreets.com/docs/us-street-api#input-fields
-        
-        var address = USStreetLookup()
-        if freeform.text != "" {
-            if let freeform = freeform.text {
-                address = USStreetLookup(freeformAddress: freeform)
-            }
-        } else {
-            address.street = street.text
-            address.city = city.text
-            address.state = state.text
-        }
-        var error:NSError! = nil
-        
-        _ = batch.add(newAddress: address, error: &error)
-        
-        if let error = error {
-            let output = """
-            Domain: \(error.domain)
-            Error Code: \(error.code)
-            Description:\n\(error.userInfo[NSLocalizedDescriptionKey] as! NSString)
-            """
-            NSLog(output)
-            results.text = output
-        }
-    }
-    
     @IBAction func lookup(_ sender: Any) {
         results.text = run()
-        self.batch = USStreetBatch()
+        self.view.endEditing(true)
     }
     
     func run() -> String{
-        //        let mobile = SharedCredentials(id: "KEY", hostname: "HOST")
-        //        let client = ClientBuilder(withSigner: mobile).buildUsZIPCodeApiClient()
-        let authId = "af79ba24-4971-9d11-ec86-e0c768a7694e"
-        let authToken = "DGQcdrLC2TmOm913YUe7"
-        let client = ClientBuilder(authId: authId, authToken: authToken).buildUsStreetApiClient()
+        let client = ClientBuilder(id: "KEY", hostname: "hostname").buildUsStreetApiClient()
+        var lookup = USStreetLookup()
+        
+        // Documentation for input fields can be found at:
+        // https://smartystreets.com/docs/cloud/us-street-api
+        
+        if freeform.text != "" {
+            if let freeform = freeform.text {
+                lookup = USStreetLookup(freeformAddress: freeform)
+            }
+        } else {
+            lookup.street = street.text
+            lookup.city = city.text
+            lookup.state = state.text
+        }
         var error:NSError! = nil
         
-        _ = client.sendBatch(batch: self.batch, error: &error)
+        _ = client.sendLookup(lookup: &lookup, error: &error)
         
         if let error = error {
             let output = """
@@ -79,28 +59,26 @@ class SwiftUSStreetExample: UIViewController, UITextFieldDelegate {
             return output
         }
         
-        let lookups:[USStreetLookup] = self.batch.allLookups as! [USStreetLookup]
         var output = "Results: \n"
         
-        for i in 0..<batch.count() {
-            let candidates:[USStreetCandidate] = lookups[i].result
-            
-            if candidates.count == 0 {
-                return "\nAddress \(i) is invalid\n"
-            }
-            
-            for candidate in candidates {
-                output.append("""
-                    Address is valid. (There is at least one candidate)\n\n
-                    \nZIP Code: \(candidate.components?.zipCode ?? "")
-                    \nCounty: \(candidate.metadata?.countyName ?? "")
-                    \nLatitude: \(candidate.metadata?.latitude ?? 0.0)
-                    \nLongitude: \(candidate.metadata?.longitude ?? 0.0)
-                    """)
-            }
-            
-            output.append("\n******************************\n")
+        if lookup.result == nil {
+            return "\nAddress is invalid\n"
         }
+        
+        let candidates:[USStreetCandidate] = lookup.result
+        
+        for candidate in candidates {
+            output.append("""
+                Address is valid. (There is at least one candidate)\n\n
+                \nZIP Code: \(candidate.components?.zipCode ?? "")
+                \nCounty: \(candidate.metadata?.countyName ?? "")
+                \nLatitude: \(candidate.metadata?.latitude ?? 0.0)
+                \nLongitude: \(candidate.metadata?.longitude ?? 0.0)
+                """)
+        }
+        
+        output.append("\n******************************\n")
+
         return output
     }
     

@@ -17,13 +17,15 @@
 }
 
 - (IBAction)Search:(UIButton *)sender {
+    [self.view endEditing:true];
     _result.text = [self run];
 }
 
 - (NSString*)run {
-    NSString* authId = @"af79ba24-4971-9d11-ec86-e0c768a7694e";
-    NSString* authToken = @"DGQcdrLC2TmOm913YUe7";
-    USExtractClient* client = [[ClientBuilder alloc] initWithAuthId:authId authToken:authToken].buildUsExtractApiClient;
+    USExtractClient* client = [[ClientBuilder alloc] initWithId:@"key" hostname:@"hostname"].buildUsExtractApiClient;
+    
+    //            Documentation for input fields can be found at:
+    //            https://smartystreets.com/docs/cloud/us-extract-api#http-request-input-fields
     
     USExtractLookup* lookup = [[[USExtractLookup alloc] init] withTextWithText:_input.text];
     NSError* error = nil;

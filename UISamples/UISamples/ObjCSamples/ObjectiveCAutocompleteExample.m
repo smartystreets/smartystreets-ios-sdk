@@ -21,10 +21,10 @@
 }
 
 - (NSString*)run {
-//    USAutocompleteClient* client = [[ClientBuilder alloc] initWithId:@"KEY" hostname:@"hostname"].buildUSAutocompleteApiClient;
-    NSString* authId = @"af79ba24-4971-9d11-ec86-e0c768a7694e";
-    NSString* authToken = @"DGQcdrLC2TmOm913YUe7";
-    USAutocompleteClient* client = [[ClientBuilder alloc] initWithAuthId:authId authToken:authToken].buildUSAutocompleteApiClient;
+    USAutocompleteClient* client = [[ClientBuilder alloc] initWithId:@"KEY" hostname:@"hostname"].buildUSAutocompleteApiClient;
+    
+    //            Documentation for input fields can be found at:
+    //            https://smartystreets.com/docs/us-autocomplete-api#http-request-input-fields
     
     USAutocompleteLookup* lookup = [[[USAutocompleteLookup alloc] init] withPrefixWithPrefix:_prefix.text];
     [lookup addCityFilterWithCity:_city.text];

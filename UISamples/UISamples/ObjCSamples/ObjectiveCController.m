@@ -29,8 +29,9 @@
     return _examples.count;
 }
 
-- (NSString *)pickerView:(UIPickerView *)thePickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    return _examples[row];
+- (NSAttributedString *)pickerView:(UIPickerView *)thePickerView attributedTitleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    NSAttributedString *name = [[NSAttributedString alloc] initWithString:_examples[row] attributes: @{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    return name;
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
