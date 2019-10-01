@@ -3,13 +3,10 @@ import sdk
 
 class USStreetMultipleAddressExample {
     func run() -> String {
-        //        let authId = ProcessInfo.processInfo.environment["SMARTY_AUTH_ID"]
-        //        let authToken = ProcessInfo.processInfo.environment["SMARTY_AUTH_TOKEN"]
-        //        let client = ClientBuilder(authId: authId ?? "", authToken: authToken ?? "").buildUsStreetApiClient()
-        let authId = "ID"
-        let authToken = "TOKEN"
-        let client = ClientBuilder(authId: authId, authToken: authToken).buildUsStreetApiClient()
-        
+        let id = "ID"
+        let hostname = "Hostname"
+        let client = ClientBuilder(id: id, hostname: hostname).buildUsStreetApiClient()
+                
         let batch = USStreetBatch()
         var error:NSError! = nil
         

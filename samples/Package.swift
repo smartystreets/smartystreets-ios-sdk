@@ -8,12 +8,14 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "samples",
-            dependencies: ["sdk"],
-            path: "Sources"),
+            name: "swiftExamples",
+            dependencies: ["sdk"]),
+        .target(
+            name: "objcExamples",
+            dependencies: ["sdk"]),
         .testTarget(
             name: "samplesTests",
-            dependencies: ["samples"],
+            dependencies: ["swiftExamples"],
             path: "Tests"),
     ]
 )
