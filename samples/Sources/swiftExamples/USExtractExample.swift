@@ -3,12 +3,9 @@ import sdk
 
 class USExtractExample {
     func run() -> String {
-        //        let authId = ProcessInfo.processInfo.environment["SMARTY_AUTH_ID"]
-        //        let authToken = ProcessInfo.processInfo.environment["SMARTY_AUTH_TOKEN"]
-        //        let client = ClientBuilder(authId: authId ?? "", authToken: authToken ?? "").buildUsSExtractApiClient()
-        let authId = "ID"
-        let authToken = "TOKEN"
-        let client = ClientBuilder(authId: authId, authToken: authToken).buildUsExtractApiClient()
+        let id = "ID"
+        let hostname = "Hostname"
+        let client = ClientBuilder(id: id, hostname: hostname).buildUsExtractApiClient()
         
         //            Documentation for input fields can be found at:
         //            https://smartystreets.com/docs/cloud/us-extract-api#http-request-input-fields

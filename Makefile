@@ -11,7 +11,7 @@ test:
 	(cd sdk && swift test)
 
 run:
-	(cd samples && swift run)
+	(cd samples && swift run swiftExamples)
 
 compile:
 	(cd sdk && swift build) && (cd samples && swift build)

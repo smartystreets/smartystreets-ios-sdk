@@ -3,13 +3,10 @@ import sdk
 
 class USStreetSingleAddressExample {
     func run() -> String {
-        //        let authId = ProcessInfo.processInfo.environment["SMARTY_AUTH_ID"]
-        //        let authToken = ProcessInfo.processInfo.environment["SMARTY_AUTH_TOKEN"]
-        //        let client = ClientBuilder(authId: authId ?? "", authToken: authToken ?? "").buildUsStreetApiClient()
-        let authId = "ID"
-        let authToken = "TOKEN"
-        let client = ClientBuilder(authId: authId, authToken: authToken).buildUsStreetApiClient()
-        
+        let id = "ID"
+        let hostname = "Hostname"
+        let client = ClientBuilder(id: id, hostname: hostname).buildUsStreetApiClient()
+                
         //        Documentation for input fields can be found at:
         //        https://smartystreets.com/docs/us-street-api#input-fields
         var lookup = USStreetLookup()

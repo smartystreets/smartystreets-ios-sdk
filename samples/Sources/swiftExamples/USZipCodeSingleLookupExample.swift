@@ -3,12 +3,9 @@ import sdk
 
 class USZipCodeSingleLookupExample {
     func run() -> String {
-        //        let authId = ProcessInfo.processInfo.environment["SMARTY_AUTH_ID"]
-        //        let authToken = ProcessInfo.processInfo.environment["SMARTY_AUTH_TOKEN"]
-        //        let client = ClientBuilder(authId: authId ?? "", authToken: authToken ?? "").buildUsZIPCodeApiClient()
-        let authId = "ID"
-        let authToken = "Token"
-        let client = ClientBuilder(authId: authId, authToken: authToken).buildUsZIPCodeApiClient()
+        let id = "ID"
+        let hostname = "Hostname"
+        let client = ClientBuilder(id: id, hostname: hostname).buildUsZIPCodeApiClient()
         
         //        Documentation for input fields can be found at:
         //        https://smartystreet.com/docs/us-zipcode-api#input-fields
