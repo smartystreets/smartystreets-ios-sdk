@@ -4,7 +4,8 @@ public class USAutocompleteProClient: NSObject {
     //    It is recommended to instantiate this class using SSClientBuilder
     
     var sender:SmartySender
-    var serializer:SmartySerializer
+    public var serializer:SmartySerializer
+    public var payload:Data?
     
     public init(sender:Any, serializer:SmartySerializer) {
         self.sender = sender as! SmartySender
@@ -25,6 +26,7 @@ public class USAutocompleteProClient: NSObject {
             let response = self.sender.sendRequest(request: request, error: &error.pointee)
             if error.pointee != nil { return false }
             
+            self.payload = response?.payload
             let result:USAutocompleteProResult = self.serializer.Deserialize(payload: response?.payload, error: &error.pointee) as! USAutocompleteProResult
             
             // Naming of parameters to allow JSON deserialization
@@ -42,7 +44,7 @@ public class USAutocompleteProClient: NSObject {
         
         request.setValue(value: lookup.search ?? "", HTTPParameterField: "search")
         request.setValue(value: lookup.selected ?? "", HTTPParameterField: "selected")
-        request.setValue(value: lookup.getMaxResultsStringIfSet(), HTTPParameterField: "max_result")
+        request.setValue(value: lookup.getMaxResultsStringIfSet(), HTTPParameterField: "max_results")
         request.setValue(value: buildFilterString(list: lookup.includeOnlyCities ?? [String]()), HTTPParameterField: "include_only_cities")
         request.setValue(value: buildFilterString(list: lookup.includeOnlyStates ?? [String]()), HTTPParameterField: "include_only_states")
         request.setValue(value: buildFilterString(list: lookup.includeOnlyZIPCodes ?? [String]()), HTTPParameterField: "include_only_zipcodes")
@@ -52,11 +54,8 @@ public class USAutocompleteProClient: NSObject {
         request.setValue(value: buildFilterString(list: lookup.preferZIPCodes ?? [String]()), HTTPParameterField: "prefer_zipcodes")
         request.setValue(value: lookup.getPreferRatioStringIfSet(), HTTPParameterField: "prefer_ratio")
         
-        if lookup.preferGeolocation!.name != "none" {
-            request.setValue(value: "true", HTTPParameterField: "geolocate")
+        if lookup.preferGeolocation!.name != "none" && lookup.preferZIPCodes == [String]() {
             request.setValue(value: lookup.preferGeolocation!.name, HTTPParameterField: "prefer_geolocation")
-        } else {
-            request.setValue(value: "false", HTTPParameterField: "geolocate")
         }
         
         return request

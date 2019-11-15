@@ -4,7 +4,7 @@ import Foundation
     //    In addition to holding all of the input data for this lookup, this class also will contain the result
     //    of the lookup after it comes back from the API.
     //
-    //    See "https://smartystreets.com/docs/cloud/us-autocomplete-api#http-request-input-fields"
+    //    See "https://smartystreets.com/docs/cloud/us-autocomplete-api#pro-http-request-input-fields"
     //
     //    prefix: The beginning of an address (required)
     //    suggestions: Maximum number of suggestions
@@ -17,7 +17,7 @@ import Foundation
     //    US Autocomplete API. Use the constants in GeolocateType to set this field
     
     let SSMaxResults = 10
-    let SSPreferRatio = 1.0 / 3.0
+    let SSPreferRatio = 3
     
     public var result:USAutocompleteProResult?
     public var search:String?
@@ -31,7 +31,7 @@ import Foundation
     public var preferStates:[String]?
     public var preferZIPCodes:[String]?
     public var preferGeolocation:GeolocateType?
-    public var preferRatio:Double?
+    public var preferRatio:Int?
     
     enum CodingKeys: String, CodingKey {
         case maxResults = "max_results"

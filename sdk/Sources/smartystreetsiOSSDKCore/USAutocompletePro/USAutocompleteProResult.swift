@@ -15,8 +15,8 @@ import Foundation
     
     func convertToSuggestionObjects(_ object:[[String:Any]]) -> [USAutocompleteProSuggestion] {
         var mutable = [USAutocompleteProSuggestion]()
-        for city in object {
-            mutable.append(USAutocompleteProSuggestion(dictionary: city as NSDictionary))
+        for suggestion in object {
+            mutable.append(USAutocompleteProSuggestion(dictionary: suggestion as NSDictionary))
         }
         return mutable
     }

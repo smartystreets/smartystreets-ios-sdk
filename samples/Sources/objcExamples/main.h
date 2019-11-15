@@ -5,4 +5,5 @@
 #import "USZipCodeMultipleExample.h"
 #import "USExtractExample.h"
 #import "USAutocompleteExample.h"
+#import "USAutocompleteProExample.h"
 #import "InternationalStreetExample.h"

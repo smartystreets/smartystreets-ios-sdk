@@ -4,7 +4,7 @@ import sdk
 class USAutocompleteExample {
     func run() -> String {
         let id = "ID"
-        let hostname = "Hostname"
+        let hostname = "hostname"
         let client = ClientBuilder(id: id, hostname: hostname).buildUSAutocompleteApiClient()
         
         //            Documentation for input fields can be found at:

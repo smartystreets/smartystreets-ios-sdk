@@ -1,6 +1,9 @@
 import Foundation
 
-class USAutocompleteProSerializer: SmartySerializer {
+public class USAutocompleteProSerializer: SmartySerializer {
+    
+    override public init() {}
+    
     override func Serialize(obj: Any?, error: inout NSError!) -> Data! {
         let raw:[USAutocompleteProLookup]? = obj as? [USAutocompleteProLookup]
         let smartyErrors = SmartyErrors()
@@ -23,7 +26,7 @@ class USAutocompleteProSerializer: SmartySerializer {
         return nil
     }
     
-    override func Deserialize(payload: Data?, error: inout NSError!) -> Any! {
+    override public func Deserialize(payload: Data?, error: inout NSError!) -> Any! {
         let smartyErrors = SmartyErrors()
         let jsonDecoder = JSONDecoder()
         if payload == nil {
