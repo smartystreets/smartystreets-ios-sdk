@@ -7,4 +7,5 @@ _MACOSX
 *.xcworkspace
 *.build
 *.xcodeproj
+*.plist
 Packages
