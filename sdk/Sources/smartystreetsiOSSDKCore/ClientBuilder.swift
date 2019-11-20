@@ -129,9 +129,9 @@ import Foundation
     }
     
     public func buildUSAutocompleteProApiClient() -> USAutocompleteProClient {
-           ensureURLPrefixNotNil(url: self.usAutocompleteProApiURL)
-           let serializer = USAutocompleteProSerializer()
-           return USAutocompleteProClient(sender: buildSender(), serializer: serializer)
+       ensureURLPrefixNotNil(url: self.usAutocompleteProApiURL)
+       let serializer = USAutocompleteProSerializer()
+       return USAutocompleteProClient(sender: buildSender(), serializer: serializer)
     }
     
     public func buildUsExtractApiClient() -> USExtractClient {

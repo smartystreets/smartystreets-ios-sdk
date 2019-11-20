@@ -16,7 +16,7 @@
 
     self.view.backgroundColor = [UIColor colorWithPatternImage:background];
     
-    _examples = [NSArray arrayWithObjects: @"US ZIP API", @"US Street API", @"International Street API", @"US Autocomplete API", @"US Extract API", nil];
+    _examples = [NSArray arrayWithObjects: @"US ZIP API", @"US Street API", @"International Street API", @"US Autocomplete API", @"US Extract API", @"US Autocomplete Pro API", nil];
     _examplesPicker.delegate = self;
     _examplesPicker.dataSource = self;
 }
@@ -50,6 +50,9 @@
             break;
         case 4:
             [self performSegueWithIdentifier:@"Extract API" sender:self];
+            break;
+        case 5:
+            [self performSegueWithIdentifier:@"Auto Pro API" sender:self];
             break;
         default:
             break;

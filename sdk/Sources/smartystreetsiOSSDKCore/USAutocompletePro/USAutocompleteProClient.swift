@@ -5,7 +5,6 @@ public class USAutocompleteProClient: NSObject {
     
     var sender:SmartySender
     public var serializer:SmartySerializer
-    public var payload:Data?
     
     public init(sender:Any, serializer:SmartySerializer) {
         self.sender = sender as! SmartySender
@@ -26,7 +25,6 @@ public class USAutocompleteProClient: NSObject {
             let response = self.sender.sendRequest(request: request, error: &error.pointee)
             if error.pointee != nil { return false }
             
-            self.payload = response?.payload
             let result:USAutocompleteProResult = self.serializer.Deserialize(payload: response?.payload, error: &error.pointee) as! USAutocompleteProResult
             
             // Naming of parameters to allow JSON deserialization

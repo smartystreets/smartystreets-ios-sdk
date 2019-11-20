@@ -3,8 +3,8 @@ import sdk
 
 class USAutocompleteProExample {
     func run() -> String {
-        let id = "ID"
-        let hostname = "hostname"
+        let id = "23161985642637220"
+        let hostname = "api.integration.smartystreets.com"
         let client = ClientBuilder(id: id, hostname: hostname).buildUSAutocompleteProApiClient()
 
         //            Documentation for input fields can be found at:
@@ -51,6 +51,6 @@ class USAutocompleteProExample {
                 whiteSpace.append(" (\(entries) entries)")
             }
         }
-        return "\(suggestion.streetLine ?? "") \(suggestion.secondary) \(whiteSpace) \(suggestion.city ?? ""), \(suggestion.state ?? "") \(suggestion.zipcode ?? "")"
+        return "\(suggestion.streetLine ?? "") \(suggestion.secondary ?? "") \(whiteSpace) \(suggestion.city ?? ""), \(suggestion.state ?? "") \(suggestion.zipcode ?? "")"
     }
 }
