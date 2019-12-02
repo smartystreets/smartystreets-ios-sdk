@@ -1,12 +1,15 @@
 import UIKit
 import sdk
 
-class SwiftAutocompleteExample: UIViewController, UITextFieldDelegate {
+class SwiftAutocompleteProExample: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var cityFilter: UITextField!
     @IBOutlet weak var stateFilter: UITextField!
-    @IBOutlet weak var prefer: UITextField!
-    @IBOutlet weak var prefix: UITextField!
+    @IBOutlet weak var zipcodeFilter: UITextField!
+    @IBOutlet weak var preferCity: UITextField!
+    @IBOutlet weak var preferState: UITextField!
+    @IBOutlet weak var preferZipcode: UITextField!
+    @IBOutlet weak var search: UITextField!
     @IBOutlet weak var result: UITextView!
     
     override func viewDidLoad() {
@@ -18,10 +21,11 @@ class SwiftAutocompleteExample: UIViewController, UITextFieldDelegate {
         
         self.view.backgroundColor = UIColor(patternImage: background!)
         
-        prefix.delegate = self
+        search.delegate = self
         cityFilter.delegate = self
         stateFilter.delegate = self
-        prefer.delegate = self
+        preferCity.delegate = self
+        preferState.delegate = self
     }
     
     @IBAction func addressChanged(_ sender: Any) {
@@ -29,13 +33,13 @@ class SwiftAutocompleteExample: UIViewController, UITextFieldDelegate {
     }
     
     func run() -> String {
-        let client = ClientBuilder(id: "Key", hostname: "Hostname").buildUSAutocompleteApiClient()
+        let client = ClientBuilder(id: "Key", hostname: "Hostname").buildUSAutocompleteProApiClient()
         
-        if let prefix = self.prefix.text {
+        if let search = self.search.text {
             //            Documentation for input fields can be found at:
-            //            https://smartystreets.com/docs/us-autocomplete-api#http-request-input-fields
+            //            https://smartystreets.com/docs/cloud/us-autocomplete-api#pro-http-response-status
             
-            var lookup = USAutocompleteLookup().withPrefix(prefix: prefix)
+            var lookup = USAutocompleteProLookup().withSearch(search: search)
             var error:NSError? = nil
             
             if let cityFilter = self.cityFilter.text {
@@ -46,8 +50,12 @@ class SwiftAutocompleteExample: UIViewController, UITextFieldDelegate {
                 lookup.addStateFilter(state: stateFilter)
             }
             
-            if let prefer = self.prefer.text {
-                lookup.addPrefer(cityORstate: prefer)
+            if let preferCity = self.preferCity.text {
+                lookup.addPreferCity(city: preferCity)
+            }
+            
+            if let preferState = self.preferState.text {
+                lookup.addPreferState(state: preferState)
             }
             
             _ = client.sendLookup(lookup: &lookup, error: &error)
@@ -65,12 +73,22 @@ class SwiftAutocompleteExample: UIViewController, UITextFieldDelegate {
             
             if let result1 = lookup.result, let suggestions = result1.suggestions {
                 for suggestion in suggestions {
-                    output.append("\(suggestion.text ?? "")\n")
+                    output.append("\(buildAddress(suggestion: suggestion))\n")
                 }
             }
             return output
         }
         return "Uncaught Error"
+    }
+    
+    func buildAddress(suggestion: USAutocompleteProSuggestion) -> String {
+        var whiteSpace = ""
+        if let entries = suggestion.entries {
+            if entries > 1 {
+                whiteSpace.append(" (\(entries) entries)")
+            }
+        }
+        return "\(suggestion.streetLine ?? "") \(suggestion.secondary ?? "") \(whiteSpace) \(suggestion.city ?? ""), \(suggestion.state ?? "") \(suggestion.zipcode ?? "")"
     }
     
     @IBAction func Return(_ sender: Any) {

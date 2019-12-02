@@ -1,8 +1,11 @@
 import Foundation
 
-class USAutocompleteSerializer: SmartySerializer {
+public class USAutocompleteProSerializer: SmartySerializer {
+    
+    override public init() {}
+    
     override func Serialize(obj: Any?, error: inout NSError!) -> Data! {
-        let raw:[USAutocompleteLookup]? = obj as? [USAutocompleteLookup]
+        let raw:[USAutocompleteProLookup]? = obj as? [USAutocompleteProLookup]
         let smartyErrors = SmartyErrors()
         let jsonEncoder = JSONEncoder()
         if raw == nil {
@@ -33,7 +36,7 @@ class USAutocompleteSerializer: SmartySerializer {
         }
         
         do {
-            let result:USAutocompleteResult = try jsonDecoder.decode(USAutocompleteResult.self, from: payload!)
+            let result:USAutocompleteProResult = try jsonDecoder.decode(USAutocompleteProResult.self, from: payload!)
             return result
         } catch let jsonError {
             let details = [NSLocalizedDescriptionKey:jsonError.localizedDescription]

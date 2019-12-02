@@ -24,7 +24,7 @@ public class USStreetSerializer: SmartySerializer {
         return nil
     }
     
-    override func Deserialize(payload: Data?, error: inout NSError!) -> Any! {
+    override public func Deserialize(payload: Data?, error: inout NSError!) -> Any! {
         let smartyErrors = SmartyErrors()
         let jsonDecoder = JSONDecoder()
         if payload == nil {

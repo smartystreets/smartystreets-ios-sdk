@@ -15,6 +15,7 @@ import Foundation
     var proxy:NSDictionary!
     var internationalStreetApiURL:String = "https://international-street.api.smartystreets.com/verify"
     var usAutocompleteApiURL:String = "https://us-autocomplete.api.smartystreets.com/suggest"
+    var usAutocompleteProApiURL:String = "https://us-autocomplete-pro.api.smartystreets.com/lookup"
     var usExtractApiURL:String = "https://us-extract.api.smartystreets.com"
     var usStreetApiURL:String = "https://us-street.api.smartystreets.com/street-address"
     var usZipCodeApiURL:String = "https://us-zipcode.api.smartystreets.com/lookup"
@@ -125,6 +126,12 @@ import Foundation
         ensureURLPrefixNotNil(url: self.usAutocompleteApiURL)
         let serializer = USAutocompleteSerializer()
         return USAutocompleteClient(sender: buildSender(), serializer: serializer)
+    }
+    
+    public func buildUSAutocompleteProApiClient() -> USAutocompleteProClient {
+       ensureURLPrefixNotNil(url: self.usAutocompleteProApiURL)
+       let serializer = USAutocompleteProSerializer()
+       return USAutocompleteProClient(sender: buildSender(), serializer: serializer)
     }
     
     public func buildUsExtractApiClient() -> USExtractClient {

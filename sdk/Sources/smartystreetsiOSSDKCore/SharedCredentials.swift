@@ -11,7 +11,7 @@ class SharedCredentials: SmartyCredentials {
     }
     
     override func sign(request:SmartyRequest) {
-        request.setValue(value: self.id, HTTPParameterField: "auth-id")
+        request.setValue(value: self.id, HTTPParameterField: "key")
         
         let fullHostname = "https://\(self.hostname)"
         request.setValue(value: fullHostname, HTTPHeaderField: "Referer")

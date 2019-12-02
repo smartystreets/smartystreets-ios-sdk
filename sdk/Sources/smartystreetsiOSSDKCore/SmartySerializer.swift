@@ -5,7 +5,7 @@ public class SmartySerializer: NSObject {
         return Data()
     }
     
-    func Deserialize(payload: Data?, error: inout NSError!) -> Any! {
+    public func Deserialize(payload: Data?, error: inout NSError!) -> Any! {
         let smartyErrors = SmartyErrors()
         if payload == nil {
             let details = [NSLocalizedDescriptionKey: "The payload is nil."]

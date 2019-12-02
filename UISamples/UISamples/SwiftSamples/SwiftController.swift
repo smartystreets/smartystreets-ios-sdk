@@ -4,7 +4,7 @@ class SwiftController: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
     
     @IBOutlet weak var examplePicker: UIPickerView!
     
-    var examples:[String] = ["US ZIP Code API","US Street API","International Street API","US Autocomplete API","US Extract API"]
+    var examples:[String] = ["US ZIP Code API","US Street API","International Street API","US Autocomplete API","US Autcomplete Pro API","US Extract API"]
     
     
     override func viewDidLoad() {
@@ -18,7 +18,7 @@ class SwiftController: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
         
         self.examplePicker.delegate = self
         self.examplePicker.dataSource = self
-        examples = ["US ZIP Code API","US Street API","International Street API","US Autocomplete API","US Extract API"]
+        examples = ["US ZIP Code API","US Street API","International Street API","US Autocomplete API","US Autcomplete Pro API","US Extract API"]
     }
     
     override func didReceiveMemoryWarning() {
@@ -49,6 +49,8 @@ class SwiftController: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
         case 3:
             performSegue(withIdentifier: "Autocomplete", sender: self)
         case 4:
+            performSegue(withIdentifier: "AutocompletePro", sender: self)
+        case 5:
             performSegue(withIdentifier: "Extract", sender: self)
         default:
             return
