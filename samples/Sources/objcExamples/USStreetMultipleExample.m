@@ -20,7 +20,9 @@
     address1.secondary = @"APT 2";
     address1.urbanization = @""; // Only applies to Puerto Rico addresses
     address1.lastline = @"Mountain view, california";
-    address1.matchStrategy = @"invalid";
+    address1.matchStrategy = @"invalid"; // "invalid" is the most permissive match,
+                                         // this will always return at least one result even if the address is invalid.
+                                         // Refer to the documentiation for additional Match Strategy options.
     
     USStreetLookup *address2 = [[USStreetLookup alloc] initWithFreeformAddress:@"1 Rosedale, Baltimore, Maryland"];
     

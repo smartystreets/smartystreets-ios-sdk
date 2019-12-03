@@ -20,8 +20,10 @@ class USStreetMultipleAddressExample {
         address1.secondary = "APT 2"
         address1.urbanization = "" // Only applies to Puerto Rico addresses
         address1.lastline = "Mountain view, california"
-        address1.matchStrategy = "invalid"
         address1.maxCandidates = 5
+        address1.matchStrategy = "invalid" // "invalid" is the most permissive match,
+                                           // this will always return at least one result even if the address is invalid.
+                                           // Refer to the documentation for additional Match Strategy options.
         
         let address2 = USStreetLookup(freeformAddress: "1 Rosedale, Baltimore, Maryland")
         address2.setMaxCandidates(max: 10, error: &error)

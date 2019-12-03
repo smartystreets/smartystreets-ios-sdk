@@ -19,8 +19,10 @@ class USStreetSingleAddressExample {
         lookup.city = "Mountain View"
         lookup.state = "CA"
         lookup.zipCode = "94043"
-        lookup.matchStrategy = "invalid"
         lookup.maxCandidates = 3
+        lookup.matchStrategy = "invalid" // "invalid" is the most permissive match,
+                                         // this will always return at least one result even if the address is invalid.
+                                         // Refer to the documentation for additional Match Strategy options.
         
         var error: NSError! = nil
         _ = client.sendLookup(lookup: &lookup, error: &error)

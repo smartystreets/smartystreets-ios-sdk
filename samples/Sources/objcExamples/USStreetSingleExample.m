@@ -23,7 +23,9 @@
     lookup.city = @"Mountain View";
     lookup.state = @"CA";
     lookup.zipCode = @"94043";
-    lookup.matchStrategy = @"invalid";
+    lookup.matchStrategy = @"invalid"; // "invalid" is the most permissive match,
+                                       // this will always return at least one result even if the address is invalid.
+                                       // Refer to the documentation for additional Match Strategy options.
     
     NSError* error = nil;
     
