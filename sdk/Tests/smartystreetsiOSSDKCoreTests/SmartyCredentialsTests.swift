@@ -40,7 +40,7 @@ class SmartyCredentialsTests: XCTestCase {
     
     func testSharedSignerFunction() {
         self.sharedCredentials.sign(request: self.request)
-        XCTAssertEqual(self.request.parameters["auth-id"], self.authId)
+        XCTAssertEqual(self.request.parameters["key"], self.authId)
         XCTAssertEqual(self.request.headers["Referer"], "https://\(self.authToken)")
     }
 }
