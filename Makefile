@@ -14,7 +14,7 @@ run:
 	(cd samples && swift run swiftExamples)
 
 compile:
-	(cd sdk && swift build) && (cd samples && swift build)
+	cd sdk && swift build
 
 version:
 	@printf 'class Version {\n    let version = "%s"\n}\n' "$(VERSION)" > "$(VERSION_FILE)"
