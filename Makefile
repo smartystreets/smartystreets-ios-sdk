@@ -1,6 +1,6 @@
 #!/usr/bin/make -f
 
-VERSION_FILE := sdk/Sources/sdk/Version.swift
+VERSION_FILE := sdk/Sources/smartystreetsiOSSDKCore/Version.swift
 VERSION      := $(shell tagit -p --dryrun)
 
 clean:
