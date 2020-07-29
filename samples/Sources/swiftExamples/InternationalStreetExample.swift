@@ -1,5 +1,5 @@
 import Foundation
-import sdk
+import SmartyStreets
 
 class InternationalStreetExample {
     func run() -> String {

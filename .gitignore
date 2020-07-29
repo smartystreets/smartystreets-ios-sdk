@@ -9,3 +9,7 @@ _MACOSX
 *.xcodeproj
 *.plist
 Packages
+.DS_Store
+/.build
+/Packages
+/*.xcodeproj
