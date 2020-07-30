@@ -1,5 +1,5 @@
 import UIKit
-import sdk
+import SmartyStreets
 
 class SwiftUSStreetExample: UIViewController, UITextFieldDelegate {
 

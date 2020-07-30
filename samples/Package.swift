@@ -4,7 +4,7 @@ import PackageDescription
 let package = Package(
     name: "samples",
     dependencies: [
-        .package(path: "../sdk"),
+        .package(path: ".."),
     ],
     targets: [
         .target(

@@ -1,5 +1,5 @@
 import Foundation
-import sdk
+import SmartyStreets
 
 class USAutocompleteExample {
     func run() -> String {
