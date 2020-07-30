@@ -22,7 +22,7 @@ version:
 publish: compile test version
 	git commit -am "Incremented version." \
 		&& tagit -p \
-		&& git push origin master --tags
+		&& git push origin master --tags \
 		&& git checkout "$(VERSION_FILE)"
 
 .PHONY: clean test compile version publish
