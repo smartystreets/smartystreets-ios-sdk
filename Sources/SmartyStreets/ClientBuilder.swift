@@ -13,6 +13,7 @@ import Foundation
     var debug:Bool = false
     var urlPrefix:String!
     var proxy:NSDictionary!
+    var licenses:[String] = []
     var internationalStreetApiURL:String = "https://international-street.api.smartystreets.com/verify"
     var usAutocompleteApiURL:String = "https://us-autocomplete.api.smartystreets.com/suggest"
     var usAutocompleteProApiURL:String = "https://us-autocomplete-pro.api.smartystreets.com/lookup"
@@ -104,6 +105,15 @@ import Foundation
         return self
     }
     
+    public func withLicenses(licenses:[String]) -> ClientBuilder {
+        //         Allows caller to set licenses (aka "tracks")
+        //
+        //         Returns self to accommodate method chaining.
+        
+        self.licenses.append(contentsOf: licenses)
+        return self
+    }
+    
     public func buildUsStreetApiClient() -> USStreetClient {
         ensureURLPrefixNotNil(url: self.usStreetApiURL)
         let serializer = USStreetSerializer()
@@ -157,6 +167,8 @@ import Foundation
         }
         
         httpSender = URLPrefixSender(urlPrefix: self.urlPrefix, inner: httpSender)
+        
+        httpSender = LicenseSender(licenses: self.licenses, inner: httpSender)
         
         return httpSender
     }

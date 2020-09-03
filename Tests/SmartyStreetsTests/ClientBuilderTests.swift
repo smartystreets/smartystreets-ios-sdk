@@ -87,4 +87,10 @@ class ClientBuilderTests: XCTestCase {
         let sender = ClientBuilder().withProxy(host: "localhost", port: 8080)
         XCTAssertNotNil(sender)
     }
+    
+    func testWithLicense() {
+        let licenses = ["one", "two", "three"]
+        let client = ClientBuilder().withLicenses(licenses: licenses)
+        XCTAssertEqual(licenses, client.licenses)
+    }
 }
