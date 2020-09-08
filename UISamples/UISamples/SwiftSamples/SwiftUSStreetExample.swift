@@ -30,7 +30,8 @@ class SwiftUSStreetExample: UIViewController, UITextFieldDelegate {
     }
     
     func run() -> String{
-        let client = ClientBuilder(id: "KEY", hostname: "hostname").buildUsStreetApiClient()
+        let client = ClientBuilder(id: "KEY", hostname: "hostname") // .withLicenses(["us-rooftop-geocoding-cloud"])
+            .buildUsStreetApiClient()
         var lookup = USStreetLookup()
         
         // Documentation for input fields can be found at:

@@ -26,7 +26,8 @@ class SwiftInternationalExample: UIViewController, UITextFieldDelegate {
     }
     
     func run() -> String {
-        let client = ClientBuilder(id: "KEY", hostname: "hostname").buildInternationalStreetApiClient()
+        let client = ClientBuilder(id: "KEY", hostname: "hostname") //.withLicenses(["fake-license"])
+            .buildInternationalStreetApiClient()
         
         // Documentation for input fields can be found at:
         // https://smartystreets.com/docs/cloud/international-street-api#http-input-fields
