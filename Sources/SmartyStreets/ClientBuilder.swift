@@ -20,6 +20,7 @@ import Foundation
     var usExtractApiURL:String = "https://us-extract.api.smartystreets.com"
     var usStreetApiURL:String = "https://us-street.api.smartystreets.com/street-address"
     var usZipCodeApiURL:String = "https://us-zipcode.api.smartystreets.com/lookup"
+    var usReverseGeoApiURL:String = "https://us-reverse-geo.api.smartystreets.com/lookup"
     
     override init() {
         self.serializer = SmartySerializer()
@@ -148,6 +149,12 @@ import Foundation
         ensureURLPrefixNotNil(url: self.usExtractApiURL)
         let serializer = USExtractSerializer()
         return USExtractClient(sender: buildSender(), serializer: serializer)
+    }
+    
+    public func buildUsReverseGeoApiClient() -> USReverseGeoClient {
+        ensureURLPrefixNotNil(url: self.usReverseGeoApiURL)
+        let serializer = USReverseGeoSerializer()
+        return USReverseGeoClient(sender: buildSender(), serializer: serializer)
     }
     
     func buildSender() -> SmartySender {

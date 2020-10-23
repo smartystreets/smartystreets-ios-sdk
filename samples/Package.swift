@@ -9,10 +9,10 @@ let package = Package(
     targets: [
         .target(
             name: "swiftExamples",
-            dependencies: ["sdk"]),
+            dependencies: ["SmartyStreets"]),
         .target(
             name: "objcExamples",
-            dependencies: ["sdk"]),
+            dependencies: ["SmartyStreets"]),
         .testTarget(
             name: "samplesTests",
             dependencies: ["swiftExamples"],
