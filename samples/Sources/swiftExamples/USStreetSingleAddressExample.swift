@@ -4,7 +4,7 @@ import SmartyStreets
 class USStreetSingleAddressExample {
     func run() -> String {
         let id = "ID"
-        let hostname = "Hostname"
+        let hostname = "HOSTNAME"
         let client = ClientBuilder(id: id, hostname: hostname).buildUsStreetApiClient()
                 
         //        Documentation for input fields can be found at:
