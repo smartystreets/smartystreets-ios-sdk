@@ -8,7 +8,7 @@ class USReverseGeoExample {
         let client = ClientBuilder(id: id, hostname: hostname).buildUsReverseGeoApiClient()
         
         // Documentation for input fields can be found at:
-        // https://smartystreets.com/docs/cloud/international-street-api#http-input-fields
+        // https://smartystreets.com/docs/cloud/us-reverse-geo-api#http-input-fields
         
         var lookup = USReverseGeoLookup(latitude: 40.27644, longitude: -111.65747)
         
@@ -42,6 +42,7 @@ class USReverseGeoExample {
                 \nCity: \(address.city ?? "")
                 \nState Abbreviation: \(address.stateAbbreviation ?? "")
                 \nZIP Code: \(address.zipcode ?? "")
+                \nLicense: \(coordinate.getLicense())
                 """)
         }
         return output
