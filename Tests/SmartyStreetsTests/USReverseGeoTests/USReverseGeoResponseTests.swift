@@ -40,7 +40,7 @@ class USReverseGeoTests: XCTestCase {
                 XCTAssertEqual(1.1, coordinate.latitude)
                 XCTAssertEqual(-2.2, coordinate.longitude)
                 XCTAssertEqual("3", coordinate.accuracy)
-                XCTAssertEqual(4, coordinate.license)
+                XCTAssertEqual("SmartyStreets", coordinate.getLicense())
             }
             
             if let address = result.address {
