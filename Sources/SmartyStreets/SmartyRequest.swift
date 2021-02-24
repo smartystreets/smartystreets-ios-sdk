@@ -54,12 +54,7 @@ public class SmartyRequest {
     }
     
     func urlEncode(value: String) -> String {
-        let charactersToEscape = "*'();:@&=+$,/?%#[]"
-        let allowedCharacters = NSCharacterSet(charactersIn: charactersToEscape).inverted
-        
-        var mutable = value.addingPercentEncoding(withAllowedCharacters: allowedCharacters as CharacterSet)!
-        mutable = mutable.replacingOccurrences(of: " ", with: "+")
-        return mutable
+        return value.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
     }
     
     func setPayload(payload:Data) {

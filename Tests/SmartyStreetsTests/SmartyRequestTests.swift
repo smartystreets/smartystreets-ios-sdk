@@ -41,7 +41,7 @@ class SmartyRequestTests: XCTestCase {
         smartyRequest.urlPrefix = "https://fakesearch.com/lookup?"
         smartyRequest.setValue(value: "Parks Blvd", HTTPParameterField: "street")
         let url = smartyRequest.getUrl()
-        XCTAssertEqual(url, "https://fakesearch.com/lookup?street=Parks+Blvd")
+        XCTAssertEqual(url, "https://fakesearch.com/lookup?street=Parks%20Blvd")
     }
     
 }
