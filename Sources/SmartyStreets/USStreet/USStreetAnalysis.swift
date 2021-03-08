@@ -7,6 +7,7 @@ import Foundation
     var dpvFootnotes:String?
     var cmra:String?
     var vacant:String?
+    var noStat:String?
     var active:String?
     var footnotes:String?
     var lacsLinkCode:String?
@@ -23,6 +24,7 @@ import Foundation
         case dpvFootnotes = "dpv_footnotes"
         case cmra = "dpv_cmra"
         case vacant = "dpv_vacant"
+        case noStat = "dpv_no_stat"
         case active = "active"
         case footnotes = "footnotes"
         case lacsLinkCode = "lacslink_code"
@@ -35,6 +37,7 @@ import Foundation
         self.dpvFootnotes = dictionary["dpv_footnotes"] as? String
         self.cmra = dictionary["dpv_cmra"] as? String
         self.vacant = dictionary["dpv_vacant"] as? String
+        self.noStat = dictionary["dpv_no_stat"] as? String
         self.active = dictionary["active"] as? String
         self.footnotes = dictionary["footnotes"] as? String
         self.lacsLinkCode = dictionary["lacslink_code"] as? String
