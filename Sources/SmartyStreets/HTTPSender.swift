@@ -49,7 +49,7 @@ class HttpSender: SmartySender {
         } catch let buildError {
             error = buildError as NSError
         }
-        if error != nil {
+        if error != nil && response != nil {
             response.statusCode = 200
         }
         return response
