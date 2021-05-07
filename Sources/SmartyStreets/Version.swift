@@ -1,3 +1,3 @@
 class Version {
-    let version = "8.7.0"
+    let version = "8.7.2"
 }
