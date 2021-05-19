@@ -30,7 +30,9 @@ class SwiftUSStreetExample: UIViewController, UITextFieldDelegate {
     }
     
     func run() -> String{
-        let client = ClientBuilder(id: "KEY", hostname: "hostname") // .withLicenses(["us-rooftop-geocoding-cloud"])
+        // The appropriate license values to be used for your subscriptions can be found on the Subscriptions page of the account dashboard.
+        // https://www.smartystreets.com/docs/cloud/licensing
+        let client = ClientBuilder(id: "KEY", hostname: "hostname").withLicenses(["us-rooftop-geocoding-cloud"])
             .buildUsStreetApiClient()
         var lookup = USStreetLookup()
         

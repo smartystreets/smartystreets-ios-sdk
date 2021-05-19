@@ -21,7 +21,9 @@
 }
 
 - (NSString*)run {
-    USAutocompleteProClient* client = [[ClientBuilder alloc] initWithId:@"Key" hostname:@"Hostname"].buildUSAutocompleteProApiClient;
+    //            The appropriate license values to be used for your subscriptions can be found on the Subscriptions page of the account dashboard.
+    //            https://www.smartystreets.com/docs/cloud/licensing
+    USAutocompleteProClient* client = [[ClientBuilder alloc] initWithId:@"Key" hostname:@"Hostname"].withLicense(["us-autocomplete-pro-cloud"]).buildUSAutocompleteProApiClient;
     
     //            Documentation for input fields can be found at:
     //            https://smartystreets.com/docs/us-autocomplete-api#http-request-input-fields

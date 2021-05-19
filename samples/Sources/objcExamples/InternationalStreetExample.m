@@ -7,7 +7,10 @@
 @implementation InternationalStreetExample
 
 - (NSString*)run {
-    InternationalStreetClient* client = [[ClientBuilder alloc] initWithId:@"ID" hostname:@"hostname"].buildInternationalStreetApiClient;
+    //            The appropriate license values to be used for your subscriptions
+    //            can be found on the Subscriptions page of the account dashboard.
+    //            https://www.smartystreets.com/docs/cloud/licensing
+    InternationalStreetClient* client = [[ClientBuilder alloc] initWithId:@"ID" hostname:@"hostname"].withLicenses(["international-global-plus-cloud"]).buildInternationalStreetApiClient;
     
     // Documentation for input fields can be found at:
     // https://smartystreets.com/docs/cloud/international-street-api#http-input-fields

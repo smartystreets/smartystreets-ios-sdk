@@ -33,7 +33,9 @@ class SwiftAutocompleteProExample: UIViewController, UITextFieldDelegate {
     }
     
     func run() -> String {
-        let client = ClientBuilder(id: "Key", hostname: "Hostname").buildUSAutocompleteProApiClient()
+        // The appropriate license values to be used for your subscriptions can be found on the Subscriptions page of the account dashboard.
+        // https://www.smartystreets.com/docs/cloud/licensing
+        let client = ClientBuilder(id: "Key", hostname: "Hostname").withLicenses(["us-autocomplete-pro-cloud"]).buildUSAutocompleteProApiClient()
         
         if let search = self.search.text {
             //            Documentation for input fields can be found at:

@@ -7,7 +7,10 @@
 @implementation USStreetMultipleExample
 
 - (NSString*)run {
-    USStreetClient *client = [[ClientBuilder alloc] initWithId:@"ID" hostname:@"hostname"].buildUsStreetApiClient;
+    //            The appropriate license values to be used for your subscriptions
+    //            can be found on the Subscriptions page of the account dashboard.
+    //            https://www.smartystreets.com/docs/cloud/licensing
+    USStreetClient *client = [[ClientBuilder alloc] initWithId:@"ID" hostname:@"hostname"].withLicenses(["us-rooftop-geocoding-cloud"]).buildUsStreetApiClient;
     NSError *error = nil;
     
     //        Documentation for input fields can be found at:

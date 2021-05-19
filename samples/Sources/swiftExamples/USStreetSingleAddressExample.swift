@@ -5,7 +5,10 @@ class USStreetSingleAddressExample {
     func run() -> String {
         let id = "ID"
         let hostname = "HOSTNAME"
-        let client = ClientBuilder(id: id, hostname: hostname).buildUsStreetApiClient()
+        //            The appropriate license values to be used for your subscriptions
+        //            can be found on the Subscriptions page of the account dashboard.
+        //            https://www.smartystreets.com/docs/cloud/licensing
+        let client = ClientBuilder(id: id, hostname: hostname).withLicenses(["us-rooftop-geocoding-cloud"]).buildUsStreetApiClient()
                 
         //        Documentation for input fields can be found at:
         //        https://smartystreets.com/docs/us-street-api#input-fields
