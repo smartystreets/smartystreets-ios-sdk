@@ -13,6 +13,8 @@ import Foundation
     var lacsLinkCode:String?
     var lacsLinkIndicator:String?
     var isSuiteLinkMatch:Bool?
+    var matchMode:String?
+    var matchDetails:String?
     public var objcIsSuiteLinkMatch:NSNumber? {
         get {
             return isSuiteLinkMatch as NSNumber?
@@ -30,6 +32,8 @@ import Foundation
         case lacsLinkCode = "lacslink_code"
         case lacsLinkIndicator = "lacslink_indicator"
         case isSuiteLinkMatch = "suitelink_match"
+        case matchMode = "match_mode"
+        case matchDetails = "match_details"
     }
     
     init(dictionary: NSDictionary) {
@@ -43,5 +47,7 @@ import Foundation
         self.lacsLinkCode = dictionary["lacslink_code"] as? String
         self.lacsLinkIndicator = dictionary["lacslink_indicator"] as? String
         self.isSuiteLinkMatch = dictionary["suitelink_match"] as? Bool
+        self.matchMode = dictionary["match_mode"] as? String
+        self.matchDetails = dictionary["match_details"] as? String
     }
 }
