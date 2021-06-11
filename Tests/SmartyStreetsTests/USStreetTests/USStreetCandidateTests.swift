@@ -72,7 +72,9 @@ class USStreetCandidateTests: XCTestCase {
                 "lacslink_code": "49",
                 "lacslink_indicator": "50",
                 "suitelink_match": true,
-                "dpv_no_stat": "51"
+                "dpv_no_stat": "51",
+                "match_mode": "52",
+                "match_details": "53"
             ]
         ]
         self.error = nil
@@ -179,5 +181,7 @@ class USStreetCandidateTests: XCTestCase {
         XCTAssertEqual("50", analysis.lacsLinkIndicator)
         XCTAssertEqual(true, analysis.isSuiteLinkMatch)
         XCTAssertEqual("51", analysis.noStat)
+        XCTAssertEqual("52", analysis.matchMode)
+        XCTAssertEqual("53", analysis.matchDetails)
     }
 }
