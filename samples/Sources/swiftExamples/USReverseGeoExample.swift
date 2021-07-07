@@ -8,7 +8,7 @@ class USReverseGeoExample {
         //            The appropriate license values to be used for your subscriptions
         //            can be found on the Subscriptions page of the account dashboard.
         //            https://www.smartystreets.com/docs/cloud/licensing
-        let client = ClientBuilder(id: id, hostname: hostname).withLicenses(["us-reverse-geocoding-cloud"]).buildUsReverseGeoApiClient()
+        let client = ClientBuilder(id: id, hostname: hostname).withLicenses(licenses:["us-reverse-geocoding-cloud"]).buildUsReverseGeoApiClient()
         
         // Documentation for input fields can be found at:
         // https://smartystreets.com/docs/cloud/us-reverse-geo-api#http-input-fields

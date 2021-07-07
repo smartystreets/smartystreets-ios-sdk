@@ -2,9 +2,9 @@ import Foundation
 
 @objcMembers public class GeolocateType: NSObject, Codable {
     
-    let SSGeolocateTypeCity = "city"
-    let SSGeolocateTypeState = "state"
-    let SSGeolocateTypeNone = "null"
+    var SSGeolocateTypeCity = "city"
+    var SSGeolocateTypeState = "state"
+    var SSGeolocateTypeNone = "null"
     
     var name:String
     

@@ -8,7 +8,7 @@ class USStreetMultipleAddressExample {
         //            The appropriate license values to be used for your subscriptions
         //            can be found on the Subscriptions page of the account dashboard.
         //            https://www.smartystreets.com/docs/cloud/licensing
-        let client = ClientBuilder(id: id, hostname: hostname).withLicenses(["us-rooftop-geocoding-cloud"]).buildUsStreetApiClient()
+        let client = ClientBuilder(id: id, hostname: hostname).withLicenses(licenses:["us-rooftop-geocoding-cloud"]).buildUsStreetApiClient()
                 
         let batch = USStreetBatch()
         var error:NSError! = nil

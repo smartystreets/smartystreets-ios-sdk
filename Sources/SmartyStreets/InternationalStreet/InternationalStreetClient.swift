@@ -23,9 +23,9 @@ public class InternationalStreetClient: NSObject {
         let response = sender.sendRequest(request: request, error: &error.pointee)
         if error.pointee != nil { return false }
         
-        let candidates:[InternationalStreetCandidate] = serializer.Deserialize(payload: response?.payload, error: &error.pointee) as! [InternationalStreetCandidate]
+        let candidates:[InternationalStreetCandidate]! = serializer.Deserialize(payload: response?.payload, error: &error.pointee) as? [InternationalStreetCandidate]
         if error.pointee != nil { return false }
-        assignCandidatesToLookups(lookups: lookup.pointee, candidates: candidates)
+        lookup.pointee.result = candidates
         
         return true
     }
@@ -51,26 +51,6 @@ public class InternationalStreetClient: NSObject {
         request.setValue(value: lookup.postalCode ?? "", HTTPParameterField: "postal_code")
         
         return request
-    }
-    
-    func assignCandidatesToLookups(lookups: InternationalStreetLookup, candidates:[InternationalStreetCandidate]) {
-        for candidate in candidates {
-            lookups.result?.append(candidate)
-        }
-    }
-    
-    func checkLookupsForErrors(lookups:[USStreetLookup], error: inout NSError!) {
-        for lookup in lookups {
-            if let result = lookup.result {
-                for candidate in result {
-                    if let reason = candidate.reason, let status = candidate.status {
-                        let details = [NSLocalizedDescriptionKey:"\n\tReason: \(reason)\n\tStatus: \(status)"]
-                        error = NSError(domain: SmartyErrors().SSErrorDomain, code: SmartyErrors.SSErrors.BadRequestError.rawValue, userInfo: details)
-                        return
-                    }
-                }
-            }
-        }
     }
     
     func ensureEnoughInfo(lookup:InternationalStreetLookup, error: inout NSError!) {
