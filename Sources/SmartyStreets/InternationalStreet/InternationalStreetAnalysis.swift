@@ -8,6 +8,13 @@ import Foundation
     public var maxAddressPrecision:String?
     public var changes:InternationalStreetChanges?
     
+    enum CodingKeys: String, CodingKey {
+        case verificationStatus = "verification_status"
+        case addressPrecision = "address_precision"
+        case maxAddressPrecision = "max_address_precision"
+        case changes = "changes"
+    }
+    
     init(dictionary: NSDictionary) {
         self.verificationStatus = dictionary["verification_status"] as? String
         self.addressPrecision = dictionary["address_precision"] as? String
