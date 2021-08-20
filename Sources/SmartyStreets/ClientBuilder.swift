@@ -133,7 +133,7 @@ import Foundation
         return InternationalStreetClient(sender:buildSender(), serializer: serializer)
     }
     
-    public func buildUSAutocompleteApiClient() -> USAutocompleteClient {
+    public func buildUSAutocompleteApiClient() -> USAutocompleteClient { // Deprecated
         ensureURLPrefixNotNil(url: self.usAutocompleteApiURL)
         let serializer = USAutocompleteSerializer()
         return USAutocompleteClient(sender: buildSender(), serializer: serializer)
