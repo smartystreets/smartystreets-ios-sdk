@@ -54,7 +54,7 @@ public class SmartyRequest {
     }
     
     func urlEncode(value: String) -> String {
-        return value.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
+        return value.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)!
     }
     
     func setPayload(payload:Data) {

@@ -42,6 +42,7 @@ class USAutocompleteProExample {
         lookup.addCityFilter(city: "Denver")
         lookup.addCityFilter(city: "Orem")
         lookup.addStateFilter(state: "UT")
+        lookup.addStateFilter(state: "CO")
         lookup.addPreferCity(city: "Orem")
         lookup.addPreferState(state: "UT")
         lookup.maxResults = 5
