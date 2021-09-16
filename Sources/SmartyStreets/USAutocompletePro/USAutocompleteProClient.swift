@@ -41,7 +41,7 @@ public class USAutocompleteProClient: NSObject {
         let request = SmartyRequest()
         
         request.setValue(value: lookup.search ?? "", HTTPParameterField: "search")
-        request.setValue(value: lookup.selected?.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? "", HTTPParameterField: "selected")
+        request.setValue(value: lookup.selected?.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? "", HTTPParameterField: "selected")
         request.setValue(value: lookup.getMaxResultsStringIfSet(), HTTPParameterField: "max_results")
         request.setValue(value: buildFilterString(list: lookup.includeOnlyCities ?? [String]()), HTTPParameterField: "include_only_cities")
         request.setValue(value: buildEncodedString(list: lookup.includeOnlyStates ?? [String]()), HTTPParameterField: "include_only_states")
@@ -64,7 +64,7 @@ public class USAutocompleteProClient: NSObject {
             return String()
         }
         
-        return list.joined(separator: ",")
+        return list.joined(separator: "%2C")
     }
     
     func buildEncodedString(list:[String]) -> String {
@@ -72,6 +72,6 @@ public class USAutocompleteProClient: NSObject {
             return String()
         }
         
-        return list.joined(separator: ";")
+        return list.joined(separator: "%3B")
     }
 }
