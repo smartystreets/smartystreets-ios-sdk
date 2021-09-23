@@ -49,6 +49,7 @@ class USAutocompleteProExample {
         lookup.preferGeolocation = GeolocateType(name: "none")
         lookup.preferRatio = 33
         lookup.selected = "1042 W Center St Apt A (24) Orem UT 84057"
+        lookup.source = "all"
         ///////////////////////////////////////////////////////////////////////////////////////////////
         
         _ = client.sendLookup(lookup: &lookup, error: &error)

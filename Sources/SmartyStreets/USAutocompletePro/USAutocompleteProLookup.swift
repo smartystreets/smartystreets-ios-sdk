@@ -32,6 +32,7 @@ import Foundation
     public var preferZIPCodes:[String]?
     public var preferGeolocation:GeolocateType?
     public var preferRatio:Int?
+    public var source:String?
     
     enum CodingKeys: String, CodingKey {
         case maxResults = "max_results"
@@ -44,6 +45,7 @@ import Foundation
         case preferZIPCodes = "prefer_zipcodes"
         case preferGeolocation = "prefer_geolocation"
         case preferRatio = "prefer_ratio"
+        case source = "source"
     }
     
     override public init() {

@@ -50,6 +50,7 @@ public class USAutocompleteProClient: NSObject {
         request.setValue(value: buildFilterString(list: lookup.preferCities ?? [String]()), HTTPParameterField: "prefer_cities")
         request.setValue(value: buildFilterString(list: lookup.preferStates ?? [String]()), HTTPParameterField: "prefer_states")
         request.setValue(value: buildFilterString(list: lookup.preferZIPCodes ?? [String]()), HTTPParameterField: "prefer_zipcodes")
+        request.setValue(value: lookup.source ?? "", HTTPParameterField: "source")
         request.setValue(value: lookup.getPreferRatioStringIfSet(), HTTPParameterField: "prefer_ratio")
         
         if lookup.preferGeolocation!.name != "none" && lookup.preferZIPCodes == [String]() {
