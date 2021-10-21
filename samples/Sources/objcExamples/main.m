@@ -9,5 +9,6 @@ int main(int argc, const char * arv[]) {
     NSLog(@"US Extract Example: \n%@", [[[USExtractExample alloc] init] run]);
     NSLog(@"US Autocomplete Pro Example: \n%@", [[[USAutocompleteProExample alloc] init] run]);
     NSLog(@"International Street Example: \n%@", [[[InternationalStreetExample alloc] init] run]);
+    NSLog(@"International Autocomplete Example: \n%@", [[[InternationalAutocompleteExample alloc] init] run]);
     return 0;
 }
