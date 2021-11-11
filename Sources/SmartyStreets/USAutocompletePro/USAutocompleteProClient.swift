@@ -41,7 +41,7 @@ public class USAutocompleteProClient: NSObject {
         let request = SmartyRequest()
         
         request.setValue(value: lookup.search ?? "", HTTPParameterField: "search")
-        request.setValue(value: lookup.selected?.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? "", HTTPParameterField: "selected")
+        request.setValue(value: lookup.selected ?? "", HTTPParameterField: "selected")
         request.setValue(value: lookup.getMaxResultsStringIfSet(), HTTPParameterField: "max_results")
         request.setValue(value: buildFilterString(list: lookup.includeOnlyCities ?? [String]()), HTTPParameterField: "include_only_cities")
         request.setValue(value: buildFilterString(list: lookup.includeOnlyStates ?? [String]()), HTTPParameterField: "include_only_states")
