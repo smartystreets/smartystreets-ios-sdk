@@ -9,7 +9,11 @@ class USAutocompleteProExample {
         //            can be found on the Subscriptions page of the account dashboard.
         //            https://www.smartystreets.com/docs/cloud/licensing
         let client = ClientBuilder(id: id, hostname: hostname).withLicenses(licenses:["us-autocomplete-pro-cloud"]).buildUSAutocompleteProApiClient()
-
+        
+//        let authId = "authId"
+//        let authToken = "authToken"
+//        let client = ClientBuilder(authId:authId, authToken:authToken).withLicenses(licenses:["us-autocomplete-pro-cloud"]).buildUSAutocompleteProApiClient()
+        
         //            Documentation for input fields can be found at:
         //            https://smartystreets.com/docs/cloud/us-autocomplete-api#pro-http-request-input-fields
 
