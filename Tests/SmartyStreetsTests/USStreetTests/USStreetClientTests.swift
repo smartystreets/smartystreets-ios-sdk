@@ -20,11 +20,11 @@ class USStreetClientTests: XCTestCase {
     }
     
     func testSendingSingleFreeformLookup() {
-        let expectedUrl = "http://localhost/?street=freeform"
+        let expectedUrl = "http://localhost/?candidates=1"
         let sender = RequestCapturingSender()
         let client = USStreetClient(sender: sender, serializer: serializer)
         
-        var lookup = USStreetLookup(freeformAddress: "freeform")
+        var lookup = USStreetLookup()
         _ = client.sendLookup(lookup: &lookup, error: &self.error)
         
         let actualUrl = sender.request.getUrl()

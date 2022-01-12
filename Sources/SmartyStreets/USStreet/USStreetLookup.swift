@@ -33,6 +33,8 @@ import Foundation
     }
     
     public init(freeformAddress:String) {
+        self.maxCandidates = 1
+        self.result = [USStreetCandidate]()
         self.street = freeformAddress
     }
     
