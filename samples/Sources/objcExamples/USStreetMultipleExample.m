@@ -63,7 +63,7 @@
             continue;
         }
         
-        [output appendString:[NSString stringWithFormat:@"\nAddress %i is valid. (There is at least one candidate)", i]];
+        [output appendString:[NSString stringWithFormat:@"\nAddress %i has at least one candidate.\n If the match parameter is set to STRICT, the address is valid.\n Otherwise, chec, the Analysis output fields to see if the address is valid.", i]];
         
         for (USStreetCandidate *candidate in candidates) {
             USStreetComponents const *components = candidate.components;

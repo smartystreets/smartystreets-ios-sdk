@@ -76,7 +76,7 @@ class USStreetMultipleAddressExample {
             
             for candidate in candidates {
                 output.append("""
-                    Address is valid. (There is at least one candidate)\n\n
+                    There is at least one candidate.\n If the match parameter is set to STRICT, the address is valid.\n Otherwise, check the Analysis output fields to see if the address is valid.\n\n
                     \nZIP Code: \(candidate.components?.zipCode ?? "")
                     \nCounty: \(candidate.metadata?.countyName ?? "")
                     \nLatitude: \(candidate.metadata?.latitude ?? 0.0)

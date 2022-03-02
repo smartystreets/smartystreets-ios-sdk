@@ -60,7 +60,7 @@
     
     USStreetCandidate* candidate = [results objectAtIndex:0];
     
-    [output appendString:[NSString stringWithFormat:@"\nAddress is valid\n"]];
+    [output appendString:[NSString stringWithFormat:@"\nThere is at least one candidate.\n If the match parameter is set to STRICT, the address is valid.\n Otherwise, check the Analysis output fields to see if the address is valid.\n"]];
     
     USStreetComponents const *components = candidate.components;
     USStreetMetadata const *metadata = candidate.metadata;

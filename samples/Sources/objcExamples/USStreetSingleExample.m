@@ -50,7 +50,7 @@
     
     USStreetCandidate* candidate = [results objectAtIndex:0];
     
-    [output appendString:@"Address is valid. (There is at least one candidate)\n\n"];
+    [output appendString:@"There is at least one candidate.\n If the match parameter is set to STRICT, the address is valid.\n Otherwise, check the Analysis output fields to see if the address is valid.\n\n"];
     [output appendString:[@"\nZIP Code: " stringByAppendingString:candidate.components.zipCode]];
     [output appendString:[@"\nCounty: " stringByAppendingString:candidate.metadata.countyName]];
     [output appendString:[@"\nLatitude: " stringByAppendingString:[candidate.metadata.objcLatitude stringValue]]];
