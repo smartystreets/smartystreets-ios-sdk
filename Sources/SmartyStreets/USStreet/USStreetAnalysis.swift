@@ -3,17 +3,17 @@ import Foundation
 @objcMembers public class USStreetAnalysis: NSObject, Codable {
     //    See "https://smartystreets.com/docs/cloud/us-street-api#analysis"
     
-    var dpvMatchCode:String?
-    var dpvFootnotes:String?
-    var cmra:String?
-    var vacant:String?
-    var noStat:String?
-    var active:String?
-    var footnotes:String?
-    var lacsLinkCode:String?
-    var lacsLinkIndicator:String?
-    var isSuiteLinkMatch:Bool?
-    var enhancedMatch:String?
+    public var dpvMatchCode:String?
+    public var dpvFootnotes:String?
+    public var cmra:String?
+    public var vacant:String?
+    public var noStat:String?
+    public var active:String?
+    public var footnotes:String?
+    public var lacsLinkCode:String?
+    public var lacsLinkIndicator:String?
+    public var isSuiteLinkMatch:Bool?
+    public var enhancedMatch:String?
     public var objcIsSuiteLinkMatch:NSNumber? {
         get {
             return isSuiteLinkMatch as NSNumber?

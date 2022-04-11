@@ -7,16 +7,16 @@ import Foundation
     //
     //    See "https://smartystreets.com/docs/cloud/us-street-api#root"
     
-    var status:String?
-    var reason:String?
-    var inputId:String?
-    var inputIndex:Int?
+    public var status:String?
+    public var reason:String?
+    public var inputId:String?
+    public var inputIndex:Int?
     public var objcInputIndex:NSNumber? {
         get {
             return inputIndex as NSNumber?
         }
     }
-    var candidateIndex:Int?
+    public var candidateIndex:Int?
     public var objcCandidateIndex:NSNumber? {
         get {
             return candidateIndex as NSNumber?
