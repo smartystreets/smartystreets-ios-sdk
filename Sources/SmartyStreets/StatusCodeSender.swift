@@ -38,7 +38,7 @@ class StatusCodeSender: SmartySender {
         case 429:
             let details = [NSLocalizedDescriptionKey:"When using public \"website key\" authentication, we restrict the number of requests coming from a given source over too short of a time."]
             error = NSError(domain: smartyErrors.SSErrorDomain, code: SmartyErrors.SSErrors.TooManyRequestsError.rawValue, userInfo: details)
-            return nil
+            return response
         case 500:
             let details = [NSLocalizedDescriptionKey:"Internal Server Error."]
             error = NSError(domain: smartyErrors.SSErrorDomain, code: SmartyErrors.SSErrors.InternalServerError.rawValue, userInfo: details)

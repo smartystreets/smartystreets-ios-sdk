@@ -38,6 +38,11 @@ class RetrySender: SmartySender {
             return nil
         }
         
+        if response.statusCode == 429 {
+            backoff(attempt: 5, error: error)
+            return nil
+        }
+        
         return response
     }
     

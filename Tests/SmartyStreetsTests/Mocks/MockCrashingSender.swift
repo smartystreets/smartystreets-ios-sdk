@@ -28,6 +28,10 @@ class MockCrashingSender: SmartySender {
                 error = NSError(domain: "NSCocoaErrorDomain", code: 400, userInfo: details)
                 return nil
             }
+        } else if request.getUrl().contains("TooManyRequests") {
+            if self.sendCount <= 1{
+                return SmartyResponse(statusCode: 429, payload: Data())
+            }
         }
         
         return SmartyResponse(statusCode: 200, payload: Data())

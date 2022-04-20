@@ -57,4 +57,12 @@ class RetrySenderTests: XCTestCase {
         XCTAssertEqual(self.mockCrashingSender.sendCount, 15)
         XCTAssertEqual(self.mockSleeper.sleepDuration as! [Int?], expectedDurations)
     }
+    
+    func testSleepOnRateLimit() {
+        let expectedDurations = [5]
+        self.request.urlPrefix = "TooManyRequests"
+        let retrySender = RetrySender(maxRetries: 15, sleeper: self.mockSleeper as Any, logger: self.mockLogger as Any, inner: self.mockCrashingSender as Any)
+        let _ = retrySender.sendRequest(request: self.request!, error: &self.error)
+        XCTAssertEqual(self.mockSleeper.sleepDuration as! [Int?], expectedDurations)
+    }
 }
