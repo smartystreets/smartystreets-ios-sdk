@@ -8,7 +8,7 @@ class USStreetSingleAddressExample {
         //            The appropriate license values to be used for your subscriptions
         //            can be found on the Subscriptions page of the account dashboard.
         //            https://www.smartystreets.com/docs/cloud/licensing
-        let client = ClientBuilder(id: id, hostname: hostname).withLicenses(licenses:["us-rooftop-geocoding-cloud"]).buildUsStreetApiClient()
+        let client = ClientBuilder(id: id, hostname: hostname).withLicenses(licenses:["us-core-cloud"]).buildUsStreetApiClient()
                 
         //        Documentation for input fields can be found at:
         //        https://smartystreets.com/docs/us-street-api#input-fields
