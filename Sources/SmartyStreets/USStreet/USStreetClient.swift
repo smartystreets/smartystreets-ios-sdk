@@ -92,10 +92,12 @@ public class USStreetClient: NSObject {
     func assignCandidatesToLookups(lookups: [USStreetLookup], candidates:[USStreetCandidate]) {
         for i in 0..<candidates.count {
             let candidate = candidates[i]
-            if lookups[i].result == nil {
-                lookups[i].result = [candidate]
-            } else {
-                lookups[i].result.append(candidate)
+            for j in 0..<lookups.count {
+                if lookups[j].result == nil {
+                    lookups[j].result = [candidate]
+                } else {
+                    lookups[j].result.append(candidate)
+                }
             }
         }
     }
