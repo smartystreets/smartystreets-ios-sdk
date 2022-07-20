@@ -13,3 +13,5 @@ Packages
 /.build
 /Packages
 /*.xcodeproj
+.idea
+.swiftpm
