@@ -48,6 +48,14 @@ class StatusCodeSenderTests: XCTestCase {
         assertSendWithStatusCode(statusCode: 429)
     }
     
+    func test429ResponseMessage() {
+        assertSendWithStatusCodeAndMessage(statusCode: 429, message:
+                                            """
+                                           {"errors":[{"id": 1234, "message": "Why so aggressive?"}]}
+                                           """
+        )
+    }
+    
     func test500ResponseThrowsInternalServerError() {
         assertSendWithStatusCode(statusCode: 500)
     }
@@ -67,5 +75,15 @@ class StatusCodeSenderTests: XCTestCase {
         let _ = sender.sendRequest(request: SmartyRequest(), error: &self.error)
         
         XCTAssertEqual(statusCode, self.error.code)
+    }
+    
+    func assertSendWithStatusCodeAndMessage(statusCode:Int, message:String) {
+        let mockStatusCodeSender = MockStatusCodeSender(statusCode: statusCode, payload: message)
+        let sender = StatusCodeSender(inner: mockStatusCodeSender)
+        
+        let _ = sender.sendRequest(request: SmartyRequest(), error: &self.error)
+        
+        XCTAssertEqual(statusCode, self.error.code)
+        XCTAssertEqual("Too Many Requests: Why so aggressive?", self.error.localizedDescription)
     }
 }

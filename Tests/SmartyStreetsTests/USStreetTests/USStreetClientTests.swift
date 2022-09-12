@@ -56,7 +56,7 @@ class USStreetClientTests: XCTestCase {
     }
 
     func testFullBatch() {
-        var responseDataTemplate = """
+        let responseDataTemplate = """
                                    {
                                        "input_index": %d,
                                        "candidate_index": %d,

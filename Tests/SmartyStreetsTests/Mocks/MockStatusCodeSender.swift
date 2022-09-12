@@ -4,9 +4,17 @@ import Foundation
 class MockStatusCodeSender: StatusCodeSender {
     
     var statusCode:Int
+    var payload:Data
     
     init(statusCode:Int) {
         self.statusCode = statusCode
+        self.payload = Data()
+        super.init(inner: SmartySender())
+    }
+    
+    init(statusCode:Int, payload: String) {
+        self.statusCode = statusCode
+        self.payload = payload.data(using: .utf8)!
         super.init(inner: SmartySender())
     }
     
@@ -15,6 +23,6 @@ class MockStatusCodeSender: StatusCodeSender {
             return nil
         }
         
-        return SmartyResponse(statusCode: self.statusCode, payload: Data())
+        return SmartyResponse(statusCode: self.statusCode, payload: self.payload)
     }
 }

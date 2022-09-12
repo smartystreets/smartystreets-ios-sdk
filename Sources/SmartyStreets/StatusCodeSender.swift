@@ -1,11 +1,22 @@
 import Foundation
 
+struct ResponseErrors : Codable {
+    let errors: [ResponseError]
+}
+
+struct ResponseError : Codable {
+    let id: Int
+    let message: String
+}
+
 class StatusCodeSender: SmartySender {
     
     var inner: SmartySender
+    var jsonDecoder: JSONDecoder
     
     init(inner:Any) {
         self.inner = inner as! SmartySender
+        self.jsonDecoder = JSONDecoder()
     }
     
     override func sendRequest(request: SmartyRequest, error: inout NSError!) -> SmartyResponse! {
@@ -36,7 +47,17 @@ class StatusCodeSender: SmartySender {
             error = NSError(domain: smartyErrors.SSErrorDomain, code: SmartyErrors.SSErrors.UnprocessableEntityError.rawValue, userInfo: details)
             return nil
         case 429:
-            let details = [NSLocalizedDescriptionKey:"When using public \"website key\" authentication, we restrict the number of requests coming from a given source over too short of a time."]
+            var detailsStr = "Too Many Requests: " as String
+            do {
+                let errors = try self.jsonDecoder.decode(ResponseErrors.self, from: response!.payload)
+                for error in errors.errors {
+                    detailsStr.append(error.message)
+                }
+            } catch {
+                detailsStr.append("Error parsing response payload from server - ")
+                detailsStr.append(error.localizedDescription)
+            }
+            let details = [NSLocalizedDescriptionKey:detailsStr]
             error = NSError(domain: smartyErrors.SSErrorDomain, code: SmartyErrors.SSErrors.TooManyRequestsError.rawValue, userInfo: details)
             return response
         case 500:
