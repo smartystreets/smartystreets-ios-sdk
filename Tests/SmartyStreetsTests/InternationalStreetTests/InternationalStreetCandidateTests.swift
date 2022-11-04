@@ -25,6 +25,8 @@ class InternationalCandidateTests: XCTestCase {
                 "country_iso_3": "14",
                 "super_administrative_area": "15",
                 "administrative_area": "16",
+                "administrative_area_short": "16.1",
+                "administrative_area_long": "16.2",
                 "sub_administrative_area": "17",
                 "dependent_locality": "18",
                 "dependent_locality_name": "19",
@@ -58,6 +60,8 @@ class InternationalCandidateTests: XCTestCase {
                 "sub_building_number": "46",
                 "sub_building_name": "47",
                 "sub_building": "48",
+                "level_type": "48.1",
+                "level_number": "48.2",
                 "post_box": "49",
                 "post_box_type": "50",
                 "post_box_number": "51"
@@ -91,6 +95,8 @@ class InternationalCandidateTests: XCTestCase {
                         "country_iso_3": "73",
                         "super_administrative_area": "74",
                         "administrative_area": "75",
+                        "administrative_area_short": "75.1",
+                        "administrative_area_long": "75.2",
                         "sub_administrative_area": "76",
                         "dependent_locality": "77",
                         "dependent_locality_name": "78",
@@ -124,6 +130,8 @@ class InternationalCandidateTests: XCTestCase {
                         "sub_building_number": "106",
                         "sub_building_name": "107",
                         "sub_building": "108",
+                        "level_type": "108.1",
+                        "level_number": "108.2",
                         "post_box": "109",
                         "post_box_type": "110",
                         "post_box_number": "111"
@@ -159,6 +167,8 @@ class InternationalCandidateTests: XCTestCase {
         XCTAssertEqual("14", components.countryIso3)
         XCTAssertEqual("15", components.superAdministrativeArea)
         XCTAssertEqual("16", components.administrativeArea)
+        XCTAssertEqual("16.1", components.administrativeAreaShort)
+        XCTAssertEqual("16.2", components.administrativeAreaLong)
         XCTAssertEqual("17", components.subAdministrativeArea)
         XCTAssertEqual("18", components.dependentLocality)
         XCTAssertEqual("19", components.dependentLocalityName)
@@ -192,6 +202,8 @@ class InternationalCandidateTests: XCTestCase {
         XCTAssertEqual("46", components.subBuildingNumber)
         XCTAssertEqual("47", components.subBuildingName)
         XCTAssertEqual("48", components.subBuilding)
+        XCTAssertEqual("48.1", components.levelType)
+        XCTAssertEqual("48.2", components.levelNumber)
         XCTAssertEqual("49", components.postBox)
         XCTAssertEqual("50", components.postBoxType)
         XCTAssertEqual("51", components.postBoxNumber)
@@ -231,6 +243,8 @@ class InternationalCandidateTests: XCTestCase {
         XCTAssertEqual("73", ccomponents.countryIso3)
         XCTAssertEqual("74", ccomponents.superAdministrativeArea)
         XCTAssertEqual("75", ccomponents.administrativeArea)
+        XCTAssertEqual("75.1", ccomponents.administrativeAreaShort)
+        XCTAssertEqual("75.2", ccomponents.administrativeAreaLong)
         XCTAssertEqual("76", ccomponents.subAdministrativeArea)
         XCTAssertEqual("77", ccomponents.dependentLocality)
         XCTAssertEqual("78", ccomponents.dependentLocalityName)
@@ -264,6 +278,8 @@ class InternationalCandidateTests: XCTestCase {
         XCTAssertEqual("106", ccomponents.subBuildingNumber)
         XCTAssertEqual("107", ccomponents.subBuildingName)
         XCTAssertEqual("108", ccomponents.subBuilding)
+        XCTAssertEqual("108.1", ccomponents.levelType)
+        XCTAssertEqual("108.2", ccomponents.levelNumber)
         XCTAssertEqual("109", ccomponents.postBox)
         XCTAssertEqual("110", ccomponents.postBoxType)
         XCTAssertEqual("111", ccomponents.postBoxNumber)

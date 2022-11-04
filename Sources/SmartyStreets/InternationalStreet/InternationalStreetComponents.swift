@@ -6,6 +6,8 @@ import Foundation
     public var countryIso3:String?
     public var superAdministrativeArea:String?
     public var administrativeArea:String?
+    public var administrativeAreaShort:String?
+    public var administrativeAreaLong:String?
     public var subAdministrativeArea:String?
     public var dependentLocality:String?
     public var dependentLocalityName:String?
@@ -39,6 +41,8 @@ import Foundation
     public var subBuildingNumber:String?
     public var subBuildingName:String?
     public var subBuilding:String?
+    public var levelType:String?
+    public var levelNumber:String?
     public var postBox:String?
     public var postBoxType:String?
     public var postBoxNumber:String?
@@ -47,6 +51,8 @@ import Foundation
         case countryIso3 = "country_iso_3"
         case superAdministrativeArea = "super_administrative_area"
         case administrativeArea = "administrative_area"
+        case administrativeAreaShort = "administrative_area_short"
+        case administrativeAreaLong = "administrative_area_long"
         case subAdministrativeArea = "sub_administrative_area"
         case dependentLocality = "dependent_locality"
         case dependentLocalityName = "dependent_locality_name"
@@ -80,6 +86,8 @@ import Foundation
         case subBuildingNumber = "sub_building_number"
         case subBuildingName = "sub_building_name"
         case subBuilding = "sub_building"
+        case levelType = "level_type"
+        case levelNumber = "level_number"
         case postBox = "post_box"
         case postBoxType = "post_box_type"
         case postBoxNumber = "post_box_number"
@@ -89,6 +97,8 @@ import Foundation
         self.countryIso3 = dictionary["country_iso_3"] as? String
         self.superAdministrativeArea = dictionary["super_administrative_area"] as? String
         self.administrativeArea = dictionary["administrative_area"] as? String
+        self.administrativeAreaShort = dictionary["administrative_area_short"] as? String
+        self.administrativeAreaLong = dictionary["administrative_area_long"] as? String
         self.subAdministrativeArea = dictionary["sub_administrative_area"] as? String
         self.dependentLocality = dictionary["dependent_locality"] as? String
         self.dependentLocalityName = dictionary["dependent_locality_name"] as? String
@@ -122,6 +132,8 @@ import Foundation
         self.subBuildingNumber = dictionary["sub_building_number"] as? String
         self.subBuildingName = dictionary["sub_building_name"] as? String
         self.subBuilding = dictionary["sub_building"] as? String
+        self.levelType = dictionary["level_type"] as? String
+        self.levelNumber = dictionary["level_number"] as? String
         self.postBox = dictionary["post_box"] as? String
         self.postBoxType = dictionary["post_box_type"] as? String
         self.postBoxNumber = dictionary["post_box_number"] as? String
