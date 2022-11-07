@@ -24,7 +24,6 @@ import Foundation
     public var address2:String?
     public var address3:String?
     public var address4:String?
-    public var unit:String?
     public var organization:String?
     public var locality:String?
     public var administrativeArea:String?

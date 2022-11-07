@@ -45,7 +45,6 @@ public class InternationalStreetClient: NSObject {
         request.setValue(value: lookup.address2 ?? "", HTTPParameterField: "address2")
         request.setValue(value: lookup.address3 ?? "", HTTPParameterField: "address3")
         request.setValue(value: lookup.address4 ?? "", HTTPParameterField: "address4")
-        request.setValue(value: lookup.unit ?? "", HTTPParameterField: "unit")
         request.setValue(value: lookup.organization ?? "", HTTPParameterField: "organization")
         request.setValue(value: lookup.locality ?? "", HTTPParameterField: "locality")
         request.setValue(value: lookup.administrativeArea ?? "", HTTPParameterField: "administrative_area")

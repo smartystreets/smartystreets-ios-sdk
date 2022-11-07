@@ -47,7 +47,6 @@ class InternationalStreetClientTests: XCTestCase {
         lookup.address2 = "3"
         lookup.address3 = "4"
         lookup.address4 = "5"
-        lookup.unit = "5.1"
         lookup.organization = "6"
         lookup.locality = "7"
         lookup.administrativeArea = "8"
