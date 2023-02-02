@@ -3,11 +3,18 @@ import SmartyStreets
 
 class InternationalStreetExample {
     func run() -> String {
-        let id = "ID"
-        let hostname = "Hostname"
         //            The appropriate license values to be used for your subscriptions
         //            can be found on the Subscriptions page of the account dashboard.
         //            https://www.smartystreets.com/docs/cloud/licensing
+        //            We recommend storing your authentication credentials in environment variables.
+        //            for server-to-server requests, use this code:
+        //let authId = getEnvironmentVar("SMARTY_AUTH_ID") ?? ""
+        //let authToken = getEnvironmentVar("SMARTY_AUTH_TOKEN") ?? ""
+        //let client = ClientBuilder(authId:authId, authToken:authToken).withLicenses(licenses: ["international-global-plus-cloud"]).buildInternationalStreetApiClient()
+        
+        // for client-side requests (browser/mobile), use this code:
+        let id = getEnvironmentVar("SMARTY_AUTH_WEB") ?? ""
+        let hostname = getEnvironmentVar("SMARTY_AUTH_REFERER") ?? ""
         let client = ClientBuilder(id: id, hostname: hostname).withLicenses(licenses: ["international-global-plus-cloud"]).buildInternationalStreetApiClient()
         
         // Documentation for input fields can be found at:

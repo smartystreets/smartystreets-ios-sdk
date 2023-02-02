@@ -3,16 +3,19 @@ import SmartyStreets
 
 class USAutocompleteProExample {
     func run() -> String {
-        let id = "Key"
-        let hostname = "Hostname"
         //            The appropriate license values to be used for your subscriptions
         //            can be found on the Subscriptions page of the account dashboard.
         //            https://www.smartystreets.com/docs/cloud/licensing
-        let client = ClientBuilder(id: id, hostname: hostname).withLicenses(licenses:["us-autocomplete-pro-cloud"]).buildUSAutocompleteProApiClient()
+        //            We recommend storing your authentication credentials in environment variables.
+        //            for server-to-server requests, use this code:
+        //let authId = getEnvironmentVar("SMARTY_AUTH_ID") ?? ""
+        //let authToken = getEnvironmentVar("SMARTY_AUTH_TOKEN") ?? ""
+        //let client = ClientBuilder(authId:authId, authToken:authToken).withLicenses(licenses:["us-autocomplete-pro-cloud"]).buildUSAutocompleteProApiClient()
         
-//        let authId = "authId"
-//        let authToken = "authToken"
-//        let client = ClientBuilder(authId:authId, authToken:authToken).withLicenses(licenses:["us-autocomplete-pro-cloud"]).buildUSAutocompleteProApiClient()
+        // for client-side requests (browser/mobile), use this code:
+        let id = getEnvironmentVar("SMARTY_AUTH_WEB") ?? ""
+        let hostname = getEnvironmentVar("SMARTY_AUTH_REFERER") ?? ""
+        let client = ClientBuilder(id: id, hostname: hostname).withLicenses(licenses:["us-autocomplete-pro-cloud"]).buildUSAutocompleteProApiClient()
         
         //            Documentation for input fields can be found at:
         //            https://smartystreets.com/docs/cloud/us-autocomplete-api#pro-http-request-input-fields

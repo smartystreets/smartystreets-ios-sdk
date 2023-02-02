@@ -62,7 +62,7 @@ class HttpSender: SmartySender {
             httpRequest.httpMethod = "GET"
         } else {
             httpRequest.setValue("gzip", forHTTPHeaderField: "Accept-Encoding")
-            httpRequest.setValue("text/plain; charset=utf-8", forHTTPHeaderField: "Content-Type")
+            httpRequest.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
             httpRequest.httpMethod = "POST"
             httpRequest.httpBody = request.payload
         }

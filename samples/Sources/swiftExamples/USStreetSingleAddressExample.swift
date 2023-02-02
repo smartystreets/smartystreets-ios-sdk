@@ -3,11 +3,18 @@ import SmartyStreets
 
 class USStreetSingleAddressExample {
     func run() -> String {
-        let id = "ID"
-        let hostname = "HOSTNAME"
         //            The appropriate license values to be used for your subscriptions
         //            can be found on the Subscriptions page of the account dashboard.
         //            https://www.smartystreets.com/docs/cloud/licensing
+        //            We recommend storing your authentication credentials in environment variables.
+        //            for server-to-server requests, use this code:
+        //let authId = getEnvironmentVar("SMARTY_AUTH_ID") ?? ""
+        //let authToken = getEnvironmentVar("SMARTY_AUTH_TOKEN") ?? ""
+        //let client = ClientBuilder(authId:authId, authToken:authToken).withLicenses(licenses:["us-core-cloud"]).buildUsStreetApiClient()
+        
+        // for client-side requests (browser/mobile), use this code:
+        let id = getEnvironmentVar("SMARTY_AUTH_WEB") ?? ""
+        let hostname = getEnvironmentVar("SMARTY_AUTH_REFERER") ?? ""
         let client = ClientBuilder(id: id, hostname: hostname).withLicenses(licenses:["us-core-cloud"]).buildUsStreetApiClient()
                 
         //        Documentation for input fields can be found at:

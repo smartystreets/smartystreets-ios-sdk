@@ -11,6 +11,11 @@ import Foundation
     public var candidates:[USStreetCandidate]?
     
     enum CodingKeys: String, CodingKey {
+        case text = "text"
+        case verified = "verified"
+        case line = "line"
+        case start = "start"
+        case end = "end"
         case candidates = "api_output"
     }
     

@@ -48,10 +48,16 @@ public class InternationalAutocompleteClient: NSObject {
         
         request.setValue(value: lookup.search ?? "", HTTPParameterField: "search")
         request.setValue(value: lookup.country ?? "", HTTPParameterField: "country")
-        request.setValue(value: lookup.getMaxResultsStringIfSet(), HTTPParameterField: "max_results")
+        request.setValue(value: lookup.maxResults.flatMap { String($0) } ?? "10", HTTPParameterField: "max_results")
+        request.setValue(value: lookup.distance.flatMap { String($0) } ?? "5", HTTPParameterField: "distance")
+        if lookup.geolocation != InternationalAutocompleteLookup.InternationalGeolocateType.none {
+            request.setValue(value: lookup.geolocation?.rawValue ?? "", HTTPParameterField: "geolocation")
+        }
         request.setValue(value: lookup.administrativeArea ?? "", HTTPParameterField: "include_only_administrative_area")
         request.setValue(value: lookup.locality ?? "", HTTPParameterField: "include_only_locality")
         request.setValue(value: lookup.postalCode ?? "", HTTPParameterField: "include_only_postal_code")
+        request.setValue(value: lookup.longitude.flatMap { String($0) } ?? "", HTTPParameterField: "longitude")
+        request.setValue(value: lookup.latitude.flatMap { String($0) } ?? "", HTTPParameterField: "latitude")
         
         return request
     }

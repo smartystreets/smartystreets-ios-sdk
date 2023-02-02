@@ -6,6 +6,13 @@ import Foundation
     public var stateAbbreviation:String?
     public var zipcode:String?
     
+    enum CodingKeys: String, CodingKey {
+        case street = "street"
+        case city = "city"
+        case stateAbbreviation = "state_abbreviation"
+        case zipcode = "zipcode"
+    }
+
     init(dictionary: NSDictionary) {
         self.street = dictionary["street"] as? String
         self.city = dictionary["city"] as? String
