@@ -14,4 +14,3 @@ jobs:
 
       - run : |
           make test
-## swfitlint
