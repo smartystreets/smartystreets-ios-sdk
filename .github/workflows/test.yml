@@ -1,0 +1,17 @@
+name: Test IOS
+
+on:
+  push:
+    branches:
+      - '*'
+
+jobs:
+  publish:
+    runs-on: macos-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - run : |
+          make test
+## swfitlint
