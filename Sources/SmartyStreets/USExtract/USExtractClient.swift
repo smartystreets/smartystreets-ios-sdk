@@ -48,7 +48,9 @@ import Foundation
         request.setValue(value: String(lookup.isAggressive()), HTTPParameterField: "aggressive")
         request.setValue(value: "\(lookup.addressesHaveLineBreaks ?? false)", HTTPParameterField: "addr_line_breaks")
         request.setValue(value: "\(lookup.addressesPerLine ?? 0)", HTTPParameterField: "addr_per_line")
-        
+        if lookup.match != USExtractLookup.MatchStrategy.strict {
+            request.setValue(value: lookup.match?.rawValue ?? "", HTTPParameterField: "match")
+        }
         return request
     }
 }

@@ -6,17 +6,25 @@ import Foundation
     //
     //    See "https://smartystreets.com/docs/cloud/us-extract-api#http-request-input-fields"
     
+    public enum MatchStrategy: String, Codable {
+        case strict
+        case invalid
+        case enhanced
+    }
+    
     public var result:USExtractResult?
     public var html:Bool?
     public var aggressive:Bool?
     public var addressesHaveLineBreaks:Bool?
     public var addressesPerLine:Int?
+    public var match:MatchStrategy?
     public var text:String?
     
     override public init() {
         self.aggressive = false
         self.addressesHaveLineBreaks = true
         self.addressesPerLine = 0
+        self.match = MatchStrategy.strict
     }
     
     public func withText(text: String) -> USExtractLookup {

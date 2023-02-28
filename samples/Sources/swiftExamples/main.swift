@@ -1,5 +1,7 @@
 import Foundation
 
+// NOTE: use 'swift run' from the 'samples' directory to run these examples.
+
 print(USStreetSingleAddressExample().run())
 print(USStreetMultipleAddressExample().run())
 print(USZipCodeSingleLookupExample().run())

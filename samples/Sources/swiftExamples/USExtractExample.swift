@@ -19,12 +19,14 @@ class USExtractExample {
         
         let text = "Here is some text.\r\nMy address is 3785 Las Vegs Av." +
         "\r\nLos Vegas, Nevada." +
-        "\r\nMeet me at 1 Rosedale Baltimore Maryland, not at 123 Phony Street, Boise Idaho."
+        "\r\nMeet me at 1 Rosedale Baltimore Maryland, not at 123 Phony Street, Boise Idaho." +
+        "\r\nAlso, this is a non-postal example to show how to get to 808 County Road 408 Brady, Tx."
         
         var lookup = USExtractLookup().withText(text: text)
         lookup.aggressive = true
         lookup.addressesHaveLineBreaks = false
         lookup.addressesPerLine = 1
+        lookup.match = USExtractLookup.MatchStrategy.enhanced
         var error: NSError! = nil
         
         _ = client.sendLookup(lookup: &lookup, error: &error)
