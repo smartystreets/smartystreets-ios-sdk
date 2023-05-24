@@ -27,6 +27,7 @@ import Foundation
     public var deliveryLine2:String?
     public var lastline:String?
     public var deliveryPointBarcode:String?
+    public var smartyKey:String?
     public var components:USStreetComponents?
     public var metadata:USStreetMetadata?
     public var analysis:USStreetAnalysis?
@@ -40,6 +41,7 @@ import Foundation
         case deliveryLine2 = "delivery_line_2"
         case lastline = "last_line"
         case deliveryPointBarcode = "delivery_point_barcode"
+        case smartyKey = "smarty_key"
         case components = "components"
         case metadata = "metadata"
         case analysis = "analysis"
@@ -54,6 +56,7 @@ import Foundation
         self.deliveryLine2 = dictionary["delivery_line_2"] as? String
         self.lastline = dictionary["last_line"] as? String
         self.deliveryPointBarcode = dictionary["delivery_point_barcode"] as? String
+        self.smartyKey = dictionary["smarty_key"] as? String
         if let components = dictionary["components"] {
             self.components = USStreetComponents(dictionary: components as! NSDictionary)
         } else {
