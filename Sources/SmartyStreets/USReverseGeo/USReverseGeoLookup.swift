@@ -8,10 +8,12 @@ import Foundation
     
     public var latitude:String
     public var longitude:String
+    public var source:String
     public var response:USReverseGeoResponse?
     
-    public init(latitude:Double, longitude:Double) {
+    public init(latitude:Double, longitude:Double, source:String) {
         self.latitude = String(format: "%.8f", latitude)
         self.longitude = String(format: "%.8f", longitude)
+        self.source = source
     }
 }
