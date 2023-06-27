@@ -42,10 +42,10 @@ class USReverseGeoSerializerTests: XCTestCase {
     
     func testSerialize() {
         let expectedOutput = """
-        {"longitude":"-111.11111111","latitude":"44.88888889"}
+        {"source":"","longitude":"-111.11111111","latitude":"44.88888889"}
         """
         
-        let lookup = USReverseGeoLookup(latitude: 44.888888888, longitude: -111.111111111)
+        let lookup = USReverseGeoLookup(latitude: 44.888888888, longitude: -111.111111111, source: "")
         let data:Data = serializer.Serialize(obj: lookup, error: &self.error)
         let decodedData = Data(base64Encoded: data.base64EncodedString())
         let decodedString = String(data: decodedData!, encoding: .utf8)

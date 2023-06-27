@@ -21,7 +21,7 @@ class USReverseGeoClientTests: XCTestCase {
         let sender = URLPrefixSender(urlPrefix: "http://localhost/", inner: capturingSender)
         let serializer = USReverseGeoSerializer()
         let client = USReverseGeoClient(sender: sender, serializer: serializer)
-        var lookup = USReverseGeoLookup(latitude: 44.888888888, longitude: -111.111111111)
+        var lookup = USReverseGeoLookup(latitude: 44.888888888, longitude: -111.111111111, source: "")
         
         _ = client.sendLookup(lookup:&lookup, error:&self.error)
         
