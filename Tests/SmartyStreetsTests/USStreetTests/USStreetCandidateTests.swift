@@ -21,6 +21,7 @@ class USStreetCandidateTests: XCTestCase {
             "delivery_line_2": "4",
             "last_line": "5",
             "delivery_point_barcode": "6",
+            "smarty_key": "112",
             "components": [
                 "urbanization": "7",
                 "primary_number": "8",
@@ -128,7 +129,8 @@ class USStreetCandidateTests: XCTestCase {
         XCTAssertEqual("4", candidate.deliveryLine2)
         XCTAssertEqual("5", candidate.lastline)
         XCTAssertEqual("6", candidate.deliveryPointBarcode)
-        
+        XCTAssertEqual("112", candidate.smartyKey)
+
         let components = candidate.components!
         XCTAssertEqual("7", components.urbanization)
         XCTAssertEqual("8", components.primaryNumber)
