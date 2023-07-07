@@ -14,14 +14,14 @@ import Foundation
     var urlPrefix:String!
     var proxy:NSDictionary!
     var licenses:[String] = []
-    var internationalStreetApiURL:String = "https://international-street.api.smartystreets.com/verify"
-    var internationalAutocompleteApiURL:String = "https://international-autocomplete.api.smartystreets.com/lookup"
-    var usAutocompleteApiURL:String = "https://us-autocomplete.api.smartystreets.com/suggest"
-    var usAutocompleteProApiURL:String = "https://us-autocomplete-pro.api.smartystreets.com/lookup"
-    var usExtractApiURL:String = "https://us-extract.api.smartystreets.com"
-    var usStreetApiURL:String = "https://us-street.api.smartystreets.com/street-address"
-    var usZipCodeApiURL:String = "https://us-zipcode.api.smartystreets.com/lookup"
-    var usReverseGeoApiURL:String = "https://us-reverse-geo.api.smartystreets.com/lookup"
+    var internationalStreetApiURL:String = "https://international-street.api.smarty.com/verify"
+    var internationalAutocompleteApiURL:String = "https://international-autocomplete.api.smarty.com/lookup"
+    var usAutocompleteApiURL:String = "https://us-autocomplete.api.smarty.com/suggest"
+    var usAutocompleteProApiURL:String = "https://us-autocomplete-pro.api.smarty.com/lookup"
+    var usExtractApiURL:String = "https://us-extract.api.smarty.com"
+    var usStreetApiURL:String = "https://us-street.api.smarty.com/street-address"
+    var usZipCodeApiURL:String = "https://us-zipcode.api.smarty.com/lookup"
+    var usReverseGeoApiURL:String = "https://us-reverse-geo.api.smarty.com/lookup"
     
     override init() {
         self.serializer = SmartySerializer()
