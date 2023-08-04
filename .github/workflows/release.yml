@@ -1,0 +1,29 @@
+name: Update Release
+
+on:
+  push:
+    tags:
+      - '*'
+      - '!**-dev**'
+    
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions: 
+      contents: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set Version
+        id: set_version
+        run: |
+          echo "VERSION=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
+        shell: bash
+
+      - name: Create Release
+        run: |
+          gh release create ${{ env.VERSION }} --title "Release ${{ env.VERSION }}"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
