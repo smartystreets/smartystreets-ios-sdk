@@ -26,6 +26,7 @@ import Foundation
         }
     }
     public var matchStrategy:String?
+    public var outputFormat:String?
     
     override public init() {
         self.maxCandidates = 1
@@ -70,7 +71,7 @@ import Foundation
         dictionary = addValueToDictionary(value: self.urbanization, key: "urbanization", dictionary: dictionary)
         dictionary = addValueToDictionary(value: self.maxCandidates, key: "candidates", dictionary: dictionary)
         dictionary = addValueToDictionary(value: self.matchStrategy, key: "match", dictionary: dictionary)
-        
+        dictionary = addValueToDictionary(value: self.outputFormat, key: "format", dictionary: dictionary)
         return dictionary
     }
     

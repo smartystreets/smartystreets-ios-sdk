@@ -81,6 +81,8 @@ public class USStreetClient: NSObject {
         populate(value: lookup.addressee, field: "addressee", request: request)
         populate(value: lookup.urbanization, field: "urbanization", request: request)
         populate(value: lookup.matchStrategy, field: "match", request: request)
+        populate(value: lookup.outputFormat, field: "format", request: request)
+
     }
     
     func populate(value:String!, field:String, request:SmartyRequest) {
