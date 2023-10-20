@@ -20,7 +20,7 @@ class USReverseGeoExample {
         // Documentation for input fields can be found at:
         // https://smartystreets.com/docs/cloud/us-reverse-geo-api#http-input-fields
         
-        var lookup = USReverseGeoLookup(latitude: 40.27644, longitude: -111.65747)
+        var lookup = USReverseGeoLookup(latitude: 40.27644, longitude: -111.65747, source: "postal")
         
         var error: NSError! = nil
         

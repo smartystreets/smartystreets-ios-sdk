@@ -7,7 +7,6 @@ class RequestCapturingSender:SmartySender {
     
     override func sendRequest(request: SmartyRequest, error: inout NSError!) -> SmartyResponse! {
         self.request = request
-        self.request.urlPrefix = "http://localhost/?"
         
         let emptyString = "[]"
         let data = emptyString.data(using: String.Encoding.utf8)
