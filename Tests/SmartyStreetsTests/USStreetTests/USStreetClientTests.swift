@@ -37,7 +37,7 @@ class USStreetClientTests: XCTestCase {
         let sender = URLPrefixSender(urlPrefix: "http://localhost/", inner: capturingSender)
         let client = USStreetClient(sender: sender, serializer: serializer)
         var lookup = USStreetLookup()
-        
+
         lookup.addressee = "0"
         lookup.street = "1"
         lookup.secondary = "2"
@@ -49,10 +49,35 @@ class USStreetClientTests: XCTestCase {
         lookup.lastline = "8"
         lookup.setMaxCandidates(max: 9, error: &self.error)
         XCTAssertNil(self.error)
-        
+
         _ = client.sendLookup(lookup: &lookup, error: &self.error)
         XCTAssertNil(self.error)
         XCTAssertNotNil(capturingSender.request.getUrl())
+    }
+
+    func testSendingSingleFullyPopulatedLookupWithFormatField() {
+        let capturingSender = RequestCapturingSender()
+        let sender = URLPrefixSender(urlPrefix: "http://localhost/", inner: capturingSender)
+        let client = USStreetClient(sender: sender, serializer: serializer)
+        var lookup = USStreetLookup()
+
+        lookup.addressee = "0"
+        lookup.street = "1"
+        lookup.secondary = "2"
+        lookup.street2 = "3"
+        lookup.urbanization = "4"
+        lookup.city = "5"
+        lookup.state = "6"
+        lookup.zipCode = "7"
+        lookup.lastline = "8"
+        lookup.setMaxCandidates(max: 9, error: &self.error)
+        lookup.outputFormat = "10"
+        XCTAssertNil(self.error)
+
+        _ = client.sendLookup(lookup: &lookup, error: &self.error)
+        XCTAssertNil(self.error)
+        XCTAssertNotNil(capturingSender.request.getUrl())
+        XCTAssertTrue(capturingSender.request.getUrl().contains("format=10"))
     }
 
     func testFullBatch() {
