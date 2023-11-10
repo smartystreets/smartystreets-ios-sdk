@@ -7,44 +7,26 @@ import Foundation
     //    See "https://smartystreets.com/docs/cloud/international-address-autocomplete-api#pro-http-request-input-fields"
     
     static let SSMaxResults = 10
-    static let SSDistance = 5
     
     public var result:InternationalAutocompleteResult?
     public var country:String?
     public var search:String?
+    public var addressID:String?
     public var maxResults:Int?
-    public var distance:Int?
-    public var geolocation:InternationalGeolocateType?
-    public var administrativeArea:String?
     public var locality:String?
     public var postalCode:String?
-    public var latitude:Double?
-    public var longitude:Double?
-    
-    public enum InternationalGeolocateType: String, Codable {
-        case adminarea
-        case locality
-        case postalcode
-        case geocodes
-        case none
-    }
     
     enum CodingKeys: String, CodingKey {
         case country = "country"
         case search = "search"
+        case addressID = "address_id"
         case maxResults = "max_results"
-        case distance = "distance"
-        case geolocation = "geolocation"
-        case administrativeArea = "include_only_administrative_area"
         case locality = "include_only_locality"
         case postalCode = "include_only_postal_code"
-        case latitude = "latitude"
-        case longitude = "longitude"
     }
     
     override public init() {
         self.maxResults = InternationalAutocompleteLookup.SSMaxResults
-        self.distance = InternationalAutocompleteLookup.SSDistance
     }
     
     public func withSearch(search:String) -> InternationalAutocompleteLookup {

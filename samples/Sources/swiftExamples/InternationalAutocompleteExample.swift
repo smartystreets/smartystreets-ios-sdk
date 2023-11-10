@@ -47,7 +47,11 @@ class InternationalAutocompleteExample {
         }
         
         for candidate in candidates {
-            output.append("\(candidate.street ?? "") \(candidate.locality ?? "") \(candidate.administrativeArea ?? ""), \(candidate.countryISO3 ?? "")")
+            if candidate.street != nil {
+                output.append("\(candidate.street ?? "") \(candidate.locality ?? "") \(candidate.administrativeArea ?? ""), \(candidate.countryISO3 ?? "")")
+            } else {
+                output.append("\(candidate.entries ?? 0) \(candidate.addressText ?? "") \(candidate.addressID ?? "")")
+            }
         }
         
         return output

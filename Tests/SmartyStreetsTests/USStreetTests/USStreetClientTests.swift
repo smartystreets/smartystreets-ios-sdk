@@ -21,13 +21,14 @@ class USStreetClientTests: XCTestCase {
     
     func testSendingSingleFreeformLookup() {
         let expectedUrl = "http://localhost/?candidates=1"
-        let sender = RequestCapturingSender()
+        let capturingSender = RequestCapturingSender()
+        let sender = URLPrefixSender(urlPrefix: "http://localhost/", inner: capturingSender as Any)
         let client = USStreetClient(sender: sender, serializer: serializer)
         
         var lookup = USStreetLookup()
         _ = client.sendLookup(lookup: &lookup, error: &self.error)
         
-        let actualUrl = sender.request.getUrl()
+        let actualUrl = capturingSender.request.getUrl()
         
         XCTAssertEqual(actualUrl, expectedUrl)
     }

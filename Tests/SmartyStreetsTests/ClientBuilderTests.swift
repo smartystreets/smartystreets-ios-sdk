@@ -22,6 +22,7 @@ class ClientBuilderTests: XCTestCase {
         XCTAssertEqual(client.maxTimeout, 10000)
         XCTAssertEqual(client.debug, false)
         XCTAssertEqual(client.internationalStreetApiURL, "https://international-street.api.smarty.com/verify")
+        XCTAssertEqual(client.internationalAutocompleteApiURL, "https://international-autocomplete.api.smarty.com/v2/lookup")
         XCTAssertEqual(client.usAutocompleteApiURL, "https://us-autocomplete.api.smarty.com/suggest")
         XCTAssertEqual(client.usExtractApiURL, "https://us-extract.api.smarty.com")
         XCTAssertEqual(client.usStreetApiURL, "https://us-street.api.smarty.com/street-address")
