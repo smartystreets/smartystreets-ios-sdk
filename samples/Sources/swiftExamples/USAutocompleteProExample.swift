@@ -46,10 +46,8 @@ class USAutocompleteProExample {
         output.append("\nResult with filters:\n")
         
         ////////////////////// Can be sent with or without the following fields //////////////////////
-        lookup.addCityFilter(city: "Denver")
-        lookup.addCityFilter(city: "Orem")
-        lookup.addStateFilter(state: "UT")
-        lookup.addStateFilter(state: "CO")
+        lookup.addCityFilter(city: "Denver,Aurora,CO")
+        lookup.addCityFilter(city: "Orem,UT")
         lookup.addPreferCity(city: "Orem")
         lookup.addPreferState(state: "UT")
         lookup.maxResults = 5
