@@ -15,7 +15,7 @@ class InternationalAutocompleteExample {
         // for client-side requests (browser/mobile), use this code:
         let id = getEnvironmentVar("SMARTY_AUTH_WEB") ?? ""
         let hostname = getEnvironmentVar("SMARTY_AUTH_REFERER") ?? ""
-        let client = ClientBuilder(id: id, hostname: hostname).withLicenses(licenses: ["international-autocomplete-cloud"]).buildInternationalAutocompleteApiClient()
+        let client = ClientBuilder(id: id, hostname: hostname).withLicenses(licenses: ["international-autocomplete-v2-cloud"]).buildInternationalAutocompleteApiClient()
         
         // Documentation for input fields can be found at:
         // https://smartystreets.com/docs/cloud/international-address-autocomplete-api#http-input-fields
