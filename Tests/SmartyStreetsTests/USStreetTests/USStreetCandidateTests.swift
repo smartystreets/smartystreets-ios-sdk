@@ -10,7 +10,7 @@ class USStreetCandidateTests: XCTestCase {
     override func setUp() {
         super.setUp()
         expectedJsonInput = """
-        [{\"state\":\"state_value\",\"secondary\":\"secondary\",\"street2\":\"street2_value\",\"street\":\"street_value\",\"maxCandidates\":5,\"urbanization\":\"urbanization_value\",\"matchStrategy\":\"match_value\",\"city\":\"city_value\",\"result\":[],\"zipCode\":\"zipCode_value\",\"addressee\":\"addressee_value\",\"lastline\":\"lastline_value\"},{\"result\":[],\"maxCandidates\":1,\"state\":\"California\",\"street\":\"1600 amphitheatre parkway\",\"city\":\"Mountain view\"},{\"result\":[],\"street\":\"1 Rosedale, Baltimore, Maryland\",\"maxCandidates\":1}]
+        [{\"addressee\":\"addressee_value\",\"city\":\"city_value\",\"lastline\":\"lastline_value\",\"matchStrategy\":\"match_value\",\"maxCandidates\":5,\"result\":[],\"secondary\":\"secondary\",\"state\":\"state_value\",\"street\":\"street_value\",\"street2\":\"street2_value\",\"urbanization\":\"urbanization_value\",\"zipCode\":\"zipCode_value\"},{\"city\":\"Mountain view\",\"maxCandidates\":1,\"result\":[],\"state\":\"California\",\"street\":\"1600 amphitheatre parkway\"},{\"maxCandidates\":1,\"result\":[],\"street\":\"1 Rosedale, Baltimore, Maryland\"}]
         """
         
         obj = [

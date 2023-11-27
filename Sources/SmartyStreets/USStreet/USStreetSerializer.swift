@@ -6,6 +6,7 @@ public class USStreetSerializer: SmartySerializer {
         let raw:[USStreetLookup]? = obj as? [USStreetLookup]
         let smartyErrors = SmartyErrors()
         let jsonEncoder = JSONEncoder()
+        jsonEncoder.outputFormatting = .sortedKeys
         if raw == nil {
             let details = [NSLocalizedDescriptionKey: "The object to be serialized is nil"]
             error = NSError(domain: smartyErrors.SSErrorDomain, code: SmartyErrors.SSErrors.ObjectNilError.rawValue, userInfo: details)

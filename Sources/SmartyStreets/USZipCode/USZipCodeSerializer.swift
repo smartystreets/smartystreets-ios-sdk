@@ -5,6 +5,7 @@ public class USZipCodeSerializer: SmartySerializer {
         let raw:[USZipCodeLookup]? = obj as? [USZipCodeLookup]
         let smartyErrors = SmartyErrors()
         let jsonEncoder = JSONEncoder()
+        jsonEncoder.outputFormatting = .sortedKeys
         if raw == nil {
             let details = [NSLocalizedDescriptionKey: "The object to be serialized is nil"]
             error = NSError(domain: smartyErrors.SSErrorDomain, code: SmartyErrors.SSErrors.ObjectNilError.rawValue, userInfo: details)
