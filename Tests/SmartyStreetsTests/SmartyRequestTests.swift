@@ -44,4 +44,10 @@ class SmartyRequestTests: XCTestCase {
         XCTAssertEqual(url, "https://fakesearch.com/lookup?street=Parks%20Blvd")
     }
     
+    func testGetURLWithURLEncodedArray() {
+        smartyRequest.urlPrefix = "https://fakesearch.com/lookup?"
+        smartyRequest.setValue(value: "abc;def", HTTPParameterField: "array")
+        let url = smartyRequest.getUrl()
+        XCTAssertEqual(url, "https://fakesearch.com/lookup?array=abc%3Bdef")
+    }
 }
