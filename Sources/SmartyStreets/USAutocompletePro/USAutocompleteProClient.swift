@@ -2,7 +2,9 @@ import Foundation
 
 public class USAutocompleteProClient: NSObject {
     //    It is recommended to instantiate this class using SSClientBuilder
-    
+
+    static let arrayItemsSeparator = ";"
+
     var sender:SmartySender
     public var serializer:SmartySerializer
     
@@ -65,6 +67,6 @@ public class USAutocompleteProClient: NSObject {
             return String()
         }
         
-        return list.joined(separator: ";")
+        return list.joined(separator: Self.arrayItemsSeparator)
     }
 }
