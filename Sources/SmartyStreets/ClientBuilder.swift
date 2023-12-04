@@ -22,6 +22,7 @@ import Foundation
     var usStreetApiURL:String = "https://us-street.api.smarty.com/street-address"
     var usZipCodeApiURL:String = "https://us-zipcode.api.smarty.com/lookup"
     var usReverseGeoApiURL:String = "https://us-reverse-geo.api.smarty.com/lookup"
+    var usEnrichemntApiURL:String = "https://us-enrichment.api.smarty.com/lookup"
     
     override init() {
         self.serializer = SmartySerializer()
@@ -162,6 +163,12 @@ import Foundation
         ensureURLPrefixNotNil(url: self.usReverseGeoApiURL)
         let serializer = USReverseGeoSerializer()
         return USReverseGeoClient(sender: buildSender(), serializer: serializer)
+    }
+    
+    public func buildUsEnrichmentApiClient() -> USEnrichmentClient {
+        ensureURLPrefixNotNil(url: self.usReverseGeoApiURL)
+        let serializer = USReverseGeoSerializer()
+        return USEnrichmentClient(sender: buildSender(), serializer: serializer)
     }
     
     func buildSender() -> SmartySender {
