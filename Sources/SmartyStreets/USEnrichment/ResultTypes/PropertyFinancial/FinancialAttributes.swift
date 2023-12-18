@@ -1,32 +1,32 @@
 import Foundation
 
 public struct FinancialAttributes: Codable {
-    let assessedImprovementPercent, assessedImprovementValue, assessedLandValue, assessedValue: String
-    let assessorLastUpdate, assessorTaxrollUpdate, contactCity, contactCrrt: String
-    let contactFullAddress, contactHouseNumber, contactMailInfoFormat, contactMailInfoPrivacy: String
-    let contactMailingCounty, contactMailingFIPS, contactPostDirection, contactPreDirection: String
-    let contactState, contactStreetName, contactSuffix, contactUnitDesignator: String
-    let contactValue, contactZip, contactZip4, deedDocumentBook: String
-    let deedDocumentNumber, deedDocumentPage, deedOwnerFirstName, deedOwnerFirstName2: String
-    let deedOwnerFirstName3, deedOwnerFirstName4, deedOwnerFullName, deedOwnerFullName2: String
-    let deedOwnerFullName3, deedOwnerFullName4, deedOwnerLastName, deedOwnerLastName2: String
-    let deedOwnerLastName3, deedOwnerLastName4, deedOwnerMiddleName, deedOwnerMiddleName2: String
-    let deedOwnerMiddleName3, deedOwnerMiddleName4, deedOwnerSuffix, deedOwnerSuffix2: String
-    let deedOwnerSuffix3, deedOwnerSuffix4, deedSaleDate, deedSalePrice: String
-    let deedTransactionID, disabledTaxExemption: String
+    let assessedImprovementPercent, assessedImprovementValue, assessedLandValue, assessedValue: String?
+    let assessorLastUpdate, assessorTaxrollUpdate, contactCity, contactCrrt: String?
+    let contactFullAddress, contactHouseNumber, contactMailInfoFormat, contactMailInfoPrivacy: String?
+    let contactMailingCounty, contactMailingFIPS, contactPostDirection, contactPreDirection: String?
+    let contactState, contactStreetName, contactSuffix, contactUnitDesignator: String?
+    let contactValue, contactZip, contactZip4, deedDocumentBook: String?
+    let deedDocumentNumber, deedDocumentPage, deedOwnerFirstName, deedOwnerFirstName2: String?
+    let deedOwnerFirstName3, deedOwnerFirstName4, deedOwnerFullName, deedOwnerFullName2: String?
+    let deedOwnerFullName3, deedOwnerFullName4, deedOwnerLastName, deedOwnerLastName2: String?
+    let deedOwnerLastName3, deedOwnerLastName4, deedOwnerMiddleName, deedOwnerMiddleName2: String?
+    let deedOwnerMiddleName3, deedOwnerMiddleName4, deedOwnerSuffix, deedOwnerSuffix2: String?
+    let deedOwnerSuffix3, deedOwnerSuffix4, deedSaleDate, deedSalePrice: String?
+    let deedTransactionID, disabledTaxExemption: String?
     let financialHistory: [FinancialHistoryEntry]
-    let firstName, firstName2, firstName3, firstName4: String
-    let homeownerTaxExemption, lastName, lastName2, lastName3: String
-    let lastName4, marketImprovementPercent, marketImprovementValue, marketLandValue: String
-    let marketValueYear, matchType, middleName, middleName2: String
-    let middleName3, middleName4, otherTaxExemption, ownerFullName: String
-    let ownerFullName2, ownerFullName3, ownerFullName4, ownershipTransferDate: String
-    let ownershipTransferDocNumber, ownershipTransferTransactionID, ownershipType, ownershipType2: String
-    let previousAssessedValue, priorSaleAmount, priorSaleDate, saleAmount: String
-    let saleDate, seniorTaxExemption, suffix, suffix2: String
-    let suffix3, suffix4, taxAssessYear, taxBilledAmount: String
-    let taxDelinquentYear, taxFiscalYear, taxRateArea, totalMarketValue: String
-    let trustDescription, veteranTaxExemption, widowTaxExemption: String
+    let firstName, firstName2, firstName3, firstName4: String?
+    let homeownerTaxExemption, lastName, lastName2, lastName3: String?
+    let lastName4, marketImprovementPercent, marketImprovementValue, marketLandValue: String?
+    let marketValueYear, matchType, middleName, middleName2: String?
+    let middleName3, middleName4, otherTaxExemption, ownerFullName: String?
+    let ownerFullName2, ownerFullName3, ownerFullName4, ownershipTransferDate: String?
+    let ownershipTransferDocNumber, ownershipTransferTransactionID, ownershipType, ownershipType2: String?
+    let previousAssessedValue, priorSaleAmount, priorSaleDate, saleAmount: String?
+    let saleDate, seniorTaxExemption, suffix, suffix2: String?
+    let suffix3, suffix4, taxAssessYear, taxBilledAmount: String?
+    let taxDelinquentYear, taxFiscalYear, taxRateArea, totalMarketValue: String?
+    let trustDescription, veteranTaxExemption, widowTaxExemption: String?
 
     enum CodingKeys: String, CodingKey {
         case assessedImprovementPercent = "assessed_improvement_percent"

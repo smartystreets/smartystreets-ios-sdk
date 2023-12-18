@@ -1,17 +1,17 @@
 import Foundation
 
 public struct FinancialHistoryEntry: Codable {
-    let codeTitleCompany, documentTypeDescription, instrumentDate, interestRateType2: String
-    let lenderAddress, lenderAddress2, lenderCity, lenderCity2: String
-    let lenderCode2, lenderFirstName, lenderFirstName2, lenderLastName: String
-    let lenderLastName2, lenderName, lenderName2, lenderSellerCarryBack: String
-    let lenderSellerCarryBack2, lenderState, lenderState2, lenderZip: String
-    let lenderZip2, lenderZipExtended, lenderZipExtended2, mortgageAmount: String
-    let mortgageAmount2, mortgageDueDate, mortgageDueDate2, mortgageInterestRate: String
-    let mortgageInterestRateType, mortgageLenderCode, mortgageRate2, mortgageRecordingDate: String
-    let mortgageRecordingDate2, mortgageTerm, mortgageTerm2, mortgageTermType: String
-    let mortgageTermType2, mortgageType, mortgageType2, multiParcelFlag: String
-    let nameTitleCompany, recordingDate, transferAmount: String
+    let codeTitleCompany, documentTypeDescription, instrumentDate, interestRateType2: String?
+    let lenderAddress, lenderAddress2, lenderCity, lenderCity2: String?
+    let lenderCode2, lenderFirstName, lenderFirstName2, lenderLastName: String?
+    let lenderLastName2, lenderName, lenderName2, lenderSellerCarryBack: String?
+    let lenderSellerCarryBack2, lenderState, lenderState2, lenderZip: String?
+    let lenderZip2, lenderZipExtended, lenderZipExtended2, mortgageAmount: String?
+    let mortgageAmount2, mortgageDueDate, mortgageDueDate2, mortgageInterestRate: String?
+    let mortgageInterestRateType, mortgageLenderCode, mortgageRate2, mortgageRecordingDate: String?
+    let mortgageRecordingDate2, mortgageTerm, mortgageTerm2, mortgageTermType: String?
+    let mortgageTermType2, mortgageType, mortgageType2, multiParcelFlag: String?
+    let nameTitleCompany, recordingDate, transferAmount: String?
 
     enum CodingKeys: String, CodingKey {
         case codeTitleCompany = "code_title_company"
