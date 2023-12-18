@@ -1,366 +1,448 @@
 import Foundation
 
-public class PrincipalAttributes: Decodable {
-    public var first_floor_sqft: String?
-    public var second_floor_sqft: String?
-    public var acres: String?
-    public var air_conditioner: String?
-    public var arbor_pergola: String?
-    public var assessed_improvement_percent: String?
-    public var assessed_improvement_value: String?
-    public var assessed_land_value: String?
-    public var assessed_value: String?
-    public var assessor_last_update: String?
-    public var assessor_taxroll_update: String?
-    public var attic_area: String?
-    public var attic_flag: String?
-    public var balcony: String?
-    public var balcony_area: String?
-    public var basement_sqft: String?
-    public var basement_sqft_finished: String?
-    public var basement_sqft_unfinished: String?
-    public var bath_house: String?
-    public var bath_house_sqft: String?
-    public var bathrooms_partial: String?
-    public var bathrooms_total: String?
-    public var bedrooms: String?
-    public var block1: String?
-    public var block2: String?
-    public var boat_access: String?
-    public var boat_house: String?
-    public var boat_house_sqft: String?
-    public var boat_lift: String?
-    public var bonus_room: String?
-    public var breakfast_nook: String?
-    public var breezeway: String?
-    public var building_definition_code: String?
-    public var building_sqft: String?
-    public var cabin: String?
-    public var cabin_sqft: String?
-    public var canopy: String?
-    public var canopy_sqft: String?
-    public var carport: String?
-    public var carport_sqft: String?
-    public var cbsa_code: String?
-    public var cbsa_name: String?
-    public var cellar: String?
-    public var census_block: String?
-    public var census_block_group: String?
-    public var census_fips_place_code: String?
-    public var census_tract: String?
-    public var central_vacuum: String?
-    public var code_title_company: String?
-    public var combined_statistical_area: String?
-    public var community_rec: String?
-    public var company_flag: String?
-    public var congressional_district: String?
-    public var construction_type: String?
-    public var contact_city: String?
-    public var contact_crrt: String?
-    public var contact_full_address: String?
-    public var contact_house_number: String?
-    public var contact_mail_info_format: String?
-    public var contact_mail_info_privacy: String?
-    public var contact_mailing_county: String?
-    public var contact_mailing_fips: String?
-    public var contact_post_direction: String?
-    public var contact_pre_direction: String?
-    public var contact_state: String?
-    public var contact_street_name: String?
-    public var contact_suffix: String?
-    public var contact_unit_designator: String?
-    public var contact_value: String?
-    public var contact_zip: String?
-    public var contact_zip4: String?
-    public var courtyard: String?
-    public var courtyard_area: String?
-    public var deck: String?
-    public var deck_area: String?
-    public var deed_document_page: String?
-    public var deed_document_book: String?
-    public var deed_document_number: String?
-    public var deed_owner_first_name: String?
-    public var deed_owner_first_name2: String?
-    public var deed_owner_first_name3: String?
-    public var deed_owner_first_name4: String?
-    public var deed_owner_full_name: String?
-    public var deed_owner_full_name2: String?
-    public var deed_owner_full_name3: String?
-    public var deed_owner_full_name4: String?
-    public var deed_owner_last_name: String?
-    public var deed_owner_last_name2: String?
-    public var deed_owner_last_name3: String?
-    public var deed_owner_last_name4: String?
-    public var deed_owner_middle_name: String?
-    public var deed_owner_middle_name2: String?
-    public var deed_owner_middle_name3: String?
-    public var deed_owner_middle_name4: String?
-    public var deed_owner_suffix: String?
-    public var deed_owner_suffix2: String?
-    public var deed_owner_suffix3: String?
-    public var deed_owner_suffix4: String?
-    public var deed_sale_date: String?
-    public var deed_sale_price: String?
-    public var deed_transaction_id: String?
-    public var depth_linear_footage: String?
-    public var disabled_tax_exemption: String?
-    public var driveway_sqft: String?
-    public var driveway_type: String?
-    public var effective_year_built: String?
-    public var elevation_feet: String?
-    public var elevator: String?
-    public var equestrian_arena: String?
-    public var escalator: String?
-    public var exercise_room: String?
-    public var exterior_walls: String?
-    public var family_room: String?
-    public var fence: String?
-    public var fence_area: String?
-    public var fips_code: String?
-    public var fire_resistance_code: String?
-    public var fire_sprinklers_flag: String?
-    public var fireplace: String?
-    public var fireplace_number: String?
-    public var first_name: String?
-    public var first_name_2: String?
-    public var first_name_3: String?
-    public var first_name_4: String?
-    public var flooring: String?
-    public var foundation: String?
-    public var game_room: String?
-    public var garage: String?
-    public var garage_sqft: String?
-    public var gazebo: String?
-    public var gazebo_sqft: String?
-    public var golf_course: String?
-    public var grainery: String?
-    public var grainery_sqft: String?
-    public var great_room: String?
-    public var greenhouse: String?
-    public var greenhouse_sqft: String?
-    public var gross_sqft: String?
-    public var guesthouse: String?
-    public var guesthouse_sqft: String?
-    public var handicap_accessibility: String?
-    public var heat: String?
-    public var heat_fuel_type: String?
-    public var hobby_room: String?
-    public var homeowner_tax_exemption: String?
-    public var instrument_date: String?
-    public var intercom_system: String?
-    public var interest_rate_type_2: String?
-    public var interior_structure: String?
-    public var kennel: String?
-    public var kennel_sqft: String?
-    public var land_use_code: String?
-    public var land_use_group: String?
-    public var land_use_standard: String?
-    public var last_name: String?
-    public var last_name_2: String?
-    public var last_name_3: String?
-    public var last_name_4: String?
-    public var latitude: String?
-    public var laundry: String?
-    public var lean_to: String?
-    public var lean_to_sqft: String?
-    public var legal_description: String?
-    public var legal_unit: String?
-    public var lender_address: String?
-    public var lender_address_2: String?
-    public var lender_city: String?
-    public var lender_city_2: String?
-    public var lender_code_2: String?
-    public var lender_first_name: String?
-    public var lender_first_name_2: String?
-    public var lender_last_name: String?
-    public var lender_last_name_2: String?
-    public var lender_name: String?
-    public var lender_name_2: String?
-    public var lender_seller_carry_back: String?
-    public var lender_seller_carry_back_2: String?
-    public var lender_state: String?
-    public var lender_state_2: String?
-    public var lender_zip: String?
-    public var lender_zip_2: String?
-    public var lender_zip_extended: String?
-    public var lender_zip_extended_2: String?
-    public var loading_platform: String?
-    public var loading_platform_sqft: String?
-    public var longitude: String?
-    public var lot_1: String?
-    public var lot_2: String?
-    public var lot_3: String?
-    public var lot_sqft: String?
-    public var market_improvement_percent: String?
-    public var market_improvement_value: String?
-    public var market_land_value: String?
-    public var market_value_year: String?
-    public var match_type: String?
-    public var media_room: String?
-    public var metro_division: String?
-    public var middle_name: String?
-    public var middle_name_2: String?
-    public var middle_name_3: String?
-    public var middle_name_4: String?
-    public var milkhouse: String?
-    public var milkhouse_sqft: String?
-    public var minor_civil_division_code: String?
-    public var minor_civil_division_name: String?
-    public var mobile_home_hookup: String?
-    public var mortgage_amount: String?
-    public var mortgage_amount_2: String?
-    public var mortgage_due_date: String?
-    public var mortgage_due_date_2: String?
-    public var mortgage_interest_rate: String?
-    public var mortgage_interest_rate_type: String?
-    public var mortgage_lender_code: String?
-    public var mortgage_rate_2: String?
-    public var mortgage_recording_date: String?
-    public var mortgage_recording_date_2: String?
-    public var mortgage_term: String?
-    public var mortgage_term_2: String?
-    public var mortgage_term_type: String?
-    public var mortgage_term_type_2: String?
-    public var mortgage_type: String?
-    public var mortgage_type_2: String?
-    public var msa_code: String?
-    public var msa_name: String?
-    public var mud_room: String?
-    public var multi_parcel_flag: String?
-    public var name_title_company: String?
-    public var neighborhood_code: String?
-    public var number_of_buildings: String?
-    public var office: String?
-    public var office_sqft: String?
-    public var other_tax_exemption: String?
-    public var outdoor_kitchen_fireplace: String?
-    public var overhead_door: String?
-    public var owner_full_name: String?
-    public var owner_full_name_2: String?
-    public var owner_full_name_3: String?
-    public var owner_full_name_4: String?
-    public var owner_occupancy_status: String?
-    public var ownership_transfer_date: String?
-    public var ownership_transfer_doc_number: String?
-    public var ownership_transfer_transaction_id: String?
-    public var ownership_type: String?
-    public var ownership_type_2: String?
-    public var ownership_vesting_relation_code: String?
-    public var parcel_account_number: String?
-    public var parcel_map_book: String?
-    public var parcel_map_page: String?
-    public var parcel_number_alternate: String?
-    public var parcel_number_formatted: String?
-    public var parcel_number_previous: String?
-    public var parcel_number_year_added: String?
-    public var parcel_number_year_change: String?
-    public var parcel_raw_number: String?
-    public var parcel_shell_record: String?
-    public var parking_spaces: String?
-    public var patio_area: String?
-    public var phase_name: String?
-    public var plumbing_fixtures_count: String?
-    public var pole_struct: String?
-    public var pole_struct_sqft: String?
-    public var pond: String?
-    public var pool: String?
-    public var pool_area: String?
-    public var poolhouse: String?
-    public var poolhouse_sqft: String?
-    public var porch: String?
-    public var porch_area: String?
-    public var poultry_house: String?
-    public var poultry_house_sqft: String?
-    public var previous_assessed_value: String?
-    public var prior_sale_amount: String?
-    public var prior_sale_date: String?
-    public var property_address_carrier_route_code: String?
-    public var property_address_city: String?
-    public var property_address_full: String?
-    public var property_address_house_number: String?
-    public var property_address_post_direction: String?
-    public var property_address_pre_direction: String?
-    public var property_address_state: String?
-    public var property_address_street_name: String?
-    public var property_address_street_suffix: String?
-    public var property_address_unit_designator: String?
-    public var property_address_unit_value: String?
-    public var property_address_zip_4: String?
-    public var property_address_zipcode: String?
-    public var publication_date: String?
-    public var quarter: String?
-    public var quarter_quarter: String?
-    public var quonset: String?
-    public var quonset_sqft: String?
-    public var range: String?
-    public var recording_date: String?
-    public var roof_cover: String?
-    public var roof_frame: String?
-    public var rooms: String?
-    public var rv_parking: String?
-    public var safe_room: String?
-    public var sale_amount: String?
-    public var sale_date: String?
-    public var sauna: String?
-    public var section: String?
-    public var security_alarm: String?
-    public var senior_tax_exemption: String?
-    public var sewer_type: String?
-    public var shed: String?
-    public var shed_sqft: String?
-    public var silo: String?
-    public var silo_sqft: String?
-    public var sitting_room: String?
-    public var situs_county: String?
-    public var situs_state: String?
-    public var sound_system: String?
-    public var sports_court: String?
-    public var sprinklers: String?
-    public var stable: String?
-    public var stable_sqft: String?
-    public var storage_building: String?
-    public var storage_building_sqft: String?
-    public var stories_number: String?
-    public var storm_shelter: String?
-    public var storm_shutter: String?
-    public var structure_style: String?
-    public var study: String?
-    public var subdivision: String?
-    public var suffix: String?
-    public var suffix_2: String?
-    public var suffix_3: String?
-    public var suffix_4: String?
-    public var sunroom: String?
-    public var tax_assess_year: String?
-    public var tax_billed_amount: String?
-    public var tax_delinquent_year: String?
-    public var tax_fiscal_year: String?
-    public var tax_jurisdiction: String?
-    public var tax_rate_area: String?
-    public var tennis_court: String?
-    public var topography_code: String?
-    public var total_market_value: String?
-    public var township: String?
-    public var tract_number: String?
-    public var transfer_amount: String?
-    public var trust_description: String?
-    public var unit_count: String?
-    public var upper_floors_sqft: String?
-    public var utility: String?
-    public var utility_building: String?
-    public var utility_building_sqft: String?
-    public var utility_sqft: String?
-    public var veteran_tax_exemption: String?
-    public var view_description: String?
-    public var water_feature: String?
-    public var water_service_type: String?
-    public var wet_bar: String?
-    public var widow_tax_exemption: String?
-    public var width_linear_footage: String?
-    public var wine_cellar: String?
-    public var year_built: String?
-    public var zoning: String?
+public struct PrincipalAttributes: Codable {
+    let firstFloorSqft, secondFloorSqft, acres, airConditioner, arborPergola: String?
+    let assessedImprovementPercent, assessedImprovementValue, assessedLandValue, assessedValue: String?
+    let assessorLastUpdate, assessorTaxrollUpdate, atticArea, atticFlag: String?
+    let balcony, balconyArea, basementSqft, basementSqftFinished: String?
+    let basementSqftUnfinished, bathHouse, bathHouseSqft, bathroomsPartial: String?
+    let bathroomsTotal, bedrooms, block1, block2: String?
+    let boatAccess, boatHouse, boatHouseSqft, boatLift: String?
+    let bonusRoom, breakfastNook, breezeway, buildingDefinitionCode: String?
+    let buildingSqft, cabin, cabinSqft, canopy: String?
+    let canopySqft, carport, carportSqft, cbsaCode: String?
+    let cbsaName, cellar, censusBlock, censusBlockGroup: String?
+    let censusFIPSPlaceCode, censusTract, centralVacuum, codeTitleCompany: String?
+    let combinedStatisticalArea, communityRec, companyFlag, congressionalDistrict: String?
+    let constructionType, contactCity, contactCrrt, contactFullAddress: String?
+    let contactHouseNumber, contactMailInfoFormat, contactMailInfoPrivacy, contactMailingCounty: String?
+    let contactMailingFIPS, contactPostDirection, contactPreDirection, contactState: String?
+    let contactStreetName, contactSuffix, contactUnitDesignator, contactValue: String?
+    let contactZip, contactZip4, courtyard, courtyardArea: String?
+    let deck, deckArea, deedDocumentBook, deedDocumentNumber: String?
+    let deedDocumentPage, deedOwnerFirstName, deedOwnerFirstName2, deedOwnerFirstName3: String?
+    let deedOwnerFirstName4, deedOwnerFullName, deedOwnerFullName2, deedOwnerFullName3: String?
+    let deedOwnerFullName4, deedOwnerLastName, deedOwnerLastName2, deedOwnerLastName3: String?
+    let deedOwnerLastName4, deedOwnerMiddleName, deedOwnerMiddleName2, deedOwnerMiddleName3: String?
+    let deedOwnerMiddleName4, deedOwnerSuffix, deedOwnerSuffix2, deedOwnerSuffix3: String?
+    let deedOwnerSuffix4, deedSaleDate, deedSalePrice, deedTransactionID: String?
+    let depthLinearFootage, disabledTaxExemption, documentTypeDescription, drivewaySqft: String?
+    let drivewayType, effectiveYearBuilt, elevationFeet, elevator: String?
+    let equestrianArena, escalator, exerciseRoom, exteriorWalls: String?
+    let familyRoom, fence, fenceArea, fipsCode: String?
+    let fireResistanceCode, fireSprinklersFlag, fireplace, fireplaceNumber: String?
+    let firstName, firstName2, firstName3, firstName4: String?
+    let flooring, foundation, gameRoom, garage: String?
+    let garageSqft, gazebo, gazeboSqft, golfCourse: String?
+    let grainery, grainerySqft, greatRoom, greenhouse: String?
+    let greenhouseSqft, grossSqft, guesthouse, guesthouseSqft: String?
+    let handicapAccessibility, heat, heatFuelType, hobbyRoom: String?
+    let homeownerTaxExemption, instrumentDate, intercomSystem, interestRateType2: String?
+    let interiorStructure, kennel, kennelSqft, landUseCode: String?
+    let landUseGroup, landUseStandard, lastName, lastName2: String?
+    let lastName3, lastName4, latitude, laundry: String?
+    let leanTo, leanToSqft, legalDescription, legalUnit: String?
+    let lenderAddress, lenderAddress2, lenderCity, lenderCity2: String?
+    let lenderCode2, lenderFirstName, lenderFirstName2, lenderLastName: String?
+    let lenderLastName2, lenderName, lenderName2, lenderSellerCarryBack: String?
+    let lenderSellerCarryBack2, lenderState, lenderState2, lenderZip: String?
+    let lenderZip2, lenderZipExtended, lenderZipExtended2, loadingPlatform: String?
+    let loadingPlatformSqft, longitude, lot1, lot2: String?
+    let lot3, lotSqft, marketImprovementPercent, marketImprovementValue: String?
+    let marketLandValue, marketValueYear, matchType, mediaRoom: String?
+    let metroDivision, middleName, middleName2, middleName3: String?
+    let middleName4, milkhouse, milkhouseSqft, minorCivilDivisionCode: String?
+    let minorCivilDivisionName, mobileHomeHookup, mortgageAmount, mortgageAmount2: String?
+    let mortgageDueDate, mortgageDueDate2, mortgageInterestRate, mortgageInterestRateType: String?
+    let mortgageLenderCode, mortgageRate2, mortgageRecordingDate, mortgageRecordingDate2: String?
+    let mortgageTerm, mortgageTerm2, mortgageTermType, mortgageTermType2: String?
+    let mortgageType, mortgageType2, msaCode, msaName: String?
+    let mudRoom, multiParcelFlag, nameTitleCompany, neighborhoodCode: String?
+    let numberOfBuildings, office, officeSqft, otherTaxExemption: String?
+    let outdoorKitchenFireplace, overheadDoor, ownerFullName, ownerFullName2: String?
+    let ownerFullName3, ownerFullName4, ownerOccupancyStatus, ownershipTransferDate: String?
+    let ownershipTransferDocNumber, ownershipTransferTransactionID, ownershipType, ownershipType2: String?
+    let ownershipVestingRelationCode, parcelAccountNumber, parcelMapBook, parcelMapPage: String?
+    let parcelNumberAlternate, parcelNumberFormatted, parcelNumberPrevious, parcelNumberYearAdded: String?
+    let parcelNumberYearChange, parcelRawNumber, parcelShellRecord, parkingSpaces: String?
+    let patioArea, phaseName, plumbingFixturesCount, poleStruct: String?
+    let poleStructSqft, pond, pool, poolArea: String?
+    let poolhouse, poolhouseSqft, porch, porchArea: String?
+    let poultryHouse, poultryHouseSqft, previousAssessedValue, priorSaleAmount: String?
+    let priorSaleDate, propertyAddressCarrierRouteCode, propertyAddressCity, propertyAddressFull: String?
+    let propertyAddressHouseNumber, propertyAddressPostDirection, propertyAddressPreDirection, propertyAddressState: String?
+    let propertyAddressStreetName, propertyAddressStreetSuffix, propertyAddressUnitDesignator, propertyAddressUnitValue: String?
+    let propertyAddressZip4, propertyAddressZipcode, publicationDate, quarter: String?
+    let quarterQuarter, quonset, quonsetSqft, range: String?
+    let recordingDate, roofCover, roofFrame, rooms: String?
+    let rvParking, safeRoom, saleAmount, saleDate: String?
+    let sauna, section, securityAlarm, seniorTaxExemption: String?
+    let sewerType, shed, shedSqft, silo: String?
+    let siloSqft, sittingRoom, situsCounty, situsState: String?
+    let soundSystem, sportsCourt, sprinklers, stable: String?
+    let stableSqft, storageBuilding, storageBuildingSqft, storiesNumber: String?
+    let stormShelter, stormShutter, structureStyle, study: String?
+    let subdivision, suffix, suffix2, suffix3: String?
+    let suffix4, sunroom, taxAssessYear, taxBilledAmount: String?
+    let taxDelinquentYear, taxFiscalYear, taxJurisdiction, taxRateArea: String?
+    let tennisCourt, topographyCode, totalMarketValue, township: String?
+    let tractNumber, transferAmount, trustDescription, unitCount: String?
+    let upperFloorsSqft, utility, utilityBuilding, utilityBuildingSqft: String?
+    let utilitySqft, veteranTaxExemption, viewDescription, waterFeature: String?
+    let waterServiceType, wetBar, widowTaxExemption, widthLinearFootage: String?
+    let wineCellar, yearBuilt, zoning: String?
 
+    enum CodingKeys: String, CodingKey {
+        case firstFloorSqft = "1st_floor_sqft"
+        case secondFloorSqft = "2nd_floor_sqft"
+        case acres
+        case airConditioner = "air_conditioner"
+        case arborPergola = "arbor_pergola"
+        case assessedImprovementPercent = "assessed_improvement_percent"
+        case assessedImprovementValue = "assessed_improvement_value"
+        case assessedLandValue = "assessed_land_value"
+        case assessedValue = "assessed_value"
+        case assessorLastUpdate = "assessor_last_update"
+        case assessorTaxrollUpdate = "assessor_taxroll_update"
+        case atticArea = "attic_area"
+        case atticFlag = "attic_flag"
+        case balcony
+        case balconyArea = "balcony_area"
+        case basementSqft = "basement_sqft"
+        case basementSqftFinished = "basement_sqft_finished"
+        case basementSqftUnfinished = "basement_sqft_unfinished"
+        case bathHouse = "bath_house"
+        case bathHouseSqft = "bath_house_sqft"
+        case bathroomsPartial = "bathrooms_partial"
+        case bathroomsTotal = "bathrooms_total"
+        case bedrooms, block1, block2
+        case boatAccess = "boat_access"
+        case boatHouse = "boat_house"
+        case boatHouseSqft = "boat_house_sqft"
+        case boatLift = "boat_lift"
+        case bonusRoom = "bonus_room"
+        case breakfastNook = "breakfast_nook"
+        case breezeway
+        case buildingDefinitionCode = "building_definition_code"
+        case buildingSqft = "building_sqft"
+        case cabin
+        case cabinSqft = "cabin_sqft"
+        case canopy
+        case canopySqft = "canopy_sqft"
+        case carport
+        case carportSqft = "carport_sqft"
+        case cbsaCode = "cbsa_code"
+        case cbsaName = "cbsa_name"
+        case cellar
+        case censusBlock = "census_block"
+        case censusBlockGroup = "census_block_group"
+        case censusFIPSPlaceCode = "census_fips_place_code"
+        case censusTract = "census_tract"
+        case centralVacuum = "central_vacuum"
+        case codeTitleCompany = "code_title_company"
+        case combinedStatisticalArea = "combined_statistical_area"
+        case communityRec = "community_rec"
+        case companyFlag = "company_flag"
+        case congressionalDistrict = "congressional_district"
+        case constructionType = "construction_type"
+        case contactCity = "contact_city"
+        case contactCrrt = "contact_crrt"
+        case contactFullAddress = "contact_full_address"
+        case contactHouseNumber = "contact_house_number"
+        case contactMailInfoFormat = "contact_mail_info_format"
+        case contactMailInfoPrivacy = "contact_mail_info_privacy"
+        case contactMailingCounty = "contact_mailing_county"
+        case contactMailingFIPS = "contact_mailing_fips"
+        case contactPostDirection = "contact_post_direction"
+        case contactPreDirection = "contact_pre_direction"
+        case contactState = "contact_state"
+        case contactStreetName = "contact_street_name"
+        case contactSuffix = "contact_suffix"
+        case contactUnitDesignator = "contact_unit_designator"
+        case contactValue = "contact_value"
+        case contactZip = "contact_zip"
+        case contactZip4 = "contact_zip4"
+        case courtyard
+        case courtyardArea = "courtyard_area"
+        case deck
+        case deckArea = "deck_area"
+        case deedDocumentBook = "deed_document_book"
+        case deedDocumentNumber = "deed_document_number"
+        case deedDocumentPage = "deed_document_page"
+        case deedOwnerFirstName = "deed_owner_first_name"
+        case deedOwnerFirstName2 = "deed_owner_first_name2"
+        case deedOwnerFirstName3 = "deed_owner_first_name3"
+        case deedOwnerFirstName4 = "deed_owner_first_name4"
+        case deedOwnerFullName = "deed_owner_full_name"
+        case deedOwnerFullName2 = "deed_owner_full_name2"
+        case deedOwnerFullName3 = "deed_owner_full_name3"
+        case deedOwnerFullName4 = "deed_owner_full_name4"
+        case deedOwnerLastName = "deed_owner_last_name"
+        case deedOwnerLastName2 = "deed_owner_last_name2"
+        case deedOwnerLastName3 = "deed_owner_last_name3"
+        case deedOwnerLastName4 = "deed_owner_last_name4"
+        case deedOwnerMiddleName = "deed_owner_middle_name"
+        case deedOwnerMiddleName2 = "deed_owner_middle_name2"
+        case deedOwnerMiddleName3 = "deed_owner_middle_name3"
+        case deedOwnerMiddleName4 = "deed_owner_middle_name4"
+        case deedOwnerSuffix = "deed_owner_suffix"
+        case deedOwnerSuffix2 = "deed_owner_suffix2"
+        case deedOwnerSuffix3 = "deed_owner_suffix3"
+        case deedOwnerSuffix4 = "deed_owner_suffix4"
+        case deedSaleDate = "deed_sale_date"
+        case deedSalePrice = "deed_sale_price"
+        case deedTransactionID = "deed_transaction_id"
+        case depthLinearFootage = "depth_linear_footage"
+        case disabledTaxExemption = "disabled_tax_exemption"
+        case documentTypeDescription = "document_type_description"
+        case drivewaySqft = "driveway_sqft"
+        case drivewayType = "driveway_type"
+        case effectiveYearBuilt = "effective_year_built"
+        case elevationFeet = "elevation_feet"
+        case elevator
+        case equestrianArena = "equestrian_arena"
+        case escalator
+        case exerciseRoom = "exercise_room"
+        case exteriorWalls = "exterior_walls"
+        case familyRoom = "family_room"
+        case fence
+        case fenceArea = "fence_area"
+        case fipsCode = "fips_code"
+        case fireResistanceCode = "fire_resistance_code"
+        case fireSprinklersFlag = "fire_sprinklers_flag"
+        case fireplace
+        case fireplaceNumber = "fireplace_number"
+        case firstName = "first_name"
+        case firstName2 = "first_name_2"
+        case firstName3 = "first_name_3"
+        case firstName4 = "first_name_4"
+        case flooring, foundation
+        case gameRoom = "game_room"
+        case garage
+        case garageSqft = "garage_sqft"
+        case gazebo
+        case gazeboSqft = "gazebo_sqft"
+        case golfCourse = "golf_course"
+        case grainery
+        case grainerySqft = "grainery_sqft"
+        case greatRoom = "great_room"
+        case greenhouse
+        case greenhouseSqft = "greenhouse_sqft"
+        case grossSqft = "gross_sqft"
+        case guesthouse
+        case guesthouseSqft = "guesthouse_sqft"
+        case handicapAccessibility = "handicap_accessibility"
+        case heat
+        case heatFuelType = "heat_fuel_type"
+        case hobbyRoom = "hobby_room"
+        case homeownerTaxExemption = "homeowner_tax_exemption"
+        case instrumentDate = "instrument_date"
+        case intercomSystem = "intercom_system"
+        case interestRateType2 = "interest_rate_type_2"
+        case interiorStructure = "interior_structure"
+        case kennel
+        case kennelSqft = "kennel_sqft"
+        case landUseCode = "land_use_code"
+        case landUseGroup = "land_use_group"
+        case landUseStandard = "land_use_standard"
+        case lastName = "last_name"
+        case lastName2 = "last_name_2"
+        case lastName3 = "last_name_3"
+        case lastName4 = "last_name_4"
+        case latitude, laundry
+        case leanTo = "lean_to"
+        case leanToSqft = "lean_to_sqft"
+        case legalDescription = "legal_description"
+        case legalUnit = "legal_unit"
+        case lenderAddress = "lender_address"
+        case lenderAddress2 = "lender_address_2"
+        case lenderCity = "lender_city"
+        case lenderCity2 = "lender_city_2"
+        case lenderCode2 = "lender_code_2"
+        case lenderFirstName = "lender_first_name"
+        case lenderFirstName2 = "lender_first_name_2"
+        case lenderLastName = "lender_last_name"
+        case lenderLastName2 = "lender_last_name_2"
+        case lenderName = "lender_name"
+        case lenderName2 = "lender_name_2"
+        case lenderSellerCarryBack = "lender_seller_carry_back"
+        case lenderSellerCarryBack2 = "lender_seller_carry_back_2"
+        case lenderState = "lender_state"
+        case lenderState2 = "lender_state_2"
+        case lenderZip = "lender_zip"
+        case lenderZip2 = "lender_zip_2"
+        case lenderZipExtended = "lender_zip_extended"
+        case lenderZipExtended2 = "lender_zip_extended_2"
+        case loadingPlatform = "loading_platform"
+        case loadingPlatformSqft = "loading_platform_sqft"
+        case longitude
+        case lot1 = "lot_1"
+        case lot2 = "lot_2"
+        case lot3 = "lot_3"
+        case lotSqft = "lot_sqft"
+        case marketImprovementPercent = "market_improvement_percent"
+        case marketImprovementValue = "market_improvement_value"
+        case marketLandValue = "market_land_value"
+        case marketValueYear = "market_value_year"
+        case matchType = "match_type"
+        case mediaRoom = "media_room"
+        case metroDivision = "metro_division"
+        case middleName = "middle_name"
+        case middleName2 = "middle_name_2"
+        case middleName3 = "middle_name_3"
+        case middleName4 = "middle_name_4"
+        case milkhouse
+        case milkhouseSqft = "milkhouse_sqft"
+        case minorCivilDivisionCode = "minor_civil_division_code"
+        case minorCivilDivisionName = "minor_civil_division_name"
+        case mobileHomeHookup = "mobile_home_hookup"
+        case mortgageAmount = "mortgage_amount"
+        case mortgageAmount2 = "mortgage_amount_2"
+        case mortgageDueDate = "mortgage_due_date"
+        case mortgageDueDate2 = "mortgage_due_date_2"
+        case mortgageInterestRate = "mortgage_interest_rate"
+        case mortgageInterestRateType = "mortgage_interest_rate_type"
+        case mortgageLenderCode = "mortgage_lender_code"
+        case mortgageRate2 = "mortgage_rate_2"
+        case mortgageRecordingDate = "mortgage_recording_date"
+        case mortgageRecordingDate2 = "mortgage_recording_date_2"
+        case mortgageTerm = "mortgage_term"
+        case mortgageTerm2 = "mortgage_term_2"
+        case mortgageTermType = "mortgage_term_type"
+        case mortgageTermType2 = "mortgage_term_type_2"
+        case mortgageType = "mortgage_type"
+        case mortgageType2 = "mortgage_type_2"
+        case msaCode = "msa_code"
+        case msaName = "msa_name"
+        case mudRoom = "mud_room"
+        case multiParcelFlag = "multi_parcel_flag"
+        case nameTitleCompany = "name_title_company"
+        case neighborhoodCode = "neighborhood_code"
+        case numberOfBuildings = "number_of_buildings"
+        case office
+        case officeSqft = "office_sqft"
+        case otherTaxExemption = "other_tax_exemption"
+        case outdoorKitchenFireplace = "outdoor_kitchen_fireplace"
+        case overheadDoor = "overhead_door"
+        case ownerFullName = "owner_full_name"
+        case ownerFullName2 = "owner_full_name_2"
+        case ownerFullName3 = "owner_full_name_3"
+        case ownerFullName4 = "owner_full_name_4"
+        case ownerOccupancyStatus = "owner_occupancy_status"
+        case ownershipTransferDate = "ownership_transfer_date"
+        case ownershipTransferDocNumber = "ownership_transfer_doc_number"
+        case ownershipTransferTransactionID = "ownership_transfer_transaction_id"
+        case ownershipType = "ownership_type"
+        case ownershipType2 = "ownership_type_2"
+        case ownershipVestingRelationCode = "ownership_vesting_relation_code"
+        case parcelAccountNumber = "parcel_account_number"
+        case parcelMapBook = "parcel_map_book"
+        case parcelMapPage = "parcel_map_page"
+        case parcelNumberAlternate = "parcel_number_alternate"
+        case parcelNumberFormatted = "parcel_number_formatted"
+        case parcelNumberPrevious = "parcel_number_previous"
+        case parcelNumberYearAdded = "parcel_number_year_added"
+        case parcelNumberYearChange = "parcel_number_year_change"
+        case parcelRawNumber = "parcel_raw_number"
+        case parcelShellRecord = "parcel_shell_record"
+        case parkingSpaces = "parking_spaces"
+        case patioArea = "patio_area"
+        case phaseName = "phase_name"
+        case plumbingFixturesCount = "plumbing_fixtures_count"
+        case poleStruct = "pole_struct"
+        case poleStructSqft = "pole_struct_sqft"
+        case pond, pool
+        case poolArea = "pool_area"
+        case poolhouse
+        case poolhouseSqft = "poolhouse_sqft"
+        case porch
+        case porchArea = "porch_area"
+        case poultryHouse = "poultry_house"
+        case poultryHouseSqft = "poultry_house_sqft"
+        case previousAssessedValue = "previous_assessed_value"
+        case priorSaleAmount = "prior_sale_amount"
+        case priorSaleDate = "prior_sale_date"
+        case propertyAddressCarrierRouteCode = "property_address_carrier_route_code"
+        case propertyAddressCity = "property_address_city"
+        case propertyAddressFull = "property_address_full"
+        case propertyAddressHouseNumber = "property_address_house_number"
+        case propertyAddressPostDirection = "property_address_post_direction"
+        case propertyAddressPreDirection = "property_address_pre_direction"
+        case propertyAddressState = "property_address_state"
+        case propertyAddressStreetName = "property_address_street_name"
+        case propertyAddressStreetSuffix = "property_address_street_suffix"
+        case propertyAddressUnitDesignator = "property_address_unit_designator"
+        case propertyAddressUnitValue = "property_address_unit_value"
+        case propertyAddressZip4 = "property_address_zip_4"
+        case propertyAddressZipcode = "property_address_zipcode"
+        case publicationDate = "publication_date"
+        case quarter
+        case quarterQuarter = "quarter_quarter"
+        case quonset
+        case quonsetSqft = "quonset_sqft"
+        case range
+        case recordingDate = "recording_date"
+        case roofCover = "roof_cover"
+        case roofFrame = "roof_frame"
+        case rooms
+        case rvParking = "rv_parking"
+        case safeRoom = "safe_room"
+        case saleAmount = "sale_amount"
+        case saleDate = "sale_date"
+        case sauna, section
+        case securityAlarm = "security_alarm"
+        case seniorTaxExemption = "senior_tax_exemption"
+        case sewerType = "sewer_type"
+        case shed
+        case shedSqft = "shed_sqft"
+        case silo
+        case siloSqft = "silo_sqft"
+        case sittingRoom = "sitting_room"
+        case situsCounty = "situs_county"
+        case situsState = "situs_state"
+        case soundSystem = "sound_system"
+        case sportsCourt = "sports_court"
+        case sprinklers, stable
+        case stableSqft = "stable_sqft"
+        case storageBuilding = "storage_building"
+        case storageBuildingSqft = "storage_building_sqft"
+        case storiesNumber = "stories_number"
+        case stormShelter = "storm_shelter"
+        case stormShutter = "storm_shutter"
+        case structureStyle = "structure_style"
+        case study, subdivision, suffix
+        case suffix2 = "suffix_2"
+        case suffix3 = "suffix_3"
+        case suffix4 = "suffix_4"
+        case sunroom
+        case taxAssessYear = "tax_assess_year"
+        case taxBilledAmount = "tax_billed_amount"
+        case taxDelinquentYear = "tax_delinquent_year"
+        case taxFiscalYear = "tax_fiscal_year"
+        case taxJurisdiction = "tax_jurisdiction"
+        case taxRateArea = "tax_rate_area"
+        case tennisCourt = "tennis_court"
+        case topographyCode = "topography_code"
+        case totalMarketValue = "total_market_value"
+        case township
+        case tractNumber = "tract_number"
+        case transferAmount = "transfer_amount"
+        case trustDescription = "trust_description"
+        case unitCount = "unit_count"
+        case upperFloorsSqft = "upper_floors_sqft"
+        case utility
+        case utilityBuilding = "utility_building"
+        case utilityBuildingSqft = "utility_building_sqft"
+        case utilitySqft = "utility_sqft"
+        case veteranTaxExemption = "veteran_tax_exemption"
+        case viewDescription = "view_description"
+        case waterFeature = "water_feature"
+        case waterServiceType = "water_service_type"
+        case wetBar = "wet_bar"
+        case widowTaxExemption = "widow_tax_exemption"
+        case widthLinearFootage = "width_linear_footage"
+        case wineCellar = "wine_cellar"
+        case yearBuilt = "year_built"
+        case zoning
+    }
 }
-
-

@@ -3,17 +3,19 @@ import Foundation
 public class USEnrichmentClient: NSObject {
     
     var sender:SmartySender
-    var serializer:SmartySerializer
+    var propertyPrincipalSerializer:PropertyPrincipalSerializer
+    var propertyFinancialSerializer:PropertyFinancialSerializer
     
-    init(sender:Any, serializer:USReverseGeoSerializer) {
+    init(sender:Any) {
         // Is is recommended to instantiate this class using SSClientBuilder
         
         self.sender = sender as! SmartySender
-        self.serializer = serializer
+        self.propertyPrincipalSerializer = PropertyPrincipalSerializer()
+        self.propertyFinancialSerializer = PropertyFinancialSerializer()
     }
     
-    public func sendPropertyFinancialLookup(smartyKey: String, error: UnsafeMutablePointer<NSError?>) -> [FinancialAttributes]? {
-        var lookup = PropertyFinancialEnrichmentLookup(smartyKey: smartyKey)
+    public func sendPropertyFinancialLookup(smartyKey: String, error: UnsafeMutablePointer<NSError?>) -> [FinancialResult]? {
+        let lookup = PropertyFinancialEnrichmentLookup(smartyKey: smartyKey)
         let lookupPointer = UnsafeMutablePointer<EnrichmentLookup>.allocate(capacity: 1)
         lookupPointer.initialize(to: lookup)
         _ = send(lookup: lookupPointer, error: error)
@@ -22,8 +24,8 @@ public class USEnrichmentClient: NSObject {
         return lookup.results
     }
     
-    public func sendPropertyPrincipalLookup(smartyKey: String, error: UnsafeMutablePointer<NSError?>) -> [PrincipalAttributes]? {
-        var lookup = PropertyPrincipalEnrichmentLookup(smartyKey: smartyKey)
+    public func sendPropertyPrincipalLookup(smartyKey: String, error: UnsafeMutablePointer<NSError?>) -> [PrincipalResult]? {
+        let lookup = PropertyPrincipalEnrichmentLookup(smartyKey: smartyKey)
         let lookupPointer = UnsafeMutablePointer<EnrichmentLookup>.allocate(capacity: 1)
         lookupPointer.initialize(to: lookup)
         _ = send(lookup: lookupPointer, error: error)
@@ -41,8 +43,16 @@ public class USEnrichmentClient: NSObject {
         let response = sender.sendRequest(request: request, error: &error.pointee)
         if error.pointee != nil { return false }
         
+        var serializer:SmartySerializer? = nil
+        
+        if lookup.pointee is PropertyPrincipalEnrichmentLookup {
+            serializer = self.propertyPrincipalSerializer
+        } else if lookup.pointee is PropertyFinancialEnrichmentLookup {
+            serializer = self.propertyFinancialSerializer
+        }
+        
         if let response = response {
-            lookup.pointee.deserializeAndSetResults(serializer: self.serializer, payload: response.payload, error: error)
+            lookup.pointee.deserializeAndSetResults(serializer: serializer!, payload: response.payload, error: error)
         }
         
         if error.pointee != nil { return false }

@@ -166,9 +166,8 @@ import Foundation
     }
     
     public func buildUsEnrichmentApiClient() -> USEnrichmentClient {
-        ensureURLPrefixNotNil(url: self.usReverseGeoApiURL)
-        let serializer = USReverseGeoSerializer()
-        return USEnrichmentClient(sender: buildSender(), serializer: serializer)
+        ensureURLPrefixNotNil(url: self.usEnrichemntApiURL)
+        return USEnrichmentClient(sender: buildSender())
     }
     
     func buildSender() -> SmartySender {

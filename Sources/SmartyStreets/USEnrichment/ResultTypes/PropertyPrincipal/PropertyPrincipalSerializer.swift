@@ -3,9 +3,10 @@ import Foundation
 
 public class PropertyPrincipalSerializer: SmartySerializer {
     override func Serialize(obj: Any?, error: inout NSError!) -> Data! {
-        let raw:[PropertyPrincipalEnrichmentLookup]? = obj as? [PropertyPrincipalEnrichmentLookup]
+        let raw:PropertyPrincipalEnrichmentLookup? = obj as? PropertyPrincipalEnrichmentLookup
         let smartyErrors = SmartyErrors()
         let jsonEncoder = JSONEncoder()
+        jsonEncoder.outputFormatting = .sortedKeys
         if raw == nil {
             let details = [NSLocalizedDescriptionKey: "The object to be serialized is nil"]
             error = NSError(domain: smartyErrors.SSErrorDomain, code: SmartyErrors.SSErrors.ObjectNilError.rawValue, userInfo: details)
@@ -34,7 +35,7 @@ public class PropertyPrincipalSerializer: SmartySerializer {
         }
         
         do {
-            let result:[PrincipalAttributes] = try jsonDecoder.decode([PrincipalAttributes].self, from: payload!)
+            let result:[PrincipalResult] = try jsonDecoder.decode([PrincipalResult].self, from: payload!)
             return result
         } catch let jsonError {
             let details = [NSLocalizedDescriptionKey:jsonError.localizedDescription]

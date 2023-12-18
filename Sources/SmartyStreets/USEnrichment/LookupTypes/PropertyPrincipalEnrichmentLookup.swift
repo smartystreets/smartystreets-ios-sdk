@@ -2,7 +2,7 @@ import Foundation
 
 public class PropertyPrincipalEnrichmentLookup: EnrichmentLookup {
     
-    public var results:[PrincipalAttributes]?
+    public var results:[PrincipalResult]?
     
     init(smartyKey: String){
         self.results = nil
@@ -10,6 +10,6 @@ public class PropertyPrincipalEnrichmentLookup: EnrichmentLookup {
     }
     
     override public func deserializeAndSetResults(serializer: SmartySerializer, payload: Data, error: UnsafeMutablePointer<NSError?>) {
-        self.results = serializer.Deserialize(payload: payload, error: &error.pointee) as? [PrincipalAttributes]
+        self.results = serializer.Deserialize(payload: payload, error: &error.pointee) as? [PrincipalResult]
     }
 }
