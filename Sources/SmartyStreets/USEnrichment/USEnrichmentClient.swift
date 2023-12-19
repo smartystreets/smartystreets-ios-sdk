@@ -2,9 +2,9 @@ import Foundation
 
 public class USEnrichmentClient: NSObject {
     
-    var sender:SmartySender
-    var propertyPrincipalSerializer:PropertyPrincipalSerializer
-    var propertyFinancialSerializer:PropertyFinancialSerializer
+    private var sender:SmartySender
+    private var propertyPrincipalSerializer:PropertyPrincipalSerializer
+    private var propertyFinancialSerializer:PropertyFinancialSerializer
     
     init(sender:Any) {
         // Is is recommended to instantiate this class using SSClientBuilder

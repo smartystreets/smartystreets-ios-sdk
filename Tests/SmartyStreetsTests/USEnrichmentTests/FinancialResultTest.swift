@@ -195,11 +195,6 @@ class USEnrichmentFinancialResultTest: XCTestCase {
         XCTAssertEqual("name_title_company", financialHistory.nameTitleCompany!.lowercased())
         XCTAssertEqual("recording_date", financialHistory.recordingDate!.lowercased())
         XCTAssertEqual("transfer_amount", financialHistory.transferAmount!.lowercased())
-
-
-
-
-        let _ = result.attributes
         
     }
 }
