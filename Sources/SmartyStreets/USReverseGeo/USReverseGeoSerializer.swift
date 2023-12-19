@@ -5,6 +5,7 @@ class USReverseGeoSerializer: SmartySerializer {
         let raw:USReverseGeoLookup? = obj as? USReverseGeoLookup
         let smartyErrors = SmartyErrors()
         let jsonEncoder = JSONEncoder()
+        jsonEncoder.outputFormatting = .sortedKeys
         if raw == nil {
             let details = [NSLocalizedDescriptionKey: "The object to be serialized is nil"]
             error = NSError(domain: smartyErrors.SSErrorDomain, code: SmartyErrors.SSErrors.ObjectNilError.rawValue, userInfo: details)

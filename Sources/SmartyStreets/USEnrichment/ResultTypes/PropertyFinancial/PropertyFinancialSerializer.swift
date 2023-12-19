@@ -1,9 +1,9 @@
 import Foundation
 
 
-public class USStreetSerializer: SmartySerializer {
+public class PropertyFinancialSerializer: SmartySerializer {
     override func Serialize(obj: Any?, error: inout NSError!) -> Data! {
-        let raw:[USStreetLookup]? = obj as? [USStreetLookup]
+        let raw:PropertyFinancialEnrichmentLookup? = obj as? PropertyFinancialEnrichmentLookup
         let smartyErrors = SmartyErrors()
         let jsonEncoder = JSONEncoder()
         jsonEncoder.outputFormatting = .sortedKeys
@@ -35,7 +35,7 @@ public class USStreetSerializer: SmartySerializer {
         }
         
         do {
-            let result:[USStreetCandidate] = try jsonDecoder.decode([USStreetCandidate].self, from: payload!)
+            let result:[FinancialResult] = try jsonDecoder.decode([FinancialResult].self, from: payload!)
             return result
         } catch let jsonError {
             let details = [NSLocalizedDescriptionKey:jsonError.localizedDescription]
