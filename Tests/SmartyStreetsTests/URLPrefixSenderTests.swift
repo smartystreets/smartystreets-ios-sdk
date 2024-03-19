@@ -22,7 +22,7 @@ class URLPrefixSenderTests: XCTestCase {
 
     func testRequestURLPresent() {
         let request:SmartyRequest = SmartyRequest()
-        request.urlPrefix = "/jimbo"
+        request.urlComponents = "/jimbo"
 
         _ = self.urlPrefixSender.sendRequest(request: request, error: &self.error)
 
@@ -36,6 +36,18 @@ class URLPrefixSenderTests: XCTestCase {
         _ = self.urlPrefixSender.sendRequest(request: request, error: &self.error)
 
         XCTAssertEqual(request.urlPrefix, "http://mysite.com/lookup")
+    }
+
+
+    func testMultipleSends() {
+        let request:SmartyRequest = SmartyRequest()
+        request.urlComponents = "/jimbo"
+
+        _ = self.urlPrefixSender.sendRequest(request: request, error: &self.error)
+        _ = self.urlPrefixSender.sendRequest(request: request, error: &self.error)
+
+        XCTAssertEqual(request.urlPrefix, "http://mysite.com/lookup/jimbo")
+
     }
 
 

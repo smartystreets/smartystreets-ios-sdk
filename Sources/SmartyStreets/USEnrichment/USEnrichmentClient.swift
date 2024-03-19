@@ -62,7 +62,7 @@ public class USEnrichmentClient: NSObject {
     
     func buildRequest(lookup:EnrichmentLookup) -> SmartyRequest {
         let request = SmartyRequest()
-        request.urlPrefix = "/" + lookup.getSmartyKey() + "/" + lookup.getDatasetName() + "/" + lookup.getDataSubsetName()
+        request.urlComponents = "/" + lookup.getSmartyKey() + "/" + lookup.getDatasetName() + "/" + lookup.getDataSubsetName()
         return request
     }
 }

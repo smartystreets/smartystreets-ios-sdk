@@ -43,7 +43,7 @@ public class InternationalAutocompleteClient: NSObject {
         let request = SmartyRequest()
 
         if let unwrappedPrefix = lookup.addressID {
-            request.urlPrefix = "/" + unwrappedPrefix
+            request.urlComponents = "/" + unwrappedPrefix
         }
         
         request.setValue(value: lookup.search ?? "", HTTPParameterField: "search")

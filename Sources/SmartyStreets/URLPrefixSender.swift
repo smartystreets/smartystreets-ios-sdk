@@ -11,8 +11,8 @@ public class URLPrefixSender: SmartySender {
     }
     
     override func sendRequest(request: SmartyRequest, error: inout NSError!) -> SmartyResponse! {
-        if !request.urlPrefix.isEmpty {
-            request.urlPrefix = self.urlPrefix + request.urlPrefix
+        if !request.urlComponents.isEmpty {
+            request.urlPrefix = self.urlPrefix + request.urlComponents
         } else {
             request.urlPrefix = self.urlPrefix
         }
