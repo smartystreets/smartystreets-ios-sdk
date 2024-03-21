@@ -1,8 +1,8 @@
 import Foundation
 
 public struct PrincipalResult: Codable {
-    let smartyKey, dataSetName, dataSubsetName: String
-    let attributes: PrincipalAttributes
+    public let smartyKey, dataSetName, dataSubsetName: String?
+    public let attributes: PrincipalAttributes?
 
     enum CodingKeys: String, CodingKey {
         case smartyKey = "smarty_key"

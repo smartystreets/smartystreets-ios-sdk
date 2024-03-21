@@ -5,6 +5,7 @@ public class SmartyRequest {
     public var headers:[String:String]
     public var parameters:[String:String]
     public var urlPrefix:String
+    public var urlComponents:String
     public var payload:Data?
     public var referer:String?
     public var method:String
@@ -14,6 +15,7 @@ public class SmartyRequest {
         self.headers = NSMutableDictionary() as! [String : String]
         self.parameters = NSMutableDictionary() as! [String : String]
         self.urlPrefix = ""
+        self.urlComponents = ""
         self.payload = nil
         self.referer = nil
         self.method = "GET"

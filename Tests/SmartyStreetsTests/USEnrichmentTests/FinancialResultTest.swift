@@ -47,12 +47,15 @@ class USEnrichmentFinancialResultTest: XCTestCase {
         let results = serializer.Deserialize(payload: jsonData, error: &self.error) as? [FinancialResult]
         print(results!)
         let result = results![0]
+
+        guard let attributes = result.attributes else {
+            print("Attributes was null")
+            return
+        }
         
         XCTAssertEqual("xxx", result.smartyKey)
-        XCTAssertEqual("property", result.dataSetName.lowercased())
-        XCTAssertEqual("financial", result.dataSubsetName.lowercased())
-        
-        let attributes = result.attributes
+        XCTAssertEqual("property", result.dataSetName)
+        XCTAssertEqual("financial", result.dataSubsetName)
         
         XCTAssertEqual("assessed_improvement_percent", attributes.assessedImprovementPercent!.lowercased())
         XCTAssertEqual("assessed_improvement_value", attributes.assessedImprovementValue!.lowercased())

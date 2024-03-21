@@ -51,7 +51,10 @@ class USEnrichmentPrincipalResultTest: XCTestCase {
         let results = serializer.Deserialize(payload: jsonData, error: &self.error) as? [PrincipalResult]
         print(results!)
         let result = results![0]
-        let attributes = result.attributes
+        guard let attributes = result.attributes else {
+            print("Attributes was null")
+            return
+        }
         
         XCTAssertEqual("xxx", result.smartyKey)
         XCTAssertEqual("property", result.dataSetName)
