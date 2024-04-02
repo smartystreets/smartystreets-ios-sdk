@@ -6,7 +6,7 @@ import Foundation
     //
     //    See "https://smartystreets.com/docs/cloud/us-street-api#input-fields"
     //
-    //    match: Must be set to 'strict', 'range', or 'invalid'.
+    //    match: Must be set to 'strict', 'enhanced', or 'invalid'.
     
     public var result:[USStreetCandidate]!
     public var inputId:String?
