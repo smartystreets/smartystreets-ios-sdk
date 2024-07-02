@@ -8,6 +8,8 @@ import Foundation
     public var street:String?
     public var locality:String?
     public var administrativeArea:String?
+    public var administrativeAreaShort:String?
+    public var administrativeAreaLong:String?
     public var postalCode:String?
     public var countryISO3:String?
     public var entries:Int?
@@ -18,6 +20,8 @@ import Foundation
         case street = "street"
         case locality = "locality"
         case administrativeArea = "administrative_area"
+        case administrativeAreaShort = "administrative_area_short"
+        case administrativeAreaLong = "administrative_area_long"
         case postalCode = "postal_code"
         case countryISO3 = "country_iso3"
         case entries = "entries"
@@ -29,6 +33,8 @@ import Foundation
         self.street = dictionary["street"] as? String
         self.locality = dictionary["locality"] as? String
         self.administrativeArea = dictionary["administrative_area"] as? String
+        self.administrativeAreaShort = dictionary["administrative_area_short"] as? String
+        self.administrativeAreaLong = dictionary["administrative_area_long"] as? String
         self.postalCode = dictionary["postal_code"] as? String
         self.countryISO3 = dictionary["country_iso3"] as? String
         self.entries = dictionary["entries"] as? Int
