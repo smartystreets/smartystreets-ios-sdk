@@ -2,24 +2,31 @@ import Foundation
 import SmartyStreets
 
 class USEnrichmentExample{
-    func run() -> String {
-        let client = ClientBuilder(id: "KEY", hostname: "hostname").withLicenses(["us-rooftop-geocoding-cloud"])
+    var error:NSError! = nil
+    
+    func run() throws -> String {
+        let client = ClientBuilder(id: "KEY", hostname: "hostname").withLicenses(licenses: ["us-property-data-principal-cloud"])
             .buildUsEnrichmentApiClient()
-        
-        var error:NSError! = nil
 
         let smartyKey = "7"
         
-        if lookupType.text.lowercased() == "principal" {
-            var results = client.sendPropertyPrincipalLookup(smartyKey: smartyKey, error: error)
-            return self.outputPrincipalResults(results)
-        } else if lookup.text.lowercased() == "financial" {
-            var results = client.sendPropertyFinancialLookup(smartyKey: smartyKey, error: error)
-            return self.outputFinancialResults(results)
+        let lookupType = "principal"
+        
+        if lookupType.lowercased() == "principal" {
+            guard let results = client.sendPropertyPrincipalLookup(smartyKey: smartyKey, error: &error) else { throw NullError.Null }
+            return try self.outputPrincipalResults(results: [results[0].attributes])
+        } else if lookupType.lowercased() == "financial" {
+            guard let results = client.sendPropertyFinancialLookup(smartyKey: smartyKey, error: &error) else { throw NullError.Null }
+            return try self.outputFinancialResults(results: [results[0].attributes])
+        } else if lookupType.lowercased() == "geo-reference" {
+            guard let results = client.sendGeoReferenceLookup(smartyKey: smartyKey, error: &error) else { throw NullError.Null }
+            return try self.outputGeoReferenceResults(results: [results[0].attributes])
         }
+        
+        return "lookupType unknown"
     }
     
-    func outputFinancialResults(results: [FinancialAttributes]) -> String {
+    func outputFinancialResults(results: [FinancialAttributes?]) throws -> String {
         if let error = error {
             let output = """
             Domain: \(error.domain)
@@ -32,15 +39,18 @@ class USEnrichmentExample{
         
         var output = "Results: \n"
         
-        if results == nil {
-            return "\nNo Result Found\n"
-        }
-        
         for result in results {
-            let jsonData = try encoder.encode(result)
-            let jsonString = String(data: jsonData, encoding: .utf8)
-            output.append(jsonString)
-            output.append("\n******************************\n")
+            let encoder = JSONEncoder()
+            do {
+                let jsonData = try encoder.encode(result)
+                guard let jsonString = String(data: jsonData, encoding: .utf8) else { throw NullError.Null }
+                output.append(jsonString)
+                output.append("\n******************************\n")
+            } catch NullError.Null {
+                print("No results found. This means the Smartykey is likely not valid.")
+            }
+            catch {
+            }
         }
         
         output.append("\n******************************\n")
@@ -48,7 +58,7 @@ class USEnrichmentExample{
         return output
     }
     
-    func outputPrincipalResults(results: [PrincipalAttributes]) -> String {
+    func outputPrincipalResults(results: [PrincipalAttributes?]) throws -> String {
         if let error = error {
             let output = """
             Domain: \(error.domain)
@@ -61,19 +71,58 @@ class USEnrichmentExample{
         
         var output = "Results: \n"
         
-        if results == nil {
-            return "\nNo Result Found\n"
-        }
-        
         for result in results {
-            let jsonData = try encoder.encode(result)
-            let jsonString = String(data: jsonData, encoding: .utf8)
-            output.append(jsonString)
-            output.append("\n******************************\n")
+            let encoder = JSONEncoder()
+            do {
+                let jsonData = try encoder.encode(result)
+                guard let jsonString = String(data: jsonData, encoding: .utf8) else { throw NullError.Null }
+                output.append(jsonString)
+                output.append("\n******************************\n")
+            } catch NullError.Null {
+                print("No results found. This means the Smartykey is likely not valid.")
+            }
+            catch {
+            }
         }
         
         output.append("\n******************************\n")
 
         return output
+    }
+    
+    func outputGeoReferenceResults(results: [GeoReferenceAttributes?]) throws -> String {
+        if let error = error {
+            let output = """
+            Domain: \(error.domain)
+            Error Code: \(error.code)
+            Description:\n\(error.userInfo[NSLocalizedDescriptionKey] as! NSString)
+            """
+            NSLog(output)
+            return output
+        }
+        
+        var output = "Results: \n"
+        
+        for result in results {
+            let encoder = JSONEncoder()
+            do {
+                let jsonData = try encoder.encode(result)
+                guard let jsonString = String(data: jsonData, encoding: .utf8) else { throw NullError.Null }
+                output.append(jsonString)
+                output.append("\n******************************\n")
+            } catch NullError.Null {
+                print("No results found. This means the Smartykey is likely not valid.")
+            }
+            catch {
+            }
+        }
+        
+        output.append("\n******************************\n")
+
+        return output
+    }
+    
+    enum NullError: Error {
+        case Null
     }
 }

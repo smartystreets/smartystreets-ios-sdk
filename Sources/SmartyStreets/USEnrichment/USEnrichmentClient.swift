@@ -5,6 +5,7 @@ public class USEnrichmentClient: NSObject {
     private var sender:SmartySender
     private var propertyPrincipalSerializer:PropertyPrincipalSerializer
     private var propertyFinancialSerializer:PropertyFinancialSerializer
+    private var geoReferenceSerializer:GeoReferenceSerializer
     
     init(sender:Any) {
         // Is is recommended to instantiate this class using SSClientBuilder
@@ -12,6 +13,7 @@ public class USEnrichmentClient: NSObject {
         self.sender = sender as! SmartySender
         self.propertyPrincipalSerializer = PropertyPrincipalSerializer()
         self.propertyFinancialSerializer = PropertyFinancialSerializer()
+        self.geoReferenceSerializer = GeoReferenceSerializer()
     }
     
     public func sendPropertyFinancialLookup(smartyKey: String, error: UnsafeMutablePointer<NSError?>) -> [FinancialResult]? {
@@ -26,6 +28,16 @@ public class USEnrichmentClient: NSObject {
     
     public func sendPropertyPrincipalLookup(smartyKey: String, error: UnsafeMutablePointer<NSError?>) -> [PrincipalResult]? {
         let lookup = PropertyPrincipalEnrichmentLookup(smartyKey: smartyKey)
+        let lookupPointer = UnsafeMutablePointer<EnrichmentLookup>.allocate(capacity: 1)
+        lookupPointer.initialize(to: lookup)
+        _ = send(lookup: lookupPointer, error: error)
+        lookupPointer.deinitialize(count: 1)
+        lookupPointer.deallocate()
+        return lookup.results
+    }
+    
+    public func sendGeoReferenceLookup(smartyKey: String, error: UnsafeMutablePointer<NSError?>) -> [GeoReferenceResult]? {
+        let lookup = GeoReferenceEnrichmentLookup(smartyKey: smartyKey)
         let lookupPointer = UnsafeMutablePointer<EnrichmentLookup>.allocate(capacity: 1)
         lookupPointer.initialize(to: lookup)
         _ = send(lookup: lookupPointer, error: error)
@@ -49,6 +61,8 @@ public class USEnrichmentClient: NSObject {
             serializer = self.propertyPrincipalSerializer
         } else if lookup.pointee is PropertyFinancialEnrichmentLookup {
             serializer = self.propertyFinancialSerializer
+        } else if lookup.pointee is GeoReferenceEnrichmentLookup {
+            serializer = self.geoReferenceSerializer
         }
         
         if let response = response {
@@ -62,7 +76,11 @@ public class USEnrichmentClient: NSObject {
     
     func buildRequest(lookup:EnrichmentLookup) -> SmartyRequest {
         let request = SmartyRequest()
-        request.urlComponents = "/" + lookup.getSmartyKey() + "/" + lookup.getDatasetName() + "/" + lookup.getDataSubsetName()
+        if lookup.getDataSubsetName() == "" {
+            request.urlComponents = "/" + lookup.getSmartyKey() + "/" + lookup.getDatasetName()
+        } else {
+            request.urlComponents = "/" + lookup.getSmartyKey() + "/" + lookup.getDatasetName() + "/" + lookup.getDataSubsetName()
+        }
         return request
     }
 }
