@@ -6,6 +6,7 @@ public class USEnrichmentClient: NSObject {
     private var propertyPrincipalSerializer:PropertyPrincipalSerializer
     private var propertyFinancialSerializer:PropertyFinancialSerializer
     private var geoReferenceSerializer:GeoReferenceSerializer
+    private var secondarySerializer:SecondarySerializer
     
     init(sender:Any) {
         // Is is recommended to instantiate this class using SSClientBuilder
@@ -14,6 +15,7 @@ public class USEnrichmentClient: NSObject {
         self.propertyPrincipalSerializer = PropertyPrincipalSerializer()
         self.propertyFinancialSerializer = PropertyFinancialSerializer()
         self.geoReferenceSerializer = GeoReferenceSerializer()
+        self.secondarySerializer = SecondarySerializer()
     }
     
     public func sendPropertyFinancialLookup(smartyKey: String, error: UnsafeMutablePointer<NSError?>) -> [FinancialResult]? {
@@ -46,6 +48,16 @@ public class USEnrichmentClient: NSObject {
         return lookup.results
     }
     
+    public func sendSecondaryLookup(smartyKey: String, error: UnsafeMutablePointer<NSError?>) -> [SecondaryResult]? {
+        let lookup = SecondaryEnrichmentLookup(smartyKey: smartyKey)
+        let lookupPointer = UnsafeMutablePointer<EnrichmentLookup>.allocate(capacity: 1)
+        lookupPointer.initialize(to: lookup)
+        _ = send(lookup: lookupPointer, error: error)
+        lookupPointer.deinitialize(count: 1)
+        lookupPointer.deallocate()
+        return lookup.results
+    }
+    
     private func send(lookup: UnsafeMutablePointer<EnrichmentLookup>, error: UnsafeMutablePointer<NSError?>) -> Bool {
         
         if error.pointee != nil { return false }
@@ -63,6 +75,8 @@ public class USEnrichmentClient: NSObject {
             serializer = self.propertyFinancialSerializer
         } else if lookup.pointee is GeoReferenceEnrichmentLookup {
             serializer = self.geoReferenceSerializer
+        } else if lookup.pointee is SecondaryEnrichmentLookup {
+            serializer = self.secondarySerializer
         }
         
         if let response = response {

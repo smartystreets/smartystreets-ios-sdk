@@ -2,7 +2,7 @@ import Foundation
 
 public struct GeoReferenceResult: Codable {
     public let smartyKey, dataSetName, dataSubsetName: String?
-    public var attributes: GeoReferenceAttributes?
+    public let attributes: GeoReferenceAttributes?
 
     enum CodingKeys: String, CodingKey {
         case smartyKey = "smarty_key"
