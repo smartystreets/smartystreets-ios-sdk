@@ -7,6 +7,7 @@ public class USEnrichmentClient: NSObject {
     private var propertyFinancialSerializer:PropertyFinancialSerializer
     private var geoReferenceSerializer:GeoReferenceSerializer
     private var secondarySerializer:SecondarySerializer
+    private var secondaryCountSerializer:SecondaryCountSerializer
     
     init(sender:Any) {
         // Is is recommended to instantiate this class using SSClientBuilder
@@ -16,6 +17,7 @@ public class USEnrichmentClient: NSObject {
         self.propertyFinancialSerializer = PropertyFinancialSerializer()
         self.geoReferenceSerializer = GeoReferenceSerializer()
         self.secondarySerializer = SecondarySerializer()
+        self.secondaryCountSerializer = SecondaryCountSerializer()
     }
     
     public func sendPropertyFinancialLookup(smartyKey: String, error: UnsafeMutablePointer<NSError?>) -> [FinancialResult]? {
@@ -58,6 +60,16 @@ public class USEnrichmentClient: NSObject {
         return lookup.results
     }
     
+    public func sendSecondaryCountLookup(smartyKey: String, error: UnsafeMutablePointer<NSError?>) -> [SecondaryCountResult]? {
+        let lookup = SecondaryCountEnrichmentLookup(smartyKey: smartyKey)
+        let lookupPointer = UnsafeMutablePointer<EnrichmentLookup>.allocate(capacity: 1)
+        lookupPointer.initialize(to: lookup)
+        _ = send(lookup: lookupPointer, error: error)
+        lookupPointer.deinitialize(count: 1)
+        lookupPointer.deallocate()
+        return lookup.results
+    }
+    
     private func send(lookup: UnsafeMutablePointer<EnrichmentLookup>, error: UnsafeMutablePointer<NSError?>) -> Bool {
         
         if error.pointee != nil { return false }
@@ -77,6 +89,8 @@ public class USEnrichmentClient: NSObject {
             serializer = self.geoReferenceSerializer
         } else if lookup.pointee is SecondaryEnrichmentLookup {
             serializer = self.secondarySerializer
+        } else if lookup.pointee is SecondaryCountEnrichmentLookup {
+            serializer = self.secondaryCountSerializer
         }
         
         if let response = response {
