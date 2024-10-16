@@ -64,7 +64,14 @@ class InternationalCandidateTests: XCTestCase {
                 "level_number": "48.2",
                 "post_box": "49",
                 "post_box_type": "50",
-                "post_box_number": "51"
+                "post_box_number": "51",
+                "additional_content": "112",
+                "delivery_installation": "113",
+                "delivery_installation_type": "114",
+                "delivery_installation_qualifier_name": "115",
+                "route": "116",
+                "route_number": "117",
+                "route_type": "118",
             ],
             "metadata": [
                 "latitude": 52.0,
@@ -207,6 +214,13 @@ class InternationalCandidateTests: XCTestCase {
         XCTAssertEqual("49", components.postBox)
         XCTAssertEqual("50", components.postBoxType)
         XCTAssertEqual("51", components.postBoxNumber)
+        XCTAssertEqual("112", components.additionalContent)
+        XCTAssertEqual("113", components.deliveryInstallation)
+        XCTAssertEqual("114", components.deliveryInstallationType)
+        XCTAssertEqual("115", components.deliveryInstallationQualifierName)
+        XCTAssertEqual("116", components.route)
+        XCTAssertEqual("117", components.routeNumber)
+        XCTAssertEqual("118", components.routeType)
         
         let metadata = candidate.metadata!
         XCTAssertNotNil(metadata)
