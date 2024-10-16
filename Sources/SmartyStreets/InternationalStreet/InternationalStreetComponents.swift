@@ -46,6 +46,13 @@ import Foundation
     public var postBox:String?
     public var postBoxType:String?
     public var postBoxNumber:String?
+    public var additionalContent:String?
+    public var deliveryInstallation:String?
+    public var deliveryInstallationType:String?
+    public var deliveryInstallationQualifierName:String?
+    public var route:String?
+    public var routeNumber:String?
+    public var routeType:String?
     
     enum CodingKeys: String, CodingKey {
         case countryIso3 = "country_iso_3"
@@ -91,6 +98,13 @@ import Foundation
         case postBox = "post_box"
         case postBoxType = "post_box_type"
         case postBoxNumber = "post_box_number"
+        case additionalContent = "additional_content"
+        case deliveryInstallation = "delivery_installation"
+        case deliveryInstallationType = "delivery_installation_type"
+        case deliveryInstallationQualifierName = "delivery_installation_qualifier_name"
+        case route = "route"
+        case routeNumber = "route_number"
+        case routeType = "route_type"
     }
     
     init(dictionary:NSDictionary) {
@@ -137,5 +151,12 @@ import Foundation
         self.postBox = dictionary["post_box"] as? String
         self.postBoxType = dictionary["post_box_type"] as? String
         self.postBoxNumber = dictionary["post_box_number"] as? String
+        self.additionalContent = dictionary["additional_content"] as? String
+        self.deliveryInstallation = dictionary["delivery_installation"] as? String
+        self.deliveryInstallationType = dictionary["delivery_installation_type"] as? String
+        self.deliveryInstallationQualifierName = dictionary["delivery_installation_qualifier_name"] as? String
+        self.route = dictionary["route"] as? String
+        self.routeNumber = dictionary["route_number"] as? String
+        self.routeType = dictionary["route_type"] as? String
     }
 }
