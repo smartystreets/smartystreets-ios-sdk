@@ -30,8 +30,28 @@ public class USEnrichmentClient: NSObject {
         return lookup.results
     }
     
+    public func sendPropertyFinancialLookup(inputLookup: EnrichmentLookup, error: UnsafeMutablePointer<NSError?>) -> [FinancialResult]? {
+        let lookup = PropertyFinancialEnrichmentLookup(lookup: inputLookup)
+        let lookupPointer = UnsafeMutablePointer<EnrichmentLookup>.allocate(capacity: 1)
+        lookupPointer.initialize(to: lookup)
+        _ = send(lookup: lookupPointer, error: error)
+        lookupPointer.deinitialize(count: 1)
+        lookupPointer.deallocate()
+        return lookup.results
+    }
+    
     public func sendPropertyPrincipalLookup(smartyKey: String, error: UnsafeMutablePointer<NSError?>) -> [PrincipalResult]? {
         let lookup = PropertyPrincipalEnrichmentLookup(smartyKey: smartyKey)
+        let lookupPointer = UnsafeMutablePointer<EnrichmentLookup>.allocate(capacity: 1)
+        lookupPointer.initialize(to: lookup)
+        _ = send(lookup: lookupPointer, error: error)
+        lookupPointer.deinitialize(count: 1)
+        lookupPointer.deallocate()
+        return lookup.results
+    }
+    
+    public func sendPropertyPrincipalLookup(inputLookup: EnrichmentLookup, error: UnsafeMutablePointer<NSError?>) -> [PrincipalResult]? {
+        let lookup = PropertyPrincipalEnrichmentLookup(lookup: inputLookup)
         let lookupPointer = UnsafeMutablePointer<EnrichmentLookup>.allocate(capacity: 1)
         lookupPointer.initialize(to: lookup)
         _ = send(lookup: lookupPointer, error: error)
@@ -50,6 +70,16 @@ public class USEnrichmentClient: NSObject {
         return lookup.results
     }
     
+    public func sendGeoReferenceLookup(inputLookup: EnrichmentLookup, error: UnsafeMutablePointer<NSError?>) -> [GeoReferenceResult]? {
+        let lookup = GeoReferenceEnrichmentLookup(lookup: inputLookup)
+        let lookupPointer = UnsafeMutablePointer<EnrichmentLookup>.allocate(capacity: 1)
+        lookupPointer.initialize(to: lookup)
+        _ = send(lookup: lookupPointer, error: error)
+        lookupPointer.deinitialize(count: 1)
+        lookupPointer.deallocate()
+        return lookup.results
+    }
+    
     public func sendSecondaryLookup(smartyKey: String, error: UnsafeMutablePointer<NSError?>) -> [SecondaryResult]? {
         let lookup = SecondaryEnrichmentLookup(smartyKey: smartyKey)
         let lookupPointer = UnsafeMutablePointer<EnrichmentLookup>.allocate(capacity: 1)
@@ -60,8 +90,28 @@ public class USEnrichmentClient: NSObject {
         return lookup.results
     }
     
+    public func sendSecondaryLookup(inputLookup: EnrichmentLookup, error: UnsafeMutablePointer<NSError?>) -> [SecondaryResult]? {
+        let lookup = SecondaryEnrichmentLookup(lookup: inputLookup)
+        let lookupPointer = UnsafeMutablePointer<EnrichmentLookup>.allocate(capacity: 1)
+        lookupPointer.initialize(to: lookup)
+        _ = send(lookup: lookupPointer, error: error)
+        lookupPointer.deinitialize(count: 1)
+        lookupPointer.deallocate()
+        return lookup.results
+    }
+    
     public func sendSecondaryCountLookup(smartyKey: String, error: UnsafeMutablePointer<NSError?>) -> [SecondaryCountResult]? {
         let lookup = SecondaryCountEnrichmentLookup(smartyKey: smartyKey)
+        let lookupPointer = UnsafeMutablePointer<EnrichmentLookup>.allocate(capacity: 1)
+        lookupPointer.initialize(to: lookup)
+        _ = send(lookup: lookupPointer, error: error)
+        lookupPointer.deinitialize(count: 1)
+        lookupPointer.deallocate()
+        return lookup.results
+    }
+    
+    public func sendSecondaryCountLookup(inputLookup: EnrichmentLookup, error: UnsafeMutablePointer<NSError?>) -> [SecondaryCountResult]? {
+        let lookup = SecondaryCountEnrichmentLookup(lookup: inputLookup)
         let lookupPointer = UnsafeMutablePointer<EnrichmentLookup>.allocate(capacity: 1)
         lookupPointer.initialize(to: lookup)
         _ = send(lookup: lookupPointer, error: error)
@@ -102,13 +152,59 @@ public class USEnrichmentClient: NSObject {
         return true
     }
     
-    func buildRequest(lookup:EnrichmentLookup) -> SmartyRequest {
-        let request = SmartyRequest()
-        if lookup.getDataSubsetName() == "" {
-            request.urlComponents = "/" + lookup.getSmartyKey() + "/" + lookup.getDatasetName()
-        } else {
-            request.urlComponents = "/" + lookup.getSmartyKey() + "/" + lookup.getDatasetName() + "/" + lookup.getDataSubsetName()
+    private func buildRequest(lookup:EnrichmentLookup) -> SmartyRequest {
+        var request = SmartyRequest()
+        if (lookup.getSmartyKey() != "") {
+            if lookup.getDataSubsetName() == "" {
+                request.urlComponents = "/" + lookup.getSmartyKey() + "/" + lookup.getDatasetName()
+            } else {
+                request.urlComponents = "/" + lookup.getSmartyKey() + "/" + lookup.getDatasetName() + "/" + lookup.getDataSubsetName()
+            }
+        }
+        else {
+            if lookup.getDataSubsetName() == "" {
+                request.urlComponents = "/search/" + lookup.getDatasetName()
+            } else {
+                request.urlComponents = "/search/" + lookup.getDatasetName() + "/" + lookup.getDataSubsetName()
+            }
+        }
+        request = buildParameters(request: request, lookup: lookup)
+        return request
+    }
+    
+    private func buildParameters(request: SmartyRequest, lookup:EnrichmentLookup) -> SmartyRequest {
+        if (!lookup.getIncludeAttributes().isEmpty) {
+            request.setValue(value: buildFilterString(list: lookup.getIncludeAttributes()), HTTPParameterField: "include")
+        }
+        if (!lookup.getExcludeAttributes().isEmpty) {
+            request.setValue(value: buildFilterString(list: lookup.getExcludeAttributes()), HTTPParameterField: "exclude")
+        }
+        if (lookup.getEtag() != "") {
+            request.setValue(value: lookup.getEtag(), HTTPHeaderField: "Etag")
+        }
+        if (lookup.getStreet() != "") {
+            request.setValue(value: lookup.getStreet(), HTTPParameterField: "street")
+        }
+        if (lookup.getCity() != "") {
+            request.setValue(value: lookup.getCity(), HTTPParameterField: "city")
+        }
+        if (lookup.getState() != "") {
+            request.setValue(value: lookup.getState(), HTTPParameterField: "state")
+        }
+        if (lookup.getZipcode() != "") {
+            request.setValue(value: lookup.getZipcode(), HTTPParameterField: "zipcode")
+        }
+        if (lookup.getFreeform() != "") {
+            request.setValue(value: lookup.getFreeform(), HTTPParameterField: "freeform")
         }
         return request
+    }
+    
+    private func buildFilterString(list:[String]) -> String {
+        if list.count == 0 {
+            return String()
+        }
+        
+        return list.joined(separator: ",")
     }
 }

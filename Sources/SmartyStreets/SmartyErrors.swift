@@ -11,6 +11,7 @@ class SmartyErrors {
         case NotPositiveIntergerError
         case JSONSerializationError
         case MaxRetriesExceededError
+        case NotModifiedInfo = 304
         case BadRequestError = 400
         case BadCredentialsError = 401
         case PaymentRequiredError = 402
