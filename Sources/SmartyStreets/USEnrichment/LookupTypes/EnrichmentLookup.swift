@@ -12,6 +12,7 @@ public class EnrichmentLookup: Encodable {
     private var zipcode: String
     private var freeform: String
     private var etag: String
+    private var custom_param_array: [String: String] = [:]
 
     public init(smartyKey: String, datasetName: String, dataSubsetName: String) {
         self.smarty_key = smartyKey
@@ -85,6 +86,10 @@ public class EnrichmentLookup: Encodable {
         return self.etag
     }
     
+    public func getCustomParamArray() -> [String: String] {
+        return self.custom_param_array
+    }
+    
     public func setSmartyKey(smarty_key: String) {
         self.smarty_key = smarty_key
     }
@@ -119,6 +124,10 @@ public class EnrichmentLookup: Encodable {
     
     public func setEtag(etag: String) {
         self.etag = etag
+    }
+    
+    public func addCustomParameter(parameter: String, value: String) {
+        self.custom_param_array.updateValue(value, forKey: parameter)
     }
 
     public func deserializeAndSetResults(serializer: SmartySerializer, payload: Data, error: UnsafeMutablePointer<NSError?>) {

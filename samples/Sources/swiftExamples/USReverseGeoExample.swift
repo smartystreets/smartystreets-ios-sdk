@@ -10,17 +10,22 @@ class USReverseGeoExample {
         //            for server-to-server requests, use this code:
         //let authId = getEnvironmentVar("SMARTY_AUTH_ID") ?? ""
         //let authToken = getEnvironmentVar("SMARTY_AUTH_TOKEN") ?? ""
-        //let client = ClientBuilder(authId:authId, authToken:authToken).withLicenses(licenses:["us-reverse-geocoding-cloud"]).buildUsReverseGeoApiClient()
+        //let client = ClientBuilder(authId:authId, authToken:authToken).buildUsReverseGeoApiClient()
         
         // for client-side requests (browser/mobile), use this code:
         let id = getEnvironmentVar("SMARTY_AUTH_WEB") ?? ""
         let hostname = getEnvironmentVar("SMARTY_AUTH_REFERER") ?? ""
-        let client = ClientBuilder(id: id, hostname: hostname).withLicenses(licenses:["us-reverse-geocoding-cloud"]).buildUsReverseGeoApiClient()
+        let client = ClientBuilder(id: id, hostname: hostname).buildUsReverseGeoApiClient()
+        // Comment the Above line, and uncomment the below line to explicitly specify a license value:
+        //let client = ClientBuilder(id: id, hostname: hostname).withLicenses(licenses:["us-reverse-geocoding-cloud"]).buildUsReverseGeoApiClient()
         
         // Documentation for input fields can be found at:
         // https://smartystreets.com/docs/cloud/us-reverse-geo-api#http-input-fields
         
         var lookup = USReverseGeoLookup(latitude: 40.27644, longitude: -111.65747, source: "postal")
+        
+        // Uncomment the below line to add a custom parameter to a lookup:
+        //lookup.addCustomParameter(parameter: "parameter", value: "value")
         
         var error: NSError! = nil
         

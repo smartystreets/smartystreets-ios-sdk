@@ -59,6 +59,10 @@ public class USAutocompleteProClient: NSObject {
             request.setValue(value: lookup.preferGeolocation!.name, HTTPParameterField: "prefer_geolocation")
         }
         
+        for key in lookup.getCustomParamArray().keys {
+            request.setValue(value: lookup.getCustomParamArray()[key] ?? "", HTTPParameterField: key)
+        }
+        
         return request
     }
     

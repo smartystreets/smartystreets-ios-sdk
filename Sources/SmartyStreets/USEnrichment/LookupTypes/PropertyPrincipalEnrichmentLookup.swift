@@ -24,6 +24,9 @@ public class PropertyPrincipalEnrichmentLookup: EnrichmentLookup {
         self.setZipcode(zipcode: lookup.getZipcode())
         self.setFreeform(freeform: lookup.getFreeform())
         self.setEtag(etag: lookup.getEtag())
+        for key in lookup.getCustomParamArray().keys {
+            self.addCustomParameter(parameter: key, value: lookup.getCustomParamArray()[key] ?? "")
+        }
     }
     
     override public func deserializeAndSetResults(serializer: SmartySerializer, payload: Data, error: UnsafeMutablePointer<NSError?>) {

@@ -8,6 +8,7 @@ import Foundation
     //
     //    match: Must be set to 'strict', 'enhanced', or 'invalid'.
     
+    private var customParamArray: [String: String] = [:]
     public var result:[USStreetCandidate]!
     public var inputId:String?
     public var street:String?
@@ -20,6 +21,7 @@ import Foundation
     public var addressee:String?
     public var urbanization:String?
     public var maxCandidates:Int?
+    public var countySource:String?
     public var objcMaxCandidates:NSNumber? {
         get {
             return maxCandidates as NSNumber?
@@ -47,6 +49,14 @@ import Foundation
         return self.result[index]
     }
     
+    public func getCustomParamArray() -> [String: String] {
+        return self.customParamArray
+    }
+    
+    public func addCustomParameter(parameter: String, value: String) {
+        self.customParamArray.updateValue(value, forKey: parameter)
+    }
+    
     public func setMaxCandidates(max:Int, error: inout NSError?) {
         if max > 0 {
             self.maxCandidates = max
@@ -70,6 +80,7 @@ import Foundation
         dictionary = addValueToDictionary(value: self.addressee, key: "addressee", dictionary: dictionary)
         dictionary = addValueToDictionary(value: self.urbanization, key: "urbanization", dictionary: dictionary)
         dictionary = addValueToDictionary(value: self.maxCandidates, key: "candidates", dictionary: dictionary)
+        dictionary = addValueToDictionary(value: self.countySource, key: "county_source", dictionary: dictionary)
         dictionary = addValueToDictionary(value: self.matchStrategy, key: "match", dictionary: dictionary)
         dictionary = addValueToDictionary(value: self.outputFormat, key: "format", dictionary: dictionary)
         return dictionary

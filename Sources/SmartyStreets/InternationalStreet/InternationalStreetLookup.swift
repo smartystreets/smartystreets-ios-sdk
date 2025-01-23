@@ -13,6 +13,7 @@ import Foundation
     //    When set to language_mode.Native, the results will always be in the language of the output country.
     //    When set to language_mode.Latin, the results will always be provided using a Latin character set.
     
+    private var customParamArray: [String: String] = [:]
     public var result:[InternationalStreetCandidate]?
     public var inputId:String?
     public var country:String?
@@ -98,5 +99,13 @@ import Foundation
         } else {
             self.geocode = "false"
         }
+    }
+    
+    public func getCustomParamArray() -> [String: String] {
+        return self.customParamArray
+    }
+    
+    public func addCustomParameter(parameter: String, value: String) {
+        self.customParamArray.updateValue(value, forKey: parameter)
     }
 }

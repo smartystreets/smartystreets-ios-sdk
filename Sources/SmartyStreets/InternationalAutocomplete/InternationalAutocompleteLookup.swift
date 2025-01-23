@@ -8,6 +8,7 @@ import Foundation
     
     static let SSMaxResults = 10
     
+    private var customParamArray: [String: String] = [:]
     public var result:InternationalAutocompleteResult?
     public var country:String?
     public var search:String?
@@ -40,6 +41,14 @@ import Foundation
         } else {
             return InternationalAutocompleteCandidate(dictionary: NSDictionary())
         }
+    }
+    
+    public func getCustomParamArray() -> [String: String] {
+        return self.customParamArray
+    }
+    
+    public func addCustomParameter(parameter: String, value: String) {
+        self.customParamArray.updateValue(value, forKey: parameter)
     }
     
     public func setMaxResults(maxResults: Int, error: inout NSError?) {

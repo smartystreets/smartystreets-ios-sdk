@@ -12,18 +12,12 @@ class USEnrichmentExample{
         //            for server-to-server requests, use this code:
         //let authId = getEnvironmentVar("SMARTY_AUTH_ID") ?? ""
         //let authToken = getEnvironmentVar("SMARTY_AUTH_TOKEN") ?? ""
-        //let credentials = [authId, authToken]
-        
-        //let client = ClientBuilder(authId: credentials[0], authToken: credentials[1]).buildUsEnrichmentApiClient()
-        // Uncomment the Above line to make a call with secret keys, and uncomment the below line do so wtih a license value:
-        //let client = ClientBuilder(id: credentials[0], hostname: credentials[1]).with_licenses([<insert license string here]).buildUsEnrichmentApiClient()
+        //let client = ClientBuilder(authId: authId, authToken: authToken).buildUsEnrichmentApiClient()
         
         // for client-side requests (browser/mobile), use this code:
         let id = getEnvironmentVar("SMARTY_AUTH_WEB") ?? ""
         let hostname = getEnvironmentVar("SMARTY_AUTH_REFERER") ?? ""
-        let credentials = [id, hostname]
-        
-        let client = ClientBuilder(id: credentials[0], hostname: credentials[1]).buildUsEnrichmentApiClient()
+        let client = ClientBuilder(id: id, hostname: hostname).buildUsEnrichmentApiClient()
         // Comment the Above line, and uncomment the below line to explicitly specify a license value:
         //let client = ClientBuilder(id: credentials[0], hostname: credentials[1]).with_licenses([<insert license string here]).buildUsEnrichmentApiClient()
         
@@ -51,6 +45,9 @@ class USEnrichmentExample{
         
         // Uncomment the below line to add an Etag header to a lookup:
         //lookup.setEtag(etag: "AUBAGDQDAIGQYCYC")
+        
+        // Uncomment the below line to add a custom parameter to a lookup:
+        //lookup.addCustomParameter(parameter: "parameter", value: "value")
         
         let lookupType = "principal"
         

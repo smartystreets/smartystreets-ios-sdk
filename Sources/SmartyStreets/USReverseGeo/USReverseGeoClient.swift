@@ -38,6 +38,9 @@ public class USReverseGeoClient: NSObject {
         request.setValue(value: lookup.latitude, HTTPParameterField: "latitude")
         request.setValue(value: lookup.longitude, HTTPParameterField: "longitude")
         request.setValue(value: lookup.source, HTTPParameterField: "source")
+        for key in lookup.getCustomParamArray().keys {
+            request.setValue(value: lookup.getCustomParamArray()[key] ?? "", HTTPParameterField: key)
+        }
 
         return request
     }

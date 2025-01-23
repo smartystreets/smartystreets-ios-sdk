@@ -39,6 +39,7 @@ class USZipCodeClientTests: XCTestCase {
     func testSendingSingleFullyPopulatedLookup() {
         let client = USZipCodeClient(sender: self.sender as Any, serializer: self.serializer)
         var lookup = USZipCodeLookup(city: "1", state: "2", zipcode: "3", inputId: "4")
+        lookup.addCustomParameter(parameter: "custom", value: "5")
         
         _ = client.sendLookup(lookup: &lookup, error: &self.error)
         
@@ -46,6 +47,7 @@ class USZipCodeClientTests: XCTestCase {
         XCTAssertTrue(url.contains("zipcode=3"))
         XCTAssertTrue(url.contains("state=2"))
         XCTAssertTrue(url.contains("city=1"))
+        XCTAssertTrue(url.contains("custom=5"))
     }
     
     func testEmptyBatchNotSent() {

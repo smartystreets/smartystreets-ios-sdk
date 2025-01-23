@@ -6,6 +6,7 @@ import Foundation
     //
     //    See "https://smartystreets.com/docs/cloud/us-zipcode-api#http-request-input-fields"
     
+    private var customParamArray: [String: String] = [:]
     public var result:USZipCodeResult!
     public var inputId:String?
     public var city:String?
@@ -35,6 +36,14 @@ import Foundation
         } else {
             self.inputId = nil
         }
+    }
+    
+    public func getCustomParamArray() -> [String: String] {
+        return self.customParamArray
+    }
+    
+    public func addCustomParameter(parameter: String, value: String) {
+        self.customParamArray.updateValue(value, forKey: parameter)
     }
     
     public func toDictionary() -> NSDictionary {
