@@ -22,6 +22,9 @@ class USZipCodeSingleLookupExample {
         lookup.state = "California"
         lookup.zipcode = "94043"
         
+        // Uncomment the below line to add a custom parameter to a lookup:
+        //lookup.addCustomParameter(parameter: "parameter", value: "value")
+        
         var error:NSError! = nil
         _ = client.sendLookup(lookup: &lookup, error: &error)
         

@@ -10,12 +10,14 @@ class USStreetSingleAddressExample {
         //            for server-to-server requests, use this code:
         //let authId = getEnvironmentVar("SMARTY_AUTH_ID") ?? ""
         //let authToken = getEnvironmentVar("SMARTY_AUTH_TOKEN") ?? ""
-        //let client = ClientBuilder(authId:authId, authToken:authToken).withLicenses(licenses:["us-core-cloud"]).buildUsStreetApiClient()
+        //let client = ClientBuilder(authId:authId, authToken:authToken).buildUsStreetApiClient()
         
         // for client-side requests (browser/mobile), use this code:
         let id = getEnvironmentVar("SMARTY_AUTH_WEB") ?? ""
         let hostname = getEnvironmentVar("SMARTY_AUTH_REFERER") ?? ""
-        let client = ClientBuilder(id: id, hostname: hostname).withLicenses(licenses:["us-core-cloud"]).buildUsStreetApiClient()
+        let client = ClientBuilder(id: id, hostname: hostname).buildUsStreetApiClient()
+        // Comment the Above line, and uncomment the below line to explicitly specify a license value:
+        //let client = ClientBuilder(id: id, hostname: hostname).withDebug().withLicenses(licenses:["us-core-cloud"]).buildUsStreetApiClient()
                 
         //        Documentation for input fields can be found at:
         //        https://smartystreets.com/docs/us-street-api#input-fields
@@ -33,6 +35,9 @@ class USStreetSingleAddressExample {
         lookup.matchStrategy = "invalid" // "invalid" is the most permissive match,
                                          // this will always return at least one result even if the address is invalid.
                                          // Refer to the documentation for additional Match Strategy options.
+        
+        // Uncomment the below line to add a custom parameter to a lookup:
+        //lookup.addCustomParameter(parameter: "parameter", value: "value")
         
         var error: NSError! = nil
         _ = client.sendLookup(lookup: &lookup, error: &error)

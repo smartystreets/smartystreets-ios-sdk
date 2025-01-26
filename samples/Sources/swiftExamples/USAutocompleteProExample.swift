@@ -10,17 +10,22 @@ class USAutocompleteProExample {
         //            for server-to-server requests, use this code:
         //let authId = getEnvironmentVar("SMARTY_AUTH_ID") ?? ""
         //let authToken = getEnvironmentVar("SMARTY_AUTH_TOKEN") ?? ""
-        //let client = ClientBuilder(authId:authId, authToken:authToken).withLicenses(licenses:["us-autocomplete-pro-cloud"]).buildUSAutocompleteProApiClient()
+        //let client = ClientBuilder(authId:authId, authToken:authToken).buildUSAutocompleteProApiClient()
         
         // for client-side requests (browser/mobile), use this code:
         let id = getEnvironmentVar("SMARTY_AUTH_WEB") ?? ""
         let hostname = getEnvironmentVar("SMARTY_AUTH_REFERER") ?? ""
-        let client = ClientBuilder(id: id, hostname: hostname).withLicenses(licenses:["us-autocomplete-pro-cloud"]).buildUSAutocompleteProApiClient()
+        let client = ClientBuilder(id: id, hostname: hostname).buildUSAutocompleteProApiClient()
+        // Comment the Above line, and uncomment the below line to explicitly specify a license value:
+        //let client = ClientBuilder(id: id, hostname: hostname).withLicenses(licenses:["us-autocomplete-pro-cloud"]).buildUSAutocompleteProApiClient()
         
         //            Documentation for input fields can be found at:
         //            https://smartystreets.com/docs/cloud/us-autocomplete-api#pro-http-request-input-fields
 
         var lookup = USAutocompleteProLookup().withSearch(search: "1042 W Center")
+        
+        // Uncomment the below line to add a custom parameter to a lookup:
+        //lookup.addCustomParameter(parameter: "parameter", value: "value")
         
         var error:NSError! = nil
         

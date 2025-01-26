@@ -12,6 +12,7 @@ import Foundation
         case enhanced
     }
     
+    private var customParamArray: [String: String] = [:]
     public var result:USExtractResult?
     public var html:Bool?
     public var aggressive:Bool?
@@ -54,5 +55,13 @@ import Foundation
         } else {
             return false
         }
+    }
+    
+    public func getCustomParamArray() -> [String: String] {
+        return self.customParamArray
+    }
+    
+    public func addCustomParameter(parameter: String, value: String) {
+        self.customParamArray.updateValue(value, forKey: parameter)
     }
 }

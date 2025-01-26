@@ -51,6 +51,9 @@ import Foundation
         if lookup.match != USExtractLookup.MatchStrategy.strict {
             request.setValue(value: lookup.match?.rawValue ?? "", HTTPParameterField: "match")
         }
+        for key in lookup.getCustomParamArray().keys {
+            request.setValue(value: lookup.getCustomParamArray()[key] ?? "", HTTPParameterField: key)
+        }
         return request
     }
 }

@@ -51,6 +51,9 @@ public class InternationalAutocompleteClient: NSObject {
         request.setValue(value: lookup.maxResults.flatMap { String($0) } ?? "10", HTTPParameterField: "max_results")
         request.setValue(value: lookup.locality ?? "", HTTPParameterField: "include_only_locality")
         request.setValue(value: lookup.postalCode ?? "", HTTPParameterField: "include_only_postal_code")
+        for key in lookup.getCustomParamArray().keys {
+            request.setValue(value: lookup.getCustomParamArray()[key] ?? "", HTTPParameterField: key)
+        }
         
         return request
     }

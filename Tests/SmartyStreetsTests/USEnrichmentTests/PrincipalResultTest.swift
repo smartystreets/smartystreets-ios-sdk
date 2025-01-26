@@ -14,7 +14,7 @@ class USEnrichmentPrincipalResultTest: XCTestCase {
     override func setUp() {
         super.setUp()
         expectedJsonInput = """
-        {"data_set_name":"property","data_subset_name":"principal","smarty_key":"xxx"}
+        {"city":"2","custom_param_array":{},"data_set_name":"property","data_subset_name":"principal","etag":"6","exclude_array":["9","10"],"freeform":"5","include_array":["7","8"],"smarty_key":"xxx","state":"3","street":"1","zipcode":"4"}
         """
     
         
@@ -31,7 +31,20 @@ class USEnrichmentPrincipalResultTest: XCTestCase {
     }
     
     func testLookupSerialization() {
-        let lookup = PropertyPrincipalEnrichmentLookup(smartyKey: "xxx")
+        let inputLookup = EnrichmentLookup()
+        inputLookup.setSmartyKey(smarty_key: "xxx")
+        inputLookup.setStreet(street: "1")
+        inputLookup.setCity(city: "2")
+        inputLookup.setState(state: "3")
+        inputLookup.setZipcode(zipcode: "4")
+        inputLookup.setFreeform(freeform: "5")
+        inputLookup.setEtag(etag: "6")
+        inputLookup.addIncludeAttribute(attribute: "7")
+        inputLookup.addIncludeAttribute(attribute: "8")
+        inputLookup.addExcludeAttribute(attribute: "9")
+        inputLookup.addExcludeAttribute(attribute: "10")
+        
+        let lookup = PropertyPrincipalEnrichmentLookup(lookup: inputLookup)
         let actualBytes = serializer.Serialize(obj: lookup, error: &self.error)
         
         let data = Data(base64Encoded: (actualBytes?.base64EncodedString())!)

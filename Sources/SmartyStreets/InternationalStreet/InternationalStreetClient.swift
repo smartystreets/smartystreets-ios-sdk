@@ -50,6 +50,10 @@ public class InternationalStreetClient: NSObject {
         request.setValue(value: lookup.administrativeArea ?? "", HTTPParameterField: "administrative_area")
         request.setValue(value: lookup.postalCode ?? "", HTTPParameterField: "postal_code")
         
+        for key in lookup.getCustomParamArray().keys {
+            request.setValue(value: lookup.getCustomParamArray()[key] ?? "", HTTPParameterField: key)
+        }
+        
         return request
     }
     
