@@ -25,8 +25,9 @@ class InternationalCandidateTests: XCTestCase {
                 "country_iso_3": "14",
                 "super_administrative_area": "15",
                 "administrative_area": "16",
-                "administrative_area_short": "16.1",
-                "administrative_area_long": "16.2",
+                "administrative_area_iso2": "16.1",
+                "administrative_area_short": "16.2",
+                "administrative_area_long": "16.3",
                 "sub_administrative_area": "17",
                 "dependent_locality": "18",
                 "dependent_locality_name": "19",
@@ -174,8 +175,9 @@ class InternationalCandidateTests: XCTestCase {
         XCTAssertEqual("14", components.countryIso3)
         XCTAssertEqual("15", components.superAdministrativeArea)
         XCTAssertEqual("16", components.administrativeArea)
-        XCTAssertEqual("16.1", components.administrativeAreaShort)
-        XCTAssertEqual("16.2", components.administrativeAreaLong)
+        XCTAssertEqual("16.1", components.administrativeAreaISO2)
+        XCTAssertEqual("16.2", components.administrativeAreaShort)
+        XCTAssertEqual("16.3", components.administrativeAreaLong)
         XCTAssertEqual("17", components.subAdministrativeArea)
         XCTAssertEqual("18", components.dependentLocality)
         XCTAssertEqual("19", components.dependentLocalityName)
