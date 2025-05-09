@@ -6,6 +6,7 @@ import Foundation
     public var countryIso3:String?
     public var superAdministrativeArea:String?
     public var administrativeArea:String?
+    public var administrativeAreaISO2:String?
     public var administrativeAreaShort:String?
     public var administrativeAreaLong:String?
     public var subAdministrativeArea:String?
@@ -58,6 +59,7 @@ import Foundation
         case countryIso3 = "country_iso_3"
         case superAdministrativeArea = "super_administrative_area"
         case administrativeArea = "administrative_area"
+        case administrativeAreaISO2 = "administrative_area_iso2"
         case administrativeAreaShort = "administrative_area_short"
         case administrativeAreaLong = "administrative_area_long"
         case subAdministrativeArea = "sub_administrative_area"
@@ -111,6 +113,7 @@ import Foundation
         self.countryIso3 = dictionary["country_iso_3"] as? String
         self.superAdministrativeArea = dictionary["super_administrative_area"] as? String
         self.administrativeArea = dictionary["administrative_area"] as? String
+        self.administrativeAreaISO2 = dictionary["administrative_area_iso2"] as? String
         self.administrativeAreaShort = dictionary["administrative_area_short"] as? String
         self.administrativeAreaLong = dictionary["administrative_area_long"] as? String
         self.subAdministrativeArea = dictionary["sub_administrative_area"] as? String
