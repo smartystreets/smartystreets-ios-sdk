@@ -74,7 +74,22 @@ class USStreetCandidateTests: XCTestCase {
                 "lacslink_indicator": "50",
                 "suitelink_match": true,
                 "dpv_no_stat": "51",
-                "enhanced_match": "52"
+                "enhanced_match": "52",
+                "components": [
+                    "primary_number": ["status": "confirmed", "changes": ["spelling"]],
+                    "street_name": ["status": "unconfirmed", "changes": ["added"]],
+                    "street_predirection": ["status": "confirmed", "changes": ["spelling"]],
+                    "street_postdirection": ["status": "unconfirmed", "changes": ["replaced"]],
+                    "street_suffix": ["status": "confirmed", "changes": ["spelling"]],
+                    "secondary_number": ["status": "confirmed", "changes": ["added"]],
+                    "secondary_designator": ["status": "confirmed", "changes": ["replaced"]],
+                    "extra_secondary_number": ["status": "unconfirmed", "changes": ["spelling"]],
+                    "extra_secondary_designator": ["status": "confirmed", "changes": ["added"]],
+                    "city_name": ["status": "confirmed", "changes": ["added"]],
+                    "state_abbreviation": ["status": "confirmed", "changes": ["spelling"]],
+                    "zipcode": ["status": "confirmed", "changes": ["replaced"]],
+                    "plus4_code": ["status": "unconfirmed"]
+                ]
             ]
         ]
         self.error = nil
@@ -183,5 +198,33 @@ class USStreetCandidateTests: XCTestCase {
         XCTAssertEqual(true, analysis.isSuiteLinkMatch)
         XCTAssertEqual("51", analysis.noStat)
         XCTAssertEqual("52", analysis.enhancedMatch)
+        
+        let ca = analysis.components!
+            XCTAssertEqual("confirmed", ca.primaryNumber?.status)
+            XCTAssertEqual(["spelling"], ca.primaryNumber?.changes)
+            XCTAssertEqual("unconfirmed", ca.streetName?.status)
+            XCTAssertEqual(["added"], ca.streetName?.changes)
+            XCTAssertEqual("confirmed", ca.streetPredirection?.status)
+            XCTAssertEqual(["spelling"], ca.streetPredirection?.changes)
+            XCTAssertEqual("unconfirmed", ca.streetPostdirection?.status)
+            XCTAssertEqual(["replaced"], ca.streetPostdirection?.changes)
+            XCTAssertEqual("confirmed", ca.streetSuffix?.status)
+            XCTAssertEqual(["spelling"], ca.streetSuffix?.changes)
+            XCTAssertEqual("confirmed", ca.secondaryNumber?.status)
+            XCTAssertEqual(["added"], ca.secondaryNumber?.changes)
+            XCTAssertEqual("confirmed", ca.secondaryDesignator?.status)
+            XCTAssertEqual(["replaced"], ca.secondaryDesignator?.changes)
+            XCTAssertEqual("unconfirmed", ca.extraSecondaryNumber?.status)
+            XCTAssertEqual(["spelling"], ca.extraSecondaryNumber?.changes)
+            XCTAssertEqual("confirmed", ca.extraSecondaryDesignator?.status)
+            XCTAssertEqual(["added"], ca.extraSecondaryDesignator?.changes)
+            XCTAssertEqual("confirmed", ca.cityName?.status)
+            XCTAssertEqual(["added"], ca.cityName?.changes)
+            XCTAssertEqual("confirmed", ca.stateAbbreviation?.status)
+            XCTAssertEqual(["spelling"], ca.stateAbbreviation?.changes)
+            XCTAssertEqual("confirmed", ca.zipcode?.status)
+            XCTAssertEqual(["replaced"], ca.zipcode?.changes)
+            XCTAssertEqual("unconfirmed", ca.plus4Code?.status)
+            XCTAssertEqual(nil, ca.plus4Code?.changes)
     }
 }
