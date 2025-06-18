@@ -56,6 +56,7 @@ class USReverseGeoExample {
                 \nState Abbreviation: \(address.stateAbbreviation ?? "")
                 \nZIP Code: \(address.zipcode ?? "")
                 \nLicense: \(coordinate.getLicense())
+                \nSmartykey: \(address.smartykey ?? "")
                 """)
         }
         return output
