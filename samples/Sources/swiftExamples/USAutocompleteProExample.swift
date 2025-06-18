@@ -16,8 +16,6 @@ class USAutocompleteProExample {
         let id = getEnvironmentVar("SMARTY_AUTH_WEB") ?? ""
         let hostname = getEnvironmentVar("SMARTY_AUTH_REFERER") ?? ""
         let client = ClientBuilder(id: id, hostname: hostname).buildUSAutocompleteProApiClient()
-        // Comment the Above line, and uncomment the below line to explicitly specify a license value:
-        //let client = ClientBuilder(id: id, hostname: hostname).withLicenses(licenses:["us-autocomplete-pro-cloud"]).buildUSAutocompleteProApiClient()
         
         //            Documentation for input fields can be found at:
         //            https://smartystreets.com/docs/cloud/us-autocomplete-api#pro-http-request-input-fields

@@ -18,8 +18,6 @@ class USEnrichmentExample{
         let id = getEnvironmentVar("SMARTY_AUTH_WEB") ?? ""
         let hostname = getEnvironmentVar("SMARTY_AUTH_REFERER") ?? ""
         let client = ClientBuilder(id: id, hostname: hostname).buildUsEnrichmentApiClient()
-        // Comment the Above line, and uncomment the below line to explicitly specify a license value:
-        //let client = ClientBuilder(id: credentials[0], hostname: credentials[1]).with_licenses([<insert license string here]).buildUsEnrichmentApiClient()
         
         let smartyKey = ""
         // Comment the above line, and uncomment the below line to make a call with ONLY a SmartyKey
