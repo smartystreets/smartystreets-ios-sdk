@@ -16,8 +16,6 @@ class USReverseGeoExample {
         let id = getEnvironmentVar("SMARTY_AUTH_WEB") ?? ""
         let hostname = getEnvironmentVar("SMARTY_AUTH_REFERER") ?? ""
         let client = ClientBuilder(id: id, hostname: hostname).buildUsReverseGeoApiClient()
-        // Comment the Above line, and uncomment the below line to explicitly specify a license value:
-        //let client = ClientBuilder(id: id, hostname: hostname).withLicenses(licenses:["us-reverse-geocoding-cloud"]).buildUsReverseGeoApiClient()
         
         // Documentation for input fields can be found at:
         // https://smartystreets.com/docs/cloud/us-reverse-geo-api#http-input-fields
@@ -58,6 +56,7 @@ class USReverseGeoExample {
                 \nState Abbreviation: \(address.stateAbbreviation ?? "")
                 \nZIP Code: \(address.zipcode ?? "")
                 \nLicense: \(coordinate.getLicense())
+                \nSmartykey: \(address.smartykey ?? "")
                 """)
         }
         return output

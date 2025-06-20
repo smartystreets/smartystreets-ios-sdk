@@ -16,8 +16,6 @@ class InternationalStreetExample {
         let id = getEnvironmentVar("SMARTY_AUTH_WEB") ?? ""
         let hostname = getEnvironmentVar("SMARTY_AUTH_REFERER") ?? ""
         let client = ClientBuilder(id: id, hostname: hostname).buildInternationalStreetApiClient()
-        // Comment the Above line, and uncomment the below line to explicitly specify a license value:
-        //let client = ClientBuilder(id: id, hostname: hostname).withLicenses(licenses: ["international-global-plus-cloud"]).buildInternationalStreetApiClient()
         
         // Documentation for input fields can be found at:
         // https://smartystreets.com/docs/cloud/international-street-api#http-input-fields

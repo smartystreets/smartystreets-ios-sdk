@@ -16,8 +16,6 @@ class USStreetSingleAddressExample {
         let id = getEnvironmentVar("SMARTY_AUTH_WEB") ?? ""
         let hostname = getEnvironmentVar("SMARTY_AUTH_REFERER") ?? ""
         let client = ClientBuilder(id: id, hostname: hostname).buildUsStreetApiClient()
-        // Comment the Above line, and uncomment the below line to explicitly specify a license value:
-        //let client = ClientBuilder(id: id, hostname: hostname).withDebug().withLicenses(licenses:["us-core-cloud"]).buildUsStreetApiClient()
                 
         //        Documentation for input fields can be found at:
         //        https://smartystreets.com/docs/us-street-api#input-fields

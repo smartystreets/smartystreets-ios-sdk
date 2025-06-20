@@ -16,8 +16,6 @@ class USStreetMultipleAddressExample {
         let id = getEnvironmentVar("SMARTY_AUTH_WEB") ?? ""
         let hostname = getEnvironmentVar("SMARTY_AUTH_REFERER") ?? ""
         let client = ClientBuilder(id: id, hostname: hostname).buildUsStreetApiClient()
-        // Comment the Above line, and uncomment the below line to explicitly specify a license value:
-        //let client = ClientBuilder(id: id, hostname: hostname).withLicenses(licenses:["us-core-cloud"]).buildUsStreetApiClient()
                 
         let batch = USStreetBatch()
         var error:NSError! = nil
