@@ -30,6 +30,6 @@ public class RiskEnrichmentLookup: EnrichmentLookup {
     }
     
     override public func deserializeAndSetResults(serializer: SmartySerializer, payload: Data, error: UnsafeMutablePointer<NSError?>) {
-        self.results = serializer.Deserialize(payload: payload, error: &error.pointee) as? [PrincipalResult]
+        self.results = serializer.Deserialize(payload: payload, error: &error.pointee) as? [RiskResult]
     }
 }
