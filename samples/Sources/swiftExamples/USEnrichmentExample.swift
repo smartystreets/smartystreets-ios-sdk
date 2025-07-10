@@ -10,15 +10,15 @@ class USEnrichmentExample{
         //            https://www.smartystreets.com/docs/cloud/licensing
         //            We recommend storing your authentication credentials in environment variables.
         //            for server-to-server requests, use this code:
-        //let authId = getEnvironmentVar("SMARTY_AUTH_ID") ?? ""
-        //let authToken = getEnvironmentVar("SMARTY_AUTH_TOKEN") ?? ""
-        //let client = ClientBuilder(authId: authId, authToken: authToken).buildUsEnrichmentApiClient()
+        let authId = getEnvironmentVar("SMARTY_AUTH_ID") ?? ""
+        let authToken = getEnvironmentVar("SMARTY_AUTH_TOKEN") ?? ""
+        let client = ClientBuilder(authId: authId, authToken: authToken).buildUsEnrichmentApiClient()
         
         // for client-side requests (browser/mobile), use this code:
-        let id = getEnvironmentVar("SMARTY_AUTH_WEB") ?? ""
-        let hostname = getEnvironmentVar("SMARTY_AUTH_REFERER") ?? ""
-        let client = ClientBuilder(id: id, hostname: hostname).buildUsEnrichmentApiClient()
-        
+//         let id = getEnvironmentVar("SMARTY_AUTH_WEB") ?? ""
+//         let hostname = getEnvironmentVar("SMARTY_AUTH_REFERER") ?? ""
+//         let client = ClientBuilder(id: id, hostname: hostname).buildUsEnrichmentApiClient()
+
         let smartyKey = ""
         // Comment the above line, and uncomment the below line to make a call with ONLY a SmartyKey
         //let smartyKey = "325023201"
@@ -47,7 +47,7 @@ class USEnrichmentExample{
         // Uncomment the below line to add a custom parameter to a lookup:
         //lookup.addCustomParameter(parameter: "parameter", value: "value")
         
-        let lookupType = "principal"
+        let lookupType = "geo-reference"
         
         if (smartyKey == "") {
             if lookupType.lowercased() == "principal" {
