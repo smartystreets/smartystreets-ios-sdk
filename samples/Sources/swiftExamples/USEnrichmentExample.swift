@@ -15,13 +15,13 @@ class USEnrichmentExample{
         let client = ClientBuilder(authId: authId, authToken: authToken).buildUsEnrichmentApiClient()
         
         // for client-side requests (browser/mobile), use this code:
-//         let id = getEnvironmentVar("SMARTY_AUTH_WEB") ?? ""
-//         let hostname = getEnvironmentVar("SMARTY_AUTH_REFERER") ?? ""
-//         let client = ClientBuilder(id: id, hostname: hostname).buildUsEnrichmentApiClient()
+        // let id = getEnvironmentVar("SMARTY_AUTH_WEB") ?? ""
+        // let hostname = getEnvironmentVar("SMARTY_AUTH_REFERER") ?? ""
+        // let client = ClientBuilder(id: id, hostname: hostname).buildUsEnrichmentApiClient()
 
         let smartyKey = ""
         // Comment the above line, and uncomment the below line to make a call with ONLY a SmartyKey
-        //let smartyKey = "325023201"
+        // let smartyKey = "325023201"
         
         let lookup = EnrichmentLookup()
         lookup.setStreet(street: "56 Union Ave")
@@ -47,18 +47,21 @@ class USEnrichmentExample{
         // Uncomment the below line to add a custom parameter to a lookup:
         //lookup.addCustomParameter(parameter: "parameter", value: "value")
         
-        let lookupType = "geo-reference"
+        let lookupType = "principal"
         
         if (smartyKey == "") {
             if lookupType.lowercased() == "principal" {
                 let results = client.sendPropertyPrincipalLookup(inputLookup: lookup, error: &error)
-                return try self.outputPrincipalResults(results: [results?[0].attributes])
+                return try self.outputPrincipalResults(results: [results?[0]])
             } else if lookupType.lowercased() == "financial" {
                 let results = client.sendPropertyFinancialLookup(inputLookup: lookup, error: &error)
-                return try self.outputFinancialResults(results: [results?[0].attributes])
+                return try self.outputFinancialResults(results: [results?[0]])
             } else if lookupType.lowercased() == "geo-reference" {
                 let results = client.sendGeoReferenceLookup(inputLookup: lookup, error: &error)
-                return try self.outputGeoReferenceResults(results: [results?[0].attributes])
+                return try self.outputGeoReferenceResults(results: [results?[0]])
+            } else if lookupType.lowercased() == "risk" {
+                let results = client.sendRiskLookup(inputLookup: lookup, error: &error)
+                return try self.outputRiskResults(results: [results?[0]])
             } else if lookupType.lowercased() == "secondary" {
                 let results = client.sendSecondaryLookup(inputLookup: lookup, error: &error)
                 return try self.outputSecondaryResults(results: [results?[0]])
@@ -70,13 +73,16 @@ class USEnrichmentExample{
         // Use a 'lookup' call, like those above, to make an API call with additional parameters.
         } else if lookupType.lowercased() == "principal" {
             let results = client.sendPropertyPrincipalLookup(smartyKey: smartyKey, error: &error)
-            return try self.outputPrincipalResults(results: [results?[0].attributes])
+            return try self.outputPrincipalResults(results: [results?[0]])
         } else if lookupType.lowercased() == "financial" {
             let results = client.sendPropertyFinancialLookup(smartyKey: smartyKey, error: &error)
-            return try self.outputFinancialResults(results: [results?[0].attributes])
+            return try self.outputFinancialResults(results: [results?[0]])
         } else if lookupType.lowercased() == "geo-reference" {
             let results = client.sendGeoReferenceLookup(smartyKey: smartyKey, error: &error)
-            return try self.outputGeoReferenceResults(results: [results?[0].attributes])
+            return try self.outputGeoReferenceResults(results: [results?[0]])
+        } else if lookupType.lowercased() == "risk" {
+            let results = client.sendRiskLookup(smartyKey: smartyKey, error: &error)
+            return try self.outputRiskResults(results: [results?[0]])
         } else if lookupType.lowercased() == "secondary" {
             let results = client.sendSecondaryLookup(smartyKey: smartyKey, error: &error)
             return try self.outputSecondaryResults(results: [results?[0]])
@@ -88,7 +94,7 @@ class USEnrichmentExample{
         return "lookupType unknown"
     }
     
-    func outputFinancialResults(results: [FinancialAttributes?]) throws -> String {
+    func outputFinancialResults(results: [FinancialResult?]) throws -> String {
         if let error = error {
             let output = """
             Domain: \(error.domain)
@@ -114,7 +120,7 @@ class USEnrichmentExample{
         return output
     }
     
-    func outputPrincipalResults(results: [PrincipalAttributes?]) throws -> String {
+    func outputPrincipalResults(results: [PrincipalResult?]) throws -> String {
         if let error = error {
             let output = """
             Domain: \(error.domain)
@@ -140,7 +146,7 @@ class USEnrichmentExample{
         return output
     }
     
-    func outputGeoReferenceResults(results: [GeoReferenceAttributes?]) throws -> String {
+    func outputGeoReferenceResults(results: [GeoReferenceResult?]) throws -> String {
         if let error = error {
             let output = """
             Domain: \(error.domain)
@@ -166,6 +172,32 @@ class USEnrichmentExample{
         return output
     }
     
+    func outputRiskResults(results: [RiskResult?]) throws -> String {
+        if let error = error {
+            let output = """
+            Domain: \(error.domain)
+            Error Code: \(error.code)
+            Description:\n\(error.userInfo[NSLocalizedDescriptionKey] as! NSString)
+            """
+            NSLog(output)
+            return output
+        }
+
+        var output = "Results: \n"
+
+        for result in results {
+            let encoder = JSONEncoder()
+            let jsonData = try encoder.encode(result)
+            let jsonString = String(data: jsonData, encoding: .utf8)
+            output.append(jsonString ?? "[]")
+            output.append("\n******************************\n")
+            }
+
+        output.append("\n******************************\n")
+
+        return output
+    }
+
     func outputSecondaryResults(results: [SecondaryResult?]) throws -> String {
         if let error = error {
             let output = """
