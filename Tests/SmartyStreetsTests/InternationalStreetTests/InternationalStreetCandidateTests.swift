@@ -73,6 +73,7 @@ class InternationalCandidateTests: XCTestCase {
                 "route": "116",
                 "route_number": "117",
                 "route_type": "118",
+                "use_indicator": "119",
             ],
             "metadata": [
                 "latitude": 52.0,
@@ -223,7 +224,8 @@ class InternationalCandidateTests: XCTestCase {
         XCTAssertEqual("116", components.route)
         XCTAssertEqual("117", components.routeNumber)
         XCTAssertEqual("118", components.routeType)
-        
+        XCTAssertEqual("119", components.useIndicator)
+
         let metadata = candidate.metadata!
         XCTAssertNotNil(metadata)
         XCTAssertEqual(52, metadata.latitude)
