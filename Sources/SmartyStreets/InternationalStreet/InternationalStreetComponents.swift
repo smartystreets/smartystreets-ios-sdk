@@ -54,7 +54,6 @@ import Foundation
     public var route:String?
     public var routeNumber:String?
     public var routeType:String?
-    public var useIndicator:String?
 
     enum CodingKeys: String, CodingKey {
         case countryIso3 = "country_iso_3"
@@ -108,7 +107,6 @@ import Foundation
         case route = "route"
         case routeNumber = "route_number"
         case routeType = "route_type"
-        case useIndicator = "use_indicator"
     }
     
     init(dictionary:NSDictionary) {
@@ -163,6 +161,5 @@ import Foundation
         self.route = dictionary["route"] as? String
         self.routeNumber = dictionary["route_number"] as? String
         self.routeType = dictionary["route_type"] as? String
-        self.useIndicator = dictionary["use_indicator"] as? String
     }
 }

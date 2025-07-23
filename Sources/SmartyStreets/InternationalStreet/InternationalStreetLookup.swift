@@ -29,7 +29,8 @@ import Foundation
     public var locality:String?
     public var administrativeArea:String?
     public var postalCode:String?
-    
+    public var features:String?
+
     override public init() {    }
     
     public init(freeform:String, country:String, inputId:String?) {

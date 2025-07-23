@@ -73,14 +73,14 @@ class InternationalCandidateTests: XCTestCase {
                 "route": "116",
                 "route_number": "117",
                 "route_type": "118",
-                "use_indicator": "119",
             ],
             "metadata": [
                 "latitude": 52.0,
                 "longitude": 53.0,
                 "geocode_precision": "54",
                 "max_geocode_precision": "55",
-                "address_format": "56"
+                "address_format": "56",
+                "occupant_use": "56.1"
             ],
             "analysis": [
                 "verification_status": "57",
@@ -224,7 +224,6 @@ class InternationalCandidateTests: XCTestCase {
         XCTAssertEqual("116", components.route)
         XCTAssertEqual("117", components.routeNumber)
         XCTAssertEqual("118", components.routeType)
-        XCTAssertEqual("119", components.useIndicator)
 
         let metadata = candidate.metadata!
         XCTAssertNotNil(metadata)
@@ -233,7 +232,8 @@ class InternationalCandidateTests: XCTestCase {
         XCTAssertEqual("54", metadata.geocodePrecision)
         XCTAssertEqual("55", metadata.maxGeocodePrecision)
         XCTAssertEqual("56", metadata.addressFormat)
-        
+        XCTAssertEqual("56.1", metadata.occupantUse)
+
         let analysis = candidate.analysis!
         XCTAssertNotNil(analysis)
         XCTAssertEqual("57", analysis.verificationStatus)
