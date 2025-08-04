@@ -1,9 +1,9 @@
 import Foundation
 
-public struct PrincipalResult: Codable {
+public struct RiskResult: Codable {
     public let smartyKey, dataSetName, dataSubsetName: String?
     public let matchedAddress: MatchedAddress?
-    public let attributes: PrincipalAttributes?
+    public let attributes: RiskAttributes?
 
     enum CodingKeys: String, CodingKey {
         case smartyKey = "smarty_key"
