@@ -30,7 +30,6 @@ class RetrySender: SmartySender {
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     
     func trySendingRequest(request:SmartyRequest, attempts:Int, error: inout NSError!) -> SmartyResponse! {
-        print(request.getUrl())
         let response:SmartyResponse! = self.inner.sendRequest(request: request, error: &error)
         
         if response == nil {
