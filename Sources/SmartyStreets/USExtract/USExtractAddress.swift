@@ -21,7 +21,6 @@ import Foundation
     
     init(dictionary: NSDictionary) {
         super.init()
-        print(dictionary)
         self.text = dictionary["text"] as? String
         self.verified = dictionary["verified"] as? Bool
         self.line = dictionary["line"] as? Int
