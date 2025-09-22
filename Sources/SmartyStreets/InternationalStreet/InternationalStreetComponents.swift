@@ -54,7 +54,7 @@ import Foundation
     public var route:String?
     public var routeNumber:String?
     public var routeType:String?
-    
+
     enum CodingKeys: String, CodingKey {
         case countryIso3 = "country_iso_3"
         case superAdministrativeArea = "super_administrative_area"

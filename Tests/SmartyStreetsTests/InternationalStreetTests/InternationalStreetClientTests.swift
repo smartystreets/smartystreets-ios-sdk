@@ -51,7 +51,8 @@ class InternationalStreetClientTests: XCTestCase {
         lookup.locality = "7"
         lookup.administrativeArea = "8"
         lookup.postalCode = "9"
-        lookup.addCustomParameter(parameter: "custom", value: "10")
+        lookup.features = "10"
+        lookup.addCustomParameter(parameter: "custom", value: "11")
         
         _ = client.sendLookup(lookup: &lookup, error: &self.error)
         
@@ -67,7 +68,8 @@ class InternationalStreetClientTests: XCTestCase {
         XCTAssertEqual("7" , capturingSender.request.parameters["locality"])
         XCTAssertEqual("8" , capturingSender.request.parameters["administrative_area"])
         XCTAssertEqual("9" , capturingSender.request.parameters["postal_code"])
-        XCTAssertEqual("10" , capturingSender.request.parameters["custom"])
+        XCTAssertEqual("10" , capturingSender.request.parameters["features"])
+        XCTAssertEqual("11" , capturingSender.request.parameters["custom"])
     }
     
     func testEmptyLookupRejected() {
