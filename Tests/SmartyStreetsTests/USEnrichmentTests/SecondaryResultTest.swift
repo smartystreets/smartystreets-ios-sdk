@@ -12,7 +12,7 @@ class USEnrichmentSecondaryResultTest: XCTestCase {
     override func setUp() {
         super.setUp()
         expectedJsonInput = """
-        {"city":"2","custom_param_array":{},"data_set_name":"secondary","data_subset_name":"","etag":"6","exclude_array":["9","10"],"freeform":"5","include_array":["7","8"],"smarty_key":"xxx","state":"3","street":"1","zipcode":"4"}
+        {"city":"2","custom_param_array":{},"data_set_name":"secondary","data_subset_name":"","etag":"6","exclude_array":["9","10"],"features":"5.1","freeform":"5","include_array":["7","8"],"smarty_key":"xxx","state":"3","street":"1","zipcode":"4"}
         """
         
         sobj = """
@@ -90,6 +90,7 @@ class USEnrichmentSecondaryResultTest: XCTestCase {
         inputLookup.setCity(city: "2")
         inputLookup.setState(state: "3")
         inputLookup.setZipcode(zipcode: "4")
+        inputLookup.setFeatures(features: "5.1")
         inputLookup.setFreeform(freeform: "5")
         inputLookup.setEtag(etag: "6")
         inputLookup.addIncludeAttribute(attribute: "7")

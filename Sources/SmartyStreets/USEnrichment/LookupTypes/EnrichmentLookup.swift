@@ -11,6 +11,7 @@ public class EnrichmentLookup: Encodable {
     private var state: String
     private var zipcode: String
     private var freeform: String
+    private var features: String
     private var etag: String
     private var custom_param_array: [String: String] = [:]
 
@@ -25,6 +26,7 @@ public class EnrichmentLookup: Encodable {
         self.state = ""
         self.zipcode = ""
         self.freeform = ""
+        self.features = ""
         self.etag = ""
     }
     
@@ -39,6 +41,7 @@ public class EnrichmentLookup: Encodable {
         self.state = ""
         self.zipcode = ""
         self.freeform = ""
+        self.features = ""
         self.etag = ""
     }
 
@@ -82,6 +85,10 @@ public class EnrichmentLookup: Encodable {
         return self.freeform
     }
     
+    public func getFeatures() -> String {
+        return self.features
+    }
+
     public func getEtag() -> String{
         return self.etag
     }
@@ -122,6 +129,10 @@ public class EnrichmentLookup: Encodable {
         self.freeform = freeform
     }
     
+    public func setFeatures(features: String) {
+        self.features = features
+    }
+
     public func setEtag(etag: String) {
         self.etag = etag
     }

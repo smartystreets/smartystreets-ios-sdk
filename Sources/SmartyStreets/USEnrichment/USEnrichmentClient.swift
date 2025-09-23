@@ -221,6 +221,9 @@ public class USEnrichmentClient: NSObject {
         if (lookup.getFreeform() != "") {
             request.setValue(value: lookup.getFreeform(), HTTPParameterField: "freeform")
         }
+        if (lookup.getFeatures() != "") {
+            request.setValue(value: lookup.getFeatures(), HTTPParameterField: "features")
+        }
         for key in lookup.getCustomParamArray().keys {
             request.setValue(value: lookup.getCustomParamArray()[key] ?? "", HTTPParameterField: key)
         }

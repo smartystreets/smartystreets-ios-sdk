@@ -23,6 +23,7 @@ public class PropertyFinancialEnrichmentLookup: EnrichmentLookup {
         self.setState(state: lookup.getState())
         self.setZipcode(zipcode: lookup.getZipcode())
         self.setFreeform(freeform: lookup.getFreeform())
+        self.setFeatures(features: lookup.getFeatures())
         self.setEtag(etag: lookup.getEtag())
         for key in lookup.getCustomParamArray().keys {
             self.addCustomParameter(parameter: key, value: lookup.getCustomParamArray()[key] ?? "")

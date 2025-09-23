@@ -30,6 +30,7 @@ public struct PrincipalAttributes: Codable {
     let drivewayType, effectiveYearBuilt, elevationFeet, elevator: String?
     let equestrianArena, escalator, exerciseRoom, exteriorWalls: String?
     let familyRoom, fence, fenceArea, fipsCode: String?
+    let financialHistory: [PrincipalFinancialHistoryEntry]
     let fireResistanceCode, fireSprinklersFlag, fireplace, fireplaceNumber: String?
     let firstName, firstName2, firstName3, firstName4: String?
     let flooring, foundation, gameRoom, garage: String?
@@ -207,6 +208,7 @@ public struct PrincipalAttributes: Codable {
         case familyRoom = "family_room"
         case fence
         case fenceArea = "fence_area"
+        case financialHistory = "financial_history"
         case fipsCode = "fips_code"
         case fireResistanceCode = "fire_resistance_code"
         case fireSprinklersFlag = "fire_sprinklers_flag"

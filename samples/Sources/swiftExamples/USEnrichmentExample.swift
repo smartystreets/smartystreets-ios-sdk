@@ -28,6 +28,7 @@ class USEnrichmentExample{
         lookup.setCity(city: "Somerville")
         lookup.setState(state: "NJ")
         lookup.setZipcode(zipcode: "08876")
+        lookup.setFeatures(features: "financial")
         
         // Uncomment the below line to make a call with SmartyKey:
         //lookup.setSmartyKey(smarty_key: "325023201")
