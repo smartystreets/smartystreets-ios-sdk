@@ -14,6 +14,7 @@ import Foundation
     var urlPrefix:String!
     var proxy:NSDictionary!
     var licenses:[String] = []
+    var queries:[String:String] = [:]
     var internationalStreetApiURL:String = "https://international-street.api.smarty.com/verify"
     var internationalAutocompleteApiURL:String = "https://international-autocomplete.api.smarty.com/v2/lookup"
     var usAutocompleteProApiURL:String = "https://us-autocomplete-pro.api.smarty.com/lookup"
@@ -114,6 +115,34 @@ import Foundation
         
         self.licenses.append(contentsOf: licenses)
         return self
+    }
+
+    public func withCustomQuery(key:String, value:String) -> ClientBuilder {
+        //         Allows caller to set custom query key value pairs
+        //
+        //         Returns self to accommodate method chaining.
+        self.queries[key] = value
+        return self
+    }
+
+    public func withCustomCommaSeparatedQuery(key:String, value:String) -> ClientBuilder {
+        //         Allows caller to set custom query key value pairs, appends new values to 
+        //         existing key value pairs separated by comma 
+        //
+        //         Returns self to accommodate method chaining.
+        if let current = self.queries[key] {
+            self.queries[key] = current + "," + value
+        } else {
+            self.queries[key] = value
+        }
+        return self
+    }
+
+        public func withFeatureComponentAnalysis() -> ClientBuilder {
+        //         Adds to the request query to use the component analysis feature.
+        //
+        //         Returns self to accommodate method chaining.
+        return self.withCustomCommaSeparatedQuery(key:"features",value:"component-analysis")
     }
     
     public func buildUsStreetApiClient() -> USStreetClient {
