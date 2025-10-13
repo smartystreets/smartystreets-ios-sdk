@@ -16,7 +16,6 @@ import Foundation
     var licenses:[String] = []
     var internationalStreetApiURL:String = "https://international-street.api.smarty.com/verify"
     var internationalAutocompleteApiURL:String = "https://international-autocomplete.api.smarty.com/v2/lookup"
-    var usAutocompleteApiURL:String = "https://us-autocomplete.api.smarty.com/suggest"
     var usAutocompleteProApiURL:String = "https://us-autocomplete-pro.api.smarty.com/lookup"
     var usExtractApiURL:String = "https://us-extract.api.smarty.com"
     var usStreetApiURL:String = "https://us-street.api.smarty.com/street-address"
@@ -139,12 +138,6 @@ import Foundation
         ensureURLPrefixNotNil(url: self.internationalAutocompleteApiURL)
         let serializer = InternationalAutocompleteSerializer()
         return InternationalAutocompleteClient(sender:buildSender(), serializer:serializer)
-    }
-
-    public func buildUSAutocompleteApiClient() -> USAutocompleteClient { // Deprecated
-        ensureURLPrefixNotNil(url: self.usAutocompleteApiURL)
-        let serializer = USAutocompleteSerializer()
-        return USAutocompleteClient(sender: buildSender(), serializer: serializer)
     }
     
     public func buildUSAutocompleteProApiClient() -> USAutocompleteProClient {

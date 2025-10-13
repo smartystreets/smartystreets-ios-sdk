@@ -27,6 +27,10 @@ class USExtractExample {
         lookup.addressesHaveLineBreaks = false
         lookup.addressesPerLine = 1
         lookup.match = USExtractLookup.MatchStrategy.enhanced
+        
+        // Uncomment the below line to add a custom parameter to a lookup:
+        //lookup.addCustomParameter(parameter: "parameter", value: "value")
+        
         var error: NSError! = nil
         
         _ = client.sendLookup(lookup: &lookup, error: &error)

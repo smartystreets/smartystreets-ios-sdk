@@ -1,10 +1,11 @@
 import Foundation
 
-class USAutocompleteSerializer: SmartySerializer {
+public class RiskSerializer: SmartySerializer {
     override func Serialize(obj: Any?, error: inout NSError!) -> Data! {
-        let raw:[USAutocompleteLookup]? = obj as? [USAutocompleteLookup]
+        let raw:RiskEnrichmentLookup? = obj as? RiskEnrichmentLookup
         let smartyErrors = SmartyErrors()
         let jsonEncoder = JSONEncoder()
+        jsonEncoder.outputFormatting = .sortedKeys
         if raw == nil {
             let details = [NSLocalizedDescriptionKey: "The object to be serialized is nil"]
             error = NSError(domain: smartyErrors.SSErrorDomain, code: SmartyErrors.SSErrors.ObjectNilError.rawValue, userInfo: details)
@@ -33,7 +34,7 @@ class USAutocompleteSerializer: SmartySerializer {
         }
         
         do {
-            let result:USAutocompleteResult = try jsonDecoder.decode(USAutocompleteResult.self, from: payload!)
+            let result:[RiskResult] = try jsonDecoder.decode([RiskResult].self, from: payload!)
             return result
         } catch let jsonError {
             let details = [NSLocalizedDescriptionKey:jsonError.localizedDescription]

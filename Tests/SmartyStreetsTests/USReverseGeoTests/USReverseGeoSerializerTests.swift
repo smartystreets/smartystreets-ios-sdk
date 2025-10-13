@@ -42,7 +42,7 @@ class USReverseGeoSerializerTests: XCTestCase {
     
     func testSerialize() {
         let expectedOutput = """
-        {"latitude":"44.88888889","longitude":"-111.11111111","source":""}
+        {"customParamArray":{},"latitude":"44.88888889","longitude":"-111.11111111","source":""}
         """
         
         let lookup = USReverseGeoLookup(latitude: 44.888888888, longitude: -111.111111111, source: "")

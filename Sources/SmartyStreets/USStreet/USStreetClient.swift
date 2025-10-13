@@ -80,8 +80,12 @@ public class USStreetClient: NSObject {
         populate(value: lookup.lastline, field: "lastline", request: request)
         populate(value: lookup.addressee, field: "addressee", request: request)
         populate(value: lookup.urbanization, field: "urbanization", request: request)
+        populate(value: lookup.countySource, field: "county_source", request: request)
         populate(value: lookup.matchStrategy, field: "match", request: request)
         populate(value: lookup.outputFormat, field: "format", request: request)
+        for key in lookup.getCustomParamArray().keys {
+            populate(value: lookup.getCustomParamArray()[key], field: key, request: request)
+        }
 
     }
     

@@ -6,6 +6,7 @@ import Foundation
     public var countryIso3:String?
     public var superAdministrativeArea:String?
     public var administrativeArea:String?
+    public var administrativeAreaISO2:String?
     public var administrativeAreaShort:String?
     public var administrativeAreaLong:String?
     public var subAdministrativeArea:String?
@@ -46,11 +47,19 @@ import Foundation
     public var postBox:String?
     public var postBoxType:String?
     public var postBoxNumber:String?
-    
+    public var additionalContent:String?
+    public var deliveryInstallation:String?
+    public var deliveryInstallationType:String?
+    public var deliveryInstallationQualifierName:String?
+    public var route:String?
+    public var routeNumber:String?
+    public var routeType:String?
+
     enum CodingKeys: String, CodingKey {
         case countryIso3 = "country_iso_3"
         case superAdministrativeArea = "super_administrative_area"
         case administrativeArea = "administrative_area"
+        case administrativeAreaISO2 = "administrative_area_iso2"
         case administrativeAreaShort = "administrative_area_short"
         case administrativeAreaLong = "administrative_area_long"
         case subAdministrativeArea = "sub_administrative_area"
@@ -91,12 +100,20 @@ import Foundation
         case postBox = "post_box"
         case postBoxType = "post_box_type"
         case postBoxNumber = "post_box_number"
+        case additionalContent = "additional_content"
+        case deliveryInstallation = "delivery_installation"
+        case deliveryInstallationType = "delivery_installation_type"
+        case deliveryInstallationQualifierName = "delivery_installation_qualifier_name"
+        case route = "route"
+        case routeNumber = "route_number"
+        case routeType = "route_type"
     }
     
     init(dictionary:NSDictionary) {
         self.countryIso3 = dictionary["country_iso_3"] as? String
         self.superAdministrativeArea = dictionary["super_administrative_area"] as? String
         self.administrativeArea = dictionary["administrative_area"] as? String
+        self.administrativeAreaISO2 = dictionary["administrative_area_iso2"] as? String
         self.administrativeAreaShort = dictionary["administrative_area_short"] as? String
         self.administrativeAreaLong = dictionary["administrative_area_long"] as? String
         self.subAdministrativeArea = dictionary["sub_administrative_area"] as? String
@@ -137,5 +154,12 @@ import Foundation
         self.postBox = dictionary["post_box"] as? String
         self.postBoxType = dictionary["post_box_type"] as? String
         self.postBoxNumber = dictionary["post_box_number"] as? String
+        self.additionalContent = dictionary["additional_content"] as? String
+        self.deliveryInstallation = dictionary["delivery_installation"] as? String
+        self.deliveryInstallationType = dictionary["delivery_installation_type"] as? String
+        self.deliveryInstallationQualifierName = dictionary["delivery_installation_qualifier_name"] as? String
+        self.route = dictionary["route"] as? String
+        self.routeNumber = dictionary["route_number"] as? String
+        self.routeType = dictionary["route_type"] as? String
     }
 }

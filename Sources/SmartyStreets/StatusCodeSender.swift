@@ -26,6 +26,10 @@ class StatusCodeSender: SmartySender {
         switch response?.statusCode {
         case 200:
             return response
+        case 304:
+            let details = [NSLocalizedDescriptionKey:"Not Modified. This data has not been modified since it was last retrieved."]
+            error = NSError(domain: smartyErrors.SSErrorDomain, code: SmartyErrors.SSErrors.NotModifiedInfo.rawValue, userInfo: details)
+            return response
         case 400:
             let details = [NSLocalizedDescriptionKey:"Bad Request (Malformed Payload): A GET request lacked a street field or the request body of a POST request contained malformed JSON."]
             error = NSError(domain: smartyErrors.SSErrorDomain, code: SmartyErrors.SSErrors.BadRequestError.rawValue, userInfo: details)

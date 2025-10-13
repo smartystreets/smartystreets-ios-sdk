@@ -25,8 +25,9 @@ class InternationalCandidateTests: XCTestCase {
                 "country_iso_3": "14",
                 "super_administrative_area": "15",
                 "administrative_area": "16",
-                "administrative_area_short": "16.1",
-                "administrative_area_long": "16.2",
+                "administrative_area_iso2": "16.1",
+                "administrative_area_short": "16.2",
+                "administrative_area_long": "16.3",
                 "sub_administrative_area": "17",
                 "dependent_locality": "18",
                 "dependent_locality_name": "19",
@@ -64,14 +65,22 @@ class InternationalCandidateTests: XCTestCase {
                 "level_number": "48.2",
                 "post_box": "49",
                 "post_box_type": "50",
-                "post_box_number": "51"
+                "post_box_number": "51",
+                "additional_content": "112",
+                "delivery_installation": "113",
+                "delivery_installation_type": "114",
+                "delivery_installation_qualifier_name": "115",
+                "route": "116",
+                "route_number": "117",
+                "route_type": "118",
             ],
             "metadata": [
                 "latitude": 52.0,
                 "longitude": 53.0,
                 "geocode_precision": "54",
                 "max_geocode_precision": "55",
-                "address_format": "56"
+                "address_format": "56",
+                "occupant_use": "56.1"
             ],
             "analysis": [
                 "verification_status": "57",
@@ -167,8 +176,9 @@ class InternationalCandidateTests: XCTestCase {
         XCTAssertEqual("14", components.countryIso3)
         XCTAssertEqual("15", components.superAdministrativeArea)
         XCTAssertEqual("16", components.administrativeArea)
-        XCTAssertEqual("16.1", components.administrativeAreaShort)
-        XCTAssertEqual("16.2", components.administrativeAreaLong)
+        XCTAssertEqual("16.1", components.administrativeAreaISO2)
+        XCTAssertEqual("16.2", components.administrativeAreaShort)
+        XCTAssertEqual("16.3", components.administrativeAreaLong)
         XCTAssertEqual("17", components.subAdministrativeArea)
         XCTAssertEqual("18", components.dependentLocality)
         XCTAssertEqual("19", components.dependentLocalityName)
@@ -207,7 +217,14 @@ class InternationalCandidateTests: XCTestCase {
         XCTAssertEqual("49", components.postBox)
         XCTAssertEqual("50", components.postBoxType)
         XCTAssertEqual("51", components.postBoxNumber)
-        
+        XCTAssertEqual("112", components.additionalContent)
+        XCTAssertEqual("113", components.deliveryInstallation)
+        XCTAssertEqual("114", components.deliveryInstallationType)
+        XCTAssertEqual("115", components.deliveryInstallationQualifierName)
+        XCTAssertEqual("116", components.route)
+        XCTAssertEqual("117", components.routeNumber)
+        XCTAssertEqual("118", components.routeType)
+
         let metadata = candidate.metadata!
         XCTAssertNotNil(metadata)
         XCTAssertEqual(52, metadata.latitude)
@@ -215,7 +232,8 @@ class InternationalCandidateTests: XCTestCase {
         XCTAssertEqual("54", metadata.geocodePrecision)
         XCTAssertEqual("55", metadata.maxGeocodePrecision)
         XCTAssertEqual("56", metadata.addressFormat)
-        
+        XCTAssertEqual("56.1", metadata.occupantUse)
+
         let analysis = candidate.analysis!
         XCTAssertNotNil(analysis)
         XCTAssertEqual("57", analysis.verificationStatus)

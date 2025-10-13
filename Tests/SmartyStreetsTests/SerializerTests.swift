@@ -76,7 +76,7 @@ class SerializerTests: XCTestCase {
     
     func testSerialize() {
         let expectedOutput = """
-        [{"city":"01","inputId":"04","state":"02","zipcode":"03"},{"city":"05","inputId":"08","state":"06","zipcode":"07"}]
+        [{"city":"01","customParamArray":{},"inputId":"04","state":"02","zipcode":"03"},{"city":"05","customParamArray":{},"inputId":"08","state":"06","zipcode":"07"}]
         """
         let lookup1 = USZipCodeLookup(city: "01", state: "02", zipcode: "03", inputId: "04")
         let lookup2 = USZipCodeLookup(city: "05", state: "06", zipcode: "07", inputId: "08")

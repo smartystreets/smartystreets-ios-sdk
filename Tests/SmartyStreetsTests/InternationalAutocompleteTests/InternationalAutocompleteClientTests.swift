@@ -29,6 +29,7 @@ class InternationalAutocompleteClientTests: XCTestCase {
         lookup.maxResults = 4
         lookup.postalCode = "5"
         lookup.addressID = "6"
+        lookup.addCustomParameter(parameter: "custom", value: "7")
         
         _ = client.sendLookup(lookup:&lookup, error:&error)
         
@@ -38,6 +39,7 @@ class InternationalAutocompleteClientTests: XCTestCase {
         XCTAssertEqual("4", capturingSender.request.parameters["max_results"])
         XCTAssertEqual("5", capturingSender.request.parameters["include_only_postal_code"])
         XCTAssertEqual("http://localhost/6", capturingSender.request.urlPrefix)
+        XCTAssertEqual("7", capturingSender.request.parameters["custom"])
         XCTAssertNil(self.error)
     }
 

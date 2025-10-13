@@ -19,6 +19,7 @@ import Foundation
     let SSMaxResults = 10
     let SSPreferRatio = 3
     
+    private var customParamArray: [String: String] = [:]
     public var result:USAutocompleteProResult?
     public var search:String?
     public var selected:String?
@@ -90,6 +91,10 @@ import Foundation
         }
     }
     
+    public func getCustomParamArray() -> [String: String] {
+        return self.customParamArray
+    }
+    
     public func setMaxResults(maxResults: Int, error: inout NSError?) {
         if maxResults > 0 && maxResults <= 10 {
             self.maxResults = maxResults
@@ -121,5 +126,9 @@ import Foundation
     
     public func addPreferZIPCode(zipcode:String) {
         self.preferZIPCodes?.append(zipcode)
+    }
+    
+    public func addCustomParameter(parameter: String, value: String) {
+        self.customParamArray.updateValue(value, forKey: parameter)
     }
 }

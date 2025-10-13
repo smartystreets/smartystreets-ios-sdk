@@ -1,17 +1,17 @@
 import Foundation
 
-public class PropertyFinancialEnrichmentLookup: EnrichmentLookup {
+public class RiskEnrichmentLookup: EnrichmentLookup {
     
-    public var results:[FinancialResult]?
+    public var results:[RiskResult]?
     
     init(smartyKey: String){
         self.results = nil
-        super.init(smartyKey: smartyKey, datasetName: "property", dataSubsetName: "financial")
+        super.init(smartyKey: smartyKey, datasetName: "risk", dataSubsetName: "")
     }
     
     init(lookup: EnrichmentLookup) {
         self.results = nil
-        super.init(smartyKey: lookup.getSmartyKey(), datasetName: "property", dataSubsetName: "financial")
+        super.init(smartyKey: lookup.getSmartyKey(), datasetName: "risk", dataSubsetName: "")
         for key in lookup.getIncludeAttributes() {
             self.addIncludeAttribute(attribute: key)
         }
@@ -31,8 +31,6 @@ public class PropertyFinancialEnrichmentLookup: EnrichmentLookup {
     }
     
     override public func deserializeAndSetResults(serializer: SmartySerializer, payload: Data, error: UnsafeMutablePointer<NSError?>) {
-        self.results = serializer.Deserialize(payload: payload, error: &error.pointee) as? [FinancialResult]
+        self.results = serializer.Deserialize(payload: payload, error: &error.pointee) as? [RiskResult]
     }
-    
-    
 }

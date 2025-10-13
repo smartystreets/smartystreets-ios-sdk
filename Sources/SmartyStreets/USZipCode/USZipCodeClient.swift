@@ -68,6 +68,9 @@ import Foundation
         populate(value: lookup.city, field: "city", request: request)
         populate(value: lookup.state, field: "state", request: request)
         populate(value: lookup.zipcode, field: "zipcode", request: request)
+        for key in lookup.getCustomParamArray().keys {
+            populate(value: lookup.getCustomParamArray()[key], field: key, request: request)
+        }
     }
     
     func populate(value:String!, field:String, request:SmartyRequest) {
