@@ -212,6 +212,8 @@ import Foundation
         
         httpSender = LicenseSender(licenses: self.licenses, inner: httpSender)
         
+        httpSender = CustomQuerySender(queries: self.queries, inner: httpSender)
+
         return httpSender
     }
     
