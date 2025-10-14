@@ -93,4 +93,34 @@ class ClientBuilderTests: XCTestCase {
         let client = ClientBuilder().withLicenses(licenses: licenses)
         XCTAssertEqual(licenses, client.licenses)
     }
+
+    func testWithCustomQuery() {
+        let queries = ["test":"result","other":"different"]
+        let client = ClientBuilder()
+            .withCustomQuery(key: "test", value: "result")
+            .withCustomQuery(key: "other", value: "different")
+        XCTAssertEqual(queries, client.queries)
+    }
+
+    func testWithCustomCommaSeparatedQuery() {
+        let queries = [
+            "test":"result,contains,commas", 
+            "other":"has,more,commas"
+        ]
+        let client = ClientBuilder()
+            .withCustomCommaSeparatedQuery(key: "test", value: "result")
+            .withCustomCommaSeparatedQuery(key: "test", value: "contains")
+            .withCustomCommaSeparatedQuery(key: "test", value: "commas")
+            .withCustomCommaSeparatedQuery(key: "other", value: "has")
+            .withCustomCommaSeparatedQuery(key: "other", value: "more")
+            .withCustomCommaSeparatedQuery(key: "other", value: "commas")
+
+        XCTAssertEqual(queries, client.queries)
+    }
+
+    func testWithFeaturesComponentAnalysis() {
+        let queries = ["features":"component-analysis"]
+        let client = ClientBuilder().withFeatureComponentAnalysis()
+        XCTAssertEqual(queries, client.queries)
+    }
 }
