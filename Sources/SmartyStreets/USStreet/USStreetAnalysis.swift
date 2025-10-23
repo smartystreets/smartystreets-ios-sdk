@@ -14,6 +14,7 @@ import Foundation
     public var lacsLinkIndicator:String?
     public var isSuiteLinkMatch:Bool?
     public var enhancedMatch:String?
+    public var components:USStreetComponentAnalysis?
     public var objcIsSuiteLinkMatch:NSNumber? {
         get {
             return isSuiteLinkMatch as NSNumber?
@@ -32,6 +33,7 @@ import Foundation
         case lacsLinkIndicator = "lacslink_indicator"
         case isSuiteLinkMatch = "suitelink_match"
         case enhancedMatch = "enhanced_match"
+        case components = "components"
     }
     
     init(dictionary: NSDictionary) {
@@ -46,5 +48,9 @@ import Foundation
         self.lacsLinkIndicator = dictionary["lacslink_indicator"] as? String
         self.isSuiteLinkMatch = dictionary["suitelink_match"] as? Bool
         self.enhancedMatch = dictionary["enhanced_match"] as? String
+        
+        if let componentsDict = dictionary["components"] as? NSDictionary {
+            self.components = USStreetComponentAnalysis(dictionary: componentsDict)
+        }
     }
 }
