@@ -13,7 +13,6 @@ class USStreetComponentAnalysisExample {
         let authToken = getEnvironmentVar("SMARTY_AUTH_TOKEN") ?? ""
         let client = ClientBuilder(authId:authId, authToken:authToken)
             .withFeatureComponentAnalysis()
-            .withUrl(urlPrefix: "https://us-street.api.rivendell.smartyops.net/street-address")
             .buildUsStreetApiClient()
 
         var lookup = USStreetLookup()
