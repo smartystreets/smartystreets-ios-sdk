@@ -23,6 +23,7 @@ class ClientBuilderTests: XCTestCase {
         XCTAssertEqual(client.debug, false)
         XCTAssertEqual(client.internationalStreetApiURL, "https://international-street.api.smarty.com/verify")
         XCTAssertEqual(client.internationalAutocompleteApiURL, "https://international-autocomplete.api.smarty.com/v2/lookup")
+        XCTAssertEqual(client.internationalPostalCodeApiURL, "https://international-postal-code.api.smarty.com/lookup")
         XCTAssertEqual(client.usExtractApiURL, "https://us-extract.api.smarty.com")
         XCTAssertEqual(client.usStreetApiURL, "https://us-street.api.smarty.com/street-address")
         XCTAssertEqual(client.usZipCodeApiURL, "https://us-zipcode.api.smarty.com/lookup")

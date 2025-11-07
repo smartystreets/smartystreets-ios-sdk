@@ -11,5 +11,6 @@ import Foundation
 // print(USExtractExample().run())
 // print(InternationalStreetExample().run())
 // print(InternationalAutocompleteExample().run())
+// print(InternationalPostalCodeExample().run())
 // print(USReverseGeoExample().run())
 print(try USEnrichmentExample().run())
