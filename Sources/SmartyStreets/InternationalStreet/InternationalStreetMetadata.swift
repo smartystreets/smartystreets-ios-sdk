@@ -16,6 +16,7 @@ import Foundation
         }
     }
     public var geocodePrecision:String?
+    public var geocodeClassification:String?
     public var maxGeocodePrecision:String?
     public var addressFormat:String?
     public var occupantUse:String?
@@ -24,6 +25,7 @@ import Foundation
         case latitude = "latitude"
         case longitude = "longitude"
         case geocodePrecision = "geocode_precision"
+        case geocodeClassification = "geocode_classification"
         case maxGeocodePrecision = "max_geocode_precision"
         case addressFormat = "address_format"
         case occupantUse = "occupant_use"
@@ -33,6 +35,7 @@ import Foundation
         self.latitude = dictionary["latitude"] as? Double
         self.longitude = dictionary["longitude"] as? Double
         self.geocodePrecision = dictionary["geocode_precision"] as? String
+        self.geocodeClassification = dictionary["geocode_classification"] as? String
         self.maxGeocodePrecision = dictionary["max_geocode_precision"] as? String
         self.addressFormat = dictionary["address_format"] as? String
         self.occupantUse = dictionary["occupant_use"] as? String

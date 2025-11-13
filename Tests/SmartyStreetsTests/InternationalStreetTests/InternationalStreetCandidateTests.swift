@@ -78,6 +78,7 @@ class InternationalCandidateTests: XCTestCase {
                 "latitude": 52.0,
                 "longitude": 53.0,
                 "geocode_precision": "54",
+                "geocode_classification": "multiple-point-average",
                 "max_geocode_precision": "55",
                 "address_format": "56",
                 "occupant_use": "56.1"
@@ -230,6 +231,7 @@ class InternationalCandidateTests: XCTestCase {
         XCTAssertEqual(52, metadata.latitude)
         XCTAssertEqual(53, metadata.longitude)
         XCTAssertEqual("54", metadata.geocodePrecision)
+        XCTAssertEqual("multiple-point-average", metadata.geocodeClassification)
         XCTAssertEqual("55", metadata.maxGeocodePrecision)
         XCTAssertEqual("56", metadata.addressFormat)
         XCTAssertEqual("56.1", metadata.occupantUse)
