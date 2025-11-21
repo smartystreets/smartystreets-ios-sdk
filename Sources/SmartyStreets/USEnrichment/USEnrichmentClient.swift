@@ -4,7 +4,6 @@ public class USEnrichmentClient: NSObject {
     
     private var sender:SmartySender
     private var propertyPrincipalSerializer:PropertyPrincipalSerializer
-    private var propertyFinancialSerializer:PropertyFinancialSerializer
     private var geoReferenceSerializer:GeoReferenceSerializer
     private var riskSerializer:RiskSerializer
     private var secondarySerializer:SecondarySerializer
@@ -15,33 +14,12 @@ public class USEnrichmentClient: NSObject {
         
         self.sender = sender as! SmartySender
         self.propertyPrincipalSerializer = PropertyPrincipalSerializer()
-        self.propertyFinancialSerializer = PropertyFinancialSerializer()
         self.geoReferenceSerializer = GeoReferenceSerializer()
         self.riskSerializer = RiskSerializer()
         self.secondarySerializer = SecondarySerializer()
         self.secondaryCountSerializer = SecondaryCountSerializer()
     }
-    
-    public func sendPropertyFinancialLookup(smartyKey: String, error: UnsafeMutablePointer<NSError?>) -> [FinancialResult]? {
-        let lookup = PropertyFinancialEnrichmentLookup(smartyKey: smartyKey)
-        let lookupPointer = UnsafeMutablePointer<EnrichmentLookup>.allocate(capacity: 1)
-        lookupPointer.initialize(to: lookup)
-        _ = send(lookup: lookupPointer, error: error)
-        lookupPointer.deinitialize(count: 1)
-        lookupPointer.deallocate()
-        return lookup.results
-    }
-    
-    public func sendPropertyFinancialLookup(inputLookup: EnrichmentLookup, error: UnsafeMutablePointer<NSError?>) -> [FinancialResult]? {
-        let lookup = PropertyFinancialEnrichmentLookup(lookup: inputLookup)
-        let lookupPointer = UnsafeMutablePointer<EnrichmentLookup>.allocate(capacity: 1)
-        lookupPointer.initialize(to: lookup)
-        _ = send(lookup: lookupPointer, error: error)
-        lookupPointer.deinitialize(count: 1)
-        lookupPointer.deallocate()
-        return lookup.results
-    }
-    
+
     public func sendPropertyPrincipalLookup(smartyKey: String, error: UnsafeMutablePointer<NSError?>) -> [PrincipalResult]? {
         let lookup = PropertyPrincipalEnrichmentLookup(smartyKey: smartyKey)
         let lookupPointer = UnsafeMutablePointer<EnrichmentLookup>.allocate(capacity: 1)
@@ -155,8 +133,6 @@ public class USEnrichmentClient: NSObject {
         
         if lookup.pointee is PropertyPrincipalEnrichmentLookup {
             serializer = self.propertyPrincipalSerializer
-        } else if lookup.pointee is PropertyFinancialEnrichmentLookup {
-            serializer = self.propertyFinancialSerializer
         } else if lookup.pointee is GeoReferenceEnrichmentLookup {
             serializer = self.geoReferenceSerializer
         } else if lookup.pointee is RiskEnrichmentLookup {
