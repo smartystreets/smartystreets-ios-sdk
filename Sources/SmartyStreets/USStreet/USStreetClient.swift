@@ -65,11 +65,7 @@ public class USStreetClient: NSObject {
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////
     
     func populateQueryString(lookup:USStreetLookup, request:SmartyRequest) {
-        if lookup.matchStrategy == "enhanced" && lookup.maxCandidates == 1 {
-            request.setValue(value: "5", HTTPParameterField: "candidates")
-        } else {
-            request.setValue(value: String(lookup.maxCandidates ?? 1), HTTPParameterField: "candidates")
-        }
+        request.setValue(value: String(lookup.maxCandidates ?? 1), HTTPParameterField: "candidates")
         populate(value: lookup.inputId, field: "input_id", request: request)
         populate(value: lookup.street, field: "street", request: request)
         populate(value: lookup.street2, field: "street2", request: request)
