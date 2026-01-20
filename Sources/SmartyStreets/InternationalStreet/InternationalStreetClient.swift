@@ -14,19 +14,34 @@ public class InternationalStreetClient: NSObject {
     
     @objc public func sendLookup(lookup: UnsafeMutablePointer<InternationalStreetLookup>, error: UnsafeMutablePointer<NSError?>) -> Bool {
         // Sends a Lookup object to the International Street API and stores the result in the Lookup's result field.
-        
+        return sendLookupWithAuth(lookup: lookup, authId: nil, authToken: nil, error: error)
+    }
+
+    @objc public func sendLookupWithAuth(lookup: UnsafeMutablePointer<InternationalStreetLookup>, authId:String?, authToken:String?, error: UnsafeMutablePointer<NSError?>) -> Bool {
+        // Sends a Lookup object with per-request credentials.
+        // If authId and authToken are both non-empty, they will be used for this request instead of the client-level credentials.
+        // This is useful for multi-tenant scenarios where different requests require different credentials.
+
         ensureEnoughInfo(lookup:lookup.pointee, error:&error.pointee)
         if error.pointee != nil { return false }
-        
+
         let request = buildRequest(lookup:lookup.pointee)
-        
+
+        if let authId = authId, let authToken = authToken, !authId.isEmpty, !authToken.isEmpty {
+            let credentials = "\(authId):\(authToken)"
+            if let credentialsData = credentials.data(using: .utf8) {
+                let base64Credentials = credentialsData.base64EncodedString()
+                request.setValue(value: "Basic \(base64Credentials)", HTTPHeaderField: "Authorization")
+            }
+        }
+
         let response = sender.sendRequest(request: request, error: &error.pointee)
         if error.pointee != nil { return false }
-        
+
         let candidates:[InternationalStreetCandidate]! = serializer.Deserialize(payload: response?.payload, error: &error.pointee) as? [InternationalStreetCandidate]
         if error.pointee != nil { return false }
         lookup.pointee.result = candidates
-        
+
         return true
     }
     

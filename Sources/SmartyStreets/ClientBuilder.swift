@@ -43,6 +43,11 @@ import Foundation
         self.signer = SharedCredentials(id: id, hostname: hostname)
         self.serializer = SmartySerializer()
     }
+
+    public init(basicAuthId:String, basicAuthToken:String) {
+        self.signer = BasicAuthCredentials(authId: basicAuthId, authToken: basicAuthToken)
+        self.serializer = SmartySerializer()
+    }
     
     public func retryAtMost(maxRetries:Int) -> ClientBuilder {
         //        Sets the maximum number of times to retry sending the request to the API. (Default is 5)

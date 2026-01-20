@@ -8,14 +8,14 @@ class InternationalAutocompleteExample {
         //            https://www.smartystreets.com/docs/cloud/licensing
         //            We recommend storing your authentication credentials in environment variables.
         //            for server-to-server requests, use this code:
-        //let authId = getEnvironmentVar("SMARTY_AUTH_ID") ?? ""
-        //let authToken = getEnvironmentVar("SMARTY_AUTH_TOKEN") ?? ""
-        //let client = ClientBuilder(authId:authId, authToken:authToken).buildInternationalAutocompleteApiClient()
+        let authId = getEnvironmentVar("SMARTY_AUTH_ID") ?? ""
+        let authToken = getEnvironmentVar("SMARTY_AUTH_TOKEN") ?? ""
+        let client = ClientBuilder(basicAuthId: authId, basicAuthToken: authToken).buildInternationalAutocompleteApiClient()
 
         // for client-side requests (browser/mobile), use this code:
-        let id = getEnvironmentVar("SMARTY_AUTH_WEB") ?? ""
-        let hostname = getEnvironmentVar("SMARTY_AUTH_REFERER") ?? ""
-        let client = ClientBuilder(id: id, hostname: hostname).buildInternationalAutocompleteApiClient()
+        //let id = getEnvironmentVar("SMARTY_AUTH_WEB") ?? ""
+        //let hostname = getEnvironmentVar("SMARTY_AUTH_REFERER") ?? ""
+        //let client = ClientBuilder(id: id, hostname: hostname).buildInternationalAutocompleteApiClient()
         
         // Documentation for input fields can be found at:
         // https://smartystreets.com/docs/cloud/international-address-autocomplete-api#http-input-fields

@@ -12,7 +12,7 @@ class USEnrichmentExample{
         //            for server-to-server requests, use this code:
         let authId = getEnvironmentVar("SMARTY_AUTH_ID") ?? ""
         let authToken = getEnvironmentVar("SMARTY_AUTH_TOKEN") ?? ""
-        let client = ClientBuilder(authId: authId, authToken: authToken).buildUsEnrichmentApiClient()
+        let client = ClientBuilder(basicAuthId: authId, basicAuthToken: authToken).buildUsEnrichmentApiClient()
         
         // for client-side requests (browser/mobile), use this code:
         // let id = getEnvironmentVar("SMARTY_AUTH_WEB") ?? ""

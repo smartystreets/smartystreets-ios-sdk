@@ -5,14 +5,14 @@ class USZipCodeMultipleLookupsExample {
     func run() -> String {
         //            We recommend storing your authentication credentials in environment variables.
         //            for server-to-server requests, use this code:
-        //let authId = getEnvironmentVar("SMARTY_AUTH_ID") ?? ""
-        //let authToken = getEnvironmentVar("SMARTY_AUTH_TOKEN") ?? ""
-        //let client = ClientBuilder(authId:authId, authToken:authToken).buildUsZIPCodeApiClient()
-        
+        let authId = getEnvironmentVar("SMARTY_AUTH_ID") ?? ""
+        let authToken = getEnvironmentVar("SMARTY_AUTH_TOKEN") ?? ""
+        let client = ClientBuilder(basicAuthId: authId, basicAuthToken: authToken).buildUsZIPCodeApiClient()
+
         // for client-side requests (browser/mobile), use this code:
-        let id = getEnvironmentVar("SMARTY_AUTH_WEB") ?? ""
-        let hostname = getEnvironmentVar("SMARTY_AUTH_REFERER") ?? ""
-        let client = ClientBuilder(id: id, hostname: hostname).buildUsZIPCodeApiClient()
+        //let id = getEnvironmentVar("SMARTY_AUTH_WEB") ?? ""
+        //let hostname = getEnvironmentVar("SMARTY_AUTH_REFERER") ?? ""
+        //let client = ClientBuilder(id: id, hostname: hostname).buildUsZIPCodeApiClient()
                 
         let batch = USZipCodeBatch()
         var error:NSError! = nil

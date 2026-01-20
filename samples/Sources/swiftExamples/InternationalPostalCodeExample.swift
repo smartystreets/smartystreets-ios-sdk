@@ -10,7 +10,7 @@ class InternationalPostalCodeExample {
         //            for server-to-server requests, use this code:
         let authId = getEnvironmentVar("SMARTY_AUTH_ID_DEV") ?? ""
         let authToken = getEnvironmentVar("SMARTY_AUTH_TOKEN_DEV") ?? ""
-        let client = ClientBuilder(authId:authId, authToken:authToken).buildInternationalPostalCodeApiClient()
+        let client = ClientBuilder(basicAuthId: authId, basicAuthToken: authToken).buildInternationalPostalCodeApiClient()
         
         // // for client-side requests (browser/mobile), use this code:
         // let id = getEnvironmentVar("SMARTY_AUTH_WEB") ?? ""

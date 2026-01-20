@@ -11,7 +11,7 @@ class USStreetComponentAnalysisExample {
         // for server-to-server requests, use this code:
         let authId = getEnvironmentVar("SMARTY_AUTH_ID") ?? ""
         let authToken = getEnvironmentVar("SMARTY_AUTH_TOKEN") ?? ""
-        let client = ClientBuilder(authId:authId, authToken:authToken)
+        let client = ClientBuilder(basicAuthId: authId, basicAuthToken: authToken)
             .withFeatureComponentAnalysis()
             .buildUsStreetApiClient()
 

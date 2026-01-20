@@ -14,24 +14,40 @@ import Foundation
     @objc public func sendLookup(lookup: UnsafeMutablePointer<USExtractLookup>, error: UnsafeMutablePointer<NSError?>) -> Bool {
         //        Sends a Lookup object to the US Extract Code API and stores the result in the Lookup's result field.
         //        It also returns the result directly.
-        
+        return sendLookupWithAuth(lookup: lookup, authId: nil, authToken: nil, error: error)
+    }
+
+    @objc public func sendLookupWithAuth(lookup: UnsafeMutablePointer<USExtractLookup>, authId:String?, authToken:String?, error: UnsafeMutablePointer<NSError?>) -> Bool {
+        //        Sends a Lookup object with per-request credentials.
+        //        If authId and authToken are both non-empty, they will be used for this request instead of the client-level credentials.
+        //        This is useful for multi-tenant scenarios where different requests require different credentials.
+
         if let text = lookup.pointee.text {
             if text.count == 0 {
                 let details = [NSLocalizedDescriptionKey:"sendLookup requires a Lookup with the 'text' field set"]
                 error.pointee = NSError(domain: SmartyErrors().SSErrorDomain, code: SmartyErrors.SSErrors.FieldNotSetError.rawValue, userInfo: details)
                 return false
             }
-            
+
             let request = buildRequest(lookup: lookup.pointee)
+
+            if let authId = authId, let authToken = authToken, !authId.isEmpty, !authToken.isEmpty {
+                let credentials = "\(authId):\(authToken)"
+                if let credentialsData = credentials.data(using: .utf8) {
+                    let base64Credentials = credentialsData.base64EncodedString()
+                    request.setValue(value: "Basic \(base64Credentials)", HTTPHeaderField: "Authorization")
+                }
+            }
+
             let response = self.sender.sendRequest(request: request, error: &error.pointee)
             if error.pointee != nil { return false }
-            
+
             let result = self.serializer.Deserialize(payload: response?.payload, error: &error.pointee) as! NSDictionary
-            
+
             if error.pointee != nil { return false }
-            
+
             lookup.pointee.result = USExtractResult(dictionary: result)
-            
+
             return true
         }
         return false

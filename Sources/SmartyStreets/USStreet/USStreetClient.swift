@@ -25,15 +25,22 @@ public class USStreetClient: NSObject {
     @objc public func sendBatch(batch:USStreetBatch, error: UnsafeMutablePointer<NSError?>) -> Bool {
         //        Sends a Batch object containing no more than 100 Lookup objects to the US Street API and stores the
         //        results in the result field of the Lookup object.
-        
+        return sendBatchWithAuth(batch: batch, authId: nil, authToken: nil, error: error)
+    }
+
+    @objc public func sendBatchWithAuth(batch:USStreetBatch, authId:String?, authToken:String?, error: UnsafeMutablePointer<NSError?>) -> Bool {
+        //        Sends a Batch object with per-request credentials.
+        //        If authId and authToken are both non-empty, they will be used for this request instead of the client-level credentials.
+        //        This is useful for multi-tenant scenarios where different requests require different credentials.
+
         let request = SmartyRequest()
-        
+
         if batch.count() == 0 {
             let details = [NSLocalizedDescriptionKey:"An address must be added before submitting a lookup"]
             error.pointee = NSError(domain: SmartyErrors().SSErrorDomain, code: SmartyErrors.SSErrors.ObjectNilError.rawValue, userInfo: details)
             return false
         }
-        
+
         if batch.count() == 1 {
             for i in 0..<batch.count() {
                 populateQueryString(lookup:batch.getLookupAtIndex(index: i) as! USStreetLookup, request:request)
@@ -41,24 +48,32 @@ public class USStreetClient: NSObject {
         } else {
             request.setPayload(payload:self.serializer.Serialize(obj: batch.allLookups as? [Any], error: &error.pointee) as Data)
         }
-        
+
+        if let authId = authId, let authToken = authToken, !authId.isEmpty, !authToken.isEmpty {
+            let credentials = "\(authId):\(authToken)"
+            if let credentialsData = credentials.data(using: .utf8) {
+                let base64Credentials = credentialsData.base64EncodedString()
+                request.setValue(value: "Basic \(base64Credentials)", HTTPHeaderField: "Authorization")
+            }
+        }
+
         let response = self.sender.sendRequest(request: request, error: &error.pointee)
         if error.pointee != nil {
             return false
         }
-        
+
         var candidates:[USStreetCandidate]! = self.serializer.Deserialize(payload: response?.payload, error: &error.pointee) as? [USStreetCandidate]
         if error.pointee != nil {
             return false
         }
-        
+
         if candidates == nil {
             candidates = [USStreetCandidate]()
         }
-        
+
         assignCandidatesToLookups(lookups: batch.allLookups as! [USStreetLookup], candidates: candidates)
         checkLookupsForErrors(lookups: batch.allLookups as! [USStreetLookup], error: &error.pointee)
-        
+
         return true
     }
     

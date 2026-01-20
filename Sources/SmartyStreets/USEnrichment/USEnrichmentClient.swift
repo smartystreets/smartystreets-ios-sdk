@@ -21,116 +21,168 @@ public class USEnrichmentClient: NSObject {
     }
 
     public func sendPropertyPrincipalLookup(smartyKey: String, error: UnsafeMutablePointer<NSError?>) -> [PrincipalResult]? {
+        return sendPropertyPrincipalLookupWithAuth(smartyKey: smartyKey, authId: nil, authToken: nil, error: error)
+    }
+
+    public func sendPropertyPrincipalLookupWithAuth(smartyKey: String, authId:String?, authToken:String?, error: UnsafeMutablePointer<NSError?>) -> [PrincipalResult]? {
         let lookup = PropertyPrincipalEnrichmentLookup(smartyKey: smartyKey)
         let lookupPointer = UnsafeMutablePointer<EnrichmentLookup>.allocate(capacity: 1)
         lookupPointer.initialize(to: lookup)
-        _ = send(lookup: lookupPointer, error: error)
+        _ = sendWithAuth(lookup: lookupPointer, authId: authId, authToken: authToken, error: error)
         lookupPointer.deinitialize(count: 1)
         lookupPointer.deallocate()
         return lookup.results
     }
-    
+
     public func sendPropertyPrincipalLookup(inputLookup: EnrichmentLookup, error: UnsafeMutablePointer<NSError?>) -> [PrincipalResult]? {
+        return sendPropertyPrincipalLookupWithAuth(inputLookup: inputLookup, authId: nil, authToken: nil, error: error)
+    }
+
+    public func sendPropertyPrincipalLookupWithAuth(inputLookup: EnrichmentLookup, authId:String?, authToken:String?, error: UnsafeMutablePointer<NSError?>) -> [PrincipalResult]? {
         let lookup = PropertyPrincipalEnrichmentLookup(lookup: inputLookup)
         let lookupPointer = UnsafeMutablePointer<EnrichmentLookup>.allocate(capacity: 1)
         lookupPointer.initialize(to: lookup)
-        _ = send(lookup: lookupPointer, error: error)
+        _ = sendWithAuth(lookup: lookupPointer, authId: authId, authToken: authToken, error: error)
         lookupPointer.deinitialize(count: 1)
         lookupPointer.deallocate()
         return lookup.results
     }
     
     public func sendGeoReferenceLookup(smartyKey: String, error: UnsafeMutablePointer<NSError?>) -> [GeoReferenceResult]? {
+        return sendGeoReferenceLookupWithAuth(smartyKey: smartyKey, authId: nil, authToken: nil, error: error)
+    }
+
+    public func sendGeoReferenceLookupWithAuth(smartyKey: String, authId:String?, authToken:String?, error: UnsafeMutablePointer<NSError?>) -> [GeoReferenceResult]? {
         let lookup = GeoReferenceEnrichmentLookup(smartyKey: smartyKey)
         let lookupPointer = UnsafeMutablePointer<EnrichmentLookup>.allocate(capacity: 1)
         lookupPointer.initialize(to: lookup)
-        _ = send(lookup: lookupPointer, error: error)
+        _ = sendWithAuth(lookup: lookupPointer, authId: authId, authToken: authToken, error: error)
         lookupPointer.deinitialize(count: 1)
         lookupPointer.deallocate()
         return lookup.results
     }
-    
+
     public func sendGeoReferenceLookup(inputLookup: EnrichmentLookup, error: UnsafeMutablePointer<NSError?>) -> [GeoReferenceResult]? {
+        return sendGeoReferenceLookupWithAuth(inputLookup: inputLookup, authId: nil, authToken: nil, error: error)
+    }
+
+    public func sendGeoReferenceLookupWithAuth(inputLookup: EnrichmentLookup, authId:String?, authToken:String?, error: UnsafeMutablePointer<NSError?>) -> [GeoReferenceResult]? {
         let lookup = GeoReferenceEnrichmentLookup(lookup: inputLookup)
         let lookupPointer = UnsafeMutablePointer<EnrichmentLookup>.allocate(capacity: 1)
         lookupPointer.initialize(to: lookup)
-        _ = send(lookup: lookupPointer, error: error)
+        _ = sendWithAuth(lookup: lookupPointer, authId: authId, authToken: authToken, error: error)
         lookupPointer.deinitialize(count: 1)
         lookupPointer.deallocate()
         return lookup.results
     }
     
     public func sendRiskLookup(smartyKey: String, error: UnsafeMutablePointer<NSError?>) -> [RiskResult]? {
+        return sendRiskLookupWithAuth(smartyKey: smartyKey, authId: nil, authToken: nil, error: error)
+    }
+
+    public func sendRiskLookupWithAuth(smartyKey: String, authId:String?, authToken:String?, error: UnsafeMutablePointer<NSError?>) -> [RiskResult]? {
         let lookup = RiskEnrichmentLookup(smartyKey: smartyKey)
         let lookupPointer = UnsafeMutablePointer<EnrichmentLookup>.allocate(capacity: 1)
         lookupPointer.initialize(to: lookup)
-        _ = send(lookup: lookupPointer, error: error)
+        _ = sendWithAuth(lookup: lookupPointer, authId: authId, authToken: authToken, error: error)
         lookupPointer.deinitialize(count: 1)
         lookupPointer.deallocate()
         return lookup.results
     }
 
     public func sendRiskLookup(inputLookup: EnrichmentLookup, error: UnsafeMutablePointer<NSError?>) -> [RiskResult]? {
+        return sendRiskLookupWithAuth(inputLookup: inputLookup, authId: nil, authToken: nil, error: error)
+    }
+
+    public func sendRiskLookupWithAuth(inputLookup: EnrichmentLookup, authId:String?, authToken:String?, error: UnsafeMutablePointer<NSError?>) -> [RiskResult]? {
         let lookup = RiskEnrichmentLookup(lookup: inputLookup)
         let lookupPointer = UnsafeMutablePointer<EnrichmentLookup>.allocate(capacity: 1)
         lookupPointer.initialize(to: lookup)
-        _ = send(lookup: lookupPointer, error: error)
+        _ = sendWithAuth(lookup: lookupPointer, authId: authId, authToken: authToken, error: error)
         lookupPointer.deinitialize(count: 1)
         lookupPointer.deallocate()
         return lookup.results
     }
 
     public func sendSecondaryLookup(smartyKey: String, error: UnsafeMutablePointer<NSError?>) -> [SecondaryResult]? {
+        return sendSecondaryLookupWithAuth(smartyKey: smartyKey, authId: nil, authToken: nil, error: error)
+    }
+
+    public func sendSecondaryLookupWithAuth(smartyKey: String, authId:String?, authToken:String?, error: UnsafeMutablePointer<NSError?>) -> [SecondaryResult]? {
         let lookup = SecondaryEnrichmentLookup(smartyKey: smartyKey)
         let lookupPointer = UnsafeMutablePointer<EnrichmentLookup>.allocate(capacity: 1)
         lookupPointer.initialize(to: lookup)
-        _ = send(lookup: lookupPointer, error: error)
+        _ = sendWithAuth(lookup: lookupPointer, authId: authId, authToken: authToken, error: error)
         lookupPointer.deinitialize(count: 1)
         lookupPointer.deallocate()
         return lookup.results
     }
-    
+
     public func sendSecondaryLookup(inputLookup: EnrichmentLookup, error: UnsafeMutablePointer<NSError?>) -> [SecondaryResult]? {
+        return sendSecondaryLookupWithAuth(inputLookup: inputLookup, authId: nil, authToken: nil, error: error)
+    }
+
+    public func sendSecondaryLookupWithAuth(inputLookup: EnrichmentLookup, authId:String?, authToken:String?, error: UnsafeMutablePointer<NSError?>) -> [SecondaryResult]? {
         let lookup = SecondaryEnrichmentLookup(lookup: inputLookup)
         let lookupPointer = UnsafeMutablePointer<EnrichmentLookup>.allocate(capacity: 1)
         lookupPointer.initialize(to: lookup)
-        _ = send(lookup: lookupPointer, error: error)
+        _ = sendWithAuth(lookup: lookupPointer, authId: authId, authToken: authToken, error: error)
         lookupPointer.deinitialize(count: 1)
         lookupPointer.deallocate()
         return lookup.results
     }
-    
+
     public func sendSecondaryCountLookup(smartyKey: String, error: UnsafeMutablePointer<NSError?>) -> [SecondaryCountResult]? {
+        return sendSecondaryCountLookupWithAuth(smartyKey: smartyKey, authId: nil, authToken: nil, error: error)
+    }
+
+    public func sendSecondaryCountLookupWithAuth(smartyKey: String, authId:String?, authToken:String?, error: UnsafeMutablePointer<NSError?>) -> [SecondaryCountResult]? {
         let lookup = SecondaryCountEnrichmentLookup(smartyKey: smartyKey)
         let lookupPointer = UnsafeMutablePointer<EnrichmentLookup>.allocate(capacity: 1)
         lookupPointer.initialize(to: lookup)
-        _ = send(lookup: lookupPointer, error: error)
+        _ = sendWithAuth(lookup: lookupPointer, authId: authId, authToken: authToken, error: error)
         lookupPointer.deinitialize(count: 1)
         lookupPointer.deallocate()
         return lookup.results
     }
-    
+
     public func sendSecondaryCountLookup(inputLookup: EnrichmentLookup, error: UnsafeMutablePointer<NSError?>) -> [SecondaryCountResult]? {
+        return sendSecondaryCountLookupWithAuth(inputLookup: inputLookup, authId: nil, authToken: nil, error: error)
+    }
+
+    public func sendSecondaryCountLookupWithAuth(inputLookup: EnrichmentLookup, authId:String?, authToken:String?, error: UnsafeMutablePointer<NSError?>) -> [SecondaryCountResult]? {
         let lookup = SecondaryCountEnrichmentLookup(lookup: inputLookup)
         let lookupPointer = UnsafeMutablePointer<EnrichmentLookup>.allocate(capacity: 1)
         lookupPointer.initialize(to: lookup)
-        _ = send(lookup: lookupPointer, error: error)
+        _ = sendWithAuth(lookup: lookupPointer, authId: authId, authToken: authToken, error: error)
         lookupPointer.deinitialize(count: 1)
         lookupPointer.deallocate()
         return lookup.results
     }
     
     private func send(lookup: UnsafeMutablePointer<EnrichmentLookup>, error: UnsafeMutablePointer<NSError?>) -> Bool {
-        
+        return sendWithAuth(lookup: lookup, authId: nil, authToken: nil, error: error)
+    }
+
+    private func sendWithAuth(lookup: UnsafeMutablePointer<EnrichmentLookup>, authId:String?, authToken:String?, error: UnsafeMutablePointer<NSError?>) -> Bool {
+
         if error.pointee != nil { return false }
-        
+
         let request = buildRequest(lookup: lookup.pointee)
-        
+
+        if let authId = authId, let authToken = authToken, !authId.isEmpty, !authToken.isEmpty {
+            let credentials = "\(authId):\(authToken)"
+            if let credentialsData = credentials.data(using: .utf8) {
+                let base64Credentials = credentialsData.base64EncodedString()
+                request.setValue(value: "Basic \(base64Credentials)", HTTPHeaderField: "Authorization")
+            }
+        }
+
         let response = sender.sendRequest(request: request, error: &error.pointee)
         if error.pointee != nil { return false }
-        
+
         var serializer:SmartySerializer? = nil
-        
+
         if lookup.pointee is PropertyPrincipalEnrichmentLookup {
             serializer = self.propertyPrincipalSerializer
         } else if lookup.pointee is GeoReferenceEnrichmentLookup {
@@ -142,13 +194,13 @@ public class USEnrichmentClient: NSObject {
         } else if lookup.pointee is SecondaryCountEnrichmentLookup {
             serializer = self.secondaryCountSerializer
         }
-        
+
         if let response = response {
             lookup.pointee.deserializeAndSetResults(serializer: serializer!, payload: response.payload, error: error)
         }
-        
+
         if error.pointee != nil { return false }
-        
+
         return true
     }
     
