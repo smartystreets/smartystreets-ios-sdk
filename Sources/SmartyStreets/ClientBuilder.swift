@@ -43,6 +43,14 @@ import Foundation
         self.signer = SharedCredentials(id: id, hostname: hostname)
         self.serializer = SmartySerializer()
     }
+
+    /// Creates a ClientBuilder using HTTP Basic Authentication (RFC 7617).
+    /// This sends credentials in the Authorization header.
+    public static func withBasicAuth(authId: String, authToken: String) -> ClientBuilder {
+        let builder = ClientBuilder()
+        builder.signer = BasicAuthCredentials(authId: authId, authToken: authToken)
+        return builder
+    }
     
     public func retryAtMost(maxRetries:Int) -> ClientBuilder {
         //        Sets the maximum number of times to retry sending the request to the API. (Default is 5)
