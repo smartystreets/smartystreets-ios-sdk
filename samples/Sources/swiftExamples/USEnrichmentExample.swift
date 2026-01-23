@@ -9,15 +9,15 @@ class USEnrichmentExample{
         //            can be found on the Subscriptions page of the account dashboard.
         //            https://www.smartystreets.com/docs/cloud/licensing
         //            We recommend storing your authentication credentials in environment variables.
-        //            for server-to-server requests, use this code:
+        //            for client-side requests (browser/mobile), use this code:
+        //let id = getEnvironmentVar("SMARTY_AUTH_WEB") ?? ""
+        //let hostname = getEnvironmentVar("SMARTY_AUTH_REFERER") ?? ""
+        //let client = ClientBuilder(id: id, hostname: hostname).buildUsEnrichmentApiClient()
+
+        // for server-to-server requests, use this code:
         let authId = getEnvironmentVar("SMARTY_AUTH_ID") ?? ""
         let authToken = getEnvironmentVar("SMARTY_AUTH_TOKEN") ?? ""
-        let client = ClientBuilder(authId: authId, authToken: authToken).buildUsEnrichmentApiClient()
-        
-        // for client-side requests (browser/mobile), use this code:
-        // let id = getEnvironmentVar("SMARTY_AUTH_WEB") ?? ""
-        // let hostname = getEnvironmentVar("SMARTY_AUTH_REFERER") ?? ""
-        // let client = ClientBuilder(id: id, hostname: hostname).buildUsEnrichmentApiClient()
+        let client = ClientBuilder.withBasicAuth(authId: authId, authToken: authToken).buildUsEnrichmentApiClient()
 
         let smartyKey = ""
         // Comment the above line, and uncomment the below line to make a call with ONLY a SmartyKey
