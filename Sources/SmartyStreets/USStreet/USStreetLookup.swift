@@ -20,11 +20,11 @@ import Foundation
     public var lastline:String?
     public var addressee:String?
     public var urbanization:String?
-    public var maxCandidates:Int?
+    public var maxCandidates:Int = 0
     public var countySource:String?
-    public var objcMaxCandidates:NSNumber? {
+    public var objcMaxCandidates:NSNumber {
         get {
-            return maxCandidates as NSNumber?
+            return maxCandidates as NSNumber
         }
     }
     public var matchStrategy:String?
@@ -82,8 +82,8 @@ import Foundation
 
         let matchStrategy = self.matchStrategy ?? "enhanced"
 
-        if let maxCandidates = self.maxCandidates, maxCandidates > 0 {
-            dictionary = addValueToDictionary(value: maxCandidates, key: "candidates", dictionary: dictionary)
+        if self.maxCandidates > 0 {
+            dictionary = addValueToDictionary(value: self.maxCandidates, key: "candidates", dictionary: dictionary)
         } else if matchStrategy == "enhanced" {
             dictionary = addValueToDictionary(value: 5, key: "candidates", dictionary: dictionary)
         }

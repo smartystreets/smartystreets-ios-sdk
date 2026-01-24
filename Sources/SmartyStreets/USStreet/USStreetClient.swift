@@ -83,8 +83,8 @@ public class USStreetClient: NSObject {
 
         let matchStrategy = lookup.matchStrategy ?? "enhanced"
 
-        if let maxCandidates = lookup.maxCandidates, maxCandidates > 1 {
-            request.setValue(value: String(maxCandidates), HTTPParameterField: "candidates")
+        if lookup.maxCandidates > 0 {
+            request.setValue(value: String(lookup.maxCandidates), HTTPParameterField: "candidates")
         } else if matchStrategy == "enhanced" {
             request.setValue(value: "5", HTTPParameterField: "candidates")
         }
