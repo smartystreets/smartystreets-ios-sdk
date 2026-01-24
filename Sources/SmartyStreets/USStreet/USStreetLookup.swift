@@ -20,23 +20,21 @@ import Foundation
     public var lastline:String?
     public var addressee:String?
     public var urbanization:String?
-    public var maxCandidates:Int?
+    public var maxCandidates:Int = 0
     public var countySource:String?
-    public var objcMaxCandidates:NSNumber? {
+    public var objcMaxCandidates:NSNumber {
         get {
-            return maxCandidates as NSNumber?
+            return maxCandidates as NSNumber
         }
     }
     public var matchStrategy:String?
     public var outputFormat:String?
     
     override public init() {
-        self.maxCandidates = 1
         self.result = [USStreetCandidate]()
     }
-    
+
     public init(freeformAddress:String) {
-        self.maxCandidates = 1
         self.result = [USStreetCandidate]()
         self.street = freeformAddress
     }
@@ -68,7 +66,7 @@ import Foundation
     
     func toDictionary() -> NSDictionary {
         var dictionary = NSDictionary()
-        
+
         dictionary = addValueToDictionary(value: self.inputId, key: "input_id", dictionary: dictionary)
         dictionary = addValueToDictionary(value: self.street, key: "street", dictionary: dictionary)
         dictionary = addValueToDictionary(value: self.street2, key: "street2", dictionary: dictionary)
@@ -79,10 +77,21 @@ import Foundation
         dictionary = addValueToDictionary(value: self.lastline, key: "lastline", dictionary: dictionary)
         dictionary = addValueToDictionary(value: self.addressee, key: "addressee", dictionary: dictionary)
         dictionary = addValueToDictionary(value: self.urbanization, key: "urbanization", dictionary: dictionary)
-        dictionary = addValueToDictionary(value: self.maxCandidates, key: "candidates", dictionary: dictionary)
         dictionary = addValueToDictionary(value: self.countySource, key: "county_source", dictionary: dictionary)
-        dictionary = addValueToDictionary(value: self.matchStrategy, key: "match", dictionary: dictionary)
         dictionary = addValueToDictionary(value: self.outputFormat, key: "format", dictionary: dictionary)
+
+        let matchStrategy = self.matchStrategy ?? "enhanced"
+
+        if self.maxCandidates > 0 {
+            dictionary = addValueToDictionary(value: self.maxCandidates, key: "candidates", dictionary: dictionary)
+        } else if matchStrategy == "enhanced" {
+            dictionary = addValueToDictionary(value: 5, key: "candidates", dictionary: dictionary)
+        }
+
+        if matchStrategy != "strict" {
+            dictionary = addValueToDictionary(value: matchStrategy, key: "match", dictionary: dictionary)
+        }
+
         return dictionary
     }
     

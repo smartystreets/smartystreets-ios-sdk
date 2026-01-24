@@ -20,17 +20,17 @@ class USStreetClientTests: XCTestCase {
     }
     
     func testSendingSingleFreeformLookup() {
-        let expectedUrl = "http://localhost/?candidates=1"
         let capturingSender = RequestCapturingSender()
         let sender = URLPrefixSender(urlPrefix: "http://localhost/", inner: capturingSender as Any)
         let client = USStreetClient(sender: sender, serializer: serializer)
-        
+
         var lookup = USStreetLookup()
         _ = client.sendLookup(lookup: &lookup, error: &self.error)
-        
+
         let actualUrl = capturingSender.request.getUrl()
-        
-        XCTAssertEqual(actualUrl, expectedUrl)
+
+        XCTAssertTrue(actualUrl.contains("candidates=5"))
+        XCTAssertTrue(actualUrl.contains("match=enhanced"))
     }
     
     func testSendingSingleFullyPopulatedLookup() {
@@ -172,8 +172,82 @@ class USStreetClientTests: XCTestCase {
     func testEmptyBatchNotSent() {
         let sender = RequestCapturingSender()
         let client = USStreetClient(sender: sender, serializer: serializer)
-        
+
         _ = client.sendBatch(batch: USStreetBatch(), error: &self.error)
         XCTAssertNil(sender.request)
+    }
+
+    func testDefaultMatchStrategyIsEnhanced() {
+        let capturingSender = RequestCapturingSender()
+        let sender = URLPrefixSender(urlPrefix: "http://localhost/", inner: capturingSender)
+        let client = USStreetClient(sender: sender, serializer: serializer)
+
+        var lookup = USStreetLookup()
+        _ = client.sendLookup(lookup: &lookup, error: &self.error)
+
+        let actualUrl = capturingSender.request.getUrl()
+
+        XCTAssertTrue(actualUrl.contains("match=enhanced"))
+        XCTAssertTrue(actualUrl.contains("candidates=5"))
+    }
+
+    func testExplicitMatchStrict() {
+        let capturingSender = RequestCapturingSender()
+        let sender = URLPrefixSender(urlPrefix: "http://localhost/", inner: capturingSender)
+        let client = USStreetClient(sender: sender, serializer: serializer)
+
+        var lookup = USStreetLookup()
+        lookup.matchStrategy = "strict"
+        _ = client.sendLookup(lookup: &lookup, error: &self.error)
+
+        let actualUrl = capturingSender.request.getUrl()
+
+        XCTAssertFalse(actualUrl.contains("match="))
+        XCTAssertFalse(actualUrl.contains("candidates="))
+    }
+
+    func testExplicitMatchStrictWithCandidates() {
+        let capturingSender = RequestCapturingSender()
+        let sender = URLPrefixSender(urlPrefix: "http://localhost/", inner: capturingSender)
+        let client = USStreetClient(sender: sender, serializer: serializer)
+
+        var lookup = USStreetLookup()
+        lookup.matchStrategy = "strict"
+        lookup.setMaxCandidates(max: 3, error: &self.error)
+        _ = client.sendLookup(lookup: &lookup, error: &self.error)
+
+        let actualUrl = capturingSender.request.getUrl()
+
+        XCTAssertFalse(actualUrl.contains("match="))
+        XCTAssertTrue(actualUrl.contains("candidates=3"))
+    }
+
+    func testExplicitMatchInvalid() {
+        let capturingSender = RequestCapturingSender()
+        let sender = URLPrefixSender(urlPrefix: "http://localhost/", inner: capturingSender)
+        let client = USStreetClient(sender: sender, serializer: serializer)
+
+        var lookup = USStreetLookup()
+        lookup.matchStrategy = "invalid"
+        _ = client.sendLookup(lookup: &lookup, error: &self.error)
+
+        let actualUrl = capturingSender.request.getUrl()
+
+        XCTAssertTrue(actualUrl.contains("match=invalid"))
+    }
+
+    func testExplicitMaxCandidatesOverridesDefault() {
+        let capturingSender = RequestCapturingSender()
+        let sender = URLPrefixSender(urlPrefix: "http://localhost/", inner: capturingSender)
+        let client = USStreetClient(sender: sender, serializer: serializer)
+
+        var lookup = USStreetLookup()
+        lookup.setMaxCandidates(max: 2, error: &self.error)
+        _ = client.sendLookup(lookup: &lookup, error: &self.error)
+
+        let actualUrl = capturingSender.request.getUrl()
+
+        XCTAssertTrue(actualUrl.contains("candidates=2"))
+        XCTAssertTrue(actualUrl.contains("match=enhanced"))
     }
 }
