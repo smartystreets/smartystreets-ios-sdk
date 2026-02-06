@@ -15,6 +15,8 @@ import Foundation
     var proxy:NSDictionary!
     var licenses:[String] = []
     var queries:[String:String] = [:]
+    var headers:[String:[String]] = ["User-Agent": ["smartystreets (sdk:ios@\(Version().version))"]]
+    var appendHeaders:[String:String] = ["User-Agent": " "]
     var internationalStreetApiURL:String = "https://international-street.api.smarty.com/verify"
     var internationalAutocompleteApiURL:String = "https://international-autocomplete.api.smarty.com/v2/lookup"
     var internationalPostalCodeApiURL:String = "https://international-postal-code.api.smarty.com/lookup"
@@ -147,6 +149,30 @@ import Foundation
         return self
     }
 
+    public func withCustomHeader(key:String, value:String) -> ClientBuilder {
+        //         Allows caller to set custom header key value pairs
+        //
+        //         Returns self to accommodate method chaining.
+        self.headers[key] = [value]
+        return self
+    }
+
+    public func withAppendedHeader(key:String, value:String, separator:String) -> ClientBuilder {
+        //         Appends the provided value to the existing header value using the specified separator,
+        //         rather than replacing a separate header value. This is useful for single-value headers
+        //         like User-Agent.
+        //
+        //         Returns self to accommodate method chaining.
+        self.appendHeaders[key] = separator
+        if var existing = self.headers[key] {
+            existing.append(value)
+            self.headers[key] = existing
+        } else {
+            self.headers[key] = [value]
+        }
+        return self
+    }
+
         public func withFeatureComponentAnalysis() -> ClientBuilder {
         //         Adds to the request query to use the component analysis feature.
         //
@@ -222,7 +248,9 @@ import Foundation
         if let httpSigner = self.signer {
             httpSender = SigningSender(signer: httpSigner, inner: httpSender)
         }
-        
+
+        httpSender = CustomHeaderSender(headers: self.headers, appendHeaders: self.appendHeaders, inner: httpSender)
+
         httpSender = URLPrefixSender(urlPrefix: self.urlPrefix, inner: httpSender)
         
         httpSender = LicenseSender(licenses: self.licenses, inner: httpSender)

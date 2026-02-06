@@ -124,4 +124,31 @@ class ClientBuilderTests: XCTestCase {
         let client = ClientBuilder().withFeatureComponentAnalysis()
         XCTAssertEqual(queries, client.queries)
     }
+
+    func testWithCustomHeader() {
+        let client = ClientBuilder()
+            .withCustomHeader(key: "X-Custom", value: "test-value")
+        XCTAssertEqual(client.headers["X-Custom"], ["test-value"])
+    }
+
+    func testWithAppendedHeader() {
+        let client = ClientBuilder()
+            .withAppendedHeader(key: "User-Agent", value: "my-app/1.0", separator: " ")
+        let userAgentValues = client.headers["User-Agent"]!
+        XCTAssertEqual(userAgentValues.count, 2)
+        XCTAssertTrue(userAgentValues[0].contains("smartystreets (sdk:ios@"))
+        XCTAssertEqual(userAgentValues[1], "my-app/1.0")
+        XCTAssertEqual(client.appendHeaders["User-Agent"], " ")
+    }
+
+    func testWithMultipleAppendedHeaders() {
+        let client = ClientBuilder()
+            .withAppendedHeader(key: "User-Agent", value: "my-app/1.0", separator: " ")
+            .withAppendedHeader(key: "User-Agent", value: "my-integration/2.0", separator: " ")
+        let userAgentValues = client.headers["User-Agent"]!
+        XCTAssertEqual(userAgentValues.count, 3)
+        XCTAssertTrue(userAgentValues[0].contains("smartystreets (sdk:ios@"))
+        XCTAssertEqual(userAgentValues[1], "my-app/1.0")
+        XCTAssertEqual(userAgentValues[2], "my-integration/2.0")
+    }
 }
