@@ -45,9 +45,10 @@ class SmartySenderTests: XCTestCase {
     
     func testCopyHeadersFuncOnHTTP() {
         let sender = HttpSender()
+        self.request.headers["User-Agent"] = "smartystreets (sdk:ios@test)"
         var httpRequest = sender.buildHttpRequest(request: self.request)
         sender.copyHeaders(request: self.request, httpRequest: &httpRequest)
-        XCTAssertNotNil(httpRequest.allHTTPHeaderFields!["User-Agent"])
+        XCTAssertEqual("smartystreets (sdk:ios@test)", httpRequest.allHTTPHeaderFields!["User-Agent"])
     }
     
     func testDebugger() {

@@ -124,4 +124,37 @@ class ClientBuilderTests: XCTestCase {
         let client = ClientBuilder().withFeatureComponentAnalysis()
         XCTAssertEqual(queries, client.queries)
     }
+
+    func testWithCustomHeader() {
+        let client = ClientBuilder().withCustomHeader(key: "X-Custom", value: "test-value")
+        XCTAssertEqual("test-value", client.headers["X-Custom"])
+    }
+
+    func testWithCustomHeaderUserAgentAppends() {
+        let version = Version().version
+        let client = ClientBuilder().withCustomHeader(key: "User-Agent", value: "my-app/1.0")
+        XCTAssertEqual("smartystreets (sdk:ios@\(version)) my-app/1.0", client.headers["User-Agent"])
+    }
+
+    func testWithCustomHeaderUserAgentAppendsMultiple() {
+        let version = Version().version
+        let client = ClientBuilder()
+            .withCustomHeader(key: "User-Agent", value: "my-app/1.0")
+            .withCustomHeader(key: "User-Agent", value: "my-lib/2.0")
+        XCTAssertEqual("smartystreets (sdk:ios@\(version)) my-app/1.0 my-lib/2.0", client.headers["User-Agent"])
+    }
+
+    func testBuildHeadersIncludesDefaultUserAgent() {
+        let version = Version().version
+        let client = ClientBuilder()
+        let headers = client.buildHeaders()
+        XCTAssertEqual("smartystreets (sdk:ios@\(version))", headers["User-Agent"])
+    }
+
+    func testBuildHeadersPreservesCustomUserAgent() {
+        let version = Version().version
+        let client = ClientBuilder().withCustomHeader(key: "User-Agent", value: "my-app/1.0")
+        let headers = client.buildHeaders()
+        XCTAssertEqual("smartystreets (sdk:ios@\(version)) my-app/1.0", headers["User-Agent"])
+    }
 }

@@ -73,11 +73,6 @@ class HttpSender: SmartySender {
         for item in request.headers {
             httpRequest.addValue(item.value, forHTTPHeaderField: item.key)
         }
-        
-        let version = Version().version
-        let userAgent = "smartystreets (sdk:ios@\(version))"
-        
-        httpRequest.addValue(userAgent, forHTTPHeaderField: "User-Agent")
     }
     
     func buildResponse(httpRequest:URLRequest) throws -> SmartyResponse! {

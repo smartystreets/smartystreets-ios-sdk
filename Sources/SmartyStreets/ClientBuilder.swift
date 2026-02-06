@@ -15,6 +15,7 @@ import Foundation
     var proxy:NSDictionary!
     var licenses:[String] = []
     var queries:[String:String] = [:]
+    var headers:[String:String] = [:]
     var internationalStreetApiURL:String = "https://international-street.api.smarty.com/verify"
     var internationalAutocompleteApiURL:String = "https://international-autocomplete.api.smarty.com/v2/lookup"
     var internationalPostalCodeApiURL:String = "https://international-postal-code.api.smarty.com/lookup"
@@ -147,6 +148,25 @@ import Foundation
         return self
     }
 
+    public func withCustomHeader(key:String, value:String) -> ClientBuilder {
+        //         Allows caller to set custom header key value pairs.
+        //         If the key is "User-Agent", the value is appended to the default User-Agent string.
+        //
+        //         Returns self to accommodate method chaining.
+        if key == "User-Agent" {
+            if let current = self.headers[key] {
+                self.headers[key] = current + " " + value
+            } else {
+                let version = Version().version
+                let defaultAgent = "smartystreets (sdk:ios@\(version))"
+                self.headers[key] = defaultAgent + " " + value
+            }
+        } else {
+            self.headers[key] = value
+        }
+        return self
+    }
+
         public func withFeatureComponentAnalysis() -> ClientBuilder {
         //         Adds to the request query to use the component analysis feature.
         //
@@ -222,7 +242,9 @@ import Foundation
         if let httpSigner = self.signer {
             httpSender = SigningSender(signer: httpSigner, inner: httpSender)
         }
-        
+
+        httpSender = CustomHeaderSender(headers: buildHeaders(), inner: httpSender)
+
         httpSender = URLPrefixSender(urlPrefix: self.urlPrefix, inner: httpSender)
         
         httpSender = LicenseSender(licenses: self.licenses, inner: httpSender)
@@ -232,6 +254,15 @@ import Foundation
         return httpSender
     }
     
+    func buildHeaders() -> [String:String] {
+        var result = self.headers
+        if result["User-Agent"] == nil {
+            let version = Version().version
+            result["User-Agent"] = "smartystreets (sdk:ios@\(version))"
+        }
+        return result
+    }
+
     func ensureURLPrefixNotNil(url:String) {
         if self.urlPrefix == nil {
             self.urlPrefix = url
