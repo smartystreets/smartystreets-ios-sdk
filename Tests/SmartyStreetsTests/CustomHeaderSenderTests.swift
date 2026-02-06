@@ -46,7 +46,7 @@ class CustomHeaderSenderTests: XCTestCase {
         XCTAssertEqual(self.inner.request.headers["User-Agent"], "base-value custom-value")
     }
 
-    func testNonAppendedHeaderUsesLastValue() {
+    func testMultiValueHeadersAreCommaJoinedByDefault() {
         let headers:[String:[String]] = [
             "X-Custom": ["first", "second"],
         ]
@@ -54,7 +54,7 @@ class CustomHeaderSenderTests: XCTestCase {
 
         _ = sender.sendRequest(request: self.request, error: &self.error)
 
-        XCTAssertEqual(self.inner.request.headers["X-Custom"], "second")
+        XCTAssertEqual(self.inner.request.headers["X-Custom"], "first, second")
     }
 
     func testRequestIsPassedToInnerSender() {

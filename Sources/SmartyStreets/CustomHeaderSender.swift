@@ -14,13 +14,8 @@ public class CustomHeaderSender: SmartySender {
 
     override func sendRequest(request: SmartyRequest, error: inout NSError!) -> SmartyResponse! {
         for (key, values) in self.headers {
-            if let separator = self.appendHeaders[key] {
-                request.headers[key] = values.joined(separator: separator)
-            } else {
-                if let last = values.last {
-                    request.headers[key] = last
-                }
-            }
+            let separator = self.appendHeaders[key] ?? ", "
+            request.headers[key] = values.joined(separator: separator)
         }
         return self.inner.sendRequest(request: request, error: &error)
     }

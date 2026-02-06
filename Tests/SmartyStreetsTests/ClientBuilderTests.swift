@@ -131,7 +131,15 @@ class ClientBuilderTests: XCTestCase {
         XCTAssertEqual(client.headers["X-Custom"], ["test-value"])
     }
 
-    func testWithAppendedHeader() {
+    func testWithCustomHeaderClearsSeparator() {
+        let client = ClientBuilder()
+            .withAppendedHeader(key: "X-Custom", value: "first", separator: ";")
+            .withCustomHeader(key: "X-Custom", value: "replaced")
+        XCTAssertEqual(client.headers["X-Custom"], ["replaced"])
+        XCTAssertNil(client.appendHeaders["X-Custom"])
+    }
+
+    func testWithAppendedHeaderWithSeparator() {
         let client = ClientBuilder()
             .withAppendedHeader(key: "User-Agent", value: "my-app/1.0", separator: " ")
         let userAgentValues = client.headers["User-Agent"]!
@@ -150,5 +158,13 @@ class ClientBuilderTests: XCTestCase {
         XCTAssertTrue(userAgentValues[0].contains("smartystreets (sdk:ios@"))
         XCTAssertEqual(userAgentValues[1], "my-app/1.0")
         XCTAssertEqual(userAgentValues[2], "my-integration/2.0")
+    }
+
+    func testWithAppendedHeaderMultiValue() {
+        let client = ClientBuilder()
+            .withAppendedHeader(key: "Accept", value: "text/html")
+            .withAppendedHeader(key: "Accept", value: "application/json")
+        XCTAssertEqual(client.headers["Accept"], ["text/html", "application/json"])
+        XCTAssertNil(client.appendHeaders["Accept"])
     }
 }

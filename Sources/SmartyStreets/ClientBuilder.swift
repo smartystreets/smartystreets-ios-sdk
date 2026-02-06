@@ -154,6 +154,21 @@ import Foundation
         //
         //         Returns self to accommodate method chaining.
         self.headers[key] = [value]
+        self.appendHeaders.removeValue(forKey: key)
+        return self
+    }
+
+    public func withAppendedHeader(key:String, value:String) -> ClientBuilder {
+        //         Appends the provided value to the existing header values as a multi-value header
+        //         (comma-separated per HTTP spec).
+        //
+        //         Returns self to accommodate method chaining.
+        if var existing = self.headers[key] {
+            existing.append(value)
+            self.headers[key] = existing
+        } else {
+            self.headers[key] = [value]
+        }
         return self
     }
 
