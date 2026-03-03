@@ -167,11 +167,18 @@ import Foundation
         return self
     }
 
-        public func withFeatureComponentAnalysis() -> ClientBuilder {
+    public func withFeatureComponentAnalysis() -> ClientBuilder {
         //         Adds to the request query to use the component analysis feature.
         //
         //         Returns self to accommodate method chaining.
         return self.withCustomCommaSeparatedQuery(key:"features",value:"component-analysis")
+    }
+
+    public func withFeatureIANATimeZone() -> ClientBuilder {
+        //         Adds to the request query to use the IANA timezone feature.
+        //
+        //         Returns self to accommodate method chaining.
+        return self.withCustomCommaSeparatedQuery(key:"features",value:"iana-timezone")
     }
     
     public func buildUsStreetApiClient() -> USStreetClient {

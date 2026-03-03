@@ -125,6 +125,20 @@ class ClientBuilderTests: XCTestCase {
         XCTAssertEqual(queries, client.queries)
     }
 
+    func testWithFeatureIANATimeZone() {
+        let queries = ["features":"iana-timezone"]
+        let client = ClientBuilder().withFeatureIANATimeZone()
+        XCTAssertEqual(queries, client.queries)
+    }
+
+    func testWithFeatureIANATimeZoneAndComponentAnalysis_ShouldAppend() {
+        let queries = ["features":"component-analysis,iana-timezone"]
+        let client = ClientBuilder()
+            .withFeatureComponentAnalysis()
+            .withFeatureIANATimeZone()
+        XCTAssertEqual(queries, client.queries)
+    }
+
     func testWithCustomHeader() {
         let client = ClientBuilder().withCustomHeader(key: "X-Custom", value: "test-value")
         XCTAssertEqual("test-value", client.headers["X-Custom"])
