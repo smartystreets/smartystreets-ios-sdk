@@ -174,10 +174,8 @@ import Foundation
         return self.withCustomCommaSeparatedQuery(key:"features",value:"component-analysis")
     }
 
+    /// withFeatureIanaTimeZone turns on the IANA timezone feature for the request.
     public func withFeatureIanaTimeZone() -> ClientBuilder {
-        //         Adds to the request query to use the IANA timezone feature.
-        //
-        //         Returns self to accommodate method chaining.
         return self.withCustomCommaSeparatedQuery(key:"features",value:"iana-timezone")
     }
     
