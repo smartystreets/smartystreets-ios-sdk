@@ -52,10 +52,10 @@ import Foundation
             return ianaUtcOffset as NSNumber?
         }
     }
-    public var ianaDst:Bool?
-    public var objcIanaDst:NSNumber? {
+    public var ianaObeysDst:Bool?
+    public var objcIanaObeysDst:NSNumber? {
         get {
-            return ianaDst as NSNumber?
+            return ianaObeysDst as NSNumber?
         }
     }
 
@@ -79,7 +79,7 @@ import Foundation
         case isEwsMatch = "ews_match"
         case ianaTimeZone = "iana_time_zone"
         case ianaUtcOffset = "iana_utc_offset"
-        case ianaDst = "iana_dst"
+        case ianaObeysDst = "iana_dst"
     }
 
     init(dictionary: NSDictionary) {
@@ -102,6 +102,6 @@ import Foundation
         self.isEwsMatch = dictionary["ews_match"] as? Bool
         self.ianaTimeZone = dictionary["iana_time_zone"] as? String
         self.ianaUtcOffset = dictionary["iana_utc_offset"] as? Double
-        self.ianaDst = dictionary["iana_dst"] as? Bool
+        self.ianaObeysDst = dictionary["iana_dst"] as? Bool
     }
 }

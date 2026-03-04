@@ -190,7 +190,7 @@ class USStreetCandidateTests: XCTestCase {
         XCTAssertEqual(true, metadata.isEwsMatch)
         XCTAssertEqual("America/Denver", metadata.ianaTimeZone)
         XCTAssertEqual(-7.0, metadata.ianaUtcOffset)
-        XCTAssertEqual(true, metadata.ianaDst)
+        XCTAssertEqual(true, metadata.ianaObeysDst)
         
         let analysis = candidate.analysis!
         XCTAssertEqual("42", analysis.dpvMatchCode)

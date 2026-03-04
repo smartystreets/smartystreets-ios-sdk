@@ -125,17 +125,17 @@ class ClientBuilderTests: XCTestCase {
         XCTAssertEqual(queries, client.queries)
     }
 
-    func testWithFeatureIANATimeZone() {
+    func testWithFeatureIanaTimeZone() {
         let queries = ["features":"iana-timezone"]
-        let client = ClientBuilder().withFeatureIANATimeZone()
+        let client = ClientBuilder().withFeatureIanaTimeZone()
         XCTAssertEqual(queries, client.queries)
     }
 
-    func testWithFeatureIANATimeZoneAndComponentAnalysis_ShouldAppend() {
+    func testWithFeatureIanaTimeZoneAndComponentAnalysis_ShouldAppend() {
         let queries = ["features":"component-analysis,iana-timezone"]
         let client = ClientBuilder()
             .withFeatureComponentAnalysis()
-            .withFeatureIANATimeZone()
+            .withFeatureIanaTimeZone()
         XCTAssertEqual(queries, client.queries)
     }
 
