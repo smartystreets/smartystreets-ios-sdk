@@ -45,7 +45,20 @@ import Foundation
             return isEwsMatch as NSNumber?
         }
     }
-    
+    public var ianaTimeZone:String?
+    public var ianaUtcOffset:Double?
+    public var objcIanaUtcOffset:NSNumber? {
+        get {
+            return ianaUtcOffset as NSNumber?
+        }
+    }
+    public var ianaObeysDst:Bool?
+    public var objcIanaObeysDst:NSNumber? {
+        get {
+            return ianaObeysDst as NSNumber?
+        }
+    }
+
     enum CodingKeys: String, CodingKey {
         case recordType = "record_type"
         case zipType = "zip_type"
@@ -64,8 +77,11 @@ import Foundation
         case utcOffset = "utc_offset"
         case obeysDst = "dst"
         case isEwsMatch = "ews_match"
+        case ianaTimeZone = "iana_time_zone"
+        case ianaUtcOffset = "iana_utc_offset"
+        case ianaObeysDst = "iana_dst"
     }
-    
+
     init(dictionary: NSDictionary) {
         self.recordType = dictionary["record_type"] as? String
         self.zipType = dictionary["zip_type"] as? String
@@ -84,5 +100,8 @@ import Foundation
         self.utcOffset = dictionary["utc_offset"] as? Double
         self.obeysDst = dictionary["dst"] as? Bool
         self.isEwsMatch = dictionary["ews_match"] as? Bool
+        self.ianaTimeZone = dictionary["iana_time_zone"] as? String
+        self.ianaUtcOffset = dictionary["iana_utc_offset"] as? Double
+        self.ianaObeysDst = dictionary["iana_dst"] as? Bool
     }
 }

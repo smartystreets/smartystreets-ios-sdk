@@ -60,7 +60,10 @@ class USStreetCandidateTests: XCTestCase {
                 "time_zone": "39",
                 "utc_offset": 40.0,
                 "dst": true,
-                "ews_match": true
+                "ews_match": true,
+                "iana_time_zone": "America/Denver",
+                "iana_utc_offset": -7.0,
+                "iana_dst": true
             ],
             "analysis": [
                 "dpv_match_code": "42",
@@ -185,6 +188,9 @@ class USStreetCandidateTests: XCTestCase {
         XCTAssertEqual(40, metadata.utcOffset)
         XCTAssertEqual(true, metadata.obeysDst)
         XCTAssertEqual(true, metadata.isEwsMatch)
+        XCTAssertEqual("America/Denver", metadata.ianaTimeZone)
+        XCTAssertEqual(-7.0, metadata.ianaUtcOffset)
+        XCTAssertEqual(true, metadata.ianaObeysDst)
         
         let analysis = candidate.analysis!
         XCTAssertEqual("42", analysis.dpvMatchCode)
