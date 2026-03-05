@@ -57,6 +57,9 @@ example-international-postal-code:
 example-us-reverse-geo:
 	@$(call run-example,USReverseGeoExample)
 
+example-us-street-iana-timezone:
+	@$(call run-example,USStreetIanaTimeZoneExample)
+
 example-us-enrichment:
 	@cp samples/Sources/swiftExamples/main.swift samples/Sources/swiftExamples/main.swift.bak
 	@sed -i '' 's/^print(/\/\/ print(/g' samples/Sources/swiftExamples/main.swift
@@ -78,6 +81,7 @@ examples-all:
 	@$(MAKE) example-international-autocomplete
 	@$(MAKE) example-international-postal-code
 	@$(MAKE) example-us-reverse-geo
+	@$(MAKE) example-us-street-iana-timezone
 	@$(MAKE) example-us-enrichment
 	@echo "All examples completed!"
 
@@ -98,4 +102,4 @@ publish: compile test version
 .PHONY: example-us-zipcode-single example-us-zipcode-multiple
 .PHONY: example-us-autocomplete-pro example-us-extract
 .PHONY: example-international-street example-international-autocomplete example-international-postal-code
-.PHONY: example-us-reverse-geo example-us-enrichment
+.PHONY: example-us-reverse-geo example-us-street-iana-timezone example-us-enrichment
