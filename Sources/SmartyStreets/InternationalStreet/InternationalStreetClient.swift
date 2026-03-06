@@ -65,23 +65,9 @@ public class InternationalStreetClient: NSObject {
             error = NSError(domain: smartyError.SSErrorDomain, code: SmartyErrors.SSErrors.UnprocessableEntityError.rawValue, userInfo: details)
             return
         }
-        
-        if lookup.hasFreeform() {
-            return
-        }
-        
-        if lookup.missingAddress1() {
+
+        if !lookup.hasFreeform() && lookup.missingAddress1() {
             let details = [NSLocalizedDescriptionKey:"Either freeform or address1 is required."]
-            error = NSError(domain: smartyError.SSErrorDomain, code: SmartyErrors.SSErrors.UnprocessableEntityError.rawValue, userInfo: details)
-            return
-        }
-        
-        if lookup.hasPostalCode() {
-            return
-        }
-        
-        if lookup.missingLocalityOrAdministrativeArea() {
-            let details = [NSLocalizedDescriptionKey:"Insufficient information: One or more required fields were not set on the lookup."]
             error = NSError(domain: smartyError.SSErrorDomain, code: SmartyErrors.SSErrors.UnprocessableEntityError.rawValue, userInfo: details)
             return
         }

@@ -66,14 +66,6 @@ import Foundation
         return fieldIsMissing(field: self.address1)
     }
     
-    func hasPostalCode() -> Bool {
-        return fieldIsSet(field: self.postalCode)
-    }
-    
-    func missingLocalityOrAdministrativeArea() -> Bool {
-        return fieldIsMissing(field: self.locality) || fieldIsMissing(field: self.administrativeArea)
-    }
-    
     func fieldIsSet(field:String?) -> Bool {
         return !fieldIsMissing(field: field)
     }
