@@ -202,7 +202,7 @@ class USStreetClientTests: XCTestCase {
 
         let actualUrl = capturingSender.request.getUrl()
 
-        XCTAssertFalse(actualUrl.contains("match="))
+        XCTAssertTrue(actualUrl.contains("match=strict"))
         XCTAssertFalse(actualUrl.contains("candidates="))
     }
 
@@ -218,7 +218,7 @@ class USStreetClientTests: XCTestCase {
 
         let actualUrl = capturingSender.request.getUrl()
 
-        XCTAssertFalse(actualUrl.contains("match="))
+        XCTAssertTrue(actualUrl.contains("match=strict"))
         XCTAssertTrue(actualUrl.contains("candidates=3"))
     }
 
@@ -249,5 +249,47 @@ class USStreetClientTests: XCTestCase {
 
         XCTAssertTrue(actualUrl.contains("candidates=2"))
         XCTAssertTrue(actualUrl.contains("match=enhanced"))
+    }
+
+    func testBatchJSONIncludesDefaultMatchAndCandidates() {
+        let capturingSender = RequestCapturingSender()
+        let sender = URLPrefixSender(urlPrefix: "http://localhost/", inner: capturingSender)
+        let client = USStreetClient(sender: sender, serializer: serializer)
+        let batch = USStreetBatch()
+
+        let lookup1 = USStreetLookup()
+        lookup1.street = "123 Main St"
+        let lookup2 = USStreetLookup()
+        lookup2.street = "456 Oak Ave"
+        _ = batch.add(newAddress: lookup1, error: &self.error)
+        _ = batch.add(newAddress: lookup2, error: &self.error)
+
+        _ = client.sendBatch(batch: batch, error: &self.error)
+
+        let payload = String(data: capturingSender.request.payload!, encoding: .utf8)!
+        XCTAssertTrue(payload.contains("\"match\":\"enhanced\""))
+        XCTAssertTrue(payload.contains("\"candidates\":5"))
+    }
+
+    func testBatchJSONWithStrictMatch() {
+        let capturingSender = RequestCapturingSender()
+        let sender = URLPrefixSender(urlPrefix: "http://localhost/", inner: capturingSender)
+        let client = USStreetClient(sender: sender, serializer: serializer)
+        let batch = USStreetBatch()
+
+        let lookup1 = USStreetLookup()
+        lookup1.street = "123 Main St"
+        lookup1.matchStrategy = "strict"
+        let lookup2 = USStreetLookup()
+        lookup2.street = "456 Oak Ave"
+        lookup2.matchStrategy = "strict"
+        _ = batch.add(newAddress: lookup1, error: &self.error)
+        _ = batch.add(newAddress: lookup2, error: &self.error)
+
+        _ = client.sendBatch(batch: batch, error: &self.error)
+
+        let payload = String(data: capturingSender.request.payload!, encoding: .utf8)!
+        XCTAssertTrue(payload.contains("\"match\":\"strict\""))
+        XCTAssertFalse(payload.contains("candidates"))
     }
 }

@@ -63,42 +63,56 @@ import Foundation
             error = NSError(domain: SmartyErrors().SSErrorDomain, code: SmartyErrors.SSErrors.NotPositiveIntergerError.rawValue, userInfo: details)
         }
     }
-    
-    func toDictionary() -> NSDictionary {
-        var dictionary = NSDictionary()
 
-        dictionary = addValueToDictionary(value: self.inputId, key: "input_id", dictionary: dictionary)
-        dictionary = addValueToDictionary(value: self.street, key: "street", dictionary: dictionary)
-        dictionary = addValueToDictionary(value: self.street2, key: "street2", dictionary: dictionary)
-        dictionary = addValueToDictionary(value: self.secondary, key: "secondary", dictionary: dictionary)
-        dictionary = addValueToDictionary(value: self.city, key: "city", dictionary: dictionary)
-        dictionary = addValueToDictionary(value: self.state, key: "state", dictionary: dictionary)
-        dictionary = addValueToDictionary(value: self.zipCode, key: "zipcode", dictionary: dictionary)
-        dictionary = addValueToDictionary(value: self.lastline, key: "lastline", dictionary: dictionary)
-        dictionary = addValueToDictionary(value: self.addressee, key: "addressee", dictionary: dictionary)
-        dictionary = addValueToDictionary(value: self.urbanization, key: "urbanization", dictionary: dictionary)
-        dictionary = addValueToDictionary(value: self.countySource, key: "county_source", dictionary: dictionary)
-        dictionary = addValueToDictionary(value: self.outputFormat, key: "format", dictionary: dictionary)
-
-        let matchStrategy = self.matchStrategy ?? "enhanced"
-
-        if self.maxCandidates > 0 {
-            dictionary = addValueToDictionary(value: self.maxCandidates, key: "candidates", dictionary: dictionary)
-        } else if matchStrategy == "enhanced" {
-            dictionary = addValueToDictionary(value: 5, key: "candidates", dictionary: dictionary)
-        }
-
-        if matchStrategy != "strict" {
-            dictionary = addValueToDictionary(value: matchStrategy, key: "match", dictionary: dictionary)
-        }
-
-        return dictionary
+    enum CodingKeys: String, CodingKey {
+        case street, street2, secondary, city, state
+        case zipCode = "zipcode"
+        case lastline, addressee, urbanization
+        case inputId = "input_id"
+        case maxCandidates = "candidates"
+        case matchStrategy = "match"
+        case outputFormat = "format"
+        case countySource = "county_source"
     }
-    
-    func addValueToDictionary(value:Any?, key:String, dictionary:NSDictionary) -> NSDictionary {
-        if let value = value {
-            dictionary.setValue(value, forKey: key)
+
+    struct DynamicCodingKey: CodingKey {
+        var stringValue: String
+        init?(stringValue: String) { self.stringValue = stringValue }
+        var intValue: Int? { return nil }
+        init?(intValue: Int) { return nil }
+    }
+
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+
+        try container.encodeIfPresent(inputId, forKey: .inputId)
+        try container.encodeIfPresent(street, forKey: .street)
+        try container.encodeIfPresent(street2, forKey: .street2)
+        try container.encodeIfPresent(secondary, forKey: .secondary)
+        try container.encodeIfPresent(city, forKey: .city)
+        try container.encodeIfPresent(state, forKey: .state)
+        try container.encodeIfPresent(zipCode, forKey: .zipCode)
+        try container.encodeIfPresent(lastline, forKey: .lastline)
+        try container.encodeIfPresent(addressee, forKey: .addressee)
+        try container.encodeIfPresent(urbanization, forKey: .urbanization)
+        try container.encodeIfPresent(outputFormat, forKey: .outputFormat)
+        try container.encodeIfPresent(countySource, forKey: .countySource)
+
+        let effectiveMatch = matchStrategy ?? "enhanced"
+        try container.encode(effectiveMatch, forKey: .matchStrategy)
+
+        if maxCandidates > 0 {
+            try container.encode(maxCandidates, forKey: .maxCandidates)
+        } else if effectiveMatch == "enhanced" {
+            try container.encode(5, forKey: .maxCandidates)
         }
-        return dictionary
+
+        // Custom parameters as top-level keys
+        var dynamicContainer = encoder.container(keyedBy: DynamicCodingKey.self)
+        for (key, value) in customParamArray {
+            if let codingKey = DynamicCodingKey(stringValue: key) {
+                try dynamicContainer.encode(value, forKey: codingKey)
+            }
+        }
     }
 }

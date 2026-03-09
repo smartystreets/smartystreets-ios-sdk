@@ -89,9 +89,7 @@ public class USStreetClient: NSObject {
             request.setValue(value: "5", HTTPParameterField: "candidates")
         }
 
-        if matchStrategy != "strict" {
-            request.setValue(value: matchStrategy, HTTPParameterField: "match")
-        }
+        request.setValue(value: matchStrategy, HTTPParameterField: "match")
     }
     
     func populate(value:String!, field:String, request:SmartyRequest) {

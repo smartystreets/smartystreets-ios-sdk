@@ -8,7 +8,7 @@ clean:
 	@rm -rf .build
 
 test:
-	swift test
+	swift test --disable-sandbox
 
 run:
 	(cd samples && swift run swiftExamples)
@@ -19,7 +19,8 @@ define run-example
 	@cp samples/Sources/swiftExamples/main.swift samples/Sources/swiftExamples/main.swift.bak
 	@sed -i '' 's/^print(/\/\/ print(/g' samples/Sources/swiftExamples/main.swift
 	@sed -i '' 's|^\/\/ print($(1)()\.run())|print($(1)().run())|' samples/Sources/swiftExamples/main.swift
-	@(cd samples && swift run swiftExamples) || true
+	@sed -i '' 's|^\/\/ print(try $(1)()\.run())|print(try $(1)().run())|' samples/Sources/swiftExamples/main.swift
+	@(cd samples && swift run --disable-sandbox swiftExamples) || true
 	@mv samples/Sources/swiftExamples/main.swift.bak samples/Sources/swiftExamples/main.swift
 endef
 
@@ -61,11 +62,7 @@ example-us-street-iana-timezone:
 	@$(call run-example,USStreetIanaTimeZoneExample)
 
 example-us-enrichment:
-	@cp samples/Sources/swiftExamples/main.swift samples/Sources/swiftExamples/main.swift.bak
-	@sed -i '' 's/^print(/\/\/ print(/g' samples/Sources/swiftExamples/main.swift
-	@sed -i '' 's|^\/\/ print(try USEnrichmentExample()\.run())|print(try USEnrichmentExample().run())|' samples/Sources/swiftExamples/main.swift
-	@(cd samples && swift run swiftExamples) || true
-	@mv samples/Sources/swiftExamples/main.swift.bak samples/Sources/swiftExamples/main.swift
+	@$(call run-example,USEnrichmentExample)
 
 # Run all examples
 examples-all:
