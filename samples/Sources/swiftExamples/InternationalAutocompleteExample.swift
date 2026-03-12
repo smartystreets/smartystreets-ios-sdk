@@ -24,7 +24,9 @@ class InternationalAutocompleteExample {
         lookup.country = "FRA"
         lookup.locality = "Paris"
         lookup.search = "Louis"
-        
+        lookup.maxGroupResults = 50
+        lookup.geolocation = true
+
         // Uncomment the below line to add a custom parameter to a lookup:
         //lookup.addCustomParameter(parameter: "parameter", value: "value")
         

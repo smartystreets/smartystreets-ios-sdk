@@ -37,6 +37,7 @@ class InternationalAutocompleteClientTests: XCTestCase {
         XCTAssertEqual("2", capturingSender.request.parameters["country"])
         XCTAssertEqual("3", capturingSender.request.parameters["include_only_locality"])
         XCTAssertEqual("4", capturingSender.request.parameters["max_results"])
+        XCTAssertEqual("100", capturingSender.request.parameters["max_group_results"])
         XCTAssertEqual("5", capturingSender.request.parameters["include_only_postal_code"])
         XCTAssertEqual("http://localhost/6", capturingSender.request.urlPrefix)
         XCTAssertEqual("7", capturingSender.request.parameters["custom"])
@@ -57,7 +58,57 @@ class InternationalAutocompleteClientTests: XCTestCase {
         XCTAssertEqual("2", capturingSender.request.parameters["country"])
         XCTAssertEqual(nil, capturingSender.request.parameters["include_only_locality"])
         XCTAssertEqual("10", capturingSender.request.parameters["max_results"])
+        XCTAssertEqual("100", capturingSender.request.parameters["max_group_results"])
         XCTAssertEqual(nil, capturingSender.request.parameters["include_only_postal_code"])
         XCTAssertNil(self.error)
+    }
+
+    func testSendingSingleLookupWithCustomMaxGroupResults() {
+        let sender = URLPrefixSender(urlPrefix: "http://localhost/", inner: self.capturingSender as Any)
+        let serializer = MockSerializer(result: InternationalAutocompleteResult(dictionary: NSDictionary()))
+        let client = InternationalAutocompleteClient(sender:sender, serializer:serializer)
+        var lookup = InternationalAutocompleteLookup()
+        lookup.search = "1"
+        lookup.country = "2"
+        lookup.maxGroupResults = 50
+
+        _ = client.sendLookup(lookup:&lookup, error:&error)
+
+        XCTAssertEqual("50", capturingSender.request.parameters["max_group_results"])
+        XCTAssertNil(self.error)
+    }
+
+    func testSendingSingleLookupWithGeolocation() {
+        let sender = URLPrefixSender(urlPrefix: "http://localhost/", inner: self.capturingSender as Any)
+        let serializer = MockSerializer(result: InternationalAutocompleteResult(dictionary: NSDictionary()))
+        let client = InternationalAutocompleteClient(sender:sender, serializer:serializer)
+        var lookup = InternationalAutocompleteLookup()
+        lookup.search = "1"
+        lookup.country = "2"
+        lookup.geolocation = true
+
+        _ = client.sendLookup(lookup:&lookup, error:&error)
+
+        XCTAssertEqual("on", capturingSender.request.parameters["geolocation"])
+        XCTAssertNil(self.error)
+    }
+
+    func testGeolocationNotIncludedWhenNotSet() {
+        let sender = URLPrefixSender(urlPrefix: "http://localhost/", inner: self.capturingSender as Any)
+        let serializer = MockSerializer(result: InternationalAutocompleteResult(dictionary: NSDictionary()))
+        let client = InternationalAutocompleteClient(sender:sender, serializer:serializer)
+        var lookup = InternationalAutocompleteLookup()
+        lookup.search = "1"
+        lookup.country = "2"
+
+        _ = client.sendLookup(lookup:&lookup, error:&error)
+
+        XCTAssertNil(capturingSender.request.parameters["geolocation"])
+        XCTAssertNil(self.error)
+    }
+
+    func testDefaultMaxGroupResults() {
+        let lookup = InternationalAutocompleteLookup()
+        XCTAssertEqual(100, lookup.maxGroupResults)
     }
 }
