@@ -57,6 +57,24 @@ class ClientBuilderTests: XCTestCase {
         let client = ClientBuilder().withSender(sender:sender)
         XCTAssertNotNil(client.sender)
     }
+
+    func testWithSender_WrapsWithMiddlewareChain() {
+        let emptyResponse = SmartyResponse(statusCode: 200, payload: "[]".data(using: .utf8)!)
+        let mockSender = MockSender(response: emptyResponse)
+        let client = ClientBuilder(authId: "test-id", authToken: "test-token")
+            .withSender(sender: mockSender)
+            .buildUsStreetApiClient()
+
+        var lookup = USStreetLookup()
+        lookup.street = "1 Rosedale"
+        var error: NSError! = nil
+        _ = client.sendLookup(lookup: &lookup, error: &error)
+
+        XCTAssertNotNil(mockSender.request)
+        XCTAssertTrue(mockSender.request.urlPrefix.contains("us-street.api.smarty.com"))
+        XCTAssertEqual(mockSender.request.parameters["auth-id"], "test-id")
+        XCTAssertEqual(mockSender.request.parameters["auth-token"], "test-token")
+    }
     
     func testWithSerializer() {
         let serializer = USZipCodeSerializer()

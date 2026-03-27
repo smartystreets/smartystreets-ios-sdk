@@ -76,11 +76,11 @@ import Foundation
         //        Default is a series of nested senders.
         //
         //        Returns self to accommodate method chaining.
-        
+
         self.sender = sender
         return self
     }
-    
+
     public func withSerializer(serializer:USZipCodeSerializer) -> ClientBuilder {
         //        Changes the Serializer from the default.
         //
@@ -233,11 +233,16 @@ import Foundation
     }
     
     func buildSender() -> SmartySender {
-        if let httpSender = self.sender {
-            return httpSender
+        if self.sender != nil {
+            var conflicts: [String] = []
+            if self.maxTimeout != 10000 { conflicts.append("withMaxTimeout()") }
+            if self.proxy != nil { conflicts.append("withProxy()") }
+            if self.debug { conflicts.append("withDebug()") }
+            if !conflicts.isEmpty {
+                preconditionFailure("withSender() cannot be combined with: \(conflicts.joined(separator: ", ")). These options only apply to the built-in HTTP transport.")
+            }
         }
-        
-        var httpSender:SmartySender = HttpSender(maxTimeout: self.maxTimeout, proxy: self.proxy, debug: self.debug)
+        var httpSender:SmartySender = self.sender ?? HttpSender(maxTimeout: self.maxTimeout, proxy: self.proxy, debug: self.debug)
         httpSender = StatusCodeSender(inner: httpSender)
         
         if self.maxRetries > 0 {
