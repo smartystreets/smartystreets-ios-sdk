@@ -58,11 +58,11 @@ class ClientBuilderTests: XCTestCase {
         XCTAssertNotNil(client.sender)
     }
 
-    func testWithWrappedSender_WrapsWithMiddlewareChain() {
+    func testWithSender_WrapsWithMiddlewareChain() {
         let emptyResponse = SmartyResponse(statusCode: 200, payload: "[]".data(using: .utf8)!)
         let mockSender = MockSender(response: emptyResponse)
         let client = ClientBuilder(authId: "test-id", authToken: "test-token")
-            .withWrappedSender(sender: mockSender)
+            .withSender(sender: mockSender)
             .buildUsStreetApiClient()
 
         var lookup = USStreetLookup()

@@ -8,7 +8,6 @@ import Foundation
     var signer:SmartyCredentials!
     var serializer:SmartySerializer
     var sender:SmartySender!
-    var wrappedSender:SmartySender!
     var maxRetries:Int = 5
     var maxTimeout:Int = 10000
     var debug:Bool = false
@@ -82,15 +81,6 @@ import Foundation
         return self
     }
 
-    public func withWrappedSender(sender:SmartySender) -> ClientBuilder {
-        //        Replaces the innermost HttpSender while keeping the rest of the sender chain intact.
-        //
-        //        Returns self to accommodate method chaining.
-
-        self.wrappedSender = sender
-        return self
-    }
-    
     public func withSerializer(serializer:USZipCodeSerializer) -> ClientBuilder {
         //        Changes the Serializer from the default.
         //
@@ -243,11 +233,7 @@ import Foundation
     }
     
     func buildSender() -> SmartySender {
-        if let httpSender = self.sender {
-            return httpSender
-        }
-        
-        var httpSender:SmartySender = self.wrappedSender ?? HttpSender(maxTimeout: self.maxTimeout, proxy: self.proxy, debug: self.debug)
+        var httpSender:SmartySender = self.sender ?? HttpSender(maxTimeout: self.maxTimeout, proxy: self.proxy, debug: self.debug)
         httpSender = StatusCodeSender(inner: httpSender)
         
         if self.maxRetries > 0 {
