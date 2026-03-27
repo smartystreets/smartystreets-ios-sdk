@@ -233,6 +233,15 @@ import Foundation
     }
     
     func buildSender() -> SmartySender {
+        if self.sender != nil {
+            var conflicts: [String] = []
+            if self.maxTimeout != 10000 { conflicts.append("withMaxTimeout()") }
+            if self.proxy != nil { conflicts.append("withProxy()") }
+            if self.debug { conflicts.append("withDebug()") }
+            if !conflicts.isEmpty {
+                preconditionFailure("withSender() cannot be combined with: \(conflicts.joined(separator: ", ")). These options only apply to the built-in HTTP transport.")
+            }
+        }
         var httpSender:SmartySender = self.sender ?? HttpSender(maxTimeout: self.maxTimeout, proxy: self.proxy, debug: self.debug)
         httpSender = StatusCodeSender(inner: httpSender)
         
