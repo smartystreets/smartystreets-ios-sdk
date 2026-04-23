@@ -27,7 +27,10 @@ class StatusCodeSender: SmartySender {
         case 200:
             return response
         case 304:
-            let details = [NSLocalizedDescriptionKey:"Not Modified. This data has not been modified since it was last retrieved."]
+            var details: [String:Any] = [NSLocalizedDescriptionKey: "Not Modified. This data has not been modified since it was last retrieved."]
+            if let etag = extractResponseEtag(response: response) {
+                details[SmartyErrors.ResponseEtagKey] = etag
+            }
             error = NSError(domain: smartyErrors.SSErrorDomain, code: SmartyErrors.SSErrors.NotModifiedInfo.rawValue, userInfo: details)
             return response
         case 400:
@@ -79,5 +82,15 @@ class StatusCodeSender: SmartySender {
         default:
             return nil
         }
+    }
+
+    private func extractResponseEtag(response: SmartyResponse?) -> String? {
+        guard let response = response else { return nil }
+        for (key, value) in response.headers {
+            if key.caseInsensitiveCompare("Etag") == .orderedSame {
+                return value
+            }
+        }
+        return nil
     }
 }

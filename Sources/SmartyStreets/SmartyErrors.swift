@@ -2,7 +2,10 @@ import Foundation
 
 class SmartyErrors {
     let SSErrorDomain = "SmartyErrorDomain"
-    
+
+    // userInfo key on a NotModifiedInfo NSError carrying the server-refreshed Etag header value.
+    static let ResponseEtagKey = "SSResponseEtag"
+
     enum SSErrors: Int {
         case BatchFullError
         case FieldNotSetError
@@ -11,6 +14,7 @@ class SmartyErrors {
         case NotPositiveIntergerError
         case JSONSerializationError
         case MaxRetriesExceededError
+        case BusinessDetailMultipleResultsError
         case NotModifiedInfo = 304
         case BadRequestError = 400
         case BadCredentialsError = 401

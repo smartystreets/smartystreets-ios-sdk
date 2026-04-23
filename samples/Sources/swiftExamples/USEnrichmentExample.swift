@@ -49,7 +49,11 @@ class USEnrichmentExample{
         //lookup.addCustomParameter(parameter: "parameter", value: "value")
         
         let lookupType = "principal"
-        
+
+        // For "business-detail" the endpoint is keyed by business_id, not smarty_key/address.
+        // Replace with an ID from a prior business-summary call.
+        let businessId = "REPLACE_WITH_BUSINESS_ID"
+
         if (smartyKey == "") {
             if lookupType.lowercased() == "principal" {
                 let results = client.sendPropertyPrincipalLookup(inputLookup: lookup, error: &error)
@@ -66,6 +70,12 @@ class USEnrichmentExample{
             } else if lookupType.lowercased() == "secondary-count" {
                 let results = client.sendSecondaryCountLookup(inputLookup: lookup, error: &error)
                 return try self.outputSecondaryCountResults(results: [results?[0]])
+            } else if lookupType.lowercased() == "business" {
+                let results = client.sendBusinessLookup(inputLookup: lookup, error: &error)
+                return try self.outputBusinessSummaryResults(results: results ?? [])
+            } else if lookupType.lowercased() == "business-detail" {
+                let result = client.sendBusinessDetailLookup(businessId: businessId, error: &error)
+                return try self.outputBusinessDetailResult(result: result)
             }
         // The following calls are made using ONLY a smarty key, and are not capable of accepting other parameters.
         // Use a 'lookup' call, like those above, to make an API call with additional parameters.
@@ -84,9 +94,62 @@ class USEnrichmentExample{
         } else if lookupType.lowercased() == "secondary-count" {
             let results = client.sendSecondaryCountLookup(smartyKey: smartyKey, error: &error)
             return try self.outputSecondaryCountResults(results: [results?[0]])
+        } else if lookupType.lowercased() == "business" {
+            let results = client.sendBusinessLookup(smartyKey: smartyKey, error: &error)
+            return try self.outputBusinessSummaryResults(results: results ?? [])
+        } else if lookupType.lowercased() == "business-detail" {
+            let result = client.sendBusinessDetailLookup(businessId: businessId, error: &error)
+            return try self.outputBusinessDetailResult(result: result)
         }
-        
+
         return "lookupType unknown"
+    }
+
+    func outputBusinessSummaryResults(results: [BusinessSummaryResult]) throws -> String {
+        if let error = error {
+            let output = """
+            Domain: \(error.domain)
+            Error Code: \(error.code)
+            Description:\n\(error.userInfo[NSLocalizedDescriptionKey] as! NSString)
+            """
+            NSLog(output)
+            return output
+        }
+
+        var output = "Results: \n"
+
+        for result in results {
+            let encoder = JSONEncoder()
+            let jsonData = try encoder.encode(result)
+            let jsonString = String(data: jsonData, encoding: .utf8)
+            output.append(jsonString ?? "[]")
+            output.append("\n******************************\n")
+        }
+
+        output.append("\n******************************\n")
+
+        return output
+    }
+
+    func outputBusinessDetailResult(result: BusinessDetailResult?) throws -> String {
+        if let error = error {
+            let output = """
+            Domain: \(error.domain)
+            Error Code: \(error.code)
+            Description:\n\(error.userInfo[NSLocalizedDescriptionKey] as! NSString)
+            """
+            NSLog(output)
+            return output
+        }
+
+        var output = "Result: \n"
+        let encoder = JSONEncoder()
+        let jsonData = try encoder.encode(result)
+        let jsonString = String(data: jsonData, encoding: .utf8)
+        output.append(jsonString ?? "{}")
+        output.append("\n******************************\n")
+
+        return output
     }
 
     func outputPrincipalResults(results: [PrincipalResult?]) throws -> String {

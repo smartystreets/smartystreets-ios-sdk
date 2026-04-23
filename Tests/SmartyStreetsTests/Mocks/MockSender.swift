@@ -12,6 +12,11 @@ class MockSender: SmartySender {
         self.response = response
         self.request = nil
     }
+
+    init(statusCode:Int, payload:Data, headers:[String:String]) {
+        self.response = SmartyResponse(statusCode: statusCode, payload: payload, headers: headers)
+        self.request = nil
+    }
     
     override func sendRequest(request: SmartyRequest, error: inout NSError!) -> SmartyResponse! {
         self.request = request

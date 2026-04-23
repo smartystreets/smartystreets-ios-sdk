@@ -68,6 +68,36 @@ class StatusCodeSenderTests: XCTestCase {
         assertSendWithStatusCode(statusCode: 504)
     }
     
+    func testNotModifiedCarriesResponseEtagFromHeader() {
+        let inner = MockSender(statusCode: 304, payload: Data(), headers: ["Etag": "server-refreshed-etag"])
+        let sender = StatusCodeSender(inner: inner)
+
+        let _ = sender.sendRequest(request: SmartyRequest(), error: &self.error)
+
+        XCTAssertEqual(304, self.error.code)
+        XCTAssertEqual("server-refreshed-etag", self.error.userInfo[SmartyErrors.ResponseEtagKey] as? String)
+    }
+
+    func testNotModifiedResponseEtagHeaderCaseInsensitive() {
+        let inner = MockSender(statusCode: 304, payload: Data(), headers: ["ETag": "case-insensitive-etag"])
+        let sender = StatusCodeSender(inner: inner)
+
+        let _ = sender.sendRequest(request: SmartyRequest(), error: &self.error)
+
+        XCTAssertEqual(304, self.error.code)
+        XCTAssertEqual("case-insensitive-etag", self.error.userInfo[SmartyErrors.ResponseEtagKey] as? String)
+    }
+
+    func testNotModifiedNoHeaderLeavesResponseEtagAbsent() {
+        let inner = MockSender(statusCode: 304, payload: Data(), headers: [:])
+        let sender = StatusCodeSender(inner: inner)
+
+        let _ = sender.sendRequest(request: SmartyRequest(), error: &self.error)
+
+        XCTAssertEqual(304, self.error.code)
+        XCTAssertNil(self.error.userInfo[SmartyErrors.ResponseEtagKey])
+    }
+
     func assertSendWithStatusCode(statusCode:Int) {
         let mockStatusCodeSender = MockStatusCodeSender(statusCode: statusCode)
         let sender = StatusCodeSender(inner: mockStatusCodeSender)

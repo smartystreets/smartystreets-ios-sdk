@@ -1,48 +1,40 @@
 import Foundation
 
-public class EnrichmentLookup: Encodable {
+public class EnrichmentLookup: EnrichmentLookupBase, Encodable {
     private var smarty_key: String
     private let data_set_name: String
     private let data_subset_name: String
-    private var include_array: [String]
-    private var exclude_array: [String]
     private var street: String
     private var city: String
     private var state: String
     private var zipcode: String
     private var freeform: String
     private var features: String
-    private var etag: String
-    private var custom_param_array: [String: String] = [:]
 
     public init(smartyKey: String, datasetName: String, dataSubsetName: String) {
         self.smarty_key = smartyKey
         self.data_set_name = datasetName
         self.data_subset_name = dataSubsetName
-        self.include_array = [String]()
-        self.exclude_array = [String]()
         self.street = ""
         self.city = ""
         self.state = ""
         self.zipcode = ""
         self.freeform = ""
         self.features = ""
-        self.etag = ""
+        super.init()
     }
-    
-    public init() {
+
+    public override init() {
         self.smarty_key = ""
         self.data_set_name = ""
         self.data_subset_name = ""
-        self.include_array = [String]()
-        self.exclude_array = [String]()
         self.street = ""
         self.city = ""
         self.state = ""
         self.zipcode = ""
         self.freeform = ""
         self.features = ""
-        self.etag = ""
+        super.init()
     }
 
     public func getSmartyKey() -> String {
@@ -56,92 +48,101 @@ public class EnrichmentLookup: Encodable {
     public func getDataSubsetName() -> String {
         return data_subset_name
     }
-    
-    public func getIncludeAttributes() -> [String] {
-        return self.include_array
-    }
-    
-    public func getExcludeAttributes() -> [String] {
-        return self.exclude_array
-    }
-    
+
     public func getStreet() -> String {
         return self.street
     }
-    
+
     public func getCity() -> String {
         return self.city
     }
-    
+
     public func getState() -> String {
         return self.state
     }
-    
+
     public func getZipcode() -> String {
         return self.zipcode
     }
-    
+
     public func getFreeform() -> String {
         return self.freeform
     }
-    
+
     public func getFeatures() -> String {
         return self.features
     }
 
-    public func getEtag() -> String{
-        return self.etag
+    // Deprecated: prefer getRequestEtag/setRequestEtag. Kept as an alias on the request etag
+    // so callers migrating from earlier SDK versions keep working unchanged.
+    public func getEtag() -> String {
+        return self.getRequestEtag()
     }
-    
-    public func getCustomParamArray() -> [String: String] {
-        return self.custom_param_array
+
+    public func setEtag(etag: String) {
+        self.setRequestEtag(etag: etag)
     }
-    
+
     public func setSmartyKey(smarty_key: String) {
         self.smarty_key = smarty_key
     }
-    
-    public func addIncludeAttribute(attribute: String) {
-        self.include_array.append(attribute)
-    }
-    
-    public func addExcludeAttribute(attribute: String) {
-        self.exclude_array.append(attribute)
-    }
-    
+
     public func setStreet(street: String) {
         self.street = street
     }
-    
+
     public func setCity(city: String) {
         self.city = city
     }
-    
+
     public func setState(state: String) {
         self.state = state
     }
-    
+
     public func setZipcode(zipcode: String) {
         self.zipcode = zipcode
     }
-    
+
     public func setFreeform(freeform: String) {
         self.freeform = freeform
     }
-    
+
     public func setFeatures(features: String) {
         self.features = features
     }
 
-    public func setEtag(etag: String) {
-        self.etag = etag
-    }
-    
-    public func addCustomParameter(parameter: String, value: String) {
-        self.custom_param_array.updateValue(value, forKey: parameter)
+    // Encodable — preserves the pre-split JSON shape so existing test fixtures keep working.
+    // The response_etag is deliberately excluded: it is server-populated, not part of the request.
+    private enum CodingKeys: String, CodingKey {
+        case smarty_key
+        case data_set_name
+        case data_subset_name
+        case street
+        case city
+        case state
+        case zipcode
+        case freeform
+        case features
+        case etag
+        case include_array
+        case exclude_array
+        case custom_param_array
     }
 
-    public func deserializeAndSetResults(serializer: SmartySerializer, payload: Data, error: UnsafeMutablePointer<NSError?>) {
-        fatalError("You must use a Lookup subclass with an implemented version of deserializeAndSetResults")
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(self.smarty_key, forKey: .smarty_key)
+        try container.encode(self.data_set_name, forKey: .data_set_name)
+        try container.encode(self.data_subset_name, forKey: .data_subset_name)
+        try container.encode(self.street, forKey: .street)
+        try container.encode(self.city, forKey: .city)
+        try container.encode(self.state, forKey: .state)
+        try container.encode(self.zipcode, forKey: .zipcode)
+        try container.encode(self.freeform, forKey: .freeform)
+        try container.encode(self.features, forKey: .features)
+        try container.encode(self.getRequestEtag(), forKey: .etag)
+        try container.encode(self.getIncludeAttributes(), forKey: .include_array)
+        try container.encode(self.getExcludeAttributes(), forKey: .exclude_array)
+        try container.encode(self.getCustomParamArray(), forKey: .custom_param_array)
     }
 }

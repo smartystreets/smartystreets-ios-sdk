@@ -100,9 +100,17 @@ class HttpSender: SmartySender {
                 _ = self.logHttpRequest(httpRequest: httpRequest, response: httpResponse, payload: data)
         }
         if let statusCode = statusCode {
-            self.myResponse = SmartyResponse(statusCode: statusCode, payload: data!)
+            var responseHeaders:[String:String] = [:]
+            if let allHeaders = httpResponse?.allHeaderFields {
+                for (key, value) in allHeaders {
+                    if let keyStr = key as? String, let valueStr = value as? String {
+                        responseHeaders[keyStr] = valueStr
+                    }
+                }
+            }
+            self.myResponse = SmartyResponse(statusCode: statusCode, payload: data!, headers: responseHeaders)
         }
-        
+
         return self.myResponse
     }
     
