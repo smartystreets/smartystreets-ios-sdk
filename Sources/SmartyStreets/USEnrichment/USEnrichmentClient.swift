@@ -5,7 +5,6 @@ public class USEnrichmentClient: NSObject {
     private var sender:SmartySender
     private var propertyPrincipalSerializer:PropertyPrincipalSerializer
     private var geoReferenceSerializer:GeoReferenceSerializer
-    private var riskSerializer:RiskSerializer
     private var secondarySerializer:SecondarySerializer
     private var secondaryCountSerializer:SecondaryCountSerializer
     private var businessSummarySerializer:BusinessSummarySerializer
@@ -17,7 +16,6 @@ public class USEnrichmentClient: NSObject {
         self.sender = sender as! SmartySender
         self.propertyPrincipalSerializer = PropertyPrincipalSerializer()
         self.geoReferenceSerializer = GeoReferenceSerializer()
-        self.riskSerializer = RiskSerializer()
         self.secondarySerializer = SecondarySerializer()
         self.secondaryCountSerializer = SecondaryCountSerializer()
         self.businessSummarySerializer = BusinessSummarySerializer()
@@ -44,18 +42,6 @@ public class USEnrichmentClient: NSObject {
 
     public func sendGeoReferenceLookup(inputLookup: EnrichmentLookup, error: UnsafeMutablePointer<NSError?>) -> [GeoReferenceResult]? {
         let lookup = GeoReferenceEnrichmentLookup(lookup: inputLookup)
-        _ = sendEnrichment(lookup: lookup, error: error)
-        return lookup.results
-    }
-
-    public func sendRiskLookup(smartyKey: String, error: UnsafeMutablePointer<NSError?>) -> [RiskResult]? {
-        let lookup = RiskEnrichmentLookup(smartyKey: smartyKey)
-        _ = sendEnrichment(lookup: lookup, error: error)
-        return lookup.results
-    }
-
-    public func sendRiskLookup(inputLookup: EnrichmentLookup, error: UnsafeMutablePointer<NSError?>) -> [RiskResult]? {
-        let lookup = RiskEnrichmentLookup(lookup: inputLookup)
         _ = sendEnrichment(lookup: lookup, error: error)
         return lookup.results
     }
@@ -164,8 +150,6 @@ public class USEnrichmentClient: NSObject {
             return self.propertyPrincipalSerializer
         } else if lookup is GeoReferenceEnrichmentLookup {
             return self.geoReferenceSerializer
-        } else if lookup is RiskEnrichmentLookup {
-            return self.riskSerializer
         } else if lookup is SecondaryEnrichmentLookup {
             return self.secondarySerializer
         } else if lookup is SecondaryCountEnrichmentLookup {

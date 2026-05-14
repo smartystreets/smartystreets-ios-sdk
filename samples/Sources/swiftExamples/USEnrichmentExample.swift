@@ -61,9 +61,6 @@ class USEnrichmentExample{
             } else if lookupType.lowercased() == "geo-reference" {
                 let results = client.sendGeoReferenceLookup(inputLookup: lookup, error: &error)
                 return try self.outputGeoReferenceResults(results: [results?[0]])
-            } else if lookupType.lowercased() == "risk" {
-                let results = client.sendRiskLookup(inputLookup: lookup, error: &error)
-                return try self.outputRiskResults(results: [results?[0]])
             } else if lookupType.lowercased() == "secondary" {
                 let results = client.sendSecondaryLookup(inputLookup: lookup, error: &error)
                 return try self.outputSecondaryResults(results: [results?[0]])
@@ -85,9 +82,6 @@ class USEnrichmentExample{
         } else if lookupType.lowercased() == "geo-reference" {
             let results = client.sendGeoReferenceLookup(smartyKey: smartyKey, error: &error)
             return try self.outputGeoReferenceResults(results: [results?[0]])
-        } else if lookupType.lowercased() == "risk" {
-            let results = client.sendRiskLookup(smartyKey: smartyKey, error: &error)
-            return try self.outputRiskResults(results: [results?[0]])
         } else if lookupType.lowercased() == "secondary" {
             let results = client.sendSecondaryLookup(smartyKey: smartyKey, error: &error)
             return try self.outputSecondaryResults(results: [results?[0]])
@@ -204,32 +198,6 @@ class USEnrichmentExample{
         return output
     }
     
-    func outputRiskResults(results: [RiskResult?]) throws -> String {
-        if let error = error {
-            let output = """
-            Domain: \(error.domain)
-            Error Code: \(error.code)
-            Description:\n\(error.userInfo[NSLocalizedDescriptionKey] as! NSString)
-            """
-            NSLog(output)
-            return output
-        }
-
-        var output = "Results: \n"
-
-        for result in results {
-            let encoder = JSONEncoder()
-            let jsonData = try encoder.encode(result)
-            let jsonString = String(data: jsonData, encoding: .utf8)
-            output.append(jsonString ?? "[]")
-            output.append("\n******************************\n")
-            }
-
-        output.append("\n******************************\n")
-
-        return output
-    }
-
     func outputSecondaryResults(results: [SecondaryResult?]) throws -> String {
         if let error = error {
             let output = """

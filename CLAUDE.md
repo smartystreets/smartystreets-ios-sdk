@@ -103,7 +103,6 @@ if let error = error { /* handle */ }
 Unlike other APIs, USEnrichment has multiple lookup/result type pairs handled by a single client:
 - `sendPropertyPrincipalLookup()` → `[PrincipalResult]`
 - `sendGeoReferenceLookup()` → `[GeoReferenceResult]`
-- `sendRiskLookup()` → `[RiskResult]`
 - `sendSecondaryLookup()` / `sendSecondaryCountLookup()` → `[SecondaryResult]` / `[SecondaryCountResult]`
 
 Each has a dedicated serializer and can be called with either a `smartyKey` string or an `EnrichmentLookup` object.
