@@ -2,11 +2,11 @@ import Foundation
 
 @objcMembers public class LanguageMode: NSObject, Codable {
     
-    var Native = "native"
-    var Latin = "latin"
-    var name:String
-    
-    init(name:String) {
+    public static let Native = "native"
+    public static let Latin = "latin"
+    public let name:String
+
+    public init(name:String) {
         self.name = name
     }
 }
