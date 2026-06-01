@@ -34,23 +34,23 @@ class StatusCodeSender: SmartySender {
             error = NSError(domain: smartyErrors.SSErrorDomain, code: SmartyErrors.SSErrors.NotModifiedInfo.rawValue, userInfo: details)
             return response
         case 400:
-            let details = [NSLocalizedDescriptionKey:"Bad Request (Malformed Payload): A GET request lacked a street field or the request body of a POST request contained malformed JSON."]
+            let details = [NSLocalizedDescriptionKey:messageFrom(response: response!, fallback: "Bad Request (Malformed Payload): A GET request lacked a street field or the request body of a POST request contained malformed JSON.")]
             error = NSError(domain: smartyErrors.SSErrorDomain, code: SmartyErrors.SSErrors.BadRequestError.rawValue, userInfo: details)
             return nil
         case 401:
-            let details = [NSLocalizedDescriptionKey:"Unauthorized: The credentials were provided incorrectly or did not match any existing, active credentials."]
+            let details = [NSLocalizedDescriptionKey:messageFrom(response: response!, fallback: "Unauthorized: The credentials were provided incorrectly or did not match any existing, active credentials.")]
             error = NSError(domain: smartyErrors.SSErrorDomain, code: SmartyErrors.SSErrors.BadCredentialsError.rawValue, userInfo: details)
             return nil
         case 402:
-            let details = [NSLocalizedDescriptionKey:"Payment Required: There is no active subscription for the account associated with the credentials submitted with the request."]
+            let details = [NSLocalizedDescriptionKey:messageFrom(response: response!, fallback: "Payment Required: There is no active subscription for the account associated with the credentials submitted with the request.")]
             error = NSError(domain: smartyErrors.SSErrorDomain, code: SmartyErrors.SSErrors.PaymentRequiredError.rawValue, userInfo: details)
             return nil
         case 413:
-            let details = [NSLocalizedDescriptionKey:"Request Entity Too Large: The request body has exceeded the maximum size."]
+            let details = [NSLocalizedDescriptionKey:messageFrom(response: response!, fallback: "Request Entity Too Large: The request body has exceeded the maximum size.")]
             error = NSError(domain: smartyErrors.SSErrorDomain, code: SmartyErrors.SSErrors.RequestEntityTooLargeError.rawValue, userInfo: details)
             return nil
         case 422:
-            let details = [NSLocalizedDescriptionKey:"GET request lacked required fields."]
+            let details = [NSLocalizedDescriptionKey:messageFrom(response: response!, fallback: "GET request lacked required fields.")]
             error = NSError(domain: smartyErrors.SSErrorDomain, code: SmartyErrors.SSErrors.UnprocessableEntityError.rawValue, userInfo: details)
             return nil
         case 429:
@@ -82,6 +82,14 @@ class StatusCodeSender: SmartySender {
         default:
             return nil
         }
+    }
+
+    private func messageFrom(response: SmartyResponse, fallback: String) -> String {
+        guard let errors = try? self.jsonDecoder.decode(ResponseErrors.self, from: response.payload) else {
+            return fallback
+        }
+        let message = errors.errors.map { $0.message }.joined(separator: " ")
+        return message.isEmpty ? fallback : message
     }
 
     private func extractResponseEtag(response: SmartyResponse?) -> String? {
