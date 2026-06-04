@@ -7,7 +7,8 @@ class RetrySender: SmartySender {
     var logger:SmartyLogger
     var sleeper:SmartySleeper
     let maxBackoffDuration = 10
-    
+    let defaultRateLimitSleep = 10
+
     init(maxRetries:Int, sleeper:Any, logger:Any, inner:Any) {
         self.maxRetries = maxRetries
         self.sleeper = sleeper as! SmartySleeper
@@ -16,7 +17,7 @@ class RetrySender: SmartySender {
     }
     
     override func sendRequest(request: SmartyRequest, error: inout NSError!) -> SmartyResponse! {
-        for attempt in 0...self.maxRetries {
+        for attempt in 0..<self.maxRetries {
             let response:SmartyResponse! = trySendingRequest(request:request, attempts:attempt, error:&error)
             if response != nil {
                 return response
@@ -38,7 +39,7 @@ class RetrySender: SmartySender {
         }
         
         if response.statusCode == 429 {
-            backoff(attempt: 5, error: error)
+            rateLimitBackoff(response: response)
             return nil
         }
         
@@ -47,10 +48,22 @@ class RetrySender: SmartySender {
     
     func backoff(attempt:Int, error: NSError?) {
         let backoffDuration  = Int(min(attempt, maxBackoffDuration))
-        
+
         let message = "There was an error processing the request. Retrying in \(backoffDuration) seconds... Error: \(error?.localizedDescription ?? "nil")"
-        
+
         self.logger.log(message: message)
         self.sleeper.sleep(seconds: backoffDuration)
+    }
+
+    func rateLimitBackoff(response: SmartyResponse) {
+        let sleepSeconds: Int
+        if let retryAfter = response.headers["Retry-After"], let seconds = Int(retryAfter) {
+            sleepSeconds = seconds
+        } else {
+            sleepSeconds = defaultRateLimitSleep
+        }
+        let message = "Rate limit reached (429). Retrying in \(sleepSeconds) seconds..."
+        self.logger.log(message: message)
+        self.sleeper.sleep(seconds: sleepSeconds)
     }
 }

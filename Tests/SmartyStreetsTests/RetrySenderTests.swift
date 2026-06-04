@@ -59,10 +59,39 @@ class RetrySenderTests: XCTestCase {
     }
     
     func testSleepOnRateLimit() {
-        let expectedDurations = [5]
+        let expectedDurations = [10]
         self.request.urlPrefix = "TooManyRequests"
         let retrySender = RetrySender(maxRetries: 15, sleeper: self.mockSleeper as Any, logger: self.mockLogger as Any, inner: self.mockCrashingSender as Any)
         let _ = retrySender.sendRequest(request: self.request!, error: &self.error)
         XCTAssertEqual(self.mockSleeper.sleepDuration as! [Int?], expectedDurations)
+        XCTAssertNil(error)
+    }
+
+    func testSleepOnRateLimitUsesRetryAfterHeader() {
+        let expectedDurations = [3]
+        self.request.urlPrefix = "TooManyRequestsWithRetryAfter"
+        let retrySender = RetrySender(maxRetries: 15, sleeper: self.mockSleeper as Any, logger: self.mockLogger as Any, inner: self.mockCrashingSender as Any)
+        let _ = retrySender.sendRequest(request: self.request!, error: &self.error)
+        XCTAssertEqual(self.mockSleeper.sleepDuration as! [Int?], expectedDurations)
+    }
+
+    func testContinuousFailureStopsAfterMaxRetries() {
+        let expectedDurations = [0, 1, 2, 3, 4]
+        self.request.urlPrefix = "RetryMaxTimes"
+        let retrySender = RetrySender(maxRetries: 5, sleeper: self.mockSleeper as Any, logger: self.mockLogger as Any, inner: self.mockCrashingSender as Any)
+        let _ = retrySender.sendRequest(request: self.request!, error: &self.error)
+        XCTAssertEqual(5, self.mockCrashingSender.sendCount)
+        XCTAssertEqual(self.mockSleeper.sleepDuration as! [Int?], expectedDurations)
+        XCTAssertNotNil(error)
+    }
+
+    func testRateLimitRespectsMaxRetries() {
+        let expectedDurations = [10, 10, 10, 10, 10]
+        self.request.urlPrefix = "TooManyRequestsAlways"
+        let retrySender = RetrySender(maxRetries: 5, sleeper: self.mockSleeper as Any, logger: self.mockLogger as Any, inner: self.mockCrashingSender as Any)
+        let _ = retrySender.sendRequest(request: self.request!, error: &self.error)
+        XCTAssertEqual(5, self.mockCrashingSender.sendCount)
+        XCTAssertEqual(self.mockSleeper.sleepDuration as! [Int?], expectedDurations)
+        XCTAssertNotNil(error)
     }
 }
