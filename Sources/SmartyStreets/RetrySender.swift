@@ -17,7 +17,7 @@ class RetrySender: SmartySender {
     }
     
     override func sendRequest(request: SmartyRequest, error: inout NSError!) -> SmartyResponse! {
-        for attempt in 0...self.maxRetries {
+        for attempt in 0..<self.maxRetries {
             let response:SmartyResponse! = trySendingRequest(request:request, attempts:attempt, error:&error)
             if response != nil {
                 return response
