@@ -64,6 +64,32 @@ class USEnrichmentClientTests: XCTestCase {
         XCTAssertEqual("freeform", sender.request.parameters["freeform"])
     }
 
+    func testBusinessSummarySearchSetsBusinessNameParameter() {
+        let (client, sender) = capturingClient()
+        let lookup = EnrichmentLookup()
+        lookup.setFreeform(freeform: "1 Rosedale, Baltimore, Maryland")
+        lookup.setBusinessName(businessName: "school")
+
+        _ = client.sendBusinessLookup(inputLookup: lookup, error: &self.error)
+
+        XCTAssertNil(self.error)
+        XCTAssertEqual("/search/business", sender.request.urlComponents)
+        XCTAssertEqual("1 Rosedale, Baltimore, Maryland", sender.request.parameters["freeform"])
+        XCTAssertEqual("school", sender.request.parameters["business_name"])
+    }
+
+    func testBusinessSummarySearchOmitsEmptyBusinessName() {
+        let (client, sender) = capturingClient()
+        let lookup = EnrichmentLookup()
+        lookup.setFreeform(freeform: "1 Rosedale, Baltimore, Maryland")
+
+        _ = client.sendBusinessLookup(inputLookup: lookup, error: &self.error)
+
+        XCTAssertNil(self.error)
+        XCTAssertEqual("/search/business", sender.request.urlComponents)
+        XCTAssertNil(sender.request.parameters["business_name"])
+    }
+
     // MARK: - Business detail URL shape
 
     func testBusinessDetailUrlContainsBusinessId() {

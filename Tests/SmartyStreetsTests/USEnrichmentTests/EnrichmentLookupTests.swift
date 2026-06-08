@@ -35,6 +35,22 @@ class EnrichmentLookupTests: XCTestCase {
         XCTAssertEqual("server-value", lookup.getResponseEtag())
     }
 
+    func testBusinessNameDefaultsEmpty() {
+        let lookup = EnrichmentLookup()
+        XCTAssertEqual("", lookup.getBusinessName())
+    }
+
+    func testBusinessNameSurvivesBusinessSummaryCopy() {
+        let lookup = EnrichmentLookup()
+        lookup.setFreeform(freeform: "1 Rosedale, Baltimore, Maryland")
+        lookup.setBusinessName(businessName: "school")
+
+        let copy = BusinessSummaryEnrichmentLookup(lookup: lookup)
+
+        XCTAssertEqual("school", copy.getBusinessName())
+        XCTAssertEqual("1 Rosedale, Baltimore, Maryland", copy.getFreeform())
+    }
+
     func testResponseEtagOmittedFromSerializedLookup() throws {
         let lookup = EnrichmentLookup(smartyKey: "xxx", datasetName: "property", dataSubsetName: "principal")
         lookup.setRequestEtag(etag: "request-value")

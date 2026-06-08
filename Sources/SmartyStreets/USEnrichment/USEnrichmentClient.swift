@@ -203,6 +203,9 @@ public class USEnrichmentClient: NSObject {
         if (lookup.getFreeform() != "") {
             request.setValue(value: lookup.getFreeform(), HTTPParameterField: "freeform")
         }
+        if (lookup.getBusinessName() != "") {
+            request.setValue(value: lookup.getBusinessName(), HTTPParameterField: "business_name")
+        }
         if (lookup.getFeatures() != "") {
             request.setValue(value: lookup.getFeatures(), HTTPParameterField: "features")
         }

@@ -9,6 +9,7 @@ public class EnrichmentLookup: EnrichmentLookupBase, Encodable {
     private var state: String
     private var zipcode: String
     private var freeform: String
+    private var business_name: String
     private var features: String
 
     public init(smartyKey: String, datasetName: String, dataSubsetName: String) {
@@ -20,6 +21,7 @@ public class EnrichmentLookup: EnrichmentLookupBase, Encodable {
         self.state = ""
         self.zipcode = ""
         self.freeform = ""
+        self.business_name = ""
         self.features = ""
         super.init()
     }
@@ -33,6 +35,7 @@ public class EnrichmentLookup: EnrichmentLookupBase, Encodable {
         self.state = ""
         self.zipcode = ""
         self.freeform = ""
+        self.business_name = ""
         self.features = ""
         super.init()
     }
@@ -67,6 +70,10 @@ public class EnrichmentLookup: EnrichmentLookupBase, Encodable {
 
     public func getFreeform() -> String {
         return self.freeform
+    }
+
+    public func getBusinessName() -> String {
+        return self.business_name
     }
 
     public func getFeatures() -> String {
@@ -107,6 +114,10 @@ public class EnrichmentLookup: EnrichmentLookupBase, Encodable {
         self.freeform = freeform
     }
 
+    public func setBusinessName(businessName: String) {
+        self.business_name = businessName
+    }
+
     public func setFeatures(features: String) {
         self.features = features
     }
@@ -122,6 +133,7 @@ public class EnrichmentLookup: EnrichmentLookupBase, Encodable {
         case state
         case zipcode
         case freeform
+        case business_name
         case features
         case etag
         case include_array
@@ -139,6 +151,7 @@ public class EnrichmentLookup: EnrichmentLookupBase, Encodable {
         try container.encode(self.state, forKey: .state)
         try container.encode(self.zipcode, forKey: .zipcode)
         try container.encode(self.freeform, forKey: .freeform)
+        try container.encode(self.business_name, forKey: .business_name)
         try container.encode(self.features, forKey: .features)
         try container.encode(self.getRequestEtag(), forKey: .etag)
         try container.encode(self.getIncludeAttributes(), forKey: .include_array)
