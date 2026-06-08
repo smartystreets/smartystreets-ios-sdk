@@ -17,17 +17,12 @@ class InternationalCandidateTests: XCTestCase {
             "address6": "7",
             "address7": "8",
             "address8": "9",
-            "address9": "10",
-            "address10": "11",
-            "address11": "12",
-            "address12": "13",
             "components": [
                 "country_iso_3": "14",
                 "super_administrative_area": "15",
                 "administrative_area": "16",
                 "administrative_area_iso2": "16.1",
-                "administrative_area_short": "16.2",
-                "administrative_area_long": "16.3",
+                "attention": "119",
                 "sub_administrative_area": "17",
                 "dependent_locality": "18",
                 "dependent_locality_name": "19",
@@ -41,6 +36,11 @@ class InternationalCandidateTests: XCTestCase {
                 "premise_number": "27",
                 "premise_prefix_number": "27.5",
                 "premise_type": "28",
+                "short_address_code": "120",
+                "sub_building_leading_type": "121",
+                "sub_building_block": "122",
+                "sub_building_door": "123",
+                "sub_building_staircase": "124",
                 "thoroughfare": "29",
                 "thoroughfare_predirection": "30",
                 "thoroughfare_postdirection": "31",
@@ -97,16 +97,12 @@ class InternationalCandidateTests: XCTestCase {
                     "address6": "66",
                     "address7": "67",
                     "address8": "68",
-                    "address9": "69",
-                    "address10": "70",
-                    "address11": "71",
-                    "address12": "72",
+                    "country": "125",
                     "components": [
                         "country_iso_3": "73",
                         "super_administrative_area": "74",
                         "administrative_area": "75",
-                        "administrative_area_short": "75.1",
-                        "administrative_area_long": "75.2",
+                        "attention": "126",
                         "sub_administrative_area": "76",
                         "dependent_locality": "77",
                         "dependent_locality_name": "78",
@@ -120,6 +116,11 @@ class InternationalCandidateTests: XCTestCase {
                         "premise_number": "86",
                         "premise_prefix_number": "87",
                         "premise_type": "88",
+                        "short_address_code": "127",
+                        "sub_building_leading_type": "128",
+                        "sub_building_block": "129",
+                        "sub_building_door": "130",
+                        "sub_building_staircase": "131",
                         "thoroughfare": "89",
                         "thoroughfare_predirection": "90",
                         "thoroughfare_postdirection": "91",
@@ -167,10 +168,6 @@ class InternationalCandidateTests: XCTestCase {
         XCTAssertEqual("7", candidate.address6)
         XCTAssertEqual("8", candidate.address7)
         XCTAssertEqual("9", candidate.address8)
-        XCTAssertEqual("10", candidate.address9)
-        XCTAssertEqual("11", candidate.address10)
-        XCTAssertEqual("12", candidate.address11)
-        XCTAssertEqual("13", candidate.address12)
         
         let components = candidate.components!
         XCTAssertNotNil(components)
@@ -178,8 +175,7 @@ class InternationalCandidateTests: XCTestCase {
         XCTAssertEqual("15", components.superAdministrativeArea)
         XCTAssertEqual("16", components.administrativeArea)
         XCTAssertEqual("16.1", components.administrativeAreaISO2)
-        XCTAssertEqual("16.2", components.administrativeAreaShort)
-        XCTAssertEqual("16.3", components.administrativeAreaLong)
+        XCTAssertEqual("119", components.attention)
         XCTAssertEqual("17", components.subAdministrativeArea)
         XCTAssertEqual("18", components.dependentLocality)
         XCTAssertEqual("19", components.dependentLocalityName)
@@ -193,6 +189,11 @@ class InternationalCandidateTests: XCTestCase {
         XCTAssertEqual("27", components.premiseNumber)
         XCTAssertEqual("27.5", components.premisePrefixNumber)
         XCTAssertEqual("28", components.premiseType)
+        XCTAssertEqual("120", components.shortAddressCode)
+        XCTAssertEqual("121", components.subBuildingLeadingType)
+        XCTAssertEqual("122", components.subBuildingBlock)
+        XCTAssertEqual("123", components.subBuildingDoor)
+        XCTAssertEqual("124", components.subBuildingStaircase)
         XCTAssertEqual("29", components.thoroughfare)
         XCTAssertEqual("30", components.thoroughfarePredirection)
         XCTAssertEqual("31", components.thoroughfarePostdirection)
@@ -253,18 +254,14 @@ class InternationalCandidateTests: XCTestCase {
         XCTAssertEqual("66", changes.address6)
         XCTAssertEqual("67", changes.address7)
         XCTAssertEqual("68", changes.address8)
-        XCTAssertEqual("69", changes.address9)
-        XCTAssertEqual("70", changes.address10)
-        XCTAssertEqual("71", changes.address11)
-        XCTAssertEqual("72", changes.address12)
+        XCTAssertEqual("125", changes.country)
         
         let ccomponents = changes.components!
         XCTAssertNotNil(components)
         XCTAssertEqual("73", ccomponents.countryIso3)
         XCTAssertEqual("74", ccomponents.superAdministrativeArea)
         XCTAssertEqual("75", ccomponents.administrativeArea)
-        XCTAssertEqual("75.1", ccomponents.administrativeAreaShort)
-        XCTAssertEqual("75.2", ccomponents.administrativeAreaLong)
+        XCTAssertEqual("126", ccomponents.attention)
         XCTAssertEqual("76", ccomponents.subAdministrativeArea)
         XCTAssertEqual("77", ccomponents.dependentLocality)
         XCTAssertEqual("78", ccomponents.dependentLocalityName)
@@ -278,6 +275,11 @@ class InternationalCandidateTests: XCTestCase {
         XCTAssertEqual("86", ccomponents.premiseNumber)
         XCTAssertEqual("87", ccomponents.premisePrefixNumber)
         XCTAssertEqual("88", ccomponents.premiseType)
+        XCTAssertEqual("127", ccomponents.shortAddressCode)
+        XCTAssertEqual("128", ccomponents.subBuildingLeadingType)
+        XCTAssertEqual("129", ccomponents.subBuildingBlock)
+        XCTAssertEqual("130", ccomponents.subBuildingDoor)
+        XCTAssertEqual("131", ccomponents.subBuildingStaircase)
         XCTAssertEqual("89", ccomponents.thoroughfare)
         XCTAssertEqual("90", ccomponents.thoroughfarePredirection)
         XCTAssertEqual("91", ccomponents.thoroughfarePostdirection)

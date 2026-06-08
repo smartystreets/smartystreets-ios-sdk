@@ -15,10 +15,6 @@ import Foundation
     public var address6:String?
     public var address7:String?
     public var address8:String?
-    public var address9:String?
-    public var address10:String?
-    public var address11:String?
-    public var address12:String?
     public var components:InternationalStreetComponents?
     public var metadata:InternationalStreetMetadata?
     public var analysis:InternationalStreetAnalysis?
@@ -33,10 +29,6 @@ import Foundation
         self.address6 = dictionary["address6"] as? String
         self.address7 = dictionary["address7"] as? String
         self.address8 = dictionary["address8"] as? String
-        self.address9 = dictionary["address9"] as? String
-        self.address10 = dictionary["address10"] as? String
-        self.address11 = dictionary["address11"] as? String
-        self.address12 = dictionary["address12"] as? String
         if let components = dictionary["components"] {
             self.components = InternationalStreetComponents(dictionary: components as! NSDictionary)
         } else {
