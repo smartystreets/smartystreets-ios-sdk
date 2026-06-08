@@ -90,6 +90,18 @@ class USEnrichmentClientTests: XCTestCase {
         XCTAssertNil(sender.request.parameters["business_name"])
     }
 
+    func testBusinessSummarySearchAcceptsBusinessNameAlone() {
+        let (client, sender) = capturingClient()
+        let lookup = EnrichmentLookup()
+        lookup.setBusinessName(businessName: "school")
+
+        _ = client.sendBusinessLookup(inputLookup: lookup, error: &self.error)
+
+        XCTAssertNil(self.error)
+        XCTAssertEqual("/search/business", sender.request.urlComponents)
+        XCTAssertEqual("school", sender.request.parameters["business_name"])
+    }
+
     // MARK: - Business detail URL shape
 
     func testBusinessDetailUrlContainsBusinessId() {
@@ -218,6 +230,7 @@ class USEnrichmentClientTests: XCTestCase {
         lookup.setSmartyKey(smarty_key: "   ")
         lookup.setStreet(street: "   ")
         lookup.setFreeform(freeform: "   ")
+        lookup.setBusinessName(businessName: "   ")
 
         let result = client.sendBusinessLookup(inputLookup: lookup, error: &self.error)
 

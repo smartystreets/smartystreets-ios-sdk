@@ -19,12 +19,12 @@ class USEnrichmentBusinessSearchExample {
         let authToken = getEnvironmentVar("SMARTY_AUTH_TOKEN") ?? ""
         let client = ClientBuilder.withBasicAuth(authId: authId, authToken: authToken).buildUsEnrichmentApiClient()
 
-        // Step 1: business-summary SEARCH.
-        // Leaving smartyKey unset and providing an address field (freeform) triggers the
-        // search path. Narrow the search by business name.
+        let smartyKey = "325023201"
+
         let lookup = EnrichmentLookup()
-        lookup.setFreeform(freeform: "1 Rosedale, Baltimore, Maryland")
-        lookup.setBusinessName(businessName: "school")
+        lookup.setSmartyKey(smartyKey)
+        lookup.setBusinessName(businessName: "delta air")
+        lookup.setCity(city: "atlanta")
 
         let summaries = client.sendBusinessLookup(inputLookup: lookup, error: &error)
 
@@ -43,7 +43,6 @@ class USEnrichmentBusinessSearchExample {
         output.append(try self.encode(summaries))
         output.append("\n******************************\n")
 
-        // Step 2: business-detail lookup, keyed by the business ID from the search above.
         let detail = client.sendBusinessDetailLookup(businessId: businessId, error: &error)
 
         if let error = error {
