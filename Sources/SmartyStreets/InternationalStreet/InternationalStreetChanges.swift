@@ -11,7 +11,6 @@ import Foundation
     public var address6:String?
     public var address7:String?
     public var address8:String?
-    public var country:String?
     public var components:InternationalStreetComponents?
     
     init(dictionary: NSDictionary) {
@@ -24,7 +23,6 @@ import Foundation
         self.address6 = dictionary["address6"] as? String
         self.address7 = dictionary["address7"] as? String
         self.address8 = dictionary["address8"] as? String
-        self.country = dictionary["country"] as? String
         if let components = dictionary["components"] {
             self.components = InternationalStreetComponents(dictionary: components as! NSDictionary)
         } else {

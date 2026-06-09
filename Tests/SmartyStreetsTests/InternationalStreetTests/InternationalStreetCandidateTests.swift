@@ -97,7 +97,6 @@ class InternationalCandidateTests: XCTestCase {
                     "address6": "66",
                     "address7": "67",
                     "address8": "68",
-                    "country": "125",
                     "components": [
                         "country_iso_3": "73",
                         "super_administrative_area": "74",
@@ -254,8 +253,7 @@ class InternationalCandidateTests: XCTestCase {
         XCTAssertEqual("66", changes.address6)
         XCTAssertEqual("67", changes.address7)
         XCTAssertEqual("68", changes.address8)
-        XCTAssertEqual("125", changes.country)
-        
+
         let ccomponents = changes.components!
         XCTAssertNotNil(components)
         XCTAssertEqual("73", ccomponents.countryIso3)
