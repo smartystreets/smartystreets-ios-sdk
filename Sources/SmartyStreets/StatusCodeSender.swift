@@ -5,8 +5,8 @@ struct ResponseErrors : Codable {
 }
 
 struct ResponseError : Codable {
-    let id: Int
-    let message: String
+    let id: Int?
+    let message: String?
 }
 
 class StatusCodeSender: SmartySender {
@@ -27,14 +27,14 @@ class StatusCodeSender: SmartySender {
         case 200:
             return response
         case 304:
-            var details: [String:Any] = [NSLocalizedDescriptionKey: "Not Modified. This data has not been modified since it was last retrieved."]
+            var details: [String:Any] = [NSLocalizedDescriptionKey: "Not Modified: The requested record has not been modified since the previous request with the Etag value."]
             if let etag = extractResponseEtag(response: response) {
                 details[SmartyErrors.ResponseEtagKey] = etag
             }
             error = NSError(domain: smartyErrors.SSErrorDomain, code: SmartyErrors.SSErrors.NotModifiedInfo.rawValue, userInfo: details)
             return response
         case 400:
-            let details = [NSLocalizedDescriptionKey:messageFrom(response: response!, fallback: "Bad Request (Malformed Payload): A GET request lacked a street field or the request body of a POST request contained malformed JSON.")]
+            let details = [NSLocalizedDescriptionKey:messageFrom(response: response!, fallback: "Bad Request (Malformed Payload): A GET request lacked a required field or the request body of a POST request contained malformed JSON.")]
             error = NSError(domain: smartyErrors.SSErrorDomain, code: SmartyErrors.SSErrors.BadRequestError.rawValue, userInfo: details)
             return nil
         case 401:
@@ -45,6 +45,14 @@ class StatusCodeSender: SmartySender {
             let details = [NSLocalizedDescriptionKey:messageFrom(response: response!, fallback: "Payment Required: There is no active subscription for the account associated with the credentials submitted with the request.")]
             error = NSError(domain: smartyErrors.SSErrorDomain, code: SmartyErrors.SSErrors.PaymentRequiredError.rawValue, userInfo: details)
             return nil
+        case 403:
+            let details = [NSLocalizedDescriptionKey:messageFrom(response: response!, fallback: "Forbidden: The request contained valid data and was understood by the server, but the server is refusing action.")]
+            error = NSError(domain: smartyErrors.SSErrorDomain, code: SmartyErrors.SSErrors.ForbiddenError.rawValue, userInfo: details)
+            return nil
+        case 408:
+            let details = [NSLocalizedDescriptionKey:messageFrom(response: response!, fallback: "Request timeout error.")]
+            error = NSError(domain: smartyErrors.SSErrorDomain, code: SmartyErrors.SSErrors.RequestTimeoutError.rawValue, userInfo: details)
+            return nil
         case 413:
             let details = [NSLocalizedDescriptionKey:messageFrom(response: response!, fallback: "Request Entity Too Large: The request body has exceeded the maximum size.")]
             error = NSError(domain: smartyErrors.SSErrorDomain, code: SmartyErrors.SSErrors.RequestEntityTooLargeError.rawValue, userInfo: details)
@@ -54,32 +62,29 @@ class StatusCodeSender: SmartySender {
             error = NSError(domain: smartyErrors.SSErrorDomain, code: SmartyErrors.SSErrors.UnprocessableEntityError.rawValue, userInfo: details)
             return nil
         case 429:
-            var detailsStr = "Too Many Requests: " as String
-            do {
-                let errors = try self.jsonDecoder.decode(ResponseErrors.self, from: response!.payload)
-                for error in errors.errors {
-                    detailsStr.append(error.message)
-                }
-            } catch {
-                detailsStr.append("Error parsing response payload from server - ")
-                detailsStr.append(error.localizedDescription)
-            }
-            let details = [NSLocalizedDescriptionKey:detailsStr]
+            let details = [NSLocalizedDescriptionKey:messageFrom(response: response!, fallback: "Too Many Requests: The rate limit for your account has been exceeded.")]
             error = NSError(domain: smartyErrors.SSErrorDomain, code: SmartyErrors.SSErrors.TooManyRequestsError.rawValue, userInfo: details)
             return response
         case 500:
-            let details = [NSLocalizedDescriptionKey:"Internal Server Error."]
+            let details = [NSLocalizedDescriptionKey:messageFrom(response: response!, fallback: "Internal Server Error.")]
             error = NSError(domain: smartyErrors.SSErrorDomain, code: SmartyErrors.SSErrors.InternalServerError.rawValue, userInfo: details)
             return nil
+        case 502:
+            let details = [NSLocalizedDescriptionKey:messageFrom(response: response!, fallback: "Bad Gateway error.")]
+            error = NSError(domain: smartyErrors.SSErrorDomain, code: SmartyErrors.SSErrors.BadGatewayError.rawValue, userInfo: details)
+            return nil
         case 503:
-            let details = [NSLocalizedDescriptionKey:"Service Unavailable. Try again later."]
+            let details = [NSLocalizedDescriptionKey:messageFrom(response: response!, fallback: "Service Unavailable. Try again later.")]
             error = NSError(domain: smartyErrors.SSErrorDomain, code: SmartyErrors.SSErrors.ServiceUnavailableError.rawValue, userInfo: details)
             return nil
         case 504:
-            let details = [NSLocalizedDescriptionKey:"The upstream data provider did not respond in a timely fashion and the request failed. A serious, yet rare occurrence indeed."]
+            let details = [NSLocalizedDescriptionKey:messageFrom(response: response!, fallback: "The upstream data provider did not respond in a timely fashion and the request failed. A serious, yet rare occurrence indeed.")]
             error = NSError(domain: smartyErrors.SSErrorDomain, code: SmartyErrors.SSErrors.GatewayTimeoutError.rawValue, userInfo: details)
             return nil
         default:
+            guard let response = response else { return nil }
+            let details = [NSLocalizedDescriptionKey:messageFrom(response: response, fallback: "The server returned an unexpected HTTP status code: \(response.statusCode)")]
+            error = NSError(domain: smartyErrors.SSErrorDomain, code: response.statusCode, userInfo: details)
             return nil
         }
     }
@@ -88,7 +93,7 @@ class StatusCodeSender: SmartySender {
         guard let errors = try? self.jsonDecoder.decode(ResponseErrors.self, from: response.payload) else {
             return fallback
         }
-        let message = errors.errors.map { $0.message }.joined(separator: " ")
+        let message = errors.errors.compactMap { $0.message }.filter { !$0.isEmpty }.joined(separator: " ")
         return message.isEmpty ? fallback : message
     }
 
