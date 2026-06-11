@@ -30,7 +30,7 @@ make examples-all      # Run all examples
 
 ## Architecture Overview
 
-This is a Swift SDK for SmartyStreets address validation APIs. Swift 5.0+ via Swift Package Manager. No external dependencies.
+This is a Swift SDK for SmartyStreets address validation APIs. Swift 5.10+ via Swift Package Manager. No external dependencies.
 
 ### Sender Chain (Decorator Pattern)
 
