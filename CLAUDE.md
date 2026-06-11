@@ -9,7 +9,7 @@ make test              # Run XCTest suite (swift test)
 make compile           # Build the package (swift build)
 make clean             # Reset build artifacts
 make run               # Run all sample examples
-make publish           # compile + test + version + git tag + push
+make publish           # compile + version + git tag + push
 ```
 
 Run a single test class or method:
