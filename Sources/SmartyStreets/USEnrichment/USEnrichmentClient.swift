@@ -103,7 +103,7 @@ public class USEnrichmentClient: NSObject {
 
         if isBlank(lookup.getSmartyKey()) && isBlank(lookup.getStreet()) && isBlank(lookup.getFreeform()) && isBlank(lookup.getBusinessName()) {
             let smartyErrors = SmartyErrors()
-            let details = [NSLocalizedDescriptionKey: "Lookup requires one of 'smartyKey', 'street', 'freeform', or 'business_name' to be set"]
+            let details = [NSLocalizedDescriptionKey: "Lookup requires one of 'smarty_key', 'street', 'freeform', or 'business_name' to be set"]
             error.pointee = NSError(domain: smartyErrors.SSErrorDomain, code: SmartyErrors.SSErrors.FieldNotSetError.rawValue, userInfo: details)
             return false
         }

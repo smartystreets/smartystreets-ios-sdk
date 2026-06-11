@@ -114,8 +114,8 @@ public class EnrichmentLookup: EnrichmentLookupBase, Encodable {
         self.freeform = freeform
     }
 
-    public func setBusinessName(businessName: String) {
-        self.business_name = businessName
+    public func setBusinessName(business_name: String) {
+        self.business_name = business_name
     }
 
     public func setFeatures(features: String) {

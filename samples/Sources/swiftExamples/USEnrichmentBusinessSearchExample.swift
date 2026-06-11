@@ -19,11 +19,9 @@ class USEnrichmentBusinessSearchExample {
         let authToken = getEnvironmentVar("SMARTY_AUTH_TOKEN") ?? ""
         let client = ClientBuilder.withBasicAuth(authId: authId, authToken: authToken).buildUsEnrichmentApiClient()
 
-        let smartyKey = "325023201"
 
         let lookup = EnrichmentLookup()
-        lookup.setSmartyKey(smartyKey)
-        lookup.setBusinessName(businessName: "delta air")
+        lookup.setBusinessName(business_name: "delta air")
         lookup.setCity(city: "atlanta")
 
         let summaries = client.sendBusinessLookup(inputLookup: lookup, error: &error)

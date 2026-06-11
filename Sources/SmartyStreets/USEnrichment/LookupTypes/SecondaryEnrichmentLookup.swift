@@ -23,7 +23,7 @@ public class SecondaryEnrichmentLookup: EnrichmentLookup {
         self.setState(state: lookup.getState())
         self.setZipcode(zipcode: lookup.getZipcode())
         self.setFreeform(freeform: lookup.getFreeform())
-        self.setBusinessName(businessName: lookup.getBusinessName())
+        self.setBusinessName(business_name: lookup.getBusinessName())
         self.setFeatures(features: lookup.getFeatures())
         self.setEtag(etag: lookup.getEtag())
         for key in lookup.getCustomParamArray().keys {
