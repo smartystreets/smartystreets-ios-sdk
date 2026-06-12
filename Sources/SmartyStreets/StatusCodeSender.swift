@@ -90,11 +90,15 @@ class StatusCodeSender: SmartySender {
     }
 
     private func messageFrom(response: SmartyResponse, fallback: String) -> String {
-        guard let errors = try? self.jsonDecoder.decode(ResponseErrors.self, from: response.payload) else {
-            return fallback
+        if let errors = try? self.jsonDecoder.decode(ResponseErrors.self, from: response.payload) {
+            let message = errors.errors.compactMap { $0.message }.filter { !$0.isEmpty }.joined(separator: " ")
+            if !message.isEmpty {
+                return message
+            }
         }
-        let message = errors.errors.compactMap { $0.message }.filter { !$0.isEmpty }.joined(separator: " ")
-        return message.isEmpty ? fallback : message
+        let body = String(data: response.payload, encoding: .utf8)?
+            .trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        return (fallback + " Body: " + body).trimmingCharacters(in: .whitespaces)
     }
 
     private func extractResponseEtag(response: SmartyResponse?) -> String? {

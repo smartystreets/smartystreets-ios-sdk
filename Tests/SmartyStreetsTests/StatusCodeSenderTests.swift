@@ -140,6 +140,36 @@ class StatusCodeSenderTests: XCTestCase {
         assertParsedMessage(statusCode: 504)
     }
 
+    func testFallbackAppendsUnparseableBody() {
+        let mockStatusCodeSender = MockStatusCodeSender(statusCode: 422, payload: "not json")
+        let sender = StatusCodeSender(inner: mockStatusCodeSender)
+
+        let _ = sender.sendRequest(request: SmartyRequest(), error: &self.error)
+
+        XCTAssertEqual(422, self.error.code)
+        XCTAssertEqual("GET request lacked required fields. Body: not json", self.error.localizedDescription)
+    }
+
+    func testFallbackAppendsBodyWithoutMessages() {
+        let mockStatusCodeSender = MockStatusCodeSender(statusCode: 422, payload: "{\"errors\":[]}")
+        let sender = StatusCodeSender(inner: mockStatusCodeSender)
+
+        let _ = sender.sendRequest(request: SmartyRequest(), error: &self.error)
+
+        XCTAssertEqual(422, self.error.code)
+        XCTAssertEqual("GET request lacked required fields. Body: {\"errors\":[]}", self.error.localizedDescription)
+    }
+
+    func testBlankBodyYieldsEmptyBodyLabel() {
+        let mockStatusCodeSender = MockStatusCodeSender(statusCode: 422, payload: "   ")
+        let sender = StatusCodeSender(inner: mockStatusCodeSender)
+
+        let _ = sender.sendRequest(request: SmartyRequest(), error: &self.error)
+
+        XCTAssertEqual(422, self.error.code)
+        XCTAssertEqual("GET request lacked required fields. Body:", self.error.localizedDescription)
+    }
+
     func testParsedMessageDoesNotRequireIdField() {
         let mockStatusCodeSender = MockStatusCodeSender(statusCode: 401, payload: """
             {"errors":[{"message": "no id supplied"}]}
@@ -171,7 +201,7 @@ class StatusCodeSenderTests: XCTestCase {
         let _ = sender.sendRequest(request: SmartyRequest(), error: &self.error)
 
         XCTAssertEqual(429, self.error.code)
-        XCTAssertEqual("Too Many Requests: The rate limit for your account has been exceeded.", self.error.localizedDescription)
+        XCTAssertEqual("Too Many Requests: The rate limit for your account has been exceeded. Body:", self.error.localizedDescription)
     }
 
     func test304ResponseUsesStandardMessage() {
@@ -243,7 +273,7 @@ class StatusCodeSenderTests: XCTestCase {
 
         XCTAssertNil(response, "status \(statusCode) should return a nil response")
         XCTAssertEqual(statusCode, self.error.code)
-        XCTAssertEqual(expectedFallback, self.error.localizedDescription)
+        XCTAssertEqual(expectedFallback + " Body:", self.error.localizedDescription)
     }
 
     func assertParsedMessage(statusCode:Int) {
