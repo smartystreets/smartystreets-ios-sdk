@@ -34,6 +34,9 @@ example-us-street-multiple:
 example-us-street-component-analysis:
 	@$(call run-example,USStreetComponentAnalysisExample)
 
+example-us-street-match-strategy:
+	@$(call run-example,USStreetLookupsWithMatchStrategyExample)
+
 example-us-zipcode-single:
 	@$(call run-example,USZipCodeSingleLookupExample)
 
@@ -70,6 +73,7 @@ examples-all:
 	@$(MAKE) example-us-street-single
 	@$(MAKE) example-us-street-multiple
 	@$(MAKE) example-us-street-component-analysis
+	@$(MAKE) example-us-street-match-strategy
 	@$(MAKE) example-us-zipcode-single
 	@$(MAKE) example-us-zipcode-multiple
 	@$(MAKE) example-us-autocomplete-pro
@@ -95,7 +99,7 @@ publish: compile test version
 		&& git checkout "$(VERSION_FILE)"
 
 .PHONY: clean test compile version publish run examples-all
-.PHONY: example-us-street-single example-us-street-multiple example-us-street-component-analysis
+.PHONY: example-us-street-single example-us-street-multiple example-us-street-component-analysis example-us-street-match-strategy
 .PHONY: example-us-zipcode-single example-us-zipcode-multiple
 .PHONY: example-us-autocomplete-pro example-us-extract
 .PHONY: example-international-street example-international-autocomplete example-international-postal-code

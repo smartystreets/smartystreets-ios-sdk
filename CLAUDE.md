@@ -22,6 +22,7 @@ Run individual examples (requires `SMARTY_AUTH_ID` and `SMARTY_AUTH_TOKEN` env v
 ```bash
 make example-us-street-single
 make example-us-street-multiple
+make example-us-street-match-strategy
 make example-us-zipcode-single
 make example-international-street
 make example-us-enrichment
