@@ -1,0 +1,135 @@
+import Foundation
+
+@objcMembers public class USAutocompleteLookup: NSObject, Codable {
+    //    In addition to holding all of the input data for this lookup, this class also will contain the result
+    //    of the lookup after it comes back from the API.
+    //
+    //    See "https://www.smarty.com/docs/apis/us-autocomplete-v2/reference#http-request-input-fields"
+    //
+    //    search: The beginning of an address (required)
+    //    maxResults: Maximum number of suggestions
+    //    cityFilter: List of cities from which to include suggestions
+    //    stateFilter: List of states from which to include suggestions
+    //    prefer: List of cities/states. Suggestions from the members of this list will appear first
+    //    preferRatio: Percentage of suggestions that will be from preferred cities/states.
+    //    geolocateType: This field corresponds to the geolocate and geolocate precision fields in the
+    //    US Autocomplete API. Use the constants in GeolocateType to set this field
+
+    let SSMaxResults = 10
+    let SSPreferRatio = 3
+
+    private var customParamArray: [String: String] = [:]
+    public var result:USAutocompleteResult?
+    public var search:String?
+    public var selected:String?
+    public var exclude:String?
+    public var maxResults:Int?
+    public var includeOnlyCities:[String]?
+    public var includeOnlyStates:[String]?
+    public var includeOnlyZIPCodes:[String]?
+    public var excludeStates:[String]?
+    public var preferCities:[String]?
+    public var preferStates:[String]?
+    public var preferZIPCodes:[String]?
+    public var preferGeolocation:GeolocateType?
+    public var preferRatio:Int?
+    public var source:String?
+
+    enum CodingKeys: String, CodingKey {
+        case maxResults = "max_results"
+        case includeOnlyCities = "include_only_cities"
+        case includeOnlyStates = "include_only_states"
+        case includeOnlyZIPCodes = "include_only_zipcodes"
+        case excludeStates = "exclude_states"
+        case preferCities = "prefer_cities"
+        case preferStates = "prefer_states"
+        case preferZIPCodes = "prefer_zipcodes"
+        case preferGeolocation = "prefer_geolocation"
+        case preferRatio = "prefer_ratio"
+        case source = "source"
+        case exclude = "exclude"
+    }
+
+    override public init() {
+        self.maxResults = SSMaxResults
+        self.includeOnlyCities = [String]()
+        self.includeOnlyStates = [String]()
+        self.includeOnlyZIPCodes = [String]()
+        self.excludeStates = [String]()
+        self.preferCities = [String]()
+        self.preferStates = [String]()
+        self.preferZIPCodes = [String]()
+        self.preferGeolocation = GeolocateType(name:"city")
+        self.preferRatio = SSPreferRatio
+    }
+
+    public func withSearch(search:String) -> USAutocompleteLookup {
+        self.search = search
+        return self
+    }
+
+    func getResultAtIndex(index:Int) -> USAutocompleteSuggestion{
+        if let result = self.result {
+            return result.suggestions![index]
+        } else {
+            return USAutocompleteSuggestion(dictionary: NSDictionary())
+        }
+    }
+
+    func getMaxResultsStringIfSet() -> String {
+        if self.maxResults == SSMaxResults {
+            return String()
+        } else {
+            return "\(self.maxResults ?? 0)"
+        }
+    }
+
+    func getPreferRatioStringIfSet() -> String {
+        if self.preferRatio == SSPreferRatio {
+            return String()
+        } else {
+            return "\(self.preferRatio ?? 0)"
+        }
+    }
+
+    public func getCustomParamArray() -> [String: String] {
+        return self.customParamArray
+    }
+
+    public func setMaxResults(maxResults: Int, error: inout NSError?) {
+        if maxResults > 0 && maxResults <= 10 {
+            self.maxResults = maxResults
+        } else {
+            let details = [NSLocalizedDescriptionKey:"Max suggestions must be a postive integer no larger than 10."]
+            error = NSError(domain: SmartyErrors().SSErrorDomain, code: SmartyErrors.SSErrors.NotPositiveIntergerError.rawValue, userInfo: details)
+        }
+    }
+
+    public func addCityFilter(city:String) {
+        self.includeOnlyCities?.append(city)
+    }
+
+    public func addStateFilter(state:String) {
+        self.includeOnlyStates?.append(state)
+    }
+
+    public func addZIPCodeFilter(zipcode:String) {
+        self.includeOnlyZIPCodes?.append(zipcode)
+    }
+
+    public func addPreferCity(city:String) {
+        self.preferCities?.append(city)
+    }
+
+    public func addPreferState(state:String) {
+        self.preferStates?.append(state)
+    }
+
+    public func addPreferZIPCode(zipcode:String) {
+        self.preferZIPCodes?.append(zipcode)
+    }
+
+    public func addCustomParameter(parameter: String, value: String) {
+        self.customParamArray.updateValue(value, forKey: parameter)
+    }
+}

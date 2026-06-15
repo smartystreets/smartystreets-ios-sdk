@@ -43,6 +43,9 @@ example-us-zipcode-multiple:
 example-us-autocomplete-pro:
 	@$(call run-example,USAutocompleteProExample)
 
+example-us-autocomplete:
+	@$(call run-example,USAutocompleteExample)
+
 example-us-extract:
 	@$(call run-example,USExtractExample)
 
@@ -76,6 +79,7 @@ examples-all:
 	@$(MAKE) example-us-zipcode-single
 	@$(MAKE) example-us-zipcode-multiple
 	@$(MAKE) example-us-autocomplete-pro
+	@$(MAKE) example-us-autocomplete
 	@$(MAKE) example-us-extract
 	@$(MAKE) example-international-street
 	@$(MAKE) example-international-autocomplete
@@ -102,5 +106,6 @@ publish: compile test version
 .PHONY: example-us-street-single example-us-street-multiple example-us-street-component-analysis
 .PHONY: example-us-zipcode-single example-us-zipcode-multiple
 .PHONY: example-us-autocomplete-pro example-us-extract
+.PHONY: example-us-autocomplete example-us-extract
 .PHONY: example-international-street example-international-autocomplete example-international-postal-code
 .PHONY: example-us-reverse-geo example-us-street-iana-timezone example-us-enrichment example-us-enrichment-business-search

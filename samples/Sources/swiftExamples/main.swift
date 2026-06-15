@@ -8,6 +8,7 @@ import Foundation
 // print(USZipCodeSingleLookupExample().run())
 // print(USZipCodeMultipleLookupsExample().run())
 // print(USAutocompleteProExample().run())
+// print(USAutocompleteExample().run())
 // print(USExtractExample().run())
 // print(InternationalStreetExample().run())
 // print(InternationalAutocompleteExample().run())
