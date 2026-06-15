@@ -20,7 +20,7 @@ class USReverseGeoExample {
         // Documentation for input fields can be found at:
         // https://smartystreets.com/docs/cloud/us-reverse-geo-api#http-input-fields
         
-        var lookup = USReverseGeoLookup(latitude: 40.27644, longitude: -111.65747, source: "postal")
+        var lookup = USReverseGeoLookup(latitude: 40.27644, longitude: -111.65747, source: .postal)
         
         // Uncomment the below line to add a custom parameter to a lookup:
         //lookup.addCustomParameter(parameter: "parameter", value: "value")

@@ -16,9 +16,14 @@ import Foundation
     //    geolocateType: This field corresponds to the geolocate and geolocate precision fields in the
     //    US Autocomplete API. Use the constants in GeolocateType to set this field
     
+    public enum Source: String, Codable {
+        case all
+        case postal
+    }
+
     let SSMaxResults = 10
     let SSPreferRatio = 3
-    
+
     private var customParamArray: [String: String] = [:]
     public var result:USAutocompleteProResult?
     public var search:String?
@@ -33,7 +38,7 @@ import Foundation
     public var preferZIPCodes:[String]?
     public var preferGeolocation:GeolocateType?
     public var preferRatio:Int?
-    public var source:String?
+    public var source:Source?
     
     enum CodingKeys: String, CodingKey {
         case maxResults = "max_results"

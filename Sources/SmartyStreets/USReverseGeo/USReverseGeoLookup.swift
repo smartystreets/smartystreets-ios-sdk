@@ -6,13 +6,18 @@ import Foundation
     //
     //    See "https://smartystreets.com/docs/cloud/us-reverse-geo-api"
     
+    public enum Source: String, Codable {
+        case all
+        case postal
+    }
+
     private var customParamArray: [String: String] = [:]
     public var latitude:String
     public var longitude:String
-    public var source:String
+    public var source:Source?
     public var response:USReverseGeoResponse?
-    
-    public init(latitude:Double, longitude:Double, source:String) {
+
+    public init(latitude:Double, longitude:Double, source:Source? = nil) {
         self.latitude = String(format: "%.8f", latitude)
         self.longitude = String(format: "%.8f", longitude)
         self.source = source
