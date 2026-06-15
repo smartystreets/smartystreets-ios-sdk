@@ -3,8 +3,7 @@ name: Update Release
 on:
   push:
     tags:
-      - '*'
-      - '!**-dev**'
+      - '**'
     
 
 jobs:
