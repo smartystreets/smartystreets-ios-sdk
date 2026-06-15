@@ -5,6 +5,7 @@ import Foundation
 // print(USStreetSingleAddressExample().run())
 // print(USStreetMultipleAddressExample().run())
 // print(USStreetComponentAnalysisExample().run())
+// print(USStreetLookupsWithMatchStrategyExample().run())
 // print(USZipCodeSingleLookupExample().run())
 // print(USZipCodeMultipleLookupsExample().run())
 // print(USAutocompleteProExample().run())
