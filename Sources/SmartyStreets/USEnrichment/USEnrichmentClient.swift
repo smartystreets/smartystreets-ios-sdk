@@ -31,6 +31,7 @@ public class USEnrichmentClient: NSObject {
     public func sendPropertyPrincipalLookup(inputLookup: EnrichmentLookup, error: UnsafeMutablePointer<NSError?>) -> [PrincipalResult]? {
         let lookup = PropertyPrincipalEnrichmentLookup(lookup: inputLookup)
         _ = sendEnrichment(lookup: lookup, error: error)
+        inputLookup.setResponseEtag(etag: lookup.getResponseEtag())
         return lookup.results
     }
 
@@ -43,6 +44,7 @@ public class USEnrichmentClient: NSObject {
     public func sendGeoReferenceLookup(inputLookup: EnrichmentLookup, error: UnsafeMutablePointer<NSError?>) -> [GeoReferenceResult]? {
         let lookup = GeoReferenceEnrichmentLookup(lookup: inputLookup)
         _ = sendEnrichment(lookup: lookup, error: error)
+        inputLookup.setResponseEtag(etag: lookup.getResponseEtag())
         return lookup.results
     }
 
@@ -55,6 +57,7 @@ public class USEnrichmentClient: NSObject {
     public func sendSecondaryLookup(inputLookup: EnrichmentLookup, error: UnsafeMutablePointer<NSError?>) -> [SecondaryResult]? {
         let lookup = SecondaryEnrichmentLookup(lookup: inputLookup)
         _ = sendEnrichment(lookup: lookup, error: error)
+        inputLookup.setResponseEtag(etag: lookup.getResponseEtag())
         return lookup.results
     }
 
@@ -67,6 +70,7 @@ public class USEnrichmentClient: NSObject {
     public func sendSecondaryCountLookup(inputLookup: EnrichmentLookup, error: UnsafeMutablePointer<NSError?>) -> [SecondaryCountResult]? {
         let lookup = SecondaryCountEnrichmentLookup(lookup: inputLookup)
         _ = sendEnrichment(lookup: lookup, error: error)
+        inputLookup.setResponseEtag(etag: lookup.getResponseEtag())
         return lookup.results
     }
 
@@ -79,6 +83,7 @@ public class USEnrichmentClient: NSObject {
     public func sendBusinessLookup(inputLookup: EnrichmentLookup, error: UnsafeMutablePointer<NSError?>) -> [BusinessSummaryResult]? {
         let lookup = BusinessSummaryEnrichmentLookup(lookup: inputLookup)
         _ = sendEnrichment(lookup: lookup, error: error)
+        inputLookup.setResponseEtag(etag: lookup.getResponseEtag())
         return lookup.results
     }
 
@@ -129,14 +134,15 @@ public class USEnrichmentClient: NSObject {
     private func dispatch(request: SmartyRequest, lookup: EnrichmentLookupBase, serializer: SmartySerializer, error: UnsafeMutablePointer<NSError?>) -> Bool {
         let response = self.sender.sendRequest(request: request, error: &error.pointee)
 
-        // Capture the server-refreshed ETag even if a 304 surfaced as NSError (the underlying
-        // response is still delivered). The NotModifiedInfo NSError already carries this in
-        // userInfo, but mirroring it on the lookup keeps both paths symmetric.
         if let response = response, let etag = responseEtag(from: response.headers) {
             lookup.setResponseEtag(etag: etag)
         }
 
         if error.pointee != nil { return false }
+
+        if let response = response, response.statusCode == 304 {
+            return true
+        }
 
         if let response = response {
             lookup.deserializeAndSetResults(serializer: serializer, payload: response.payload, error: error)

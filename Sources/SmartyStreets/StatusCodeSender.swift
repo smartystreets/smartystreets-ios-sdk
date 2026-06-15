@@ -24,14 +24,7 @@ class StatusCodeSender: SmartySender {
         let smartyErrors = SmartyErrors()
         
         switch response?.statusCode {
-        case 200:
-            return response
-        case 304:
-            var details: [String:Any] = [NSLocalizedDescriptionKey: "Not Modified: The requested record has not been modified since the previous request with the Etag value."]
-            if let etag = extractResponseEtag(response: response) {
-                details[SmartyErrors.ResponseEtagKey] = etag
-            }
-            error = NSError(domain: smartyErrors.SSErrorDomain, code: SmartyErrors.SSErrors.NotModifiedInfo.rawValue, userInfo: details)
+        case 200, 304:
             return response
         case 400:
             let details = [NSLocalizedDescriptionKey:messageFrom(response: response!, fallback: "Bad Request (Malformed Payload): A GET request lacked a required field or the request body of a POST request contained malformed JSON.")]
@@ -101,13 +94,4 @@ class StatusCodeSender: SmartySender {
         return (fallback + " Body: " + body).trimmingCharacters(in: .whitespaces)
     }
 
-    private func extractResponseEtag(response: SmartyResponse?) -> String? {
-        guard let response = response else { return nil }
-        for (key, value) in response.headers {
-            if key.caseInsensitiveCompare("Etag") == .orderedSame {
-                return value
-            }
-        }
-        return nil
-    }
 }

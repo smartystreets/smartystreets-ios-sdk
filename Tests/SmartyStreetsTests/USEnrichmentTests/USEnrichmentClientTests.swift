@@ -304,17 +304,17 @@ class USEnrichmentClientTests: XCTestCase {
 
     // MARK: - 304 Not Modified via full StatusCodeSender
 
-    func testBusinessDetailOn304SurfacesErrorAndCapturesResponseEtag() {
+    func testBusinessDetailOn304IsSuccessWithRefreshedEtag() {
         // Wrap a raw 304 MockSender in StatusCodeSender so dispatch() sees both a populated
         // response and an NSError — the same shape that hits the client in production.
-        let inner = MockSender(statusCode: 304, payload: "[]".data(using: .utf8)!, headers: ["Etag": "server-refreshed"])
+        let inner = MockSender(statusCode: 304, payload: Data(), headers: ["Etag": "server-refreshed"])
         let client = USEnrichmentClient(sender: StatusCodeSender(inner: inner))
         let lookup = BusinessDetailEnrichmentLookup(businessId: "ABC")
+        lookup.setRequestEtag(etag: "old-etag")
 
         _ = client.sendBusinessDetailLookup(lookup: lookup, error: &self.error)
 
-        XCTAssertEqual(SmartyErrors.SSErrors.NotModifiedInfo.rawValue, self.error.code)
-        XCTAssertEqual("server-refreshed", self.error.userInfo[SmartyErrors.ResponseEtagKey] as? String)
+        XCTAssertNil(self.error)
         XCTAssertEqual("server-refreshed", lookup.getResponseEtag())
     }
 
@@ -356,6 +356,17 @@ class USEnrichmentClientTests: XCTestCase {
         XCTAssertNotNil(self.error)
         XCTAssertEqual(SmartyErrors.SSErrors.FieldNotSetError.rawValue, self.error.code)
         XCTAssertNil(sender.request)
+    }
+
+    func testInputLookupOverloadPropagatesResponseEtag() {
+        let (client, _) = capturingClient(responseHeaders: ["Etag": "srv-etag"])
+        let lookup = EnrichmentLookup()
+        lookup.setSmartyKey(smarty_key: "1")
+
+        _ = client.sendBusinessLookup(inputLookup: lookup, error: &self.error)
+
+        XCTAssertNil(self.error)
+        XCTAssertEqual("srv-etag", lookup.getResponseEtag())
     }
 }
 
