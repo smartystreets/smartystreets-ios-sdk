@@ -43,7 +43,7 @@ class EnrichmentLookupTests: XCTestCase {
     func testBusinessNameSurvivesBusinessSummaryCopy() {
         let lookup = EnrichmentLookup()
         lookup.setFreeform(freeform: "1 Rosedale, Baltimore, Maryland")
-        lookup.setBusinessName(businessName: "school")
+        lookup.setBusinessName(business_name: "school")
 
         let copy = BusinessSummaryEnrichmentLookup(lookup: lookup)
 
@@ -53,7 +53,7 @@ class EnrichmentLookupTests: XCTestCase {
 
     func testBusinessNameSurvivesOtherLookupCopies() {
         let lookup = EnrichmentLookup()
-        lookup.setBusinessName(businessName: "school")
+        lookup.setBusinessName(business_name: "school")
 
         XCTAssertEqual("school", PropertyPrincipalEnrichmentLookup(lookup: lookup).getBusinessName())
         XCTAssertEqual("school", GeoReferenceEnrichmentLookup(lookup: lookup).getBusinessName())

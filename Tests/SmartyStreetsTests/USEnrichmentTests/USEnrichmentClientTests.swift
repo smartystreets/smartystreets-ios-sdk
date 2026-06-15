@@ -68,7 +68,7 @@ class USEnrichmentClientTests: XCTestCase {
         let (client, sender) = capturingClient()
         let lookup = EnrichmentLookup()
         lookup.setFreeform(freeform: "1 Rosedale, Baltimore, Maryland")
-        lookup.setBusinessName(businessName: "school")
+        lookup.setBusinessName(business_name: "school")
 
         _ = client.sendBusinessLookup(inputLookup: lookup, error: &self.error)
 
@@ -93,7 +93,7 @@ class USEnrichmentClientTests: XCTestCase {
     func testBusinessSummarySearchAcceptsBusinessNameAlone() {
         let (client, sender) = capturingClient()
         let lookup = EnrichmentLookup()
-        lookup.setBusinessName(businessName: "school")
+        lookup.setBusinessName(business_name: "school")
 
         _ = client.sendBusinessLookup(inputLookup: lookup, error: &self.error)
 
@@ -230,7 +230,7 @@ class USEnrichmentClientTests: XCTestCase {
         lookup.setSmartyKey(smarty_key: "   ")
         lookup.setStreet(street: "   ")
         lookup.setFreeform(freeform: "   ")
-        lookup.setBusinessName(businessName: "   ")
+        lookup.setBusinessName(business_name: "   ")
 
         let result = client.sendBusinessLookup(inputLookup: lookup, error: &self.error)
 
