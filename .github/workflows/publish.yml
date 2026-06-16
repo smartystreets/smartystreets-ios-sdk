@@ -4,7 +4,6 @@ on:
   push:
     tags:
       - '**'
-    
 
 jobs:
   test:
@@ -17,7 +16,7 @@ jobs:
       contents: write
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Set Version
         id: set_version

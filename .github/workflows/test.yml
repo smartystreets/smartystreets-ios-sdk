@@ -10,11 +10,22 @@ jobs:
         include:
           - os: macos-14
             xcode: "15.4"
+            swift: "5.10"
           - os: macos-15
             xcode: "16.2"
+            swift: "6.0"
+          - os: macos-15
+            xcode: "16.4"
+            swift: "6.1"
+          - os: macos-26
+            xcode: "26.0"
+            swift: "6.2"
+          - os: macos-26
+            xcode: "26.5"
+            swift: "6.3"
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - run: sudo xcode-select -s /Applications/Xcode_${{ matrix.xcode }}.app
 

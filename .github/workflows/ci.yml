@@ -2,6 +2,8 @@ name: Test IOS
 
 on:
   push:
+    branches:
+      - '**'
 
 jobs:
   test:

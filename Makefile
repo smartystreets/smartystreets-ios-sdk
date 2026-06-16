@@ -88,7 +88,7 @@ compile:
 version:
 	@printf 'class Version {\n    let version = "%s"\n}\n' "$(VERSION)" > "$(VERSION_FILE)"
 
-publish: compile version
+publish: compile test version
 	git commit -am "Incremented version." \
 		&& tagit -p \
 		&& git push origin master --tags \
