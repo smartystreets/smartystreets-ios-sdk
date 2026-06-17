@@ -12,6 +12,10 @@ public class SmartySerializer: NSObject {
             error = NSError(domain: smartyErrors.SSErrorDomain, code: SmartyErrors.SSErrors.ObjectNilError.rawValue, userInfo: details)
             return nil
         }
+
+        if payload!.isEmpty {
+            return nil
+        }
         
         do {
             let result = try JSONSerialization.jsonObject(with: payload!, options: []) as? [String:Any]
