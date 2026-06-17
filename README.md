@@ -3,7 +3,9 @@
 
 # Smarty iOS SDK
 
-The official iOS SDK for accessing [Smarty](https://www.smarty.com) address validation APIs from Swift and Objective-C. Requires Swift 5.0+ and has no external dependencies.
+The official iOS SDK for accessing [Smarty](https://www.smarty.com) address validation APIs from Swift and Objective-C.
+
+Compatible with Swift 5.10 and later.
 
 "Getting started with the SmartyStreets iOS SDK" (Click to play on YouTube)
 
