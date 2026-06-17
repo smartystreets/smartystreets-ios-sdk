@@ -7,8 +7,7 @@ import Foundation
     public var superAdministrativeArea:String?
     public var administrativeArea:String?
     public var administrativeAreaISO2:String?
-    public var administrativeAreaShort:String?
-    public var administrativeAreaLong:String?
+    public var attention:String?
     public var subAdministrativeArea:String?
     public var dependentLocality:String?
     public var dependentLocalityName:String?
@@ -22,6 +21,11 @@ import Foundation
     public var premiseNumber:String?
     public var premisePrefixNumber:String?
     public var premiseType:String?
+    public var shortAddressCode:String?
+    public var subBuildingLeadingType:String?
+    public var subBuildingBlock:String?
+    public var subBuildingDoor:String?
+    public var subBuildingStaircase:String?
     public var thoroughfare:String?
     public var thoroughfarePredirection:String?
     public var thoroughfarePostdirection:String?
@@ -60,8 +64,7 @@ import Foundation
         case superAdministrativeArea = "super_administrative_area"
         case administrativeArea = "administrative_area"
         case administrativeAreaISO2 = "administrative_area_iso2"
-        case administrativeAreaShort = "administrative_area_short"
-        case administrativeAreaLong = "administrative_area_long"
+        case attention = "attention"
         case subAdministrativeArea = "sub_administrative_area"
         case dependentLocality = "dependent_locality"
         case dependentLocalityName = "dependent_locality_name"
@@ -75,6 +78,11 @@ import Foundation
         case premiseNumber = "premise_number"
         case premisePrefixNumber = "premise_prefix_number"
         case premiseType = "premise_type"
+        case shortAddressCode = "short_address_code"
+        case subBuildingLeadingType = "sub_building_leading_type"
+        case subBuildingBlock = "sub_building_block"
+        case subBuildingDoor = "sub_building_door"
+        case subBuildingStaircase = "sub_building_staircase"
         case thoroughfare = "thoroughfare"
         case thoroughfarePredirection = "thoroughfare_predirection"
         case thoroughfarePostdirection = "thoroughfare_postdirection"
@@ -114,8 +122,7 @@ import Foundation
         self.superAdministrativeArea = dictionary["super_administrative_area"] as? String
         self.administrativeArea = dictionary["administrative_area"] as? String
         self.administrativeAreaISO2 = dictionary["administrative_area_iso2"] as? String
-        self.administrativeAreaShort = dictionary["administrative_area_short"] as? String
-        self.administrativeAreaLong = dictionary["administrative_area_long"] as? String
+        self.attention = dictionary["attention"] as? String
         self.subAdministrativeArea = dictionary["sub_administrative_area"] as? String
         self.dependentLocality = dictionary["dependent_locality"] as? String
         self.dependentLocalityName = dictionary["dependent_locality_name"] as? String
@@ -129,6 +136,11 @@ import Foundation
         self.premiseNumber = dictionary["premise_number"] as? String
         self.premisePrefixNumber = dictionary["premise_prefix_number"] as? String
         self.premiseType = dictionary["premise_type"] as? String
+        self.shortAddressCode = dictionary["short_address_code"] as? String
+        self.subBuildingLeadingType = dictionary["sub_building_leading_type"] as? String
+        self.subBuildingBlock = dictionary["sub_building_block"] as? String
+        self.subBuildingDoor = dictionary["sub_building_door"] as? String
+        self.subBuildingStaircase = dictionary["sub_building_staircase"] as? String
         self.thoroughfare = dictionary["thoroughfare"] as? String
         self.thoroughfarePredirection = dictionary["thoroughfare_predirection"] as? String
         self.thoroughfarePostdirection = dictionary["thoroughfare_postdirection"] as? String
