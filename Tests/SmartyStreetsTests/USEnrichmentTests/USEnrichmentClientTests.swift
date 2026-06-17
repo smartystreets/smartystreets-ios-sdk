@@ -64,6 +64,44 @@ class USEnrichmentClientTests: XCTestCase {
         XCTAssertEqual("freeform", sender.request.parameters["freeform"])
     }
 
+    func testBusinessSummarySearchSetsBusinessNameParameter() {
+        let (client, sender) = capturingClient()
+        let lookup = EnrichmentLookup()
+        lookup.setFreeform(freeform: "1 Rosedale, Baltimore, Maryland")
+        lookup.setBusinessName(business_name: "school")
+
+        _ = client.sendBusinessLookup(inputLookup: lookup, error: &self.error)
+
+        XCTAssertNil(self.error)
+        XCTAssertEqual("/search/business", sender.request.urlComponents)
+        XCTAssertEqual("1 Rosedale, Baltimore, Maryland", sender.request.parameters["freeform"])
+        XCTAssertEqual("school", sender.request.parameters["business_name"])
+    }
+
+    func testBusinessSummarySearchOmitsEmptyBusinessName() {
+        let (client, sender) = capturingClient()
+        let lookup = EnrichmentLookup()
+        lookup.setFreeform(freeform: "1 Rosedale, Baltimore, Maryland")
+
+        _ = client.sendBusinessLookup(inputLookup: lookup, error: &self.error)
+
+        XCTAssertNil(self.error)
+        XCTAssertEqual("/search/business", sender.request.urlComponents)
+        XCTAssertNil(sender.request.parameters["business_name"])
+    }
+
+    func testBusinessSummarySearchAcceptsBusinessNameAlone() {
+        let (client, sender) = capturingClient()
+        let lookup = EnrichmentLookup()
+        lookup.setBusinessName(business_name: "school")
+
+        _ = client.sendBusinessLookup(inputLookup: lookup, error: &self.error)
+
+        XCTAssertNil(self.error)
+        XCTAssertEqual("/search/business", sender.request.urlComponents)
+        XCTAssertEqual("school", sender.request.parameters["business_name"])
+    }
+
     // MARK: - Business detail URL shape
 
     func testBusinessDetailUrlContainsBusinessId() {
@@ -192,6 +230,7 @@ class USEnrichmentClientTests: XCTestCase {
         lookup.setSmartyKey(smarty_key: "   ")
         lookup.setStreet(street: "   ")
         lookup.setFreeform(freeform: "   ")
+        lookup.setBusinessName(business_name: "   ")
 
         let result = client.sendBusinessLookup(inputLookup: lookup, error: &self.error)
 

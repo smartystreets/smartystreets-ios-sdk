@@ -9,7 +9,7 @@ make test              # Run XCTest suite (swift test)
 make compile           # Build the package (swift build)
 make clean             # Reset build artifacts
 make run               # Run all sample examples
-make publish           # compile + test + version + git tag + push
+make publish           # compile + version + git tag + push
 ```
 
 Run a single test class or method:
@@ -22,6 +22,7 @@ Run individual examples (requires `SMARTY_AUTH_ID` and `SMARTY_AUTH_TOKEN` env v
 ```bash
 make example-us-street-single
 make example-us-street-multiple
+make example-us-street-match-strategy
 make example-us-zipcode-single
 make example-international-street
 make example-us-enrichment
@@ -30,7 +31,7 @@ make examples-all      # Run all examples
 
 ## Architecture Overview
 
-This is a Swift SDK for SmartyStreets address validation APIs. Swift 5.0+ via Swift Package Manager. No external dependencies.
+This is a Swift SDK for SmartyStreets address validation APIs. Swift 5.10+ via Swift Package Manager. No external dependencies.
 
 ### Sender Chain (Decorator Pattern)
 

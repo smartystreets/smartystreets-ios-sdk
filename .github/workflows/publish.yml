@@ -3,18 +3,20 @@ name: Update Release
 on:
   push:
     tags:
-      - '*'
-      - '!**-dev**'
-    
+      - '**'
 
 jobs:
+  test:
+    uses: ./.github/workflows/test.yml
+
   release:
+    needs: test
     runs-on: ubuntu-latest
-    permissions: 
+    permissions:
       contents: write
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v6
 
       - name: Set Version
         id: set_version
