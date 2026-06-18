@@ -16,4 +16,5 @@ import Foundation
 // print(USReverseGeoExample().run())
 // print(USStreetIanaTimeZoneExample().run())
 // print(try USEnrichmentExample().run())
+// print(try USEnrichmentEtagExample().run())
 // print(try USEnrichmentBusinessSearchExample().run())

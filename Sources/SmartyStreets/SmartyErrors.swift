@@ -19,10 +19,13 @@ class SmartyErrors {
         case BadRequestError = 400
         case BadCredentialsError = 401
         case PaymentRequiredError = 402
+        case ForbiddenError = 403
+        case RequestTimeoutError = 408
         case RequestEntityTooLargeError = 413
         case UnprocessableEntityError = 422
         case TooManyRequestsError = 429
         case InternalServerError = 500
+        case BadGatewayError = 502
         case ServiceUnavailableError = 503
         case GatewayTimeoutError = 504
     }

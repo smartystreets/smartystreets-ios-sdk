@@ -34,6 +34,10 @@ public class InternationalAutocompleteSerializer: SmartySerializer {
             error = NSError(domain: smartyErrors.SSErrorDomain, code: SmartyErrors.SSErrors.ObjectNilError.rawValue, userInfo: details)
             return nil
         }
+
+        if payload!.isEmpty {
+            return nil
+        }
         
         do {
             let result:InternationalAutocompleteResult = try jsonDecoder.decode(InternationalAutocompleteResult.self, from: payload!)

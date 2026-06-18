@@ -67,6 +67,8 @@ example-us-street-iana-timezone:
 example-us-enrichment:
 	@$(call run-example,USEnrichmentExample)
 
+example-us-enrichment-etag:
+	@$(call run-example,USEnrichmentEtagExample)
 example-us-enrichment-business-search:
 	@$(call run-example,USEnrichmentBusinessSearchExample)
 
@@ -87,6 +89,7 @@ examples-all:
 	@$(MAKE) example-us-reverse-geo
 	@$(MAKE) example-us-street-iana-timezone
 	@$(MAKE) example-us-enrichment
+	@$(MAKE) example-us-enrichment-etag
 	@$(MAKE) example-us-enrichment-business-search
 	@echo "All examples completed!"
 
@@ -107,4 +110,4 @@ publish: compile test version
 .PHONY: example-us-zipcode-single example-us-zipcode-multiple
 .PHONY: example-us-autocomplete-pro example-us-extract
 .PHONY: example-international-street example-international-autocomplete example-international-postal-code
-.PHONY: example-us-reverse-geo example-us-street-iana-timezone example-us-enrichment example-us-enrichment-business-search
+.PHONY: example-us-reverse-geo example-us-street-iana-timezone example-us-enrichment example-us-enrichment-etag example-us-enrichment-business-search

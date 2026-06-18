@@ -93,9 +93,16 @@ class SerializerTests: XCTestCase {
     
     func testDeserializeResult() {
         let result:[USZipCodeResult] = (serializer.Deserialize(payload: jsonData.data(using: .utf8), error: &self.error) as? [USZipCodeResult])!
-        
+
         XCTAssertNotNil(result[0])
         XCTAssertNotNil(result[1])
     }
-    
+
+    func testDeserializeEmptyPayloadReturnsNilWithoutError() {
+        let result = serializer.Deserialize(payload: Data(), error: &self.error)
+
+        XCTAssertNil(result)
+        XCTAssertNil(self.error)
+    }
+
 }
