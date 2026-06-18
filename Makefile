@@ -34,6 +34,9 @@ example-us-street-multiple:
 example-us-street-component-analysis:
 	@$(call run-example,USStreetComponentAnalysisExample)
 
+example-us-street-match-strategy:
+	@$(call run-example,USStreetLookupsWithMatchStrategyExample)
+
 example-us-zipcode-single:
 	@$(call run-example,USZipCodeSingleLookupExample)
 
@@ -66,6 +69,8 @@ example-us-enrichment:
 
 example-us-enrichment-etag:
 	@$(call run-example,USEnrichmentEtagExample)
+example-us-enrichment-business-search:
+	@$(call run-example,USEnrichmentBusinessSearchExample)
 
 # Run all examples
 examples-all:
@@ -73,6 +78,7 @@ examples-all:
 	@$(MAKE) example-us-street-single
 	@$(MAKE) example-us-street-multiple
 	@$(MAKE) example-us-street-component-analysis
+	@$(MAKE) example-us-street-match-strategy
 	@$(MAKE) example-us-zipcode-single
 	@$(MAKE) example-us-zipcode-multiple
 	@$(MAKE) example-us-autocomplete-pro
@@ -84,6 +90,7 @@ examples-all:
 	@$(MAKE) example-us-street-iana-timezone
 	@$(MAKE) example-us-enrichment
 	@$(MAKE) example-us-enrichment-etag
+	@$(MAKE) example-us-enrichment-business-search
 	@echo "All examples completed!"
 
 compile:
@@ -99,8 +106,8 @@ publish: compile test version
 		&& git checkout "$(VERSION_FILE)"
 
 .PHONY: clean test compile version publish run examples-all
-.PHONY: example-us-street-single example-us-street-multiple example-us-street-component-analysis
+.PHONY: example-us-street-single example-us-street-multiple example-us-street-component-analysis example-us-street-match-strategy
 .PHONY: example-us-zipcode-single example-us-zipcode-multiple
 .PHONY: example-us-autocomplete-pro example-us-extract
 .PHONY: example-international-street example-international-autocomplete example-international-postal-code
-.PHONY: example-us-reverse-geo example-us-street-iana-timezone example-us-enrichment example-us-enrichment-etag
+.PHONY: example-us-reverse-geo example-us-street-iana-timezone example-us-enrichment example-us-enrichment-etag example-us-enrichment-business-search
