@@ -1,5 +1,5 @@
 import XCTest
-import SmartyStreets
+@testable import SmartyStreets
 
 class USAutocompleteClientTests: XCTestCase {
 
@@ -45,7 +45,7 @@ class USAutocompleteClientTests: XCTestCase {
         lookup.addPreferCity(city: "preferCity")
         lookup.addPreferState(state: "preferState")
         lookup.preferRatio = 4
-        lookup.source = "all"
+        lookup.source = .all
         lookup.addCustomParameter(parameter: "custom", value: "7")
 
         _ = client.sendLookup(lookup:&lookup, error:&error)
@@ -63,6 +63,29 @@ class USAutocompleteClientTests: XCTestCase {
         XCTAssertEqual("all", capturingSender.request.parameters["source"])
         XCTAssertEqual("7", capturingSender.request.parameters["custom"])
         XCTAssertNil(self.error)
+    }
+
+    func testSourceAllIsSetInRequest() {
+        let client = USAutocompleteClient(sender: RequestCapturingSender(), serializer: MockSerializer())
+        let lookup = USAutocompleteLookup()
+        lookup.source = .all
+        let request = client.buildRequest(lookup: lookup)
+        XCTAssertEqual(request.parameters["source"], "all")
+    }
+
+    func testSourcePostalIsSetInRequest() {
+        let client = USAutocompleteClient(sender: RequestCapturingSender(), serializer: MockSerializer())
+        let lookup = USAutocompleteLookup()
+        lookup.source = .postal
+        let request = client.buildRequest(lookup: lookup)
+        XCTAssertEqual(request.parameters["source"], "postal")
+    }
+
+    func testSourceNotInRequestWhenNotSet() {
+        let client = USAutocompleteClient(sender: RequestCapturingSender(), serializer: MockSerializer())
+        let lookup = USAutocompleteLookup()
+        let request = client.buildRequest(lookup: lookup)
+        XCTAssertNil(request.parameters["source"])
     }
 
     func testSendingExclude() {
