@@ -59,7 +59,7 @@ class USAutocompleteExample {
         lookup.maxResults = 5
         lookup.preferGeolocation = GeolocateType(name: "none")
         lookup.preferRatio = 33
-        lookup.source = "all"
+        lookup.source = .all
         ///////////////////////////////////////////////////////////////////////////////////////////////
 
         _ = client.sendLookup(lookup: &lookup, error: &error)
