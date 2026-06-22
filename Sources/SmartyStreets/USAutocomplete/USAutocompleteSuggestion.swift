@@ -11,6 +11,7 @@ import Foundation
     public var state:String?
     public var zipcode:String?
     public var entries:Int?
+    public var source:String?
 
     enum CodingKeys: String, CodingKey {
         case smartyKey = "smarty_key"
@@ -21,6 +22,7 @@ import Foundation
         case state = "state"
         case zipcode = "zipcode"
         case entries = "entries"
+        case source = "source"
     }
 
     init(dictionary: NSDictionary) {
@@ -32,5 +34,6 @@ import Foundation
         self.state = dictionary["state"] as? String
         self.zipcode = dictionary["zipcode"] as? String
         self.entries = dictionary["entries"] as? Int
+        self.source = dictionary["source"] as? String
     }
 }

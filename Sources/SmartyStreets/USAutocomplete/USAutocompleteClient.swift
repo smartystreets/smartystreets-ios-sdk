@@ -48,11 +48,11 @@ public class USAutocompleteClient: NSObject {
         request.setValue(value: lookup.getMaxResultsStringIfSet(), HTTPParameterField: "max_results")
         request.setValue(value: buildFilterString(list: lookup.includeOnlyCities ?? [String]()), HTTPParameterField: "include_only_cities")
         request.setValue(value: buildFilterString(list: lookup.includeOnlyStates ?? [String]()), HTTPParameterField: "include_only_states")
-        request.setValue(value: buildFilterString(list: lookup.includeOnlyZIPCodes ?? [String]()), HTTPParameterField: "include_only_zipcodes")
+        request.setValue(value: buildFilterString(list: lookup.includeOnlyZIPCodes ?? [String]()), HTTPParameterField: "include_only_zip_codes")
         request.setValue(value: buildFilterString(list: lookup.excludeStates ?? [String]()), HTTPParameterField: "exclude_states")
         request.setValue(value: buildFilterString(list: lookup.preferCities ?? [String]()), HTTPParameterField: "prefer_cities")
         request.setValue(value: buildFilterString(list: lookup.preferStates ?? [String]()), HTTPParameterField: "prefer_states")
-        request.setValue(value: buildFilterString(list: lookup.preferZIPCodes ?? [String]()), HTTPParameterField: "prefer_zipcodes")
+        request.setValue(value: buildFilterString(list: lookup.preferZIPCodes ?? [String]()), HTTPParameterField: "prefer_zip_codes")
         request.setValue(value: lookup.source ?? "", HTTPParameterField: "source")
         request.setValue(value: lookup.getPreferRatioStringIfSet(), HTTPParameterField: "prefer_ratio")
 
