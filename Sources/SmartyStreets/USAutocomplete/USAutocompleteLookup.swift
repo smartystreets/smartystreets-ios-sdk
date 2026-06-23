@@ -22,7 +22,7 @@ import Foundation
     public var result:USAutocompleteResult?
     public var search:String?
     public var selected:String?
-    public var exclude:String?
+    public var exclude:[String]?
     public var maxResults:Int?
     public var includeOnlyCities:[String]?
     public var includeOnlyStates:[String]?
@@ -54,6 +54,7 @@ import Foundation
         self.includeOnlyCities = [String]()
         self.includeOnlyStates = [String]()
         self.includeOnlyZIPCodes = [String]()
+        self.exclude = [String]()
         self.excludeStates = [String]()
         self.preferCities = [String]()
         self.preferStates = [String]()
@@ -126,6 +127,10 @@ import Foundation
 
     public func addPreferZIPCode(zipcode:String) {
         self.preferZIPCodes?.append(zipcode)
+    }
+
+    public func addExclude(exclude:String) {
+        self.exclude?.append(exclude)
     }
 
     public func addCustomParameter(parameter: String, value: String) {

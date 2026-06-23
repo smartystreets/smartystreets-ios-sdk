@@ -37,7 +37,7 @@ class USAutocompleteClientTests: XCTestCase {
         let client = USAutocompleteClient(sender:sender, serializer:serializer)
         var lookup = USAutocompleteLookup().withSearch(search: "1")
         lookup.selected = "selectedAddress"
-        lookup.exclude = "excludedAddress"
+        lookup.addExclude(exclude: "excludedAddress")
         lookup.maxResults = 5
         lookup.addCityFilter(city: "city")
         lookup.addStateFilter(state: "state")
@@ -93,11 +93,11 @@ class USAutocompleteClientTests: XCTestCase {
         let serializer = MockSerializer(result: USAutocompleteResult(dictionary: NSDictionary()))
         let client = USAutocompleteClient(sender:sender, serializer:serializer)
         var lookup = USAutocompleteLookup().withSearch(search: "1")
-        lookup.exclude = "excludedAddress"
+        lookup.exclude = ["excludedAddress", "excludeAddress2"]
 
         _ = client.sendLookup(lookup:&lookup, error:&error)
 
-        XCTAssertEqual("excludedAddress", capturingSender.request.parameters["exclude"])
+        XCTAssertEqual("excludedAddress,excludeAddress2", capturingSender.request.parameters["exclude"])
         XCTAssertNil(self.error)
     }
 }

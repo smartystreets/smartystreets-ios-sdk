@@ -3,8 +3,6 @@ import Foundation
 public class USAutocompleteClient: NSObject {
     //    It is recommended to instantiate this class using SSClientBuilder
 
-    static let arrayItemsSeparator = ";"
-
     var sender:SmartySender
     public var serializer:SmartySerializer
 
@@ -44,7 +42,7 @@ public class USAutocompleteClient: NSObject {
 
         request.setValue(value: lookup.search ?? "", HTTPParameterField: "search")
         request.setValue(value: lookup.selected ?? "", HTTPParameterField: "selected")
-        request.setValue(value: lookup.exclude ?? "", HTTPParameterField: "exclude")
+        request.setValue(value: buildFilterString(list: lookup.exclude ?? [String](), separator: ","), HTTPParameterField: "exclude")
         request.setValue(value: lookup.getMaxResultsStringIfSet(), HTTPParameterField: "max_results")
         request.setValue(value: buildFilterString(list: lookup.includeOnlyCities ?? [String]()), HTTPParameterField: "include_only_cities")
         request.setValue(value: buildFilterString(list: lookup.includeOnlyStates ?? [String]()), HTTPParameterField: "include_only_states")
@@ -67,11 +65,11 @@ public class USAutocompleteClient: NSObject {
         return request
     }
 
-    func buildFilterString(list:[String]) -> String {
+    func buildFilterString(list:[String], separator:String=";") -> String {
         if list.count == 0 {
             return String()
         }
 
-        return list.joined(separator: Self.arrayItemsSeparator)
+        return list.joined(separator: separator)
     }
 }
