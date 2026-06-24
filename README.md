@@ -76,6 +76,7 @@ if let suggestions = lookup.result?.suggestions {
 | [US Street](https://www.smarty.com/docs/cloud/us-street-api) | `USStreetLookup` | `buildUsStreetApiClient()` | [example](samples/Sources/swiftExamples/USStreetSingleAddressExample.swift) |
 | [US Zipcode](https://www.smarty.com/docs/cloud/us-zipcode-api) | `USZipCodeLookup` | `buildUsZIPCodeApiClient()` | [example](samples/Sources/swiftExamples/USZipCodeSingleLookupExample.swift) |
 | [US Autocomplete Pro](https://www.smarty.com/docs/cloud/us-autocomplete-pro-api) | `USAutocompleteProLookup` | `buildUSAutocompleteProApiClient()` | [example](samples/Sources/swiftExamples/USAutocompleteProExample.swift) |
+| [US Autocomplete](https://www.smarty.com/docs/apis/us-autocomplete-v2) | `USAutocompleteLookup` | `buildUSAutocompleteApiClient()` | [example](samples/Sources/swiftExamples/USAutocompleteExample.swift) |
 | [US Extract](https://www.smarty.com/docs/cloud/us-extract-api) | `USExtractLookup` | `buildUsExtractApiClient()` | [example](samples/Sources/swiftExamples/USExtractExample.swift) |
 | [US Enrichment](https://www.smarty.com/docs/cloud/us-address-enrichment-api) | `EnrichmentLookup` | `buildUsEnrichmentApiClient()` | [example](samples/Sources/swiftExamples/USEnrichmentExample.swift) |
 | [US Reverse Geocoding](https://www.smarty.com/docs/cloud/us-reverse-geo-api) | `USReverseGeoLookup` | `buildUsReverseGeoApiClient()` | [example](samples/Sources/swiftExamples/USReverseGeoExample.swift) |

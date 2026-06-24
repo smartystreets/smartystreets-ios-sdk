@@ -1,0 +1,75 @@
+import Foundation
+
+public class USAutocompleteClient: NSObject {
+    //    It is recommended to instantiate this class using SSClientBuilder
+
+    var sender:SmartySender
+    public var serializer:SmartySerializer
+
+    public init(sender:Any, serializer:SmartySerializer) {
+        self.sender = sender as! SmartySender
+        self.serializer = serializer
+    }
+
+    @objc public func sendLookup(lookup: UnsafeMutablePointer<USAutocompleteLookup>, error: UnsafeMutablePointer<NSError?>) -> Bool {
+        //        Sends a Lookup object to the US Autocomplete API and stores the result in the Lookup's result field.
+
+        if let search = lookup.pointee.search {
+            if search.count == 0 {
+                let details = [NSLocalizedDescriptionKey:"sendLookup must be passed a Lookup with the search field set."]
+                error.pointee = NSError(domain: SmartyErrors().SSErrorDomain, code: SmartyErrors.SSErrors.FieldNotSetError.rawValue, userInfo: details)
+                return false
+            }
+
+            let request = buildRequest(lookup:lookup.pointee)
+            let response = self.sender.sendRequest(request: request, error: &error.pointee)
+            if error.pointee != nil { return false }
+
+            let result:USAutocompleteResult = self.serializer.Deserialize(payload: response?.payload, error: &error.pointee) as! USAutocompleteResult
+
+            // Naming of parameters to allow JSON deserialization
+            if error.pointee != nil { return false }
+
+            lookup.pointee.result = result
+            return true
+        } else {
+            return false
+        }
+    }
+
+    func buildRequest(lookup:USAutocompleteLookup) -> SmartyRequest {
+        let request = SmartyRequest()
+
+        request.setValue(value: lookup.search ?? "", HTTPParameterField: "search")
+        request.setValue(value: lookup.selected ?? "", HTTPParameterField: "selected")
+        request.setValue(value: buildFilterString(list: lookup.exclude ?? [String](), separator: ","), HTTPParameterField: "exclude")
+        request.setValue(value: lookup.getMaxResultsStringIfSet(), HTTPParameterField: "max_results")
+        request.setValue(value: buildFilterString(list: lookup.includeOnlyCities ?? [String]()), HTTPParameterField: "include_only_cities")
+        request.setValue(value: buildFilterString(list: lookup.includeOnlyStates ?? [String]()), HTTPParameterField: "include_only_states")
+        request.setValue(value: buildFilterString(list: lookup.includeOnlyZIPCodes ?? [String]()), HTTPParameterField: "include_only_zip_codes")
+        request.setValue(value: buildFilterString(list: lookup.excludeStates ?? [String]()), HTTPParameterField: "exclude_states")
+        request.setValue(value: buildFilterString(list: lookup.preferCities ?? [String]()), HTTPParameterField: "prefer_cities")
+        request.setValue(value: buildFilterString(list: lookup.preferStates ?? [String]()), HTTPParameterField: "prefer_states")
+        request.setValue(value: buildFilterString(list: lookup.preferZIPCodes ?? [String]()), HTTPParameterField: "prefer_zip_codes")
+        request.setValue(value: lookup.source?.name ?? "", HTTPParameterField: "source")
+        request.setValue(value: lookup.getPreferRatioStringIfSet(), HTTPParameterField: "prefer_ratio")
+
+        if lookup.preferGeolocation!.name != "none" && lookup.preferZIPCodes == [String]() {
+            request.setValue(value: lookup.preferGeolocation!.name, HTTPParameterField: "prefer_geolocation")
+        }
+
+        for key in lookup.getCustomParamArray().keys {
+            request.setValue(value: lookup.getCustomParamArray()[key] ?? "", HTTPParameterField: key)
+        }
+
+        return request
+    }
+
+    func buildFilterString(list:[String], separator:String=";") -> String {
+        if list.count == 0 {
+            return String()
+        }
+
+        return list.joined(separator: separator)
+    }
+}
