@@ -100,4 +100,18 @@ class USAutocompleteClientTests: XCTestCase {
         XCTAssertEqual("excludedAddress,excludeAddress2", capturingSender.request.parameters["exclude"])
         XCTAssertNil(self.error)
     }
+
+    func testUrbanizationDeserializedFromResponse() {
+        let dictionary: NSDictionary = [
+            "suggestions": [
+                ["urbanization": "urb", "street_line": "1", "entry_id": "2"],
+                ["street_line": "3", "entry_id": "4"]
+            ]
+        ]
+
+        let result = USAutocompleteResult(dictionary: dictionary)
+
+        XCTAssertEqual("urb", result.getSuggestionAtIndex(index: 0).urbanization)
+        XCTAssertNil(result.getSuggestionAtIndex(index: 1).urbanization)
+    }
 }
