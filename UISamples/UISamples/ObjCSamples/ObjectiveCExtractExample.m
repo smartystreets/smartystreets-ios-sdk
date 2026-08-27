@@ -22,7 +22,10 @@
 }
 
 - (NSString*)run {
-    USExtractClient* client = [[ClientBuilder alloc] initWithId:@"key" hostname:@"hostname"].buildUsExtractApiClient;
+    // The US Extract API is POST-only, and embedded keys are restricted to GET, so this
+    // API requires secret keys: https://www.smarty.com/docs/cloud/authentication
+    // Secret keys must not ship in a mobile binary - proxy Extract calls through your server.
+    USExtractClient* client = [[ClientBuilder alloc] initWithAuthId:@"AUTH-ID" authToken:@"AUTH-TOKEN"].buildUsExtractApiClient;
     
     //            Documentation for input fields can be found at:
     //            https://smartystreets.com/docs/cloud/us-extract-api#http-request-input-fields

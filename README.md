@@ -90,7 +90,7 @@ Three credential types are available:
 
 - **`ClientBuilder(authId:authToken:)`** — Server-to-server using auth-id and auth-token (passed as query parameters).
 - **`ClientBuilder.withBasicAuth(authId:authToken:)`** — HTTP Basic Auth.
-- **`ClientBuilder(id:hostname:)`** — Client-side (mobile/browser) authentication using an embedded key and `Referer` hostname. Does not support batch (POST) requests.
+- **`ClientBuilder(id:hostname:)`** — Client-side (mobile/browser) authentication using an embedded key and `Referer` hostname. Embedded keys are restricted to HTTP GET, so they cannot be used for batch (POST) requests or with the US Extract API, which is POST-only.
 
 ```swift
 // Server-to-server (query params)

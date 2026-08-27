@@ -7,12 +7,8 @@ class USStreetMultipleAddressExample {
         //            can be found on the Subscriptions page of the account dashboard.
         //            https://www.smartystreets.com/docs/cloud/licensing
         //            We recommend storing your authentication credentials in environment variables.
-        //            for client-side requests (browser/mobile), use this code:
-        //let id = getEnvironmentVar("SMARTY_AUTH_WEB") ?? ""
-        //let hostname = getEnvironmentVar("SMARTY_AUTH_REFERER") ?? ""
-        //let client = ClientBuilder(id: id, hostname: hostname).buildUsStreetApiClient()
-
-        // for server-to-server requests, use this code:
+        // Batch requests are sent via HTTP POST. Embedded keys are restricted to GET, so
+        // batches require secret keys: https://www.smarty.com/docs/cloud/authentication
         let authId = getEnvironmentVar("SMARTY_AUTH_ID") ?? ""
         let authToken = getEnvironmentVar("SMARTY_AUTH_TOKEN") ?? ""
         let client = ClientBuilder.withBasicAuth(authId: authId, authToken: authToken).buildUsStreetApiClient()
