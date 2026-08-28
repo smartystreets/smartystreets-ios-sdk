@@ -72,6 +72,7 @@ let client = ClientBuilder(authId: id, authToken: token)
 Auth options:
 - `ClientBuilder(authId:authToken:)` - Server-to-server with static credentials (query params)
 - `ClientBuilder(id:hostname:)` - Client-side with shared/web credentials (Referer header)
+- Embedded/website keys are GET-only — not valid for batch (POST) requests or the US Extract API (POST-only): https://www.smarty.com/docs/cloud/authentication
 - `ClientBuilder.withBasicAuth(authId:authToken:)` - HTTP Basic Auth (Authorization header)
 - `ClientBuilder(signer:)` - Custom `SmartyCredentials` implementation
 

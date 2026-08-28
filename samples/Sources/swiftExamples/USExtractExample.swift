@@ -4,12 +4,8 @@ import SmartyStreets
 class USExtractExample {
     func run() -> String {
         //            We recommend storing your authentication credentials in environment variables.
-        //            for client-side requests (browser/mobile), use this code:
-        //let id = getEnvironmentVar("SMARTY_AUTH_WEB") ?? ""
-        //let hostname = getEnvironmentVar("SMARTY_AUTH_REFERER") ?? ""
-        //let client = ClientBuilder(id: id, hostname: hostname).buildUsExtractApiClient()
-
-        // for server-to-server requests, use this code:
+        // The US Extract API is POST-only and embedded keys are restricted to GET, so this
+        // API requires secret keys: https://www.smarty.com/docs/cloud/authentication
         let authId = getEnvironmentVar("SMARTY_AUTH_ID") ?? ""
         let authToken = getEnvironmentVar("SMARTY_AUTH_TOKEN") ?? ""
         let client = ClientBuilder.withBasicAuth(authId: authId, authToken: authToken).buildUsExtractApiClient()

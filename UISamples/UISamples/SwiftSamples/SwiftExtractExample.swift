@@ -22,7 +22,10 @@ class SwiftExtractExample: UIViewController {
     }
     
     func run() -> String {
-        let client = ClientBuilder(id: "key", hostname: "hostname").buildUsExtractApiClient()
+        // The US Extract API is POST-only, and embedded keys are restricted to GET, so this
+        // API requires secret keys: https://www.smarty.com/docs/cloud/authentication
+        // Secret keys must not ship in a mobile binary - proxy Extract calls through your server.
+        let client = ClientBuilder(authId: "AUTH-ID", authToken: "AUTH-TOKEN").buildUsExtractApiClient()
         
         if let text = input.text {
             //            Documentation for input fields can be found at:
