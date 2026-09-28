@@ -70,6 +70,7 @@ class InternationalStreetClientTests: XCTestCase {
         XCTAssertEqual("9" , capturingSender.request.parameters["postal_code"])
         XCTAssertEqual("10" , capturingSender.request.parameters["features"])
         XCTAssertEqual("11" , capturingSender.request.parameters["custom"])
+        XCTAssertEqual("native" , capturingSender.request.parameters["language"])
     }
     
     func testEmptyLookupRejected() {

@@ -30,6 +30,7 @@ class InternationalAutocompleteClientTests: XCTestCase {
         lookup.postalCode = "5"
         lookup.addressID = "6"
         lookup.addCustomParameter(parameter: "custom", value: "7")
+        lookup.language = LanguageMode(name: LanguageMode.Native)
         
         _ = client.sendLookup(lookup:&lookup, error:&error)
         
@@ -41,6 +42,7 @@ class InternationalAutocompleteClientTests: XCTestCase {
         XCTAssertEqual("5", capturingSender.request.parameters["include_only_postal_code"])
         XCTAssertEqual("http://localhost/6", capturingSender.request.urlPrefix)
         XCTAssertEqual("7", capturingSender.request.parameters["custom"])
+        XCTAssertEqual("native", capturingSender.request.parameters["language"])
         XCTAssertNil(self.error)
     }
 
@@ -104,6 +106,21 @@ class InternationalAutocompleteClientTests: XCTestCase {
         _ = client.sendLookup(lookup:&lookup, error:&error)
 
         XCTAssertNil(capturingSender.request.parameters["geolocation"])
+        XCTAssertNil(self.error)
+    }
+
+    func testLanguageNotIncludedWhenNotSet() {
+        let sender = URLPrefixSender(urlPrefix: "http://localhost/", inner: self.capturingSender as Any)
+        let serializer = MockSerializer(result: InternationalAutocompleteResult(dictionary: NSDictionary()))
+        let client = InternationalAutocompleteClient(sender:sender, serializer:serializer)
+        var lookup = InternationalAutocompleteLookup()
+        lookup.search = "1"
+        lookup.country = "2"
+
+        _ = client.sendLookup(lookup:&lookup, error:&error)
+
+        XCTAssertNil(capturingSender.request.parameters["language"])
+        XCTAssertFalse(capturingSender.request.getUrl().contains("language"))
         XCTAssertNil(self.error)
     }
 
