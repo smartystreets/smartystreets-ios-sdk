@@ -30,7 +30,7 @@ class InternationalAutocompleteClientTests: XCTestCase {
         lookup.postalCode = "5"
         lookup.addressID = "6"
         lookup.addCustomParameter(parameter: "custom", value: "7")
-        lookup.language = LanguageMode(name: LanguageMode.Native)
+        lookup.language = InternationalAutocompleteLanguageMode(name: "native")
         
         _ = client.sendLookup(lookup:&lookup, error:&error)
         
