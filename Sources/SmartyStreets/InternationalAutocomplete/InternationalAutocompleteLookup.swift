@@ -19,6 +19,7 @@ import Foundation
     public var geolocation:Bool
     public var locality:String?
     public var postalCode:String?
+    public var language:InternationalAutocompleteLanguageMode?
     
     enum CodingKeys: String, CodingKey {
         case country = "country"

@@ -26,6 +26,7 @@ class InternationalAutocompleteExample {
         lookup.search = "Louis"
         lookup.maxGroupResults = 50
         lookup.geolocation = true
+        lookup.language = InternationalAutocompleteLanguageMode(name: "native")
 
         // Uncomment the below line to add a custom parameter to a lookup:
         //lookup.addCustomParameter(parameter: "parameter", value: "value")
