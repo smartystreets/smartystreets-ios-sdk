@@ -73,6 +73,31 @@ class InternationalStreetClientTests: XCTestCase {
         XCTAssertEqual("native" , capturingSender.request.parameters["language"])
     }
     
+    func testMaxResultsSentWhenSet() {
+        let capturingSender = RequestCapturingSender()
+        let sender = URLPrefixSender(urlPrefix: "http://localhost/", inner: capturingSender)
+        let client = InternationalStreetClient(sender: sender, serializer: InternationalStreetSerializer())
+        var lookup = InternationalStreetLookup(freeform: "freeform", country: "USA", inputId: nil)
+        lookup.maxResults = 10
+        
+        _ = client.sendLookup(lookup: &lookup, error: &self.error)
+        
+        XCTAssertNil(self.error)
+        XCTAssertEqual("10", capturingSender.request.parameters["max_results"])
+    }
+    
+    func testMaxResultsOmittedWhenUnset() {
+        let capturingSender = RequestCapturingSender()
+        let sender = URLPrefixSender(urlPrefix: "http://localhost/", inner: capturingSender)
+        let client = InternationalStreetClient(sender: sender, serializer: InternationalStreetSerializer())
+        var lookup = InternationalStreetLookup(freeform: "freeform", country: "USA", inputId: nil)
+        
+        _ = client.sendLookup(lookup: &lookup, error: &self.error)
+        
+        XCTAssertNil(self.error)
+        XCTAssertNil(capturingSender.request.parameters["max_results"])
+    }
+    
     func testEmptyLookupRejected() {
         var lookup = InternationalStreetLookup()
         assertLookupRejected(lookup: &lookup)

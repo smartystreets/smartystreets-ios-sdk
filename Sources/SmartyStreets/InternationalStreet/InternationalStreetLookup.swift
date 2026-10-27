@@ -12,6 +12,7 @@ import Foundation
     //    self.language: When not set, the output language will match the language of the input values.
     //    When set to language_mode.Native, the results will always be in the language of the output country.
     //    When set to language_mode.Latin, the results will always be provided using a Latin character set.
+    //    self.maxResults: The maximum number of candidates to return. Omitted when 0 (the default).
     
     private var customParamArray: [String: String] = [:]
     public var result:[InternationalStreetCandidate]?
@@ -30,6 +31,7 @@ import Foundation
     public var administrativeArea:String?
     public var postalCode:String?
     public var features:String?
+    public var maxResults:Int = 0
 
     override public init() {    }
     

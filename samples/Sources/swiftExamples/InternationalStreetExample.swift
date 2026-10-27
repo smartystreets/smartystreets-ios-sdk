@@ -30,6 +30,8 @@ class InternationalStreetExample {
         lookup.country = "Brazil"
         lookup.postalCode = "02516-050"
         lookup.enableGeocode(geocode: true)
+        // Uncomment the below line to limit the number of candidates returned:
+        //lookup.maxResults = 5
         
         // Uncomment the below line to add a custom parameter to a lookup:
         //lookup.addCustomParameter(parameter: "parameter", value: "value")

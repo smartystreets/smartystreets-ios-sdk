@@ -26,6 +26,9 @@ class InternationalPostalCodeExample {
         lookup.administrativeArea = "SP"
         lookup.country = "Brazil"
         lookup.postalCode = "02516"
+        // Uncomment the below lines to request native-script results (JPN only) or limit the number of results:
+        //lookup.language = InternationalPostalCodeLanguageMode(name: InternationalPostalCodeLanguageMode.Native)
+        //lookup.maxResults = 5
         
         // Uncomment the below line to add a custom parameter to a lookup:
         //lookup.addCustomParameter(parameter: "parameter", value: "value")
@@ -78,6 +81,9 @@ class InternationalPostalCodeExample {
             }
             if let postalCode = candidate.postalCode, !postalCode.isEmpty {
                 output.append("  \(postalCode)\n")
+            }
+            if let thoroughfare = candidate.thoroughfare, !thoroughfare.isEmpty {
+                output.append("  \(thoroughfare)\n")
             }
             output.append("\n")
         }
