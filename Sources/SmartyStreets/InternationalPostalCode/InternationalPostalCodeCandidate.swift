@@ -16,6 +16,7 @@ import Foundation
     public var doubleDependentLocality: String?
     public var postalCode: String?
     public var postalCodeExtra: String?
+    public var thoroughfare: String?
     
     enum CodingKeys: String, CodingKey {
         case inputID = "input_id"
@@ -29,6 +30,7 @@ import Foundation
         case doubleDependentLocality = "double_dependent_locality"
         case postalCode = "postal_code"
         case postalCodeExtra = "postal_code_extra"
+        case thoroughfare = "thoroughfare"
     }
     
     init(dictionary: NSDictionary) {
@@ -43,6 +45,7 @@ import Foundation
         self.doubleDependentLocality = dictionary["double_dependent_locality"] as? String
         self.postalCode = dictionary["postal_code"] as? String
         self.postalCodeExtra = dictionary["postal_code_extra"] as? String
+        self.thoroughfare = dictionary["thoroughfare"] as? String
     }
 }
 

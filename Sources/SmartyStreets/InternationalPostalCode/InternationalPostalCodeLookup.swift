@@ -13,6 +13,8 @@ import Foundation
     public var locality: String?
     public var administrativeArea: String?
     public var postalCode: String?
+    public var language: InternationalPostalCodeLanguageMode?
+    public var maxResults: Int = 0
     
     enum CodingKeys: String, CodingKey {
         case inputID = "input_id"
